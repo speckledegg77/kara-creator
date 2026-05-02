@@ -84,17 +84,6 @@ def normalise_word(value: str) -> str:
 
 
 def words_from_line(line: str) -> list[str]:
-    """
-    Match the lyrics-aligner token style.
-
-    Important:
-    - hyphenated words become one token:
-      wide-eyed -> wideeyed
-      love-struck -> lovestruck
-    - apostrophes are kept:
-      I'd -> i'd
-      won't -> won't
-    """
     cleaned = line.replace("’", "'")
     cleaned = cleaned.replace("-", "")
     raw_words = re.findall(r"[A-Za-z0-9']+", cleaned)
@@ -213,7 +202,7 @@ def write_line_map(
             "lyrics_file": str(source_lyrics),
             "tokenisation": {
                 "hyphenated_words": "merged",
-                "apostrophes": "kept"
+                "apostrophes": "kept",
             },
         },
         "line_count": len(flat_lines),
@@ -368,12 +357,86 @@ def create_word2phonemes_file(
         )
 
 
+def clean_previous_aligner_files(aligner_dir: Path, dataset_name: str) -> list[str]:
+    removed: list[str] = []
+
+    files_dir = aligner_dir / "files"
+    outputs_dir = aligner_dir / "outputs" / dataset_name
+
+    if files_dir.exists():
+        for path in files_dir.glob(f"{dataset_name}*"):
+            if path.is_file():
+                path.unlink()
+                removed.append(str(path))
+            elif path.is_dir():
+                shutil.rmtree(path)
+                removed.append(str(path))
+
+    if outputs_dir.exists():
+        shutil.rmtree(outputs_dir)
+        removed.append(str(outputs_dir))
+
+    return removed
+
+
+def write_run_manifest(
+    manifest_path: Path,
+    *,
+    safe_name: str,
+    dataset_name: str,
+    source_audio: Path,
+    source_lyrics: Path,
+    clean_audio_path: Path,
+    clean_lyrics_path: Path,
+    line_map_path: Path,
+    word_review_path: Path,
+    draft_path: Path,
+    sections: list[dict[str, Any]],
+    removed_files: list[str],
+) -> None:
+    manifest = {
+        "schema_version": "kara-run-manifest-v1",
+        "song_name": safe_name,
+        "dataset_name": dataset_name,
+        "source": {
+            "audio_file": str(source_audio),
+            "lyrics_file": str(source_lyrics),
+        },
+        "prepared_inputs": {
+            "audio_file": str(clean_audio_path),
+            "lyrics_file": str(clean_lyrics_path),
+            "line_map_json": str(line_map_path),
+        },
+        "outputs": {
+            "word_review_json": str(word_review_path),
+            "draft_json": str(draft_path),
+        },
+        "sections": [
+            {
+                "label": section["label"],
+                "line_count": len(section["lines"]),
+            }
+            for section in sections
+        ],
+        "cleanup": {
+            "removed_previous_aligner_files": removed_files,
+        },
+    }
+
+    manifest_path.parent.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(
+        json.dumps(manifest, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+
 def run_pipeline(
     project_root: Path,
     audio_path: Path,
     lyrics_path: Path,
     name: str,
     aligner_dir: Path,
+    clean_previous: bool,
 ) -> None:
     require_file(audio_path, "Input vocal MP3")
     require_file(lyrics_path, "Input lyrics TXT")
@@ -389,9 +452,18 @@ def run_pipeline(
     clean_audio_path = run_audio_dir / f"{safe_name}{audio_path.suffix.lower()}"
     clean_lyrics_path = run_lyrics_dir / f"{safe_name}.txt"
     line_map_path = run_dir / f"{safe_name}-line-map.json"
+    manifest_path = run_dir / f"{safe_name}-run-manifest.json"
 
     word_review_path = project_root / "outputs" / f"{safe_name}-word-review-lyrics-aligner.json"
     draft_path = project_root / "outputs" / f"{safe_name}-draft-lyrics-aligner-v3.json"
+
+    removed_files: list[str] = []
+
+    if clean_previous:
+        removed_files = clean_previous_aligner_files(
+            aligner_dir=aligner_dir,
+            dataset_name=dataset_name,
+        )
 
     custom_pronunciations = load_custom_pronunciations(project_root)
     sections = parse_sectioned_lyrics(lyrics_path)
@@ -409,13 +481,32 @@ def run_pipeline(
         source_lyrics=lyrics_path,
     )
 
+    write_run_manifest(
+        manifest_path=manifest_path,
+        safe_name=safe_name,
+        dataset_name=dataset_name,
+        source_audio=audio_path,
+        source_lyrics=lyrics_path,
+        clean_audio_path=clean_audio_path,
+        clean_lyrics_path=clean_lyrics_path,
+        line_map_path=line_map_path,
+        word_review_path=word_review_path,
+        draft_path=draft_path,
+        sections=sections,
+        removed_files=removed_files,
+    )
+
     print("")
     print("Prepared song files.")
     print(f"Run folder:    {run_dir}")
     print(f"Clean audio:   {clean_audio_path}")
     print(f"Clean lyrics:  {clean_lyrics_path}")
     print(f"Line map:      {line_map_path}")
+    print(f"Manifest:      {manifest_path}")
     print(f"Custom pronunciations loaded: {len(custom_pronunciations)}")
+
+    if clean_previous:
+        print(f"Previous aligner files removed: {len(removed_files)}")
 
     run_command(
         [
@@ -544,6 +635,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Path to the cloned lyrics-aligner folder.",
     )
 
+    parser.add_argument(
+        "--keep-previous",
+        action="store_true",
+        help="Do not clean previous lyrics-aligner files for this song name before running.",
+    )
+
     return parser
 
 
@@ -560,6 +657,7 @@ def main() -> int:
             lyrics_path=Path(args.lyrics).resolve(),
             name=args.name,
             aligner_dir=Path(args.aligner_dir).resolve(),
+            clean_previous=not args.keep_previous,
         )
     except Exception as error:
         print("")

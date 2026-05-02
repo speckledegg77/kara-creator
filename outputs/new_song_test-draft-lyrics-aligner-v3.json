@@ -5,7 +5,7 @@
     "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_song_test-word-review-lyrics-aligner.json",
     "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\vocals.mp3",
     "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\lyrics.txt",
-    "audio_duration_seconds": 203.888
+    "audio_duration_seconds": 203.872
   },
   "alignment": {
     "mode": "singing-specific-word-starts-to-line-draft",
@@ -53,13 +53,13 @@
       "id": "opening-001",
       "label": "OPENING",
       "start": 12.81,
-      "end": 38.848,
+      "end": 38.864,
       "lines": [
         {
           "id": "line-0001",
           "text": "If I met myself back then I wonder what I'd say",
           "start": 12.81,
-          "end": 17.584,
+          "end": 17.28,
           "word_start": 12.96,
           "last_word_start": 17.136,
           "confidence": "draft",
@@ -86,13 +86,13 @@
               "id": "word-0003",
               "text": "met",
               "start": 13.296,
-              "end": 13.664,
+              "end": 13.68,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0004",
               "text": "myself",
-              "start": 13.664,
+              "start": 13.68,
               "end": 14.544,
               "source": "lyrics-aligner-word-start"
             },
@@ -107,21 +107,21 @@
               "id": "word-0006",
               "text": "then",
               "start": 14.96,
-              "end": 15.504,
+              "end": 15.52,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0007",
               "text": "i",
-              "start": 15.504,
-              "end": 15.552,
+              "start": 15.52,
+              "end": 15.568,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0008",
               "text": "wonder",
-              "start": 15.552,
-              "end": 16.452,
+              "start": 15.568,
+              "end": 16.468,
               "source": "lyrics-aligner-word-start"
             },
             {
@@ -142,7 +142,7 @@
               "id": "word-0011",
               "text": "say",
               "start": 17.136,
-              "end": 17.664,
+              "end": 17.36,
               "source": "lyrics-aligner-word-start"
             }
           ]
@@ -150,9 +150,9 @@
         {
           "id": "line-0002",
           "text": "Would I tell that simple wide-eyed girl the truth",
-          "start": 17.514,
+          "start": 17.21,
           "end": 26.096,
-          "word_start": 17.664,
+          "word_start": 17.36,
           "last_word_start": 23.2,
           "confidence": "draft",
           "locked": false,
@@ -163,8 +163,8 @@
             {
               "id": "word-0012",
               "text": "would",
-              "start": 17.664,
-              "end": 18.564,
+              "start": 17.36,
+              "end": 18.26,
               "source": "lyrics-aligner-word-start"
             },
             {
@@ -192,27 +192,27 @@
               "id": "word-0016",
               "text": "simple",
               "start": 20.592,
-              "end": 21.456,
+              "end": 21.492,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0017",
               "text": "wideeyed",
-              "start": 21.456,
-              "end": 22.356,
+              "start": 21.536,
+              "end": 22.436,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0018",
               "text": "girl",
               "start": 22.448,
-              "end": 23.056,
+              "end": 23.04,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0019",
               "text": "the",
-              "start": 23.056,
+              "start": 23.04,
               "end": 23.2,
               "source": "lyrics-aligner-word-start"
             },
@@ -269,7 +269,7 @@
             {
               "id": "word-0025",
               "text": "back",
-              "start": 27.84,
+              "start": 27.824,
               "end": 27.952,
               "source": "lyrics-aligner-word-start"
             },
@@ -284,20 +284,20 @@
               "id": "word-0027",
               "text": "a",
               "start": 28.688,
-              "end": 28.768,
+              "end": 28.752,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0028",
               "text": "child",
-              "start": 28.768,
-              "end": 29.104,
+              "start": 28.752,
+              "end": 29.12,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0029",
               "text": "who'd",
-              "start": 29.104,
+              "start": 29.12,
               "end": 29.632,
               "source": "lyrics-aligner-word-start"
             },
@@ -305,13 +305,13 @@
               "id": "word-0030",
               "text": "lost",
               "start": 29.632,
-              "end": 30.176,
+              "end": 30.192,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0031",
               "text": "her",
-              "start": 30.176,
+              "start": 30.192,
               "end": 30.464,
               "source": "lyrics-aligner-word-start"
             },
@@ -328,7 +328,7 @@
           "id": "line-0004",
           "text": "Who was just about to pay the price of youth",
           "start": 32.49,
-          "end": 38.848,
+          "end": 38.864,
           "word_start": 32.64,
           "last_word_start": 36.064,
           "confidence": "draft",
@@ -341,13 +341,13 @@
               "id": "word-0033",
               "text": "who",
               "start": 32.64,
-              "end": 32.784,
+              "end": 32.768,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0034",
               "text": "was",
-              "start": 32.784,
+              "start": 32.768,
               "end": 33.072,
               "source": "lyrics-aligner-word-start"
             },
@@ -362,20 +362,20 @@
               "id": "word-0036",
               "text": "about",
               "start": 33.536,
-              "end": 34.304,
+              "end": 34.288,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0037",
               "text": "to",
-              "start": 34.304,
-              "end": 34.448,
+              "start": 34.288,
+              "end": 34.432,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0038",
               "text": "pay",
-              "start": 34.448,
+              "start": 34.432,
               "end": 35.12,
               "source": "lyrics-aligner-word-start"
             },
@@ -383,13 +383,13 @@
               "id": "word-0039",
               "text": "the",
               "start": 35.12,
-              "end": 35.2,
+              "end": 35.216,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0040",
               "text": "price",
-              "start": 35.2,
+              "start": 35.216,
               "end": 35.952,
               "source": "lyrics-aligner-word-start"
             },
@@ -414,15 +414,15 @@
     {
       "id": "verse-one-002",
       "label": "VERSE ONE",
-      "start": 38.778,
-      "end": 69.36,
+      "start": 38.794,
+      "end": 67.104,
       "lines": [
         {
           "id": "line-0005",
           "text": "I'd tell her only fools rush in and think the heart can lead",
-          "start": 38.778,
+          "start": 38.794,
           "end": 45.472,
-          "word_start": 38.928,
+          "word_start": 38.944,
           "last_word_start": 43.488,
           "confidence": "draft",
           "locked": false,
@@ -433,7 +433,7 @@
             {
               "id": "word-0043",
               "text": "i'd",
-              "start": 38.928,
+              "start": 38.944,
               "end": 39.04,
               "source": "lyrics-aligner-word-start"
             },
@@ -462,13 +462,13 @@
               "id": "word-0047",
               "text": "fools",
               "start": 40.064,
-              "end": 40.816,
+              "end": 40.832,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0048",
               "text": "rush",
-              "start": 40.816,
+              "start": 40.832,
               "end": 41.232,
               "source": "lyrics-aligner-word-start"
             },
@@ -483,20 +483,20 @@
               "id": "word-0050",
               "text": "and",
               "start": 41.696,
-              "end": 41.824,
+              "end": 41.808,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0051",
               "text": "think",
-              "start": 41.824,
-              "end": 42.384,
+              "start": 41.808,
+              "end": 42.368,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0052",
               "text": "the",
-              "start": 42.384,
+              "start": 42.368,
               "end": 42.56,
               "source": "lyrics-aligner-word-start"
             },
@@ -547,20 +547,20 @@
               "id": "word-0057",
               "text": "tell",
               "start": 45.648,
-              "end": 45.888,
+              "end": 45.904,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0058",
               "text": "her",
-              "start": 45.888,
-              "end": 46.032,
+              "start": 45.904,
+              "end": 46.048,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0059",
               "text": "grow",
-              "start": 46.032,
+              "start": 46.048,
               "end": 46.592,
               "source": "lyrics-aligner-word-start"
             },
@@ -603,13 +603,13 @@
               "id": "word-0065",
               "text": "you're",
               "start": 48.896,
-              "end": 49.104,
+              "end": 49.088,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0066",
               "text": "gonna",
-              "start": 49.104,
+              "start": 49.088,
               "end": 49.968,
               "source": "lyrics-aligner-word-start"
             },
@@ -660,13 +660,13 @@
               "id": "word-0071",
               "text": "blue",
               "start": 52.56,
-              "end": 52.912,
+              "end": 52.896,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0072",
               "text": "skies",
-              "start": 52.912,
+              "start": 52.896,
               "end": 53.472,
               "source": "lyrics-aligner-word-start"
             },
@@ -695,13 +695,13 @@
               "id": "word-0076",
               "text": "the",
               "start": 55.04,
-              "end": 55.456,
+              "end": 55.408,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0077",
               "text": "only",
-              "start": 55.456,
+              "start": 55.408,
               "end": 56.08,
               "source": "lyrics-aligner-word-start"
             },
@@ -725,9 +725,9 @@
           "id": "line-0008",
           "text": "I'd make her see the future's me",
           "start": 58.794,
-          "end": 62.256,
+          "end": 62.272,
           "word_start": 58.944,
-          "last_word_start": 61.888,
+          "last_word_start": 61.872,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -765,7 +765,7 @@
             {
               "id": "word-0084",
               "text": "the",
-              "start": 60.624,
+              "start": 60.64,
               "end": 60.784,
               "source": "lyrics-aligner-word-start"
             },
@@ -779,8 +779,8 @@
             {
               "id": "word-0086",
               "text": "me",
-              "start": 61.888,
-              "end": 62.336,
+              "start": 61.872,
+              "end": 62.352,
               "source": "lyrics-aligner-word-start"
             }
           ]
@@ -788,9 +788,9 @@
         {
           "id": "line-0009",
           "text": "If I met myself again",
-          "start": 62.186,
-          "end": 69.36,
-          "word_start": 62.336,
+          "start": 62.202,
+          "end": 67.104,
+          "word_start": 62.352,
           "last_word_start": 65.952,
           "confidence": "draft",
           "locked": false,
@@ -801,8 +801,8 @@
             {
               "id": "word-0087",
               "text": "if",
-              "start": 62.336,
-              "end": 63.236,
+              "start": 62.352,
+              "end": 63.252,
               "source": "lyrics-aligner-word-start"
             },
             {
@@ -840,15 +840,15 @@
     {
       "id": "verse-two-003",
       "label": "VERSE TWO",
-      "start": 69.29,
+      "start": 67.034,
       "end": 104.72,
       "lines": [
         {
           "id": "line-0010",
           "text": "If I met myself again I wonder what she'd say",
-          "start": 69.29,
+          "start": 67.034,
           "end": 85.264,
-          "word_start": 69.44,
+          "word_start": 67.184,
           "last_word_start": 83.2,
           "confidence": "draft",
           "locked": false,
@@ -859,8 +859,8 @@
             {
               "id": "word-0092",
               "text": "if",
-              "start": 69.44,
-              "end": 70.34,
+              "start": 67.184,
+              "end": 68.084,
               "source": "lyrics-aligner-word-start"
             },
             {
@@ -1037,20 +1037,20 @@
               "id": "word-0113",
               "text": "wonder",
               "start": 92.304,
-              "end": 93.008,
+              "end": 93.072,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0114",
               "text": "of",
-              "start": 93.008,
-              "end": 93.536,
+              "start": 93.072,
+              "end": 93.552,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0115",
               "text": "the",
-              "start": 93.536,
+              "start": 93.552,
               "end": 93.68,
               "source": "lyrics-aligner-word-start"
             },
@@ -1058,20 +1058,20 @@
               "id": "word-0116",
               "text": "men",
               "start": 93.68,
-              "end": 94.272,
+              "end": 94.368,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0117",
               "text": "the",
-              "start": 94.272,
-              "end": 94.368,
+              "start": 94.368,
+              "end": 94.512,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0118",
               "text": "ones",
-              "start": 94.368,
+              "start": 94.512,
               "end": 94.992,
               "source": "lyrics-aligner-word-start"
             },
@@ -1104,7 +1104,7 @@
           "start": 98.506,
           "end": 104.72,
           "word_start": 98.656,
-          "last_word_start": 101.76,
+          "last_word_start": 101.776,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -1115,20 +1115,20 @@
               "id": "word-0122",
               "text": "and",
               "start": 98.656,
-              "end": 98.768,
+              "end": 98.752,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0123",
               "text": "worse",
-              "start": 98.768,
-              "end": 99.344,
+              "start": 98.752,
+              "end": 99.328,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0124",
               "text": "the",
-              "start": 99.344,
+              "start": 99.328,
               "end": 99.424,
               "source": "lyrics-aligner-word-start"
             },
@@ -1150,20 +1150,20 @@
               "id": "word-0127",
               "text": "stay",
               "start": 100.096,
-              "end": 100.688,
+              "end": 100.704,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0128",
               "text": "and",
-              "start": 100.688,
-              "end": 100.976,
+              "start": 100.704,
+              "end": 100.992,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0129",
               "text": "break",
-              "start": 100.976,
+              "start": 100.992,
               "end": 101.568,
               "source": "lyrics-aligner-word-start"
             },
@@ -1171,14 +1171,14 @@
               "id": "word-0130",
               "text": "your",
               "start": 101.568,
-              "end": 101.76,
+              "end": 101.776,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0131",
               "text": "heart",
-              "start": 101.76,
-              "end": 102.66,
+              "start": 101.776,
+              "end": 102.676,
               "source": "lyrics-aligner-word-start"
             }
           ]
@@ -1236,20 +1236,20 @@
               "id": "word-0136",
               "text": "a",
               "start": 105.872,
-              "end": 106.176,
+              "end": 106.16,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0137",
               "text": "losing",
-              "start": 106.176,
-              "end": 106.832,
+              "start": 106.16,
+              "end": 106.816,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0138",
               "text": "game",
-              "start": 106.832,
+              "start": 106.816,
               "end": 107.504,
               "source": "lyrics-aligner-word-start"
             },
@@ -1257,20 +1257,20 @@
               "id": "word-0139",
               "text": "that's",
               "start": 107.504,
-              "end": 107.856,
+              "end": 107.84,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0140",
               "text": "better",
-              "start": 107.856,
-              "end": 108.64,
+              "start": 107.84,
+              "end": 108.624,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0141",
               "text": "left",
-              "start": 108.64,
+              "start": 108.624,
               "end": 109.136,
               "source": "lyrics-aligner-word-start"
             },
@@ -1314,13 +1314,13 @@
               "id": "word-0145",
               "text": "her",
               "start": 111.504,
-              "end": 111.568,
+              "end": 111.728,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0146",
               "text": "you've",
-              "start": 111.568,
+              "start": 111.728,
               "end": 112.32,
               "source": "lyrics-aligner-word-start"
             },
@@ -1349,20 +1349,20 @@
               "id": "word-0150",
               "text": "for",
               "start": 113.904,
-              "end": 114.256,
+              "end": 114.24,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0151",
               "text": "every",
-              "start": 114.256,
-              "end": 114.944,
+              "start": 114.24,
+              "end": 114.928,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0152",
               "text": "choice",
-              "start": 114.944,
+              "start": 114.928,
               "end": 115.648,
               "source": "lyrics-aligner-word-start"
             },
@@ -1388,7 +1388,7 @@
           "start": 117.706,
           "end": 119.376,
           "word_start": 117.856,
-          "last_word_start": 118.576,
+          "last_word_start": 118.56,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -1413,13 +1413,13 @@
               "id": "word-0157",
               "text": "tell",
               "start": 118.256,
-              "end": 118.576,
+              "end": 118.56,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0158",
               "text": "her",
-              "start": 118.576,
+              "start": 118.56,
               "end": 119.456,
               "source": "lyrics-aligner-word-start"
             }
@@ -1442,13 +1442,13 @@
               "id": "word-0159",
               "text": "and",
               "start": 119.456,
-              "end": 119.664,
+              "end": 119.68,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0160",
               "text": "i'd",
-              "start": 119.664,
+              "start": 119.68,
               "end": 119.952,
               "source": "lyrics-aligner-word-start"
             },
@@ -1463,13 +1463,13 @@
               "id": "word-0162",
               "text": "her",
               "start": 120.432,
-              "end": 120.592,
+              "end": 120.576,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0163",
               "text": "'til",
-              "start": 120.592,
+              "start": 120.576,
               "end": 121.152,
               "source": "lyrics-aligner-word-start"
             },
@@ -1477,13 +1477,13 @@
               "id": "word-0164",
               "text": "my",
               "start": 121.152,
-              "end": 121.648,
+              "end": 121.632,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0165",
               "text": "voice",
-              "start": 121.648,
+              "start": 121.632,
               "end": 122.512,
               "source": "lyrics-aligner-word-start"
             },
@@ -1536,7 +1536,7 @@
           "id": "line-0019",
           "text": "She would smile",
           "start": 125.69,
-          "end": 127.248,
+          "end": 127.296,
           "word_start": 125.84,
           "last_word_start": 126.272,
           "confidence": "draft",
@@ -1571,10 +1571,10 @@
         {
           "id": "line-0020",
           "text": "And wait a while",
-          "start": 127.178,
+          "start": 127.226,
           "end": 129.504,
-          "word_start": 127.328,
-          "last_word_start": 127.984,
+          "word_start": 127.376,
+          "last_word_start": 127.968,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -1584,14 +1584,14 @@
             {
               "id": "word-0173",
               "text": "and",
-              "start": 127.328,
-              "end": 127.536,
+              "start": 127.376,
+              "end": 127.552,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0174",
               "text": "wait",
-              "start": 127.536,
+              "start": 127.552,
               "end": 127.888,
               "source": "lyrics-aligner-word-start"
             },
@@ -1599,14 +1599,14 @@
               "id": "word-0175",
               "text": "a",
               "start": 127.888,
-              "end": 127.984,
+              "end": 127.968,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0176",
               "text": "while",
-              "start": 127.984,
-              "end": 128.884,
+              "start": 127.968,
+              "end": 128.868,
               "source": "lyrics-aligner-word-start"
             }
           ]
@@ -1615,9 +1615,9 @@
           "id": "line-0021",
           "text": "And go and do it all again",
           "start": 129.434,
-          "end": 136.064,
+          "end": 136.08,
           "word_start": 129.584,
-          "last_word_start": 131.424,
+          "last_word_start": 131.408,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -1665,14 +1665,14 @@
               "id": "word-0182",
               "text": "all",
               "start": 130.592,
-              "end": 131.424,
+              "end": 131.408,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0183",
               "text": "again",
-              "start": 131.424,
-              "end": 132.324,
+              "start": 131.408,
+              "end": 132.308,
               "source": "lyrics-aligner-word-start"
             }
           ]
@@ -1680,9 +1680,9 @@
         {
           "id": "line-0022",
           "text": "If I met myself again",
-          "start": 135.994,
+          "start": 136.01,
           "end": 143.968,
-          "word_start": 136.144,
+          "word_start": 136.16,
           "last_word_start": 137.76,
           "confidence": "draft",
           "locked": false,
@@ -1695,7 +1695,7 @@
             {
               "id": "word-0184",
               "text": "if",
-              "start": 136.144,
+              "start": 136.16,
               "end": 136.336,
               "source": "lyrics-aligner-word-start"
             },
@@ -1710,14 +1710,14 @@
               "id": "word-0186",
               "text": "met",
               "start": 136.48,
-              "end": 136.8,
+              "end": 136.784,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0187",
               "text": "myself",
-              "start": 136.8,
-              "end": 137.7,
+              "start": 136.784,
+              "end": 137.684,
               "source": "lyrics-aligner-word-start"
             },
             {
@@ -1761,13 +1761,13 @@
               "id": "word-0190",
               "text": "i",
               "start": 144.24,
-              "end": 144.4,
+              "end": 144.384,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0191",
               "text": "met",
-              "start": 144.4,
+              "start": 144.384,
               "end": 144.816,
               "source": "lyrics-aligner-word-start"
             },
@@ -1775,27 +1775,27 @@
               "id": "word-0192",
               "text": "that",
               "start": 144.816,
-              "end": 145.184,
+              "end": 145.168,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0193",
               "text": "girl",
-              "start": 145.184,
-              "end": 145.664,
+              "start": 145.168,
+              "end": 145.504,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0194",
               "text": "again",
-              "start": 145.664,
-              "end": 146.24,
+              "start": 145.504,
+              "end": 146.256,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0195",
               "text": "i'd",
-              "start": 146.24,
+              "start": 146.256,
               "end": 146.528,
               "source": "lyrics-aligner-word-start"
             },
@@ -1803,13 +1803,13 @@
               "id": "word-0196",
               "text": "tell",
               "start": 146.528,
-              "end": 146.912,
+              "end": 146.928,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0197",
               "text": "her",
-              "start": 146.912,
+              "start": 146.928,
               "end": 147.232,
               "source": "lyrics-aligner-word-start"
             },
@@ -1860,20 +1860,20 @@
               "id": "word-0202",
               "text": "wake",
               "start": 150.496,
-              "end": 151.04,
+              "end": 151.024,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0203",
               "text": "her",
-              "start": 151.04,
-              "end": 151.36,
+              "start": 151.024,
+              "end": 151.392,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0204",
               "text": "up",
-              "start": 151.36,
+              "start": 151.392,
               "end": 151.728,
               "source": "lyrics-aligner-word-start"
             },
@@ -1959,13 +1959,13 @@
               "id": "word-0214",
               "text": "time",
               "start": 157.728,
-              "end": 158.144,
+              "end": 158.272,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0215",
               "text": "and",
-              "start": 158.144,
+              "start": 158.272,
               "end": 158.336,
               "source": "lyrics-aligner-word-start"
             },
@@ -1987,13 +1987,13 @@
               "id": "word-0218",
               "text": "stay",
               "start": 159.312,
-              "end": 159.84,
+              "end": 159.856,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0219",
               "text": "away",
-              "start": 159.84,
+              "start": 159.856,
               "end": 160.32,
               "source": "lyrics-aligner-word-start"
             },
@@ -2019,7 +2019,7 @@
           "start": 162.538,
           "end": 164.832,
           "word_start": 162.688,
-          "last_word_start": 163.312,
+          "last_word_start": 163.328,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -2044,14 +2044,14 @@
               "id": "word-0224",
               "text": "i",
               "start": 163.168,
-              "end": 163.312,
+              "end": 163.328,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0225",
               "text": "did",
-              "start": 163.312,
-              "end": 164.212,
+              "start": 163.328,
+              "end": 164.228,
               "source": "lyrics-aligner-word-start"
             }
           ]
@@ -2109,13 +2109,13 @@
               "id": "word-0229",
               "text": "there's",
               "start": 166.848,
-              "end": 167.184,
+              "end": 167.168,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0230",
               "text": "a",
-              "start": 167.184,
+              "start": 167.168,
               "end": 167.232,
               "source": "lyrics-aligner-word-start"
             },
@@ -2168,7 +2168,7 @@
           "id": "line-0030",
           "text": "And I'd lose",
           "start": 172.122,
-          "end": 174.272,
+          "end": 174.288,
           "word_start": 172.272,
           "last_word_start": 172.752,
           "confidence": "draft",
@@ -2203,10 +2203,10 @@
         {
           "id": "line-0031",
           "text": "Cause I won't have my son",
-          "start": 174.202,
+          "start": 174.218,
           "end": 178.128,
-          "word_start": 174.352,
-          "last_word_start": 177.408,
+          "word_start": 174.368,
+          "last_word_start": 177.424,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -2216,42 +2216,42 @@
             {
               "id": "word-0238",
               "text": "cause",
-              "start": 174.352,
-              "end": 174.64,
+              "start": 174.368,
+              "end": 174.656,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0239",
               "text": "i",
-              "start": 174.64,
-              "end": 174.768,
+              "start": 174.656,
+              "end": 174.816,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0240",
               "text": "won't",
-              "start": 174.768,
-              "end": 175.44,
+              "start": 174.816,
+              "end": 175.424,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0241",
               "text": "have",
-              "start": 175.44,
-              "end": 175.808,
+              "start": 175.424,
+              "end": 175.824,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0242",
               "text": "my",
-              "start": 175.808,
-              "end": 176.708,
+              "start": 175.824,
+              "end": 176.724,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0243",
               "text": "son",
-              "start": 177.408,
+              "start": 177.424,
               "end": 178.208,
               "source": "lyrics-aligner-word-start"
             }
@@ -2298,14 +2298,14 @@
               "id": "word-0246",
               "text": "met",
               "start": 181.792,
-              "end": 182.112,
+              "end": 182.128,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0247",
               "text": "myself",
-              "start": 182.112,
-              "end": 183.012,
+              "start": 182.128,
+              "end": 183.028,
               "source": "lyrics-aligner-word-start"
             },
             {
@@ -2336,13 +2336,13 @@
               "id": "word-0249",
               "text": "if",
               "start": 187.84,
-              "end": 188.016,
+              "end": 188.0,
               "source": "lyrics-aligner-word-start"
             },
             {
               "id": "word-0250",
               "text": "i",
-              "start": 188.016,
+              "start": 188.0,
               "end": 188.144,
               "source": "lyrics-aligner-word-start"
             },
@@ -2375,7 +2375,7 @@
           "start": 200.346,
           "end": 202.996,
           "word_start": 200.496,
-          "last_word_start": 202.688,
+          "last_word_start": 202.672,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -2413,8 +2413,8 @@
             {
               "id": "word-0258",
               "text": "again",
-              "start": 202.688,
-              "end": 203.888,
+              "start": 202.672,
+              "end": 203.872,
               "source": "lyrics-aligner-word-start"
             }
           ]
