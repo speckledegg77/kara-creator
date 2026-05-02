@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Build outputs
+dist/
+build/
+.next/
+
+# Local environment
+.env
+.env.local
+
+# Local authoring projects
+projects/
+
+# Audio and media source files
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.aac
+*.ogg
+
+# Generated exports that may include copyrighted lyrics
+exports/
+working/
+
+# OS files
+.DS_Store
+Thumbs.db
