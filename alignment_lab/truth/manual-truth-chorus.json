@@ -1,0 +1,48 @@
+{
+  "schema_version": "karaoke-section-truth-v1",
+  "created_by": "kara-creator manual section timer",
+  "source": {
+    "audio_file_name": "test-vocals.mp3",
+    "draft_json_file_name": "test-draft-sections.json"
+  },
+  "section": {
+    "id": "chorus-003",
+    "label": "CHORUS",
+    "start": 79.5,
+    "end": 101.256,
+    "lines": [
+      {
+        "id": "line-0011",
+        "text": "But I miss the mountains",
+        "start": 79.5,
+        "end": 87.394,
+        "original_draft_start": 45.247,
+        "original_draft_end": 48.889
+      },
+      {
+        "id": "line-0012",
+        "text": "I miss the dizzy heights",
+        "start": 89.05,
+        "end": 93.154,
+        "original_draft_start": 51.503,
+        "original_draft_end": 56.163
+      },
+      {
+        "id": "line-0013",
+        "text": "All the manic magic days",
+        "start": 93.916,
+        "end": 97.869,
+        "original_draft_start": 58.088,
+        "original_draft_end": 60.942
+      },
+      {
+        "id": "line-0014",
+        "text": "And the dark depressing nights",
+        "start": 98.168,
+        "end": 101.256,
+        "original_draft_start": 64.832,
+        "original_draft_end": 68.205
+      }
+    ]
+  }
+}

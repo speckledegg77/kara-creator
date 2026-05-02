@@ -1,0 +1,2 @@
+file,begin,end,speaker,overall_log_likelihood,speech_log_likelihood,phone_duration_deviation,snr
+miss_the_mountains,0.0,244.7935,corpus,-47.30572633686017,-53.83624278622241,5.78273984124141,12.059096300158945

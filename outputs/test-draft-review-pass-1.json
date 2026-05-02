@@ -1,0 +1,630 @@
+{
+  "schema_version": "karaoke-draft-v1",
+  "created_by": "kara-creator phase 1 cli",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\samples\\test-vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\samples\\test-lyrics.txt",
+    "audio_duration_seconds": 244.793,
+    "analysis_sample_rate": 22050
+  },
+  "alignment": {
+    "mode": "vocal-energy-to-known-lyrics",
+    "status": "draft",
+    "lyric_line_count": 41,
+    "detected_audio_region_count": 29,
+    "settings": {
+      "frame_ms": 40,
+      "hop_ms": 10,
+      "sensitivity": 0.25,
+      "min_region_ms": 350,
+      "max_gap_ms": 700,
+      "pad_ms": 120
+    },
+    "region_detection_stats": {
+      "threshold": 0.087161,
+      "rms_p20": 0.003782,
+      "rms_p95": 0.337298
+    }
+  },
+  "sections": [
+    {
+      "id": "opening-001",
+      "label": "OPENING",
+      "start": 9.159,
+      "end": 28.166,
+      "lines": [
+        {
+          "id": "line-0001",
+          "text": "There was a time when I flew higher",
+          "start": 9.159,
+          "end": 12.871,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0002",
+          "text": "Was a time the wild girl running free",
+          "start": 15.814,
+          "end": 17.94,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0003",
+          "text": "Would be me",
+          "start": 19.485,
+          "end": 20.289,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0004",
+          "text": "Now I see her, feel the fire",
+          "start": 20.289,
+          "end": 21.092,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0005",
+          "text": "Now I know she needs me there to share",
+          "start": 23.207,
+          "end": 24.465,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0006",
+          "text": "I'm nowhere",
+          "start": 27.527,
+          "end": 28.166,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        }
+      ]
+    },
+    {
+      "id": "verse-002",
+      "label": "VERSE",
+      "start": 28.166,
+      "end": 42.109,
+      "lines": [
+        {
+          "id": "line-0007",
+          "text": "All these blank and tranquil years",
+          "start": 28.166,
+          "end": 28.805,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0008",
+          "text": "Seems they've dried up all my tears",
+          "start": 29.592,
+          "end": 31.579,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0009",
+          "text": "And while she runs free and fast",
+          "start": 33.055,
+          "end": 38.124,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0010",
+          "text": "Seems my wild days are past",
+          "start": 41.446,
+          "end": 42.109,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        }
+      ]
+    },
+    {
+      "id": "chorus-003",
+      "label": "CHORUS",
+      "start": 42.109,
+      "end": 56.362,
+      "lines": [
+        {
+          "id": "line-0011",
+          "text": "But I miss the mountains",
+          "start": 42.109,
+          "end": 42.773,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0012",
+          "text": "I miss the dizzy heights",
+          "start": 45.067,
+          "end": 48.939,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0013",
+          "text": "All the manic magic days",
+          "start": 51.453,
+          "end": 53.907,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0014",
+          "text": "And the dark depressing nights",
+          "start": 53.907,
+          "end": 56.362,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        }
+      ]
+    },
+    {
+      "id": "stage1-004",
+      "label": "STAGE1",
+      "start": 57.988,
+      "end": 92.021,
+      "lines": [
+        {
+          "id": "line-0015",
+          "text": "I miss the mountains",
+          "start": 57.988,
+          "end": 61.081,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0016",
+          "text": "I miss the highs and lows",
+          "start": 64.782,
+          "end": 68.255,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0017",
+          "text": "All the climbing, all the falling",
+          "start": 69.442,
+          "end": 71.408,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0018",
+          "text": "All the while the wild wind blows",
+          "start": 71.408,
+          "end": 73.374,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0019",
+          "text": "Stinging you with snow",
+          "start": 74.351,
+          "end": 75.249,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0020",
+          "text": "And soaking you with rain",
+          "start": 81.754,
+          "end": 84.094,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0021",
+          "text": "I miss the mountains",
+          "start": 84.094,
+          "end": 86.434,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0022",
+          "text": "I miss the pain",
+          "start": 88.708,
+          "end": 92.021,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        }
+      ]
+    },
+    {
+      "id": "bridge-005",
+      "label": "BRIDGE",
+      "start": 93.737,
+      "end": 136.091,
+      "lines": [
+        {
+          "id": "line-0023",
+          "text": "Mountains make you crazy",
+          "start": 93.737,
+          "end": 95.328,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0024",
+          "text": "Here it's safe and sound",
+          "start": 95.328,
+          "end": 96.92,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0025",
+          "text": "My mind is somewhere hazy",
+          "start": 97.817,
+          "end": 100.213,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0026",
+          "text": "My feet are on the ground",
+          "start": 103.564,
+          "end": 107.566,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0027",
+          "text": "Everything is balanced here",
+          "start": 109.441,
+          "end": 115.248,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0028",
+          "text": "And on an even keel",
+          "start": 115.248,
+          "end": 121.055,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0029",
+          "text": "Everything is perfect",
+          "start": 121.863,
+          "end": 132.808,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0030",
+          "text": "Nothing's real",
+          "start": 134.344,
+          "end": 135.218,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0031",
+          "text": "Nothing's real",
+          "start": 135.218,
+          "end": 136.091,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        }
+      ]
+    },
+    {
+      "id": "chorus-2-006",
+      "label": "CHORUS 2",
+      "start": 141.348,
+      "end": 241.102,
+      "lines": [
+        {
+          "id": "line-0032",
+          "text": "And I miss the mountains",
+          "start": 141.348,
+          "end": 157.981,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0033",
+          "text": "I miss the lonely climb",
+          "start": 158.998,
+          "end": 161.912,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0034",
+          "text": "Wandering through the wilderness",
+          "start": 166.072,
+          "end": 190.183,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0035",
+          "text": "And spending all my time",
+          "start": 190.183,
+          "end": 214.293,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0036",
+          "text": "Where the air is clear",
+          "start": 218.214,
+          "end": 218.823,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0037",
+          "text": "And cuts you like a knife",
+          "start": 222.544,
+          "end": 225.163,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0038",
+          "text": "I miss the mountains",
+          "start": 225.163,
+          "end": 227.783,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0039",
+          "text": "I miss the mountains",
+          "start": 228.62,
+          "end": 232.392,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0040",
+          "text": "I miss my life",
+          "start": 233.21,
+          "end": 237.156,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        },
+        {
+          "id": "line-0041",
+          "text": "I miss my life",
+          "start": 237.156,
+          "end": 241.102,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false
+        }
+      ]
+    }
+  ],
+  "raw_audio_regions": [
+    {
+      "id": "region-0001",
+      "start": 9.159,
+      "end": 12.871,
+      "peak_rms": 0.211766
+    },
+    {
+      "id": "region-0002",
+      "start": 15.814,
+      "end": 17.94,
+      "peak_rms": 0.171607
+    },
+    {
+      "id": "region-0003",
+      "start": 19.485,
+      "end": 21.092,
+      "peak_rms": 0.156479
+    },
+    {
+      "id": "region-0004",
+      "start": 23.207,
+      "end": 24.465,
+      "peak_rms": 0.260142
+    },
+    {
+      "id": "region-0005",
+      "start": 27.527,
+      "end": 28.805,
+      "peak_rms": 0.151887
+    },
+    {
+      "id": "region-0006",
+      "start": 29.592,
+      "end": 31.579,
+      "peak_rms": 0.166463
+    },
+    {
+      "id": "region-0007",
+      "start": 33.055,
+      "end": 38.124,
+      "peak_rms": 0.290549
+    },
+    {
+      "id": "region-0008",
+      "start": 41.446,
+      "end": 42.773,
+      "peak_rms": 0.170866
+    },
+    {
+      "id": "region-0009",
+      "start": 45.067,
+      "end": 48.939,
+      "peak_rms": 0.259818
+    },
+    {
+      "id": "region-0010",
+      "start": 51.453,
+      "end": 56.362,
+      "peak_rms": 0.300207
+    },
+    {
+      "id": "region-0011",
+      "start": 57.988,
+      "end": 61.081,
+      "peak_rms": 0.281985
+    },
+    {
+      "id": "region-0012",
+      "start": 64.782,
+      "end": 68.255,
+      "peak_rms": 0.262777
+    },
+    {
+      "id": "region-0013",
+      "start": 69.442,
+      "end": 73.374,
+      "peak_rms": 0.399804
+    },
+    {
+      "id": "region-0014",
+      "start": 74.351,
+      "end": 75.249,
+      "peak_rms": 0.132506
+    },
+    {
+      "id": "region-0015",
+      "start": 81.754,
+      "end": 86.434,
+      "peak_rms": 0.214575
+    },
+    {
+      "id": "region-0016",
+      "start": 88.708,
+      "end": 92.021,
+      "peak_rms": 0.211497
+    },
+    {
+      "id": "region-0017",
+      "start": 93.737,
+      "end": 96.92,
+      "peak_rms": 0.314909
+    },
+    {
+      "id": "region-0018",
+      "start": 97.817,
+      "end": 100.213,
+      "peak_rms": 0.299974
+    },
+    {
+      "id": "region-0019",
+      "start": 103.564,
+      "end": 107.566,
+      "peak_rms": 0.300161
+    },
+    {
+      "id": "region-0020",
+      "start": 109.441,
+      "end": 121.055,
+      "peak_rms": 0.396057
+    },
+    {
+      "id": "region-0021",
+      "start": 121.863,
+      "end": 132.808,
+      "peak_rms": 0.360726
+    },
+    {
+      "id": "region-0022",
+      "start": 134.344,
+      "end": 136.091,
+      "peak_rms": 0.212848
+    },
+    {
+      "id": "region-0023",
+      "start": 141.348,
+      "end": 157.981,
+      "peak_rms": 0.336519
+    },
+    {
+      "id": "region-0024",
+      "start": 158.998,
+      "end": 161.912,
+      "peak_rms": 0.294652
+    },
+    {
+      "id": "region-0025",
+      "start": 166.072,
+      "end": 214.293,
+      "peak_rms": 0.47766
+    },
+    {
+      "id": "region-0026",
+      "start": 218.214,
+      "end": 218.823,
+      "peak_rms": 0.167128
+    },
+    {
+      "id": "region-0027",
+      "start": 222.544,
+      "end": 227.783,
+      "peak_rms": 0.254367
+    },
+    {
+      "id": "region-0028",
+      "start": 228.62,
+      "end": 232.392,
+      "peak_rms": 0.378595
+    },
+    {
+      "id": "region-0029",
+      "start": 233.21,
+      "end": 241.102,
+      "peak_rms": 0.469123
+    }
+  ],
+  "editor_notes": [
+    "This is a draft generated from isolated vocal energy and known lyric lines.",
+    "Check section starts and ends first.",
+    "Then correct line timings.",
+    "Do not treat these timings as final without review."
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": "karaoke-section-truth-v1",
+  "created_by": "kara-creator manual section timer",
+  "source": {
+    "audio_file_name": "test-vocals.mp3",
+    "draft_json_file_name": "test-draft-sections.json"
+  },
+  "section": {
+    "id": "stage1-004",
+    "label": "STAGE1",
+    "start": 103.656,
+    "end": 136.424,
+    "lines": [
+      {
+        "id": "line-0015",
+        "text": "I miss the mountains",
+        "start": 103.656,
+        "end": 108.555,
+        "original_draft_start": 69.512,
+        "original_draft_end": 73.304
+      },
+      {
+        "id": "line-0016",
+        "text": "I miss the highs and lows",
+        "start": 109.45,
+        "end": 114.619,
+        "original_draft_start": 74.5,
+        "original_draft_end": 75.119
+      },
+      {
+        "id": "line-0017",
+        "text": "All the climbing, all the falling",
+        "start": 114.666,
+        "end": 118.191,
+        "original_draft_start": 82.153,
+        "original_draft_end": 86.045
+      },
+      {
+        "id": "line-0018",
+        "text": "All the while the wild wind blows",
+        "start": 118.748,
+        "end": 121.878,
+        "original_draft_start": 88.768,
+        "original_draft_end": 90.325
+      },
+      {
+        "id": "line-0019",
+        "text": "Stinging you with snow",
+        "start": 122.149,
+        "end": 123.149,
+        "original_draft_start": 90.803,
+        "original_draft_end": 91.971
+      },
+      {
+        "id": "line-0020",
+        "text": "And soaking you with rain",
+        "start": 124.351,
+        "end": 129.867,
+        "original_draft_start": 93.787,
+        "original_draft_end": 96.84
+      },
+      {
+        "id": "line-0021",
+        "text": "I miss the mountains",
+        "start": 130.035,
+        "end": 133.714,
+        "original_draft_start": 97.867,
+        "original_draft_end": 99.324
+      },
+      {
+        "id": "line-0022",
+        "text": "I miss the pain",
+        "start": 134.435,
+        "end": 136.424,
+        "original_draft_start": 103.614,
+        "original_draft_end": 107.496
+      }
+    ]
+  }
+}

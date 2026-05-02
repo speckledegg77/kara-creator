@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kara Creator Draft Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --panel-soft: #263244;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #374151;
+      --active: #facc15;
+      --active-text: #111827;
+      --warning: #f97316;
+      --danger: #ef4444;
+      --button: #e5e7eb;
+      --button-text: #111827;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 16px 0;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input[type="file"] {
+      display: block;
+      color: var(--text);
+    }
+
+    input[type="number"] {
+      width: 110px;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    button {
+      background: var(--button);
+      color: var(--button-text);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .now-playing {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .section-name {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .current-line {
+      font-size: 34px;
+      line-height: 1.2;
+      font-weight: bold;
+      color: var(--active);
+    }
+
+    .time-readout {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .summary-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .section-block {
+      margin-top: 22px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .section-header {
+      background: var(--panel-soft);
+      padding: 12px 14px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border-top: 1px solid var(--border);
+      padding: 9px 10px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: normal;
+    }
+
+    tr.active {
+      background: var(--active);
+      color: var(--active-text);
+    }
+
+    tr.active button {
+      background: var(--active-text);
+      color: var(--active);
+    }
+
+    .duration-warning {
+      color: var(--warning);
+      font-weight: bold;
+    }
+
+    .duration-danger {
+      color: var(--danger);
+      font-weight: bold;
+    }
+
+    tr.active .duration-warning,
+    tr.active .duration-danger {
+      color: var(--active-text);
+    }
+
+    .help {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .error {
+      color: #fecaca;
+      background: #7f1d1d;
+      border: 1px solid #b91c1c;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 12px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Kara Creator Draft Review</h1>
+    <p>
+      Load your isolated vocal MP3 and the generated karaoke JSON. Press play and check whether each lyric line appears at the right time.
+    </p>
+
+    <div class="panel">
+      <div class="row">
+        <div>
+          <label for="audioFile">1. Vocal MP3</label>
+          <input id="audioFile" type="file" accept="audio/*" />
+        </div>
+
+        <div>
+          <label for="jsonFile">2. Draft JSON</label>
+          <input id="jsonFile" type="file" accept=".json,application/json" />
+        </div>
+
+        <div>
+          <label for="offsetInput">Display offset seconds</label>
+          <input id="offsetInput" type="number" value="0" step="0.05" />
+        </div>
+
+        <div>
+          <label>&nbsp;</label>
+          <button id="loadButton">Load review</button>
+        </div>
+      </div>
+
+      <p class="help">
+        Use display offset for testing only. If the lyrics appear late, try a negative value like -0.25. If they appear early, try a positive value like 0.25.
+      </p>
+
+      <div id="errorBox" class="error"></div>
+
+      <audio id="audio" controls></audio>
+    </div>
+
+    <div class="panel now-playing">
+      <div id="currentSection" class="section-name">No JSON loaded yet</div>
+      <div id="currentLine" class="current-line">Load a vocal file and JSON draft to start.</div>
+      <div id="timeReadout" class="time-readout">00:00.000</div>
+
+      <div class="row" style="margin-top: 16px;">
+        <button id="previousButton" disabled>Previous line</button>
+        <button id="replayButton" disabled>Replay current line</button>
+        <button id="nextButton" disabled>Next line</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Draft summary</h2>
+      <div id="summary" class="summary"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Lines</h2>
+      <p class="help">
+        Click “Jump” beside any line to hear that part of the vocal. Lines under 0.8 seconds or over 10 seconds are flagged because they are likely to need review.
+      </p>
+      <div id="lineList"></div>
+    </div>
+  </main>
+
+  <script>
+    const audioFileInput = document.getElementById("audioFile");
+    const jsonFileInput = document.getElementById("jsonFile");
+    const offsetInput = document.getElementById("offsetInput");
+    const loadButton = document.getElementById("loadButton");
+    const audio = document.getElementById("audio");
+    const errorBox = document.getElementById("errorBox");
+
+    const currentSection = document.getElementById("currentSection");
+    const currentLine = document.getElementById("currentLine");
+    const timeReadout = document.getElementById("timeReadout");
+    const previousButton = document.getElementById("previousButton");
+    const replayButton = document.getElementById("replayButton");
+    const nextButton = document.getElementById("nextButton");
+    const summary = document.getElementById("summary");
+    const lineList = document.getElementById("lineList");
+
+    let draft = null;
+    let flatLines = [];
+    let currentIndex = -1;
+
+    function showError(message) {
+      errorBox.style.display = "block";
+      errorBox.textContent = message;
+    }
+
+    function clearError() {
+      errorBox.style.display = "none";
+      errorBox.textContent = "";
+    }
+
+    function formatTime(seconds) {
+      if (!Number.isFinite(seconds)) {
+        return "00:00.000";
+      }
+
+      const safeSeconds = Math.max(0, seconds);
+      const minutes = Math.floor(safeSeconds / 60);
+      const remainingSeconds = safeSeconds - minutes * 60;
+
+      return `${String(minutes).padStart(2, "0")}:${remainingSeconds.toFixed(3).padStart(6, "0")}`;
+    }
+
+    function getOffset() {
+      const value = Number(offsetInput.value);
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function getAdjustedTime() {
+      return audio.currentTime + getOffset();
+    }
+
+    function flattenDraftLines(json) {
+      const lines = [];
+
+      for (const section of json.sections || []) {
+        for (const line of section.lines || []) {
+          lines.push({
+            sectionId: section.id,
+            sectionLabel: section.label,
+            lineId: line.id,
+            text: line.text,
+            start: Number(line.start),
+            end: Number(line.end),
+            duration: Number(line.end) - Number(line.start)
+          });
+        }
+      }
+
+      return lines;
+    }
+
+    function findCurrentLineIndex(time) {
+      if (!flatLines.length) {
+        return -1;
+      }
+
+      for (let index = 0; index < flatLines.length; index++) {
+        const line = flatLines[index];
+
+        if (time >= line.start && time <= line.end) {
+          return index;
+        }
+      }
+
+      let closestPreviousIndex = -1;
+
+      for (let index = 0; index < flatLines.length; index++) {
+        if (flatLines[index].start <= time) {
+          closestPreviousIndex = index;
+        } else {
+          break;
+        }
+      }
+
+      return closestPreviousIndex;
+    }
+
+    function jumpToLine(index) {
+      if (!flatLines[index]) {
+        return;
+      }
+
+      const offset = getOffset();
+      audio.currentTime = Math.max(0, flatLines[index].start - offset);
+      audio.play();
+      updateCurrentLine();
+    }
+
+    function replayCurrentLine() {
+      if (currentIndex < 0) {
+        return;
+      }
+
+      jumpToLine(currentIndex);
+    }
+
+    function moveLine(direction) {
+      if (!flatLines.length) {
+        return;
+      }
+
+      let nextIndex = currentIndex + direction;
+
+      if (currentIndex < 0) {
+        nextIndex = 0;
+      }
+
+      nextIndex = Math.max(0, Math.min(flatLines.length - 1, nextIndex));
+      jumpToLine(nextIndex);
+    }
+
+    function durationClass(duration) {
+      if (duration < 0.8 || duration > 15) {
+        return "duration-danger";
+      }
+
+      if (duration < 1.2 || duration > 10) {
+        return "duration-warning";
+      }
+
+      return "";
+    }
+
+    function renderSummary() {
+      const sectionCount = draft.sections ? draft.sections.length : 0;
+      const lineCount = flatLines.length;
+      const shortLines = flatLines.filter((line) => line.duration < 0.8).length;
+      const longLines = flatLines.filter((line) => line.duration > 10).length;
+
+      summary.innerHTML = `
+        <div class="summary-card">
+          <strong>${sectionCount}</strong>
+          Sections
+        </div>
+        <div class="summary-card">
+          <strong>${lineCount}</strong>
+          Lines
+        </div>
+        <div class="summary-card">
+          <strong>${shortLines}</strong>
+          Very short lines
+        </div>
+        <div class="summary-card">
+          <strong>${longLines}</strong>
+          Very long lines
+        </div>
+      `;
+    }
+
+    function renderLineList() {
+      lineList.innerHTML = "";
+
+      for (const section of draft.sections || []) {
+        const sectionBlock = document.createElement("div");
+        sectionBlock.className = "section-block";
+
+        const sectionHeader = document.createElement("div");
+        sectionHeader.className = "section-header";
+        sectionHeader.textContent = `${section.label} (${formatTime(section.start)} to ${formatTime(section.end)})`;
+
+        const table = document.createElement("table");
+
+        table.innerHTML = `
+          <thead>
+            <tr>
+              <th>Line</th>
+              <th>Start</th>
+              <th>End</th>
+              <th>Duration</th>
+              <th>Text</th>
+              <th>Test</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        `;
+
+        const tbody = table.querySelector("tbody");
+
+        for (const line of section.lines || []) {
+          const flatIndex = flatLines.findIndex((item) => item.lineId === line.id);
+          const duration = Number(line.end) - Number(line.start);
+          const row = document.createElement("tr");
+          row.dataset.lineId = line.id;
+
+          row.innerHTML = `
+            <td>${line.id}</td>
+            <td>${formatTime(Number(line.start))}</td>
+            <td>${formatTime(Number(line.end))}</td>
+            <td class="${durationClass(duration)}">${duration.toFixed(3)}s</td>
+            <td>${escapeHtml(line.text)}</td>
+            <td><button type="button">Jump</button></td>
+          `;
+
+          row.querySelector("button").addEventListener("click", () => {
+            jumpToLine(flatIndex);
+          });
+
+          tbody.appendChild(row);
+        }
+
+        sectionBlock.appendChild(sectionHeader);
+        sectionBlock.appendChild(table);
+        lineList.appendChild(sectionBlock);
+      }
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function updateCurrentLine() {
+      const adjustedTime = getAdjustedTime();
+      const nextIndex = findCurrentLineIndex(adjustedTime);
+
+      if (nextIndex !== currentIndex) {
+        currentIndex = nextIndex;
+
+        document.querySelectorAll("tr.active").forEach((row) => {
+          row.classList.remove("active");
+        });
+
+        if (currentIndex >= 0 && flatLines[currentIndex]) {
+          const line = flatLines[currentIndex];
+
+          currentSection.textContent = line.sectionLabel;
+          currentLine.textContent = line.text;
+
+          const row = document.querySelector(`tr[data-line-id="${line.lineId}"]`);
+          if (row) {
+            row.classList.add("active");
+            row.scrollIntoView({
+              block: "center",
+              behaviour: "smooth"
+            });
+          }
+        } else {
+          currentSection.textContent = "Waiting for first lyric";
+          currentLine.textContent = "No active line yet.";
+        }
+      }
+
+      timeReadout.textContent = `Audio: ${formatTime(audio.currentTime)} | JSON check time: ${formatTime(adjustedTime)}`;
+    }
+
+    async function readJsonFile(file) {
+      const text = await file.text();
+      return JSON.parse(text);
+    }
+
+    async function loadReview() {
+      clearError();
+
+      const audioFile = audioFileInput.files[0];
+      const jsonFile = jsonFileInput.files[0];
+
+      if (!audioFile) {
+        showError("Choose the isolated vocal MP3 first.");
+        return;
+      }
+
+      if (!jsonFile) {
+        showError("Choose the draft JSON file next.");
+        return;
+      }
+
+      try {
+        draft = await readJsonFile(jsonFile);
+      } catch (error) {
+        showError(`Could not read JSON: ${error.message}`);
+        return;
+      }
+
+      if (!draft.sections || !Array.isArray(draft.sections)) {
+        showError("This JSON does not contain a sections array.");
+        return;
+      }
+
+      audio.src = URL.createObjectURL(audioFile);
+      flatLines = flattenDraftLines(draft);
+      currentIndex = -1;
+
+      renderSummary();
+      renderLineList();
+      updateCurrentLine();
+
+      previousButton.disabled = false;
+      replayButton.disabled = false;
+      nextButton.disabled = false;
+    }
+
+    loadButton.addEventListener("click", loadReview);
+
+    audio.addEventListener("timeupdate", updateCurrentLine);
+    audio.addEventListener("seeked", updateCurrentLine);
+    audio.addEventListener("play", updateCurrentLine);
+
+    previousButton.addEventListener("click", () => moveLine(-1));
+    replayButton.addEventListener("click", replayCurrentLine);
+    nextButton.addEventListener("click", () => moveLine(1));
+    offsetInput.addEventListener("input", updateCurrentLine);
+  </script>
+</body>
+</html>

@@ -1,0 +1,4342 @@
+{
+  "schema_version": "karaoke-word-review-v1",
+  "created_by": "kara-creator MFA word review converter",
+  "source": {
+    "mfa_json": "C:\\Users\\mark\\kara-creator\\mfa_test\\aligned\\miss_the_mountains.json",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\mfa_test\\miss_the_mountains-line-map.json",
+    "audio_file": "C:\\Users\\mark\\kara-creator\\samples\\test-vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\samples\\test-lyrics.txt",
+    "audio_duration_seconds": 244.793
+  },
+  "alignment": {
+    "mode": "mfa-word-start-review",
+    "status": "diagnostic",
+    "word_count": 205,
+    "section_count": 6,
+    "line_count": 41,
+    "warnings": []
+  },
+  "sections": [
+    {
+      "id": "opening-001",
+      "label": "OPENING",
+      "start": 8.56,
+      "end": 43.1,
+      "lines": [
+        {
+          "id": "line-0001",
+          "section": "OPENING",
+          "text": "There was a time when I flew higher",
+          "start": 8.56,
+          "end": 13.39,
+          "words": [
+            {
+              "id": "word-0001",
+              "mfa_word_index": 0,
+              "line_word_index": 0,
+              "text": "there",
+              "raw_text": "there",
+              "start": 8.56,
+              "end": 9.02,
+              "duration": 0.46
+            },
+            {
+              "id": "word-0002",
+              "mfa_word_index": 1,
+              "line_word_index": 1,
+              "text": "was",
+              "raw_text": "was",
+              "start": 9.02,
+              "end": 9.58,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0003",
+              "mfa_word_index": 2,
+              "line_word_index": 2,
+              "text": "a",
+              "raw_text": "a",
+              "start": 9.58,
+              "end": 9.62,
+              "duration": 0.04
+            },
+            {
+              "id": "word-0004",
+              "mfa_word_index": 3,
+              "line_word_index": 3,
+              "text": "time",
+              "raw_text": "time",
+              "start": 9.62,
+              "end": 9.71,
+              "duration": 0.09
+            },
+            {
+              "id": "word-0005",
+              "mfa_word_index": 4,
+              "line_word_index": 4,
+              "text": "when",
+              "raw_text": "when",
+              "start": 9.71,
+              "end": 9.8,
+              "duration": 0.09
+            },
+            {
+              "id": "word-0006",
+              "mfa_word_index": 5,
+              "line_word_index": 5,
+              "text": "i",
+              "raw_text": "i",
+              "start": 9.83,
+              "end": 12.74,
+              "duration": 2.91
+            },
+            {
+              "id": "word-0007",
+              "mfa_word_index": 6,
+              "line_word_index": 6,
+              "text": "flew",
+              "raw_text": "flew",
+              "start": 12.77,
+              "end": 12.84,
+              "duration": 0.07
+            },
+            {
+              "id": "word-0008",
+              "mfa_word_index": 7,
+              "line_word_index": 7,
+              "text": "higher",
+              "raw_text": "higher",
+              "start": 12.84,
+              "end": 13.39,
+              "duration": 0.55
+            }
+          ]
+        },
+        {
+          "id": "line-0002",
+          "section": "OPENING",
+          "text": "Was a time the wild girl running free",
+          "start": 15.67,
+          "end": 21.6,
+          "words": [
+            {
+              "id": "word-0009",
+              "mfa_word_index": 8,
+              "line_word_index": 0,
+              "text": "was",
+              "raw_text": "was",
+              "start": 15.67,
+              "end": 16.36,
+              "duration": 0.69
+            },
+            {
+              "id": "word-0010",
+              "mfa_word_index": 9,
+              "line_word_index": 1,
+              "text": "a",
+              "raw_text": "a",
+              "start": 16.36,
+              "end": 16.46,
+              "duration": 0.1
+            },
+            {
+              "id": "word-0011",
+              "mfa_word_index": 10,
+              "line_word_index": 2,
+              "text": "time",
+              "raw_text": "time",
+              "start": 16.46,
+              "end": 16.56,
+              "duration": 0.1
+            },
+            {
+              "id": "word-0012",
+              "mfa_word_index": 11,
+              "line_word_index": 3,
+              "text": "the",
+              "raw_text": "the",
+              "start": 16.56,
+              "end": 17.35,
+              "duration": 0.79
+            },
+            {
+              "id": "word-0013",
+              "mfa_word_index": 12,
+              "line_word_index": 4,
+              "text": "wild",
+              "raw_text": "wild",
+              "start": 17.38,
+              "end": 19.39,
+              "duration": 2.01
+            },
+            {
+              "id": "word-0014",
+              "mfa_word_index": 13,
+              "line_word_index": 5,
+              "text": "girl",
+              "raw_text": "girl",
+              "start": 19.39,
+              "end": 19.49,
+              "duration": 0.1
+            },
+            {
+              "id": "word-0015",
+              "mfa_word_index": 14,
+              "line_word_index": 6,
+              "text": "running",
+              "raw_text": "running",
+              "start": 19.49,
+              "end": 20.2,
+              "duration": 0.71
+            },
+            {
+              "id": "word-0016",
+              "mfa_word_index": 15,
+              "line_word_index": 7,
+              "text": "free",
+              "raw_text": "free",
+              "start": 20.2,
+              "end": 21.6,
+              "duration": 1.4
+            }
+          ]
+        },
+        {
+          "id": "line-0003",
+          "section": "OPENING",
+          "text": "Would be me",
+          "start": 23.02,
+          "end": 25.17,
+          "words": [
+            {
+              "id": "word-0017",
+              "mfa_word_index": 16,
+              "line_word_index": 0,
+              "text": "would",
+              "raw_text": "would",
+              "start": 23.02,
+              "end": 23.29,
+              "duration": 0.27
+            },
+            {
+              "id": "word-0018",
+              "mfa_word_index": 17,
+              "line_word_index": 1,
+              "text": "be",
+              "raw_text": "be",
+              "start": 23.29,
+              "end": 23.65,
+              "duration": 0.36
+            },
+            {
+              "id": "word-0019",
+              "mfa_word_index": 18,
+              "line_word_index": 2,
+              "text": "me",
+              "raw_text": "me",
+              "start": 23.65,
+              "end": 25.17,
+              "duration": 1.52
+            }
+          ]
+        },
+        {
+          "id": "line-0004",
+          "section": "OPENING",
+          "text": "Now I see her, feel the fire",
+          "start": 27.62,
+          "end": 31.91,
+          "words": [
+            {
+              "id": "word-0020",
+              "mfa_word_index": 19,
+              "line_word_index": 0,
+              "text": "now",
+              "raw_text": "now",
+              "start": 27.62,
+              "end": 28.55,
+              "duration": 0.93
+            },
+            {
+              "id": "word-0021",
+              "mfa_word_index": 20,
+              "line_word_index": 1,
+              "text": "i",
+              "raw_text": "i",
+              "start": 28.58,
+              "end": 31.44,
+              "duration": 2.86
+            },
+            {
+              "id": "word-0022",
+              "mfa_word_index": 21,
+              "line_word_index": 2,
+              "text": "see",
+              "raw_text": "see",
+              "start": 31.47,
+              "end": 31.53,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0023",
+              "mfa_word_index": 22,
+              "line_word_index": 3,
+              "text": "her",
+              "raw_text": "her",
+              "start": 31.53,
+              "end": 31.61,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0024",
+              "mfa_word_index": 23,
+              "line_word_index": 4,
+              "text": "feel",
+              "raw_text": "feel",
+              "start": 31.61,
+              "end": 31.7,
+              "duration": 0.09
+            },
+            {
+              "id": "word-0025",
+              "mfa_word_index": 24,
+              "line_word_index": 5,
+              "text": "the",
+              "raw_text": "the",
+              "start": 31.7,
+              "end": 31.76,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0026",
+              "mfa_word_index": 25,
+              "line_word_index": 6,
+              "text": "fire",
+              "raw_text": "fire",
+              "start": 31.76,
+              "end": 31.91,
+              "duration": 0.15
+            }
+          ]
+        },
+        {
+          "id": "line-0005",
+          "section": "OPENING",
+          "text": "Now I know she needs me there to share",
+          "start": 32.98,
+          "end": 38.89,
+          "words": [
+            {
+              "id": "word-0027",
+              "mfa_word_index": 26,
+              "line_word_index": 0,
+              "text": "now",
+              "raw_text": "now",
+              "start": 32.98,
+              "end": 33.38,
+              "duration": 0.4
+            },
+            {
+              "id": "word-0028",
+              "mfa_word_index": 27,
+              "line_word_index": 1,
+              "text": "i",
+              "raw_text": "i",
+              "start": 33.38,
+              "end": 35.78,
+              "duration": 2.4
+            },
+            {
+              "id": "word-0029",
+              "mfa_word_index": 28,
+              "line_word_index": 2,
+              "text": "know",
+              "raw_text": "know",
+              "start": 35.81,
+              "end": 35.87,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0030",
+              "mfa_word_index": 29,
+              "line_word_index": 3,
+              "text": "she",
+              "raw_text": "she",
+              "start": 35.87,
+              "end": 36.48,
+              "duration": 0.61
+            },
+            {
+              "id": "word-0031",
+              "mfa_word_index": 30,
+              "line_word_index": 4,
+              "text": "needs",
+              "raw_text": "needs",
+              "start": 36.51,
+              "end": 36.63,
+              "duration": 0.12
+            },
+            {
+              "id": "word-0032",
+              "mfa_word_index": 31,
+              "line_word_index": 5,
+              "text": "me",
+              "raw_text": "me",
+              "start": 36.63,
+              "end": 37.07,
+              "duration": 0.44
+            },
+            {
+              "id": "word-0033",
+              "mfa_word_index": 32,
+              "line_word_index": 6,
+              "text": "there",
+              "raw_text": "there",
+              "start": 37.1,
+              "end": 38.06,
+              "duration": 0.96
+            },
+            {
+              "id": "word-0034",
+              "mfa_word_index": 33,
+              "line_word_index": 7,
+              "text": "to",
+              "raw_text": "to",
+              "start": 38.06,
+              "end": 38.17,
+              "duration": 0.11
+            },
+            {
+              "id": "word-0035",
+              "mfa_word_index": 34,
+              "line_word_index": 8,
+              "text": "share",
+              "raw_text": "share",
+              "start": 38.17,
+              "end": 38.89,
+              "duration": 0.72
+            }
+          ]
+        },
+        {
+          "id": "line-0006",
+          "section": "OPENING",
+          "text": "I'm nowhere",
+          "start": 41.43,
+          "end": 43.1,
+          "words": [
+            {
+              "id": "word-0036",
+              "mfa_word_index": 35,
+              "line_word_index": 0,
+              "text": "i'm",
+              "raw_text": "i'm",
+              "start": 41.43,
+              "end": 41.78,
+              "duration": 0.35
+            },
+            {
+              "id": "word-0037",
+              "mfa_word_index": 36,
+              "line_word_index": 1,
+              "text": "nowhere",
+              "raw_text": "nowhere",
+              "start": 41.78,
+              "end": 43.1,
+              "duration": 1.32
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verse-002",
+      "label": "VERSE",
+      "start": 45.12,
+      "end": 70.2,
+      "lines": [
+        {
+          "id": "line-0007",
+          "section": "VERSE",
+          "text": "All these blank and tranquil years",
+          "start": 45.12,
+          "end": 49.54,
+          "words": [
+            {
+              "id": "word-0038",
+              "mfa_word_index": 37,
+              "line_word_index": 0,
+              "text": "all",
+              "raw_text": "all",
+              "start": 45.12,
+              "end": 45.53,
+              "duration": 0.41
+            },
+            {
+              "id": "word-0039",
+              "mfa_word_index": 38,
+              "line_word_index": 1,
+              "text": "these",
+              "raw_text": "these",
+              "start": 45.53,
+              "end": 45.9,
+              "duration": 0.37
+            },
+            {
+              "id": "word-0040",
+              "mfa_word_index": 39,
+              "line_word_index": 2,
+              "text": "blank",
+              "raw_text": "blank",
+              "start": 45.9,
+              "end": 47.38,
+              "duration": 1.48
+            },
+            {
+              "id": "word-0041",
+              "mfa_word_index": 40,
+              "line_word_index": 3,
+              "text": "and",
+              "raw_text": "and",
+              "start": 47.38,
+              "end": 48.0,
+              "duration": 0.62
+            },
+            {
+              "id": "word-0042",
+              "mfa_word_index": 41,
+              "line_word_index": 4,
+              "text": "tranquil",
+              "raw_text": "tranquil",
+              "start": 48.0,
+              "end": 48.79,
+              "duration": 0.79
+            },
+            {
+              "id": "word-0043",
+              "mfa_word_index": 42,
+              "line_word_index": 5,
+              "text": "years",
+              "raw_text": "years",
+              "start": 48.79,
+              "end": 49.54,
+              "duration": 0.75
+            }
+          ]
+        },
+        {
+          "id": "line-0008",
+          "section": "VERSE",
+          "text": "Seems they've dried up all my tears",
+          "start": 51.41,
+          "end": 56.94,
+          "words": [
+            {
+              "id": "word-0044",
+              "mfa_word_index": 43,
+              "line_word_index": 0,
+              "text": "seems",
+              "raw_text": "seems",
+              "start": 51.41,
+              "end": 51.95,
+              "duration": 0.54
+            },
+            {
+              "id": "word-0045",
+              "mfa_word_index": 44,
+              "line_word_index": 1,
+              "text": "they've",
+              "raw_text": "they've",
+              "start": 51.95,
+              "end": 52.19,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0046",
+              "mfa_word_index": 45,
+              "line_word_index": 2,
+              "text": "dried",
+              "raw_text": "dried",
+              "start": 52.19,
+              "end": 53.26,
+              "duration": 1.07
+            },
+            {
+              "id": "word-0047",
+              "mfa_word_index": 46,
+              "line_word_index": 3,
+              "text": "up",
+              "raw_text": "up",
+              "start": 53.26,
+              "end": 53.62,
+              "duration": 0.36
+            },
+            {
+              "id": "word-0048",
+              "mfa_word_index": 47,
+              "line_word_index": 4,
+              "text": "all",
+              "raw_text": "all",
+              "start": 53.62,
+              "end": 53.68,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0049",
+              "mfa_word_index": 48,
+              "line_word_index": 5,
+              "text": "my",
+              "raw_text": "my",
+              "start": 53.68,
+              "end": 55.04,
+              "duration": 1.36
+            },
+            {
+              "id": "word-0050",
+              "mfa_word_index": 49,
+              "line_word_index": 6,
+              "text": "tears",
+              "raw_text": "tears",
+              "start": 55.04,
+              "end": 56.94,
+              "duration": 1.9
+            }
+          ]
+        },
+        {
+          "id": "line-0009",
+          "section": "VERSE",
+          "text": "And while she runs free and fast",
+          "start": 58.04,
+          "end": 64.12,
+          "words": [
+            {
+              "id": "word-0051",
+              "mfa_word_index": 50,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 58.04,
+              "end": 58.48,
+              "duration": 0.44
+            },
+            {
+              "id": "word-0052",
+              "mfa_word_index": 51,
+              "line_word_index": 1,
+              "text": "while",
+              "raw_text": "while",
+              "start": 58.48,
+              "end": 58.79,
+              "duration": 0.31
+            },
+            {
+              "id": "word-0053",
+              "mfa_word_index": 52,
+              "line_word_index": 2,
+              "text": "she",
+              "raw_text": "she",
+              "start": 58.79,
+              "end": 59.56,
+              "duration": 0.77
+            },
+            {
+              "id": "word-0054",
+              "mfa_word_index": 53,
+              "line_word_index": 3,
+              "text": "runs",
+              "raw_text": "runs",
+              "start": 59.56,
+              "end": 60.37,
+              "duration": 0.81
+            },
+            {
+              "id": "word-0055",
+              "mfa_word_index": 54,
+              "line_word_index": 4,
+              "text": "free",
+              "raw_text": "free",
+              "start": 60.37,
+              "end": 61.92,
+              "duration": 1.55
+            },
+            {
+              "id": "word-0056",
+              "mfa_word_index": 55,
+              "line_word_index": 5,
+              "text": "and",
+              "raw_text": "and",
+              "start": 62.04,
+              "end": 62.5,
+              "duration": 0.46
+            },
+            {
+              "id": "word-0057",
+              "mfa_word_index": 56,
+              "line_word_index": 6,
+              "text": "fast",
+              "raw_text": "fast",
+              "start": 64.0,
+              "end": 64.12,
+              "duration": 0.12
+            }
+          ]
+        },
+        {
+          "id": "line-0010",
+          "section": "VERSE",
+          "text": "Seems my wild days are past",
+          "start": 64.72,
+          "end": 70.2,
+          "words": [
+            {
+              "id": "word-0058",
+              "mfa_word_index": 57,
+              "line_word_index": 0,
+              "text": "seems",
+              "raw_text": "seems",
+              "start": 64.72,
+              "end": 65.29,
+              "duration": 0.57
+            },
+            {
+              "id": "word-0059",
+              "mfa_word_index": 58,
+              "line_word_index": 1,
+              "text": "my",
+              "raw_text": "my",
+              "start": 65.29,
+              "end": 66.91,
+              "duration": 1.62
+            },
+            {
+              "id": "word-0060",
+              "mfa_word_index": 59,
+              "line_word_index": 2,
+              "text": "wild",
+              "raw_text": "wild",
+              "start": 66.94,
+              "end": 67.06,
+              "duration": 0.12
+            },
+            {
+              "id": "word-0061",
+              "mfa_word_index": 60,
+              "line_word_index": 3,
+              "text": "days",
+              "raw_text": "days",
+              "start": 67.06,
+              "end": 68.84,
+              "duration": 1.78
+            },
+            {
+              "id": "word-0062",
+              "mfa_word_index": 61,
+              "line_word_index": 4,
+              "text": "are",
+              "raw_text": "are",
+              "start": 69.49,
+              "end": 70.02,
+              "duration": 0.53
+            },
+            {
+              "id": "word-0063",
+              "mfa_word_index": 62,
+              "line_word_index": 5,
+              "text": "past",
+              "raw_text": "past",
+              "start": 70.02,
+              "end": 70.2,
+              "duration": 0.18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chorus-003",
+      "label": "CHORUS",
+      "start": 70.2,
+      "end": 100.82,
+      "lines": [
+        {
+          "id": "line-0011",
+          "section": "CHORUS",
+          "text": "But I miss the mountains",
+          "start": 70.2,
+          "end": 86.96,
+          "words": [
+            {
+              "id": "word-0064",
+              "mfa_word_index": 63,
+              "line_word_index": 0,
+              "text": "but",
+              "raw_text": "but",
+              "start": 70.2,
+              "end": 70.26,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0065",
+              "mfa_word_index": 64,
+              "line_word_index": 1,
+              "text": "i",
+              "raw_text": "i",
+              "start": 70.26,
+              "end": 75.4,
+              "duration": 5.14
+            },
+            {
+              "id": "word-0066",
+              "mfa_word_index": 65,
+              "line_word_index": 2,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 75.51,
+              "end": 76.25,
+              "duration": 0.74
+            },
+            {
+              "id": "word-0067",
+              "mfa_word_index": 66,
+              "line_word_index": 3,
+              "text": "the",
+              "raw_text": "the",
+              "start": 79.6,
+              "end": 79.92,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0068",
+              "mfa_word_index": 67,
+              "line_word_index": 4,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 81.71,
+              "end": 86.96,
+              "duration": 5.25
+            }
+          ]
+        },
+        {
+          "id": "line-0012",
+          "section": "CHORUS",
+          "text": "I miss the dizzy heights",
+          "start": 88.8,
+          "end": 92.67,
+          "words": [
+            {
+              "id": "word-0069",
+              "mfa_word_index": 68,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 88.8,
+              "end": 89.52,
+              "duration": 0.72
+            },
+            {
+              "id": "word-0070",
+              "mfa_word_index": 69,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 89.52,
+              "end": 90.43,
+              "duration": 0.91
+            },
+            {
+              "id": "word-0071",
+              "mfa_word_index": 70,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 90.43,
+              "end": 90.56,
+              "duration": 0.13
+            },
+            {
+              "id": "word-0072",
+              "mfa_word_index": 71,
+              "line_word_index": 3,
+              "text": "dizzy",
+              "raw_text": "dizzy",
+              "start": 90.56,
+              "end": 91.95,
+              "duration": 1.39
+            },
+            {
+              "id": "word-0073",
+              "mfa_word_index": 72,
+              "line_word_index": 4,
+              "text": "heights",
+              "raw_text": "heights",
+              "start": 91.95,
+              "end": 92.67,
+              "duration": 0.72
+            }
+          ]
+        },
+        {
+          "id": "line-0013",
+          "section": "CHORUS",
+          "text": "All the manic magic days",
+          "start": 93.82,
+          "end": 97.56,
+          "words": [
+            {
+              "id": "word-0074",
+              "mfa_word_index": 73,
+              "line_word_index": 0,
+              "text": "all",
+              "raw_text": "all",
+              "start": 93.82,
+              "end": 94.21,
+              "duration": 0.39
+            },
+            {
+              "id": "word-0075",
+              "mfa_word_index": 74,
+              "line_word_index": 1,
+              "text": "the",
+              "raw_text": "the",
+              "start": 94.21,
+              "end": 95.88,
+              "duration": 1.67
+            },
+            {
+              "id": "word-0076",
+              "mfa_word_index": 75,
+              "line_word_index": 2,
+              "text": "manic",
+              "raw_text": "manic",
+              "start": 95.95,
+              "end": 97.22,
+              "duration": 1.27
+            },
+            {
+              "id": "word-0077",
+              "mfa_word_index": 76,
+              "line_word_index": 3,
+              "text": "magic",
+              "raw_text": "magic",
+              "start": 97.22,
+              "end": 97.4,
+              "duration": 0.18
+            },
+            {
+              "id": "word-0078",
+              "mfa_word_index": 77,
+              "line_word_index": 4,
+              "text": "days",
+              "raw_text": "days",
+              "start": 97.4,
+              "end": 97.56,
+              "duration": 0.16
+            }
+          ]
+        },
+        {
+          "id": "line-0014",
+          "section": "CHORUS",
+          "text": "And the dark depressing nights",
+          "start": 97.91,
+          "end": 100.82,
+          "words": [
+            {
+              "id": "word-0079",
+              "mfa_word_index": 78,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 97.91,
+              "end": 98.31,
+              "duration": 0.4
+            },
+            {
+              "id": "word-0080",
+              "mfa_word_index": 79,
+              "line_word_index": 1,
+              "text": "the",
+              "raw_text": "the",
+              "start": 98.31,
+              "end": 98.44,
+              "duration": 0.13
+            },
+            {
+              "id": "word-0081",
+              "mfa_word_index": 80,
+              "line_word_index": 2,
+              "text": "dark",
+              "raw_text": "dark",
+              "start": 98.44,
+              "end": 99.37,
+              "duration": 0.93
+            },
+            {
+              "id": "word-0082",
+              "mfa_word_index": 81,
+              "line_word_index": 3,
+              "text": "depressing",
+              "raw_text": "depressing",
+              "start": 99.37,
+              "end": 100.47,
+              "duration": 1.1
+            },
+            {
+              "id": "word-0083",
+              "mfa_word_index": 82,
+              "line_word_index": 4,
+              "text": "nights",
+              "raw_text": "nights",
+              "start": 100.47,
+              "end": 100.82,
+              "duration": 0.35
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stage1-004",
+      "label": "STAGE1",
+      "start": 103.69,
+      "end": 136.66,
+      "lines": [
+        {
+          "id": "line-0015",
+          "section": "STAGE1",
+          "text": "I miss the mountains",
+          "start": 103.69,
+          "end": 107.8,
+          "words": [
+            {
+              "id": "word-0084",
+              "mfa_word_index": 83,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 103.69,
+              "end": 104.27,
+              "duration": 0.58
+            },
+            {
+              "id": "word-0085",
+              "mfa_word_index": 84,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 104.27,
+              "end": 105.3,
+              "duration": 1.03
+            },
+            {
+              "id": "word-0086",
+              "mfa_word_index": 85,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 105.3,
+              "end": 105.4,
+              "duration": 0.1
+            },
+            {
+              "id": "word-0087",
+              "mfa_word_index": 86,
+              "line_word_index": 3,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 105.4,
+              "end": 107.8,
+              "duration": 2.4
+            }
+          ]
+        },
+        {
+          "id": "line-0016",
+          "section": "STAGE1",
+          "text": "I miss the highs and lows",
+          "start": 109.57,
+          "end": 114.54,
+          "words": [
+            {
+              "id": "word-0088",
+              "mfa_word_index": 87,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 109.57,
+              "end": 110.65,
+              "duration": 1.08
+            },
+            {
+              "id": "word-0089",
+              "mfa_word_index": 88,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 110.65,
+              "end": 111.19,
+              "duration": 0.54
+            },
+            {
+              "id": "word-0090",
+              "mfa_word_index": 89,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 111.19,
+              "end": 111.3,
+              "duration": 0.11
+            },
+            {
+              "id": "word-0091",
+              "mfa_word_index": 90,
+              "line_word_index": 3,
+              "text": "highs",
+              "raw_text": "highs",
+              "start": 111.3,
+              "end": 112.06,
+              "duration": 0.76
+            },
+            {
+              "id": "word-0092",
+              "mfa_word_index": 91,
+              "line_word_index": 4,
+              "text": "and",
+              "raw_text": "and",
+              "start": 112.06,
+              "end": 112.58,
+              "duration": 0.52
+            },
+            {
+              "id": "word-0093",
+              "mfa_word_index": 92,
+              "line_word_index": 5,
+              "text": "lows",
+              "raw_text": "lows",
+              "start": 112.58,
+              "end": 114.54,
+              "duration": 1.96
+            }
+          ]
+        },
+        {
+          "id": "line-0017",
+          "section": "STAGE1",
+          "text": "All the climbing, all the falling",
+          "start": 114.58,
+          "end": 118.08,
+          "words": [
+            {
+              "id": "word-0094",
+              "mfa_word_index": 93,
+              "line_word_index": 0,
+              "text": "all",
+              "raw_text": "all",
+              "start": 114.58,
+              "end": 114.96,
+              "duration": 0.38
+            },
+            {
+              "id": "word-0095",
+              "mfa_word_index": 94,
+              "line_word_index": 1,
+              "text": "the",
+              "raw_text": "the",
+              "start": 114.96,
+              "end": 115.04,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0096",
+              "mfa_word_index": 95,
+              "line_word_index": 2,
+              "text": "climbing",
+              "raw_text": "climbing",
+              "start": 115.04,
+              "end": 115.9,
+              "duration": 0.86
+            },
+            {
+              "id": "word-0097",
+              "mfa_word_index": 96,
+              "line_word_index": 3,
+              "text": "all",
+              "raw_text": "all",
+              "start": 115.98,
+              "end": 116.48,
+              "duration": 0.5
+            },
+            {
+              "id": "word-0098",
+              "mfa_word_index": 97,
+              "line_word_index": 4,
+              "text": "the",
+              "raw_text": "the",
+              "start": 116.48,
+              "end": 116.55,
+              "duration": 0.07
+            },
+            {
+              "id": "word-0099",
+              "mfa_word_index": 98,
+              "line_word_index": 5,
+              "text": "falling",
+              "raw_text": "falling",
+              "start": 116.55,
+              "end": 118.08,
+              "duration": 1.53
+            }
+          ]
+        },
+        {
+          "id": "line-0018",
+          "section": "STAGE1",
+          "text": "All the while the wild wind blows",
+          "start": 118.49,
+          "end": 121.67,
+          "words": [
+            {
+              "id": "word-0100",
+              "mfa_word_index": 99,
+              "line_word_index": 0,
+              "text": "all",
+              "raw_text": "all",
+              "start": 118.49,
+              "end": 118.83,
+              "duration": 0.34
+            },
+            {
+              "id": "word-0101",
+              "mfa_word_index": 100,
+              "line_word_index": 1,
+              "text": "the",
+              "raw_text": "the",
+              "start": 118.83,
+              "end": 118.95,
+              "duration": 0.12
+            },
+            {
+              "id": "word-0102",
+              "mfa_word_index": 101,
+              "line_word_index": 2,
+              "text": "while",
+              "raw_text": "while",
+              "start": 118.95,
+              "end": 119.51,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0103",
+              "mfa_word_index": 102,
+              "line_word_index": 3,
+              "text": "the",
+              "raw_text": "the",
+              "start": 119.51,
+              "end": 119.57,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0104",
+              "mfa_word_index": 103,
+              "line_word_index": 4,
+              "text": "wild",
+              "raw_text": "wild",
+              "start": 119.57,
+              "end": 120.02,
+              "duration": 0.45
+            },
+            {
+              "id": "word-0105",
+              "mfa_word_index": 104,
+              "line_word_index": 5,
+              "text": "wind",
+              "raw_text": "wind",
+              "start": 120.02,
+              "end": 120.4,
+              "duration": 0.38
+            },
+            {
+              "id": "word-0106",
+              "mfa_word_index": 105,
+              "line_word_index": 6,
+              "text": "blows",
+              "raw_text": "blows",
+              "start": 120.4,
+              "end": 121.67,
+              "duration": 1.27
+            }
+          ]
+        },
+        {
+          "id": "line-0019",
+          "section": "STAGE1",
+          "text": "Stinging you with snow",
+          "start": 121.85,
+          "end": 123.87,
+          "words": [
+            {
+              "id": "word-0107",
+              "mfa_word_index": 106,
+              "line_word_index": 0,
+              "text": "stinging",
+              "raw_text": "stinging",
+              "start": 121.85,
+              "end": 122.48,
+              "duration": 0.63
+            },
+            {
+              "id": "word-0108",
+              "mfa_word_index": 107,
+              "line_word_index": 1,
+              "text": "you",
+              "raw_text": "you",
+              "start": 122.48,
+              "end": 122.69,
+              "duration": 0.21
+            },
+            {
+              "id": "word-0109",
+              "mfa_word_index": 108,
+              "line_word_index": 2,
+              "text": "with",
+              "raw_text": "with",
+              "start": 122.69,
+              "end": 122.88,
+              "duration": 0.19
+            },
+            {
+              "id": "word-0110",
+              "mfa_word_index": 109,
+              "line_word_index": 3,
+              "text": "snow",
+              "raw_text": "snow",
+              "start": 122.88,
+              "end": 123.87,
+              "duration": 0.99
+            }
+          ]
+        },
+        {
+          "id": "line-0020",
+          "section": "STAGE1",
+          "text": "And soaking you with rain",
+          "start": 124.35,
+          "end": 126.48,
+          "words": [
+            {
+              "id": "word-0111",
+              "mfa_word_index": 110,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 124.35,
+              "end": 124.6,
+              "duration": 0.25
+            },
+            {
+              "id": "word-0112",
+              "mfa_word_index": 111,
+              "line_word_index": 1,
+              "text": "soaking",
+              "raw_text": "soaking",
+              "start": 124.6,
+              "end": 125.66,
+              "duration": 1.06
+            },
+            {
+              "id": "word-0113",
+              "mfa_word_index": 112,
+              "line_word_index": 2,
+              "text": "you",
+              "raw_text": "you",
+              "start": 125.66,
+              "end": 125.85,
+              "duration": 0.19
+            },
+            {
+              "id": "word-0114",
+              "mfa_word_index": 113,
+              "line_word_index": 3,
+              "text": "with",
+              "raw_text": "with",
+              "start": 125.85,
+              "end": 125.94,
+              "duration": 0.09
+            },
+            {
+              "id": "word-0115",
+              "mfa_word_index": 114,
+              "line_word_index": 4,
+              "text": "rain",
+              "raw_text": "rain",
+              "start": 125.94,
+              "end": 126.48,
+              "duration": 0.54
+            }
+          ]
+        },
+        {
+          "id": "line-0021",
+          "section": "STAGE1",
+          "text": "I miss the mountains",
+          "start": 126.52,
+          "end": 133.0,
+          "words": [
+            {
+              "id": "word-0116",
+              "mfa_word_index": 115,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 126.52,
+              "end": 126.55,
+              "duration": 0.03
+            },
+            {
+              "id": "word-0117",
+              "mfa_word_index": 116,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 126.73,
+              "end": 126.87,
+              "duration": 0.14
+            },
+            {
+              "id": "word-0118",
+              "mfa_word_index": 117,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 126.87,
+              "end": 129.43,
+              "duration": 2.56
+            },
+            {
+              "id": "word-0119",
+              "mfa_word_index": 118,
+              "line_word_index": 3,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 129.66,
+              "end": 133.0,
+              "duration": 3.34
+            }
+          ]
+        },
+        {
+          "id": "line-0022",
+          "section": "STAGE1",
+          "text": "I miss the pain",
+          "start": 133.73,
+          "end": 136.66,
+          "words": [
+            {
+              "id": "word-0120",
+              "mfa_word_index": 119,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 133.73,
+              "end": 133.76,
+              "duration": 0.03
+            },
+            {
+              "id": "word-0121",
+              "mfa_word_index": 120,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 134.45,
+              "end": 135.27,
+              "duration": 0.82
+            },
+            {
+              "id": "word-0122",
+              "mfa_word_index": 121,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 135.37,
+              "end": 135.45,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0123",
+              "mfa_word_index": 122,
+              "line_word_index": 3,
+              "text": "pain",
+              "raw_text": "pain",
+              "start": 135.45,
+              "end": 136.66,
+              "duration": 1.21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bridge-005",
+      "label": "BRIDGE",
+      "start": 141.47,
+      "end": 172.7,
+      "lines": [
+        {
+          "id": "line-0023",
+          "section": "BRIDGE",
+          "text": "Mountains make you crazy",
+          "start": 141.47,
+          "end": 143.87,
+          "words": [
+            {
+              "id": "word-0124",
+              "mfa_word_index": 123,
+              "line_word_index": 0,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 141.47,
+              "end": 142.1,
+              "duration": 0.63
+            },
+            {
+              "id": "word-0125",
+              "mfa_word_index": 124,
+              "line_word_index": 1,
+              "text": "make",
+              "raw_text": "make",
+              "start": 142.1,
+              "end": 142.46,
+              "duration": 0.36
+            },
+            {
+              "id": "word-0126",
+              "mfa_word_index": 125,
+              "line_word_index": 2,
+              "text": "you",
+              "raw_text": "you",
+              "start": 142.46,
+              "end": 142.7,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0127",
+              "mfa_word_index": 126,
+              "line_word_index": 3,
+              "text": "crazy",
+              "raw_text": "crazy",
+              "start": 142.7,
+              "end": 143.87,
+              "duration": 1.17
+            }
+          ]
+        },
+        {
+          "id": "line-0024",
+          "section": "BRIDGE",
+          "text": "Here it's safe and sound",
+          "start": 143.87,
+          "end": 147.1,
+          "words": [
+            {
+              "id": "word-0128",
+              "mfa_word_index": 127,
+              "line_word_index": 0,
+              "text": "here",
+              "raw_text": "here",
+              "start": 143.87,
+              "end": 144.8,
+              "duration": 0.93
+            },
+            {
+              "id": "word-0129",
+              "mfa_word_index": 128,
+              "line_word_index": 1,
+              "text": "it's",
+              "raw_text": "it's",
+              "start": 144.8,
+              "end": 145.03,
+              "duration": 0.23
+            },
+            {
+              "id": "word-0130",
+              "mfa_word_index": 129,
+              "line_word_index": 2,
+              "text": "safe",
+              "raw_text": "safe",
+              "start": 145.03,
+              "end": 145.38,
+              "duration": 0.35
+            },
+            {
+              "id": "word-0131",
+              "mfa_word_index": 130,
+              "line_word_index": 3,
+              "text": "and",
+              "raw_text": "and",
+              "start": 145.38,
+              "end": 145.63,
+              "duration": 0.25
+            },
+            {
+              "id": "word-0132",
+              "mfa_word_index": 131,
+              "line_word_index": 4,
+              "text": "sound",
+              "raw_text": "sound",
+              "start": 145.63,
+              "end": 147.1,
+              "duration": 1.47
+            }
+          ]
+        },
+        {
+          "id": "line-0025",
+          "section": "BRIDGE",
+          "text": "My mind is somewhere hazy",
+          "start": 147.1,
+          "end": 149.67,
+          "words": [
+            {
+              "id": "word-0133",
+              "mfa_word_index": 132,
+              "line_word_index": 0,
+              "text": "my",
+              "raw_text": "my",
+              "start": 147.1,
+              "end": 147.22,
+              "duration": 0.12
+            },
+            {
+              "id": "word-0134",
+              "mfa_word_index": 133,
+              "line_word_index": 1,
+              "text": "mind",
+              "raw_text": "mind",
+              "start": 147.22,
+              "end": 147.92,
+              "duration": 0.7
+            },
+            {
+              "id": "word-0135",
+              "mfa_word_index": 134,
+              "line_word_index": 2,
+              "text": "is",
+              "raw_text": "is",
+              "start": 147.92,
+              "end": 148.18,
+              "duration": 0.26
+            },
+            {
+              "id": "word-0136",
+              "mfa_word_index": 135,
+              "line_word_index": 3,
+              "text": "somewhere",
+              "raw_text": "somewhere",
+              "start": 148.18,
+              "end": 148.76,
+              "duration": 0.58
+            },
+            {
+              "id": "word-0137",
+              "mfa_word_index": 136,
+              "line_word_index": 4,
+              "text": "hazy",
+              "raw_text": "hazy",
+              "start": 148.76,
+              "end": 149.67,
+              "duration": 0.91
+            }
+          ]
+        },
+        {
+          "id": "line-0026",
+          "section": "BRIDGE",
+          "text": "My feet are on the ground",
+          "start": 150.08,
+          "end": 153.11,
+          "words": [
+            {
+              "id": "word-0138",
+              "mfa_word_index": 137,
+              "line_word_index": 0,
+              "text": "my",
+              "raw_text": "my",
+              "start": 150.08,
+              "end": 150.29,
+              "duration": 0.21
+            },
+            {
+              "id": "word-0139",
+              "mfa_word_index": 138,
+              "line_word_index": 1,
+              "text": "feet",
+              "raw_text": "feet",
+              "start": 150.29,
+              "end": 150.86,
+              "duration": 0.57
+            },
+            {
+              "id": "word-0140",
+              "mfa_word_index": 139,
+              "line_word_index": 2,
+              "text": "are",
+              "raw_text": "are",
+              "start": 150.86,
+              "end": 151.22,
+              "duration": 0.36
+            },
+            {
+              "id": "word-0141",
+              "mfa_word_index": 140,
+              "line_word_index": 3,
+              "text": "on",
+              "raw_text": "on",
+              "start": 151.22,
+              "end": 151.5,
+              "duration": 0.28
+            },
+            {
+              "id": "word-0142",
+              "mfa_word_index": 141,
+              "line_word_index": 4,
+              "text": "the",
+              "raw_text": "the",
+              "start": 151.5,
+              "end": 151.56,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0143",
+              "mfa_word_index": 142,
+              "line_word_index": 5,
+              "text": "ground",
+              "raw_text": "ground",
+              "start": 151.56,
+              "end": 153.11,
+              "duration": 1.55
+            }
+          ]
+        },
+        {
+          "id": "line-0027",
+          "section": "BRIDGE",
+          "text": "Everything is balanced here",
+          "start": 153.14,
+          "end": 155.67,
+          "words": [
+            {
+              "id": "word-0144",
+              "mfa_word_index": 143,
+              "line_word_index": 0,
+              "text": "everything",
+              "raw_text": "everything",
+              "start": 153.14,
+              "end": 154.04,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0145",
+              "mfa_word_index": 144,
+              "line_word_index": 1,
+              "text": "is",
+              "raw_text": "is",
+              "start": 154.04,
+              "end": 154.37,
+              "duration": 0.33
+            },
+            {
+              "id": "word-0146",
+              "mfa_word_index": 145,
+              "line_word_index": 2,
+              "text": "balanced",
+              "raw_text": "balanced",
+              "start": 154.37,
+              "end": 155.15,
+              "duration": 0.78
+            },
+            {
+              "id": "word-0147",
+              "mfa_word_index": 146,
+              "line_word_index": 3,
+              "text": "here",
+              "raw_text": "here",
+              "start": 155.15,
+              "end": 155.67,
+              "duration": 0.52
+            }
+          ]
+        },
+        {
+          "id": "line-0028",
+          "section": "BRIDGE",
+          "text": "And on an even keel",
+          "start": 155.67,
+          "end": 158.45,
+          "words": [
+            {
+              "id": "word-0148",
+              "mfa_word_index": 147,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 155.67,
+              "end": 155.91,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0149",
+              "mfa_word_index": 148,
+              "line_word_index": 1,
+              "text": "on",
+              "raw_text": "on",
+              "start": 155.91,
+              "end": 156.4,
+              "duration": 0.49
+            },
+            {
+              "id": "word-0150",
+              "mfa_word_index": 149,
+              "line_word_index": 2,
+              "text": "an",
+              "raw_text": "an",
+              "start": 156.4,
+              "end": 156.67,
+              "duration": 0.27
+            },
+            {
+              "id": "word-0151",
+              "mfa_word_index": 150,
+              "line_word_index": 3,
+              "text": "even",
+              "raw_text": "even",
+              "start": 156.67,
+              "end": 157.12,
+              "duration": 0.45
+            },
+            {
+              "id": "word-0152",
+              "mfa_word_index": 151,
+              "line_word_index": 4,
+              "text": "keel",
+              "raw_text": "keel",
+              "start": 157.12,
+              "end": 158.45,
+              "duration": 1.33
+            }
+          ]
+        },
+        {
+          "id": "line-0029",
+          "section": "BRIDGE",
+          "text": "Everything is perfect",
+          "start": 159.1,
+          "end": 162.74,
+          "words": [
+            {
+              "id": "word-0153",
+              "mfa_word_index": 152,
+              "line_word_index": 0,
+              "text": "everything",
+              "raw_text": "everything",
+              "start": 159.1,
+              "end": 160.86,
+              "duration": 1.76
+            },
+            {
+              "id": "word-0154",
+              "mfa_word_index": 153,
+              "line_word_index": 1,
+              "text": "is",
+              "raw_text": "is",
+              "start": 160.86,
+              "end": 161.49,
+              "duration": 0.63
+            },
+            {
+              "id": "word-0155",
+              "mfa_word_index": 154,
+              "line_word_index": 2,
+              "text": "perfect",
+              "raw_text": "perfect",
+              "start": 161.49,
+              "end": 162.74,
+              "duration": 1.25
+            }
+          ]
+        },
+        {
+          "id": "line-0030",
+          "section": "BRIDGE",
+          "text": "Nothing's real",
+          "start": 166.11,
+          "end": 171.58,
+          "words": [
+            {
+              "id": "word-0156",
+              "mfa_word_index": 155,
+              "line_word_index": 0,
+              "text": "nothing's",
+              "raw_text": "nothing's",
+              "start": 166.11,
+              "end": 167.39,
+              "duration": 1.28
+            },
+            {
+              "id": "word-0157",
+              "mfa_word_index": 156,
+              "line_word_index": 1,
+              "text": "real",
+              "raw_text": "real",
+              "start": 167.39,
+              "end": 171.58,
+              "duration": 4.19
+            }
+          ]
+        },
+        {
+          "id": "line-0031",
+          "section": "BRIDGE",
+          "text": "Nothing's real",
+          "start": 171.58,
+          "end": 172.7,
+          "words": [
+            {
+              "id": "word-0158",
+              "mfa_word_index": 157,
+              "line_word_index": 0,
+              "text": "nothing's",
+              "raw_text": "nothing's",
+              "start": 171.58,
+              "end": 172.49,
+              "duration": 0.91
+            },
+            {
+              "id": "word-0159",
+              "mfa_word_index": 158,
+              "line_word_index": 1,
+              "text": "real",
+              "raw_text": "real",
+              "start": 172.49,
+              "end": 172.7,
+              "duration": 0.21
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chorus-2-006",
+      "label": "CHORUS 2",
+      "start": 172.7,
+      "end": 233.21,
+      "lines": [
+        {
+          "id": "line-0032",
+          "section": "CHORUS 2",
+          "text": "And I miss the mountains",
+          "start": 172.7,
+          "end": 184.6,
+          "words": [
+            {
+              "id": "word-0160",
+              "mfa_word_index": 159,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 172.7,
+              "end": 173.44,
+              "duration": 0.74
+            },
+            {
+              "id": "word-0161",
+              "mfa_word_index": 160,
+              "line_word_index": 1,
+              "text": "i",
+              "raw_text": "i",
+              "start": 173.47,
+              "end": 182.57,
+              "duration": 9.1
+            },
+            {
+              "id": "word-0162",
+              "mfa_word_index": 161,
+              "line_word_index": 2,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 182.6,
+              "end": 182.7,
+              "duration": 0.1
+            },
+            {
+              "id": "word-0163",
+              "mfa_word_index": 162,
+              "line_word_index": 3,
+              "text": "the",
+              "raw_text": "the",
+              "start": 182.7,
+              "end": 182.76,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0164",
+              "mfa_word_index": 163,
+              "line_word_index": 4,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 182.76,
+              "end": 184.6,
+              "duration": 1.84
+            }
+          ]
+        },
+        {
+          "id": "line-0033",
+          "section": "CHORUS 2",
+          "text": "I miss the lonely climb",
+          "start": 185.55,
+          "end": 196.24,
+          "words": [
+            {
+              "id": "word-0165",
+              "mfa_word_index": 164,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 185.55,
+              "end": 193.53,
+              "duration": 7.98
+            },
+            {
+              "id": "word-0166",
+              "mfa_word_index": 165,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 193.76,
+              "end": 194.08,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0167",
+              "mfa_word_index": 166,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 194.08,
+              "end": 194.64,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0168",
+              "mfa_word_index": 167,
+              "line_word_index": 3,
+              "text": "lonely",
+              "raw_text": "lonely",
+              "start": 194.67,
+              "end": 195.41,
+              "duration": 0.74
+            },
+            {
+              "id": "word-0169",
+              "mfa_word_index": 168,
+              "line_word_index": 4,
+              "text": "climb",
+              "raw_text": "climb",
+              "start": 195.41,
+              "end": 196.24,
+              "duration": 0.83
+            }
+          ]
+        },
+        {
+          "id": "line-0034",
+          "section": "CHORUS 2",
+          "text": "Wandering through the wilderness",
+          "start": 196.24,
+          "end": 197.93,
+          "words": [
+            {
+              "id": "word-0170",
+              "mfa_word_index": 169,
+              "line_word_index": 0,
+              "text": "wandering",
+              "raw_text": "wandering",
+              "start": 196.24,
+              "end": 196.61,
+              "duration": 0.37
+            },
+            {
+              "id": "word-0171",
+              "mfa_word_index": 170,
+              "line_word_index": 1,
+              "text": "through",
+              "raw_text": "through",
+              "start": 196.61,
+              "end": 197.14,
+              "duration": 0.53
+            },
+            {
+              "id": "word-0172",
+              "mfa_word_index": 171,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 197.14,
+              "end": 197.42,
+              "duration": 0.28
+            },
+            {
+              "id": "word-0173",
+              "mfa_word_index": 172,
+              "line_word_index": 3,
+              "text": "wilderness",
+              "raw_text": "wilderness",
+              "start": 197.46,
+              "end": 197.93,
+              "duration": 0.47
+            }
+          ]
+        },
+        {
+          "id": "line-0035",
+          "section": "CHORUS 2",
+          "text": "And spending all my time",
+          "start": 197.93,
+          "end": 205.53,
+          "words": [
+            {
+              "id": "word-0174",
+              "mfa_word_index": 173,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 197.93,
+              "end": 198.7,
+              "duration": 0.77
+            },
+            {
+              "id": "word-0175",
+              "mfa_word_index": 174,
+              "line_word_index": 1,
+              "text": "spending",
+              "raw_text": "spending",
+              "start": 199.13,
+              "end": 199.66,
+              "duration": 0.53
+            },
+            {
+              "id": "word-0176",
+              "mfa_word_index": 175,
+              "line_word_index": 2,
+              "text": "all",
+              "raw_text": "all",
+              "start": 199.66,
+              "end": 199.75,
+              "duration": 0.09
+            },
+            {
+              "id": "word-0177",
+              "mfa_word_index": 176,
+              "line_word_index": 3,
+              "text": "my",
+              "raw_text": "my",
+              "start": 199.96,
+              "end": 203.99,
+              "duration": 4.03
+            },
+            {
+              "id": "word-0178",
+              "mfa_word_index": 177,
+              "line_word_index": 4,
+              "text": "time",
+              "raw_text": "time",
+              "start": 204.4,
+              "end": 205.53,
+              "duration": 1.13
+            }
+          ]
+        },
+        {
+          "id": "line-0036",
+          "section": "CHORUS 2",
+          "text": "Where the air is clear",
+          "start": 205.53,
+          "end": 206.74,
+          "words": [
+            {
+              "id": "word-0179",
+              "mfa_word_index": 178,
+              "line_word_index": 0,
+              "text": "where",
+              "raw_text": "where",
+              "start": 205.53,
+              "end": 206.02,
+              "duration": 0.49
+            },
+            {
+              "id": "word-0180",
+              "mfa_word_index": 179,
+              "line_word_index": 1,
+              "text": "the",
+              "raw_text": "the",
+              "start": 206.02,
+              "end": 206.08,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0181",
+              "mfa_word_index": 180,
+              "line_word_index": 2,
+              "text": "air",
+              "raw_text": "air",
+              "start": 206.08,
+              "end": 206.18,
+              "duration": 0.1
+            },
+            {
+              "id": "word-0182",
+              "mfa_word_index": 181,
+              "line_word_index": 3,
+              "text": "is",
+              "raw_text": "is",
+              "start": 206.18,
+              "end": 206.49,
+              "duration": 0.31
+            },
+            {
+              "id": "word-0183",
+              "mfa_word_index": 182,
+              "line_word_index": 4,
+              "text": "clear",
+              "raw_text": "clear",
+              "start": 206.49,
+              "end": 206.74,
+              "duration": 0.25
+            }
+          ]
+        },
+        {
+          "id": "line-0037",
+          "section": "CHORUS 2",
+          "text": "And cuts you like a knife",
+          "start": 206.74,
+          "end": 209.63,
+          "words": [
+            {
+              "id": "word-0184",
+              "mfa_word_index": 183,
+              "line_word_index": 0,
+              "text": "and",
+              "raw_text": "and",
+              "start": 206.74,
+              "end": 207.05,
+              "duration": 0.31
+            },
+            {
+              "id": "word-0185",
+              "mfa_word_index": 184,
+              "line_word_index": 1,
+              "text": "cuts",
+              "raw_text": "cuts",
+              "start": 207.05,
+              "end": 207.18,
+              "duration": 0.13
+            },
+            {
+              "id": "word-0186",
+              "mfa_word_index": 185,
+              "line_word_index": 2,
+              "text": "you",
+              "raw_text": "you",
+              "start": 207.18,
+              "end": 207.29,
+              "duration": 0.11
+            },
+            {
+              "id": "word-0187",
+              "mfa_word_index": 186,
+              "line_word_index": 3,
+              "text": "like",
+              "raw_text": "like",
+              "start": 207.29,
+              "end": 207.38,
+              "duration": 0.09
+            },
+            {
+              "id": "word-0188",
+              "mfa_word_index": 187,
+              "line_word_index": 4,
+              "text": "a",
+              "raw_text": "a",
+              "start": 207.38,
+              "end": 207.41,
+              "duration": 0.03
+            },
+            {
+              "id": "word-0189",
+              "mfa_word_index": 188,
+              "line_word_index": 5,
+              "text": "knife",
+              "raw_text": "knife",
+              "start": 207.41,
+              "end": 209.63,
+              "duration": 2.22
+            }
+          ]
+        },
+        {
+          "id": "line-0038",
+          "section": "CHORUS 2",
+          "text": "I miss the mountains",
+          "start": 209.67,
+          "end": 214.78,
+          "words": [
+            {
+              "id": "word-0190",
+              "mfa_word_index": 189,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 209.67,
+              "end": 211.87,
+              "duration": 2.2
+            },
+            {
+              "id": "word-0191",
+              "mfa_word_index": 190,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 211.9,
+              "end": 212.7,
+              "duration": 0.8
+            },
+            {
+              "id": "word-0192",
+              "mfa_word_index": 191,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 212.7,
+              "end": 212.84,
+              "duration": 0.14
+            },
+            {
+              "id": "word-0193",
+              "mfa_word_index": 192,
+              "line_word_index": 3,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 212.84,
+              "end": 214.78,
+              "duration": 1.94
+            }
+          ]
+        },
+        {
+          "id": "line-0039",
+          "section": "CHORUS 2",
+          "text": "I miss the mountains",
+          "start": 215.63,
+          "end": 221.4,
+          "words": [
+            {
+              "id": "word-0194",
+              "mfa_word_index": 193,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 215.63,
+              "end": 215.66,
+              "duration": 0.03
+            },
+            {
+              "id": "word-0195",
+              "mfa_word_index": 194,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 218.28,
+              "end": 219.04,
+              "duration": 0.76
+            },
+            {
+              "id": "word-0196",
+              "mfa_word_index": 195,
+              "line_word_index": 2,
+              "text": "the",
+              "raw_text": "the",
+              "start": 220.37,
+              "end": 220.43,
+              "duration": 0.06
+            },
+            {
+              "id": "word-0197",
+              "mfa_word_index": 196,
+              "line_word_index": 3,
+              "text": "mountains",
+              "raw_text": "mountains",
+              "start": 220.43,
+              "end": 221.4,
+              "duration": 0.97
+            }
+          ]
+        },
+        {
+          "id": "line-0040",
+          "section": "CHORUS 2",
+          "text": "I miss my life",
+          "start": 221.87,
+          "end": 224.91,
+          "words": [
+            {
+              "id": "word-0198",
+              "mfa_word_index": 197,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 221.87,
+              "end": 221.9,
+              "duration": 0.03
+            },
+            {
+              "id": "word-0199",
+              "mfa_word_index": 198,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 222.65,
+              "end": 223.21,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0200",
+              "mfa_word_index": 199,
+              "line_word_index": 2,
+              "text": "my",
+              "raw_text": "my",
+              "start": 223.21,
+              "end": 224.8,
+              "duration": 1.59
+            },
+            {
+              "id": "word-0201",
+              "mfa_word_index": 200,
+              "line_word_index": 3,
+              "text": "life",
+              "raw_text": "life",
+              "start": 224.8,
+              "end": 224.91,
+              "duration": 0.11
+            }
+          ]
+        },
+        {
+          "id": "line-0041",
+          "section": "CHORUS 2",
+          "text": "I miss my life",
+          "start": 224.94,
+          "end": 233.21,
+          "words": [
+            {
+              "id": "word-0202",
+              "mfa_word_index": 201,
+              "line_word_index": 0,
+              "text": "i",
+              "raw_text": "i",
+              "start": 224.94,
+              "end": 228.03,
+              "duration": 3.09
+            },
+            {
+              "id": "word-0203",
+              "mfa_word_index": 202,
+              "line_word_index": 1,
+              "text": "miss",
+              "raw_text": "miss",
+              "start": 228.06,
+              "end": 228.27,
+              "duration": 0.21
+            },
+            {
+              "id": "word-0204",
+              "mfa_word_index": 203,
+              "line_word_index": 2,
+              "text": "my",
+              "raw_text": "my",
+              "start": 228.74,
+              "end": 232.42,
+              "duration": 3.68
+            },
+            {
+              "id": "word-0205",
+              "mfa_word_index": 204,
+              "line_word_index": 3,
+              "text": "life",
+              "raw_text": "life",
+              "start": 232.8,
+              "end": 233.21,
+              "duration": 0.41
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "all_words": [
+    {
+      "mfa_word_index": 0,
+      "id": "word-0001",
+      "text": "there",
+      "raw_text": "there",
+      "start": 8.56,
+      "end": 9.02,
+      "duration": 0.46
+    },
+    {
+      "mfa_word_index": 1,
+      "id": "word-0002",
+      "text": "was",
+      "raw_text": "was",
+      "start": 9.02,
+      "end": 9.58,
+      "duration": 0.56
+    },
+    {
+      "mfa_word_index": 2,
+      "id": "word-0003",
+      "text": "a",
+      "raw_text": "a",
+      "start": 9.58,
+      "end": 9.62,
+      "duration": 0.04
+    },
+    {
+      "mfa_word_index": 3,
+      "id": "word-0004",
+      "text": "time",
+      "raw_text": "time",
+      "start": 9.62,
+      "end": 9.71,
+      "duration": 0.09
+    },
+    {
+      "mfa_word_index": 4,
+      "id": "word-0005",
+      "text": "when",
+      "raw_text": "when",
+      "start": 9.71,
+      "end": 9.8,
+      "duration": 0.09
+    },
+    {
+      "mfa_word_index": 5,
+      "id": "word-0006",
+      "text": "i",
+      "raw_text": "i",
+      "start": 9.83,
+      "end": 12.74,
+      "duration": 2.91
+    },
+    {
+      "mfa_word_index": 6,
+      "id": "word-0007",
+      "text": "flew",
+      "raw_text": "flew",
+      "start": 12.77,
+      "end": 12.84,
+      "duration": 0.07
+    },
+    {
+      "mfa_word_index": 7,
+      "id": "word-0008",
+      "text": "higher",
+      "raw_text": "higher",
+      "start": 12.84,
+      "end": 13.39,
+      "duration": 0.55
+    },
+    {
+      "mfa_word_index": 8,
+      "id": "word-0009",
+      "text": "was",
+      "raw_text": "was",
+      "start": 15.67,
+      "end": 16.36,
+      "duration": 0.69
+    },
+    {
+      "mfa_word_index": 9,
+      "id": "word-0010",
+      "text": "a",
+      "raw_text": "a",
+      "start": 16.36,
+      "end": 16.46,
+      "duration": 0.1
+    },
+    {
+      "mfa_word_index": 10,
+      "id": "word-0011",
+      "text": "time",
+      "raw_text": "time",
+      "start": 16.46,
+      "end": 16.56,
+      "duration": 0.1
+    },
+    {
+      "mfa_word_index": 11,
+      "id": "word-0012",
+      "text": "the",
+      "raw_text": "the",
+      "start": 16.56,
+      "end": 17.35,
+      "duration": 0.79
+    },
+    {
+      "mfa_word_index": 12,
+      "id": "word-0013",
+      "text": "wild",
+      "raw_text": "wild",
+      "start": 17.38,
+      "end": 19.39,
+      "duration": 2.01
+    },
+    {
+      "mfa_word_index": 13,
+      "id": "word-0014",
+      "text": "girl",
+      "raw_text": "girl",
+      "start": 19.39,
+      "end": 19.49,
+      "duration": 0.1
+    },
+    {
+      "mfa_word_index": 14,
+      "id": "word-0015",
+      "text": "running",
+      "raw_text": "running",
+      "start": 19.49,
+      "end": 20.2,
+      "duration": 0.71
+    },
+    {
+      "mfa_word_index": 15,
+      "id": "word-0016",
+      "text": "free",
+      "raw_text": "free",
+      "start": 20.2,
+      "end": 21.6,
+      "duration": 1.4
+    },
+    {
+      "mfa_word_index": 16,
+      "id": "word-0017",
+      "text": "would",
+      "raw_text": "would",
+      "start": 23.02,
+      "end": 23.29,
+      "duration": 0.27
+    },
+    {
+      "mfa_word_index": 17,
+      "id": "word-0018",
+      "text": "be",
+      "raw_text": "be",
+      "start": 23.29,
+      "end": 23.65,
+      "duration": 0.36
+    },
+    {
+      "mfa_word_index": 18,
+      "id": "word-0019",
+      "text": "me",
+      "raw_text": "me",
+      "start": 23.65,
+      "end": 25.17,
+      "duration": 1.52
+    },
+    {
+      "mfa_word_index": 19,
+      "id": "word-0020",
+      "text": "now",
+      "raw_text": "now",
+      "start": 27.62,
+      "end": 28.55,
+      "duration": 0.93
+    },
+    {
+      "mfa_word_index": 20,
+      "id": "word-0021",
+      "text": "i",
+      "raw_text": "i",
+      "start": 28.58,
+      "end": 31.44,
+      "duration": 2.86
+    },
+    {
+      "mfa_word_index": 21,
+      "id": "word-0022",
+      "text": "see",
+      "raw_text": "see",
+      "start": 31.47,
+      "end": 31.53,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 22,
+      "id": "word-0023",
+      "text": "her",
+      "raw_text": "her",
+      "start": 31.53,
+      "end": 31.61,
+      "duration": 0.08
+    },
+    {
+      "mfa_word_index": 23,
+      "id": "word-0024",
+      "text": "feel",
+      "raw_text": "feel",
+      "start": 31.61,
+      "end": 31.7,
+      "duration": 0.09
+    },
+    {
+      "mfa_word_index": 24,
+      "id": "word-0025",
+      "text": "the",
+      "raw_text": "the",
+      "start": 31.7,
+      "end": 31.76,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 25,
+      "id": "word-0026",
+      "text": "fire",
+      "raw_text": "fire",
+      "start": 31.76,
+      "end": 31.91,
+      "duration": 0.15
+    },
+    {
+      "mfa_word_index": 26,
+      "id": "word-0027",
+      "text": "now",
+      "raw_text": "now",
+      "start": 32.98,
+      "end": 33.38,
+      "duration": 0.4
+    },
+    {
+      "mfa_word_index": 27,
+      "id": "word-0028",
+      "text": "i",
+      "raw_text": "i",
+      "start": 33.38,
+      "end": 35.78,
+      "duration": 2.4
+    },
+    {
+      "mfa_word_index": 28,
+      "id": "word-0029",
+      "text": "know",
+      "raw_text": "know",
+      "start": 35.81,
+      "end": 35.87,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 29,
+      "id": "word-0030",
+      "text": "she",
+      "raw_text": "she",
+      "start": 35.87,
+      "end": 36.48,
+      "duration": 0.61
+    },
+    {
+      "mfa_word_index": 30,
+      "id": "word-0031",
+      "text": "needs",
+      "raw_text": "needs",
+      "start": 36.51,
+      "end": 36.63,
+      "duration": 0.12
+    },
+    {
+      "mfa_word_index": 31,
+      "id": "word-0032",
+      "text": "me",
+      "raw_text": "me",
+      "start": 36.63,
+      "end": 37.07,
+      "duration": 0.44
+    },
+    {
+      "mfa_word_index": 32,
+      "id": "word-0033",
+      "text": "there",
+      "raw_text": "there",
+      "start": 37.1,
+      "end": 38.06,
+      "duration": 0.96
+    },
+    {
+      "mfa_word_index": 33,
+      "id": "word-0034",
+      "text": "to",
+      "raw_text": "to",
+      "start": 38.06,
+      "end": 38.17,
+      "duration": 0.11
+    },
+    {
+      "mfa_word_index": 34,
+      "id": "word-0035",
+      "text": "share",
+      "raw_text": "share",
+      "start": 38.17,
+      "end": 38.89,
+      "duration": 0.72
+    },
+    {
+      "mfa_word_index": 35,
+      "id": "word-0036",
+      "text": "i'm",
+      "raw_text": "i'm",
+      "start": 41.43,
+      "end": 41.78,
+      "duration": 0.35
+    },
+    {
+      "mfa_word_index": 36,
+      "id": "word-0037",
+      "text": "nowhere",
+      "raw_text": "nowhere",
+      "start": 41.78,
+      "end": 43.1,
+      "duration": 1.32
+    },
+    {
+      "mfa_word_index": 37,
+      "id": "word-0038",
+      "text": "all",
+      "raw_text": "all",
+      "start": 45.12,
+      "end": 45.53,
+      "duration": 0.41
+    },
+    {
+      "mfa_word_index": 38,
+      "id": "word-0039",
+      "text": "these",
+      "raw_text": "these",
+      "start": 45.53,
+      "end": 45.9,
+      "duration": 0.37
+    },
+    {
+      "mfa_word_index": 39,
+      "id": "word-0040",
+      "text": "blank",
+      "raw_text": "blank",
+      "start": 45.9,
+      "end": 47.38,
+      "duration": 1.48
+    },
+    {
+      "mfa_word_index": 40,
+      "id": "word-0041",
+      "text": "and",
+      "raw_text": "and",
+      "start": 47.38,
+      "end": 48.0,
+      "duration": 0.62
+    },
+    {
+      "mfa_word_index": 41,
+      "id": "word-0042",
+      "text": "tranquil",
+      "raw_text": "tranquil",
+      "start": 48.0,
+      "end": 48.79,
+      "duration": 0.79
+    },
+    {
+      "mfa_word_index": 42,
+      "id": "word-0043",
+      "text": "years",
+      "raw_text": "years",
+      "start": 48.79,
+      "end": 49.54,
+      "duration": 0.75
+    },
+    {
+      "mfa_word_index": 43,
+      "id": "word-0044",
+      "text": "seems",
+      "raw_text": "seems",
+      "start": 51.41,
+      "end": 51.95,
+      "duration": 0.54
+    },
+    {
+      "mfa_word_index": 44,
+      "id": "word-0045",
+      "text": "they've",
+      "raw_text": "they've",
+      "start": 51.95,
+      "end": 52.19,
+      "duration": 0.24
+    },
+    {
+      "mfa_word_index": 45,
+      "id": "word-0046",
+      "text": "dried",
+      "raw_text": "dried",
+      "start": 52.19,
+      "end": 53.26,
+      "duration": 1.07
+    },
+    {
+      "mfa_word_index": 46,
+      "id": "word-0047",
+      "text": "up",
+      "raw_text": "up",
+      "start": 53.26,
+      "end": 53.62,
+      "duration": 0.36
+    },
+    {
+      "mfa_word_index": 47,
+      "id": "word-0048",
+      "text": "all",
+      "raw_text": "all",
+      "start": 53.62,
+      "end": 53.68,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 48,
+      "id": "word-0049",
+      "text": "my",
+      "raw_text": "my",
+      "start": 53.68,
+      "end": 55.04,
+      "duration": 1.36
+    },
+    {
+      "mfa_word_index": 49,
+      "id": "word-0050",
+      "text": "tears",
+      "raw_text": "tears",
+      "start": 55.04,
+      "end": 56.94,
+      "duration": 1.9
+    },
+    {
+      "mfa_word_index": 50,
+      "id": "word-0051",
+      "text": "and",
+      "raw_text": "and",
+      "start": 58.04,
+      "end": 58.48,
+      "duration": 0.44
+    },
+    {
+      "mfa_word_index": 51,
+      "id": "word-0052",
+      "text": "while",
+      "raw_text": "while",
+      "start": 58.48,
+      "end": 58.79,
+      "duration": 0.31
+    },
+    {
+      "mfa_word_index": 52,
+      "id": "word-0053",
+      "text": "she",
+      "raw_text": "she",
+      "start": 58.79,
+      "end": 59.56,
+      "duration": 0.77
+    },
+    {
+      "mfa_word_index": 53,
+      "id": "word-0054",
+      "text": "runs",
+      "raw_text": "runs",
+      "start": 59.56,
+      "end": 60.37,
+      "duration": 0.81
+    },
+    {
+      "mfa_word_index": 54,
+      "id": "word-0055",
+      "text": "free",
+      "raw_text": "free",
+      "start": 60.37,
+      "end": 61.92,
+      "duration": 1.55
+    },
+    {
+      "mfa_word_index": 55,
+      "id": "word-0056",
+      "text": "and",
+      "raw_text": "and",
+      "start": 62.04,
+      "end": 62.5,
+      "duration": 0.46
+    },
+    {
+      "mfa_word_index": 56,
+      "id": "word-0057",
+      "text": "fast",
+      "raw_text": "fast",
+      "start": 64.0,
+      "end": 64.12,
+      "duration": 0.12
+    },
+    {
+      "mfa_word_index": 57,
+      "id": "word-0058",
+      "text": "seems",
+      "raw_text": "seems",
+      "start": 64.72,
+      "end": 65.29,
+      "duration": 0.57
+    },
+    {
+      "mfa_word_index": 58,
+      "id": "word-0059",
+      "text": "my",
+      "raw_text": "my",
+      "start": 65.29,
+      "end": 66.91,
+      "duration": 1.62
+    },
+    {
+      "mfa_word_index": 59,
+      "id": "word-0060",
+      "text": "wild",
+      "raw_text": "wild",
+      "start": 66.94,
+      "end": 67.06,
+      "duration": 0.12
+    },
+    {
+      "mfa_word_index": 60,
+      "id": "word-0061",
+      "text": "days",
+      "raw_text": "days",
+      "start": 67.06,
+      "end": 68.84,
+      "duration": 1.78
+    },
+    {
+      "mfa_word_index": 61,
+      "id": "word-0062",
+      "text": "are",
+      "raw_text": "are",
+      "start": 69.49,
+      "end": 70.02,
+      "duration": 0.53
+    },
+    {
+      "mfa_word_index": 62,
+      "id": "word-0063",
+      "text": "past",
+      "raw_text": "past",
+      "start": 70.02,
+      "end": 70.2,
+      "duration": 0.18
+    },
+    {
+      "mfa_word_index": 63,
+      "id": "word-0064",
+      "text": "but",
+      "raw_text": "but",
+      "start": 70.2,
+      "end": 70.26,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 64,
+      "id": "word-0065",
+      "text": "i",
+      "raw_text": "i",
+      "start": 70.26,
+      "end": 75.4,
+      "duration": 5.14
+    },
+    {
+      "mfa_word_index": 65,
+      "id": "word-0066",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 75.51,
+      "end": 76.25,
+      "duration": 0.74
+    },
+    {
+      "mfa_word_index": 66,
+      "id": "word-0067",
+      "text": "the",
+      "raw_text": "the",
+      "start": 79.6,
+      "end": 79.92,
+      "duration": 0.32
+    },
+    {
+      "mfa_word_index": 67,
+      "id": "word-0068",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 81.71,
+      "end": 86.96,
+      "duration": 5.25
+    },
+    {
+      "mfa_word_index": 68,
+      "id": "word-0069",
+      "text": "i",
+      "raw_text": "i",
+      "start": 88.8,
+      "end": 89.52,
+      "duration": 0.72
+    },
+    {
+      "mfa_word_index": 69,
+      "id": "word-0070",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 89.52,
+      "end": 90.43,
+      "duration": 0.91
+    },
+    {
+      "mfa_word_index": 70,
+      "id": "word-0071",
+      "text": "the",
+      "raw_text": "the",
+      "start": 90.43,
+      "end": 90.56,
+      "duration": 0.13
+    },
+    {
+      "mfa_word_index": 71,
+      "id": "word-0072",
+      "text": "dizzy",
+      "raw_text": "dizzy",
+      "start": 90.56,
+      "end": 91.95,
+      "duration": 1.39
+    },
+    {
+      "mfa_word_index": 72,
+      "id": "word-0073",
+      "text": "heights",
+      "raw_text": "heights",
+      "start": 91.95,
+      "end": 92.67,
+      "duration": 0.72
+    },
+    {
+      "mfa_word_index": 73,
+      "id": "word-0074",
+      "text": "all",
+      "raw_text": "all",
+      "start": 93.82,
+      "end": 94.21,
+      "duration": 0.39
+    },
+    {
+      "mfa_word_index": 74,
+      "id": "word-0075",
+      "text": "the",
+      "raw_text": "the",
+      "start": 94.21,
+      "end": 95.88,
+      "duration": 1.67
+    },
+    {
+      "mfa_word_index": 75,
+      "id": "word-0076",
+      "text": "manic",
+      "raw_text": "manic",
+      "start": 95.95,
+      "end": 97.22,
+      "duration": 1.27
+    },
+    {
+      "mfa_word_index": 76,
+      "id": "word-0077",
+      "text": "magic",
+      "raw_text": "magic",
+      "start": 97.22,
+      "end": 97.4,
+      "duration": 0.18
+    },
+    {
+      "mfa_word_index": 77,
+      "id": "word-0078",
+      "text": "days",
+      "raw_text": "days",
+      "start": 97.4,
+      "end": 97.56,
+      "duration": 0.16
+    },
+    {
+      "mfa_word_index": 78,
+      "id": "word-0079",
+      "text": "and",
+      "raw_text": "and",
+      "start": 97.91,
+      "end": 98.31,
+      "duration": 0.4
+    },
+    {
+      "mfa_word_index": 79,
+      "id": "word-0080",
+      "text": "the",
+      "raw_text": "the",
+      "start": 98.31,
+      "end": 98.44,
+      "duration": 0.13
+    },
+    {
+      "mfa_word_index": 80,
+      "id": "word-0081",
+      "text": "dark",
+      "raw_text": "dark",
+      "start": 98.44,
+      "end": 99.37,
+      "duration": 0.93
+    },
+    {
+      "mfa_word_index": 81,
+      "id": "word-0082",
+      "text": "depressing",
+      "raw_text": "depressing",
+      "start": 99.37,
+      "end": 100.47,
+      "duration": 1.1
+    },
+    {
+      "mfa_word_index": 82,
+      "id": "word-0083",
+      "text": "nights",
+      "raw_text": "nights",
+      "start": 100.47,
+      "end": 100.82,
+      "duration": 0.35
+    },
+    {
+      "mfa_word_index": 83,
+      "id": "word-0084",
+      "text": "i",
+      "raw_text": "i",
+      "start": 103.69,
+      "end": 104.27,
+      "duration": 0.58
+    },
+    {
+      "mfa_word_index": 84,
+      "id": "word-0085",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 104.27,
+      "end": 105.3,
+      "duration": 1.03
+    },
+    {
+      "mfa_word_index": 85,
+      "id": "word-0086",
+      "text": "the",
+      "raw_text": "the",
+      "start": 105.3,
+      "end": 105.4,
+      "duration": 0.1
+    },
+    {
+      "mfa_word_index": 86,
+      "id": "word-0087",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 105.4,
+      "end": 107.8,
+      "duration": 2.4
+    },
+    {
+      "mfa_word_index": 87,
+      "id": "word-0088",
+      "text": "i",
+      "raw_text": "i",
+      "start": 109.57,
+      "end": 110.65,
+      "duration": 1.08
+    },
+    {
+      "mfa_word_index": 88,
+      "id": "word-0089",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 110.65,
+      "end": 111.19,
+      "duration": 0.54
+    },
+    {
+      "mfa_word_index": 89,
+      "id": "word-0090",
+      "text": "the",
+      "raw_text": "the",
+      "start": 111.19,
+      "end": 111.3,
+      "duration": 0.11
+    },
+    {
+      "mfa_word_index": 90,
+      "id": "word-0091",
+      "text": "highs",
+      "raw_text": "highs",
+      "start": 111.3,
+      "end": 112.06,
+      "duration": 0.76
+    },
+    {
+      "mfa_word_index": 91,
+      "id": "word-0092",
+      "text": "and",
+      "raw_text": "and",
+      "start": 112.06,
+      "end": 112.58,
+      "duration": 0.52
+    },
+    {
+      "mfa_word_index": 92,
+      "id": "word-0093",
+      "text": "lows",
+      "raw_text": "lows",
+      "start": 112.58,
+      "end": 114.54,
+      "duration": 1.96
+    },
+    {
+      "mfa_word_index": 93,
+      "id": "word-0094",
+      "text": "all",
+      "raw_text": "all",
+      "start": 114.58,
+      "end": 114.96,
+      "duration": 0.38
+    },
+    {
+      "mfa_word_index": 94,
+      "id": "word-0095",
+      "text": "the",
+      "raw_text": "the",
+      "start": 114.96,
+      "end": 115.04,
+      "duration": 0.08
+    },
+    {
+      "mfa_word_index": 95,
+      "id": "word-0096",
+      "text": "climbing",
+      "raw_text": "climbing",
+      "start": 115.04,
+      "end": 115.9,
+      "duration": 0.86
+    },
+    {
+      "mfa_word_index": 96,
+      "id": "word-0097",
+      "text": "all",
+      "raw_text": "all",
+      "start": 115.98,
+      "end": 116.48,
+      "duration": 0.5
+    },
+    {
+      "mfa_word_index": 97,
+      "id": "word-0098",
+      "text": "the",
+      "raw_text": "the",
+      "start": 116.48,
+      "end": 116.55,
+      "duration": 0.07
+    },
+    {
+      "mfa_word_index": 98,
+      "id": "word-0099",
+      "text": "falling",
+      "raw_text": "falling",
+      "start": 116.55,
+      "end": 118.08,
+      "duration": 1.53
+    },
+    {
+      "mfa_word_index": 99,
+      "id": "word-0100",
+      "text": "all",
+      "raw_text": "all",
+      "start": 118.49,
+      "end": 118.83,
+      "duration": 0.34
+    },
+    {
+      "mfa_word_index": 100,
+      "id": "word-0101",
+      "text": "the",
+      "raw_text": "the",
+      "start": 118.83,
+      "end": 118.95,
+      "duration": 0.12
+    },
+    {
+      "mfa_word_index": 101,
+      "id": "word-0102",
+      "text": "while",
+      "raw_text": "while",
+      "start": 118.95,
+      "end": 119.51,
+      "duration": 0.56
+    },
+    {
+      "mfa_word_index": 102,
+      "id": "word-0103",
+      "text": "the",
+      "raw_text": "the",
+      "start": 119.51,
+      "end": 119.57,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 103,
+      "id": "word-0104",
+      "text": "wild",
+      "raw_text": "wild",
+      "start": 119.57,
+      "end": 120.02,
+      "duration": 0.45
+    },
+    {
+      "mfa_word_index": 104,
+      "id": "word-0105",
+      "text": "wind",
+      "raw_text": "wind",
+      "start": 120.02,
+      "end": 120.4,
+      "duration": 0.38
+    },
+    {
+      "mfa_word_index": 105,
+      "id": "word-0106",
+      "text": "blows",
+      "raw_text": "blows",
+      "start": 120.4,
+      "end": 121.67,
+      "duration": 1.27
+    },
+    {
+      "mfa_word_index": 106,
+      "id": "word-0107",
+      "text": "stinging",
+      "raw_text": "stinging",
+      "start": 121.85,
+      "end": 122.48,
+      "duration": 0.63
+    },
+    {
+      "mfa_word_index": 107,
+      "id": "word-0108",
+      "text": "you",
+      "raw_text": "you",
+      "start": 122.48,
+      "end": 122.69,
+      "duration": 0.21
+    },
+    {
+      "mfa_word_index": 108,
+      "id": "word-0109",
+      "text": "with",
+      "raw_text": "with",
+      "start": 122.69,
+      "end": 122.88,
+      "duration": 0.19
+    },
+    {
+      "mfa_word_index": 109,
+      "id": "word-0110",
+      "text": "snow",
+      "raw_text": "snow",
+      "start": 122.88,
+      "end": 123.87,
+      "duration": 0.99
+    },
+    {
+      "mfa_word_index": 110,
+      "id": "word-0111",
+      "text": "and",
+      "raw_text": "and",
+      "start": 124.35,
+      "end": 124.6,
+      "duration": 0.25
+    },
+    {
+      "mfa_word_index": 111,
+      "id": "word-0112",
+      "text": "soaking",
+      "raw_text": "soaking",
+      "start": 124.6,
+      "end": 125.66,
+      "duration": 1.06
+    },
+    {
+      "mfa_word_index": 112,
+      "id": "word-0113",
+      "text": "you",
+      "raw_text": "you",
+      "start": 125.66,
+      "end": 125.85,
+      "duration": 0.19
+    },
+    {
+      "mfa_word_index": 113,
+      "id": "word-0114",
+      "text": "with",
+      "raw_text": "with",
+      "start": 125.85,
+      "end": 125.94,
+      "duration": 0.09
+    },
+    {
+      "mfa_word_index": 114,
+      "id": "word-0115",
+      "text": "rain",
+      "raw_text": "rain",
+      "start": 125.94,
+      "end": 126.48,
+      "duration": 0.54
+    },
+    {
+      "mfa_word_index": 115,
+      "id": "word-0116",
+      "text": "i",
+      "raw_text": "i",
+      "start": 126.52,
+      "end": 126.55,
+      "duration": 0.03
+    },
+    {
+      "mfa_word_index": 116,
+      "id": "word-0117",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 126.73,
+      "end": 126.87,
+      "duration": 0.14
+    },
+    {
+      "mfa_word_index": 117,
+      "id": "word-0118",
+      "text": "the",
+      "raw_text": "the",
+      "start": 126.87,
+      "end": 129.43,
+      "duration": 2.56
+    },
+    {
+      "mfa_word_index": 118,
+      "id": "word-0119",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 129.66,
+      "end": 133.0,
+      "duration": 3.34
+    },
+    {
+      "mfa_word_index": 119,
+      "id": "word-0120",
+      "text": "i",
+      "raw_text": "i",
+      "start": 133.73,
+      "end": 133.76,
+      "duration": 0.03
+    },
+    {
+      "mfa_word_index": 120,
+      "id": "word-0121",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 134.45,
+      "end": 135.27,
+      "duration": 0.82
+    },
+    {
+      "mfa_word_index": 121,
+      "id": "word-0122",
+      "text": "the",
+      "raw_text": "the",
+      "start": 135.37,
+      "end": 135.45,
+      "duration": 0.08
+    },
+    {
+      "mfa_word_index": 122,
+      "id": "word-0123",
+      "text": "pain",
+      "raw_text": "pain",
+      "start": 135.45,
+      "end": 136.66,
+      "duration": 1.21
+    },
+    {
+      "mfa_word_index": 123,
+      "id": "word-0124",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 141.47,
+      "end": 142.1,
+      "duration": 0.63
+    },
+    {
+      "mfa_word_index": 124,
+      "id": "word-0125",
+      "text": "make",
+      "raw_text": "make",
+      "start": 142.1,
+      "end": 142.46,
+      "duration": 0.36
+    },
+    {
+      "mfa_word_index": 125,
+      "id": "word-0126",
+      "text": "you",
+      "raw_text": "you",
+      "start": 142.46,
+      "end": 142.7,
+      "duration": 0.24
+    },
+    {
+      "mfa_word_index": 126,
+      "id": "word-0127",
+      "text": "crazy",
+      "raw_text": "crazy",
+      "start": 142.7,
+      "end": 143.87,
+      "duration": 1.17
+    },
+    {
+      "mfa_word_index": 127,
+      "id": "word-0128",
+      "text": "here",
+      "raw_text": "here",
+      "start": 143.87,
+      "end": 144.8,
+      "duration": 0.93
+    },
+    {
+      "mfa_word_index": 128,
+      "id": "word-0129",
+      "text": "it's",
+      "raw_text": "it's",
+      "start": 144.8,
+      "end": 145.03,
+      "duration": 0.23
+    },
+    {
+      "mfa_word_index": 129,
+      "id": "word-0130",
+      "text": "safe",
+      "raw_text": "safe",
+      "start": 145.03,
+      "end": 145.38,
+      "duration": 0.35
+    },
+    {
+      "mfa_word_index": 130,
+      "id": "word-0131",
+      "text": "and",
+      "raw_text": "and",
+      "start": 145.38,
+      "end": 145.63,
+      "duration": 0.25
+    },
+    {
+      "mfa_word_index": 131,
+      "id": "word-0132",
+      "text": "sound",
+      "raw_text": "sound",
+      "start": 145.63,
+      "end": 147.1,
+      "duration": 1.47
+    },
+    {
+      "mfa_word_index": 132,
+      "id": "word-0133",
+      "text": "my",
+      "raw_text": "my",
+      "start": 147.1,
+      "end": 147.22,
+      "duration": 0.12
+    },
+    {
+      "mfa_word_index": 133,
+      "id": "word-0134",
+      "text": "mind",
+      "raw_text": "mind",
+      "start": 147.22,
+      "end": 147.92,
+      "duration": 0.7
+    },
+    {
+      "mfa_word_index": 134,
+      "id": "word-0135",
+      "text": "is",
+      "raw_text": "is",
+      "start": 147.92,
+      "end": 148.18,
+      "duration": 0.26
+    },
+    {
+      "mfa_word_index": 135,
+      "id": "word-0136",
+      "text": "somewhere",
+      "raw_text": "somewhere",
+      "start": 148.18,
+      "end": 148.76,
+      "duration": 0.58
+    },
+    {
+      "mfa_word_index": 136,
+      "id": "word-0137",
+      "text": "hazy",
+      "raw_text": "hazy",
+      "start": 148.76,
+      "end": 149.67,
+      "duration": 0.91
+    },
+    {
+      "mfa_word_index": 137,
+      "id": "word-0138",
+      "text": "my",
+      "raw_text": "my",
+      "start": 150.08,
+      "end": 150.29,
+      "duration": 0.21
+    },
+    {
+      "mfa_word_index": 138,
+      "id": "word-0139",
+      "text": "feet",
+      "raw_text": "feet",
+      "start": 150.29,
+      "end": 150.86,
+      "duration": 0.57
+    },
+    {
+      "mfa_word_index": 139,
+      "id": "word-0140",
+      "text": "are",
+      "raw_text": "are",
+      "start": 150.86,
+      "end": 151.22,
+      "duration": 0.36
+    },
+    {
+      "mfa_word_index": 140,
+      "id": "word-0141",
+      "text": "on",
+      "raw_text": "on",
+      "start": 151.22,
+      "end": 151.5,
+      "duration": 0.28
+    },
+    {
+      "mfa_word_index": 141,
+      "id": "word-0142",
+      "text": "the",
+      "raw_text": "the",
+      "start": 151.5,
+      "end": 151.56,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 142,
+      "id": "word-0143",
+      "text": "ground",
+      "raw_text": "ground",
+      "start": 151.56,
+      "end": 153.11,
+      "duration": 1.55
+    },
+    {
+      "mfa_word_index": 143,
+      "id": "word-0144",
+      "text": "everything",
+      "raw_text": "everything",
+      "start": 153.14,
+      "end": 154.04,
+      "duration": 0.9
+    },
+    {
+      "mfa_word_index": 144,
+      "id": "word-0145",
+      "text": "is",
+      "raw_text": "is",
+      "start": 154.04,
+      "end": 154.37,
+      "duration": 0.33
+    },
+    {
+      "mfa_word_index": 145,
+      "id": "word-0146",
+      "text": "balanced",
+      "raw_text": "balanced",
+      "start": 154.37,
+      "end": 155.15,
+      "duration": 0.78
+    },
+    {
+      "mfa_word_index": 146,
+      "id": "word-0147",
+      "text": "here",
+      "raw_text": "here",
+      "start": 155.15,
+      "end": 155.67,
+      "duration": 0.52
+    },
+    {
+      "mfa_word_index": 147,
+      "id": "word-0148",
+      "text": "and",
+      "raw_text": "and",
+      "start": 155.67,
+      "end": 155.91,
+      "duration": 0.24
+    },
+    {
+      "mfa_word_index": 148,
+      "id": "word-0149",
+      "text": "on",
+      "raw_text": "on",
+      "start": 155.91,
+      "end": 156.4,
+      "duration": 0.49
+    },
+    {
+      "mfa_word_index": 149,
+      "id": "word-0150",
+      "text": "an",
+      "raw_text": "an",
+      "start": 156.4,
+      "end": 156.67,
+      "duration": 0.27
+    },
+    {
+      "mfa_word_index": 150,
+      "id": "word-0151",
+      "text": "even",
+      "raw_text": "even",
+      "start": 156.67,
+      "end": 157.12,
+      "duration": 0.45
+    },
+    {
+      "mfa_word_index": 151,
+      "id": "word-0152",
+      "text": "keel",
+      "raw_text": "keel",
+      "start": 157.12,
+      "end": 158.45,
+      "duration": 1.33
+    },
+    {
+      "mfa_word_index": 152,
+      "id": "word-0153",
+      "text": "everything",
+      "raw_text": "everything",
+      "start": 159.1,
+      "end": 160.86,
+      "duration": 1.76
+    },
+    {
+      "mfa_word_index": 153,
+      "id": "word-0154",
+      "text": "is",
+      "raw_text": "is",
+      "start": 160.86,
+      "end": 161.49,
+      "duration": 0.63
+    },
+    {
+      "mfa_word_index": 154,
+      "id": "word-0155",
+      "text": "perfect",
+      "raw_text": "perfect",
+      "start": 161.49,
+      "end": 162.74,
+      "duration": 1.25
+    },
+    {
+      "mfa_word_index": 155,
+      "id": "word-0156",
+      "text": "nothing's",
+      "raw_text": "nothing's",
+      "start": 166.11,
+      "end": 167.39,
+      "duration": 1.28
+    },
+    {
+      "mfa_word_index": 156,
+      "id": "word-0157",
+      "text": "real",
+      "raw_text": "real",
+      "start": 167.39,
+      "end": 171.58,
+      "duration": 4.19
+    },
+    {
+      "mfa_word_index": 157,
+      "id": "word-0158",
+      "text": "nothing's",
+      "raw_text": "nothing's",
+      "start": 171.58,
+      "end": 172.49,
+      "duration": 0.91
+    },
+    {
+      "mfa_word_index": 158,
+      "id": "word-0159",
+      "text": "real",
+      "raw_text": "real",
+      "start": 172.49,
+      "end": 172.7,
+      "duration": 0.21
+    },
+    {
+      "mfa_word_index": 159,
+      "id": "word-0160",
+      "text": "and",
+      "raw_text": "and",
+      "start": 172.7,
+      "end": 173.44,
+      "duration": 0.74
+    },
+    {
+      "mfa_word_index": 160,
+      "id": "word-0161",
+      "text": "i",
+      "raw_text": "i",
+      "start": 173.47,
+      "end": 182.57,
+      "duration": 9.1
+    },
+    {
+      "mfa_word_index": 161,
+      "id": "word-0162",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 182.6,
+      "end": 182.7,
+      "duration": 0.1
+    },
+    {
+      "mfa_word_index": 162,
+      "id": "word-0163",
+      "text": "the",
+      "raw_text": "the",
+      "start": 182.7,
+      "end": 182.76,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 163,
+      "id": "word-0164",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 182.76,
+      "end": 184.6,
+      "duration": 1.84
+    },
+    {
+      "mfa_word_index": 164,
+      "id": "word-0165",
+      "text": "i",
+      "raw_text": "i",
+      "start": 185.55,
+      "end": 193.53,
+      "duration": 7.98
+    },
+    {
+      "mfa_word_index": 165,
+      "id": "word-0166",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 193.76,
+      "end": 194.08,
+      "duration": 0.32
+    },
+    {
+      "mfa_word_index": 166,
+      "id": "word-0167",
+      "text": "the",
+      "raw_text": "the",
+      "start": 194.08,
+      "end": 194.64,
+      "duration": 0.56
+    },
+    {
+      "mfa_word_index": 167,
+      "id": "word-0168",
+      "text": "lonely",
+      "raw_text": "lonely",
+      "start": 194.67,
+      "end": 195.41,
+      "duration": 0.74
+    },
+    {
+      "mfa_word_index": 168,
+      "id": "word-0169",
+      "text": "climb",
+      "raw_text": "climb",
+      "start": 195.41,
+      "end": 196.24,
+      "duration": 0.83
+    },
+    {
+      "mfa_word_index": 169,
+      "id": "word-0170",
+      "text": "wandering",
+      "raw_text": "wandering",
+      "start": 196.24,
+      "end": 196.61,
+      "duration": 0.37
+    },
+    {
+      "mfa_word_index": 170,
+      "id": "word-0171",
+      "text": "through",
+      "raw_text": "through",
+      "start": 196.61,
+      "end": 197.14,
+      "duration": 0.53
+    },
+    {
+      "mfa_word_index": 171,
+      "id": "word-0172",
+      "text": "the",
+      "raw_text": "the",
+      "start": 197.14,
+      "end": 197.42,
+      "duration": 0.28
+    },
+    {
+      "mfa_word_index": 172,
+      "id": "word-0173",
+      "text": "wilderness",
+      "raw_text": "wilderness",
+      "start": 197.46,
+      "end": 197.93,
+      "duration": 0.47
+    },
+    {
+      "mfa_word_index": 173,
+      "id": "word-0174",
+      "text": "and",
+      "raw_text": "and",
+      "start": 197.93,
+      "end": 198.7,
+      "duration": 0.77
+    },
+    {
+      "mfa_word_index": 174,
+      "id": "word-0175",
+      "text": "spending",
+      "raw_text": "spending",
+      "start": 199.13,
+      "end": 199.66,
+      "duration": 0.53
+    },
+    {
+      "mfa_word_index": 175,
+      "id": "word-0176",
+      "text": "all",
+      "raw_text": "all",
+      "start": 199.66,
+      "end": 199.75,
+      "duration": 0.09
+    },
+    {
+      "mfa_word_index": 176,
+      "id": "word-0177",
+      "text": "my",
+      "raw_text": "my",
+      "start": 199.96,
+      "end": 203.99,
+      "duration": 4.03
+    },
+    {
+      "mfa_word_index": 177,
+      "id": "word-0178",
+      "text": "time",
+      "raw_text": "time",
+      "start": 204.4,
+      "end": 205.53,
+      "duration": 1.13
+    },
+    {
+      "mfa_word_index": 178,
+      "id": "word-0179",
+      "text": "where",
+      "raw_text": "where",
+      "start": 205.53,
+      "end": 206.02,
+      "duration": 0.49
+    },
+    {
+      "mfa_word_index": 179,
+      "id": "word-0180",
+      "text": "the",
+      "raw_text": "the",
+      "start": 206.02,
+      "end": 206.08,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 180,
+      "id": "word-0181",
+      "text": "air",
+      "raw_text": "air",
+      "start": 206.08,
+      "end": 206.18,
+      "duration": 0.1
+    },
+    {
+      "mfa_word_index": 181,
+      "id": "word-0182",
+      "text": "is",
+      "raw_text": "is",
+      "start": 206.18,
+      "end": 206.49,
+      "duration": 0.31
+    },
+    {
+      "mfa_word_index": 182,
+      "id": "word-0183",
+      "text": "clear",
+      "raw_text": "clear",
+      "start": 206.49,
+      "end": 206.74,
+      "duration": 0.25
+    },
+    {
+      "mfa_word_index": 183,
+      "id": "word-0184",
+      "text": "and",
+      "raw_text": "and",
+      "start": 206.74,
+      "end": 207.05,
+      "duration": 0.31
+    },
+    {
+      "mfa_word_index": 184,
+      "id": "word-0185",
+      "text": "cuts",
+      "raw_text": "cuts",
+      "start": 207.05,
+      "end": 207.18,
+      "duration": 0.13
+    },
+    {
+      "mfa_word_index": 185,
+      "id": "word-0186",
+      "text": "you",
+      "raw_text": "you",
+      "start": 207.18,
+      "end": 207.29,
+      "duration": 0.11
+    },
+    {
+      "mfa_word_index": 186,
+      "id": "word-0187",
+      "text": "like",
+      "raw_text": "like",
+      "start": 207.29,
+      "end": 207.38,
+      "duration": 0.09
+    },
+    {
+      "mfa_word_index": 187,
+      "id": "word-0188",
+      "text": "a",
+      "raw_text": "a",
+      "start": 207.38,
+      "end": 207.41,
+      "duration": 0.03
+    },
+    {
+      "mfa_word_index": 188,
+      "id": "word-0189",
+      "text": "knife",
+      "raw_text": "knife",
+      "start": 207.41,
+      "end": 209.63,
+      "duration": 2.22
+    },
+    {
+      "mfa_word_index": 189,
+      "id": "word-0190",
+      "text": "i",
+      "raw_text": "i",
+      "start": 209.67,
+      "end": 211.87,
+      "duration": 2.2
+    },
+    {
+      "mfa_word_index": 190,
+      "id": "word-0191",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 211.9,
+      "end": 212.7,
+      "duration": 0.8
+    },
+    {
+      "mfa_word_index": 191,
+      "id": "word-0192",
+      "text": "the",
+      "raw_text": "the",
+      "start": 212.7,
+      "end": 212.84,
+      "duration": 0.14
+    },
+    {
+      "mfa_word_index": 192,
+      "id": "word-0193",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 212.84,
+      "end": 214.78,
+      "duration": 1.94
+    },
+    {
+      "mfa_word_index": 193,
+      "id": "word-0194",
+      "text": "i",
+      "raw_text": "i",
+      "start": 215.63,
+      "end": 215.66,
+      "duration": 0.03
+    },
+    {
+      "mfa_word_index": 194,
+      "id": "word-0195",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 218.28,
+      "end": 219.04,
+      "duration": 0.76
+    },
+    {
+      "mfa_word_index": 195,
+      "id": "word-0196",
+      "text": "the",
+      "raw_text": "the",
+      "start": 220.37,
+      "end": 220.43,
+      "duration": 0.06
+    },
+    {
+      "mfa_word_index": 196,
+      "id": "word-0197",
+      "text": "mountains",
+      "raw_text": "mountains",
+      "start": 220.43,
+      "end": 221.4,
+      "duration": 0.97
+    },
+    {
+      "mfa_word_index": 197,
+      "id": "word-0198",
+      "text": "i",
+      "raw_text": "i",
+      "start": 221.87,
+      "end": 221.9,
+      "duration": 0.03
+    },
+    {
+      "mfa_word_index": 198,
+      "id": "word-0199",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 222.65,
+      "end": 223.21,
+      "duration": 0.56
+    },
+    {
+      "mfa_word_index": 199,
+      "id": "word-0200",
+      "text": "my",
+      "raw_text": "my",
+      "start": 223.21,
+      "end": 224.8,
+      "duration": 1.59
+    },
+    {
+      "mfa_word_index": 200,
+      "id": "word-0201",
+      "text": "life",
+      "raw_text": "life",
+      "start": 224.8,
+      "end": 224.91,
+      "duration": 0.11
+    },
+    {
+      "mfa_word_index": 201,
+      "id": "word-0202",
+      "text": "i",
+      "raw_text": "i",
+      "start": 224.94,
+      "end": 228.03,
+      "duration": 3.09
+    },
+    {
+      "mfa_word_index": 202,
+      "id": "word-0203",
+      "text": "miss",
+      "raw_text": "miss",
+      "start": 228.06,
+      "end": 228.27,
+      "duration": 0.21
+    },
+    {
+      "mfa_word_index": 203,
+      "id": "word-0204",
+      "text": "my",
+      "raw_text": "my",
+      "start": 228.74,
+      "end": 232.42,
+      "duration": 3.68
+    },
+    {
+      "mfa_word_index": 204,
+      "id": "word-0205",
+      "text": "life",
+      "raw_text": "life",
+      "start": 232.8,
+      "end": 233.21,
+      "duration": 0.41
+    }
+  ],
+  "review_notes": [
+    "This file is for testing MFA word timing accuracy.",
+    "MFA silence entries such as <eps> have been removed.",
+    "Each remaining word has an MFA start and end time.",
+    "Use the review page to check whether each word highlights when it is sung.",
+    "Do not treat this as final karaoke display timing."
+  ]
+}

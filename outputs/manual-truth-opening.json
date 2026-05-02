@@ -1,0 +1,64 @@
+{
+  "schema_version": "karaoke-section-truth-v1",
+  "created_by": "kara-creator manual section timer",
+  "source": {
+    "audio_file_name": "test-vocals.mp3",
+    "draft_json_file_name": "test-draft-review-pass-1.json"
+  },
+  "section": {
+    "id": "opening-001",
+    "label": "OPENING",
+    "start": 8.915,
+    "end": 43.609,
+    "lines": [
+      {
+        "id": "line-0001",
+        "text": "There was a time when I flew higher",
+        "start": 8.915,
+        "end": 14.441,
+        "original_draft_start": 9.159,
+        "original_draft_end": 12.871
+      },
+      {
+        "id": "line-0002",
+        "text": "Was a time the wild girl running free",
+        "start": 15.993,
+        "end": 21.753,
+        "original_draft_start": 15.814,
+        "original_draft_end": 17.94
+      },
+      {
+        "id": "line-0003",
+        "text": "Would be me",
+        "start": 23.363,
+        "end": 25.449,
+        "original_draft_start": 19.485,
+        "original_draft_end": 20.289
+      },
+      {
+        "id": "line-0004",
+        "text": "Now I see her, feel the fire",
+        "start": 27.877,
+        "end": 32.448,
+        "original_draft_start": 20.289,
+        "original_draft_end": 21.092
+      },
+      {
+        "id": "line-0005",
+        "text": "Now I know she needs me there to share",
+        "start": 33.306,
+        "end": 39.492,
+        "original_draft_start": 23.207,
+        "original_draft_end": 24.465
+      },
+      {
+        "id": "line-0006",
+        "text": "I'm nowhere",
+        "start": 41.876,
+        "end": 43.609,
+        "original_draft_start": 27.527,
+        "original_draft_end": 28.166
+      }
+    ]
+  }
+}

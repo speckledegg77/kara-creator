@@ -1,0 +1,96 @@
+{
+  "schema_version": "karaoke-section-truth-v1",
+  "created_by": "kara-creator manual section timer",
+  "source": {
+    "audio_file_name": "test-vocals.mp3",
+    "draft_json_file_name": "test-draft-sections.json"
+  },
+  "section": {
+    "id": "chorus-2-006",
+    "label": "CHORUS 2",
+    "start": 177.907,
+    "end": 241.693,
+    "lines": [
+      {
+        "id": "line-0032",
+        "text": "And I miss the mountains",
+        "start": 177.907,
+        "end": 184.611,
+        "original_draft_start": 144.352,
+        "original_draft_end": 149.041
+      },
+      {
+        "id": "line-0033",
+        "text": "I miss the lonely climb",
+        "start": 184.904,
+        "end": 190.104,
+        "original_draft_start": 149.999,
+        "original_draft_end": 157.881
+      },
+      {
+        "id": "line-0034",
+        "text": "Wandering through the wilderness",
+        "start": 190.134,
+        "end": 193.659,
+        "original_draft_start": 159.048,
+        "original_draft_end": 161.134
+      },
+      {
+        "id": "line-0035",
+        "text": "And spending all my time",
+        "start": 193.66,
+        "end": 196.694,
+        "original_draft_start": 166.571,
+        "original_draft_end": 198.489
+      },
+      {
+        "id": "line-0036",
+        "text": "Where the air is clear",
+        "start": 196.904,
+        "end": 198.662,
+        "original_draft_start": 199.137,
+        "original_draft_end": 209.005
+      },
+      {
+        "id": "line-0037",
+        "text": "And cuts you like a knife",
+        "start": 199.296,
+        "end": 204.104,
+        "original_draft_start": 209.593,
+        "original_draft_end": 214.193
+      },
+      {
+        "id": "line-0038",
+        "text": "I miss the mountains",
+        "start": 204.671,
+        "end": 209.313,
+        "original_draft_start": 218.284,
+        "original_draft_end": 218.733
+      },
+      {
+        "id": "line-0039",
+        "text": "I miss the mountains",
+        "start": 209.929,
+        "end": 215.269,
+        "original_draft_start": 222.594,
+        "original_draft_end": 227.573
+      },
+      {
+        "id": "line-0040",
+        "text": "I miss my life",
+        "start": 218.661,
+        "end": 228.661,
+        "original_draft_start": 228.67,
+        "original_draft_end": 232.332
+      },
+      {
+        "id": "line-0041",
+        "text": "I miss my life",
+        "start": 228.96,
+        "end": 241.693,
+        "original_draft_start": 233.26,
+        "original_draft_end": 240.623
+      }
+    ]
+  }
+}

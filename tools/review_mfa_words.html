@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kara Creator MFA Word Review</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --panel-soft: #263244;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #374151;
+      --active: #facc15;
+      --active-text: #111827;
+      --word-bg: #374151;
+      --word-border: #4b5563;
+      --button: #e5e7eb;
+      --button-text: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .left-column {
+      position: sticky;
+      top: 16px;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .right-column {
+      min-width: 0;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 0 0 16px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: end;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    input[type="file"] {
+      padding: 0;
+      border: none;
+    }
+
+    button {
+      background: var(--button);
+      color: var(--button-text);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .error {
+      display: none;
+      color: #fecaca;
+      background: #7f1d1d;
+      border: 1px solid #b91c1c;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 12px;
+    }
+
+    .help {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .now {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .time {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--active);
+      line-height: 1.25;
+    }
+
+    .current-word {
+      font-size: 44px;
+      font-weight: bold;
+      margin-top: 8px;
+      color: var(--active);
+      line-height: 1.1;
+      word-break: break-word;
+    }
+
+    .current-line {
+      font-size: 20px;
+      margin-top: 8px;
+      line-height: 1.35;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .control-grid button {
+      width: 100%;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .summary-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .keyboard {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .keyboard div {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      color: var(--muted);
+    }
+
+    code {
+      color: var(--text);
+    }
+
+    .section-block {
+      margin-top: 20px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .section-block:first-child {
+      margin-top: 0;
+    }
+
+    .section-header {
+      background: var(--panel-soft);
+      padding: 12px 14px;
+      font-weight: bold;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .line-card {
+      padding: 12px 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .line-card.active {
+      background: rgba(250, 204, 21, 0.12);
+    }
+
+    .line-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .line-title strong {
+      font-size: 16px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .word-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      line-height: 1.6;
+    }
+
+    .word {
+      display: inline-block;
+      background: var(--word-bg);
+      border: 1px solid var(--word-border);
+      border-radius: 10px;
+      padding: 6px 9px;
+      font-size: 18px;
+    }
+
+    .word.active {
+      background: var(--active);
+      color: var(--active-text);
+      border-color: var(--active);
+      transform: translateY(-1px);
+    }
+
+    .word.past {
+      opacity: 0.55;
+    }
+
+    @media (max-width: 900px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .left-column {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
+
+      .section-header {
+        position: static;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Kara Creator MFA Word Review</h1>
+    <p>
+      Load the isolated vocal MP3 and the MFA word review JSON. The player stays on the left while the lyrics scroll on the right.
+    </p>
+
+    <div class="app-grid">
+      <div class="left-column">
+        <div class="panel">
+          <h2>Files</h2>
+
+          <div style="margin-bottom: 14px;">
+            <label for="audioFile">1. Vocal MP3</label>
+            <input id="audioFile" type="file" accept="audio/*" />
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label for="jsonFile">2. Word review JSON</label>
+            <input id="jsonFile" type="file" accept=".json,application/json" />
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label for="offsetInput">Review offset seconds</label>
+            <input id="offsetInput" type="number" value="0" step="0.05" />
+          </div>
+
+          <button id="loadButton">Load review</button>
+
+          <p class="help">
+            If highlighting is late, try a negative offset such as -0.20. If highlighting is early, try a positive offset such as 0.20.
+          </p>
+
+          <div id="errorBox" class="error"></div>
+
+          <audio id="audio" controls></audio>
+        </div>
+
+        <div class="panel now">
+          <div id="timeReadout" class="time">00:00.000</div>
+          <div id="currentSection" class="small">No file loaded</div>
+          <div id="currentWord" class="current-word">No word yet</div>
+          <div id="currentLine" class="current-line">Load a vocal file and word review JSON to start.</div>
+
+          <div class="control-grid">
+            <button id="previousWordButton" disabled>Previous word</button>
+            <button id="nextWordButton" disabled>Next word</button>
+            <button id="replayWordButton" disabled>Replay word</button>
+            <button id="replayLineButton" disabled>Replay line</button>
+          </div>
+
+          <div class="keyboard">
+            <div><code>Space</code> = play or pause</div>
+            <div><code>Left</code> = previous word</div>
+            <div><code>Right</code> = next word</div>
+            <div><code>R</code> = replay current word</div>
+            <div><code>L</code> = replay current line</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Summary</h2>
+          <div id="summary" class="summary"></div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="panel">
+          <h2>Word timings</h2>
+          <p class="help">
+            Watch whether each highlighted word begins when the singer starts that word. Start accuracy matters more than word-end accuracy for this test.
+          </p>
+          <div id="wordList"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const audioFileInput = document.getElementById("audioFile");
+    const jsonFileInput = document.getElementById("jsonFile");
+    const offsetInput = document.getElementById("offsetInput");
+    const loadButton = document.getElementById("loadButton");
+    const audio = document.getElementById("audio");
+    const errorBox = document.getElementById("errorBox");
+
+    const timeReadout = document.getElementById("timeReadout");
+    const currentSection = document.getElementById("currentSection");
+    const currentWord = document.getElementById("currentWord");
+    const currentLine = document.getElementById("currentLine");
+
+    const previousWordButton = document.getElementById("previousWordButton");
+    const replayWordButton = document.getElementById("replayWordButton");
+    const nextWordButton = document.getElementById("nextWordButton");
+    const replayLineButton = document.getElementById("replayLineButton");
+
+    const summary = document.getElementById("summary");
+    const wordList = document.getElementById("wordList");
+
+    let review = null;
+    let flatWords = [];
+    let flatLines = [];
+    let currentWordIndex = -1;
+    let currentLineIndex = -1;
+
+    function showError(message) {
+      errorBox.style.display = "block";
+      errorBox.textContent = message;
+    }
+
+    function clearError() {
+      errorBox.style.display = "none";
+      errorBox.textContent = "";
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function formatTime(seconds) {
+      if (!Number.isFinite(seconds)) {
+        return "00:00.000";
+      }
+
+      const safeSeconds = Math.max(0, seconds);
+      const minutes = Math.floor(safeSeconds / 60);
+      const remainingSeconds = safeSeconds - minutes * 60;
+
+      return `${String(minutes).padStart(2, "0")}:${remainingSeconds.toFixed(3).padStart(6, "0")}`;
+    }
+
+    function getOffset() {
+      const value = Number(offsetInput.value);
+      return Number.isFinite(value) ? value : 0;
+    }
+
+    function getReviewTime() {
+      return audio.currentTime + getOffset();
+    }
+
+    async function readJsonFile(file) {
+      const text = await file.text();
+      return JSON.parse(text);
+    }
+
+    function flattenReview(json) {
+      flatWords = [];
+      flatLines = [];
+
+      for (const section of json.sections || []) {
+        for (const line of section.lines || []) {
+          const lineIndex = flatLines.length;
+
+          const lineItem = {
+            lineIndex,
+            id: line.id,
+            sectionId: section.id,
+            sectionLabel: section.label,
+            text: line.text,
+            start: Number(line.start),
+            end: Number(line.end),
+            words: []
+          };
+
+          for (const word of line.words || []) {
+            const wordIndex = flatWords.length;
+
+            const wordItem = {
+              wordIndex,
+              lineIndex,
+              id: word.id,
+              text: word.text,
+              start: Number(word.start),
+              end: Number(word.end),
+              duration: Number(word.duration),
+              sectionLabel: section.label,
+              lineId: line.id,
+              lineText: line.text
+            };
+
+            flatWords.push(wordItem);
+            lineItem.words.push(wordItem);
+          }
+
+          flatLines.push(lineItem);
+        }
+      }
+    }
+
+    function findCurrentWordIndex(time) {
+      if (!flatWords.length) {
+        return -1;
+      }
+
+      for (let index = 0; index < flatWords.length; index++) {
+        const word = flatWords[index];
+
+        if (time >= word.start && time <= word.end) {
+          return index;
+        }
+      }
+
+      let closestPreviousIndex = -1;
+
+      for (let index = 0; index < flatWords.length; index++) {
+        if (flatWords[index].start <= time) {
+          closestPreviousIndex = index;
+        } else {
+          break;
+        }
+      }
+
+      return closestPreviousIndex;
+    }
+
+    function renderSummary() {
+      const warnings = review.alignment && Array.isArray(review.alignment.warnings)
+        ? review.alignment.warnings.length
+        : 0;
+
+      summary.innerHTML = `
+        <div class="summary-card">
+          <strong>${review.alignment?.section_count ?? 0}</strong>
+          Sections
+        </div>
+        <div class="summary-card">
+          <strong>${review.alignment?.line_count ?? 0}</strong>
+          Lines
+        </div>
+        <div class="summary-card">
+          <strong>${review.alignment?.word_count ?? flatWords.length}</strong>
+          Words
+        </div>
+        <div class="summary-card">
+          <strong>${warnings}</strong>
+          Warnings
+        </div>
+      `;
+    }
+
+    function renderWordList() {
+      wordList.innerHTML = "";
+
+      for (const section of review.sections || []) {
+        const sectionBlock = document.createElement("div");
+        sectionBlock.className = "section-block";
+
+        const sectionHeader = document.createElement("div");
+        sectionHeader.className = "section-header";
+        sectionHeader.textContent = `${section.label} (${formatTime(Number(section.start))} to ${formatTime(Number(section.end))})`;
+
+        sectionBlock.appendChild(sectionHeader);
+
+        for (const line of section.lines || []) {
+          const lineCard = document.createElement("div");
+          lineCard.className = "line-card";
+          lineCard.dataset.lineId = line.id;
+
+          const wordSpans = (line.words || []).map((word) => {
+            return `
+              <span
+                class="word"
+                data-word-id="${escapeHtml(word.id)}"
+                title="${formatTime(Number(word.start))} to ${formatTime(Number(word.end))}"
+              >${escapeHtml(word.text)}</span>
+            `;
+          }).join("");
+
+          lineCard.innerHTML = `
+            <div class="line-title">
+              <strong>${escapeHtml(line.id)}: ${escapeHtml(line.text)}</strong>
+              <span class="small">${formatTime(Number(line.start))} to ${formatTime(Number(line.end))}</span>
+              <button type="button" data-action="jump-line" data-jump-line-id="${escapeHtml(line.id)}">Jump to line</button>
+            </div>
+            <div class="word-strip">${wordSpans}</div>
+          `;
+
+          lineCard.querySelector("button").addEventListener("click", () => {
+            const lineIndex = flatLines.findIndex((item) => item.id === line.id);
+
+            if (lineIndex >= 0) {
+              jumpToLine(lineIndex);
+            }
+          });
+
+          sectionBlock.appendChild(lineCard);
+        }
+
+        wordList.appendChild(sectionBlock);
+      }
+    }
+
+    function clearActiveWordClasses() {
+      document.querySelectorAll(".word.active").forEach((item) => {
+        item.classList.remove("active");
+      });
+
+      document.querySelectorAll(".word.past").forEach((item) => {
+        item.classList.remove("past");
+      });
+
+      document.querySelectorAll(".line-card.active").forEach((item) => {
+        item.classList.remove("active");
+      });
+    }
+
+    function updateActiveDisplay() {
+      const reviewTime = getReviewTime();
+      const nextWordIndex = findCurrentWordIndex(reviewTime);
+
+      if (nextWordIndex !== currentWordIndex) {
+        currentWordIndex = nextWordIndex;
+        currentLineIndex = currentWordIndex >= 0 ? flatWords[currentWordIndex].lineIndex : -1;
+
+        clearActiveWordClasses();
+
+        for (const word of flatWords) {
+          const wordElement = document.querySelector(`[data-word-id="${word.id}"]`);
+
+          if (!wordElement) {
+            continue;
+          }
+
+          if (word.wordIndex === currentWordIndex) {
+            wordElement.classList.add("active");
+            wordElement.scrollIntoView({
+              block: "center",
+              inline: "center",
+              behavior: "smooth"
+            });
+          } else if (word.wordIndex < currentWordIndex) {
+            wordElement.classList.add("past");
+          }
+        }
+
+        if (currentLineIndex >= 0 && flatLines[currentLineIndex]) {
+          const line = flatLines[currentLineIndex];
+          const lineElement = document.querySelector(`.line-card[data-line-id="${line.id}"]`);
+
+          if (lineElement) {
+            lineElement.classList.add("active");
+          }
+        }
+      }
+
+      if (currentWordIndex >= 0 && flatWords[currentWordIndex]) {
+        const word = flatWords[currentWordIndex];
+
+        currentSection.textContent = `${word.sectionLabel} | ${word.lineId}`;
+        currentWord.textContent = word.text;
+        currentLine.textContent = word.lineText;
+      } else {
+        currentSection.textContent = "Waiting for first word";
+        currentWord.textContent = "No word yet";
+        currentLine.textContent = "";
+      }
+
+      timeReadout.textContent = `Audio: ${formatTime(audio.currentTime)} | Review: ${formatTime(reviewTime)}`;
+    }
+
+    function jumpToWord(index) {
+      if (!flatWords[index]) {
+        return;
+      }
+
+      audio.currentTime = Math.max(0, flatWords[index].start - getOffset());
+      audio.play();
+      updateActiveDisplay();
+    }
+
+    function jumpToLine(lineIndex) {
+      if (!flatLines[lineIndex]) {
+        return;
+      }
+
+      audio.currentTime = Math.max(0, flatLines[lineIndex].start - getOffset());
+      audio.play();
+      updateActiveDisplay();
+    }
+
+    function replayCurrentWord() {
+      if (currentWordIndex < 0) {
+        return;
+      }
+
+      const word = flatWords[currentWordIndex];
+      audio.currentTime = Math.max(0, word.start - 0.15 - getOffset());
+      audio.play();
+
+      const stopAt = word.end + 0.2 - getOffset();
+
+      const stopper = () => {
+        if (audio.currentTime >= stopAt) {
+          audio.pause();
+          audio.removeEventListener("timeupdate", stopper);
+        }
+      };
+
+      audio.addEventListener("timeupdate", stopper);
+    }
+
+    function replayCurrentLine() {
+      if (currentLineIndex < 0) {
+        return;
+      }
+
+      const line = flatLines[currentLineIndex];
+      audio.currentTime = Math.max(0, line.start - 0.2 - getOffset());
+      audio.play();
+
+      const stopAt = line.end + 0.3 - getOffset();
+
+      const stopper = () => {
+        if (audio.currentTime >= stopAt) {
+          audio.pause();
+          audio.removeEventListener("timeupdate", stopper);
+        }
+      };
+
+      audio.addEventListener("timeupdate", stopper);
+    }
+
+    function moveWord(direction) {
+      if (!flatWords.length) {
+        return;
+      }
+
+      let nextIndex = currentWordIndex + direction;
+
+      if (currentWordIndex < 0) {
+        nextIndex = 0;
+      }
+
+      nextIndex = Math.max(0, Math.min(flatWords.length - 1, nextIndex));
+      jumpToWord(nextIndex);
+    }
+
+    function setButtonsEnabled(enabled) {
+      previousWordButton.disabled = !enabled;
+      replayWordButton.disabled = !enabled;
+      nextWordButton.disabled = !enabled;
+      replayLineButton.disabled = !enabled;
+    }
+
+    async function loadReview() {
+      clearError();
+
+      const audioFile = audioFileInput.files[0];
+      const jsonFile = jsonFileInput.files[0];
+
+      if (!audioFile) {
+        showError("Choose the isolated vocal MP3 first.");
+        return;
+      }
+
+      if (!jsonFile) {
+        showError("Choose the word review JSON.");
+        return;
+      }
+
+      try {
+        review = await readJsonFile(jsonFile);
+      } catch (error) {
+        showError(`Could not read JSON: ${error.message}`);
+        return;
+      }
+
+      if (!review.sections || !Array.isArray(review.sections)) {
+        showError("This JSON does not contain a sections array.");
+        return;
+      }
+
+      audio.src = URL.createObjectURL(audioFile);
+
+      flattenReview(review);
+
+      if (!flatWords.length) {
+        showError("No words were found in the review JSON.");
+        return;
+      }
+
+      currentWordIndex = -1;
+      currentLineIndex = -1;
+
+      renderSummary();
+      renderWordList();
+      updateActiveDisplay();
+      setButtonsEnabled(true);
+    }
+
+    loadButton.addEventListener("click", loadReview);
+
+    audio.addEventListener("timeupdate", updateActiveDisplay);
+    audio.addEventListener("seeked", updateActiveDisplay);
+    audio.addEventListener("play", updateActiveDisplay);
+
+    offsetInput.addEventListener("input", updateActiveDisplay);
+
+    previousWordButton.addEventListener("click", () => moveWord(-1));
+    replayWordButton.addEventListener("click", replayCurrentWord);
+    nextWordButton.addEventListener("click", () => moveWord(1));
+    replayLineButton.addEventListener("click", replayCurrentLine);
+
+    document.addEventListener("keydown", (event) => {
+      const tagName = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+
+      if (tagName === "input" || tagName === "select") {
+        return;
+      }
+
+      if (event.code === "Space") {
+        event.preventDefault();
+
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        moveWord(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        moveWord(1);
+      }
+
+      if (event.key.toLowerCase() === "r") {
+        replayCurrentWord();
+      }
+
+      if (event.key.toLowerCase() === "l") {
+        replayCurrentLine();
+      }
+    });
+
+    setButtonsEnabled(false);
+  </script>
+</body>
+</html>

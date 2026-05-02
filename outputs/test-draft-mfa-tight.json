@@ -1,0 +1,1967 @@
+{
+  "schema_version": "karaoke-draft-mfa-v1",
+  "created_by": "kara-creator MFA converter",
+  "source": {
+    "mfa_json": "C:\\Users\\mark\\kara-creator\\mfa_test\\aligned\\miss_the_mountains.json",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\mfa_test\\miss_the_mountains-line-map.json",
+    "audio_file": "C:\\Users\\mark\\kara-creator\\samples\\test-vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\samples\\test-lyrics.txt",
+    "audio_duration_seconds": 244.793
+  },
+  "alignment": {
+    "mode": "forced-alignment-known-lyrics",
+    "status": "draft",
+    "word_count": 273,
+    "section_count": 6,
+    "line_count": 41,
+    "settings": {
+      "start_padding_seconds": 0.1,
+      "end_padding_seconds": 0.25,
+      "next_line_gap_seconds": 0.08
+    },
+    "warnings": [
+      "line-0001: expected words do not exactly match MFA words. Expected ['there', 'was', 'a', 'time', 'when', 'i', 'flew', 'higher']; got ['eps', 'there', 'was', 'a', 'time', 'when', 'eps', 'i'].",
+      "line-0002: expected words do not exactly match MFA words. Expected ['was', 'a', 'time', 'the', 'wild', 'girl', 'running', 'free']; got ['eps', 'flew', 'higher', 'eps', 'was', 'a', 'time', 'the'].",
+      "line-0003: expected words do not exactly match MFA words. Expected ['would', 'be', 'me']; got ['eps', 'wild', 'girl'].",
+      "line-0004: expected words do not exactly match MFA words. Expected ['now', 'i', 'see', 'her', 'feel', 'the', 'fire']; got ['running', 'free', 'eps', 'would', 'be', 'me', 'eps'].",
+      "line-0005: expected words do not exactly match MFA words. Expected ['now', 'i', 'know', 'she', 'needs', 'me', 'there', 'to', 'share']; got ['now', 'eps', 'i', 'eps', 'see', 'her', 'feel', 'the', 'fire'].",
+      "line-0006: expected words do not exactly match MFA words. Expected [\"i'm\", 'nowhere']; got ['eps', 'now'].",
+      "line-0007: expected words do not exactly match MFA words. Expected ['all', 'these', 'blank', 'and', 'tranquil', 'years']; got ['i', 'eps', 'know', 'she', 'eps', 'needs'].",
+      "line-0008: expected words do not exactly match MFA words. Expected ['seems', \"they've\", 'dried', 'up', 'all', 'my', 'tears']; got ['me', 'eps', 'there', 'to', 'share', 'eps', \"i'm\"].",
+      "line-0009: expected words do not exactly match MFA words. Expected ['and', 'while', 'she', 'runs', 'free', 'and', 'fast']; got ['nowhere', 'eps', 'all', 'these', 'blank', 'and', 'tranquil'].",
+      "line-0010: expected words do not exactly match MFA words. Expected ['seems', 'my', 'wild', 'days', 'are', 'past']; got ['years', 'eps', 'seems', \"they've\", 'dried', 'up'].",
+      "line-0011: expected words do not exactly match MFA words. Expected ['but', 'i', 'miss', 'the', 'mountains']; got ['all', 'my', 'tears', 'eps', 'and'].",
+      "line-0012: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'dizzy', 'heights']; got ['while', 'she', 'runs', 'free', 'eps'].",
+      "line-0013: expected words do not exactly match MFA words. Expected ['all', 'the', 'manic', 'magic', 'days']; got ['and', 'eps', 'fast', 'eps', 'seems'].",
+      "line-0014: expected words do not exactly match MFA words. Expected ['and', 'the', 'dark', 'depressing', 'nights']; got ['my', 'eps', 'wild', 'days', 'eps'].",
+      "line-0015: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'mountains']; got ['are', 'past', 'but', 'i'].",
+      "line-0016: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'highs', 'and', 'lows']; got ['eps', 'miss', 'eps', 'the', 'eps', 'mountains'].",
+      "line-0017: expected words do not exactly match MFA words. Expected ['all', 'the', 'climbing', 'all', 'the', 'falling']; got ['eps', 'i', 'miss', 'the', 'dizzy', 'heights'].",
+      "line-0018: expected words do not exactly match MFA words. Expected ['all', 'the', 'while', 'the', 'wild', 'wind', 'blows']; got ['eps', 'all', 'the', 'eps', 'manic', 'magic', 'days'].",
+      "line-0019: expected words do not exactly match MFA words. Expected ['stinging', 'you', 'with', 'snow']; got ['eps', 'and', 'the', 'dark'].",
+      "line-0020: expected words do not exactly match MFA words. Expected ['and', 'soaking', 'you', 'with', 'rain']; got ['depressing', 'nights', 'eps', 'i', 'miss'].",
+      "line-0021: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'mountains']; got ['the', 'mountains', 'eps', 'i'].",
+      "line-0022: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'pain']; got ['miss', 'the', 'highs', 'and'].",
+      "line-0023: expected words do not exactly match MFA words. Expected ['mountains', 'make', 'you', 'crazy']; got ['lows', 'eps', 'all', 'the'].",
+      "line-0024: expected words do not exactly match MFA words. Expected ['here', \"it's\", 'safe', 'and', 'sound']; got ['climbing', 'eps', 'all', 'the', 'falling'].",
+      "line-0025: expected words do not exactly match MFA words. Expected ['my', 'mind', 'is', 'somewhere', 'hazy']; got ['eps', 'all', 'the', 'while', 'the'].",
+      "line-0026: expected words do not exactly match MFA words. Expected ['my', 'feet', 'are', 'on', 'the', 'ground']; got ['wild', 'wind', 'blows', 'eps', 'stinging', 'you'].",
+      "line-0027: expected words do not exactly match MFA words. Expected ['everything', 'is', 'balanced', 'here']; got ['with', 'snow', 'eps', 'and'].",
+      "line-0028: expected words do not exactly match MFA words. Expected ['and', 'on', 'an', 'even', 'keel']; got ['soaking', 'you', 'with', 'rain', 'eps'].",
+      "line-0029: expected words do not exactly match MFA words. Expected ['everything', 'is', 'perfect']; got ['i', 'eps', 'miss'].",
+      "line-0030: expected words do not exactly match MFA words. Expected [\"nothing's\", 'real']; got ['the', 'eps'].",
+      "line-0031: expected words do not exactly match MFA words. Expected [\"nothing's\", 'real']; got ['mountains', 'eps'].",
+      "line-0032: expected words do not exactly match MFA words. Expected ['and', 'i', 'miss', 'the', 'mountains']; got ['i', 'eps', 'miss', 'eps', 'the'].",
+      "line-0033: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'lonely', 'climb']; got ['pain', 'eps', 'mountains', 'make', 'you'].",
+      "line-0034: expected words do not exactly match MFA words. Expected ['wandering', 'through', 'the', 'wilderness']; got ['crazy', 'here', \"it's\", 'safe'].",
+      "line-0035: expected words do not exactly match MFA words. Expected ['and', 'spending', 'all', 'my', 'time']; got ['and', 'sound', 'my', 'mind', 'is'].",
+      "line-0036: expected words do not exactly match MFA words. Expected ['where', 'the', 'air', 'is', 'clear']; got ['somewhere', 'hazy', 'eps', 'my', 'feet'].",
+      "line-0037: expected words do not exactly match MFA words. Expected ['and', 'cuts', 'you', 'like', 'a', 'knife']; got ['are', 'on', 'the', 'ground', 'eps', 'everything'].",
+      "line-0038: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'mountains']; got ['is', 'balanced', 'here', 'and'].",
+      "line-0039: expected words do not exactly match MFA words. Expected ['i', 'miss', 'the', 'mountains']; got ['on', 'an', 'even', 'keel'].",
+      "line-0040: expected words do not exactly match MFA words. Expected ['i', 'miss', 'my', 'life']; got ['eps', 'everything', 'is', 'perfect'].",
+      "line-0041: expected words do not exactly match MFA words. Expected ['i', 'miss', 'my', 'life']; got ['eps', \"nothing's\", 'real', \"nothing's\"]."
+    ]
+  },
+  "sections": [
+    {
+      "id": "opening-001",
+      "label": "OPENING",
+      "start": 0.0,
+      "end": 33.63,
+      "lines": [
+        {
+          "id": "line-0001",
+          "text": "There was a time when I flew higher",
+          "start": 0.0,
+          "end": 12.56,
+          "vocal_start": 0.0,
+          "vocal_end": 12.74,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 0,
+              "text": "eps",
+              "start": 0.0,
+              "end": 8.56
+            },
+            {
+              "index": 1,
+              "text": "there",
+              "start": 8.56,
+              "end": 9.02
+            },
+            {
+              "index": 2,
+              "text": "was",
+              "start": 9.02,
+              "end": 9.58
+            },
+            {
+              "index": 3,
+              "text": "a",
+              "start": 9.58,
+              "end": 9.62
+            },
+            {
+              "index": 4,
+              "text": "time",
+              "start": 9.62,
+              "end": 9.71
+            },
+            {
+              "index": 5,
+              "text": "when",
+              "start": 9.71,
+              "end": 9.8
+            },
+            {
+              "index": 6,
+              "text": "eps",
+              "start": 9.8,
+              "end": 9.83
+            },
+            {
+              "index": 7,
+              "text": "i",
+              "start": 9.83,
+              "end": 12.74
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0002",
+          "text": "Was a time the wild girl running free",
+          "start": 12.64,
+          "end": 17.17,
+          "vocal_start": 12.74,
+          "vocal_end": 17.35,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 8,
+              "text": "eps",
+              "start": 12.74,
+              "end": 12.77
+            },
+            {
+              "index": 9,
+              "text": "flew",
+              "start": 12.77,
+              "end": 12.84
+            },
+            {
+              "index": 10,
+              "text": "higher",
+              "start": 12.84,
+              "end": 13.39
+            },
+            {
+              "index": 11,
+              "text": "eps",
+              "start": 13.39,
+              "end": 15.67
+            },
+            {
+              "index": 12,
+              "text": "was",
+              "start": 15.67,
+              "end": 16.36
+            },
+            {
+              "index": 13,
+              "text": "a",
+              "start": 16.36,
+              "end": 16.46
+            },
+            {
+              "index": 14,
+              "text": "time",
+              "start": 16.46,
+              "end": 16.56
+            },
+            {
+              "index": 15,
+              "text": "the",
+              "start": 16.56,
+              "end": 17.35
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0003",
+          "text": "Would be me",
+          "start": 17.25,
+          "end": 19.31,
+          "vocal_start": 17.35,
+          "vocal_end": 19.49,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 16,
+              "text": "eps",
+              "start": 17.35,
+              "end": 17.38
+            },
+            {
+              "index": 17,
+              "text": "wild",
+              "start": 17.38,
+              "end": 19.39
+            },
+            {
+              "index": 18,
+              "text": "girl",
+              "start": 19.39,
+              "end": 19.49
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0004",
+          "text": "Now I see her, feel the fire",
+          "start": 19.39,
+          "end": 27.44,
+          "vocal_start": 19.49,
+          "vocal_end": 27.62,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 19,
+              "text": "running",
+              "start": 19.49,
+              "end": 20.2
+            },
+            {
+              "index": 20,
+              "text": "free",
+              "start": 20.2,
+              "end": 21.6
+            },
+            {
+              "index": 21,
+              "text": "eps",
+              "start": 21.6,
+              "end": 23.02
+            },
+            {
+              "index": 22,
+              "text": "would",
+              "start": 23.02,
+              "end": 23.29
+            },
+            {
+              "index": 23,
+              "text": "be",
+              "start": 23.29,
+              "end": 23.65
+            },
+            {
+              "index": 24,
+              "text": "me",
+              "start": 23.65,
+              "end": 25.17
+            },
+            {
+              "index": 25,
+              "text": "eps",
+              "start": 25.17,
+              "end": 27.62
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0005",
+          "text": "Now I know she needs me there to share",
+          "start": 27.52,
+          "end": 31.73,
+          "vocal_start": 27.62,
+          "vocal_end": 31.91,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 26,
+              "text": "now",
+              "start": 27.62,
+              "end": 28.55
+            },
+            {
+              "index": 27,
+              "text": "eps",
+              "start": 28.55,
+              "end": 28.58
+            },
+            {
+              "index": 28,
+              "text": "i",
+              "start": 28.58,
+              "end": 31.44
+            },
+            {
+              "index": 29,
+              "text": "eps",
+              "start": 31.44,
+              "end": 31.47
+            },
+            {
+              "index": 30,
+              "text": "see",
+              "start": 31.47,
+              "end": 31.53
+            },
+            {
+              "index": 31,
+              "text": "her",
+              "start": 31.53,
+              "end": 31.61
+            },
+            {
+              "index": 32,
+              "text": "feel",
+              "start": 31.61,
+              "end": 31.7
+            },
+            {
+              "index": 33,
+              "text": "the",
+              "start": 31.7,
+              "end": 31.76
+            },
+            {
+              "index": 34,
+              "text": "fire",
+              "start": 31.76,
+              "end": 31.91
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0006",
+          "text": "I'm nowhere",
+          "start": 31.81,
+          "end": 33.63,
+          "vocal_start": 31.91,
+          "vocal_end": 33.38,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 35,
+              "text": "eps",
+              "start": 31.91,
+              "end": 32.98
+            },
+            {
+              "index": 36,
+              "text": "now",
+              "start": 32.98,
+              "end": 33.38
+            }
+          ],
+          "display_end_adjusted": false
+        }
+      ]
+    },
+    {
+      "id": "verse-002",
+      "label": "VERSE",
+      "start": 33.28,
+      "end": 53.87,
+      "lines": [
+        {
+          "id": "line-0007",
+          "text": "All these blank and tranquil years",
+          "start": 33.28,
+          "end": 36.45,
+          "vocal_start": 33.38,
+          "vocal_end": 36.63,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 37,
+              "text": "i",
+              "start": 33.38,
+              "end": 35.78
+            },
+            {
+              "index": 38,
+              "text": "eps",
+              "start": 35.78,
+              "end": 35.81
+            },
+            {
+              "index": 39,
+              "text": "know",
+              "start": 35.81,
+              "end": 35.87
+            },
+            {
+              "index": 40,
+              "text": "she",
+              "start": 35.87,
+              "end": 36.48
+            },
+            {
+              "index": 41,
+              "text": "eps",
+              "start": 36.48,
+              "end": 36.51
+            },
+            {
+              "index": 42,
+              "text": "needs",
+              "start": 36.51,
+              "end": 36.63
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0008",
+          "text": "Seems they've dried up all my tears",
+          "start": 36.53,
+          "end": 41.6,
+          "vocal_start": 36.63,
+          "vocal_end": 41.78,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 43,
+              "text": "me",
+              "start": 36.63,
+              "end": 37.07
+            },
+            {
+              "index": 44,
+              "text": "eps",
+              "start": 37.07,
+              "end": 37.1
+            },
+            {
+              "index": 45,
+              "text": "there",
+              "start": 37.1,
+              "end": 38.06
+            },
+            {
+              "index": 46,
+              "text": "to",
+              "start": 38.06,
+              "end": 38.17
+            },
+            {
+              "index": 47,
+              "text": "share",
+              "start": 38.17,
+              "end": 38.89
+            },
+            {
+              "index": 48,
+              "text": "eps",
+              "start": 38.89,
+              "end": 41.43
+            },
+            {
+              "index": 49,
+              "text": "i'm",
+              "start": 41.43,
+              "end": 41.78
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0009",
+          "text": "And while she runs free and fast",
+          "start": 41.68,
+          "end": 48.61,
+          "vocal_start": 41.78,
+          "vocal_end": 48.79,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 50,
+              "text": "nowhere",
+              "start": 41.78,
+              "end": 43.1
+            },
+            {
+              "index": 51,
+              "text": "eps",
+              "start": 43.1,
+              "end": 45.12
+            },
+            {
+              "index": 52,
+              "text": "all",
+              "start": 45.12,
+              "end": 45.53
+            },
+            {
+              "index": 53,
+              "text": "these",
+              "start": 45.53,
+              "end": 45.9
+            },
+            {
+              "index": 54,
+              "text": "blank",
+              "start": 45.9,
+              "end": 47.38
+            },
+            {
+              "index": 55,
+              "text": "and",
+              "start": 47.38,
+              "end": 48.0
+            },
+            {
+              "index": 56,
+              "text": "tranquil",
+              "start": 48.0,
+              "end": 48.79
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0010",
+          "text": "Seems my wild days are past",
+          "start": 48.69,
+          "end": 53.87,
+          "vocal_start": 48.79,
+          "vocal_end": 53.62,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 57,
+              "text": "years",
+              "start": 48.79,
+              "end": 49.54
+            },
+            {
+              "index": 58,
+              "text": "eps",
+              "start": 49.54,
+              "end": 51.41
+            },
+            {
+              "index": 59,
+              "text": "seems",
+              "start": 51.41,
+              "end": 51.95
+            },
+            {
+              "index": 60,
+              "text": "they've",
+              "start": 51.95,
+              "end": 52.19
+            },
+            {
+              "index": 61,
+              "text": "dried",
+              "start": 52.19,
+              "end": 53.26
+            },
+            {
+              "index": 62,
+              "text": "up",
+              "start": 53.26,
+              "end": 53.62
+            }
+          ],
+          "display_end_adjusted": false
+        }
+      ]
+    },
+    {
+      "id": "chorus-003",
+      "label": "CHORUS",
+      "start": 53.52,
+      "end": 69.74,
+      "lines": [
+        {
+          "id": "line-0011",
+          "text": "But I miss the mountains",
+          "start": 53.52,
+          "end": 58.3,
+          "vocal_start": 53.62,
+          "vocal_end": 58.48,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 63,
+              "text": "all",
+              "start": 53.62,
+              "end": 53.68
+            },
+            {
+              "index": 64,
+              "text": "my",
+              "start": 53.68,
+              "end": 55.04
+            },
+            {
+              "index": 65,
+              "text": "tears",
+              "start": 55.04,
+              "end": 56.94
+            },
+            {
+              "index": 66,
+              "text": "eps",
+              "start": 56.94,
+              "end": 58.04
+            },
+            {
+              "index": 67,
+              "text": "and",
+              "start": 58.04,
+              "end": 58.48
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0012",
+          "text": "I miss the dizzy heights",
+          "start": 58.38,
+          "end": 61.86,
+          "vocal_start": 58.48,
+          "vocal_end": 62.04,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 68,
+              "text": "while",
+              "start": 58.48,
+              "end": 58.79
+            },
+            {
+              "index": 69,
+              "text": "she",
+              "start": 58.79,
+              "end": 59.56
+            },
+            {
+              "index": 70,
+              "text": "runs",
+              "start": 59.56,
+              "end": 60.37
+            },
+            {
+              "index": 71,
+              "text": "free",
+              "start": 60.37,
+              "end": 61.92
+            },
+            {
+              "index": 72,
+              "text": "eps",
+              "start": 61.92,
+              "end": 62.04
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0013",
+          "text": "All the manic magic days",
+          "start": 61.94,
+          "end": 65.11,
+          "vocal_start": 62.04,
+          "vocal_end": 65.29,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 73,
+              "text": "and",
+              "start": 62.04,
+              "end": 62.5
+            },
+            {
+              "index": 74,
+              "text": "eps",
+              "start": 62.5,
+              "end": 64.0
+            },
+            {
+              "index": 75,
+              "text": "fast",
+              "start": 64.0,
+              "end": 64.12
+            },
+            {
+              "index": 76,
+              "text": "eps",
+              "start": 64.12,
+              "end": 64.72
+            },
+            {
+              "index": 77,
+              "text": "seems",
+              "start": 64.72,
+              "end": 65.29
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0014",
+          "text": "And the dark depressing nights",
+          "start": 65.19,
+          "end": 69.74,
+          "vocal_start": 65.29,
+          "vocal_end": 69.49,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 78,
+              "text": "my",
+              "start": 65.29,
+              "end": 66.91
+            },
+            {
+              "index": 79,
+              "text": "eps",
+              "start": 66.91,
+              "end": 66.94
+            },
+            {
+              "index": 80,
+              "text": "wild",
+              "start": 66.94,
+              "end": 67.06
+            },
+            {
+              "index": 81,
+              "text": "days",
+              "start": 67.06,
+              "end": 68.84
+            },
+            {
+              "index": 82,
+              "text": "eps",
+              "start": 68.84,
+              "end": 69.49
+            }
+          ],
+          "display_end_adjusted": false
+        }
+      ]
+    },
+    {
+      "id": "stage1-004",
+      "label": "STAGE1",
+      "start": 69.39,
+      "end": 112.83,
+      "lines": [
+        {
+          "id": "line-0015",
+          "text": "I miss the mountains",
+          "start": 69.39,
+          "end": 75.22,
+          "vocal_start": 69.49,
+          "vocal_end": 75.4,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 83,
+              "text": "are",
+              "start": 69.49,
+              "end": 70.02
+            },
+            {
+              "index": 84,
+              "text": "past",
+              "start": 70.02,
+              "end": 70.2
+            },
+            {
+              "index": 85,
+              "text": "but",
+              "start": 70.2,
+              "end": 70.26
+            },
+            {
+              "index": 86,
+              "text": "i",
+              "start": 70.26,
+              "end": 75.4
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0016",
+          "text": "I miss the highs and lows",
+          "start": 75.3,
+          "end": 86.78,
+          "vocal_start": 75.4,
+          "vocal_end": 86.96,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 87,
+              "text": "eps",
+              "start": 75.4,
+              "end": 75.51
+            },
+            {
+              "index": 88,
+              "text": "miss",
+              "start": 75.51,
+              "end": 76.25
+            },
+            {
+              "index": 89,
+              "text": "eps",
+              "start": 76.25,
+              "end": 79.6
+            },
+            {
+              "index": 90,
+              "text": "the",
+              "start": 79.6,
+              "end": 79.92
+            },
+            {
+              "index": 91,
+              "text": "eps",
+              "start": 79.92,
+              "end": 81.71
+            },
+            {
+              "index": 92,
+              "text": "mountains",
+              "start": 81.71,
+              "end": 86.96
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0017",
+          "text": "All the climbing, all the falling",
+          "start": 86.86,
+          "end": 92.49,
+          "vocal_start": 86.96,
+          "vocal_end": 92.67,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 93,
+              "text": "eps",
+              "start": 86.96,
+              "end": 88.8
+            },
+            {
+              "index": 94,
+              "text": "i",
+              "start": 88.8,
+              "end": 89.52
+            },
+            {
+              "index": 95,
+              "text": "miss",
+              "start": 89.52,
+              "end": 90.43
+            },
+            {
+              "index": 96,
+              "text": "the",
+              "start": 90.43,
+              "end": 90.56
+            },
+            {
+              "index": 97,
+              "text": "dizzy",
+              "start": 90.56,
+              "end": 91.95
+            },
+            {
+              "index": 98,
+              "text": "heights",
+              "start": 91.95,
+              "end": 92.67
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0018",
+          "text": "All the while the wild wind blows",
+          "start": 92.57,
+          "end": 97.38,
+          "vocal_start": 92.67,
+          "vocal_end": 97.56,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 99,
+              "text": "eps",
+              "start": 92.67,
+              "end": 93.82
+            },
+            {
+              "index": 100,
+              "text": "all",
+              "start": 93.82,
+              "end": 94.21
+            },
+            {
+              "index": 101,
+              "text": "the",
+              "start": 94.21,
+              "end": 95.88
+            },
+            {
+              "index": 102,
+              "text": "eps",
+              "start": 95.88,
+              "end": 95.95
+            },
+            {
+              "index": 103,
+              "text": "manic",
+              "start": 95.95,
+              "end": 97.22
+            },
+            {
+              "index": 104,
+              "text": "magic",
+              "start": 97.22,
+              "end": 97.4
+            },
+            {
+              "index": 105,
+              "text": "days",
+              "start": 97.4,
+              "end": 97.56
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0019",
+          "text": "Stinging you with snow",
+          "start": 97.46,
+          "end": 99.19,
+          "vocal_start": 97.56,
+          "vocal_end": 99.37,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 106,
+              "text": "eps",
+              "start": 97.56,
+              "end": 97.91
+            },
+            {
+              "index": 107,
+              "text": "and",
+              "start": 97.91,
+              "end": 98.31
+            },
+            {
+              "index": 108,
+              "text": "the",
+              "start": 98.31,
+              "end": 98.44
+            },
+            {
+              "index": 109,
+              "text": "dark",
+              "start": 98.44,
+              "end": 99.37
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0020",
+          "text": "And soaking you with rain",
+          "start": 99.27,
+          "end": 105.12,
+          "vocal_start": 99.37,
+          "vocal_end": 105.3,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 110,
+              "text": "depressing",
+              "start": 99.37,
+              "end": 100.47
+            },
+            {
+              "index": 111,
+              "text": "nights",
+              "start": 100.47,
+              "end": 100.82
+            },
+            {
+              "index": 112,
+              "text": "eps",
+              "start": 100.82,
+              "end": 103.69
+            },
+            {
+              "index": 113,
+              "text": "i",
+              "start": 103.69,
+              "end": 104.27
+            },
+            {
+              "index": 114,
+              "text": "miss",
+              "start": 104.27,
+              "end": 105.3
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0021",
+          "text": "I miss the mountains",
+          "start": 105.2,
+          "end": 110.47,
+          "vocal_start": 105.3,
+          "vocal_end": 110.65,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 115,
+              "text": "the",
+              "start": 105.3,
+              "end": 105.4
+            },
+            {
+              "index": 116,
+              "text": "mountains",
+              "start": 105.4,
+              "end": 107.8
+            },
+            {
+              "index": 117,
+              "text": "eps",
+              "start": 107.8,
+              "end": 109.57
+            },
+            {
+              "index": 118,
+              "text": "i",
+              "start": 109.57,
+              "end": 110.65
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0022",
+          "text": "I miss the pain",
+          "start": 110.55,
+          "end": 112.83,
+          "vocal_start": 110.65,
+          "vocal_end": 112.58,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 119,
+              "text": "miss",
+              "start": 110.65,
+              "end": 111.19
+            },
+            {
+              "index": 120,
+              "text": "the",
+              "start": 111.19,
+              "end": 111.3
+            },
+            {
+              "index": 121,
+              "text": "highs",
+              "start": 111.3,
+              "end": 112.06
+            },
+            {
+              "index": 122,
+              "text": "and",
+              "start": 112.06,
+              "end": 112.58
+            }
+          ],
+          "display_end_adjusted": false
+        }
+      ]
+    },
+    {
+      "id": "bridge-005",
+      "label": "BRIDGE",
+      "start": 112.48,
+      "end": 133.98,
+      "lines": [
+        {
+          "id": "line-0023",
+          "text": "Mountains make you crazy",
+          "start": 112.48,
+          "end": 114.86,
+          "vocal_start": 112.58,
+          "vocal_end": 115.04,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 123,
+              "text": "lows",
+              "start": 112.58,
+              "end": 114.54
+            },
+            {
+              "index": 124,
+              "text": "eps",
+              "start": 114.54,
+              "end": 114.58
+            },
+            {
+              "index": 125,
+              "text": "all",
+              "start": 114.58,
+              "end": 114.96
+            },
+            {
+              "index": 126,
+              "text": "the",
+              "start": 114.96,
+              "end": 115.04
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0024",
+          "text": "Here it's safe and sound",
+          "start": 114.94,
+          "end": 117.9,
+          "vocal_start": 115.04,
+          "vocal_end": 118.08,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 127,
+              "text": "climbing",
+              "start": 115.04,
+              "end": 115.9
+            },
+            {
+              "index": 128,
+              "text": "eps",
+              "start": 115.9,
+              "end": 115.98
+            },
+            {
+              "index": 129,
+              "text": "all",
+              "start": 115.98,
+              "end": 116.48
+            },
+            {
+              "index": 130,
+              "text": "the",
+              "start": 116.48,
+              "end": 116.55
+            },
+            {
+              "index": 131,
+              "text": "falling",
+              "start": 116.55,
+              "end": 118.08
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0025",
+          "text": "My mind is somewhere hazy",
+          "start": 117.98,
+          "end": 119.39,
+          "vocal_start": 118.08,
+          "vocal_end": 119.57,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 132,
+              "text": "eps",
+              "start": 118.08,
+              "end": 118.49
+            },
+            {
+              "index": 133,
+              "text": "all",
+              "start": 118.49,
+              "end": 118.83
+            },
+            {
+              "index": 134,
+              "text": "the",
+              "start": 118.83,
+              "end": 118.95
+            },
+            {
+              "index": 135,
+              "text": "while",
+              "start": 118.95,
+              "end": 119.51
+            },
+            {
+              "index": 136,
+              "text": "the",
+              "start": 119.51,
+              "end": 119.57
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0026",
+          "text": "My feet are on the ground",
+          "start": 119.47,
+          "end": 122.51,
+          "vocal_start": 119.57,
+          "vocal_end": 122.69,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 137,
+              "text": "wild",
+              "start": 119.57,
+              "end": 120.02
+            },
+            {
+              "index": 138,
+              "text": "wind",
+              "start": 120.02,
+              "end": 120.4
+            },
+            {
+              "index": 139,
+              "text": "blows",
+              "start": 120.4,
+              "end": 121.67
+            },
+            {
+              "index": 140,
+              "text": "eps",
+              "start": 121.67,
+              "end": 121.85
+            },
+            {
+              "index": 141,
+              "text": "stinging",
+              "start": 121.85,
+              "end": 122.48
+            },
+            {
+              "index": 142,
+              "text": "you",
+              "start": 122.48,
+              "end": 122.69
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0027",
+          "text": "Everything is balanced here",
+          "start": 122.59,
+          "end": 124.42,
+          "vocal_start": 122.69,
+          "vocal_end": 124.6,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 143,
+              "text": "with",
+              "start": 122.69,
+              "end": 122.88
+            },
+            {
+              "index": 144,
+              "text": "snow",
+              "start": 122.88,
+              "end": 123.87
+            },
+            {
+              "index": 145,
+              "text": "eps",
+              "start": 123.87,
+              "end": 124.35
+            },
+            {
+              "index": 146,
+              "text": "and",
+              "start": 124.35,
+              "end": 124.6
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0028",
+          "text": "And on an even keel",
+          "start": 124.5,
+          "end": 126.34,
+          "vocal_start": 124.6,
+          "vocal_end": 126.52,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 147,
+              "text": "soaking",
+              "start": 124.6,
+              "end": 125.66
+            },
+            {
+              "index": 148,
+              "text": "you",
+              "start": 125.66,
+              "end": 125.85
+            },
+            {
+              "index": 149,
+              "text": "with",
+              "start": 125.85,
+              "end": 125.94
+            },
+            {
+              "index": 150,
+              "text": "rain",
+              "start": 125.94,
+              "end": 126.48
+            },
+            {
+              "index": 151,
+              "text": "eps",
+              "start": 126.48,
+              "end": 126.52
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0029",
+          "text": "Everything is perfect",
+          "start": 126.42,
+          "end": 126.69,
+          "vocal_start": 126.52,
+          "vocal_end": 126.87,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 152,
+              "text": "i",
+              "start": 126.52,
+              "end": 126.55
+            },
+            {
+              "index": 153,
+              "text": "eps",
+              "start": 126.55,
+              "end": 126.73
+            },
+            {
+              "index": 154,
+              "text": "miss",
+              "start": 126.73,
+              "end": 126.87
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0030",
+          "text": "Nothing's real",
+          "start": 126.77,
+          "end": 129.48,
+          "vocal_start": 126.87,
+          "vocal_end": 129.66,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 155,
+              "text": "the",
+              "start": 126.87,
+              "end": 129.43
+            },
+            {
+              "index": 156,
+              "text": "eps",
+              "start": 129.43,
+              "end": 129.66
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0031",
+          "text": "Nothing's real",
+          "start": 129.56,
+          "end": 133.98,
+          "vocal_start": 129.66,
+          "vocal_end": 133.73,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 157,
+              "text": "mountains",
+              "start": 129.66,
+              "end": 133.0
+            },
+            {
+              "index": 158,
+              "text": "eps",
+              "start": 133.0,
+              "end": 133.73
+            }
+          ],
+          "display_end_adjusted": false
+        }
+      ]
+    },
+    {
+      "id": "chorus-2-006",
+      "label": "CHORUS 2",
+      "start": 133.63,
+      "end": 172.74,
+      "lines": [
+        {
+          "id": "line-0032",
+          "text": "And I miss the mountains",
+          "start": 133.63,
+          "end": 135.27,
+          "vocal_start": 133.73,
+          "vocal_end": 135.45,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 159,
+              "text": "i",
+              "start": 133.73,
+              "end": 133.76
+            },
+            {
+              "index": 160,
+              "text": "eps",
+              "start": 133.76,
+              "end": 134.45
+            },
+            {
+              "index": 161,
+              "text": "miss",
+              "start": 134.45,
+              "end": 135.27
+            },
+            {
+              "index": 162,
+              "text": "eps",
+              "start": 135.27,
+              "end": 135.37
+            },
+            {
+              "index": 163,
+              "text": "the",
+              "start": 135.37,
+              "end": 135.45
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0033",
+          "text": "I miss the lonely climb",
+          "start": 135.35,
+          "end": 142.52,
+          "vocal_start": 135.45,
+          "vocal_end": 142.7,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 164,
+              "text": "pain",
+              "start": 135.45,
+              "end": 136.66
+            },
+            {
+              "index": 165,
+              "text": "eps",
+              "start": 136.66,
+              "end": 141.47
+            },
+            {
+              "index": 166,
+              "text": "mountains",
+              "start": 141.47,
+              "end": 142.1
+            },
+            {
+              "index": 167,
+              "text": "make",
+              "start": 142.1,
+              "end": 142.46
+            },
+            {
+              "index": 168,
+              "text": "you",
+              "start": 142.46,
+              "end": 142.7
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0034",
+          "text": "Wandering through the wilderness",
+          "start": 142.6,
+          "end": 145.2,
+          "vocal_start": 142.7,
+          "vocal_end": 145.38,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 169,
+              "text": "crazy",
+              "start": 142.7,
+              "end": 143.87
+            },
+            {
+              "index": 170,
+              "text": "here",
+              "start": 143.87,
+              "end": 144.8
+            },
+            {
+              "index": 171,
+              "text": "it's",
+              "start": 144.8,
+              "end": 145.03
+            },
+            {
+              "index": 172,
+              "text": "safe",
+              "start": 145.03,
+              "end": 145.38
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0035",
+          "text": "And spending all my time",
+          "start": 145.28,
+          "end": 148.0,
+          "vocal_start": 145.38,
+          "vocal_end": 148.18,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 173,
+              "text": "and",
+              "start": 145.38,
+              "end": 145.63
+            },
+            {
+              "index": 174,
+              "text": "sound",
+              "start": 145.63,
+              "end": 147.1
+            },
+            {
+              "index": 175,
+              "text": "my",
+              "start": 147.1,
+              "end": 147.22
+            },
+            {
+              "index": 176,
+              "text": "mind",
+              "start": 147.22,
+              "end": 147.92
+            },
+            {
+              "index": 177,
+              "text": "is",
+              "start": 147.92,
+              "end": 148.18
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0036",
+          "text": "Where the air is clear",
+          "start": 148.08,
+          "end": 150.68,
+          "vocal_start": 148.18,
+          "vocal_end": 150.86,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 178,
+              "text": "somewhere",
+              "start": 148.18,
+              "end": 148.76
+            },
+            {
+              "index": 179,
+              "text": "hazy",
+              "start": 148.76,
+              "end": 149.67
+            },
+            {
+              "index": 180,
+              "text": "eps",
+              "start": 149.67,
+              "end": 150.08
+            },
+            {
+              "index": 181,
+              "text": "my",
+              "start": 150.08,
+              "end": 150.29
+            },
+            {
+              "index": 182,
+              "text": "feet",
+              "start": 150.29,
+              "end": 150.86
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0037",
+          "text": "And cuts you like a knife",
+          "start": 150.76,
+          "end": 153.86,
+          "vocal_start": 150.86,
+          "vocal_end": 154.04,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 183,
+              "text": "are",
+              "start": 150.86,
+              "end": 151.22
+            },
+            {
+              "index": 184,
+              "text": "on",
+              "start": 151.22,
+              "end": 151.5
+            },
+            {
+              "index": 185,
+              "text": "the",
+              "start": 151.5,
+              "end": 151.56
+            },
+            {
+              "index": 186,
+              "text": "ground",
+              "start": 151.56,
+              "end": 153.11
+            },
+            {
+              "index": 187,
+              "text": "eps",
+              "start": 153.11,
+              "end": 153.14
+            },
+            {
+              "index": 188,
+              "text": "everything",
+              "start": 153.14,
+              "end": 154.04
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0038",
+          "text": "I miss the mountains",
+          "start": 153.94,
+          "end": 155.73,
+          "vocal_start": 154.04,
+          "vocal_end": 155.91,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 189,
+              "text": "is",
+              "start": 154.04,
+              "end": 154.37
+            },
+            {
+              "index": 190,
+              "text": "balanced",
+              "start": 154.37,
+              "end": 155.15
+            },
+            {
+              "index": 191,
+              "text": "here",
+              "start": 155.15,
+              "end": 155.67
+            },
+            {
+              "index": 192,
+              "text": "and",
+              "start": 155.67,
+              "end": 155.91
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0039",
+          "text": "I miss the mountains",
+          "start": 155.81,
+          "end": 158.27,
+          "vocal_start": 155.91,
+          "vocal_end": 158.45,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 193,
+              "text": "on",
+              "start": 155.91,
+              "end": 156.4
+            },
+            {
+              "index": 194,
+              "text": "an",
+              "start": 156.4,
+              "end": 156.67
+            },
+            {
+              "index": 195,
+              "text": "even",
+              "start": 156.67,
+              "end": 157.12
+            },
+            {
+              "index": 196,
+              "text": "keel",
+              "start": 157.12,
+              "end": 158.45
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0040",
+          "text": "I miss my life",
+          "start": 158.35,
+          "end": 162.56,
+          "vocal_start": 158.45,
+          "vocal_end": 162.74,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 197,
+              "text": "eps",
+              "start": 158.45,
+              "end": 159.1
+            },
+            {
+              "index": 198,
+              "text": "everything",
+              "start": 159.1,
+              "end": 160.86
+            },
+            {
+              "index": 199,
+              "text": "is",
+              "start": 160.86,
+              "end": 161.49
+            },
+            {
+              "index": 200,
+              "text": "perfect",
+              "start": 161.49,
+              "end": 162.74
+            }
+          ],
+          "display_end_adjusted": true
+        },
+        {
+          "id": "line-0041",
+          "text": "I miss my life",
+          "start": 162.64,
+          "end": 172.74,
+          "vocal_start": 162.74,
+          "vocal_end": 172.49,
+          "confidence": "mfa-draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "mfa-word-alignment",
+          "words": [
+            {
+              "index": 201,
+              "text": "eps",
+              "start": 162.74,
+              "end": 166.11
+            },
+            {
+              "index": 202,
+              "text": "nothing's",
+              "start": 166.11,
+              "end": 167.39
+            },
+            {
+              "index": 203,
+              "text": "real",
+              "start": 167.39,
+              "end": 171.58
+            },
+            {
+              "index": 204,
+              "text": "nothing's",
+              "start": 171.58,
+              "end": 172.49
+            }
+          ],
+          "display_end_adjusted": false
+        }
+      ]
+    }
+  ],
+  "editor_notes": [
+    "This draft was created from MFA word-level forced alignment.",
+    "The supplied lyric file remains the source of truth.",
+    "Line start/end timings are derived from first and last aligned words.",
+    "Use the manual review tool to check whether the display padding feels right."
+  ]
+}

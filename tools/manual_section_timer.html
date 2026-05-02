@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kara Creator Manual Section Timer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --panel-soft: #263244;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #374151;
+      --active: #facc15;
+      --active-text: #111827;
+      --button: #e5e7eb;
+      --button-text: #111827;
+      --good: #22c55e;
+      --danger: #ef4444;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 410px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .left-column {
+      position: sticky;
+      top: 16px;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .right-column {
+      min-width: 0;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 0 0 16px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: end;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    input[type="file"] {
+      padding: 0;
+      border: none;
+    }
+
+    button {
+      background: var(--button);
+      color: var(--button-text);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    button:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .help {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .error {
+      color: #fecaca;
+      background: #7f1d1d;
+      border: 1px solid #b91c1c;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .now {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      margin-top: 0;
+    }
+
+    .time {
+      font-size: 30px;
+      font-weight: bold;
+      color: var(--active);
+      line-height: 1.2;
+    }
+
+    .current-line {
+      margin-top: 8px;
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: bold;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .control-grid button {
+      width: 100%;
+    }
+
+    .wide-button {
+      grid-column: 1 / -1;
+    }
+
+    .export-button {
+      background: var(--good);
+      color: #052e16;
+    }
+
+    .keyboard {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .keyboard div {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px;
+      color: var(--muted);
+    }
+
+    code {
+      color: var(--text);
+    }
+
+    .section-summary {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .line-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 900px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border-top: 1px solid var(--border);
+      padding: 8px;
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: normal;
+      background: var(--panel-soft);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    tr:first-child td {
+      border-top: none;
+    }
+
+    tr.active {
+      background: var(--active);
+      color: var(--active-text);
+    }
+
+    tr.active input {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    tr.active button {
+      background: var(--active-text);
+      color: var(--active);
+    }
+
+    .line-text {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.35;
+    }
+
+    .small-button {
+      padding: 7px 9px;
+      border-radius: 8px;
+      margin: 2px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .left-column {
+        position: static;
+        max-height: none;
+        overflow: visible;
+      }
+
+      th {
+        position: static;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Kara Creator Manual Section Timer</h1>
+    <p>
+      Use this to hand-time one section against the isolated vocal. The player stays on the left while the lyric table scrolls on the right.
+    </p>
+
+    <div class="app-grid">
+      <div class="left-column">
+        <div class="panel">
+          <h2>Files</h2>
+
+          <div style="margin-bottom: 14px;">
+            <label for="audioFile">1. Vocal MP3</label>
+            <input id="audioFile" type="file" accept="audio/*" />
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label for="jsonFile">2. Draft JSON</label>
+            <input id="jsonFile" type="file" accept=".json,application/json" />
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <label for="sectionSelect">3. Section</label>
+            <select id="sectionSelect" disabled>
+              <option value="">Load JSON first</option>
+            </select>
+          </div>
+
+          <button id="loadButton">Load section</button>
+
+          <div id="errorBox" class="error"></div>
+
+          <audio id="audio" controls></audio>
+
+          <p class="help">
+            Load the vocal MP3, load the draft JSON, choose the section, then set start and end times line by line.
+          </p>
+        </div>
+
+        <div class="panel now">
+          <div class="time" id="timeReadout">00:00.000</div>
+          <div class="current-line" id="currentLineText">No line loaded yet.</div>
+
+          <div class="control-grid">
+            <button id="previousButton" disabled>Previous line</button>
+            <button id="nextButton" disabled>Next line</button>
+            <button id="setStartButton" disabled>Set START</button>
+            <button id="setEndButton" disabled>Set END</button>
+            <button id="playLineButton" disabled>Play current line</button>
+            <button id="exportButton" class="export-button" disabled>Export truth JSON</button>
+          </div>
+
+          <div class="keyboard">
+            <div><code>Space</code> = play or pause</div>
+            <div><code>S</code> = set current line start</div>
+            <div><code>E</code> = set current line end</div>
+            <div><code>N</code> = next line</div>
+            <div><code>P</code> = previous line</div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Section</h2>
+          <div id="sectionInfo" class="section-summary">No section loaded yet.</div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="panel">
+          <h2>Manual timings</h2>
+          <p class="help">
+            Suggested method: play the section, pause when the line starts, press S. Pause when the line finishes, press E. Then move to the next line. You can also type times directly.
+          </p>
+
+          <div id="lineTable"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const audioFileInput = document.getElementById("audioFile");
+    const jsonFileInput = document.getElementById("jsonFile");
+    const sectionSelect = document.getElementById("sectionSelect");
+    const loadButton = document.getElementById("loadButton");
+    const audio = document.getElementById("audio");
+    const errorBox = document.getElementById("errorBox");
+
+    const timeReadout = document.getElementById("timeReadout");
+    const currentLineText = document.getElementById("currentLineText");
+    const previousButton = document.getElementById("previousButton");
+    const nextButton = document.getElementById("nextButton");
+    const setStartButton = document.getElementById("setStartButton");
+    const setEndButton = document.getElementById("setEndButton");
+    const playLineButton = document.getElementById("playLineButton");
+    const exportButton = document.getElementById("exportButton");
+    const sectionInfo = document.getElementById("sectionInfo");
+    const lineTable = document.getElementById("lineTable");
+
+    let draft = null;
+    let selectedSection = null;
+    let manualLines = [];
+    let currentIndex = 0;
+    let sourceAudioName = "";
+    let sourceJsonName = "";
+
+    function showError(message) {
+      errorBox.style.display = "block";
+      errorBox.textContent = message;
+    }
+
+    function clearError() {
+      errorBox.style.display = "none";
+      errorBox.textContent = "";
+    }
+
+    function roundTime(value) {
+      return Math.round(Number(value) * 1000) / 1000;
+    }
+
+    function formatTime(seconds) {
+      if (!Number.isFinite(seconds)) {
+        return "00:00.000";
+      }
+
+      const safeSeconds = Math.max(0, seconds);
+      const minutes = Math.floor(safeSeconds / 60);
+      const remainingSeconds = safeSeconds - minutes * 60;
+
+      return `${String(minutes).padStart(2, "0")}:${remainingSeconds.toFixed(3).padStart(6, "0")}`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    async function readJsonFile(file) {
+      const text = await file.text();
+      return JSON.parse(text);
+    }
+
+    function populateSectionSelect() {
+      sectionSelect.innerHTML = "";
+
+      if (!draft || !Array.isArray(draft.sections)) {
+        sectionSelect.disabled = true;
+        sectionSelect.innerHTML = `<option value="">No sections found</option>`;
+        return;
+      }
+
+      draft.sections.forEach((section, index) => {
+        const option = document.createElement("option");
+        option.value = String(index);
+        option.textContent = `${section.label} (${formatTime(Number(section.start))} to ${formatTime(Number(section.end))})`;
+        sectionSelect.appendChild(option);
+      });
+
+      sectionSelect.disabled = false;
+    }
+
+    function loadSelectedSection() {
+      const sectionIndex = Number(sectionSelect.value);
+
+      if (!draft || !draft.sections || !draft.sections[sectionIndex]) {
+        selectedSection = null;
+        manualLines = [];
+        renderLines();
+        setButtonsEnabled(false);
+        return;
+      }
+
+      selectedSection = draft.sections[sectionIndex];
+
+      manualLines = (selectedSection.lines || []).map((line) => ({
+        id: line.id,
+        text: line.text,
+        start: roundTime(Number(line.start)),
+        end: roundTime(Number(line.end)),
+        original_start: roundTime(Number(line.start)),
+        original_end: roundTime(Number(line.end))
+      }));
+
+      currentIndex = 0;
+
+      if (manualLines.length > 0) {
+        audio.currentTime = Math.max(0, manualLines[0].start - 0.5);
+      }
+
+      renderLines();
+      updateCurrentLineDisplay();
+      setButtonsEnabled(true);
+    }
+
+    function setButtonsEnabled(enabled) {
+      previousButton.disabled = !enabled;
+      nextButton.disabled = !enabled;
+      setStartButton.disabled = !enabled;
+      setEndButton.disabled = !enabled;
+      playLineButton.disabled = !enabled;
+      exportButton.disabled = !enabled;
+    }
+
+    async function loadFiles() {
+      clearError();
+
+      const audioFile = audioFileInput.files[0];
+      const jsonFile = jsonFileInput.files[0];
+
+      if (!audioFile) {
+        showError("Choose the isolated vocal MP3 first.");
+        return;
+      }
+
+      if (!jsonFile) {
+        showError("Choose the draft JSON file.");
+        return;
+      }
+
+      try {
+        draft = await readJsonFile(jsonFile);
+      } catch (error) {
+        showError(`Could not read JSON: ${error.message}`);
+        return;
+      }
+
+      if (!draft.sections || !Array.isArray(draft.sections)) {
+        showError("The JSON does not contain a sections array.");
+        return;
+      }
+
+      sourceAudioName = audioFile.name;
+      sourceJsonName = jsonFile.name;
+
+      audio.src = URL.createObjectURL(audioFile);
+
+      populateSectionSelect();
+      loadSelectedSection();
+    }
+
+    function renderLines() {
+      if (!selectedSection || !manualLines.length) {
+        sectionInfo.textContent = "No section loaded yet.";
+        lineTable.innerHTML = "";
+        currentLineText.textContent = "No line loaded yet.";
+        return;
+      }
+
+      const firstStart = manualLines[0].start;
+      const lastEnd = manualLines[manualLines.length - 1].end;
+
+      sectionInfo.innerHTML = `
+        <strong>${escapeHtml(selectedSection.label)}</strong><br>
+        Lines: ${manualLines.length}<br>
+        Current timed range: ${formatTime(firstStart)} to ${formatTime(lastEnd)}
+      `;
+
+      lineTable.innerHTML = `
+        <div class="line-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Line</th>
+                <th>Text</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Original draft</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${manualLines.map((line, index) => `
+                <tr data-index="${index}" class="${index === currentIndex ? "active" : ""}">
+                  <td>${escapeHtml(line.id)}</td>
+                  <td class="line-text">${escapeHtml(line.text)}</td>
+                  <td>
+                    <input data-field="start" data-index="${index}" type="number" step="0.001" value="${line.start}">
+                  </td>
+                  <td>
+                    <input data-field="end" data-index="${index}" type="number" step="0.001" value="${line.end}">
+                  </td>
+                  <td>
+                    ${formatTime(line.original_start)} to ${formatTime(line.original_end)}
+                  </td>
+                  <td>
+                    <div class="button-row">
+                      <button class="small-button" data-action="select" data-index="${index}">Select</button>
+                      <button class="small-button" data-action="jump" data-index="${index}">Jump</button>
+                      <button class="small-button" data-action="set-start" data-index="${index}">Set start</button>
+                      <button class="small-button" data-action="set-end" data-index="${index}">Set end</button>
+                    </div>
+                  </td>
+                </tr>
+              `).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+
+      lineTable.querySelectorAll("input").forEach((input) => {
+        input.addEventListener("change", (event) => {
+          const index = Number(event.target.dataset.index);
+          const field = event.target.dataset.field;
+          const value = roundTime(Number(event.target.value));
+
+          if (manualLines[index] && Number.isFinite(value)) {
+            manualLines[index][field] = value;
+            updateCurrentLineDisplay();
+            updateSectionInfoOnly();
+          }
+        });
+      });
+
+      lineTable.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const index = Number(button.dataset.index);
+          const action = button.dataset.action;
+
+          if (action === "select") {
+            selectLine(index);
+          }
+
+          if (action === "jump") {
+            selectLine(index);
+            jumpToLine(index);
+          }
+
+          if (action === "set-start") {
+            selectLine(index);
+            setLineStart(index);
+          }
+
+          if (action === "set-end") {
+            selectLine(index);
+            setLineEnd(index);
+          }
+        });
+      });
+    }
+
+    function updateSectionInfoOnly() {
+      if (!selectedSection || !manualLines.length) {
+        return;
+      }
+
+      const firstStart = manualLines[0].start;
+      const lastEnd = manualLines[manualLines.length - 1].end;
+
+      sectionInfo.innerHTML = `
+        <strong>${escapeHtml(selectedSection.label)}</strong><br>
+        Lines: ${manualLines.length}<br>
+        Current timed range: ${formatTime(firstStart)} to ${formatTime(lastEnd)}
+      `;
+    }
+
+    function refreshActiveRow() {
+      document.querySelectorAll("tr.active").forEach((row) => {
+        row.classList.remove("active");
+      });
+
+      const row = document.querySelector(`tr[data-index="${currentIndex}"]`);
+
+      if (row) {
+        row.classList.add("active");
+        row.scrollIntoView({
+          block: "center",
+          behavior: "smooth"
+        });
+      }
+    }
+
+    function selectLine(index) {
+      if (!manualLines[index]) {
+        return;
+      }
+
+      currentIndex = index;
+      refreshActiveRow();
+      updateCurrentLineDisplay();
+    }
+
+    function jumpToLine(index) {
+      if (!manualLines[index]) {
+        return;
+      }
+
+      audio.currentTime = Math.max(0, manualLines[index].start - 0.2);
+    }
+
+    function setLineStart(index) {
+      if (!manualLines[index]) {
+        return;
+      }
+
+      manualLines[index].start = roundTime(audio.currentTime);
+
+      if (manualLines[index].end <= manualLines[index].start) {
+        manualLines[index].end = roundTime(manualLines[index].start + 1);
+      }
+
+      renderLines();
+      selectLine(index);
+      updateSectionInfoOnly();
+    }
+
+    function setLineEnd(index) {
+      if (!manualLines[index]) {
+        return;
+      }
+
+      manualLines[index].end = roundTime(audio.currentTime);
+
+      if (manualLines[index].end <= manualLines[index].start) {
+        manualLines[index].start = roundTime(Math.max(0, manualLines[index].end - 1));
+      }
+
+      renderLines();
+      selectLine(index);
+      updateSectionInfoOnly();
+    }
+
+    function updateCurrentLineDisplay() {
+      timeReadout.textContent = formatTime(audio.currentTime);
+
+      if (!manualLines[currentIndex]) {
+        currentLineText.textContent = "No line selected.";
+        return;
+      }
+
+      const line = manualLines[currentIndex];
+      currentLineText.textContent = `${line.id}: ${line.text} (${formatTime(line.start)} to ${formatTime(line.end)})`;
+    }
+
+    function previousLine() {
+      selectLine(Math.max(0, currentIndex - 1));
+      jumpToLine(currentIndex);
+    }
+
+    function nextLine() {
+      selectLine(Math.min(manualLines.length - 1, currentIndex + 1));
+      jumpToLine(currentIndex);
+    }
+
+    function playCurrentLine() {
+      if (!manualLines[currentIndex]) {
+        return;
+      }
+
+      const line = manualLines[currentIndex];
+      audio.currentTime = Math.max(0, line.start - 0.2);
+      audio.play();
+
+      const stopAt = line.end + 0.2;
+
+      const stopper = () => {
+        if (audio.currentTime >= stopAt) {
+          audio.pause();
+          audio.removeEventListener("timeupdate", stopper);
+        }
+      };
+
+      audio.addEventListener("timeupdate", stopper);
+    }
+
+    function exportTruthJson() {
+      if (!selectedSection || !manualLines.length) {
+        showError("No section is loaded.");
+        return;
+      }
+
+      const firstStart = manualLines[0].start;
+      const lastEnd = manualLines[manualLines.length - 1].end;
+
+      const truth = {
+        schema_version: "karaoke-section-truth-v1",
+        created_by: "kara-creator manual section timer",
+        source: {
+          audio_file_name: sourceAudioName,
+          draft_json_file_name: sourceJsonName
+        },
+        section: {
+          id: selectedSection.id,
+          label: selectedSection.label,
+          start: firstStart,
+          end: lastEnd,
+          lines: manualLines.map((line) => ({
+            id: line.id,
+            text: line.text,
+            start: line.start,
+            end: line.end,
+            original_draft_start: line.original_start,
+            original_draft_end: line.original_end
+          }))
+        }
+      };
+
+      const json = JSON.stringify(truth, null, 2);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const safeLabel = selectedSection.label
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || "section";
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `manual-truth-${safeLabel}.json`;
+      link.click();
+
+      URL.revokeObjectURL(url);
+    }
+
+    loadButton.addEventListener("click", loadFiles);
+    sectionSelect.addEventListener("change", loadSelectedSection);
+
+    previousButton.addEventListener("click", previousLine);
+    nextButton.addEventListener("click", nextLine);
+    setStartButton.addEventListener("click", () => setLineStart(currentIndex));
+    setEndButton.addEventListener("click", () => setLineEnd(currentIndex));
+    playLineButton.addEventListener("click", playCurrentLine);
+    exportButton.addEventListener("click", exportTruthJson);
+
+    audio.addEventListener("timeupdate", updateCurrentLineDisplay);
+    audio.addEventListener("seeked", updateCurrentLineDisplay);
+
+    document.addEventListener("keydown", (event) => {
+      const tagName = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+
+      if (tagName === "input" || tagName === "select") {
+        return;
+      }
+
+      if (event.code === "Space") {
+        event.preventDefault();
+
+        if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+
+      if (event.key.toLowerCase() === "s") {
+        setLineStart(currentIndex);
+      }
+
+      if (event.key.toLowerCase() === "e") {
+        setLineEnd(currentIndex);
+      }
+
+      if (event.key.toLowerCase() === "n") {
+        nextLine();
+      }
+
+      if (event.key.toLowerCase() === "p") {
+        previousLine();
+      }
+    });
+
+    setButtonsEnabled(false);
+  </script>
+</body>
+</html>

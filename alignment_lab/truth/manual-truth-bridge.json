@@ -1,0 +1,88 @@
+{
+  "schema_version": "karaoke-section-truth-v1",
+  "created_by": "kara-creator manual section timer",
+  "source": {
+    "audio_file_name": "test-vocals.mp3",
+    "draft_json_file_name": "test-draft-sections.json"
+  },
+  "section": {
+    "id": "bridge-005",
+    "label": "BRIDGE",
+    "start": 141,
+    "end": 177.844,
+    "lines": [
+      {
+        "id": "line-0023",
+        "text": "Mountains make you crazy",
+        "start": 141,
+        "end": 144.331,
+        "original_draft_start": 109.491,
+        "original_draft_end": 117.763
+      },
+      {
+        "id": "line-0024",
+        "text": "Here it's safe and sound",
+        "start": 144.588,
+        "end": 147.389,
+        "original_draft_start": 118.431,
+        "original_draft_end": 120.955
+      },
+      {
+        "id": "line-0025",
+        "text": "My mind is somewhere hazy",
+        "start": 147.287,
+        "end": 149.612,
+        "original_draft_start": 121.913,
+        "original_draft_end": 123.629
+      },
+      {
+        "id": "line-0026",
+        "text": "My feet are on the ground",
+        "start": 150.371,
+        "end": 153.015,
+        "original_draft_start": 124.277,
+        "original_draft_end": 126.124
+      },
+      {
+        "id": "line-0027",
+        "text": "Everything is balanced here",
+        "start": 153.32,
+        "end": 155.471,
+        "original_draft_start": 126.871,
+        "original_draft_end": 129.037
+      },
+      {
+        "id": "line-0028",
+        "text": "And on an even keel",
+        "start": 155.849,
+        "end": 158.18,
+        "original_draft_start": 129.605,
+        "original_draft_end": 132.758
+      },
+      {
+        "id": "line-0029",
+        "text": "Everything is perfect",
+        "start": 159.392,
+        "end": 163.245,
+        "original_draft_start": 134.394,
+        "original_draft_end": 134.854
+      },
+      {
+        "id": "line-0030",
+        "text": "Nothing's real",
+        "start": 166.403,
+        "end": 172.342,
+        "original_draft_start": 135.592,
+        "original_draft_end": 136.031
+      },
+      {
+        "id": "line-0031",
+        "text": "Nothing's real",
+        "start": 172.717,
+        "end": 177.844,
+        "original_draft_start": 141.398,
+        "original_draft_end": 143.564
+      }
+    ]
+  }
+}

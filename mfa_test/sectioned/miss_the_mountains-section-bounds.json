@@ -1,0 +1,44 @@
+{
+  "schema_version": "kara-section-bounds-v1",
+  "song_name": "miss_the_mountains",
+  "source_audio": "samples/test-vocals.mp3",
+  "notes": [
+    "Times are full-song seconds.",
+    "Section starts should be just before the first sung word in that section.",
+    "Section ends should be just before the next section start.",
+    "Section bounds must not overlap.",
+    "These bounds are used to stop MFA assigning a held note from one section to the words in the next section."
+  ],
+  "sections": [
+    {
+      "label": "OPENING",
+      "start": 8.3,
+      "end": 44.0
+    },
+    {
+      "label": "VERSE",
+      "start": 44.5,
+      "end": 76.95
+    },
+    {
+      "label": "CHORUS",
+      "start": 77.0,
+      "end": 101.2
+    },
+    {
+      "label": "STAGE1",
+      "start": 103.2,
+      "end": 137.0
+    },
+    {
+      "label": "BRIDGE",
+      "start": 140.5,
+      "end": 173.2
+    },
+    {
+      "label": "CHORUS 2",
+      "start": 173.2,
+      "end": 241.0
+    }
+  ]
+}

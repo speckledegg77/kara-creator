@@ -1,0 +1,1308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kara Creator Draft Editor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    :root {
+      --bg: #111827;
+      --panel: #1f2937;
+      --panel-soft: #263244;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: #374151;
+      --active: #facc15;
+      --active-text: #111827;
+      --button: #e5e7eb;
+      --button-text: #111827;
+      --good: #22c55e;
+      --warning: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .left-column {
+      position: sticky;
+      top: 16px;
+    }
+
+    .right-column {
+      min-width: 0;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .compact-panel {
+      padding: 14px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    input[type="file"] {
+      padding: 0;
+      border: none;
+      background: transparent;
+    }
+
+    input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    button {
+      background: var(--button);
+      color: var(--button-text);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    button:hover {
+      opacity: 0.92;
+    }
+
+    button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .good-button {
+      background: var(--good);
+      color: #052e16;
+    }
+
+    .warning-button {
+      background: var(--warning);
+      color: #111827;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .help {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .error {
+      color: #fecaca;
+      background: #7f1d1d;
+      border: 1px solid #b91c1c;
+      padding: 12px;
+      border-radius: 10px;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .time {
+      font-size: 28px;
+      font-weight: bold;
+      color: var(--active);
+      line-height: 1.2;
+    }
+
+    .current-line {
+      margin-top: 8px;
+      font-size: 20px;
+      line-height: 1.3;
+      font-weight: bold;
+    }
+
+    .current-meta {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .control-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .control-grid button {
+      width: 100%;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    .option-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--panel-soft);
+    }
+
+    .option-row label {
+      margin-bottom: 0;
+      font-weight: normal;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .summary-card {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px;
+    }
+
+    .summary-card strong {
+      display: block;
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    .keyboard summary {
+      cursor: pointer;
+      color: var(--muted);
+      font-weight: bold;
+    }
+
+    .keyboard-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .keyboard-list div {
+      background: var(--panel-soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      color: var(--text);
+    }
+
+    .section-block {
+      margin-bottom: 18px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .section-header {
+      background: var(--panel-soft);
+      padding: 12px 14px;
+      font-weight: bold;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+
+    .line-list {
+      display: grid;
+      gap: 0;
+    }
+
+    .line-card {
+      padding: 14px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      gap: 12px;
+    }
+
+    .line-card:first-child {
+      border-top: none;
+    }
+
+    .line-card.selected {
+      background: rgba(250, 204, 21, 0.14);
+      outline: 1px solid rgba(250, 204, 21, 0.45);
+      outline-offset: -1px;
+    }
+
+    .line-card.playing {
+      box-shadow: inset 5px 0 0 var(--active);
+    }
+
+    .line-card.edited {
+      box-shadow: inset 5px 0 0 rgba(56, 189, 248, 0.75);
+    }
+
+    .line-card.selected.edited,
+    .line-card.selected.playing {
+      box-shadow: inset 5px 0 0 var(--active);
+    }
+
+    .line-top {
+      display: grid;
+      grid-template-columns: minmax(90px, 120px) minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .line-id {
+      font-weight: bold;
+      color: var(--text);
+    }
+
+    .line-text {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 1.35;
+    }
+
+    .duration {
+      font-weight: bold;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .duration-warning {
+      color: #fbbf24;
+    }
+
+    .duration-danger {
+      color: #f87171;
+    }
+
+    .timing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .field-label {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 4px;
+    }
+
+    .tag-row,
+    .flag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #bae6fd;
+      font-size: 12px;
+    }
+
+    .tag.anchor {
+      background: rgba(34, 197, 94, 0.18);
+      border-color: rgba(34, 197, 94, 0.45);
+      color: #bbf7d0;
+    }
+
+    .tag.locked {
+      background: rgba(239, 68, 68, 0.18);
+      border-color: rgba(239, 68, 68, 0.45);
+      color: #fecaca;
+    }
+
+    .flag {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.18);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fde68a;
+      font-size: 12px;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+      gap: 8px;
+    }
+
+    .actions button {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+
+    .file-row {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 1050px) {
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .left-column {
+        position: static;
+      }
+
+      .section-header {
+        position: static;
+      }
+    }
+
+    @media (max-width: 700px) {
+      main {
+        padding: 12px;
+      }
+
+      .line-top {
+        grid-template-columns: 1fr;
+      }
+
+      .duration {
+        text-align: left;
+      }
+
+      .timing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .control-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Kara Creator Draft Editor</h1>
+    <p>
+      Load the isolated vocal MP3 and draft JSON, then adjust the few lines that need correction. Follow playback is switched on by default.
+    </p>
+
+    <div class="app-grid">
+      <div class="left-column">
+        <div class="panel compact-panel">
+          <h2>Files</h2>
+
+          <div class="file-row">
+            <label for="audioFile">1. Vocal MP3</label>
+            <input id="audioFile" type="file" accept="audio/*" />
+          </div>
+
+          <div class="file-row">
+            <label for="jsonFile">2. Draft JSON</label>
+            <input id="jsonFile" type="file" accept=".json,application/json" />
+          </div>
+
+          <button id="loadButton">Load draft</button>
+
+          <div id="errorBox" class="error"></div>
+
+          <audio id="audio" controls></audio>
+        </div>
+
+        <div class="panel compact-panel">
+          <div id="timeReadout" class="time">00:00.000</div>
+          <div id="currentLineText" class="current-line">No draft loaded yet.</div>
+          <div id="currentMeta" class="current-meta">Load a file to begin.</div>
+
+          <div class="option-row">
+            <label><input id="followPlaybackCheckbox" type="checkbox" checked /> Follow playback</label>
+            <label><input id="rippleCheckbox" type="checkbox" checked /> Ripple forward</label>
+            <label><input id="autoplayCheckbox" type="checkbox" checked /> Autoplay on jump</label>
+          </div>
+
+          <div class="control-grid">
+            <button id="previousButton" disabled>Previous</button>
+            <button id="nextButton" disabled>Next</button>
+
+            <button id="jumpButton" disabled>Jump</button>
+            <button id="playLineButton" disabled>Play line</button>
+
+            <button id="setStartButton" class="warning-button" disabled>Set START</button>
+            <button id="setEndButton" class="warning-button" disabled>Set END</button>
+
+            <button id="toggleAnchorButton" disabled>Anchor</button>
+            <button id="toggleLockButton" disabled>Lock</button>
+
+            <button id="exportButton" class="good-button full-width" disabled>Export edited JSON</button>
+          </div>
+
+          <details class="keyboard">
+            <summary>Keyboard shortcuts</summary>
+            <div class="keyboard-list">
+              <div><code>Space</code> = play / pause</div>
+              <div><code>J</code> = jump to selected line</div>
+              <div><code>P</code> = play selected line</div>
+              <div><code>S</code> = set start</div>
+              <div><code>E</code> = set end</div>
+              <div><code>N</code> = next line</div>
+              <div><code>B</code> = previous line</div>
+            </div>
+          </details>
+        </div>
+
+        <div class="panel compact-panel">
+          <h2>Summary</h2>
+          <div id="summaryGrid" class="summary-grid"></div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="panel">
+          <h2>Draft lines</h2>
+          <p class="help">
+            The selected card now follows playback. Turn off Follow playback when you want to edit a line without the selection moving.
+          </p>
+          <div id="sectionsContainer"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const audioFileInput = document.getElementById("audioFile");
+    const jsonFileInput = document.getElementById("jsonFile");
+    const loadButton = document.getElementById("loadButton");
+    const audio = document.getElementById("audio");
+    const errorBox = document.getElementById("errorBox");
+
+    const timeReadout = document.getElementById("timeReadout");
+    const currentLineText = document.getElementById("currentLineText");
+    const currentMeta = document.getElementById("currentMeta");
+
+    const followPlaybackCheckbox = document.getElementById("followPlaybackCheckbox");
+    const rippleCheckbox = document.getElementById("rippleCheckbox");
+    const autoplayCheckbox = document.getElementById("autoplayCheckbox");
+
+    const previousButton = document.getElementById("previousButton");
+    const nextButton = document.getElementById("nextButton");
+    const jumpButton = document.getElementById("jumpButton");
+    const playLineButton = document.getElementById("playLineButton");
+    const setStartButton = document.getElementById("setStartButton");
+    const setEndButton = document.getElementById("setEndButton");
+    const toggleAnchorButton = document.getElementById("toggleAnchorButton");
+    const toggleLockButton = document.getElementById("toggleLockButton");
+    const exportButton = document.getElementById("exportButton");
+
+    const summaryGrid = document.getElementById("summaryGrid");
+    const sectionsContainer = document.getElementById("sectionsContainer");
+
+    let draft = null;
+    let flatLines = [];
+    let selectedIndex = 0;
+    let playingIndex = -1;
+    let sourceAudioFileName = "";
+    let sourceDraftFileName = "";
+    let exportCounter = 0;
+
+    function showError(message) {
+      errorBox.style.display = "block";
+      errorBox.textContent = message;
+    }
+
+    function clearError() {
+      errorBox.style.display = "none";
+      errorBox.textContent = "";
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function asNumber(value, fallback = 0) {
+      const parsed = Number(value);
+      return Number.isFinite(parsed) ? parsed : fallback;
+    }
+
+    function roundTime(value) {
+      return Math.round(asNumber(value) * 1000) / 1000;
+    }
+
+    function formatTime(seconds) {
+      const safe = Math.max(0, asNumber(seconds));
+      const minutes = Math.floor(safe / 60);
+      const remainingSeconds = safe - minutes * 60;
+      return `${String(minutes).padStart(2, "0")}:${remainingSeconds.toFixed(3).padStart(6, "0")}`;
+    }
+
+    function lineDuration(line) {
+      return roundTime(asNumber(line.end) - asNumber(line.start));
+    }
+
+    function durationClass(duration) {
+      if (duration >= 15) return "duration-danger";
+      if (duration >= 10) return "duration-warning";
+      return "";
+    }
+
+    function readJsonFile(file) {
+      return file.text().then((text) => JSON.parse(text));
+    }
+
+    function isEditingField() {
+      const tagName = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
+      return tagName === "input" || tagName === "select" || tagName === "textarea";
+    }
+
+    function rebuildFlatLines() {
+      flatLines = [];
+
+      if (!draft || !Array.isArray(draft.sections)) {
+        return;
+      }
+
+      draft.sections.forEach((section, sectionIndex) => {
+        if (!Array.isArray(section.lines)) return;
+
+        section.lines.forEach((line, lineIndex) => {
+          if (typeof line.anchor !== "boolean") line.anchor = false;
+          if (typeof line.locked !== "boolean") line.locked = false;
+          if (!Array.isArray(line.review_flags)) line.review_flags = [];
+          if (typeof line.confidence !== "string") line.confidence = "draft";
+          if (typeof line.timing_source !== "string") line.timing_source = "manual-or-draft";
+          if (typeof line.edited_manually !== "boolean") line.edited_manually = false;
+
+          flatLines.push({
+            sectionIndex,
+            lineIndex,
+            section,
+            line
+          });
+        });
+      });
+    }
+
+    function recalculateSectionRanges() {
+      if (!draft || !Array.isArray(draft.sections)) {
+        return;
+      }
+
+      draft.sections.forEach((section) => {
+        if (!Array.isArray(section.lines) || section.lines.length === 0) return;
+        section.start = roundTime(section.lines[0].start);
+        section.end = roundTime(section.lines[section.lines.length - 1].end);
+      });
+
+      if (!draft.alignment) draft.alignment = {};
+      draft.alignment.section_count = draft.sections.length;
+      draft.alignment.line_count = flatLines.length;
+
+      let reviewFlags = [];
+
+      draft.sections.forEach((section) => {
+        section.lines.forEach((line) => {
+          (line.review_flags || []).forEach((flag) => {
+            reviewFlags.push({
+              section: section.label,
+              line_id: line.id,
+              text: line.text,
+              flag
+            });
+          });
+        });
+      });
+
+      draft.alignment.review_flag_count = reviewFlags.length;
+      draft.alignment.review_flags = reviewFlags;
+    }
+
+    function selectedFlatLine() {
+      return flatLines[selectedIndex] || null;
+    }
+
+    function setButtonsEnabled(enabled) {
+      previousButton.disabled = !enabled;
+      nextButton.disabled = !enabled;
+      jumpButton.disabled = !enabled;
+      playLineButton.disabled = !enabled;
+      setStartButton.disabled = !enabled;
+      setEndButton.disabled = !enabled;
+      toggleAnchorButton.disabled = !enabled;
+      toggleLockButton.disabled = !enabled;
+      exportButton.disabled = !enabled;
+    }
+
+    function renderSummary() {
+      if (!draft) {
+        summaryGrid.innerHTML = "";
+        return;
+      }
+
+      const lineCount = flatLines.length;
+      const sectionCount = Array.isArray(draft.sections) ? draft.sections.length : 0;
+      const editedCount = flatLines.filter((item) => item.line.edited_manually).length;
+      const flaggedCount = flatLines.reduce((total, item) => total + (item.line.review_flags || []).length, 0);
+
+      summaryGrid.innerHTML = `
+        <div class="summary-card">
+          <strong>${sectionCount}</strong>
+          Sections
+        </div>
+        <div class="summary-card">
+          <strong>${lineCount}</strong>
+          Lines
+        </div>
+        <div class="summary-card">
+          <strong>${editedCount}</strong>
+          Edited
+        </div>
+        <div class="summary-card">
+          <strong>${flaggedCount}</strong>
+          Flags
+        </div>
+      `;
+    }
+
+    function renderSections() {
+      if (!draft || !Array.isArray(draft.sections)) {
+        sectionsContainer.innerHTML = "";
+        return;
+      }
+
+      sectionsContainer.innerHTML = draft.sections.map((section, sectionIndex) => {
+        const cards = (section.lines || []).map((line, lineIndex) => {
+          const flatIndex = flatLines.findIndex((item) => item.sectionIndex === sectionIndex && item.lineIndex === lineIndex);
+          const duration = lineDuration(line);
+          const flags = (line.review_flags || []).map((flag) => `<span class="flag">${escapeHtml(flag)}</span>`).join("");
+
+          return `
+            <div
+              class="line-card ${flatIndex === selectedIndex ? "selected" : ""} ${flatIndex === playingIndex ? "playing" : ""} ${line.edited_manually ? "edited" : ""}"
+              data-flat-index="${flatIndex}"
+            >
+              <div class="line-top">
+                <div class="line-id">${escapeHtml(line.id || "")}</div>
+                <div class="line-text">${escapeHtml(line.text || "")}</div>
+                <div class="duration ${durationClass(duration)}">${duration.toFixed(3)}s</div>
+              </div>
+
+              <div class="timing-grid">
+                <div>
+                  <div class="field-label">Start</div>
+                  <input type="number" step="0.001" data-action="start-input" data-flat-index="${flatIndex}" value="${roundTime(line.start)}" />
+                </div>
+                <div>
+                  <div class="field-label">End</div>
+                  <input type="number" step="0.001" data-action="end-input" data-flat-index="${flatIndex}" value="${roundTime(line.end)}" />
+                </div>
+              </div>
+
+              <div class="tag-row">
+                <span class="tag">${escapeHtml(line.timing_source || "draft")}</span>
+                ${line.anchor ? `<span class="tag anchor">anchor</span>` : ""}
+                ${line.locked ? `<span class="tag locked">locked</span>` : ""}
+              </div>
+
+              <div class="flag-row">
+                ${flags || `<span class="small">No review flags</span>`}
+              </div>
+
+              <div class="actions">
+                <button data-action="select" data-flat-index="${flatIndex}">Select</button>
+                <button data-action="jump" data-flat-index="${flatIndex}">Jump</button>
+                <button data-action="play" data-flat-index="${flatIndex}">Play</button>
+                <button data-action="set-start" data-flat-index="${flatIndex}">Set start</button>
+                <button data-action="set-end" data-flat-index="${flatIndex}">Set end</button>
+                <button data-action="toggle-anchor" data-flat-index="${flatIndex}">Anchor</button>
+                <button data-action="toggle-lock" data-flat-index="${flatIndex}">Lock</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        return `
+          <div class="section-block">
+            <div class="section-header">
+              ${escapeHtml(section.label || "Section")} (${formatTime(section.start)} to ${formatTime(section.end)})
+            </div>
+            <div class="line-list">${cards}</div>
+          </div>
+        `;
+      }).join("");
+
+      sectionsContainer.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const flatIndex = asNumber(button.dataset.flatIndex, -1);
+          const action = button.dataset.action;
+
+          if (flatIndex < 0 || !flatLines[flatIndex]) return;
+
+          if (action === "select") selectLine(flatIndex, true);
+
+          if (action === "jump") {
+            selectLine(flatIndex, true);
+            jumpToSelectedLine();
+          }
+
+          if (action === "play") {
+            selectLine(flatIndex, true);
+            playSelectedLine();
+          }
+
+          if (action === "set-start") {
+            selectLine(flatIndex, true);
+            setSelectedLineStart(audio.currentTime);
+          }
+
+          if (action === "set-end") {
+            selectLine(flatIndex, true);
+            setSelectedLineEnd(audio.currentTime);
+          }
+
+          if (action === "toggle-anchor") {
+            selectLine(flatIndex, true);
+            toggleAnchor();
+          }
+
+          if (action === "toggle-lock") {
+            selectLine(flatIndex, true);
+            toggleLock();
+          }
+        });
+      });
+
+      sectionsContainer.querySelectorAll('input[data-action="start-input"]').forEach((input) => {
+        input.addEventListener("change", () => {
+          const flatIndex = asNumber(input.dataset.flatIndex, -1);
+          const newStart = asNumber(input.value, 0);
+
+          if (flatIndex < 0 || !flatLines[flatIndex]) return;
+
+          selectLine(flatIndex, false);
+          setSelectedLineStart(newStart);
+        });
+      });
+
+      sectionsContainer.querySelectorAll('input[data-action="end-input"]').forEach((input) => {
+        input.addEventListener("change", () => {
+          const flatIndex = asNumber(input.dataset.flatIndex, -1);
+          const newEnd = asNumber(input.value, 0);
+
+          if (flatIndex < 0 || !flatLines[flatIndex]) return;
+
+          selectLine(flatIndex, false);
+          setSelectedLineEnd(newEnd);
+        });
+      });
+    }
+
+    function updateCurrentDisplay() {
+      timeReadout.textContent = formatTime(audio.currentTime);
+
+      const selected = selectedFlatLine();
+
+      if (!selected) {
+        currentLineText.textContent = "No line selected.";
+        currentMeta.textContent = "Load a draft to begin.";
+        return;
+      }
+
+      const { section, line } = selected;
+      const duration = lineDuration(line);
+
+      currentLineText.textContent = `${line.id}: ${line.text}`;
+      currentMeta.innerHTML = `
+        Section: <strong>${escapeHtml(section.label || "")}</strong><br>
+        Start: <strong>${formatTime(line.start)}</strong> |
+        End: <strong>${formatTime(line.end)}</strong> |
+        Duration: <strong>${duration.toFixed(3)}s</strong><br>
+        Anchor: <strong>${line.anchor ? "yes" : "no"}</strong> |
+        Locked: <strong>${line.locked ? "yes" : "no"}</strong><br>
+        Flags: <strong>${(line.review_flags || []).length ? escapeHtml(line.review_flags.join(", ")) : "none"}</strong>
+      `;
+    }
+
+    function rerenderAll() {
+      recalculateSectionRanges();
+      rebuildFlatLines();
+
+      if (selectedIndex >= flatLines.length) {
+        selectedIndex = Math.max(0, flatLines.length - 1);
+      }
+
+      renderSummary();
+      renderSections();
+      updateCurrentDisplay();
+      highlightSelectedCard();
+    }
+
+    function clearSelectionClasses() {
+      document.querySelectorAll(".line-card.selected").forEach((card) => {
+        card.classList.remove("selected");
+      });
+    }
+
+    function clearPlayingClasses() {
+      document.querySelectorAll(".line-card.playing").forEach((card) => {
+        card.classList.remove("playing");
+      });
+    }
+
+    function highlightSelectedCard(scrollIntoView = true) {
+      clearSelectionClasses();
+
+      const card = document.querySelector(`.line-card[data-flat-index="${selectedIndex}"]`);
+
+      if (card) {
+        card.classList.add("selected");
+
+        if (scrollIntoView) {
+          card.scrollIntoView({ block: "center", behavior: "smooth" });
+        }
+      }
+    }
+
+    function highlightPlayingCard(scrollIntoView = false) {
+      clearPlayingClasses();
+
+      const card = document.querySelector(`.line-card[data-flat-index="${playingIndex}"]`);
+
+      if (card) {
+        card.classList.add("playing");
+
+        if (scrollIntoView) {
+          card.scrollIntoView({ block: "center", behavior: "smooth" });
+        }
+      }
+    }
+
+    function selectLine(index, scrollIntoView = true) {
+      if (!flatLines[index]) return;
+
+      selectedIndex = index;
+      updateCurrentDisplay();
+      highlightSelectedCard(scrollIntoView);
+    }
+
+    function findLineIndexAtTime(time) {
+      if (!flatLines.length) return -1;
+
+      for (let index = 0; index < flatLines.length; index++) {
+        const line = flatLines[index].line;
+
+        if (time >= asNumber(line.start) && time <= asNumber(line.end)) {
+          return index;
+        }
+      }
+
+      let closestPreviousIndex = -1;
+
+      for (let index = 0; index < flatLines.length; index++) {
+        const line = flatLines[index].line;
+
+        if (asNumber(line.start) <= time) {
+          closestPreviousIndex = index;
+        } else {
+          break;
+        }
+      }
+
+      return closestPreviousIndex;
+    }
+
+    function syncSelectionToPlayback() {
+      if (!followPlaybackCheckbox.checked) return;
+      if (!flatLines.length) return;
+      if (audio.paused) return;
+      if (isEditingField()) return;
+
+      const nextPlayingIndex = findLineIndexAtTime(audio.currentTime);
+
+      if (nextPlayingIndex < 0) return;
+
+      if (nextPlayingIndex !== playingIndex) {
+        playingIndex = nextPlayingIndex;
+        selectedIndex = nextPlayingIndex;
+        updateCurrentDisplay();
+        highlightSelectedCard(true);
+        highlightPlayingCard(false);
+      }
+    }
+
+    function jumpToSelectedLine() {
+      const selected = selectedFlatLine();
+
+      if (!selected) return;
+
+      audio.currentTime = Math.max(0, asNumber(selected.line.start) - 0.2);
+
+      if (autoplayCheckbox.checked) {
+        audio.play();
+      }
+    }
+
+    function playSelectedLine() {
+      const selected = selectedFlatLine();
+
+      if (!selected) return;
+
+      const line = selected.line;
+      const stopAt = asNumber(line.end) + 0.2;
+
+      audio.currentTime = Math.max(0, asNumber(line.start) - 0.2);
+      audio.play();
+
+      const stopper = () => {
+        if (audio.currentTime >= stopAt) {
+          audio.pause();
+          audio.removeEventListener("timeupdate", stopper);
+        }
+      };
+
+      audio.addEventListener("timeupdate", stopper);
+    }
+
+    function markLineEdited(line) {
+      line.edited_manually = true;
+      line.confidence = "edited";
+      line.timing_source = "manual-edit";
+    }
+
+    function shiftLine(line, delta) {
+      line.start = roundTime(asNumber(line.start) + delta);
+      line.end = roundTime(asNumber(line.end) + delta);
+
+      if (line.end <= line.start) {
+        line.end = roundTime(line.start + 0.05);
+      }
+
+      markLineEdited(line);
+    }
+
+    function rippleForward(fromFlatIndex, delta) {
+      if (!rippleCheckbox.checked) return;
+      if (Math.abs(delta) < 0.0005) return;
+
+      for (let i = fromFlatIndex; i < flatLines.length; i++) {
+        const target = flatLines[i].line;
+
+        if (target.anchor || target.locked) {
+          break;
+        }
+
+        shiftLine(target, delta);
+      }
+    }
+
+    function setSelectedLineStart(newStart) {
+      const selected = selectedFlatLine();
+
+      if (!selected) return;
+
+      const line = selected.line;
+      const oldStart = asNumber(line.start);
+      const oldEnd = asNumber(line.end);
+      const duration = Math.max(0.05, oldEnd - oldStart);
+
+      line.start = roundTime(Math.max(0, newStart));
+      line.end = roundTime(line.start + duration);
+
+      markLineEdited(line);
+
+      const delta = roundTime(line.start - oldStart);
+      rippleForward(selectedIndex + 1, delta);
+
+      rerenderAll();
+    }
+
+    function setSelectedLineEnd(newEnd) {
+      const selected = selectedFlatLine();
+
+      if (!selected) return;
+
+      const line = selected.line;
+      const oldEnd = asNumber(line.end);
+
+      line.end = roundTime(Math.max(asNumber(line.start) + 0.05, newEnd));
+      markLineEdited(line);
+
+      const delta = roundTime(line.end - oldEnd);
+      rippleForward(selectedIndex + 1, delta);
+
+      rerenderAll();
+    }
+
+    function toggleAnchor() {
+      const selected = selectedFlatLine();
+
+      if (!selected) return;
+
+      selected.line.anchor = !selected.line.anchor;
+      markLineEdited(selected.line);
+      rerenderAll();
+    }
+
+    function toggleLock() {
+      const selected = selectedFlatLine();
+
+      if (!selected) return;
+
+      selected.line.locked = !selected.line.locked;
+      markLineEdited(selected.line);
+      rerenderAll();
+    }
+
+    async function loadDraft() {
+      clearError();
+
+      const audioFile = audioFileInput.files[0];
+      const jsonFile = jsonFileInput.files[0];
+
+      if (!audioFile) {
+        showError("Choose the isolated vocal MP3 first.");
+        return;
+      }
+
+      if (!jsonFile) {
+        showError("Choose the draft JSON file.");
+        return;
+      }
+
+      try {
+        draft = await readJsonFile(jsonFile);
+      } catch (error) {
+        showError(`Could not read JSON: ${error.message}`);
+        return;
+      }
+
+      if (!draft.sections || !Array.isArray(draft.sections)) {
+        showError("The JSON does not contain a sections array.");
+        return;
+      }
+
+      sourceAudioFileName = audioFile.name;
+      sourceDraftFileName = jsonFile.name;
+      audio.src = URL.createObjectURL(audioFile);
+
+      rebuildFlatLines();
+
+      if (!flatLines.length) {
+        showError("No lines were found in the draft JSON.");
+        return;
+      }
+
+      selectedIndex = 0;
+      playingIndex = -1;
+      setButtonsEnabled(true);
+      rerenderAll();
+      jumpToSelectedLine();
+    }
+
+    function previousLine() {
+      if (!flatLines.length) return;
+
+      selectedIndex = Math.max(0, selectedIndex - 1);
+      playingIndex = selectedIndex;
+      updateCurrentDisplay();
+      highlightSelectedCard(true);
+      highlightPlayingCard(false);
+
+      if (autoplayCheckbox.checked) {
+        jumpToSelectedLine();
+      }
+    }
+
+    function nextLine() {
+      if (!flatLines.length) return;
+
+      selectedIndex = Math.min(flatLines.length - 1, selectedIndex + 1);
+      playingIndex = selectedIndex;
+      updateCurrentDisplay();
+      highlightSelectedCard(true);
+      highlightPlayingCard(false);
+
+      if (autoplayCheckbox.checked) {
+        jumpToSelectedLine();
+      }
+    }
+
+    function exportEditedJson() {
+      if (!draft) {
+        showError("No draft loaded.");
+        return;
+      }
+
+      recalculateSectionRanges();
+
+      if (!draft.source) draft.source = {};
+      draft.source.edited_audio_file_name = sourceAudioFileName;
+      draft.source.edited_from_draft_file_name = sourceDraftFileName;
+
+      exportCounter += 1;
+
+      const json = JSON.stringify(draft, null, 2);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const baseName = sourceDraftFileName
+        ? sourceDraftFileName.replace(/\.json$/i, "")
+        : "karaoke-draft";
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${baseName}-edited-${exportCounter}.json`;
+      link.click();
+
+      URL.revokeObjectURL(url);
+    }
+
+    loadButton.addEventListener("click", loadDraft);
+    previousButton.addEventListener("click", previousLine);
+    nextButton.addEventListener("click", nextLine);
+    jumpButton.addEventListener("click", jumpToSelectedLine);
+    playLineButton.addEventListener("click", playSelectedLine);
+    setStartButton.addEventListener("click", () => setSelectedLineStart(audio.currentTime));
+    setEndButton.addEventListener("click", () => setSelectedLineEnd(audio.currentTime));
+    toggleAnchorButton.addEventListener("click", toggleAnchor);
+    toggleLockButton.addEventListener("click", toggleLock);
+    exportButton.addEventListener("click", exportEditedJson);
+
+    audio.addEventListener("timeupdate", () => {
+      syncSelectionToPlayback();
+      updateCurrentDisplay();
+    });
+
+    audio.addEventListener("seeked", () => {
+      const index = findLineIndexAtTime(audio.currentTime);
+
+      if (index >= 0) {
+        playingIndex = index;
+
+        if (followPlaybackCheckbox.checked && !isEditingField()) {
+          selectedIndex = index;
+          highlightSelectedCard(true);
+        }
+
+        highlightPlayingCard(false);
+      }
+
+      updateCurrentDisplay();
+    });
+
+    audio.addEventListener("pause", () => {
+      updateCurrentDisplay();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (isEditingField()) {
+        return;
+      }
+
+      if (event.code === "Space") {
+        event.preventDefault();
+
+        if (audio.paused) audio.play();
+        else audio.pause();
+      }
+
+      if (event.key.toLowerCase() === "j") {
+        jumpToSelectedLine();
+      }
+
+      if (event.key.toLowerCase() === "p") {
+        playSelectedLine();
+      }
+
+      if (event.key.toLowerCase() === "s") {
+        setSelectedLineStart(audio.currentTime);
+      }
+
+      if (event.key.toLowerCase() === "e") {
+        setSelectedLineEnd(audio.currentTime);
+      }
+
+      if (event.key.toLowerCase() === "n") {
+        nextLine();
+      }
+
+      if (event.key.toLowerCase() === "b") {
+        previousLine();
+      }
+    });
+
+    setButtonsEnabled(false);
+  </script>
+</body>
+</html>

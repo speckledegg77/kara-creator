@@ -1,0 +1,102 @@
+{
+  "schema_version": "karaoke-comparison-report-v1",
+  "draft_file": "C:\\Users\\mark\\kara-creator\\outputs\\test-draft-mfa-generous.json",
+  "truth_file": "C:\\Users\\mark\\kara-creator\\outputs\\manual-truth-opening.json",
+  "section": {
+    "id": "opening-001",
+    "label": "OPENING"
+  },
+  "summary": {
+    "lines_in_truth": 6,
+    "lines_compared": 6,
+    "mean_absolute_start_error_seconds": 7.245,
+    "mean_absolute_end_error_seconds": 5.95,
+    "mean_absolute_duration_error_seconds": 2.372
+  },
+  "comparisons": [
+    {
+      "line_id": "line-0001",
+      "text": "There was a time when I flew higher",
+      "status": "compared",
+      "draft_start": 0.0,
+      "truth_start": 8.915,
+      "start_error_seconds": -8.915,
+      "draft_end": 12.41,
+      "truth_end": 14.441,
+      "end_error_seconds": -2.031,
+      "draft_duration": 12.41,
+      "truth_duration": 5.526,
+      "duration_error_seconds": 6.884
+    },
+    {
+      "line_id": "line-0002",
+      "text": "Was a time the wild girl running free",
+      "status": "compared",
+      "draft_start": 12.49,
+      "truth_start": 15.993,
+      "start_error_seconds": -3.503,
+      "draft_end": 17.02,
+      "truth_end": 21.753,
+      "end_error_seconds": -4.733,
+      "draft_duration": 4.53,
+      "truth_duration": 5.76,
+      "duration_error_seconds": -1.23
+    },
+    {
+      "line_id": "line-0003",
+      "text": "Would be me",
+      "status": "compared",
+      "draft_start": 17.1,
+      "truth_start": 23.363,
+      "start_error_seconds": -6.263,
+      "draft_end": 19.16,
+      "truth_end": 25.449,
+      "end_error_seconds": -6.289,
+      "draft_duration": 2.06,
+      "truth_duration": 2.086,
+      "duration_error_seconds": -0.026
+    },
+    {
+      "line_id": "line-0004",
+      "text": "Now I see her, feel the fire",
+      "status": "compared",
+      "draft_start": 19.24,
+      "truth_start": 27.877,
+      "start_error_seconds": -8.637,
+      "draft_end": 27.29,
+      "truth_end": 32.448,
+      "end_error_seconds": -5.158,
+      "draft_duration": 8.05,
+      "truth_duration": 4.571,
+      "duration_error_seconds": 3.479
+    },
+    {
+      "line_id": "line-0005",
+      "text": "Now I know she needs me there to share",
+      "status": "compared",
+      "draft_start": 27.37,
+      "truth_start": 33.306,
+      "start_error_seconds": -5.936,
+      "draft_end": 31.58,
+      "truth_end": 39.492,
+      "end_error_seconds": -7.912,
+      "draft_duration": 4.21,
+      "truth_duration": 6.186,
+      "duration_error_seconds": -1.976
+    },
+    {
+      "line_id": "line-0006",
+      "text": "I'm nowhere",
+      "status": "compared",
+      "draft_start": 31.66,
+      "truth_start": 41.876,
+      "start_error_seconds": -10.216,
+      "draft_end": 34.03,
+      "truth_end": 43.609,
+      "end_error_seconds": -9.579,
+      "draft_duration": 2.37,
+      "truth_duration": 1.733,
+      "duration_error_seconds": 0.637
+    }
+  ]
+}

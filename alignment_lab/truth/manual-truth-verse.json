@@ -1,0 +1,48 @@
+{
+  "schema_version": "karaoke-section-truth-v1",
+  "created_by": "kara-creator manual section timer",
+  "source": {
+    "audio_file_name": "test-vocals.mp3",
+    "draft_json_file_name": "test-draft-sections.json"
+  },
+  "section": {
+    "id": "verse-002",
+    "label": "VERSE",
+    "start": 45.528,
+    "end": 77.24,
+    "lines": [
+      {
+        "id": "line-0007",
+        "text": "All these blank and tranquil years",
+        "start": 45.528,
+        "end": 50.611,
+        "original_draft_start": 30.91,
+        "original_draft_end": 31.529
+      },
+      {
+        "id": "line-0008",
+        "text": "Seems they've dried up all my tears",
+        "start": 51.765,
+        "end": 57.749,
+        "original_draft_start": 33.144,
+        "original_draft_end": 36.028
+      },
+      {
+        "id": "line-0009",
+        "text": "And while she runs free and fast",
+        "start": 58.079,
+        "end": 63.298,
+        "original_draft_start": 37.535,
+        "original_draft_end": 38.024
+      },
+      {
+        "id": "line-0010",
+        "text": "Seems my wild days are past",
+        "start": 65.052,
+        "end": 77.24,
+        "original_draft_start": 41.655,
+        "original_draft_end": 42.703
+      }
+    ]
+  }
+}
