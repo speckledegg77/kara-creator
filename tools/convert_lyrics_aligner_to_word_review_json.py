@@ -115,19 +115,32 @@ def group_lines_by_section(line_map: dict[str, Any]) -> list[dict[str, Any]]:
     if not isinstance(lines, list) or not lines:
         raise ValueError("Line map does not contain any lines.")
 
+    section_lookup: dict[str, dict[str, Any]] = {}
+
+    for index, section in enumerate(line_map.get("sections", []), start=1):
+        section_id = str(section.get("id") or f"section-{index:03d}")
+        section_lookup[section_id] = section
+
     grouped_sections: list[dict[str, Any]] = []
     current_section: dict[str, Any] | None = None
+    current_key: str | None = None
 
     for line in lines:
         section_label = str(line.get("section", "Song")).strip() or "Song"
+        section_id = str(line.get("section_id") or f"{slugify(section_label)}-{len(grouped_sections) + 1:03d}")
+        section_key = f"{section_id}|{section_label}"
 
-        if current_section is None or current_section["label"] != section_label:
+        if current_section is None or current_key != section_key:
+            source_section = section_lookup.get(section_id, {})
             current_section = {
-                "id": f"{slugify(section_label)}-{len(grouped_sections) + 1:03d}",
+                "id": section_id,
                 "label": section_label,
+                "source": source_section.get("source"),
+                "parser_mode": source_section.get("parser_mode"),
                 "lines": [],
             }
             grouped_sections.append(current_section)
+            current_key = section_key
 
         current_section["lines"].append(line)
 
@@ -140,8 +153,18 @@ def get_words_for_line(
 ) -> tuple[list[dict[str, Any]], list[str]]:
     warnings: list[str] = []
 
-    start_index = int(line.get("start_word_index", -1))
-    end_index = int(line.get("end_word_index", -1))
+    if line.get("display_type") == "instrumental":
+        return [], warnings
+
+    start_index = line.get("start_word_index")
+    end_index = line.get("end_word_index")
+
+    if start_index is None or end_index is None:
+        warnings.append(f"{line.get('id', 'unknown line')}: lyric line has no word index range.")
+        return [], warnings
+
+    start_index = int(start_index)
+    end_index = int(end_index)
 
     if start_index < 0 or end_index < start_index:
         warnings.append(f"{line.get('id', 'unknown line')}: invalid word index range.")
@@ -199,6 +222,24 @@ def build_word_review_json(
         output_lines: list[dict[str, Any]] = []
 
         for line in section["lines"]:
+            display_type = str(line.get("display_type", "lyric"))
+
+            if display_type == "instrumental":
+                output_lines.append(
+                    {
+                        "id": line.get("id"),
+                        "section": section["label"],
+                        "text": ". . .",
+                        "display_type": "instrumental",
+                        "start": None,
+                        "end": None,
+                        "timing_source": "instrumental-placeholder-pending-draft-builder",
+                        "review_flags": ["instrumental_timing_needs_review"],
+                        "words": [],
+                    }
+                )
+                continue
+
             line_words, line_warnings = get_words_for_line(
                 aligned_words=aligned_words,
                 line=line,
@@ -229,19 +270,25 @@ def build_word_review_json(
                     "id": line.get("id"),
                     "section": section["label"],
                     "text": line.get("text", ""),
+                    "display_type": "lyric",
                     "start": output_words[0]["start"],
                     "end": output_words[-1]["end"],
+                    "review_flags": [],
                     "words": output_words,
                 }
             )
 
         if output_lines:
+            timed_lines = [line for line in output_lines if line.get("start") is not None and line.get("end") is not None]
+
             output_sections.append(
                 {
                     "id": section["id"],
                     "label": section["label"],
-                    "start": output_lines[0]["start"],
-                    "end": output_lines[-1]["end"],
+                    "source": section.get("source"),
+                    "parser_mode": section.get("parser_mode"),
+                    "start": timed_lines[0]["start"] if timed_lines else None,
+                    "end": timed_lines[-1]["end"] if timed_lines else None,
                     "lines": output_lines,
                 }
             )
@@ -255,8 +302,10 @@ def build_word_review_json(
         for line in section["lines"]:
             all_lines.append(line)
 
-    for index, line in enumerate(all_lines[:-1]):
-        next_line = all_lines[index + 1]
+    timed_lyric_lines = [line for line in all_lines if line.get("display_type") == "lyric" and line.get("start") is not None]
+
+    for index, line in enumerate(timed_lyric_lines[:-1]):
+        next_line = timed_lyric_lines[index + 1]
         next_start = as_float(next_line["start"])
         latest_allowed_end = max(
             as_float(line["start"]) + 0.05,
@@ -270,17 +319,20 @@ def build_word_review_json(
         else:
             line["display_end_clamped_to_next_line"] = False
 
-    all_lines[-1]["display_end_clamped_to_next_line"] = False
+    if timed_lyric_lines:
+        timed_lyric_lines[-1]["display_end_clamped_to_next_line"] = False
 
     for section in output_sections:
-        if section["lines"]:
-            section["start"] = section["lines"][0]["start"]
-            section["end"] = section["lines"][-1]["end"]
+        timed_lines = [line for line in section["lines"] if line.get("start") is not None and line.get("end") is not None]
+
+        if timed_lines:
+            section["start"] = timed_lines[0]["start"]
+            section["end"] = timed_lines[-1]["end"]
 
     audio_duration = max(as_float(word["start"]) for word in aligned_words) + final_word_display_seconds
 
     return {
-        "schema_version": "karaoke-word-review-v1",
+        "schema_version": "karaoke-word-review-v2",
         "created_by": "kara-creator lyrics-aligner converter",
         "source": {
             "lyrics_aligner_output": str(lyrics_aligner_path),
@@ -295,6 +347,8 @@ def build_word_review_json(
             "word_count": len(aligned_words),
             "section_count": len(output_sections),
             "line_count": sum(len(section["lines"]) for section in output_sections),
+            "lyric_line_count": sum(1 for line in all_lines if line.get("display_type") == "lyric"),
+            "instrumental_line_count": sum(1 for line in all_lines if line.get("display_type") == "instrumental"),
             "settings": {
                 "max_word_display_seconds": max_word_display_seconds,
                 "final_word_display_seconds": final_word_display_seconds,
@@ -318,6 +372,7 @@ def build_word_review_json(
             "This file was created from singing-specific lyrics-aligner word onsets.",
             "The aligner output provides word starts only.",
             "Word and line ends are inferred for review purposes and should not be treated as final timing truth.",
+            "Instrumental placeholder lines are preserved here with empty words arrays and are timed in the draft builder.",
             "Use this mainly to judge word starts and line starts.",
         ],
     }
@@ -400,10 +455,12 @@ def main() -> int:
         print("Lyrics-aligner word review JSON created.")
         print(f"Output: {output_path}")
         print("")
-        print(f"Sections: {output['alignment']['section_count']}")
-        print(f"Lines:    {output['alignment']['line_count']}")
-        print(f"Words:    {output['alignment']['word_count']}")
-        print(f"Warnings: {len(output['alignment']['warnings'])}")
+        print(f"Sections:      {output['alignment']['section_count']}")
+        print(f"Display lines: {output['alignment']['line_count']}")
+        print(f"Lyric lines:   {output['alignment']['lyric_line_count']}")
+        print(f"Instrumentals: {output['alignment']['instrumental_line_count']}")
+        print(f"Words:         {output['alignment']['word_count']}")
+        print(f"Warnings:      {len(output['alignment']['warnings'])}")
         print("")
 
         if output["alignment"]["warnings"]:

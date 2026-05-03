@@ -30,21 +30,21 @@ For command-line use:
 2. Download and install it.
 3. Accept the default options unless you know you need something else.
 
+Check Git in PowerShell:
+
+```powershell
+git --version
+```
+
 ## Step 3: Install Python
 
-1. Go to the official Python downloads page.
-2. Download the Windows installer.
-3. Run it.
-4. Tick `Add python.exe to PATH` before installing.
-5. Finish installation.
+Some project tools use normal Python, and the current aligner uses a conda environment.
 
-Then check it in PowerShell:
+Check normal Python:
 
 ```powershell
 python --version
 ```
-
-You should see a Python version number.
 
 If that does not work, try:
 
@@ -52,28 +52,27 @@ If that does not work, try:
 py --version
 ```
 
-## Step 4: Install Node.js
+## Step 4: Install Miniconda
 
-1. Go to the official Node.js downloads page.
-2. Download the current LTS version for Windows.
-3. Run the installer.
-4. Accept the default options.
-5. Finish installation.
+The current `lyrics-aligner` workflow uses a conda environment called `aligner-win`.
 
-Then check it in PowerShell:
+Install Miniconda for Windows, then open a new PowerShell window and check:
 
 ```powershell
-node --version
-npm --version
+conda --version
 ```
 
-You should see version numbers for both.
+The working environment should be activated with:
+
+```powershell
+conda activate aligner-win
+```
+
+If that environment does not exist, check the project notes or ask for the current setup commands.
 
 ## Step 5: Install FFmpeg
 
 FFmpeg is used to read and convert audio files.
-
-The easiest Windows route may vary. The project should later include one preferred method once tested on your PC.
 
 After installing FFmpeg, check it in PowerShell:
 
@@ -85,73 +84,65 @@ You should see FFmpeg version information.
 
 If PowerShell says `ffmpeg is not recognised`, FFmpeg is installed incorrectly or is not on your PATH.
 
-## Step 6: Create your project folder
+## Step 6: Install Node.js
 
-Choose where your coding projects live.
+Node.js may be needed later if the editor moves to React.
 
-For example:
-
-```powershell
-cd $HOME
-mkdir Projects
-cd Projects
-```
-
-## Step 7: Clone the new repo
-
-Once the repo exists on GitHub, clone it.
-
-Replace `<repo-url>` with the real GitHub URL.
+Check:
 
 ```powershell
-git clone <repo-url>
-cd karaoke-authoring-tool
+node --version
+npm --version
 ```
 
-## Step 8: Add these documents
+The current proof of concept uses static HTML and Python tools, so Node is not always needed for the immediate workflow.
 
-Copy the generated files into the repo root so the folder looks like this:
+## Step 7: Go to the project folder
 
-```text
-karaoke-authoring-tool
-  README.md
-  docs
-    00-novice-start-here.md
-    context.md
-    decisions.md
-    roadmap.md
-    setup-windows.md
-    architecture.md
-    authoring-workflow.md
-    json-schema.md
-    testing-checklist.md
-    troubleshooting.md
-    new-chat-starter.md
-```
-
-## Step 9: First commit
-
-Run this in PowerShell from the project folder:
+Current project folder:
 
 ```powershell
-git add -A
-git commit -m "Add project source docs"
-git push origin main
+cd C:\Users\mark\kara-creator
 ```
 
-## Step 10: Do not add audio files to Git
+## Step 8: Activate the aligner environment
+
+Before running the current pipeline:
+
+```powershell
+conda activate aligner-win
+cd C:\Users\mark\kara-creator
+```
+
+## Step 9: Run the current pipeline
+
+Example:
+
+```powershell
+python .\tools\run_lyrics_aligner_pipeline.py `
+  --audio ".\incoming\new-song-test\vocals.mp3" `
+  --lyrics ".\incoming\new-song-test\lyrics.txt" `
+  --name "new_song_test"
+```
+
+## Step 10: Open the editor
+
+```powershell
+Start-Process .\tools\edit_karaoke_draft.html
+```
+
+Then load the prepared audio file and draft JSON shown by the pipeline.
+
+## Step 11: Do not add audio files to Git
 
 Commercial audio and generated local projects should stay on your PC.
 
 They should not be committed to Git.
 
-A `.gitignore` file should block folders such as:
+Run before commits:
 
-```text
-projects/
-*.mp3
-*.wav
-*.m4a
+```powershell
+git status
 ```
 
 ## Basic checks
@@ -160,8 +151,9 @@ Run these commands any time you need to check whether the core tools are install
 
 ```powershell
 python --version
-node --version
-npm --version
+conda --version
 ffmpeg -version
 git --version
+node --version
+npm --version
 ```

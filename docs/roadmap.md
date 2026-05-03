@@ -2,86 +2,118 @@
 
 ## Current priority
 
-Create a local-first authoring tool that proves whether isolated vocal audio plus exact lyrics can generate a usable karaoke JSON draft.
+Move from the validated Phase 1 proof of concept into Phase 2 usability improvements.
+
+The immediate Phase 2 goal is to reduce lyric preparation work by making section headings optional and supporting instrumental placeholder lines.
 
 ## Phase 0: Project setup
 
-- [ ] Create new repo called `karaoke-authoring-tool`.
-- [ ] Add these source documents.
-- [ ] Add `.gitignore` to avoid committing audio and generated project files.
-- [ ] Install required local tools.
-- [ ] Confirm Python, Node.js, and FFmpeg work from PowerShell.
+Status: complete enough for current work.
+
+Done:
+
+- Repository created as `kara-creator`.
+- Source documents added.
+- Git workflow started.
+- Windows and PowerShell workflow established.
+- FFmpeg available.
+- Conda environment `aligner-win` created.
+- `lyrics-aligner` cloned under `alignment_lab/singing-aligners/lyrics-aligner`.
+
+Still worth checking:
+
+- `.gitignore` blocks audio, incoming files, run folders, and generated lyric JSON.
 
 ## Phase 1: Command-line proof of concept
 
-Goal: prove the timing pipeline before building a polished editor.
+Status: validated.
 
-- [ ] Create backend folder.
-- [ ] Create Python virtual environment.
-- [ ] Add audio preparation script.
-- [ ] Add lyric normalisation script.
-- [ ] Add basic section detection from blank lyric lines and vocal gaps.
-- [ ] Add first draft JSON generator.
-- [ ] Test with `I Miss the Mountains` isolated vocal and cleaned lyrics.
-- [ ] Compare generated JSON against the existing viewer.
+Done:
 
-Done means:
-
-- A command can create `karaoke.draft.json` from a vocal MP3 and lyrics TXT.
-- The first two or three sections are close enough to review.
-- Drift is better than the earlier flat timeline draft.
-
-## Phase 2: Local editor MVP
-
-Goal: make correction fast.
-
-- [ ] Create frontend folder.
-- [ ] Add waveform player.
-- [ ] Load audio and JSON.
-- [ ] Highlight active phrase.
-- [ ] Add phrase list.
-- [ ] Add section list.
-- [ ] Add anchor start to playhead.
-- [ ] Add anchor end to playhead.
-- [ ] Add ripple forward behaviour.
-- [ ] Add section shift.
-- [ ] Add section rescale.
-- [ ] Add JSON export.
+- Tested MFA and identified limitations for sung vocals.
+- Tested singing-specific `lyrics-aligner`.
+- Built pipeline from vocal MP3 plus lyrics TXT to word review JSON and draft JSON.
+- Built `karaoke-draft-v3` draft generation from word starts.
+- Built local browser editor.
+- Added manual correction and export.
+- Added custom pronunciation support.
+- Added stale aligner file cleanup before repeat runs.
+- Tested on two songs.
 
 Done means:
 
-- A user can fix drift without manually adjusting every later line.
+- A command can create a draft JSON from a vocal MP3 and lyrics TXT.
+- The generated draft is close enough to correct in the editor.
+- The workflow reduces manual syncing.
 
-## Phase 3: Better alignment
+## Phase 2: Usability and lyric-prep improvements
 
-Goal: reduce correction work.
+Current focus.
 
-- [ ] Test one or more forced alignment engines.
-- [ ] Add confidence scoring.
-- [ ] Flag low-confidence phrases.
-- [ ] Add repeated-line handling.
-- [ ] Add pronunciation overrides.
-- [ ] Add better section boundary detection.
+Tasks:
+
+- [ ] Make manual section headings optional.
+- [ ] Use explicit `[SECTION]` headings when present.
+- [ ] Use blank-line lyric groups as automatic sections when headings are absent.
+- [ ] Auto-split continuous lyrics into sections of about 8 lines.
+- [ ] Add `. . .`, `...`, and `…` instrumental placeholder support.
+- [ ] Keep instrumental placeholders in the draft and editor.
+- [ ] Prevent instrumental placeholders being sent to `lyrics-aligner`.
+- [ ] Add review flags when instrumental timing must be checked.
+- [ ] Update the launcher to explain the simpler lyric format.
+- [ ] Test a song with no headings.
+- [ ] Test a song with blank-line groups.
+- [ ] Test a song with `. . .` instrumental placeholders.
 
 Done means:
 
-- Clean isolated vocal files usually produce a draft that needs tweaking rather than manual syncing.
+- The user can paste ordinary clean lyrics without manually labelling every verse or chorus.
+- The editor still shows useful sections.
+- Instrumental gaps can be represented and edited.
 
-## Phase 4: Preview and export polish
+## Phase 3: Editor improvement
 
-- [ ] Add backing-track preview option.
-- [ ] Add LRC export.
-- [ ] Add final project save/load.
-- [ ] Add review status per phrase.
-- [ ] Add keyboard shortcuts.
+Goal: make correction faster and less fiddly.
+
+Tasks:
+
+- [ ] Improve save/export naming.
+- [ ] Add a cleaner project result page after pipeline generation.
+- [ ] Add section-level shift.
+- [ ] Add section-level rescale.
+- [ ] Add filter for flagged lines.
+- [ ] Add reviewed status per line.
+- [ ] Add loop current line.
+- [ ] Add loop current section.
+- [ ] Add optional backing track preview.
+
+Done means:
+
+- A user can fix a draft without scrolling or hunting for problem areas.
+
+## Phase 4: Export polish
+
+Tasks:
+
+- [ ] Define final export JSON separately from diagnostic draft JSON.
+- [ ] Add final export button.
+- [ ] Add optional LRC export.
+- [ ] Add JSON validation before export.
+- [ ] Add reload test for exported JSON.
+
+Done means:
+
+- The output is stable enough to use as a sample input for a future quiz app karaoke display.
 
 ## Phase 5: Prepare quiz app integration
 
 Do this only after the authoring workflow works.
 
-- [ ] Lock JSON schema.
-- [ ] Create sample final JSON files.
-- [ ] Build standalone karaoke display component.
+Tasks:
+
+- [ ] Lock the final JSON schema.
+- [ ] Create safe sample final JSON files.
+- [ ] Build a standalone karaoke display component.
 - [ ] Test display with exported JSON.
 - [ ] Plan future quiz app integration.
 
@@ -90,4 +122,6 @@ Do this only after the authoring workflow works.
 - Batch processing for many songs.
 - Word-by-word highlighting.
 - Automatic vocal separation.
+- Better pronunciation editing UI.
+- Better waveform display.
 - Cloud version for trusted private use.

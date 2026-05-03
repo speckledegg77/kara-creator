@@ -1,5 +1,5 @@
 {
-  "schema_version": "kara-run-manifest-v1",
+  "schema_version": "kara-run-manifest-v2",
   "song_name": "new_song_test",
   "dataset_name": "kara_new_song_test",
   "source": {
@@ -15,30 +15,88 @@
     "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_song_test-word-review-lyrics-aligner.json",
     "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_song_test-draft-lyrics-aligner-v3.json"
   },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . .",
+    "aligner_lyrics_exclude_instrumentals": true
+  },
   "sections": [
     {
-      "label": "OPENING",
-      "line_count": 4
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
     },
     {
-      "label": "VERSE ONE",
-      "line_count": 5
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
     },
     {
-      "label": "VERSE TWO",
-      "line_count": 4
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
     },
     {
-      "label": "VERSE THREE",
-      "line_count": 9
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
     },
     {
-      "label": "VERSE 4",
-      "line_count": 9
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 8,
+      "lyric_line_count": 8,
+      "instrumental_line_count": 0
     },
     {
-      "label": "OUTRO",
-      "line_count": 3
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 9,
+      "lyric_line_count": 9,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 2,
+      "lyric_line_count": 2,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 1,
+      "instrumental_line_count": 0
     }
   ],
   "cleanup": {

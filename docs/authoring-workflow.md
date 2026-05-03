@@ -1,6 +1,6 @@
 # Authoring Workflow
 
-This explains how the tool should work from the user's point of view.
+This explains how Kara Creator should work from the user's point of view.
 
 ## One song workflow
 
@@ -10,126 +10,177 @@ Create or obtain:
 
 - isolated vocal audio file
 - exact lyrics for the same version
-- optional backing track for preview
+- optional backing track for preview later
 
 Use clean lyric text.
 
 Do not include scraped website clutter, song suggestions, annotations, or unrelated text.
 
-## Step 2: Create a project
+## Step 2: Prepare the lyrics
 
-The tool asks for:
+Exact lyric line breaks matter.
 
-- title
-- show key or show name
-- version label
-- notes
+Manual section headings are optional.
+
+The tool should support these lyric formats.
+
+### Option A: Explicit section headings
+
+```text
+[OPENING]
+First lyric line
+Second lyric line
+
+[VERSE]
+Third lyric line
+Fourth lyric line
+```
+
+### Option B: Blank-line groups
+
+```text
+First lyric line
+Second lyric line
+
+Third lyric line
+Fourth lyric line
+
+Fifth lyric line
+Sixth lyric line
+```
+
+Each blank-line group becomes an automatic section.
+
+### Option C: Continuous lyrics
+
+```text
+First lyric line
+Second lyric line
+Third lyric line
+Fourth lyric line
+```
+
+The tool should split continuous lyrics into automatic sections of about 8 lines.
+
+## Step 3: Add instrumental placeholders if needed
+
+Use this on a line by itself when you want the karaoke display to show an instrumental gap:
+
+```text
+. . .
+```
+
+The parser should also accept:
+
+```text
+...
+…
+```
+
+and normalise them to:
+
+```text
+. . .
+```
+
+This line should appear in the editor and final JSON, but it should not be sent to the aligner.
 
 Example:
 
 ```text
-Title: I Miss the Mountains
-Show key: next_to_normal
-Version label: isolated vocal test
+I had a dream my life would be
+So different from this hell I'm living
+
+. . .
+
+So different now from what it seemed
 ```
 
-## Step 3: Add source files
+## Step 4: Run the pipeline
 
-Add:
+Current command-line workflow:
+
+```powershell
+conda activate aligner-win
+cd C:\Users\mark\kara-creator
+
+python .\tools\run_lyrics_aligner_pipeline.py `
+  --audio ".\incoming\new-song-test\vocals.mp3" `
+  --lyrics ".\incoming\new-song-test\lyrics.txt" `
+  --name "new_song_test"
+```
+
+Expected outputs:
 
 ```text
-vocals.mp3
-lyrics.txt
+outputs\new_song_test-word-review-lyrics-aligner.json
+outputs\new_song_test-draft-lyrics-aligner-v3.json
+alignment_lab\runs\new_song_test\new_song_test-run-manifest.json
 ```
 
-Optional:
+## Step 5: Open the draft editor
+
+Open:
 
 ```text
-backing-track.mp3
+tools/edit_karaoke_draft.html
 ```
 
-## Step 4: Review lyric phrases before generation
-
-The tool should show the lyric lines and let the user:
-
-- keep a line
-- split a line
-- merge two lines
-- add a section break
-- rename a section
-
-This matters because printed lyric lines are not always sung phrases.
-
-## Step 5: Generate draft timing
-
-The user presses:
+Load:
 
 ```text
-Generate draft
+alignment_lab\runs\<song>\audio\<song>.mp3
+outputs\<song>-draft-lyrics-aligner-v3.json
 ```
 
-The backend creates:
+## Step 6: Review the draft
 
-```text
-working/karaoke.draft.json
-```
+Use Follow playback to watch the active line move through the song.
 
-## Step 6: Review confidence flags
+Check:
 
-The editor should show:
+- line starts
+- line ends
+- repeated lyric phrases
+- long held notes
+- flagged lines
+- `. . .` instrumental placeholders
 
-- high-confidence phrases
-- medium-confidence phrases
-- low-confidence phrases
-- overlap warnings
-- repeated-line warnings
-
-The user should not have to listen to every phrase in order.
-
-The editor should guide them to the weak parts first.
+The editor should guide attention to likely weak lines.
 
 ## Step 7: Correct timing
 
-The main correction actions are:
+Main correction actions:
 
-- anchor phrase start to playhead
-- anchor phrase end to playhead
-- shift phrase
+- jump to line
+- play line
+- set line start to playhead
+- set line end to playhead
 - ripple forward
+- anchor trusted lines
+- lock lines to stop ripple
+
+Future correction actions:
+
+- shift whole section
 - rescale section
-- split phrase
-- merge phrase
-- mark reviewed
+- mark line reviewed
+- loop current line
+- loop current section
 
-## Step 8: Export final JSON
+## Step 8: Export edited JSON
 
-When reviewed, export:
+When reviewed, export edited JSON from the editor.
 
-```text
-exports/karaoke.final.json
-```
+Store the edited file in `outputs/` if you want to keep it locally.
 
-Optional:
-
-```text
-exports/karaoke.final.lrc
-```
+Be careful before committing edited files, because they may contain full copyrighted lyrics.
 
 ## Draft quality judgement
 
-A draft is good if most correction is section-level or small line-level tweaking.
+A draft is good if most correction is small line-level tweaking.
 
 A draft is poor if the user has to manually sync most lines from scratch.
-
-## Recommended first test song
-
-Use one known test song with:
-
-- clean isolated vocal
-- clean exact lyrics
-- known earlier timing problems
-
-This lets the team compare new output against earlier rough attempts.
 
 ## When to reject a song for MVP
 
@@ -141,6 +192,6 @@ A song may be poor for the first version if it has:
 - lots of ad libs
 - live recording noise
 - very free rubato timing
-- long sections with no clear vocal gaps
+- long sections where the sung lyrics do not match the supplied text
 
 Do not force poor candidates through the MVP.

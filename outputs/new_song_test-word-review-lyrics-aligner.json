@@ -1,19 +1,21 @@
 {
-  "schema_version": "karaoke-word-review-v1",
+  "schema_version": "karaoke-word-review-v2",
   "created_by": "kara-creator lyrics-aligner converter",
   "source": {
     "lyrics_aligner_output": "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\outputs\\kara_new_song_test\\word_onsets\\new_song_test.txt",
     "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_song_test\\new_song_test-line-map.json",
     "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\vocals.mp3",
     "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\lyrics.txt",
-    "audio_duration_seconds": 203.872
+    "audio_duration_seconds": 203.888
   },
   "alignment": {
     "mode": "singing-specific-lyrics-aligner-word-onsets",
     "status": "diagnostic",
-    "word_count": 258,
-    "section_count": 6,
-    "line_count": 34,
+    "word_count": 257,
+    "section_count": 9,
+    "line_count": 35,
+    "lyric_line_count": 33,
+    "instrumental_line_count": 2,
     "settings": {
       "max_word_display_seconds": 0.9,
       "final_word_display_seconds": 1.2,
@@ -23,17 +25,21 @@
   },
   "sections": [
     {
-      "id": "opening-001",
-      "label": "OPENING",
+      "id": "section-1-001",
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
       "start": 12.96,
       "end": 36.964,
       "lines": [
         {
           "id": "line-0001",
-          "section": "OPENING",
+          "section": "Section 1",
           "text": "If I met myself back then I wonder what I'd say",
+          "display_type": "lyric",
           "start": 12.96,
           "end": 17.31,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0001",
@@ -77,17 +83,17 @@
               "line_word_index": 4,
               "text": "back",
               "start": 14.544,
-              "end": 14.96,
-              "duration": 0.416
+              "end": 14.944,
+              "duration": 0.4
             },
             {
               "id": "word-0006",
               "aligner_word_index": 5,
               "line_word_index": 5,
               "text": "then",
-              "start": 14.96,
+              "start": 14.944,
               "end": 15.52,
-              "duration": 0.56
+              "duration": 0.576
             },
             {
               "id": "word-0007",
@@ -95,16 +101,16 @@
               "line_word_index": 6,
               "text": "i",
               "start": 15.52,
-              "end": 15.568,
-              "duration": 0.048
+              "end": 15.552,
+              "duration": 0.032
             },
             {
               "id": "word-0008",
               "aligner_word_index": 7,
               "line_word_index": 7,
               "text": "wonder",
-              "start": 15.568,
-              "end": 16.468,
+              "start": 15.552,
+              "end": 16.452,
               "duration": 0.9
             },
             {
@@ -112,9 +118,9 @@
               "aligner_word_index": 8,
               "line_word_index": 8,
               "text": "what",
-              "start": 16.544,
+              "start": 16.592,
               "end": 16.944,
-              "duration": 0.4
+              "duration": 0.352
             },
             {
               "id": "word-0010",
@@ -140,10 +146,12 @@
         },
         {
           "id": "line-0002",
-          "section": "OPENING",
+          "section": "Section 1",
           "text": "Would I tell that simple wide-eyed girl the truth",
+          "display_type": "lyric",
           "start": 17.36,
           "end": 24.1,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0012",
@@ -169,17 +177,17 @@
               "line_word_index": 2,
               "text": "tell",
               "start": 19.824,
-              "end": 20.336,
-              "duration": 0.512
+              "end": 20.32,
+              "duration": 0.496
             },
             {
               "id": "word-0015",
               "aligner_word_index": 14,
               "line_word_index": 3,
               "text": "that",
-              "start": 20.336,
+              "start": 20.32,
               "end": 20.592,
-              "duration": 0.256
+              "duration": 0.272
             },
             {
               "id": "word-0016",
@@ -195,8 +203,8 @@
               "aligner_word_index": 16,
               "line_word_index": 5,
               "text": "wideeyed",
-              "start": 21.536,
-              "end": 22.436,
+              "start": 21.52,
+              "end": 22.42,
               "duration": 0.9
             },
             {
@@ -231,10 +239,12 @@
         },
         {
           "id": "line-0003",
-          "section": "OPENING",
-          "text": "If I met myself back then, a child who'd lost her way",
+          "section": "Section 1",
+          "text": "If I met myself again, a child who'd lost her way",
+          "display_type": "lyric",
           "start": 26.176,
-          "end": 31.364,
+          "end": 31.38,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0021",
@@ -276,72 +286,63 @@
               "id": "word-0025",
               "aligner_word_index": 24,
               "line_word_index": 4,
-              "text": "back",
-              "start": 27.824,
-              "end": 27.952,
-              "duration": 0.128
+              "text": "again",
+              "start": 27.872,
+              "end": 28.672,
+              "duration": 0.8
             },
             {
               "id": "word-0026",
               "aligner_word_index": 25,
               "line_word_index": 5,
-              "text": "then",
-              "start": 27.952,
-              "end": 28.688,
-              "duration": 0.736
+              "text": "a",
+              "start": 28.672,
+              "end": 28.768,
+              "duration": 0.096
             },
             {
               "id": "word-0027",
               "aligner_word_index": 26,
               "line_word_index": 6,
-              "text": "a",
-              "start": 28.688,
-              "end": 28.752,
-              "duration": 0.064
+              "text": "child",
+              "start": 28.768,
+              "end": 29.12,
+              "duration": 0.352
             },
             {
               "id": "word-0028",
               "aligner_word_index": 27,
               "line_word_index": 7,
-              "text": "child",
-              "start": 28.752,
-              "end": 29.12,
-              "duration": 0.368
-            },
-            {
-              "id": "word-0029",
-              "aligner_word_index": 28,
-              "line_word_index": 8,
               "text": "who'd",
               "start": 29.12,
               "end": 29.632,
               "duration": 0.512
             },
             {
+              "id": "word-0029",
+              "aligner_word_index": 28,
+              "line_word_index": 8,
+              "text": "lost",
+              "start": 29.632,
+              "end": 30.176,
+              "duration": 0.544
+            },
+            {
               "id": "word-0030",
               "aligner_word_index": 29,
               "line_word_index": 9,
-              "text": "lost",
-              "start": 29.632,
-              "end": 30.192,
-              "duration": 0.56
+              "text": "her",
+              "start": 30.176,
+              "end": 30.48,
+              "duration": 0.304
             },
             {
               "id": "word-0031",
               "aligner_word_index": 30,
               "line_word_index": 10,
-              "text": "her",
-              "start": 30.192,
-              "end": 30.464,
-              "duration": 0.272
-            },
-            {
-              "id": "word-0032",
-              "aligner_word_index": 31,
-              "line_word_index": 11,
               "text": "way",
-              "start": 30.464,
-              "end": 31.364,
+              "start": 30.48,
+              "end": 31.38,
               "duration": 0.9
             }
           ],
@@ -349,23 +350,25 @@
         },
         {
           "id": "line-0004",
-          "section": "OPENING",
+          "section": "Section 1",
           "text": "Who was just about to pay the price of youth",
-          "start": 32.64,
+          "display_type": "lyric",
+          "start": 32.608,
           "end": 36.964,
+          "review_flags": [],
           "words": [
+            {
+              "id": "word-0032",
+              "aligner_word_index": 31,
+              "line_word_index": 0,
+              "text": "who",
+              "start": 32.608,
+              "end": 32.768,
+              "duration": 0.16
+            },
             {
               "id": "word-0033",
               "aligner_word_index": 32,
-              "line_word_index": 0,
-              "text": "who",
-              "start": 32.64,
-              "end": 32.768,
-              "duration": 0.128
-            },
-            {
-              "id": "word-0034",
-              "aligner_word_index": 33,
               "line_word_index": 1,
               "text": "was",
               "start": 32.768,
@@ -373,8 +376,8 @@
               "duration": 0.304
             },
             {
-              "id": "word-0035",
-              "aligner_word_index": 34,
+              "id": "word-0034",
+              "aligner_word_index": 33,
               "line_word_index": 2,
               "text": "just",
               "start": 33.072,
@@ -382,26 +385,26 @@
               "duration": 0.464
             },
             {
-              "id": "word-0036",
-              "aligner_word_index": 35,
+              "id": "word-0035",
+              "aligner_word_index": 34,
               "line_word_index": 3,
               "text": "about",
               "start": 33.536,
-              "end": 34.288,
-              "duration": 0.752
+              "end": 34.304,
+              "duration": 0.768
+            },
+            {
+              "id": "word-0036",
+              "aligner_word_index": 35,
+              "line_word_index": 4,
+              "text": "to",
+              "start": 34.304,
+              "end": 34.432,
+              "duration": 0.128
             },
             {
               "id": "word-0037",
               "aligner_word_index": 36,
-              "line_word_index": 4,
-              "text": "to",
-              "start": 34.288,
-              "end": 34.432,
-              "duration": 0.144
-            },
-            {
-              "id": "word-0038",
-              "aligner_word_index": 37,
               "line_word_index": 5,
               "text": "pay",
               "start": 34.432,
@@ -409,26 +412,26 @@
               "duration": 0.688
             },
             {
-              "id": "word-0039",
-              "aligner_word_index": 38,
+              "id": "word-0038",
+              "aligner_word_index": 37,
               "line_word_index": 6,
               "text": "the",
               "start": 35.12,
-              "end": 35.216,
-              "duration": 0.096
+              "end": 35.2,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0039",
+              "aligner_word_index": 38,
+              "line_word_index": 7,
+              "text": "price",
+              "start": 35.2,
+              "end": 35.952,
+              "duration": 0.752
             },
             {
               "id": "word-0040",
               "aligner_word_index": 39,
-              "line_word_index": 7,
-              "text": "price",
-              "start": 35.216,
-              "end": 35.952,
-              "duration": 0.736
-            },
-            {
-              "id": "word-0041",
-              "aligner_word_index": 40,
               "line_word_index": 8,
               "text": "of",
               "start": 35.952,
@@ -436,8 +439,8 @@
               "duration": 0.112
             },
             {
-              "id": "word-0042",
-              "aligner_word_index": 41,
+              "id": "word-0041",
+              "aligner_word_index": 40,
               "line_word_index": 9,
               "text": "youth",
               "start": 36.064,
@@ -450,30 +453,34 @@
       ]
     },
     {
-      "id": "verse-one-002",
-      "label": "VERSE ONE",
-      "start": 38.944,
+      "id": "section-2-002",
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 38.928,
       "end": 66.852,
       "lines": [
         {
           "id": "line-0005",
-          "section": "VERSE ONE",
+          "section": "Section 2",
           "text": "I'd tell her only fools rush in and think the heart can lead",
-          "start": 38.944,
-          "end": 44.388,
+          "display_type": "lyric",
+          "start": 38.928,
+          "end": 44.372,
+          "review_flags": [],
           "words": [
+            {
+              "id": "word-0042",
+              "aligner_word_index": 41,
+              "line_word_index": 0,
+              "text": "i'd",
+              "start": 38.928,
+              "end": 39.04,
+              "duration": 0.112
+            },
             {
               "id": "word-0043",
               "aligner_word_index": 42,
-              "line_word_index": 0,
-              "text": "i'd",
-              "start": 38.944,
-              "end": 39.04,
-              "duration": 0.096
-            },
-            {
-              "id": "word-0044",
-              "aligner_word_index": 43,
               "line_word_index": 1,
               "text": "tell",
               "start": 39.04,
@@ -481,26 +488,26 @@
               "duration": 0.4
             },
             {
-              "id": "word-0045",
-              "aligner_word_index": 44,
+              "id": "word-0044",
+              "aligner_word_index": 43,
               "line_word_index": 2,
               "text": "her",
               "start": 39.44,
-              "end": 39.52,
-              "duration": 0.08
+              "end": 39.536,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0045",
+              "aligner_word_index": 44,
+              "line_word_index": 3,
+              "text": "only",
+              "start": 39.536,
+              "end": 40.064,
+              "duration": 0.528
             },
             {
               "id": "word-0046",
               "aligner_word_index": 45,
-              "line_word_index": 3,
-              "text": "only",
-              "start": 39.52,
-              "end": 40.064,
-              "duration": 0.544
-            },
-            {
-              "id": "word-0047",
-              "aligner_word_index": 46,
               "line_word_index": 4,
               "text": "fools",
               "start": 40.064,
@@ -508,8 +515,8 @@
               "duration": 0.768
             },
             {
-              "id": "word-0048",
-              "aligner_word_index": 47,
+              "id": "word-0047",
+              "aligner_word_index": 46,
               "line_word_index": 5,
               "text": "rush",
               "start": 40.832,
@@ -517,8 +524,8 @@
               "duration": 0.4
             },
             {
-              "id": "word-0049",
-              "aligner_word_index": 48,
+              "id": "word-0048",
+              "aligner_word_index": 47,
               "line_word_index": 6,
               "text": "in",
               "start": 41.232,
@@ -526,26 +533,26 @@
               "duration": 0.464
             },
             {
-              "id": "word-0050",
-              "aligner_word_index": 49,
+              "id": "word-0049",
+              "aligner_word_index": 48,
               "line_word_index": 7,
               "text": "and",
               "start": 41.696,
-              "end": 41.808,
-              "duration": 0.112
+              "end": 41.824,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0050",
+              "aligner_word_index": 49,
+              "line_word_index": 8,
+              "text": "think",
+              "start": 41.824,
+              "end": 42.368,
+              "duration": 0.544
             },
             {
               "id": "word-0051",
               "aligner_word_index": 50,
-              "line_word_index": 8,
-              "text": "think",
-              "start": 41.808,
-              "end": 42.368,
-              "duration": 0.56
-            },
-            {
-              "id": "word-0052",
-              "aligner_word_index": 51,
               "line_word_index": 9,
               "text": "the",
               "start": 42.368,
@@ -553,8 +560,8 @@
               "duration": 0.192
             },
             {
-              "id": "word-0053",
-              "aligner_word_index": 52,
+              "id": "word-0052",
+              "aligner_word_index": 51,
               "line_word_index": 10,
               "text": "heart",
               "start": 42.56,
@@ -562,21 +569,21 @@
               "duration": 0.624
             },
             {
-              "id": "word-0054",
-              "aligner_word_index": 53,
+              "id": "word-0053",
+              "aligner_word_index": 52,
               "line_word_index": 11,
               "text": "can",
               "start": 43.184,
-              "end": 43.488,
-              "duration": 0.304
+              "end": 43.472,
+              "duration": 0.288
             },
             {
-              "id": "word-0055",
-              "aligner_word_index": 54,
+              "id": "word-0054",
+              "aligner_word_index": 53,
               "line_word_index": 12,
               "text": "lead",
-              "start": 43.488,
-              "end": 44.388,
+              "start": 43.472,
+              "end": 44.372,
               "duration": 0.9
             }
           ],
@@ -584,14 +591,16 @@
         },
         {
           "id": "line-0006",
-          "section": "VERSE ONE",
+          "section": "Section 2",
           "text": "I'd tell her grow a thicker skin, 'cause girl you're gonna bleed",
+          "display_type": "lyric",
           "start": 45.552,
-          "end": 50.868,
+          "end": 50.852,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0056",
-              "aligner_word_index": 55,
+              "id": "word-0055",
+              "aligner_word_index": 54,
               "line_word_index": 0,
               "text": "i'd",
               "start": 45.552,
@@ -599,8 +608,8 @@
               "duration": 0.096
             },
             {
-              "id": "word-0057",
-              "aligner_word_index": 56,
+              "id": "word-0056",
+              "aligner_word_index": 55,
               "line_word_index": 1,
               "text": "tell",
               "start": 45.648,
@@ -608,8 +617,8 @@
               "duration": 0.256
             },
             {
-              "id": "word-0058",
-              "aligner_word_index": 57,
+              "id": "word-0057",
+              "aligner_word_index": 56,
               "line_word_index": 2,
               "text": "her",
               "start": 45.904,
@@ -617,8 +626,8 @@
               "duration": 0.144
             },
             {
-              "id": "word-0059",
-              "aligner_word_index": 58,
+              "id": "word-0058",
+              "aligner_word_index": 57,
               "line_word_index": 3,
               "text": "grow",
               "start": 46.048,
@@ -626,8 +635,8 @@
               "duration": 0.544
             },
             {
-              "id": "word-0060",
-              "aligner_word_index": 59,
+              "id": "word-0059",
+              "aligner_word_index": 58,
               "line_word_index": 4,
               "text": "a",
               "start": 46.592,
@@ -635,8 +644,8 @@
               "duration": 0.064
             },
             {
-              "id": "word-0061",
-              "aligner_word_index": 60,
+              "id": "word-0060",
+              "aligner_word_index": 59,
               "line_word_index": 5,
               "text": "thicker",
               "start": 46.656,
@@ -644,8 +653,8 @@
               "duration": 0.704
             },
             {
-              "id": "word-0062",
-              "aligner_word_index": 61,
+              "id": "word-0061",
+              "aligner_word_index": 60,
               "line_word_index": 6,
               "text": "skin",
               "start": 47.36,
@@ -653,8 +662,8 @@
               "duration": 0.736
             },
             {
-              "id": "word-0063",
-              "aligner_word_index": 62,
+              "id": "word-0062",
+              "aligner_word_index": 61,
               "line_word_index": 7,
               "text": "'cause",
               "start": 48.096,
@@ -662,39 +671,39 @@
               "duration": 0.224
             },
             {
-              "id": "word-0064",
-              "aligner_word_index": 63,
+              "id": "word-0063",
+              "aligner_word_index": 62,
               "line_word_index": 8,
               "text": "girl",
               "start": 48.32,
-              "end": 48.896,
-              "duration": 0.576
+              "end": 48.88,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0064",
+              "aligner_word_index": 63,
+              "line_word_index": 9,
+              "text": "you're",
+              "start": 48.88,
+              "end": 49.088,
+              "duration": 0.208
             },
             {
               "id": "word-0065",
               "aligner_word_index": 64,
-              "line_word_index": 9,
-              "text": "you're",
-              "start": 48.896,
-              "end": 49.088,
-              "duration": 0.192
+              "line_word_index": 10,
+              "text": "gonna",
+              "start": 49.088,
+              "end": 49.952,
+              "duration": 0.864
             },
             {
               "id": "word-0066",
               "aligner_word_index": 65,
-              "line_word_index": 10,
-              "text": "gonna",
-              "start": 49.088,
-              "end": 49.968,
-              "duration": 0.88
-            },
-            {
-              "id": "word-0067",
-              "aligner_word_index": 66,
               "line_word_index": 11,
               "text": "bleed",
-              "start": 49.968,
-              "end": 50.868,
+              "start": 49.952,
+              "end": 50.852,
               "duration": 0.9
             }
           ],
@@ -702,14 +711,16 @@
         },
         {
           "id": "line-0007",
-          "section": "VERSE ONE",
+          "section": "Section 2",
           "text": "I'd tell her blue skies turn to grey, the only question's when",
+          "display_type": "lyric",
           "start": 52.128,
           "end": 58.548,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0068",
-              "aligner_word_index": 67,
+              "id": "word-0067",
+              "aligner_word_index": 66,
               "line_word_index": 0,
               "text": "i'd",
               "start": 52.128,
@@ -717,8 +728,8 @@
               "duration": 0.112
             },
             {
-              "id": "word-0069",
-              "aligner_word_index": 68,
+              "id": "word-0068",
+              "aligner_word_index": 67,
               "line_word_index": 1,
               "text": "tell",
               "start": 52.24,
@@ -726,8 +737,8 @@
               "duration": 0.208
             },
             {
-              "id": "word-0070",
-              "aligner_word_index": 69,
+              "id": "word-0069",
+              "aligner_word_index": 68,
               "line_word_index": 2,
               "text": "her",
               "start": 52.448,
@@ -735,26 +746,26 @@
               "duration": 0.112
             },
             {
-              "id": "word-0071",
-              "aligner_word_index": 70,
+              "id": "word-0070",
+              "aligner_word_index": 69,
               "line_word_index": 3,
               "text": "blue",
               "start": 52.56,
-              "end": 52.896,
-              "duration": 0.336
+              "end": 52.912,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0071",
+              "aligner_word_index": 70,
+              "line_word_index": 4,
+              "text": "skies",
+              "start": 52.912,
+              "end": 53.472,
+              "duration": 0.56
             },
             {
               "id": "word-0072",
               "aligner_word_index": 71,
-              "line_word_index": 4,
-              "text": "skies",
-              "start": 52.896,
-              "end": 53.472,
-              "duration": 0.576
-            },
-            {
-              "id": "word-0073",
-              "aligner_word_index": 72,
               "line_word_index": 5,
               "text": "turn",
               "start": 53.472,
@@ -762,8 +773,8 @@
               "duration": 0.464
             },
             {
-              "id": "word-0074",
-              "aligner_word_index": 73,
+              "id": "word-0073",
+              "aligner_word_index": 72,
               "line_word_index": 6,
               "text": "to",
               "start": 53.936,
@@ -771,8 +782,8 @@
               "duration": 0.128
             },
             {
-              "id": "word-0075",
-              "aligner_word_index": 74,
+              "id": "word-0074",
+              "aligner_word_index": 73,
               "line_word_index": 7,
               "text": "grey",
               "start": 54.064,
@@ -780,26 +791,26 @@
               "duration": 0.9
             },
             {
-              "id": "word-0076",
-              "aligner_word_index": 75,
+              "id": "word-0075",
+              "aligner_word_index": 74,
               "line_word_index": 8,
               "text": "the",
-              "start": 55.04,
-              "end": 55.408,
-              "duration": 0.368
+              "start": 55.056,
+              "end": 55.44,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0076",
+              "aligner_word_index": 75,
+              "line_word_index": 9,
+              "text": "only",
+              "start": 55.44,
+              "end": 56.08,
+              "duration": 0.64
             },
             {
               "id": "word-0077",
               "aligner_word_index": 76,
-              "line_word_index": 9,
-              "text": "only",
-              "start": 55.408,
-              "end": 56.08,
-              "duration": 0.672
-            },
-            {
-              "id": "word-0078",
-              "aligner_word_index": 77,
               "line_word_index": 10,
               "text": "question's",
               "start": 56.08,
@@ -807,8 +818,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0079",
-              "aligner_word_index": 78,
+              "id": "word-0078",
+              "aligner_word_index": 77,
               "line_word_index": 11,
               "text": "when",
               "start": 57.648,
@@ -820,14 +831,16 @@
         },
         {
           "id": "line-0008",
-          "section": "VERSE ONE",
-          "text": "I'd make her see the future's me",
+          "section": "Section 2",
+          "text": "I'd make her see her future's me",
+          "display_type": "lyric",
           "start": 58.944,
           "end": 62.302,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0080",
-              "aligner_word_index": 79,
+              "id": "word-0079",
+              "aligner_word_index": 78,
               "line_word_index": 0,
               "text": "i'd",
               "start": 58.944,
@@ -835,8 +848,8 @@
               "duration": 0.112
             },
             {
-              "id": "word-0081",
-              "aligner_word_index": 80,
+              "id": "word-0080",
+              "aligner_word_index": 79,
               "line_word_index": 1,
               "text": "make",
               "start": 59.056,
@@ -844,8 +857,8 @@
               "duration": 0.256
             },
             {
-              "id": "word-0082",
-              "aligner_word_index": 81,
+              "id": "word-0081",
+              "aligner_word_index": 80,
               "line_word_index": 2,
               "text": "her",
               "start": 59.312,
@@ -853,8 +866,8 @@
               "duration": 0.08
             },
             {
-              "id": "word-0083",
-              "aligner_word_index": 82,
+              "id": "word-0082",
+              "aligner_word_index": 81,
               "line_word_index": 3,
               "text": "see",
               "start": 59.392,
@@ -862,17 +875,17 @@
               "duration": 0.9
             },
             {
-              "id": "word-0084",
-              "aligner_word_index": 83,
+              "id": "word-0083",
+              "aligner_word_index": 82,
               "line_word_index": 4,
-              "text": "the",
+              "text": "her",
               "start": 60.64,
               "end": 60.784,
               "duration": 0.144
             },
             {
-              "id": "word-0085",
-              "aligner_word_index": 84,
+              "id": "word-0084",
+              "aligner_word_index": 83,
               "line_word_index": 5,
               "text": "future's",
               "start": 60.784,
@@ -880,8 +893,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0086",
-              "aligner_word_index": 85,
+              "id": "word-0085",
+              "aligner_word_index": 84,
               "line_word_index": 6,
               "text": "me",
               "start": 61.872,
@@ -894,14 +907,16 @@
         },
         {
           "id": "line-0009",
-          "section": "VERSE ONE",
+          "section": "Section 2",
           "text": "If I met myself again",
+          "display_type": "lyric",
           "start": 62.352,
           "end": 66.852,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0087",
-              "aligner_word_index": 86,
+              "id": "word-0086",
+              "aligner_word_index": 85,
               "line_word_index": 0,
               "text": "if",
               "start": 62.352,
@@ -909,8 +924,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0088",
-              "aligner_word_index": 87,
+              "id": "word-0087",
+              "aligner_word_index": 86,
               "line_word_index": 1,
               "text": "i",
               "start": 64.496,
@@ -918,8 +933,8 @@
               "duration": 0.144
             },
             {
-              "id": "word-0089",
-              "aligner_word_index": 88,
+              "id": "word-0088",
+              "aligner_word_index": 87,
               "line_word_index": 2,
               "text": "met",
               "start": 64.64,
@@ -927,8 +942,8 @@
               "duration": 0.336
             },
             {
-              "id": "word-0090",
-              "aligner_word_index": 89,
+              "id": "word-0089",
+              "aligner_word_index": 88,
               "line_word_index": 3,
               "text": "myself",
               "start": 64.976,
@@ -936,8 +951,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0091",
-              "aligner_word_index": 90,
+              "id": "word-0090",
+              "aligner_word_index": 89,
               "line_word_index": 4,
               "text": "again",
               "start": 65.952,
@@ -950,30 +965,57 @@
       ]
     },
     {
-      "id": "verse-two-003",
-      "label": "VERSE TWO",
-      "start": 67.184,
-      "end": 102.676,
+      "id": "section-3-003",
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": null,
+      "end": null,
       "lines": [
         {
           "id": "line-0010",
-          "section": "VERSE TWO",
+          "section": "Section 3",
+          "text": ". . .",
+          "display_type": "instrumental",
+          "start": null,
+          "end": null,
+          "timing_source": "instrumental-placeholder-pending-draft-builder",
+          "review_flags": [
+            "instrumental_timing_needs_review"
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 69.424,
+      "end": 102.676,
+      "lines": [
+        {
+          "id": "line-0011",
+          "section": "Section 4",
           "text": "If I met myself again I wonder what she'd say",
-          "start": 67.184,
+          "display_type": "lyric",
+          "start": 69.424,
           "end": 84.1,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0092",
-              "aligner_word_index": 91,
+              "id": "word-0091",
+              "aligner_word_index": 90,
               "line_word_index": 0,
               "text": "if",
-              "start": 67.184,
-              "end": 68.084,
+              "start": 69.424,
+              "end": 70.324,
               "duration": 0.9
             },
             {
-              "id": "word-0093",
-              "aligner_word_index": 92,
+              "id": "word-0092",
+              "aligner_word_index": 91,
               "line_word_index": 1,
               "text": "i",
               "start": 79.2,
@@ -981,26 +1023,26 @@
               "duration": 0.128
             },
             {
-              "id": "word-0094",
-              "aligner_word_index": 93,
+              "id": "word-0093",
+              "aligner_word_index": 92,
               "line_word_index": 2,
               "text": "met",
               "start": 79.328,
-              "end": 79.68,
-              "duration": 0.352
+              "end": 79.696,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0094",
+              "aligner_word_index": 93,
+              "line_word_index": 3,
+              "text": "myself",
+              "start": 79.696,
+              "end": 80.596,
+              "duration": 0.9
             },
             {
               "id": "word-0095",
               "aligner_word_index": 94,
-              "line_word_index": 3,
-              "text": "myself",
-              "start": 79.68,
-              "end": 80.58,
-              "duration": 0.9
-            },
-            {
-              "id": "word-0096",
-              "aligner_word_index": 95,
               "line_word_index": 4,
               "text": "again",
               "start": 80.64,
@@ -1008,35 +1050,35 @@
               "duration": 0.752
             },
             {
-              "id": "word-0097",
-              "aligner_word_index": 96,
+              "id": "word-0096",
+              "aligner_word_index": 95,
               "line_word_index": 5,
               "text": "i",
               "start": 81.392,
-              "end": 81.488,
-              "duration": 0.096
+              "end": 81.456,
+              "duration": 0.064
+            },
+            {
+              "id": "word-0097",
+              "aligner_word_index": 96,
+              "line_word_index": 6,
+              "text": "wonder",
+              "start": 81.456,
+              "end": 82.356,
+              "duration": 0.9
             },
             {
               "id": "word-0098",
               "aligner_word_index": 97,
-              "line_word_index": 6,
-              "text": "wonder",
-              "start": 81.488,
-              "end": 82.32,
-              "duration": 0.832
+              "line_word_index": 7,
+              "text": "what",
+              "start": 82.4,
+              "end": 82.768,
+              "duration": 0.368
             },
             {
               "id": "word-0099",
               "aligner_word_index": 98,
-              "line_word_index": 7,
-              "text": "what",
-              "start": 82.32,
-              "end": 82.768,
-              "duration": 0.448
-            },
-            {
-              "id": "word-0100",
-              "aligner_word_index": 99,
               "line_word_index": 8,
               "text": "she'd",
               "start": 82.768,
@@ -1044,8 +1086,8 @@
               "duration": 0.432
             },
             {
-              "id": "word-0101",
-              "aligner_word_index": 100,
+              "id": "word-0100",
+              "aligner_word_index": 99,
               "line_word_index": 9,
               "text": "say",
               "start": 83.2,
@@ -1056,15 +1098,17 @@
           "display_end_clamped_to_next_line": false
         },
         {
-          "id": "line-0011",
-          "section": "VERSE TWO",
+          "id": "line-0012",
+          "section": "Section 4",
           "text": "That love-struck girl who thought she was so smart",
+          "display_type": "lyric",
           "start": 85.344,
           "end": 89.796,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0102",
-              "aligner_word_index": 101,
+              "id": "word-0101",
+              "aligner_word_index": 100,
               "line_word_index": 0,
               "text": "that",
               "start": 85.344,
@@ -1072,8 +1116,8 @@
               "duration": 0.288
             },
             {
-              "id": "word-0103",
-              "aligner_word_index": 102,
+              "id": "word-0102",
+              "aligner_word_index": 101,
               "line_word_index": 1,
               "text": "lovestruck",
               "start": 85.632,
@@ -1081,8 +1125,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0104",
-              "aligner_word_index": 103,
+              "id": "word-0103",
+              "aligner_word_index": 102,
               "line_word_index": 2,
               "text": "girl",
               "start": 86.56,
@@ -1090,8 +1134,8 @@
               "duration": 0.512
             },
             {
-              "id": "word-0105",
-              "aligner_word_index": 104,
+              "id": "word-0104",
+              "aligner_word_index": 103,
               "line_word_index": 3,
               "text": "who",
               "start": 87.072,
@@ -1099,8 +1143,8 @@
               "duration": 0.192
             },
             {
-              "id": "word-0106",
-              "aligner_word_index": 105,
+              "id": "word-0105",
+              "aligner_word_index": 104,
               "line_word_index": 4,
               "text": "thought",
               "start": 87.264,
@@ -1108,8 +1152,8 @@
               "duration": 0.432
             },
             {
-              "id": "word-0107",
-              "aligner_word_index": 106,
+              "id": "word-0106",
+              "aligner_word_index": 105,
               "line_word_index": 5,
               "text": "she",
               "start": 87.696,
@@ -1117,8 +1161,8 @@
               "duration": 0.32
             },
             {
-              "id": "word-0108",
-              "aligner_word_index": 107,
+              "id": "word-0107",
+              "aligner_word_index": 106,
               "line_word_index": 6,
               "text": "was",
               "start": 88.016,
@@ -1126,8 +1170,8 @@
               "duration": 0.352
             },
             {
-              "id": "word-0109",
-              "aligner_word_index": 108,
+              "id": "word-0108",
+              "aligner_word_index": 107,
               "line_word_index": 7,
               "text": "so",
               "start": 88.368,
@@ -1135,8 +1179,8 @@
               "duration": 0.528
             },
             {
-              "id": "word-0110",
-              "aligner_word_index": 109,
+              "id": "word-0109",
+              "aligner_word_index": 108,
               "line_word_index": 8,
               "text": "smart",
               "start": 88.896,
@@ -1147,15 +1191,17 @@
           "display_end_clamped_to_next_line": false
         },
         {
-          "id": "line-0012",
-          "section": "VERSE TWO",
-          "text": "If I wonder of the men, the ones that got away",
+          "id": "line-0013",
+          "section": "Section 4",
+          "text": "If I warn her of the men, the ones that got away",
+          "display_type": "lyric",
           "start": 91.936,
           "end": 97.108,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0111",
-              "aligner_word_index": 110,
+              "id": "word-0110",
+              "aligner_word_index": 109,
               "line_word_index": 0,
               "text": "if",
               "start": 91.936,
@@ -1163,8 +1209,8 @@
               "duration": 0.192
             },
             {
-              "id": "word-0112",
-              "aligner_word_index": 111,
+              "id": "word-0111",
+              "aligner_word_index": 110,
               "line_word_index": 1,
               "text": "i",
               "start": 92.128,
@@ -1172,36 +1218,45 @@
               "duration": 0.176
             },
             {
+              "id": "word-0112",
+              "aligner_word_index": 111,
+              "line_word_index": 2,
+              "text": "warn",
+              "start": 92.304,
+              "end": 92.752,
+              "duration": 0.448
+            },
+            {
               "id": "word-0113",
               "aligner_word_index": 112,
-              "line_word_index": 2,
-              "text": "wonder",
-              "start": 92.304,
+              "line_word_index": 3,
+              "text": "her",
+              "start": 92.752,
               "end": 93.072,
-              "duration": 0.768
+              "duration": 0.32
             },
             {
               "id": "word-0114",
               "aligner_word_index": 113,
-              "line_word_index": 3,
+              "line_word_index": 4,
               "text": "of",
               "start": 93.072,
-              "end": 93.552,
-              "duration": 0.48
+              "end": 93.536,
+              "duration": 0.464
             },
             {
               "id": "word-0115",
               "aligner_word_index": 114,
-              "line_word_index": 4,
+              "line_word_index": 5,
               "text": "the",
-              "start": 93.552,
+              "start": 93.536,
               "end": 93.68,
-              "duration": 0.128
+              "duration": 0.144
             },
             {
               "id": "word-0116",
               "aligner_word_index": 115,
-              "line_word_index": 5,
+              "line_word_index": 6,
               "text": "men",
               "start": 93.68,
               "end": 94.368,
@@ -1210,7 +1265,7 @@
             {
               "id": "word-0117",
               "aligner_word_index": 116,
-              "line_word_index": 6,
+              "line_word_index": 7,
               "text": "the",
               "start": 94.368,
               "end": 94.512,
@@ -1219,7 +1274,7 @@
             {
               "id": "word-0118",
               "aligner_word_index": 117,
-              "line_word_index": 7,
+              "line_word_index": 8,
               "text": "ones",
               "start": 94.512,
               "end": 94.992,
@@ -1228,7 +1283,7 @@
             {
               "id": "word-0119",
               "aligner_word_index": 118,
-              "line_word_index": 8,
+              "line_word_index": 9,
               "text": "that",
               "start": 94.992,
               "end": 95.892,
@@ -1237,7 +1292,7 @@
             {
               "id": "word-0120",
               "aligner_word_index": 119,
-              "line_word_index": 9,
+              "line_word_index": 10,
               "text": "got",
               "start": 95.904,
               "end": 96.208,
@@ -1246,7 +1301,7 @@
             {
               "id": "word-0121",
               "aligner_word_index": 120,
-              "line_word_index": 10,
+              "line_word_index": 11,
               "text": "away",
               "start": 96.208,
               "end": 97.108,
@@ -1256,11 +1311,13 @@
           "display_end_clamped_to_next_line": false
         },
         {
-          "id": "line-0013",
-          "section": "VERSE TWO",
+          "id": "line-0014",
+          "section": "Section 4",
           "text": "And worse the ones that stay and break your heart",
+          "display_type": "lyric",
           "start": 98.656,
           "end": 102.676,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0122",
@@ -1268,17 +1325,17 @@
               "line_word_index": 0,
               "text": "and",
               "start": 98.656,
-              "end": 98.752,
-              "duration": 0.096
+              "end": 98.768,
+              "duration": 0.112
             },
             {
               "id": "word-0123",
               "aligner_word_index": 122,
               "line_word_index": 1,
               "text": "worse",
-              "start": 98.752,
+              "start": 98.768,
               "end": 99.328,
-              "duration": 0.576
+              "duration": 0.56
             },
             {
               "id": "word-0124",
@@ -1295,17 +1352,17 @@
               "line_word_index": 3,
               "text": "ones",
               "start": 99.424,
-              "end": 99.984,
-              "duration": 0.56
+              "end": 99.968,
+              "duration": 0.544
             },
             {
               "id": "word-0126",
               "aligner_word_index": 125,
               "line_word_index": 4,
               "text": "that",
-              "start": 99.984,
+              "start": 99.968,
               "end": 100.096,
-              "duration": 0.112
+              "duration": 0.128
             },
             {
               "id": "word-0127",
@@ -1313,26 +1370,26 @@
               "line_word_index": 5,
               "text": "stay",
               "start": 100.096,
-              "end": 100.704,
-              "duration": 0.608
+              "end": 100.72,
+              "duration": 0.624
             },
             {
               "id": "word-0128",
               "aligner_word_index": 127,
               "line_word_index": 6,
               "text": "and",
-              "start": 100.704,
-              "end": 100.992,
-              "duration": 0.288
+              "start": 100.72,
+              "end": 100.96,
+              "duration": 0.24
             },
             {
               "id": "word-0129",
               "aligner_word_index": 128,
               "line_word_index": 7,
               "text": "break",
-              "start": 100.992,
+              "start": 100.96,
               "end": 101.568,
-              "duration": 0.576
+              "duration": 0.608
             },
             {
               "id": "word-0130",
@@ -1358,17 +1415,21 @@
       ]
     },
     {
-      "id": "verse-three-004",
-      "label": "VERSE THREE",
+      "id": "section-5-005",
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
       "start": 104.8,
       "end": 138.66,
       "lines": [
         {
-          "id": "line-0014",
-          "section": "VERSE THREE",
-          "text": "I'd tell her love's a losing game that's better left unplayed",
+          "id": "line-0015",
+          "section": "Section 5",
+          "text": "I'd tell her love's a losing game that's better left un-played",
+          "display_type": "lyric",
           "start": 104.8,
           "end": 110.036,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0132",
@@ -1394,17 +1455,17 @@
               "line_word_index": 2,
               "text": "her",
               "start": 105.136,
-              "end": 105.264,
-              "duration": 0.128
+              "end": 105.28,
+              "duration": 0.144
             },
             {
               "id": "word-0135",
               "aligner_word_index": 134,
               "line_word_index": 3,
               "text": "love's",
-              "start": 105.264,
+              "start": 105.28,
               "end": 105.872,
-              "duration": 0.608
+              "duration": 0.592
             },
             {
               "id": "word-0136",
@@ -1448,17 +1509,17 @@
               "line_word_index": 8,
               "text": "better",
               "start": 107.84,
-              "end": 108.624,
-              "duration": 0.784
+              "end": 108.64,
+              "duration": 0.8
             },
             {
               "id": "word-0141",
               "aligner_word_index": 140,
               "line_word_index": 9,
               "text": "left",
-              "start": 108.624,
+              "start": 108.64,
               "end": 109.136,
-              "duration": 0.512
+              "duration": 0.496
             },
             {
               "id": "word-0142",
@@ -1473,11 +1534,13 @@
           "display_end_clamped_to_next_line": false
         },
         {
-          "id": "line-0015",
-          "section": "VERSE THREE",
+          "id": "line-0016",
+          "section": "Section 5",
           "text": "I'd tell her you've yourself to blame for every choice you've made",
+          "display_type": "lyric",
           "start": 111.168,
-          "end": 116.74,
+          "end": 116.724,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0143",
@@ -1512,17 +1575,17 @@
               "line_word_index": 3,
               "text": "you've",
               "start": 111.728,
-              "end": 112.32,
-              "duration": 0.592
+              "end": 112.304,
+              "duration": 0.576
             },
             {
               "id": "word-0147",
               "aligner_word_index": 146,
               "line_word_index": 4,
               "text": "yourself",
-              "start": 112.32,
+              "start": 112.304,
               "end": 113.152,
-              "duration": 0.832
+              "duration": 0.848
             },
             {
               "id": "word-0148",
@@ -1557,17 +1620,17 @@
               "line_word_index": 8,
               "text": "every",
               "start": 114.24,
-              "end": 114.928,
-              "duration": 0.688
+              "end": 114.944,
+              "duration": 0.704
             },
             {
               "id": "word-0152",
               "aligner_word_index": 151,
               "line_word_index": 9,
               "text": "choice",
-              "start": 114.928,
+              "start": 114.944,
               "end": 115.648,
-              "duration": 0.72
+              "duration": 0.704
             },
             {
               "id": "word-0153",
@@ -1575,27 +1638,29 @@
               "line_word_index": 10,
               "text": "you've",
               "start": 115.648,
-              "end": 115.84,
-              "duration": 0.192
+              "end": 115.824,
+              "duration": 0.176
             },
             {
               "id": "word-0154",
               "aligner_word_index": 153,
               "line_word_index": 11,
               "text": "made",
-              "start": 115.84,
-              "end": 116.74,
+              "start": 115.824,
+              "end": 116.724,
               "duration": 0.9
             }
           ],
           "display_end_clamped_to_next_line": false
         },
         {
-          "id": "line-0016",
-          "section": "VERSE THREE",
+          "id": "line-0017",
+          "section": "Section 5",
           "text": "And I'd tell her",
+          "display_type": "lyric",
           "start": 117.856,
           "end": 119.406,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0155",
@@ -1621,28 +1686,30 @@
               "line_word_index": 2,
               "text": "tell",
               "start": 118.256,
-              "end": 118.56,
-              "duration": 0.304
+              "end": 118.576,
+              "duration": 0.32
             },
             {
               "id": "word-0158",
               "aligner_word_index": 157,
               "line_word_index": 3,
               "text": "her",
-              "start": 118.56,
+              "start": 118.576,
               "end": 119.456,
-              "duration": 0.896
+              "duration": 0.88
             }
           ],
           "original_unclamped_end": 119.456,
           "display_end_clamped_to_next_line": true
         },
         {
-          "id": "line-0017",
-          "section": "VERSE THREE",
+          "id": "line-0018",
+          "section": "Section 5",
           "text": "And I'd tell her 'til my voice gave out",
+          "display_type": "lyric",
           "start": 119.456,
-          "end": 124.142,
+          "end": 124.158,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0159",
@@ -1677,26 +1744,26 @@
               "line_word_index": 3,
               "text": "her",
               "start": 120.432,
-              "end": 120.576,
-              "duration": 0.144
+              "end": 120.592,
+              "duration": 0.16
             },
             {
               "id": "word-0163",
               "aligner_word_index": 162,
               "line_word_index": 4,
               "text": "'til",
-              "start": 120.576,
-              "end": 121.152,
-              "duration": 0.576
+              "start": 120.592,
+              "end": 121.072,
+              "duration": 0.48
             },
             {
               "id": "word-0164",
               "aligner_word_index": 163,
               "line_word_index": 5,
               "text": "my",
-              "start": 121.152,
+              "start": 121.072,
               "end": 121.632,
-              "duration": 0.48
+              "duration": 0.56
             },
             {
               "id": "word-0165",
@@ -1722,27 +1789,29 @@
               "line_word_index": 8,
               "text": "out",
               "start": 123.424,
-              "end": 124.192,
-              "duration": 0.768
+              "end": 124.208,
+              "duration": 0.784
             }
           ],
-          "original_unclamped_end": 124.192,
+          "original_unclamped_end": 124.208,
           "display_end_clamped_to_next_line": true
         },
         {
-          "id": "line-0018",
-          "section": "VERSE THREE",
+          "id": "line-0019",
+          "section": "Section 5",
           "text": "And then",
-          "start": 124.192,
-          "end": 125.492,
+          "display_type": "lyric",
+          "start": 124.208,
+          "end": 125.508,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0168",
               "aligner_word_index": 167,
               "line_word_index": 0,
               "text": "and",
-              "start": 124.192,
-              "end": 124.592,
+              "start": 124.208,
+              "end": 124.608,
               "duration": 0.4
             },
             {
@@ -1750,19 +1819,21 @@
               "aligner_word_index": 168,
               "line_word_index": 1,
               "text": "then",
-              "start": 124.592,
-              "end": 125.492,
+              "start": 124.608,
+              "end": 125.508,
               "duration": 0.9
             }
           ],
           "display_end_clamped_to_next_line": false
         },
         {
-          "id": "line-0019",
-          "section": "VERSE THREE",
-          "text": "She would smile",
+          "id": "line-0020",
+          "section": "Section 5",
+          "text": "She would smile, wait a while",
+          "display_type": "lyric",
           "start": 125.84,
-          "end": 127.172,
+          "end": 128.884,
+          "review_flags": [],
           "words": [
             {
               "id": "word-0170",
@@ -1770,17 +1841,17 @@
               "line_word_index": 0,
               "text": "she",
               "start": 125.84,
-              "end": 126.112,
-              "duration": 0.272
+              "end": 126.128,
+              "duration": 0.288
             },
             {
               "id": "word-0171",
               "aligner_word_index": 170,
               "line_word_index": 1,
               "text": "would",
-              "start": 126.112,
+              "start": 126.128,
               "end": 126.272,
-              "duration": 0.16
+              "duration": 0.144
             },
             {
               "id": "word-0172",
@@ -1790,51 +1861,32 @@
               "start": 126.272,
               "end": 127.172,
               "duration": 0.9
-            }
-          ],
-          "display_end_clamped_to_next_line": false
-        },
-        {
-          "id": "line-0020",
-          "section": "VERSE THREE",
-          "text": "And wait a while",
-          "start": 127.376,
-          "end": 128.868,
-          "words": [
+            },
             {
               "id": "word-0173",
               "aligner_word_index": 172,
-              "line_word_index": 0,
-              "text": "and",
-              "start": 127.376,
-              "end": 127.552,
-              "duration": 0.176
+              "line_word_index": 3,
+              "text": "wait",
+              "start": 127.536,
+              "end": 127.888,
+              "duration": 0.352
             },
             {
               "id": "word-0174",
               "aligner_word_index": 173,
-              "line_word_index": 1,
-              "text": "wait",
-              "start": 127.552,
-              "end": 127.888,
-              "duration": 0.336
+              "line_word_index": 4,
+              "text": "a",
+              "start": 127.888,
+              "end": 127.984,
+              "duration": 0.096
             },
             {
               "id": "word-0175",
               "aligner_word_index": 174,
-              "line_word_index": 2,
-              "text": "a",
-              "start": 127.888,
-              "end": 127.968,
-              "duration": 0.08
-            },
-            {
-              "id": "word-0176",
-              "aligner_word_index": 175,
-              "line_word_index": 3,
+              "line_word_index": 5,
               "text": "while",
-              "start": 127.968,
-              "end": 128.868,
+              "start": 127.984,
+              "end": 128.884,
               "duration": 0.9
             }
           ],
@@ -1842,41 +1894,43 @@
         },
         {
           "id": "line-0021",
-          "section": "VERSE THREE",
+          "section": "Section 5",
           "text": "And go and do it all again",
+          "display_type": "lyric",
           "start": 129.584,
           "end": 132.308,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0177",
-              "aligner_word_index": 176,
+              "id": "word-0176",
+              "aligner_word_index": 175,
               "line_word_index": 0,
               "text": "and",
               "start": 129.584,
-              "end": 129.728,
-              "duration": 0.144
+              "end": 129.744,
+              "duration": 0.16
+            },
+            {
+              "id": "word-0177",
+              "aligner_word_index": 176,
+              "line_word_index": 1,
+              "text": "go",
+              "start": 129.744,
+              "end": 129.952,
+              "duration": 0.208
             },
             {
               "id": "word-0178",
               "aligner_word_index": 177,
-              "line_word_index": 1,
-              "text": "go",
-              "start": 129.728,
-              "end": 130.0,
-              "duration": 0.272
+              "line_word_index": 2,
+              "text": "and",
+              "start": 129.952,
+              "end": 130.128,
+              "duration": 0.176
             },
             {
               "id": "word-0179",
               "aligner_word_index": 178,
-              "line_word_index": 2,
-              "text": "and",
-              "start": 130.0,
-              "end": 130.128,
-              "duration": 0.128
-            },
-            {
-              "id": "word-0180",
-              "aligner_word_index": 179,
               "line_word_index": 3,
               "text": "do",
               "start": 130.128,
@@ -1884,8 +1938,8 @@
               "duration": 0.288
             },
             {
-              "id": "word-0181",
-              "aligner_word_index": 180,
+              "id": "word-0180",
+              "aligner_word_index": 179,
               "line_word_index": 4,
               "text": "it",
               "start": 130.416,
@@ -1893,8 +1947,8 @@
               "duration": 0.176
             },
             {
-              "id": "word-0182",
-              "aligner_word_index": 181,
+              "id": "word-0181",
+              "aligner_word_index": 180,
               "line_word_index": 5,
               "text": "all",
               "start": 130.592,
@@ -1902,8 +1956,8 @@
               "duration": 0.816
             },
             {
-              "id": "word-0183",
-              "aligner_word_index": 182,
+              "id": "word-0182",
+              "aligner_word_index": 181,
               "line_word_index": 6,
               "text": "again",
               "start": 131.408,
@@ -1915,14 +1969,16 @@
         },
         {
           "id": "line-0022",
-          "section": "VERSE THREE",
+          "section": "Section 5",
           "text": "If I met myself again",
+          "display_type": "lyric",
           "start": 136.16,
           "end": 138.66,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0184",
-              "aligner_word_index": 183,
+              "id": "word-0183",
+              "aligner_word_index": 182,
               "line_word_index": 0,
               "text": "if",
               "start": 136.16,
@@ -1930,8 +1986,8 @@
               "duration": 0.176
             },
             {
-              "id": "word-0185",
-              "aligner_word_index": 184,
+              "id": "word-0184",
+              "aligner_word_index": 183,
               "line_word_index": 1,
               "text": "i",
               "start": 136.336,
@@ -1939,26 +1995,26 @@
               "duration": 0.144
             },
             {
-              "id": "word-0186",
-              "aligner_word_index": 185,
+              "id": "word-0185",
+              "aligner_word_index": 184,
               "line_word_index": 2,
               "text": "met",
               "start": 136.48,
-              "end": 136.784,
-              "duration": 0.304
+              "end": 136.8,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0186",
+              "aligner_word_index": 185,
+              "line_word_index": 3,
+              "text": "myself",
+              "start": 136.8,
+              "end": 137.7,
+              "duration": 0.9
             },
             {
               "id": "word-0187",
               "aligner_word_index": 186,
-              "line_word_index": 3,
-              "text": "myself",
-              "start": 136.784,
-              "end": 137.684,
-              "duration": 0.9
-            },
-            {
-              "id": "word-0188",
-              "aligner_word_index": 187,
               "line_word_index": 4,
               "text": "again",
               "start": 137.76,
@@ -1971,21 +2027,25 @@
       ]
     },
     {
-      "id": "verse-4-005",
-      "label": "VERSE 4",
+      "id": "section-6-006",
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
       "start": 144.048,
-      "end": 178.158,
+      "end": 178.142,
       "lines": [
         {
           "id": "line-0023",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "If I met that girl again I'd tell her sink or swim",
+          "display_type": "lyric",
           "start": 144.048,
           "end": 149.06,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0189",
-              "aligner_word_index": 188,
+              "id": "word-0188",
+              "aligner_word_index": 187,
               "line_word_index": 0,
               "text": "if",
               "start": 144.048,
@@ -1993,26 +2053,26 @@
               "duration": 0.192
             },
             {
-              "id": "word-0190",
-              "aligner_word_index": 189,
+              "id": "word-0189",
+              "aligner_word_index": 188,
               "line_word_index": 1,
               "text": "i",
               "start": 144.24,
-              "end": 144.384,
-              "duration": 0.144
+              "end": 144.4,
+              "duration": 0.16
+            },
+            {
+              "id": "word-0190",
+              "aligner_word_index": 189,
+              "line_word_index": 2,
+              "text": "met",
+              "start": 144.4,
+              "end": 144.816,
+              "duration": 0.416
             },
             {
               "id": "word-0191",
               "aligner_word_index": 190,
-              "line_word_index": 2,
-              "text": "met",
-              "start": 144.384,
-              "end": 144.816,
-              "duration": 0.432
-            },
-            {
-              "id": "word-0192",
-              "aligner_word_index": 191,
               "line_word_index": 3,
               "text": "that",
               "start": 144.816,
@@ -2020,53 +2080,53 @@
               "duration": 0.352
             },
             {
-              "id": "word-0193",
-              "aligner_word_index": 192,
+              "id": "word-0192",
+              "aligner_word_index": 191,
               "line_word_index": 4,
               "text": "girl",
               "start": 145.168,
-              "end": 145.504,
-              "duration": 0.336
+              "end": 145.664,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0193",
+              "aligner_word_index": 192,
+              "line_word_index": 5,
+              "text": "again",
+              "start": 145.664,
+              "end": 146.24,
+              "duration": 0.576
             },
             {
               "id": "word-0194",
               "aligner_word_index": 193,
-              "line_word_index": 5,
-              "text": "again",
-              "start": 145.504,
-              "end": 146.256,
-              "duration": 0.752
+              "line_word_index": 6,
+              "text": "i'd",
+              "start": 146.24,
+              "end": 146.544,
+              "duration": 0.304
             },
             {
               "id": "word-0195",
               "aligner_word_index": 194,
-              "line_word_index": 6,
-              "text": "i'd",
-              "start": 146.256,
-              "end": 146.528,
-              "duration": 0.272
+              "line_word_index": 7,
+              "text": "tell",
+              "start": 146.544,
+              "end": 146.88,
+              "duration": 0.336
             },
             {
               "id": "word-0196",
               "aligner_word_index": 195,
-              "line_word_index": 7,
-              "text": "tell",
-              "start": 146.528,
-              "end": 146.928,
-              "duration": 0.4
+              "line_word_index": 8,
+              "text": "her",
+              "start": 146.88,
+              "end": 147.232,
+              "duration": 0.352
             },
             {
               "id": "word-0197",
               "aligner_word_index": 196,
-              "line_word_index": 8,
-              "text": "her",
-              "start": 146.928,
-              "end": 147.232,
-              "duration": 0.304
-            },
-            {
-              "id": "word-0198",
-              "aligner_word_index": 197,
               "line_word_index": 9,
               "text": "sink",
               "start": 147.232,
@@ -2074,8 +2134,8 @@
               "duration": 0.576
             },
             {
-              "id": "word-0199",
-              "aligner_word_index": 198,
+              "id": "word-0198",
+              "aligner_word_index": 197,
               "line_word_index": 10,
               "text": "or",
               "start": 147.808,
@@ -2083,8 +2143,8 @@
               "duration": 0.352
             },
             {
-              "id": "word-0200",
-              "aligner_word_index": 199,
+              "id": "word-0199",
+              "aligner_word_index": 198,
               "line_word_index": 11,
               "text": "swim",
               "start": 148.16,
@@ -2096,50 +2156,52 @@
         },
         {
           "id": "line-0024",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "I'd wake her up and god I'd make her run",
-          "start": 150.288,
-          "end": 154.692,
+          "display_type": "lyric",
+          "start": 150.304,
+          "end": 154.596,
+          "review_flags": [],
           "words": [
+            {
+              "id": "word-0200",
+              "aligner_word_index": 199,
+              "line_word_index": 0,
+              "text": "i'd",
+              "start": 150.304,
+              "end": 150.496,
+              "duration": 0.192
+            },
             {
               "id": "word-0201",
               "aligner_word_index": 200,
-              "line_word_index": 0,
-              "text": "i'd",
-              "start": 150.288,
-              "end": 150.496,
-              "duration": 0.208
+              "line_word_index": 1,
+              "text": "wake",
+              "start": 150.496,
+              "end": 151.04,
+              "duration": 0.544
             },
             {
               "id": "word-0202",
               "aligner_word_index": 201,
-              "line_word_index": 1,
-              "text": "wake",
-              "start": 150.496,
-              "end": 151.024,
-              "duration": 0.528
+              "line_word_index": 2,
+              "text": "her",
+              "start": 151.04,
+              "end": 151.376,
+              "duration": 0.336
             },
             {
               "id": "word-0203",
               "aligner_word_index": 202,
-              "line_word_index": 2,
-              "text": "her",
-              "start": 151.024,
-              "end": 151.392,
-              "duration": 0.368
+              "line_word_index": 3,
+              "text": "up",
+              "start": 151.376,
+              "end": 151.728,
+              "duration": 0.352
             },
             {
               "id": "word-0204",
               "aligner_word_index": 203,
-              "line_word_index": 3,
-              "text": "up",
-              "start": 151.392,
-              "end": 151.728,
-              "duration": 0.336
-            },
-            {
-              "id": "word-0205",
-              "aligner_word_index": 204,
               "line_word_index": 4,
               "text": "and",
               "start": 151.728,
@@ -2147,8 +2209,8 @@
               "duration": 0.32
             },
             {
-              "id": "word-0206",
-              "aligner_word_index": 205,
+              "id": "word-0205",
+              "aligner_word_index": 204,
               "line_word_index": 5,
               "text": "god",
               "start": 152.048,
@@ -2156,8 +2218,8 @@
               "duration": 0.48
             },
             {
-              "id": "word-0207",
-              "aligner_word_index": 206,
+              "id": "word-0206",
+              "aligner_word_index": 205,
               "line_word_index": 6,
               "text": "i'd",
               "start": 152.528,
@@ -2165,8 +2227,8 @@
               "duration": 0.32
             },
             {
-              "id": "word-0208",
-              "aligner_word_index": 207,
+              "id": "word-0207",
+              "aligner_word_index": 206,
               "line_word_index": 7,
               "text": "make",
               "start": 152.848,
@@ -2174,21 +2236,21 @@
               "duration": 0.352
             },
             {
-              "id": "word-0209",
-              "aligner_word_index": 208,
+              "id": "word-0208",
+              "aligner_word_index": 207,
               "line_word_index": 8,
               "text": "her",
               "start": 153.2,
-              "end": 153.792,
-              "duration": 0.592
+              "end": 153.696,
+              "duration": 0.496
             },
             {
-              "id": "word-0210",
-              "aligner_word_index": 209,
+              "id": "word-0209",
+              "aligner_word_index": 208,
               "line_word_index": 9,
               "text": "run",
-              "start": 153.792,
-              "end": 154.692,
+              "start": 153.696,
+              "end": 154.596,
               "duration": 0.9
             }
           ],
@@ -2196,23 +2258,25 @@
         },
         {
           "id": "line-0025",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "I'd turn back time and say girl stay away from him",
-          "start": 156.624,
+          "display_type": "lyric",
+          "start": 156.64,
           "end": 161.716,
+          "review_flags": [],
           "words": [
+            {
+              "id": "word-0210",
+              "aligner_word_index": 209,
+              "line_word_index": 0,
+              "text": "i'd",
+              "start": 156.64,
+              "end": 156.88,
+              "duration": 0.24
+            },
             {
               "id": "word-0211",
               "aligner_word_index": 210,
-              "line_word_index": 0,
-              "text": "i'd",
-              "start": 156.624,
-              "end": 156.88,
-              "duration": 0.256
-            },
-            {
-              "id": "word-0212",
-              "aligner_word_index": 211,
               "line_word_index": 1,
               "text": "turn",
               "start": 156.88,
@@ -2220,35 +2284,35 @@
               "duration": 0.496
             },
             {
-              "id": "word-0213",
-              "aligner_word_index": 212,
+              "id": "word-0212",
+              "aligner_word_index": 211,
               "line_word_index": 2,
               "text": "back",
               "start": 157.376,
-              "end": 157.728,
-              "duration": 0.352
+              "end": 157.744,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0213",
+              "aligner_word_index": 212,
+              "line_word_index": 3,
+              "text": "time",
+              "start": 157.744,
+              "end": 158.128,
+              "duration": 0.384
             },
             {
               "id": "word-0214",
               "aligner_word_index": 213,
-              "line_word_index": 3,
-              "text": "time",
-              "start": 157.728,
-              "end": 158.272,
-              "duration": 0.544
+              "line_word_index": 4,
+              "text": "and",
+              "start": 158.128,
+              "end": 158.336,
+              "duration": 0.208
             },
             {
               "id": "word-0215",
               "aligner_word_index": 214,
-              "line_word_index": 4,
-              "text": "and",
-              "start": 158.272,
-              "end": 158.336,
-              "duration": 0.064
-            },
-            {
-              "id": "word-0216",
-              "aligner_word_index": 215,
               "line_word_index": 5,
               "text": "say",
               "start": 158.336,
@@ -2256,8 +2320,8 @@
               "duration": 0.4
             },
             {
-              "id": "word-0217",
-              "aligner_word_index": 216,
+              "id": "word-0216",
+              "aligner_word_index": 215,
               "line_word_index": 6,
               "text": "girl",
               "start": 158.736,
@@ -2265,26 +2329,26 @@
               "duration": 0.576
             },
             {
-              "id": "word-0218",
-              "aligner_word_index": 217,
+              "id": "word-0217",
+              "aligner_word_index": 216,
               "line_word_index": 7,
               "text": "stay",
               "start": 159.312,
-              "end": 159.856,
-              "duration": 0.544
+              "end": 159.824,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0218",
+              "aligner_word_index": 217,
+              "line_word_index": 8,
+              "text": "away",
+              "start": 159.824,
+              "end": 160.32,
+              "duration": 0.496
             },
             {
               "id": "word-0219",
               "aligner_word_index": 218,
-              "line_word_index": 8,
-              "text": "away",
-              "start": 159.856,
-              "end": 160.32,
-              "duration": 0.464
-            },
-            {
-              "id": "word-0220",
-              "aligner_word_index": 219,
               "line_word_index": 9,
               "text": "from",
               "start": 160.32,
@@ -2292,8 +2356,8 @@
               "duration": 0.496
             },
             {
-              "id": "word-0221",
-              "aligner_word_index": 220,
+              "id": "word-0220",
+              "aligner_word_index": 219,
               "line_word_index": 10,
               "text": "him",
               "start": 160.816,
@@ -2305,14 +2369,16 @@
         },
         {
           "id": "line-0026",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "But if I did",
+          "display_type": "lyric",
           "start": 162.688,
           "end": 164.228,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0222",
-              "aligner_word_index": 221,
+              "id": "word-0221",
+              "aligner_word_index": 220,
               "line_word_index": 0,
               "text": "but",
               "start": 162.688,
@@ -2320,8 +2386,8 @@
               "duration": 0.288
             },
             {
-              "id": "word-0223",
-              "aligner_word_index": 222,
+              "id": "word-0222",
+              "aligner_word_index": 221,
               "line_word_index": 1,
               "text": "if",
               "start": 162.976,
@@ -2329,8 +2395,8 @@
               "duration": 0.192
             },
             {
-              "id": "word-0224",
-              "aligner_word_index": 223,
+              "id": "word-0223",
+              "aligner_word_index": 222,
               "line_word_index": 2,
               "text": "i",
               "start": 163.168,
@@ -2338,8 +2404,8 @@
               "duration": 0.16
             },
             {
-              "id": "word-0225",
-              "aligner_word_index": 224,
+              "id": "word-0224",
+              "aligner_word_index": 223,
               "line_word_index": 3,
               "text": "did",
               "start": 163.328,
@@ -2351,14 +2417,16 @@
         },
         {
           "id": "line-0027",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "If I dared",
+          "display_type": "lyric",
           "start": 164.912,
           "end": 166.148,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0226",
-              "aligner_word_index": 225,
+              "id": "word-0225",
+              "aligner_word_index": 224,
               "line_word_index": 0,
               "text": "if",
               "start": 164.912,
@@ -2366,8 +2434,8 @@
               "duration": 0.176
             },
             {
-              "id": "word-0227",
-              "aligner_word_index": 226,
+              "id": "word-0226",
+              "aligner_word_index": 225,
               "line_word_index": 1,
               "text": "i",
               "start": 165.088,
@@ -2375,8 +2443,8 @@
               "duration": 0.16
             },
             {
-              "id": "word-0228",
-              "aligner_word_index": 227,
+              "id": "word-0227",
+              "aligner_word_index": 226,
               "line_word_index": 2,
               "text": "dared",
               "start": 165.248,
@@ -2388,23 +2456,25 @@
         },
         {
           "id": "line-0028",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "There's a price",
-          "start": 166.848,
+          "display_type": "lyric",
+          "start": 166.864,
           "end": 168.132,
+          "review_flags": [],
           "words": [
+            {
+              "id": "word-0228",
+              "aligner_word_index": 227,
+              "line_word_index": 0,
+              "text": "there's",
+              "start": 166.864,
+              "end": 167.168,
+              "duration": 0.304
+            },
             {
               "id": "word-0229",
               "aligner_word_index": 228,
-              "line_word_index": 0,
-              "text": "there's",
-              "start": 166.848,
-              "end": 167.168,
-              "duration": 0.32
-            },
-            {
-              "id": "word-0230",
-              "aligner_word_index": 229,
               "line_word_index": 1,
               "text": "a",
               "start": 167.168,
@@ -2412,8 +2482,8 @@
               "duration": 0.064
             },
             {
-              "id": "word-0231",
-              "aligner_word_index": 230,
+              "id": "word-0230",
+              "aligner_word_index": 229,
               "line_word_index": 2,
               "text": "price",
               "start": 167.232,
@@ -2425,36 +2495,38 @@
         },
         {
           "id": "line-0029",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "I would pay",
-          "start": 168.848,
-          "end": 170.1,
+          "display_type": "lyric",
+          "start": 168.864,
+          "end": 170.068,
+          "review_flags": [],
           "words": [
+            {
+              "id": "word-0231",
+              "aligner_word_index": 230,
+              "line_word_index": 0,
+              "text": "i",
+              "start": 168.864,
+              "end": 169.024,
+              "duration": 0.16
+            },
             {
               "id": "word-0232",
               "aligner_word_index": 231,
-              "line_word_index": 0,
-              "text": "i",
-              "start": 168.848,
-              "end": 169.024,
-              "duration": 0.176
+              "line_word_index": 1,
+              "text": "would",
+              "start": 169.024,
+              "end": 169.168,
+              "duration": 0.144
             },
             {
               "id": "word-0233",
               "aligner_word_index": 232,
-              "line_word_index": 1,
-              "text": "would",
-              "start": 169.024,
-              "end": 169.2,
-              "duration": 0.176
-            },
-            {
-              "id": "word-0234",
-              "aligner_word_index": 233,
               "line_word_index": 2,
               "text": "pay",
-              "start": 169.2,
-              "end": 170.1,
+              "start": 169.168,
+              "end": 170.068,
               "duration": 0.9
             }
           ],
@@ -2462,14 +2534,16 @@
         },
         {
           "id": "line-0030",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "And I'd lose",
+          "display_type": "lyric",
           "start": 172.272,
-          "end": 173.652,
+          "end": 173.636,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0235",
-              "aligner_word_index": 234,
+              "id": "word-0234",
+              "aligner_word_index": 233,
               "line_word_index": 0,
               "text": "and",
               "start": 172.272,
@@ -2477,21 +2551,21 @@
               "duration": 0.24
             },
             {
-              "id": "word-0236",
-              "aligner_word_index": 235,
+              "id": "word-0235",
+              "aligner_word_index": 234,
               "line_word_index": 1,
               "text": "i'd",
               "start": 172.512,
-              "end": 172.752,
-              "duration": 0.24
+              "end": 172.736,
+              "duration": 0.224
             },
             {
-              "id": "word-0237",
-              "aligner_word_index": 236,
+              "id": "word-0236",
+              "aligner_word_index": 235,
               "line_word_index": 2,
               "text": "lose",
-              "start": 172.752,
-              "end": 173.652,
+              "start": 172.736,
+              "end": 173.636,
               "duration": 0.9
             }
           ],
@@ -2499,50 +2573,52 @@
         },
         {
           "id": "line-0031",
-          "section": "VERSE 4",
+          "section": "Section 6",
           "text": "Cause I won't have my son",
+          "display_type": "lyric",
           "start": 174.368,
-          "end": 178.158,
+          "end": 178.142,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0238",
-              "aligner_word_index": 237,
+              "id": "word-0237",
+              "aligner_word_index": 236,
               "line_word_index": 0,
               "text": "cause",
               "start": 174.368,
-              "end": 174.656,
-              "duration": 0.288
+              "end": 174.64,
+              "duration": 0.272
+            },
+            {
+              "id": "word-0238",
+              "aligner_word_index": 237,
+              "line_word_index": 1,
+              "text": "i",
+              "start": 174.64,
+              "end": 174.768,
+              "duration": 0.128
             },
             {
               "id": "word-0239",
               "aligner_word_index": 238,
-              "line_word_index": 1,
-              "text": "i",
-              "start": 174.656,
-              "end": 174.816,
-              "duration": 0.16
+              "line_word_index": 2,
+              "text": "won't",
+              "start": 174.768,
+              "end": 175.44,
+              "duration": 0.672
             },
             {
               "id": "word-0240",
               "aligner_word_index": 239,
-              "line_word_index": 2,
-              "text": "won't",
-              "start": 174.816,
-              "end": 175.424,
-              "duration": 0.608
+              "line_word_index": 3,
+              "text": "have",
+              "start": 175.44,
+              "end": 175.824,
+              "duration": 0.384
             },
             {
               "id": "word-0241",
               "aligner_word_index": 240,
-              "line_word_index": 3,
-              "text": "have",
-              "start": 175.424,
-              "end": 175.824,
-              "duration": 0.4
-            },
-            {
-              "id": "word-0242",
-              "aligner_word_index": 241,
               "line_word_index": 4,
               "text": "my",
               "start": 175.824,
@@ -2550,45 +2626,49 @@
               "duration": 0.9
             },
             {
-              "id": "word-0243",
-              "aligner_word_index": 242,
+              "id": "word-0242",
+              "aligner_word_index": 241,
               "line_word_index": 5,
               "text": "son",
-              "start": 177.424,
-              "end": 178.208,
+              "start": 177.408,
+              "end": 178.192,
               "duration": 0.784
             }
           ],
-          "original_unclamped_end": 178.208,
+          "original_unclamped_end": 178.192,
           "display_end_clamped_to_next_line": true
         }
       ]
     },
     {
-      "id": "outro-006",
-      "label": "OUTRO",
-      "start": 178.208,
-      "end": 203.872,
+      "id": "section-7-007",
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 178.192,
+      "end": 190.388,
       "lines": [
         {
           "id": "line-0032",
-          "section": "OUTRO",
+          "section": "Section 7",
           "text": "If I met myself again",
-          "start": 178.208,
+          "display_type": "lyric",
+          "start": 178.192,
           "end": 183.972,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0244",
-              "aligner_word_index": 243,
+              "id": "word-0243",
+              "aligner_word_index": 242,
               "line_word_index": 0,
               "text": "if",
-              "start": 178.208,
-              "end": 179.108,
+              "start": 178.192,
+              "end": 179.092,
               "duration": 0.9
             },
             {
-              "id": "word-0245",
-              "aligner_word_index": 244,
+              "id": "word-0244",
+              "aligner_word_index": 243,
               "line_word_index": 1,
               "text": "i",
               "start": 181.632,
@@ -2596,8 +2676,8 @@
               "duration": 0.16
             },
             {
-              "id": "word-0246",
-              "aligner_word_index": 245,
+              "id": "word-0245",
+              "aligner_word_index": 244,
               "line_word_index": 2,
               "text": "met",
               "start": 181.792,
@@ -2605,8 +2685,8 @@
               "duration": 0.336
             },
             {
-              "id": "word-0247",
-              "aligner_word_index": 246,
+              "id": "word-0246",
+              "aligner_word_index": 245,
               "line_word_index": 3,
               "text": "myself",
               "start": 182.128,
@@ -2614,8 +2694,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0248",
-              "aligner_word_index": 247,
+              "id": "word-0247",
+              "aligner_word_index": 246,
               "line_word_index": 4,
               "text": "again",
               "start": 183.072,
@@ -2627,32 +2707,34 @@
         },
         {
           "id": "line-0033",
-          "section": "OUTRO",
+          "section": "Section 7",
           "text": "If I met myself again",
+          "display_type": "lyric",
           "start": 187.84,
           "end": 190.388,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0249",
-              "aligner_word_index": 248,
+              "id": "word-0248",
+              "aligner_word_index": 247,
               "line_word_index": 0,
               "text": "if",
               "start": 187.84,
-              "end": 188.0,
-              "duration": 0.16
+              "end": 188.016,
+              "duration": 0.176
+            },
+            {
+              "id": "word-0249",
+              "aligner_word_index": 248,
+              "line_word_index": 1,
+              "text": "i",
+              "start": 188.016,
+              "end": 188.144,
+              "duration": 0.128
             },
             {
               "id": "word-0250",
               "aligner_word_index": 249,
-              "line_word_index": 1,
-              "text": "i",
-              "start": 188.0,
-              "end": 188.144,
-              "duration": 0.144
-            },
-            {
-              "id": "word-0251",
-              "aligner_word_index": 250,
               "line_word_index": 2,
               "text": "met",
               "start": 188.144,
@@ -2660,8 +2742,8 @@
               "duration": 0.368
             },
             {
-              "id": "word-0252",
-              "aligner_word_index": 251,
+              "id": "word-0251",
+              "aligner_word_index": 250,
               "line_word_index": 3,
               "text": "myself",
               "start": 188.512,
@@ -2669,8 +2751,8 @@
               "duration": 0.9
             },
             {
-              "id": "word-0253",
-              "aligner_word_index": 252,
+              "id": "word-0252",
+              "aligner_word_index": 251,
               "line_word_index": 4,
               "text": "again",
               "start": 189.488,
@@ -2679,17 +2761,52 @@
             }
           ],
           "display_end_clamped_to_next_line": false
-        },
+        }
+      ]
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": null,
+      "end": null,
+      "lines": [
         {
           "id": "line-0034",
-          "section": "OUTRO",
+          "section": "Section 8",
+          "text": ". . .",
+          "display_type": "instrumental",
+          "start": null,
+          "end": null,
+          "timing_source": "instrumental-placeholder-pending-draft-builder",
+          "review_flags": [
+            "instrumental_timing_needs_review"
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 200.496,
+      "end": 203.888,
+      "lines": [
+        {
+          "id": "line-0035",
+          "section": "Section 9",
           "text": "If I met myself again",
+          "display_type": "lyric",
           "start": 200.496,
-          "end": 203.872,
+          "end": 203.888,
+          "review_flags": [],
           "words": [
             {
-              "id": "word-0254",
-              "aligner_word_index": 253,
+              "id": "word-0253",
+              "aligner_word_index": 252,
               "line_word_index": 0,
               "text": "if",
               "start": 200.496,
@@ -2697,8 +2814,8 @@
               "duration": 0.16
             },
             {
-              "id": "word-0255",
-              "aligner_word_index": 254,
+              "id": "word-0254",
+              "aligner_word_index": 253,
               "line_word_index": 1,
               "text": "i",
               "start": 200.656,
@@ -2706,30 +2823,30 @@
               "duration": 0.16
             },
             {
-              "id": "word-0256",
-              "aligner_word_index": 255,
+              "id": "word-0255",
+              "aligner_word_index": 254,
               "line_word_index": 2,
               "text": "met",
               "start": 200.816,
-              "end": 201.232,
-              "duration": 0.416
+              "end": 201.216,
+              "duration": 0.4
+            },
+            {
+              "id": "word-0256",
+              "aligner_word_index": 255,
+              "line_word_index": 3,
+              "text": "myself",
+              "start": 201.216,
+              "end": 202.116,
+              "duration": 0.9
             },
             {
               "id": "word-0257",
               "aligner_word_index": 256,
-              "line_word_index": 3,
-              "text": "myself",
-              "start": 201.232,
-              "end": 202.132,
-              "duration": 0.9
-            },
-            {
-              "id": "word-0258",
-              "aligner_word_index": 257,
               "line_word_index": 4,
               "text": "again",
-              "start": 202.672,
-              "end": 203.872,
+              "start": 202.688,
+              "end": 203.888,
               "duration": 1.2
             }
           ],
@@ -2776,40 +2893,40 @@
       "index": 4,
       "text": "back",
       "start": 14.544,
-      "end": 14.96,
-      "duration": 0.416
+      "end": 14.944,
+      "duration": 0.4
     },
     {
       "id": "word-0006",
       "index": 5,
       "text": "then",
-      "start": 14.96,
+      "start": 14.944,
       "end": 15.52,
-      "duration": 0.56
+      "duration": 0.576
     },
     {
       "id": "word-0007",
       "index": 6,
       "text": "i",
       "start": 15.52,
-      "end": 15.568,
-      "duration": 0.048
+      "end": 15.552,
+      "duration": 0.032
     },
     {
       "id": "word-0008",
       "index": 7,
       "text": "wonder",
-      "start": 15.568,
-      "end": 16.468,
+      "start": 15.552,
+      "end": 16.452,
       "duration": 0.9
     },
     {
       "id": "word-0009",
       "index": 8,
       "text": "what",
-      "start": 16.544,
+      "start": 16.592,
       "end": 16.944,
-      "duration": 0.4
+      "duration": 0.352
     },
     {
       "id": "word-0010",
@@ -2848,16 +2965,16 @@
       "index": 13,
       "text": "tell",
       "start": 19.824,
-      "end": 20.336,
-      "duration": 0.512
+      "end": 20.32,
+      "duration": 0.496
     },
     {
       "id": "word-0015",
       "index": 14,
       "text": "that",
-      "start": 20.336,
+      "start": 20.32,
       "end": 20.592,
-      "duration": 0.256
+      "duration": 0.272
     },
     {
       "id": "word-0016",
@@ -2871,8 +2988,8 @@
       "id": "word-0017",
       "index": 16,
       "text": "wideeyed",
-      "start": 21.536,
-      "end": 22.436,
+      "start": 21.52,
+      "end": 22.42,
       "duration": 0.9
     },
     {
@@ -2934,730 +3051,730 @@
     {
       "id": "word-0025",
       "index": 24,
-      "text": "back",
-      "start": 27.824,
-      "end": 27.952,
-      "duration": 0.128
+      "text": "again",
+      "start": 27.872,
+      "end": 28.672,
+      "duration": 0.8
     },
     {
       "id": "word-0026",
       "index": 25,
-      "text": "then",
-      "start": 27.952,
-      "end": 28.688,
-      "duration": 0.736
+      "text": "a",
+      "start": 28.672,
+      "end": 28.768,
+      "duration": 0.096
     },
     {
       "id": "word-0027",
       "index": 26,
-      "text": "a",
-      "start": 28.688,
-      "end": 28.752,
-      "duration": 0.064
+      "text": "child",
+      "start": 28.768,
+      "end": 29.12,
+      "duration": 0.352
     },
     {
       "id": "word-0028",
       "index": 27,
-      "text": "child",
-      "start": 28.752,
-      "end": 29.12,
-      "duration": 0.368
-    },
-    {
-      "id": "word-0029",
-      "index": 28,
       "text": "who'd",
       "start": 29.12,
       "end": 29.632,
       "duration": 0.512
     },
     {
-      "id": "word-0030",
-      "index": 29,
+      "id": "word-0029",
+      "index": 28,
       "text": "lost",
       "start": 29.632,
-      "end": 30.192,
-      "duration": 0.56
+      "end": 30.176,
+      "duration": 0.544
+    },
+    {
+      "id": "word-0030",
+      "index": 29,
+      "text": "her",
+      "start": 30.176,
+      "end": 30.48,
+      "duration": 0.304
     },
     {
       "id": "word-0031",
       "index": 30,
-      "text": "her",
-      "start": 30.192,
-      "end": 30.464,
-      "duration": 0.272
+      "text": "way",
+      "start": 30.48,
+      "end": 31.38,
+      "duration": 0.9
     },
     {
       "id": "word-0032",
       "index": 31,
-      "text": "way",
-      "start": 30.464,
-      "end": 31.364,
-      "duration": 0.9
+      "text": "who",
+      "start": 32.608,
+      "end": 32.768,
+      "duration": 0.16
     },
     {
       "id": "word-0033",
       "index": 32,
-      "text": "who",
-      "start": 32.64,
-      "end": 32.768,
-      "duration": 0.128
-    },
-    {
-      "id": "word-0034",
-      "index": 33,
       "text": "was",
       "start": 32.768,
       "end": 33.072,
       "duration": 0.304
     },
     {
-      "id": "word-0035",
-      "index": 34,
+      "id": "word-0034",
+      "index": 33,
       "text": "just",
       "start": 33.072,
       "end": 33.536,
       "duration": 0.464
     },
     {
-      "id": "word-0036",
-      "index": 35,
+      "id": "word-0035",
+      "index": 34,
       "text": "about",
       "start": 33.536,
-      "end": 34.288,
-      "duration": 0.752
+      "end": 34.304,
+      "duration": 0.768
+    },
+    {
+      "id": "word-0036",
+      "index": 35,
+      "text": "to",
+      "start": 34.304,
+      "end": 34.432,
+      "duration": 0.128
     },
     {
       "id": "word-0037",
       "index": 36,
-      "text": "to",
-      "start": 34.288,
-      "end": 34.432,
-      "duration": 0.144
-    },
-    {
-      "id": "word-0038",
-      "index": 37,
       "text": "pay",
       "start": 34.432,
       "end": 35.12,
       "duration": 0.688
     },
     {
-      "id": "word-0039",
-      "index": 38,
+      "id": "word-0038",
+      "index": 37,
       "text": "the",
       "start": 35.12,
-      "end": 35.216,
-      "duration": 0.096
+      "end": 35.2,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0039",
+      "index": 38,
+      "text": "price",
+      "start": 35.2,
+      "end": 35.952,
+      "duration": 0.752
     },
     {
       "id": "word-0040",
       "index": 39,
-      "text": "price",
-      "start": 35.216,
-      "end": 35.952,
-      "duration": 0.736
-    },
-    {
-      "id": "word-0041",
-      "index": 40,
       "text": "of",
       "start": 35.952,
       "end": 36.064,
       "duration": 0.112
     },
     {
-      "id": "word-0042",
-      "index": 41,
+      "id": "word-0041",
+      "index": 40,
       "text": "youth",
       "start": 36.064,
       "end": 36.964,
       "duration": 0.9
     },
     {
-      "id": "word-0043",
-      "index": 42,
+      "id": "word-0042",
+      "index": 41,
       "text": "i'd",
-      "start": 38.944,
+      "start": 38.928,
       "end": 39.04,
-      "duration": 0.096
+      "duration": 0.112
     },
     {
-      "id": "word-0044",
-      "index": 43,
+      "id": "word-0043",
+      "index": 42,
       "text": "tell",
       "start": 39.04,
       "end": 39.44,
       "duration": 0.4
     },
     {
-      "id": "word-0045",
-      "index": 44,
+      "id": "word-0044",
+      "index": 43,
       "text": "her",
       "start": 39.44,
-      "end": 39.52,
-      "duration": 0.08
+      "end": 39.536,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0045",
+      "index": 44,
+      "text": "only",
+      "start": 39.536,
+      "end": 40.064,
+      "duration": 0.528
     },
     {
       "id": "word-0046",
       "index": 45,
-      "text": "only",
-      "start": 39.52,
-      "end": 40.064,
-      "duration": 0.544
-    },
-    {
-      "id": "word-0047",
-      "index": 46,
       "text": "fools",
       "start": 40.064,
       "end": 40.832,
       "duration": 0.768
     },
     {
-      "id": "word-0048",
-      "index": 47,
+      "id": "word-0047",
+      "index": 46,
       "text": "rush",
       "start": 40.832,
       "end": 41.232,
       "duration": 0.4
     },
     {
-      "id": "word-0049",
-      "index": 48,
+      "id": "word-0048",
+      "index": 47,
       "text": "in",
       "start": 41.232,
       "end": 41.696,
       "duration": 0.464
     },
     {
-      "id": "word-0050",
-      "index": 49,
+      "id": "word-0049",
+      "index": 48,
       "text": "and",
       "start": 41.696,
-      "end": 41.808,
-      "duration": 0.112
+      "end": 41.824,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0050",
+      "index": 49,
+      "text": "think",
+      "start": 41.824,
+      "end": 42.368,
+      "duration": 0.544
     },
     {
       "id": "word-0051",
       "index": 50,
-      "text": "think",
-      "start": 41.808,
-      "end": 42.368,
-      "duration": 0.56
-    },
-    {
-      "id": "word-0052",
-      "index": 51,
       "text": "the",
       "start": 42.368,
       "end": 42.56,
       "duration": 0.192
     },
     {
-      "id": "word-0053",
-      "index": 52,
+      "id": "word-0052",
+      "index": 51,
       "text": "heart",
       "start": 42.56,
       "end": 43.184,
       "duration": 0.624
     },
     {
-      "id": "word-0054",
-      "index": 53,
+      "id": "word-0053",
+      "index": 52,
       "text": "can",
       "start": 43.184,
-      "end": 43.488,
-      "duration": 0.304
+      "end": 43.472,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0054",
+      "index": 53,
+      "text": "lead",
+      "start": 43.472,
+      "end": 44.372,
+      "duration": 0.9
     },
     {
       "id": "word-0055",
       "index": 54,
-      "text": "lead",
-      "start": 43.488,
-      "end": 44.388,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0056",
-      "index": 55,
       "text": "i'd",
       "start": 45.552,
       "end": 45.648,
       "duration": 0.096
     },
     {
-      "id": "word-0057",
-      "index": 56,
+      "id": "word-0056",
+      "index": 55,
       "text": "tell",
       "start": 45.648,
       "end": 45.904,
       "duration": 0.256
     },
     {
-      "id": "word-0058",
-      "index": 57,
+      "id": "word-0057",
+      "index": 56,
       "text": "her",
       "start": 45.904,
       "end": 46.048,
       "duration": 0.144
     },
     {
-      "id": "word-0059",
-      "index": 58,
+      "id": "word-0058",
+      "index": 57,
       "text": "grow",
       "start": 46.048,
       "end": 46.592,
       "duration": 0.544
     },
     {
-      "id": "word-0060",
-      "index": 59,
+      "id": "word-0059",
+      "index": 58,
       "text": "a",
       "start": 46.592,
       "end": 46.656,
       "duration": 0.064
     },
     {
-      "id": "word-0061",
-      "index": 60,
+      "id": "word-0060",
+      "index": 59,
       "text": "thicker",
       "start": 46.656,
       "end": 47.36,
       "duration": 0.704
     },
     {
-      "id": "word-0062",
-      "index": 61,
+      "id": "word-0061",
+      "index": 60,
       "text": "skin",
       "start": 47.36,
       "end": 48.096,
       "duration": 0.736
     },
     {
-      "id": "word-0063",
-      "index": 62,
+      "id": "word-0062",
+      "index": 61,
       "text": "'cause",
       "start": 48.096,
       "end": 48.32,
       "duration": 0.224
     },
     {
-      "id": "word-0064",
-      "index": 63,
+      "id": "word-0063",
+      "index": 62,
       "text": "girl",
       "start": 48.32,
-      "end": 48.896,
-      "duration": 0.576
+      "end": 48.88,
+      "duration": 0.56
+    },
+    {
+      "id": "word-0064",
+      "index": 63,
+      "text": "you're",
+      "start": 48.88,
+      "end": 49.088,
+      "duration": 0.208
     },
     {
       "id": "word-0065",
       "index": 64,
-      "text": "you're",
-      "start": 48.896,
-      "end": 49.088,
-      "duration": 0.192
+      "text": "gonna",
+      "start": 49.088,
+      "end": 49.952,
+      "duration": 0.864
     },
     {
       "id": "word-0066",
       "index": 65,
-      "text": "gonna",
-      "start": 49.088,
-      "end": 49.968,
-      "duration": 0.88
+      "text": "bleed",
+      "start": 49.952,
+      "end": 50.852,
+      "duration": 0.9
     },
     {
       "id": "word-0067",
       "index": 66,
-      "text": "bleed",
-      "start": 49.968,
-      "end": 50.868,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0068",
-      "index": 67,
       "text": "i'd",
       "start": 52.128,
       "end": 52.24,
       "duration": 0.112
     },
     {
-      "id": "word-0069",
-      "index": 68,
+      "id": "word-0068",
+      "index": 67,
       "text": "tell",
       "start": 52.24,
       "end": 52.448,
       "duration": 0.208
     },
     {
-      "id": "word-0070",
-      "index": 69,
+      "id": "word-0069",
+      "index": 68,
       "text": "her",
       "start": 52.448,
       "end": 52.56,
       "duration": 0.112
     },
     {
-      "id": "word-0071",
-      "index": 70,
+      "id": "word-0070",
+      "index": 69,
       "text": "blue",
       "start": 52.56,
-      "end": 52.896,
-      "duration": 0.336
+      "end": 52.912,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0071",
+      "index": 70,
+      "text": "skies",
+      "start": 52.912,
+      "end": 53.472,
+      "duration": 0.56
     },
     {
       "id": "word-0072",
       "index": 71,
-      "text": "skies",
-      "start": 52.896,
-      "end": 53.472,
-      "duration": 0.576
-    },
-    {
-      "id": "word-0073",
-      "index": 72,
       "text": "turn",
       "start": 53.472,
       "end": 53.936,
       "duration": 0.464
     },
     {
-      "id": "word-0074",
-      "index": 73,
+      "id": "word-0073",
+      "index": 72,
       "text": "to",
       "start": 53.936,
       "end": 54.064,
       "duration": 0.128
     },
     {
-      "id": "word-0075",
-      "index": 74,
+      "id": "word-0074",
+      "index": 73,
       "text": "grey",
       "start": 54.064,
       "end": 54.964,
       "duration": 0.9
     },
     {
+      "id": "word-0075",
+      "index": 74,
+      "text": "the",
+      "start": 55.056,
+      "end": 55.44,
+      "duration": 0.384
+    },
+    {
       "id": "word-0076",
       "index": 75,
-      "text": "the",
-      "start": 55.04,
-      "end": 55.408,
-      "duration": 0.368
+      "text": "only",
+      "start": 55.44,
+      "end": 56.08,
+      "duration": 0.64
     },
     {
       "id": "word-0077",
       "index": 76,
-      "text": "only",
-      "start": 55.408,
-      "end": 56.08,
-      "duration": 0.672
-    },
-    {
-      "id": "word-0078",
-      "index": 77,
       "text": "question's",
       "start": 56.08,
       "end": 56.98,
       "duration": 0.9
     },
     {
-      "id": "word-0079",
-      "index": 78,
+      "id": "word-0078",
+      "index": 77,
       "text": "when",
       "start": 57.648,
       "end": 58.548,
       "duration": 0.9
     },
     {
-      "id": "word-0080",
-      "index": 79,
+      "id": "word-0079",
+      "index": 78,
       "text": "i'd",
       "start": 58.944,
       "end": 59.056,
       "duration": 0.112
     },
     {
-      "id": "word-0081",
-      "index": 80,
+      "id": "word-0080",
+      "index": 79,
       "text": "make",
       "start": 59.056,
       "end": 59.312,
       "duration": 0.256
     },
     {
-      "id": "word-0082",
-      "index": 81,
+      "id": "word-0081",
+      "index": 80,
       "text": "her",
       "start": 59.312,
       "end": 59.392,
       "duration": 0.08
     },
     {
-      "id": "word-0083",
-      "index": 82,
+      "id": "word-0082",
+      "index": 81,
       "text": "see",
       "start": 59.392,
       "end": 60.292,
       "duration": 0.9
     },
     {
-      "id": "word-0084",
-      "index": 83,
-      "text": "the",
+      "id": "word-0083",
+      "index": 82,
+      "text": "her",
       "start": 60.64,
       "end": 60.784,
       "duration": 0.144
     },
     {
-      "id": "word-0085",
-      "index": 84,
+      "id": "word-0084",
+      "index": 83,
       "text": "future's",
       "start": 60.784,
       "end": 61.684,
       "duration": 0.9
     },
     {
-      "id": "word-0086",
-      "index": 85,
+      "id": "word-0085",
+      "index": 84,
       "text": "me",
       "start": 61.872,
       "end": 62.352,
       "duration": 0.48
     },
     {
-      "id": "word-0087",
-      "index": 86,
+      "id": "word-0086",
+      "index": 85,
       "text": "if",
       "start": 62.352,
       "end": 63.252,
       "duration": 0.9
     },
     {
-      "id": "word-0088",
-      "index": 87,
+      "id": "word-0087",
+      "index": 86,
       "text": "i",
       "start": 64.496,
       "end": 64.64,
       "duration": 0.144
     },
     {
-      "id": "word-0089",
-      "index": 88,
+      "id": "word-0088",
+      "index": 87,
       "text": "met",
       "start": 64.64,
       "end": 64.976,
       "duration": 0.336
     },
     {
-      "id": "word-0090",
-      "index": 89,
+      "id": "word-0089",
+      "index": 88,
       "text": "myself",
       "start": 64.976,
       "end": 65.876,
       "duration": 0.9
     },
     {
-      "id": "word-0091",
-      "index": 90,
+      "id": "word-0090",
+      "index": 89,
       "text": "again",
       "start": 65.952,
       "end": 66.852,
       "duration": 0.9
     },
     {
-      "id": "word-0092",
-      "index": 91,
+      "id": "word-0091",
+      "index": 90,
       "text": "if",
-      "start": 67.184,
-      "end": 68.084,
+      "start": 69.424,
+      "end": 70.324,
       "duration": 0.9
     },
     {
-      "id": "word-0093",
-      "index": 92,
+      "id": "word-0092",
+      "index": 91,
       "text": "i",
       "start": 79.2,
       "end": 79.328,
       "duration": 0.128
     },
     {
-      "id": "word-0094",
-      "index": 93,
+      "id": "word-0093",
+      "index": 92,
       "text": "met",
       "start": 79.328,
-      "end": 79.68,
-      "duration": 0.352
+      "end": 79.696,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0094",
+      "index": 93,
+      "text": "myself",
+      "start": 79.696,
+      "end": 80.596,
+      "duration": 0.9
     },
     {
       "id": "word-0095",
       "index": 94,
-      "text": "myself",
-      "start": 79.68,
-      "end": 80.58,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0096",
-      "index": 95,
       "text": "again",
       "start": 80.64,
       "end": 81.392,
       "duration": 0.752
     },
     {
-      "id": "word-0097",
-      "index": 96,
+      "id": "word-0096",
+      "index": 95,
       "text": "i",
       "start": 81.392,
-      "end": 81.488,
-      "duration": 0.096
+      "end": 81.456,
+      "duration": 0.064
+    },
+    {
+      "id": "word-0097",
+      "index": 96,
+      "text": "wonder",
+      "start": 81.456,
+      "end": 82.356,
+      "duration": 0.9
     },
     {
       "id": "word-0098",
       "index": 97,
-      "text": "wonder",
-      "start": 81.488,
-      "end": 82.32,
-      "duration": 0.832
+      "text": "what",
+      "start": 82.4,
+      "end": 82.768,
+      "duration": 0.368
     },
     {
       "id": "word-0099",
       "index": 98,
-      "text": "what",
-      "start": 82.32,
-      "end": 82.768,
-      "duration": 0.448
-    },
-    {
-      "id": "word-0100",
-      "index": 99,
       "text": "she'd",
       "start": 82.768,
       "end": 83.2,
       "duration": 0.432
     },
     {
-      "id": "word-0101",
-      "index": 100,
+      "id": "word-0100",
+      "index": 99,
       "text": "say",
       "start": 83.2,
       "end": 84.1,
       "duration": 0.9
     },
     {
-      "id": "word-0102",
-      "index": 101,
+      "id": "word-0101",
+      "index": 100,
       "text": "that",
       "start": 85.344,
       "end": 85.632,
       "duration": 0.288
     },
     {
-      "id": "word-0103",
-      "index": 102,
+      "id": "word-0102",
+      "index": 101,
       "text": "lovestruck",
       "start": 85.632,
       "end": 86.532,
       "duration": 0.9
     },
     {
-      "id": "word-0104",
-      "index": 103,
+      "id": "word-0103",
+      "index": 102,
       "text": "girl",
       "start": 86.56,
       "end": 87.072,
       "duration": 0.512
     },
     {
-      "id": "word-0105",
-      "index": 104,
+      "id": "word-0104",
+      "index": 103,
       "text": "who",
       "start": 87.072,
       "end": 87.264,
       "duration": 0.192
     },
     {
-      "id": "word-0106",
-      "index": 105,
+      "id": "word-0105",
+      "index": 104,
       "text": "thought",
       "start": 87.264,
       "end": 87.696,
       "duration": 0.432
     },
     {
-      "id": "word-0107",
-      "index": 106,
+      "id": "word-0106",
+      "index": 105,
       "text": "she",
       "start": 87.696,
       "end": 88.016,
       "duration": 0.32
     },
     {
-      "id": "word-0108",
-      "index": 107,
+      "id": "word-0107",
+      "index": 106,
       "text": "was",
       "start": 88.016,
       "end": 88.368,
       "duration": 0.352
     },
     {
-      "id": "word-0109",
-      "index": 108,
+      "id": "word-0108",
+      "index": 107,
       "text": "so",
       "start": 88.368,
       "end": 88.896,
       "duration": 0.528
     },
     {
-      "id": "word-0110",
-      "index": 109,
+      "id": "word-0109",
+      "index": 108,
       "text": "smart",
       "start": 88.896,
       "end": 89.796,
       "duration": 0.9
     },
     {
-      "id": "word-0111",
-      "index": 110,
+      "id": "word-0110",
+      "index": 109,
       "text": "if",
       "start": 91.936,
       "end": 92.128,
       "duration": 0.192
     },
     {
-      "id": "word-0112",
-      "index": 111,
+      "id": "word-0111",
+      "index": 110,
       "text": "i",
       "start": 92.128,
       "end": 92.304,
       "duration": 0.176
     },
     {
+      "id": "word-0112",
+      "index": 111,
+      "text": "warn",
+      "start": 92.304,
+      "end": 92.752,
+      "duration": 0.448
+    },
+    {
       "id": "word-0113",
       "index": 112,
-      "text": "wonder",
-      "start": 92.304,
+      "text": "her",
+      "start": 92.752,
       "end": 93.072,
-      "duration": 0.768
+      "duration": 0.32
     },
     {
       "id": "word-0114",
       "index": 113,
       "text": "of",
       "start": 93.072,
-      "end": 93.552,
-      "duration": 0.48
+      "end": 93.536,
+      "duration": 0.464
     },
     {
       "id": "word-0115",
       "index": 114,
       "text": "the",
-      "start": 93.552,
+      "start": 93.536,
       "end": 93.68,
-      "duration": 0.128
+      "duration": 0.144
     },
     {
       "id": "word-0116",
@@ -3712,16 +3829,16 @@
       "index": 121,
       "text": "and",
       "start": 98.656,
-      "end": 98.752,
-      "duration": 0.096
+      "end": 98.768,
+      "duration": 0.112
     },
     {
       "id": "word-0123",
       "index": 122,
       "text": "worse",
-      "start": 98.752,
+      "start": 98.768,
       "end": 99.328,
-      "duration": 0.576
+      "duration": 0.56
     },
     {
       "id": "word-0124",
@@ -3736,40 +3853,40 @@
       "index": 124,
       "text": "ones",
       "start": 99.424,
-      "end": 99.984,
-      "duration": 0.56
+      "end": 99.968,
+      "duration": 0.544
     },
     {
       "id": "word-0126",
       "index": 125,
       "text": "that",
-      "start": 99.984,
+      "start": 99.968,
       "end": 100.096,
-      "duration": 0.112
+      "duration": 0.128
     },
     {
       "id": "word-0127",
       "index": 126,
       "text": "stay",
       "start": 100.096,
-      "end": 100.704,
-      "duration": 0.608
+      "end": 100.72,
+      "duration": 0.624
     },
     {
       "id": "word-0128",
       "index": 127,
       "text": "and",
-      "start": 100.704,
-      "end": 100.992,
-      "duration": 0.288
+      "start": 100.72,
+      "end": 100.96,
+      "duration": 0.24
     },
     {
       "id": "word-0129",
       "index": 128,
       "text": "break",
-      "start": 100.992,
+      "start": 100.96,
       "end": 101.568,
-      "duration": 0.576
+      "duration": 0.608
     },
     {
       "id": "word-0130",
@@ -3808,16 +3925,16 @@
       "index": 133,
       "text": "her",
       "start": 105.136,
-      "end": 105.264,
-      "duration": 0.128
+      "end": 105.28,
+      "duration": 0.144
     },
     {
       "id": "word-0135",
       "index": 134,
       "text": "love's",
-      "start": 105.264,
+      "start": 105.28,
       "end": 105.872,
-      "duration": 0.608
+      "duration": 0.592
     },
     {
       "id": "word-0136",
@@ -3856,16 +3973,16 @@
       "index": 139,
       "text": "better",
       "start": 107.84,
-      "end": 108.624,
-      "duration": 0.784
+      "end": 108.64,
+      "duration": 0.8
     },
     {
       "id": "word-0141",
       "index": 140,
       "text": "left",
-      "start": 108.624,
+      "start": 108.64,
       "end": 109.136,
-      "duration": 0.512
+      "duration": 0.496
     },
     {
       "id": "word-0142",
@@ -3904,16 +4021,16 @@
       "index": 145,
       "text": "you've",
       "start": 111.728,
-      "end": 112.32,
-      "duration": 0.592
+      "end": 112.304,
+      "duration": 0.576
     },
     {
       "id": "word-0147",
       "index": 146,
       "text": "yourself",
-      "start": 112.32,
+      "start": 112.304,
       "end": 113.152,
-      "duration": 0.832
+      "duration": 0.848
     },
     {
       "id": "word-0148",
@@ -3944,31 +4061,31 @@
       "index": 150,
       "text": "every",
       "start": 114.24,
-      "end": 114.928,
-      "duration": 0.688
+      "end": 114.944,
+      "duration": 0.704
     },
     {
       "id": "word-0152",
       "index": 151,
       "text": "choice",
-      "start": 114.928,
+      "start": 114.944,
       "end": 115.648,
-      "duration": 0.72
+      "duration": 0.704
     },
     {
       "id": "word-0153",
       "index": 152,
       "text": "you've",
       "start": 115.648,
-      "end": 115.84,
-      "duration": 0.192
+      "end": 115.824,
+      "duration": 0.176
     },
     {
       "id": "word-0154",
       "index": 153,
       "text": "made",
-      "start": 115.84,
-      "end": 116.74,
+      "start": 115.824,
+      "end": 116.724,
       "duration": 0.9
     },
     {
@@ -3992,16 +4109,16 @@
       "index": 156,
       "text": "tell",
       "start": 118.256,
-      "end": 118.56,
-      "duration": 0.304
+      "end": 118.576,
+      "duration": 0.32
     },
     {
       "id": "word-0158",
       "index": 157,
       "text": "her",
-      "start": 118.56,
+      "start": 118.576,
       "end": 119.456,
-      "duration": 0.896
+      "duration": 0.88
     },
     {
       "id": "word-0159",
@@ -4032,24 +4149,24 @@
       "index": 161,
       "text": "her",
       "start": 120.432,
-      "end": 120.576,
-      "duration": 0.144
+      "end": 120.592,
+      "duration": 0.16
     },
     {
       "id": "word-0163",
       "index": 162,
       "text": "'til",
-      "start": 120.576,
-      "end": 121.152,
-      "duration": 0.576
+      "start": 120.592,
+      "end": 121.072,
+      "duration": 0.48
     },
     {
       "id": "word-0164",
       "index": 163,
       "text": "my",
-      "start": 121.152,
+      "start": 121.072,
       "end": 121.632,
-      "duration": 0.48
+      "duration": 0.56
     },
     {
       "id": "word-0165",
@@ -4072,23 +4189,23 @@
       "index": 166,
       "text": "out",
       "start": 123.424,
-      "end": 124.192,
-      "duration": 0.768
+      "end": 124.208,
+      "duration": 0.784
     },
     {
       "id": "word-0168",
       "index": 167,
       "text": "and",
-      "start": 124.192,
-      "end": 124.592,
+      "start": 124.208,
+      "end": 124.608,
       "duration": 0.4
     },
     {
       "id": "word-0169",
       "index": 168,
       "text": "then",
-      "start": 124.592,
-      "end": 125.492,
+      "start": 124.608,
+      "end": 125.508,
       "duration": 0.9
     },
     {
@@ -4096,16 +4213,16 @@
       "index": 169,
       "text": "she",
       "start": 125.84,
-      "end": 126.112,
-      "duration": 0.272
+      "end": 126.128,
+      "duration": 0.288
     },
     {
       "id": "word-0171",
       "index": 170,
       "text": "would",
-      "start": 126.112,
+      "start": 126.128,
       "end": 126.272,
-      "duration": 0.16
+      "duration": 0.144
     },
     {
       "id": "word-0172",
@@ -4118,689 +4235,681 @@
     {
       "id": "word-0173",
       "index": 172,
-      "text": "and",
-      "start": 127.376,
-      "end": 127.552,
-      "duration": 0.176
+      "text": "wait",
+      "start": 127.536,
+      "end": 127.888,
+      "duration": 0.352
     },
     {
       "id": "word-0174",
       "index": 173,
-      "text": "wait",
-      "start": 127.552,
-      "end": 127.888,
-      "duration": 0.336
+      "text": "a",
+      "start": 127.888,
+      "end": 127.984,
+      "duration": 0.096
     },
     {
       "id": "word-0175",
       "index": 174,
-      "text": "a",
-      "start": 127.888,
-      "end": 127.968,
-      "duration": 0.08
+      "text": "while",
+      "start": 127.984,
+      "end": 128.884,
+      "duration": 0.9
     },
     {
       "id": "word-0176",
       "index": 175,
-      "text": "while",
-      "start": 127.968,
-      "end": 128.868,
-      "duration": 0.9
+      "text": "and",
+      "start": 129.584,
+      "end": 129.744,
+      "duration": 0.16
     },
     {
       "id": "word-0177",
       "index": 176,
-      "text": "and",
-      "start": 129.584,
-      "end": 129.728,
-      "duration": 0.144
+      "text": "go",
+      "start": 129.744,
+      "end": 129.952,
+      "duration": 0.208
     },
     {
       "id": "word-0178",
       "index": 177,
-      "text": "go",
-      "start": 129.728,
-      "end": 130.0,
-      "duration": 0.272
+      "text": "and",
+      "start": 129.952,
+      "end": 130.128,
+      "duration": 0.176
     },
     {
       "id": "word-0179",
       "index": 178,
-      "text": "and",
-      "start": 130.0,
-      "end": 130.128,
-      "duration": 0.128
-    },
-    {
-      "id": "word-0180",
-      "index": 179,
       "text": "do",
       "start": 130.128,
       "end": 130.416,
       "duration": 0.288
     },
     {
-      "id": "word-0181",
-      "index": 180,
+      "id": "word-0180",
+      "index": 179,
       "text": "it",
       "start": 130.416,
       "end": 130.592,
       "duration": 0.176
     },
     {
-      "id": "word-0182",
-      "index": 181,
+      "id": "word-0181",
+      "index": 180,
       "text": "all",
       "start": 130.592,
       "end": 131.408,
       "duration": 0.816
     },
     {
-      "id": "word-0183",
-      "index": 182,
+      "id": "word-0182",
+      "index": 181,
       "text": "again",
       "start": 131.408,
       "end": 132.308,
       "duration": 0.9
     },
     {
-      "id": "word-0184",
-      "index": 183,
+      "id": "word-0183",
+      "index": 182,
       "text": "if",
       "start": 136.16,
       "end": 136.336,
       "duration": 0.176
     },
     {
-      "id": "word-0185",
-      "index": 184,
+      "id": "word-0184",
+      "index": 183,
       "text": "i",
       "start": 136.336,
       "end": 136.48,
       "duration": 0.144
     },
     {
-      "id": "word-0186",
-      "index": 185,
+      "id": "word-0185",
+      "index": 184,
       "text": "met",
       "start": 136.48,
-      "end": 136.784,
-      "duration": 0.304
+      "end": 136.8,
+      "duration": 0.32
+    },
+    {
+      "id": "word-0186",
+      "index": 185,
+      "text": "myself",
+      "start": 136.8,
+      "end": 137.7,
+      "duration": 0.9
     },
     {
       "id": "word-0187",
       "index": 186,
-      "text": "myself",
-      "start": 136.784,
-      "end": 137.684,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0188",
-      "index": 187,
       "text": "again",
       "start": 137.76,
       "end": 138.66,
       "duration": 0.9
     },
     {
-      "id": "word-0189",
-      "index": 188,
+      "id": "word-0188",
+      "index": 187,
       "text": "if",
       "start": 144.048,
       "end": 144.24,
       "duration": 0.192
     },
     {
-      "id": "word-0190",
-      "index": 189,
+      "id": "word-0189",
+      "index": 188,
       "text": "i",
       "start": 144.24,
-      "end": 144.384,
-      "duration": 0.144
+      "end": 144.4,
+      "duration": 0.16
+    },
+    {
+      "id": "word-0190",
+      "index": 189,
+      "text": "met",
+      "start": 144.4,
+      "end": 144.816,
+      "duration": 0.416
     },
     {
       "id": "word-0191",
       "index": 190,
-      "text": "met",
-      "start": 144.384,
-      "end": 144.816,
-      "duration": 0.432
-    },
-    {
-      "id": "word-0192",
-      "index": 191,
       "text": "that",
       "start": 144.816,
       "end": 145.168,
       "duration": 0.352
     },
     {
-      "id": "word-0193",
-      "index": 192,
+      "id": "word-0192",
+      "index": 191,
       "text": "girl",
       "start": 145.168,
-      "end": 145.504,
-      "duration": 0.336
+      "end": 145.664,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0193",
+      "index": 192,
+      "text": "again",
+      "start": 145.664,
+      "end": 146.24,
+      "duration": 0.576
     },
     {
       "id": "word-0194",
       "index": 193,
-      "text": "again",
-      "start": 145.504,
-      "end": 146.256,
-      "duration": 0.752
+      "text": "i'd",
+      "start": 146.24,
+      "end": 146.544,
+      "duration": 0.304
     },
     {
       "id": "word-0195",
       "index": 194,
-      "text": "i'd",
-      "start": 146.256,
-      "end": 146.528,
-      "duration": 0.272
+      "text": "tell",
+      "start": 146.544,
+      "end": 146.88,
+      "duration": 0.336
     },
     {
       "id": "word-0196",
       "index": 195,
-      "text": "tell",
-      "start": 146.528,
-      "end": 146.928,
-      "duration": 0.4
+      "text": "her",
+      "start": 146.88,
+      "end": 147.232,
+      "duration": 0.352
     },
     {
       "id": "word-0197",
       "index": 196,
-      "text": "her",
-      "start": 146.928,
-      "end": 147.232,
-      "duration": 0.304
-    },
-    {
-      "id": "word-0198",
-      "index": 197,
       "text": "sink",
       "start": 147.232,
       "end": 147.808,
       "duration": 0.576
     },
     {
-      "id": "word-0199",
-      "index": 198,
+      "id": "word-0198",
+      "index": 197,
       "text": "or",
       "start": 147.808,
       "end": 148.16,
       "duration": 0.352
     },
     {
-      "id": "word-0200",
-      "index": 199,
+      "id": "word-0199",
+      "index": 198,
       "text": "swim",
       "start": 148.16,
       "end": 149.06,
       "duration": 0.9
     },
     {
+      "id": "word-0200",
+      "index": 199,
+      "text": "i'd",
+      "start": 150.304,
+      "end": 150.496,
+      "duration": 0.192
+    },
+    {
       "id": "word-0201",
       "index": 200,
-      "text": "i'd",
-      "start": 150.288,
-      "end": 150.496,
-      "duration": 0.208
+      "text": "wake",
+      "start": 150.496,
+      "end": 151.04,
+      "duration": 0.544
     },
     {
       "id": "word-0202",
       "index": 201,
-      "text": "wake",
-      "start": 150.496,
-      "end": 151.024,
-      "duration": 0.528
+      "text": "her",
+      "start": 151.04,
+      "end": 151.376,
+      "duration": 0.336
     },
     {
       "id": "word-0203",
       "index": 202,
-      "text": "her",
-      "start": 151.024,
-      "end": 151.392,
-      "duration": 0.368
+      "text": "up",
+      "start": 151.376,
+      "end": 151.728,
+      "duration": 0.352
     },
     {
       "id": "word-0204",
       "index": 203,
-      "text": "up",
-      "start": 151.392,
-      "end": 151.728,
-      "duration": 0.336
-    },
-    {
-      "id": "word-0205",
-      "index": 204,
       "text": "and",
       "start": 151.728,
       "end": 152.048,
       "duration": 0.32
     },
     {
-      "id": "word-0206",
-      "index": 205,
+      "id": "word-0205",
+      "index": 204,
       "text": "god",
       "start": 152.048,
       "end": 152.528,
       "duration": 0.48
     },
     {
-      "id": "word-0207",
-      "index": 206,
+      "id": "word-0206",
+      "index": 205,
       "text": "i'd",
       "start": 152.528,
       "end": 152.848,
       "duration": 0.32
     },
     {
-      "id": "word-0208",
-      "index": 207,
+      "id": "word-0207",
+      "index": 206,
       "text": "make",
       "start": 152.848,
       "end": 153.2,
       "duration": 0.352
     },
     {
-      "id": "word-0209",
-      "index": 208,
+      "id": "word-0208",
+      "index": 207,
       "text": "her",
       "start": 153.2,
-      "end": 153.792,
-      "duration": 0.592
+      "end": 153.696,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0209",
+      "index": 208,
+      "text": "run",
+      "start": 153.696,
+      "end": 154.596,
+      "duration": 0.9
     },
     {
       "id": "word-0210",
       "index": 209,
-      "text": "run",
-      "start": 153.792,
-      "end": 154.692,
-      "duration": 0.9
+      "text": "i'd",
+      "start": 156.64,
+      "end": 156.88,
+      "duration": 0.24
     },
     {
       "id": "word-0211",
       "index": 210,
-      "text": "i'd",
-      "start": 156.624,
-      "end": 156.88,
-      "duration": 0.256
-    },
-    {
-      "id": "word-0212",
-      "index": 211,
       "text": "turn",
       "start": 156.88,
       "end": 157.376,
       "duration": 0.496
     },
     {
-      "id": "word-0213",
-      "index": 212,
+      "id": "word-0212",
+      "index": 211,
       "text": "back",
       "start": 157.376,
-      "end": 157.728,
-      "duration": 0.352
+      "end": 157.744,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0213",
+      "index": 212,
+      "text": "time",
+      "start": 157.744,
+      "end": 158.128,
+      "duration": 0.384
     },
     {
       "id": "word-0214",
       "index": 213,
-      "text": "time",
-      "start": 157.728,
-      "end": 158.272,
-      "duration": 0.544
+      "text": "and",
+      "start": 158.128,
+      "end": 158.336,
+      "duration": 0.208
     },
     {
       "id": "word-0215",
       "index": 214,
-      "text": "and",
-      "start": 158.272,
-      "end": 158.336,
-      "duration": 0.064
-    },
-    {
-      "id": "word-0216",
-      "index": 215,
       "text": "say",
       "start": 158.336,
       "end": 158.736,
       "duration": 0.4
     },
     {
-      "id": "word-0217",
-      "index": 216,
+      "id": "word-0216",
+      "index": 215,
       "text": "girl",
       "start": 158.736,
       "end": 159.312,
       "duration": 0.576
     },
     {
-      "id": "word-0218",
-      "index": 217,
+      "id": "word-0217",
+      "index": 216,
       "text": "stay",
       "start": 159.312,
-      "end": 159.856,
-      "duration": 0.544
+      "end": 159.824,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0218",
+      "index": 217,
+      "text": "away",
+      "start": 159.824,
+      "end": 160.32,
+      "duration": 0.496
     },
     {
       "id": "word-0219",
       "index": 218,
-      "text": "away",
-      "start": 159.856,
-      "end": 160.32,
-      "duration": 0.464
-    },
-    {
-      "id": "word-0220",
-      "index": 219,
       "text": "from",
       "start": 160.32,
       "end": 160.816,
       "duration": 0.496
     },
     {
-      "id": "word-0221",
-      "index": 220,
+      "id": "word-0220",
+      "index": 219,
       "text": "him",
       "start": 160.816,
       "end": 161.716,
       "duration": 0.9
     },
     {
-      "id": "word-0222",
-      "index": 221,
+      "id": "word-0221",
+      "index": 220,
       "text": "but",
       "start": 162.688,
       "end": 162.976,
       "duration": 0.288
     },
     {
-      "id": "word-0223",
-      "index": 222,
+      "id": "word-0222",
+      "index": 221,
       "text": "if",
       "start": 162.976,
       "end": 163.168,
       "duration": 0.192
     },
     {
-      "id": "word-0224",
-      "index": 223,
+      "id": "word-0223",
+      "index": 222,
       "text": "i",
       "start": 163.168,
       "end": 163.328,
       "duration": 0.16
     },
     {
-      "id": "word-0225",
-      "index": 224,
+      "id": "word-0224",
+      "index": 223,
       "text": "did",
       "start": 163.328,
       "end": 164.228,
       "duration": 0.9
     },
     {
-      "id": "word-0226",
-      "index": 225,
+      "id": "word-0225",
+      "index": 224,
       "text": "if",
       "start": 164.912,
       "end": 165.088,
       "duration": 0.176
     },
     {
-      "id": "word-0227",
-      "index": 226,
+      "id": "word-0226",
+      "index": 225,
       "text": "i",
       "start": 165.088,
       "end": 165.248,
       "duration": 0.16
     },
     {
-      "id": "word-0228",
-      "index": 227,
+      "id": "word-0227",
+      "index": 226,
       "text": "dared",
       "start": 165.248,
       "end": 166.148,
       "duration": 0.9
     },
     {
-      "id": "word-0229",
-      "index": 228,
+      "id": "word-0228",
+      "index": 227,
       "text": "there's",
-      "start": 166.848,
+      "start": 166.864,
       "end": 167.168,
-      "duration": 0.32
+      "duration": 0.304
     },
     {
-      "id": "word-0230",
-      "index": 229,
+      "id": "word-0229",
+      "index": 228,
       "text": "a",
       "start": 167.168,
       "end": 167.232,
       "duration": 0.064
     },
     {
-      "id": "word-0231",
-      "index": 230,
+      "id": "word-0230",
+      "index": 229,
       "text": "price",
       "start": 167.232,
       "end": 168.132,
       "duration": 0.9
     },
     {
+      "id": "word-0231",
+      "index": 230,
+      "text": "i",
+      "start": 168.864,
+      "end": 169.024,
+      "duration": 0.16
+    },
+    {
       "id": "word-0232",
       "index": 231,
-      "text": "i",
-      "start": 168.848,
-      "end": 169.024,
-      "duration": 0.176
+      "text": "would",
+      "start": 169.024,
+      "end": 169.168,
+      "duration": 0.144
     },
     {
       "id": "word-0233",
       "index": 232,
-      "text": "would",
-      "start": 169.024,
-      "end": 169.2,
-      "duration": 0.176
+      "text": "pay",
+      "start": 169.168,
+      "end": 170.068,
+      "duration": 0.9
     },
     {
       "id": "word-0234",
       "index": 233,
-      "text": "pay",
-      "start": 169.2,
-      "end": 170.1,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0235",
-      "index": 234,
       "text": "and",
       "start": 172.272,
       "end": 172.512,
       "duration": 0.24
     },
     {
-      "id": "word-0236",
-      "index": 235,
+      "id": "word-0235",
+      "index": 234,
       "text": "i'd",
       "start": 172.512,
-      "end": 172.752,
-      "duration": 0.24
+      "end": 172.736,
+      "duration": 0.224
+    },
+    {
+      "id": "word-0236",
+      "index": 235,
+      "text": "lose",
+      "start": 172.736,
+      "end": 173.636,
+      "duration": 0.9
     },
     {
       "id": "word-0237",
       "index": 236,
-      "text": "lose",
-      "start": 172.752,
-      "end": 173.652,
-      "duration": 0.9
+      "text": "cause",
+      "start": 174.368,
+      "end": 174.64,
+      "duration": 0.272
     },
     {
       "id": "word-0238",
       "index": 237,
-      "text": "cause",
-      "start": 174.368,
-      "end": 174.656,
-      "duration": 0.288
+      "text": "i",
+      "start": 174.64,
+      "end": 174.768,
+      "duration": 0.128
     },
     {
       "id": "word-0239",
       "index": 238,
-      "text": "i",
-      "start": 174.656,
-      "end": 174.816,
-      "duration": 0.16
+      "text": "won't",
+      "start": 174.768,
+      "end": 175.44,
+      "duration": 0.672
     },
     {
       "id": "word-0240",
       "index": 239,
-      "text": "won't",
-      "start": 174.816,
-      "end": 175.424,
-      "duration": 0.608
+      "text": "have",
+      "start": 175.44,
+      "end": 175.824,
+      "duration": 0.384
     },
     {
       "id": "word-0241",
       "index": 240,
-      "text": "have",
-      "start": 175.424,
-      "end": 175.824,
-      "duration": 0.4
-    },
-    {
-      "id": "word-0242",
-      "index": 241,
       "text": "my",
       "start": 175.824,
       "end": 176.724,
       "duration": 0.9
     },
     {
+      "id": "word-0242",
+      "index": 241,
+      "text": "son",
+      "start": 177.408,
+      "end": 178.192,
+      "duration": 0.784
+    },
+    {
       "id": "word-0243",
       "index": 242,
-      "text": "son",
-      "start": 177.424,
-      "end": 178.208,
-      "duration": 0.784
+      "text": "if",
+      "start": 178.192,
+      "end": 179.092,
+      "duration": 0.9
     },
     {
       "id": "word-0244",
       "index": 243,
-      "text": "if",
-      "start": 178.208,
-      "end": 179.108,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0245",
-      "index": 244,
       "text": "i",
       "start": 181.632,
       "end": 181.792,
       "duration": 0.16
     },
     {
-      "id": "word-0246",
-      "index": 245,
+      "id": "word-0245",
+      "index": 244,
       "text": "met",
       "start": 181.792,
       "end": 182.128,
       "duration": 0.336
     },
     {
-      "id": "word-0247",
-      "index": 246,
+      "id": "word-0246",
+      "index": 245,
       "text": "myself",
       "start": 182.128,
       "end": 183.028,
       "duration": 0.9
     },
     {
-      "id": "word-0248",
-      "index": 247,
+      "id": "word-0247",
+      "index": 246,
       "text": "again",
       "start": 183.072,
       "end": 183.972,
       "duration": 0.9
     },
     {
-      "id": "word-0249",
-      "index": 248,
+      "id": "word-0248",
+      "index": 247,
       "text": "if",
       "start": 187.84,
-      "end": 188.0,
-      "duration": 0.16
+      "end": 188.016,
+      "duration": 0.176
+    },
+    {
+      "id": "word-0249",
+      "index": 248,
+      "text": "i",
+      "start": 188.016,
+      "end": 188.144,
+      "duration": 0.128
     },
     {
       "id": "word-0250",
       "index": 249,
-      "text": "i",
-      "start": 188.0,
-      "end": 188.144,
-      "duration": 0.144
-    },
-    {
-      "id": "word-0251",
-      "index": 250,
       "text": "met",
       "start": 188.144,
       "end": 188.512,
       "duration": 0.368
     },
     {
-      "id": "word-0252",
-      "index": 251,
+      "id": "word-0251",
+      "index": 250,
       "text": "myself",
       "start": 188.512,
       "end": 189.412,
       "duration": 0.9
     },
     {
-      "id": "word-0253",
-      "index": 252,
+      "id": "word-0252",
+      "index": 251,
       "text": "again",
       "start": 189.488,
       "end": 190.388,
       "duration": 0.9
     },
     {
-      "id": "word-0254",
-      "index": 253,
+      "id": "word-0253",
+      "index": 252,
       "text": "if",
       "start": 200.496,
       "end": 200.656,
       "duration": 0.16
     },
     {
-      "id": "word-0255",
-      "index": 254,
+      "id": "word-0254",
+      "index": 253,
       "text": "i",
       "start": 200.656,
       "end": 200.816,
       "duration": 0.16
     },
     {
-      "id": "word-0256",
-      "index": 255,
+      "id": "word-0255",
+      "index": 254,
       "text": "met",
       "start": 200.816,
-      "end": 201.232,
-      "duration": 0.416
+      "end": 201.216,
+      "duration": 0.4
+    },
+    {
+      "id": "word-0256",
+      "index": 255,
+      "text": "myself",
+      "start": 201.216,
+      "end": 202.116,
+      "duration": 0.9
     },
     {
       "id": "word-0257",
       "index": 256,
-      "text": "myself",
-      "start": 201.232,
-      "end": 202.132,
-      "duration": 0.9
-    },
-    {
-      "id": "word-0258",
-      "index": 257,
       "text": "again",
-      "start": 202.672,
-      "end": 203.872,
+      "start": 202.688,
+      "end": 203.888,
       "duration": 1.2
     }
   ],
@@ -4808,6 +4917,7 @@
     "This file was created from singing-specific lyrics-aligner word onsets.",
     "The aligner output provides word starts only.",
     "Word and line ends are inferred for review purposes and should not be treated as final timing truth.",
+    "Instrumental placeholder lines are preserved here with empty words arrays and are timed in the draft builder.",
     "Use this mainly to judge word starts and line starts."
   ]
 }

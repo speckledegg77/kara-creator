@@ -23,6 +23,8 @@ CLITIC_SUFFIXES = [
 ]
 
 UNVOICED_FOR_S = {"P", "T", "K", "F", "TH"}
+INSTRUMENTAL_DISPLAY_TEXT = ". . ."
+AUTO_SECTION_SIZE = 8
 
 
 def require_file(path: Path, label: str) -> None:
@@ -71,8 +73,39 @@ def section_id_from_label(label: str, index: int) -> str:
 def clean_lyric_line(line: str) -> str:
     line = line.strip()
     line = line.replace("’", "'")
+    line = line.replace("…", "…")
     line = re.sub(r"\s+", " ", line)
     return line
+
+
+def is_section_heading(line: str) -> bool:
+    return bool(re.match(r"^\[(.+?)\]$", line.strip()))
+
+
+def section_label_from_heading(line: str) -> str:
+    match = re.match(r"^\[(.+?)\]$", line.strip())
+
+    if not match:
+        return "Section"
+
+    return match.group(1).strip() or "Section"
+
+
+def is_comment_line(line: str) -> bool:
+    return line.strip().startswith("#")
+
+
+def is_instrumental_placeholder(line: str) -> bool:
+    value = line.strip()
+
+    if value == "…":
+        return True
+
+    if value == "...":
+        return True
+
+    compact = re.sub(r"\s+", "", value)
+    return compact == "..."
 
 
 def normalise_word(value: str) -> str:
@@ -90,13 +123,45 @@ def words_from_line(line: str) -> list[str]:
     return [normalise_word(word) for word in raw_words if normalise_word(word)]
 
 
-def parse_sectioned_lyrics(lyrics_path: Path) -> list[dict[str, Any]]:
-    require_file(lyrics_path, "Lyrics file")
+def make_line_entry(raw_line: str, section_label: str, line_counter: int) -> dict[str, Any] | None:
+    line = clean_lyric_line(raw_line)
 
-    raw_lines = lyrics_path.read_text(encoding="utf-8-sig").splitlines()
+    if not line:
+        return None
 
+    if is_comment_line(line):
+        return None
+
+    if is_section_heading(line):
+        return None
+
+    if is_instrumental_placeholder(line):
+        return {
+            "id": f"line-{line_counter:04d}",
+            "section": section_label,
+            "text": INSTRUMENTAL_DISPLAY_TEXT,
+            "display_type": "instrumental",
+            "words": [],
+        }
+
+    words = words_from_line(line)
+
+    if not words:
+        return None
+
+    return {
+        "id": f"line-{line_counter:04d}",
+        "section": section_label,
+        "text": line,
+        "display_type": "lyric",
+        "words": words,
+    }
+
+
+def parse_lyrics_with_explicit_sections(raw_lines: list[str]) -> tuple[list[dict[str, Any]], str]:
     sections: list[dict[str, Any]] = []
     current_section: dict[str, Any] | None = None
+    current_label = "Song"
     line_counter = 0
 
     def ensure_section(label: str) -> dict[str, Any]:
@@ -105,13 +170,14 @@ def parse_sectioned_lyrics(lyrics_path: Path) -> list[dict[str, Any]]:
         if current_section is None or current_section["label"] != label:
             current_section = {
                 "label": label,
+                "source": "explicit_heading" if label != "Song" else "implicit_default",
                 "lines": [],
             }
             sections.append(current_section)
 
         return current_section
 
-    ensure_section("Song")
+    ensure_section(current_label)
 
     for raw_line in raw_lines:
         line = clean_lyric_line(raw_line)
@@ -119,39 +185,164 @@ def parse_sectioned_lyrics(lyrics_path: Path) -> list[dict[str, Any]]:
         if not line:
             continue
 
-        if line.startswith("#"):
+        if is_comment_line(line):
             continue
 
-        section_match = re.match(r"^\[(.+?)\]$", line)
-
-        if section_match:
-            section_label = section_match.group(1).strip() or "Section"
-            ensure_section(section_label)
+        if is_section_heading(line):
+            current_label = section_label_from_heading(line)
+            ensure_section(current_label)
             continue
-
-        words = words_from_line(line)
-
-        if not words:
-            continue
-
-        if current_section is None:
-            ensure_section("Song")
 
         line_counter += 1
+        entry = make_line_entry(
+            raw_line=raw_line,
+            section_label=current_label,
+            line_counter=line_counter,
+        )
 
-        current_section["lines"].append(
+        if entry is None:
+            continue
+
+        ensure_section(current_label)["lines"].append(entry)
+
+    sections = [section for section in sections if section["lines"]]
+    return sections, "explicit_headings"
+
+
+def parse_lyrics_with_blank_groups(raw_lines: list[str]) -> tuple[list[dict[str, Any]], str]:
+    groups: list[list[str]] = []
+    current_group: list[str] = []
+    saw_blank_between_content = False
+    seen_content = False
+
+    for raw_line in raw_lines:
+        line = clean_lyric_line(raw_line)
+
+        if is_comment_line(line):
+            continue
+
+        if not line:
+            if current_group:
+                groups.append(current_group)
+                current_group = []
+                saw_blank_between_content = True
+            continue
+
+        seen_content = True
+        current_group.append(raw_line)
+
+    if current_group:
+        groups.append(current_group)
+
+    if not groups:
+        return [], "blank_groups"
+
+    if len(groups) > 1 and saw_blank_between_content and seen_content:
+        sections: list[dict[str, Any]] = []
+        line_counter = 0
+
+        for group_index, group in enumerate(groups, start=1):
+            section_label = f"Section {group_index}"
+            section = {
+                "label": section_label,
+                "source": "blank_line_group",
+                "lines": [],
+            }
+
+            for raw_line in group:
+                line_counter += 1
+                entry = make_line_entry(
+                    raw_line=raw_line,
+                    section_label=section_label,
+                    line_counter=line_counter,
+                )
+
+                if entry is not None:
+                    section["lines"].append(entry)
+
+            if section["lines"]:
+                sections.append(section)
+
+        return sections, "blank_line_groups"
+
+    return parse_lyrics_with_auto_sections(groups[0])
+
+
+def parse_lyrics_with_auto_sections(raw_lines: list[str]) -> tuple[list[dict[str, Any]], str]:
+    display_entries: list[dict[str, Any]] = []
+    line_counter = 0
+
+    for raw_line in raw_lines:
+        line = clean_lyric_line(raw_line)
+
+        if not line or is_comment_line(line):
+            continue
+
+        line_counter += 1
+        entry = make_line_entry(
+            raw_line=raw_line,
+            section_label="Section 1",
+            line_counter=line_counter,
+        )
+
+        if entry is not None:
+            display_entries.append(entry)
+
+    sections: list[dict[str, Any]] = []
+
+    for section_index, start in enumerate(range(0, len(display_entries), AUTO_SECTION_SIZE), start=1):
+        label = f"Section {section_index}"
+        chunk = display_entries[start:start + AUTO_SECTION_SIZE]
+
+        for entry in chunk:
+            entry["section"] = label
+
+        sections.append(
             {
-                "id": f"line-{line_counter:04d}",
-                "section": current_section["label"],
-                "text": line,
-                "words": words,
+                "label": label,
+                "source": "automatic_8_line_group",
+                "lines": chunk,
             }
         )
 
     sections = [section for section in sections if section["lines"]]
+    return sections, "automatic_8_line_sections"
 
-    if not sections:
-        raise ValueError("No lyric lines were found. Check your lyrics TXT file.")
+
+def parse_sectioned_lyrics(lyrics_path: Path) -> list[dict[str, Any]]:
+    require_file(lyrics_path, "Lyrics file")
+
+    raw_lines = lyrics_path.read_text(encoding="utf-8-sig").splitlines()
+    cleaned_lines = [clean_lyric_line(line) for line in raw_lines]
+    has_explicit_headings = any(
+        is_section_heading(line)
+        for line in cleaned_lines
+        if line and not is_comment_line(line)
+    )
+
+    if has_explicit_headings:
+        sections, parser_mode = parse_lyrics_with_explicit_sections(raw_lines)
+    else:
+        sections, parser_mode = parse_lyrics_with_blank_groups(raw_lines)
+
+    display_line_count = sum(len(section["lines"]) for section in sections)
+    lyric_line_count = sum(
+        1
+        for section in sections
+        for line in section["lines"]
+        if line.get("display_type") == "lyric"
+    )
+
+    if display_line_count == 0:
+        raise ValueError("No lyric or instrumental display lines were found. Check your lyrics TXT file.")
+
+    if lyric_line_count == 0:
+        raise ValueError(
+            "No lyric lines with words were found. The aligner needs at least one real lyric line."
+        )
+
+    for section in sections:
+        section["parser_mode"] = parser_mode
 
     return sections
 
@@ -161,6 +352,9 @@ def write_clean_lyrics(sections: list[dict[str, Any]], output_path: Path) -> Non
 
     for section in sections:
         for line in section["lines"]:
+            if line.get("display_type") != "lyric":
+                continue
+
             output_lines.append(line["text"])
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -175,27 +369,54 @@ def write_line_map(
 ) -> None:
     flat_lines: list[dict[str, Any]] = []
     word_index = 0
+    section_summaries: list[dict[str, Any]] = []
 
-    for section in sections:
+    for section_index, section in enumerate(sections, start=1):
+        section_id = section_id_from_label(section["label"], section_index)
+        section_lyric_count = 0
+        section_instrumental_count = 0
+
         for line in section["lines"]:
-            start_word_index = word_index
-            end_word_index = word_index + len(line["words"]) - 1
+            display_type = line.get("display_type", "lyric")
+            words = line.get("words", [])
+
+            if display_type == "instrumental":
+                start_word_index = None
+                end_word_index = None
+                section_instrumental_count += 1
+            else:
+                start_word_index = word_index
+                end_word_index = word_index + len(words) - 1
+                word_index = end_word_index + 1
+                section_lyric_count += 1
 
             flat_lines.append(
                 {
                     "id": line["id"],
+                    "section_id": section_id,
                     "section": section["label"],
                     "text": line["text"],
-                    "words": line["words"],
+                    "display_type": display_type,
+                    "words": words,
                     "start_word_index": start_word_index,
                     "end_word_index": end_word_index,
                 }
             )
 
-            word_index = end_word_index + 1
+        section_summaries.append(
+            {
+                "id": section_id,
+                "label": section["label"],
+                "source": section.get("source", section.get("parser_mode", "unknown")),
+                "parser_mode": section.get("parser_mode", "unknown"),
+                "line_count": len(section["lines"]),
+                "lyric_line_count": section_lyric_count,
+                "instrumental_line_count": section_instrumental_count,
+            }
+        )
 
     line_map = {
-        "schema_version": "kara-line-map-v1",
+        "schema_version": "kara-line-map-v2",
         "created_by": "kara-creator lyrics-aligner pipeline",
         "source": {
             "audio_file": str(source_audio),
@@ -203,18 +424,19 @@ def write_line_map(
             "tokenisation": {
                 "hyphenated_words": "merged",
                 "apostrophes": "kept",
+                "instrumental_placeholders": "excluded_from_aligner",
             },
         },
+        "parser": {
+            "auto_section_size": AUTO_SECTION_SIZE,
+            "instrumental_placeholder_inputs": [". . .", "...", "…"],
+            "instrumental_placeholder_output": INSTRUMENTAL_DISPLAY_TEXT,
+        },
         "line_count": len(flat_lines),
+        "lyric_line_count": sum(1 for line in flat_lines if line.get("display_type") == "lyric"),
+        "instrumental_line_count": sum(1 for line in flat_lines if line.get("display_type") == "instrumental"),
         "word_count": word_index,
-        "sections": [
-            {
-                "id": section_id_from_label(section["label"], index),
-                "label": section["label"],
-                "line_count": len(section["lines"]),
-            }
-            for index, section in enumerate(sections, start=1)
-        ],
+        "sections": section_summaries,
         "lines": flat_lines,
     }
 
@@ -395,7 +617,7 @@ def write_run_manifest(
     removed_files: list[str],
 ) -> None:
     manifest = {
-        "schema_version": "kara-run-manifest-v1",
+        "schema_version": "kara-run-manifest-v2",
         "song_name": safe_name,
         "dataset_name": dataset_name,
         "source": {
@@ -411,10 +633,20 @@ def write_run_manifest(
             "word_review_json": str(word_review_path),
             "draft_json": str(draft_path),
         },
+        "parser": {
+            "auto_section_size": AUTO_SECTION_SIZE,
+            "instrumental_placeholder_inputs": [". . .", "...", "…"],
+            "instrumental_placeholder_output": INSTRUMENTAL_DISPLAY_TEXT,
+            "aligner_lyrics_exclude_instrumentals": True,
+        },
         "sections": [
             {
                 "label": section["label"],
+                "source": section.get("source", section.get("parser_mode", "unknown")),
+                "parser_mode": section.get("parser_mode", "unknown"),
                 "line_count": len(section["lines"]),
+                "lyric_line_count": sum(1 for line in section["lines"] if line.get("display_type") == "lyric"),
+                "instrumental_line_count": sum(1 for line in section["lines"] if line.get("display_type") == "instrumental"),
             }
             for section in sections
         ],
@@ -504,6 +736,9 @@ def run_pipeline(
     print(f"Line map:      {line_map_path}")
     print(f"Manifest:      {manifest_path}")
     print(f"Custom pronunciations loaded: {len(custom_pronunciations)}")
+    print(f"Display lines: {sum(len(section['lines']) for section in sections)}")
+    print(f"Lyric lines sent to aligner: {sum(1 for section in sections for line in section['lines'] if line.get('display_type') == 'lyric')}")
+    print(f"Instrumental placeholders: {sum(1 for section in sections for line in section['lines'] if line.get('display_type') == 'instrumental')}")
 
     if clean_previous:
         print(f"Previous aligner files removed: {len(removed_files)}")
@@ -620,7 +855,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--lyrics",
         required=True,
-        help="Path to exact lyrics TXT with [SECTION] headings.",
+        help="Path to exact lyrics TXT. Section headings are optional. Blank lines can create sections. . . . lines are instrumental placeholders.",
     )
 
     parser.add_argument(

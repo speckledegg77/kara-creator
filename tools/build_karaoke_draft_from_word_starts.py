@@ -29,20 +29,12 @@ def as_float(value: Any, fallback: float = 0.0) -> float:
         return fallback
 
 
-def flatten_lines(word_review: dict[str, Any]) -> list[dict[str, Any]]:
-    lines: list[dict[str, Any]] = []
+def collect_ordered_lines(word_review: dict[str, Any]) -> list[dict[str, Any]]:
+    ordered: list[dict[str, Any]] = []
 
     for section_index, section in enumerate(word_review.get("sections", [])):
         for line_index, line in enumerate(section.get("lines", [])):
-            words = line.get("words", [])
-
-            if not words:
-                continue
-
-            first_word = words[0]
-            last_word = words[-1]
-
-            lines.append(
+            ordered.append(
                 {
                     "section_index": section_index,
                     "section_id": section.get("id"),
@@ -50,50 +42,204 @@ def flatten_lines(word_review: dict[str, Any]) -> list[dict[str, Any]]:
                     "line_index": line_index,
                     "id": line.get("id"),
                     "text": line.get("text", ""),
-                    "first_word_start": as_float(first_word.get("start")),
-                    "last_word_start": as_float(last_word.get("start")),
-                    "words": words,
+                    "display_type": line.get("display_type", "lyric"),
+                    "review_flags": list(line.get("review_flags", [])),
+                    "words": line.get("words", []),
                 }
             )
 
-    lines.sort(key=lambda item: as_float(item.get("first_word_start")))
+    return ordered
 
-    return lines
+
+def build_word_objects(words: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    output_words = []
+
+    for word in words:
+        output_words.append(
+            {
+                "id": word.get("id"),
+                "text": word.get("text"),
+                "start": word.get("start"),
+                "end": word.get("end"),
+                "source": "lyrics-aligner-word-start",
+            }
+        )
+
+    return output_words
+
+
+def previous_lyric_line(lines: list[dict[str, Any]], start_index: int) -> dict[str, Any] | None:
+    for index in range(start_index - 1, -1, -1):
+        candidate = lines[index]
+
+        if candidate.get("display_type") == "lyric" and candidate.get("start") is not None:
+            return candidate
+
+    return None
+
+
+def next_lyric_line(lines: list[dict[str, Any]], start_index: int) -> dict[str, Any] | None:
+    for index in range(start_index + 1, len(lines)):
+        candidate = lines[index]
+
+        if candidate.get("display_type") == "lyric" and candidate.get("start") is not None:
+            return candidate
+
+    return None
+
+
+def assign_instrumental_run(
+    lines: list[dict[str, Any]],
+    run_indexes: list[int],
+    next_line_gap_seconds: float,
+    instrumental_fallback_seconds: float,
+    audio_duration_seconds: float | None,
+) -> None:
+    if not run_indexes:
+        return
+
+    first_index = run_indexes[0]
+    last_index = run_indexes[-1]
+    previous_line = previous_lyric_line(lines, first_index)
+    following_line = next_lyric_line(lines, last_index)
+    count = len(run_indexes)
+    min_each = 0.5
+    total_minimum = count * min_each
+    flags_for_all = ["instrumental_timing_needs_review"]
+
+    if previous_line and following_line:
+        following_start = as_float(following_line.get("start"))
+        previous_start = as_float(previous_line.get("start"))
+        previous_last_word_start = as_float(previous_line.get("last_word_start"), previous_start)
+
+        gap_start = max(previous_start + 0.75, previous_last_word_start + 0.35)
+        gap_end = following_start - next_line_gap_seconds
+
+        if gap_end - gap_start < total_minimum:
+            gap_start = max(0.0, following_start - next_line_gap_seconds - max(total_minimum, instrumental_fallback_seconds * count))
+            flags_for_all.append("instrumental_gap_too_short_needs_review")
+
+        if gap_end <= gap_start:
+            gap_end = gap_start + total_minimum
+            flags_for_all.append("instrumental_overlap_risk_needs_review")
+
+    elif following_line:
+        following_start = as_float(following_line.get("start"))
+        gap_end = max(0.0, following_start - next_line_gap_seconds)
+        gap_start = max(0.0, gap_end - instrumental_fallback_seconds * count)
+        flags_for_all.append("instrumental_at_start_needs_review")
+
+        if gap_end <= gap_start:
+            gap_end = gap_start + total_minimum
+            flags_for_all.append("instrumental_overlap_risk_needs_review")
+
+    elif previous_line:
+        previous_start = as_float(previous_line.get("start"))
+        previous_last_word_start = as_float(previous_line.get("last_word_start"), previous_start)
+        gap_start = max(previous_start + 0.75, previous_last_word_start + 0.35)
+        gap_end = gap_start + instrumental_fallback_seconds * count
+        flags_for_all.append("instrumental_at_end_needs_review")
+
+        if audio_duration_seconds and audio_duration_seconds > gap_start + min_each:
+            gap_end = min(gap_end, audio_duration_seconds)
+
+    else:
+        gap_start = 0.0
+        gap_end = instrumental_fallback_seconds * count
+        flags_for_all.append("instrumental_no_surrounding_lyrics_needs_review")
+
+    available = max(total_minimum, gap_end - gap_start)
+    segment = available / count
+
+    for offset, line_index in enumerate(run_indexes):
+        line_start = gap_start + (segment * offset)
+        line_end = gap_start + (segment * (offset + 1))
+
+        if offset < count - 1:
+            line_end = max(line_start + min_each, line_end - next_line_gap_seconds)
+
+        line = lines[line_index]
+        line["start"] = round_time(line_start)
+        line["end"] = round_time(max(line_start + min_each, line_end))
+        line["confidence"] = "draft"
+        line["locked"] = False
+        line["anchor"] = False
+        line["timing_source"] = "instrumental-placeholder-inferred"
+        line["review_flags"] = sorted(set(list(line.get("review_flags", [])) + flags_for_all))
+        line["words"] = []
+        line["edited_manually"] = False
+
+
+def assign_all_instrumental_timings(
+    lines: list[dict[str, Any]],
+    next_line_gap_seconds: float,
+    instrumental_fallback_seconds: float,
+    audio_duration_seconds: float | None,
+) -> None:
+    index = 0
+
+    while index < len(lines):
+        line = lines[index]
+
+        if line.get("display_type") != "instrumental":
+            index += 1
+            continue
+
+        run_indexes: list[int] = []
+
+        while index < len(lines) and lines[index].get("display_type") == "instrumental":
+            run_indexes.append(index)
+            index += 1
+
+        assign_instrumental_run(
+            lines=lines,
+            run_indexes=run_indexes,
+            next_line_gap_seconds=next_line_gap_seconds,
+            instrumental_fallback_seconds=instrumental_fallback_seconds,
+            audio_duration_seconds=audio_duration_seconds,
+        )
+
+
+def next_display_line_with_timing(lines: list[dict[str, Any]], start_index: int) -> dict[str, Any] | None:
+    for index in range(start_index + 1, len(lines)):
+        candidate = lines[index]
+
+        if candidate.get("start") is not None:
+            return candidate
+
+    return None
 
 
 def build_review_flags(
     line: dict[str, Any],
-    next_line: dict[str, Any] | None,
-    previous_line: dict[str, Any] | None,
+    next_display_line: dict[str, Any] | None,
+    previous_display_line: dict[str, Any] | None,
     long_tail_threshold_seconds: float,
     short_line_threshold_seconds: float,
 ) -> list[str]:
-    flags: list[str] = []
+    flags: list[str] = list(line.get("review_flags", []))
 
-    line_start = as_float(line.get("first_word_start"))
-    last_word_start = as_float(line.get("last_word_start"))
+    line_start = as_float(line.get("start"))
+    line_end = as_float(line.get("end"))
+    last_word_start = as_float(line.get("last_word_start"), line_start)
 
-    if next_line:
-        next_start = as_float(next_line.get("first_word_start"))
+    if next_display_line and next_display_line.get("display_type") != "instrumental":
+        next_start = as_float(next_display_line.get("start"))
         tail_after_last_word = next_start - last_word_start
 
         if tail_after_last_word >= long_tail_threshold_seconds:
             flags.append("long_tail_after_last_word_needs_review")
 
-    if previous_line:
-        previous_start = as_float(previous_line.get("first_word_start"))
+    if previous_display_line:
+        previous_start = as_float(previous_display_line.get("start"))
 
         if line_start < previous_start:
             flags.append("line_start_before_previous_line")
 
-    if next_line:
-        next_start = as_float(next_line.get("first_word_start"))
-        implied_duration = next_start - line_start
+    if line_end - line_start <= short_line_threshold_seconds:
+        flags.append("very_short_display_duration_needs_review")
 
-        if implied_duration <= short_line_threshold_seconds:
-            flags.append("very_short_display_duration_needs_review")
-
-    return flags
+    return sorted(set(flags))
 
 
 def build_draft(
@@ -104,79 +250,129 @@ def build_draft(
     final_line_hold_seconds: float,
     long_tail_threshold_seconds: float,
     short_line_threshold_seconds: float,
+    instrumental_fallback_seconds: float,
 ) -> dict[str, Any]:
-    flat_lines = flatten_lines(word_review)
+    ordered_lines = collect_ordered_lines(word_review)
 
-    if not flat_lines:
+    if not ordered_lines:
         raise ValueError("No usable lines were found in the word review JSON.")
 
-    line_timings: dict[str, dict[str, Any]] = {}
+    lyric_line_count = 0
 
-    for index, line in enumerate(flat_lines):
-        previous_line = flat_lines[index - 1] if index > 0 else None
-        next_line = flat_lines[index + 1] if index < len(flat_lines) - 1 else None
+    for line in ordered_lines:
+        words = line.get("words", [])
+        display_type = line.get("display_type", "lyric")
 
-        raw_start = as_float(line.get("first_word_start"))
+        if display_type == "instrumental":
+            line["text"] = ". . ."
+            line["words"] = []
+            continue
+
+        if not words:
+            continue
+
+        first_word = words[0]
+        last_word = words[-1]
+        raw_start = as_float(first_word.get("start"))
         display_start = max(0.0, raw_start - start_padding_seconds)
 
-        if next_line:
-            next_raw_start = as_float(next_line.get("first_word_start"))
-            display_end = max(display_start + 0.1, next_raw_start - next_line_gap_seconds)
-        else:
-            display_end = raw_start + final_line_hold_seconds
+        line["display_type"] = "lyric"
+        line["start"] = round_time(display_start)
+        line["end"] = None
+        line["word_start"] = round_time(raw_start)
+        line["last_word_start"] = round_time(as_float(last_word.get("start")))
+        line["confidence"] = "draft"
+        line["locked"] = False
+        line["anchor"] = False
+        line["timing_source"] = "lyrics-aligner-word-starts"
+        line["words"] = build_word_objects(words)
+        line["edited_manually"] = False
+        lyric_line_count += 1
 
-        flags = build_review_flags(
+    if lyric_line_count == 0:
+        raise ValueError("No lyric lines with word timings were found in the word review JSON.")
+
+    audio_duration_raw = word_review.get("source", {}).get("audio_duration_seconds")
+    audio_duration_seconds = None if audio_duration_raw is None else as_float(audio_duration_raw, fallback=0.0)
+
+    assign_all_instrumental_timings(
+        lines=ordered_lines,
+        next_line_gap_seconds=next_line_gap_seconds,
+        instrumental_fallback_seconds=instrumental_fallback_seconds,
+        audio_duration_seconds=audio_duration_seconds,
+    )
+
+    for index, line in enumerate(ordered_lines):
+        if line.get("display_type") != "lyric" or line.get("start") is None:
+            continue
+
+        next_display_line = next_display_line_with_timing(ordered_lines, index)
+
+        if next_display_line:
+            display_end = max(
+                as_float(line.get("start")) + 0.1,
+                as_float(next_display_line.get("start")) - next_line_gap_seconds,
+            )
+        else:
+            display_end = as_float(line.get("word_start")) + final_line_hold_seconds
+
+        line["end"] = round_time(display_end)
+
+    for index, line in enumerate(ordered_lines):
+        if line.get("display_type") != "lyric" or line.get("start") is None:
+            continue
+
+        previous_display_line = None
+        for previous_index in range(index - 1, -1, -1):
+            if ordered_lines[previous_index].get("start") is not None:
+                previous_display_line = ordered_lines[previous_index]
+                break
+
+        next_display_line = next_display_line_with_timing(ordered_lines, index)
+        line["review_flags"] = build_review_flags(
             line=line,
-            next_line=next_line,
-            previous_line=previous_line,
+            next_display_line=next_display_line,
+            previous_display_line=previous_display_line,
             long_tail_threshold_seconds=long_tail_threshold_seconds,
             short_line_threshold_seconds=short_line_threshold_seconds,
         )
 
-        words = []
-
-        for word in line["words"]:
-            words.append(
-                {
-                    "id": word.get("id"),
-                    "text": word.get("text"),
-                    "start": word.get("start"),
-                    "end": word.get("end"),
-                    "source": "lyrics-aligner-word-start",
-                }
-            )
-
-        line_timings[str(line["id"])] = {
-            "id": line["id"],
-            "text": line["text"],
-            "start": round_time(display_start),
-            "end": round_time(display_end),
-            "word_start": round_time(raw_start),
-            "last_word_start": round_time(as_float(line.get("last_word_start"))),
-            "confidence": "draft",
-            "locked": False,
-            "anchor": False,
-            "timing_source": "lyrics-aligner-word-starts",
-            "review_flags": flags,
-            "words": words,
-        }
-
     output_sections: list[dict[str, Any]] = []
 
-    for section in word_review.get("sections", []):
+    for section_index, source_section in enumerate(word_review.get("sections", [])):
         output_lines: list[dict[str, Any]] = []
 
-        for line in section.get("lines", []):
-            line_id = str(line.get("id"))
+        for line in ordered_lines:
+            if line.get("section_index") != section_index:
+                continue
 
-            if line_id in line_timings:
-                output_lines.append(line_timings[line_id])
+            if line.get("start") is None or line.get("end") is None:
+                continue
+
+            output_lines.append(
+                {
+                    "id": line.get("id"),
+                    "display_type": line.get("display_type", "lyric"),
+                    "text": line.get("text", ""),
+                    "start": line.get("start"),
+                    "end": line.get("end"),
+                    **({"word_start": line.get("word_start")} if line.get("display_type") == "lyric" else {}),
+                    **({"last_word_start": line.get("last_word_start")} if line.get("display_type") == "lyric" else {}),
+                    "confidence": line.get("confidence", "draft"),
+                    "locked": line.get("locked", False),
+                    "anchor": line.get("anchor", False),
+                    "timing_source": line.get("timing_source", "unknown"),
+                    "review_flags": line.get("review_flags", []),
+                    "words": line.get("words", []),
+                    "edited_manually": line.get("edited_manually", False),
+                }
+            )
 
         if output_lines:
             output_sections.append(
                 {
-                    "id": section.get("id"),
-                    "label": section.get("label"),
+                    "id": source_section.get("id"),
+                    "label": source_section.get("label"),
                     "start": output_lines[0]["start"],
                     "end": output_lines[-1]["end"],
                     "lines": output_lines,
@@ -211,6 +407,8 @@ def build_draft(
             "status": "draft",
             "primary_aligner": "lyrics-aligner",
             "line_count": sum(len(section["lines"]) for section in output_sections),
+            "lyric_line_count": sum(1 for section in output_sections for line in section["lines"] if line.get("display_type") == "lyric"),
+            "instrumental_line_count": sum(1 for section in output_sections for line in section["lines"] if line.get("display_type") == "instrumental"),
             "section_count": len(output_sections),
             "settings": {
                 "start_padding_seconds": start_padding_seconds,
@@ -218,6 +416,7 @@ def build_draft(
                 "final_line_hold_seconds": final_line_hold_seconds,
                 "long_tail_threshold_seconds": long_tail_threshold_seconds,
                 "short_line_threshold_seconds": short_line_threshold_seconds,
+                "instrumental_fallback_seconds": instrumental_fallback_seconds,
             },
             "review_flag_count": len(review_flags),
             "review_flags": review_flags,
@@ -226,8 +425,9 @@ def build_draft(
         "editor_notes": [
             "This draft uses singing-specific word starts as timing anchors.",
             "Line starts come from the first word in each lyric line.",
-            "Line ends are inferred from the next line start, not from word endings.",
-            "Lines with long held notes or suspiciously short timings are flagged for review.",
+            "Line ends are inferred from the next display line, not from word endings.",
+            "Instrumental placeholders are kept as editable display lines with empty words arrays.",
+            "Lines with long held notes, short timings, or inferred instrumental timings are flagged for review.",
             "This is an editable draft, not a final export.",
         ],
     }
@@ -241,7 +441,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--word-review",
         required=True,
-        help="Path to karaoke-word-review-v1 JSON created from lyrics-aligner.",
+        help="Path to karaoke-word-review JSON created from lyrics-aligner.",
     )
 
     parser.add_argument(
@@ -261,7 +461,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--next-line-gap-ms",
         type=int,
         default=80,
-        help="Gap before the next line appears. Default: 80.",
+        help="Gap before the next display line appears. Default: 80.",
     )
 
     parser.add_argument(
@@ -275,7 +475,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--long-tail-threshold-ms",
         type=int,
         default=3500,
-        help="Flag lines where the last word starts a long time before the next line. Default: 3500.",
+        help="Flag lines where the last word starts a long time before the next display line. Default: 3500.",
     )
 
     parser.add_argument(
@@ -283,6 +483,13 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=1200,
         help="Flag lines with very short inferred display duration. Default: 1200.",
+    )
+
+    parser.add_argument(
+        "--instrumental-fallback-ms",
+        type=int,
+        default=2500,
+        help="Fallback duration for instrumental placeholders at the start or end. Default: 2500.",
     )
 
     return parser
@@ -308,6 +515,7 @@ def main() -> int:
             final_line_hold_seconds=args.final_line_hold_ms / 1000,
             long_tail_threshold_seconds=args.long_tail_threshold_ms / 1000,
             short_line_threshold_seconds=args.short_line_threshold_ms / 1000,
+            instrumental_fallback_seconds=args.instrumental_fallback_ms / 1000,
         )
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -320,9 +528,11 @@ def main() -> int:
         print("Karaoke draft created from singing-aligner word starts.")
         print(f"Output: {output_path}")
         print("")
-        print(f"Sections:     {draft['alignment']['section_count']}")
-        print(f"Lines:        {draft['alignment']['line_count']}")
-        print(f"Review flags: {draft['alignment']['review_flag_count']}")
+        print(f"Sections:      {draft['alignment']['section_count']}")
+        print(f"Display lines: {draft['alignment']['line_count']}")
+        print(f"Lyric lines:   {draft['alignment']['lyric_line_count']}")
+        print(f"Instrumentals: {draft['alignment']['instrumental_line_count']}")
+        print(f"Review flags:  {draft['alignment']['review_flag_count']}")
         print("")
 
         if draft["alignment"]["review_flags"]:

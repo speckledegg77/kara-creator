@@ -1,234 +1,174 @@
 # Karaoke JSON Schema
 
-This document defines the proposed canonical JSON shape for exported karaoke timing files.
+This document describes the current working draft schema and the intended final export direction.
 
-The schema may change during development, but changes should be deliberate.
+The current working file is `karaoke-draft-v3`. It is an authoring draft format, not necessarily the final quiz app format.
 
-## Core principles
+## Current draft principles
 
-- Use milliseconds for all timings.
+- JSON is the source of truth during authoring.
 - Store sections as first-class objects.
-- Store phrases inside sections.
-- Keep display text separate from alignment data if needed.
-- Include confidence and flags.
-- Support future word timing without requiring it in MVP.
+- Store timed lines inside sections.
+- Preserve display text.
+- Store word starts where available for diagnostics.
+- Store review flags.
+- Store manual edit markers.
+- Support future instrumental display lines.
 
-## Example JSON
+## Current timing unit
+
+The current `karaoke-draft-v3` files use seconds as numbers:
+
+```json
+"start": 12.81,
+"end": 17.584
+```
+
+A future final export for the quiz app may convert timings to milliseconds. Do not mix units inside one file.
+
+## Current top-level shape
 
 ```json
 {
-  "version": 1,
-  "title": "I Miss the Mountains",
-  "showKey": "next_to_normal",
-  "versionLabel": "isolated vocal test",
-  "sourceType": "isolated_vocal",
-  "timingMode": "phrase",
-  "generatedBy": "karaoke-authoring-tool-mvp",
-  "audioReference": {
-    "authoringSource": "source/vocals.wav",
-    "playbackSource": null,
-    "durationMs": 244793
+  "schema_version": "karaoke-draft-v3",
+  "created_by": "kara-creator lyrics-aligner draft builder",
+  "source": {
+    "word_review_json": "outputs/song-word-review-lyrics-aligner.json",
+    "audio_file": "incoming/song/vocals.mp3",
+    "lyrics_file": "incoming/song/lyrics.txt",
+    "audio_duration_seconds": 203.888
   },
-  "sections": [
-    {
-      "id": "s001",
-      "label": "Verse 1",
-      "startMs": 8200,
-      "endMs": 39200,
-      "confidence": 0.86,
-      "phrases": [
-        {
-          "id": "p001",
-          "text": "There was a time when I flew higher",
-          "startMs": 8420,
-          "endMs": 12560,
-          "confidence": 0.91,
-          "words": [],
-          "flags": []
-        },
-        {
-          "id": "p002",
-          "text": "Was a time the wild girl running free",
-          "startMs": 15240,
-          "endMs": 18810,
-          "confidence": 0.78,
-          "words": [],
-          "flags": ["low_confidence"]
-        }
-      ]
-    }
-  ]
+  "alignment": {
+    "mode": "singing-specific-word-starts-to-line-draft",
+    "status": "draft",
+    "primary_aligner": "lyrics-aligner",
+    "line_count": 34,
+    "section_count": 6,
+    "settings": {},
+    "review_flag_count": 4,
+    "review_flags": []
+  },
+  "sections": [],
+  "editor_notes": []
 }
 ```
 
-## Top-level fields
-
-### `version`
-
-Schema version number.
-
-Start with `1`.
-
-### `title`
-
-Song title shown to the author and later to the quiz app if needed.
-
-### `showKey`
-
-Optional show key.
-
-For musical theatre content, this should later match the quiz app's show key convention where possible.
-
-### `versionLabel`
-
-Optional label for the recording or source.
-
-Examples:
-
-- `Original Broadway Cast`
-- `London revival`
-- `isolated vocal test`
-
-### `sourceType`
-
-Expected values:
-
-- `isolated_vocal`
-- `full_mix`
-- `manual`
-- `unknown`
-
-MVP should prefer `isolated_vocal`.
-
-### `timingMode`
-
-Expected values:
-
-- `phrase`
-- `line`
-- `word`
-
-MVP should use `phrase` or `line`.
-
-### `generatedBy`
-
-Tool or pipeline name.
-
-Useful for later debugging.
-
-### `audioReference`
-
-Information about source audio.
-
-Do not assume these paths are valid inside the quiz app.
-
-They are authoring references.
-
-## Section fields
-
-### `id`
-
-Stable section ID.
-
-Example: `s001`.
-
-### `label`
-
-Human-readable section name.
-
-Examples:
-
-- `Verse 1`
-- `Chorus 1`
-- `Bridge`
-- `Final chorus`
-
-### `startMs`
-
-Section start time.
-
-### `endMs`
-
-Section end time.
-
-### `confidence`
-
-Overall confidence for the section.
-
-This can be the average or weighted average of phrase confidence values.
-
-### `phrases`
-
-Timed lyric phrases in that section.
-
-## Phrase fields
-
-### `id`
-
-Stable phrase ID.
-
-Example: `p001`.
-
-### `text`
-
-Display text for the lyric phrase.
-
-### `startMs`
-
-Phrase start time.
-
-### `endMs`
-
-Phrase end time.
-
-### `confidence`
-
-Number from `0` to `1`.
-
-High confidence does not mean perfect. It means the tool thinks the timing is likely usable.
-
-### `words`
-
-Optional word timing array.
-
-MVP can leave this empty.
-
-Example future shape:
+## Section shape
 
 ```json
-[
-  { "text": "There", "startMs": 8420, "endMs": 8780 },
-  { "text": "was", "startMs": 8790, "endMs": 9060 }
-]
+{
+  "id": "verse-one-002",
+  "label": "VERSE ONE",
+  "start": 38.778,
+  "end": 69.36,
+  "lines": []
+}
 ```
 
-### `flags`
+Section labels may come from:
 
-List of review flags.
+- explicit `[SECTION]` headings
+- blank-line lyric groups
+- automatic grouping when no headings or blank groups exist
+
+## Lyric line shape
+
+```json
+{
+  "id": "line-0005",
+  "display_type": "lyric",
+  "text": "I'd tell her only fools rush in and think the heart can lead",
+  "start": 38.778,
+  "end": 45.472,
+  "word_start": 38.928,
+  "last_word_start": 43.488,
+  "confidence": "draft",
+  "locked": false,
+  "anchor": false,
+  "timing_source": "lyrics-aligner-word-starts",
+  "review_flags": [],
+  "words": [],
+  "edited_manually": false
+}
+```
+
+## Instrumental placeholder line shape
+
+A lyric input line containing only `. . .`, `...`, or `…` should become:
+
+```json
+{
+  "id": "line-0012",
+  "display_type": "instrumental",
+  "text": ". . .",
+  "start": 72.5,
+  "end": 84.2,
+  "confidence": "draft",
+  "locked": false,
+  "anchor": false,
+  "timing_source": "instrumental-placeholder-inferred",
+  "review_flags": ["instrumental_timing_needs_review"],
+  "words": [],
+  "edited_manually": false
+}
+```
+
+Rules:
+
+- It should display as `. . .`.
+- It should not be sent to `lyrics-aligner`.
+- It should not require a pronunciation.
+- It should have an empty `words` array.
+- It should be editable in the same editor as lyric lines.
+
+## Word shape
+
+The current draft can store words from `lyrics-aligner`:
+
+```json
+{
+  "id": "word-0001",
+  "text": "if",
+  "start": 12.96,
+  "end": 13.152,
+  "source": "lyrics-aligner-word-start"
+}
+```
+
+Important:
+
+- Word starts are useful.
+- Word ends are inferred for display and review.
+- Do not treat inferred word ends as final sung word endings.
+
+## Review flags
 
 Examples:
 
-- `low_confidence`
+- `long_tail_after_last_word_needs_review`
+- `very_short_display_duration_needs_review`
+- `instrumental_timing_needs_review`
+- `instrumental_at_start_needs_review`
+- `instrumental_at_end_needs_review`
+- `manual_edit`
 - `overlap`
 - `too_short`
 - `too_long`
 - `repeated_phrase`
 - `needs_review`
-- `manual_edit`
 
-## Editing metadata
+## Future final export direction
 
-Later versions may add:
+The final quiz app format may be cleaner than the draft format.
 
-```json
-"review": {
-  "status": "draft",
-  "reviewedAt": null,
-  "reviewedBy": null
-}
-```
+A final export may:
 
-Do not add this until the editor needs it.
+- convert seconds to milliseconds
+- remove diagnostic word timing if not needed
+- keep only reviewed line timings
+- keep `display_type`
+- keep section structure
+- keep enough source metadata for traceability
 
 ## LRC export rule
 

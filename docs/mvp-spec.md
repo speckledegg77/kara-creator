@@ -10,159 +10,163 @@ The tool supports future Karaoke round development in the Musical Theatre Quiz a
 
 Create a draft timing file that needs light correction rather than full manual syncing.
 
-The MVP is successful if a clean isolated vocal and matching lyrics can produce a section-based draft where most timing issues can be corrected through anchors, ripple edits, and section rescaling.
+The MVP is successful if a clean isolated vocal and matching lyrics can produce a draft where most timing issues can be corrected quickly in the editor.
+
+## Current MVP status
+
+Phase 1 has been validated.
+
+The working pipeline uses:
+
+- isolated vocal MP3
+- exact lyrics TXT
+- `lyrics-aligner`
+- word review JSON
+- `karaoke-draft-v3` JSON
+- static HTML editor
+
+Two songs have produced usable edited drafts.
 
 ## Required inputs
 
 - isolated vocal audio file
 - exact lyric text file
-- song title
-- optional show key
-- optional version label
+- correct lyric line breaks
+- song name
+
+Optional:
+
+- explicit section headings
+- blank lines between lyric groups
+- `. . .` instrumental placeholders
+- show key
+- version label
+- notes
 
 ## Required outputs
 
 - draft karaoke JSON
-- edited final karaoke JSON
-- optional LRC export
-- saved local project state
+- edited karaoke JSON
+- run manifest
+- optional word review JSON for diagnostics
+- optional LRC export later
 
 ## User story
 
 As a content author, I want to load an isolated vocal and exact lyrics, generate a draft karaoke file, quickly correct the parts that are off, and export a final JSON file for later use in the quiz app.
 
-## MVP screens
+## Current screens and tools
 
-## Screen 1: Project setup
+## Tool 1: Pipeline command
 
-Fields:
+Generates the draft:
 
-- project name
-- song title
-- show key
-- version label
+```powershell
+python .\tools\run_lyrics_aligner_pipeline.py `
+  --audio ".\incoming\new-song-test\vocals.mp3" `
+  --lyrics ".\incoming\new-song-test\lyrics.txt" `
+  --name "new_song_test"
+```
 
-Actions:
+## Tool 2: Local launcher
 
-- create project
-- open existing project
+A simple browser page can upload files and run the pipeline locally.
 
-## Screen 2: Source files
-
-Inputs:
-
-- vocal file
-- lyric file or pasted lyrics
-- optional backing track
-
-Actions:
-
-- validate files
-- continue to lyric review
-
-## Screen 3: Lyric review
-
-Features:
-
-- display lyric lines
-- preserve blank-line section hints
-- split line
-- merge line
-- add section break
-- rename section
-
-Actions:
-
-- generate draft
-
-## Screen 4: Timing editor
+## Tool 3: Timing editor
 
 Features:
 
 - audio player
-- waveform
-- phrase list
-- active phrase highlight
-- section list
-- confidence flags
-- low-confidence filter
-- timing inspector
-
-Core actions:
-
-- anchor phrase start to playhead
-- anchor phrase end to playhead
+- line cards
+- active line highlight
+- follow playback
+- jump to line
+- play line
+- set start from playhead
+- set end from playhead
 - ripple forward
-- shift section
-- rescale section
-- split phrase
-- merge phrase
-- mark reviewed
+- anchors
+- locks
 - export JSON
 
-## Screen 5: Export
+## Required backend or pipeline features
 
-Exports:
-
-- final JSON
-- optional LRC
-
-## Required backend features
-
-- project creation
 - file validation
-- audio conversion through FFmpeg
 - lyric normalisation
-- section detection
+- optional section detection
+- instrumental placeholder detection
+- custom pronunciation support
+- `lyrics-aligner` execution
+- word review JSON creation
 - draft timing generation
-- JSON validation
-- export writing
+- stale file cleanup
+- run manifest writing
 
-## Required frontend features
+## Required editor features
 
-- project forms
-- file inputs
 - audio playback
-- phrase display
-- active phrase highlighting
+- line display
+- active line highlighting
 - timing edit controls
+- ripple forward
 - export button
 
 ## Timing model
 
-MVP timing is phrase-level.
+MVP timing is line-level.
 
-Word timing is not required.
+Word timings can be stored for diagnostics and future word-level highlighting.
 
-Every phrase must have:
+Every line should have:
 
 - ID
 - display text
-- start time in milliseconds
-- end time in milliseconds
-- confidence value
-- flags array
+- start time
+- end time
+- review flags
+- anchor state
+- lock state
+- manual edit state
+- display type
 
 ## Section model
 
-Sections are required.
+Sections remain first-class objects, but manual section headings are optional.
 
-Every section must have:
+Sections can come from:
+
+- `[SECTION]` headings
+- blank-line lyric groups
+- automatic grouping
+
+Every section should have:
 
 - ID
 - label
-- start time in milliseconds
-- end time in milliseconds
-- confidence value
-- phrase array
+- start time
+- end time
+- line array
+
+## Instrumental placeholder model
+
+A line containing `. . .`, `...`, or `…` on its own means an instrumental display line.
+
+It should:
+
+- display as `. . .`
+- use `display_type: "instrumental"`
+- have an empty `words` array
+- not be sent to `lyrics-aligner`
+- be editable in the timing editor
+- be flagged if timing is uncertain
 
 ## Editing rules
 
 - Do not allow impossible negative timings.
-- Do not allow phrase end before phrase start.
-- Prevent overlaps by default.
+- Do not allow line end before line start.
+- Prevent overlaps by default where practical.
 - Use ripple editing rather than isolated edits.
-- Keep manual corrections reversible where practical.
+- Keep manual corrections visible in the JSON.
 
 ## MVP exclusions
 
@@ -175,26 +179,12 @@ Not included in the MVP:
 - full batch processing
 - perfect syncing without review
 
-## First test case
+## Acceptance test for a song
 
-Use one known isolated vocal and cleaned lyric file.
+A song is acceptable for the MVP workflow if:
 
-Measure:
-
-- how close the draft is
-- where drift begins
-- how many edits are needed
-- how long the review takes
-
-## Build order
-
-1. Docs and repo setup.
-2. Backend skeleton.
-3. Audio prep.
-4. Lyric normalisation.
-5. Draft JSON generator.
-6. Simple viewer/editor.
-7. Ripple editing.
-8. Section editing.
-9. Confidence review.
-10. Export and reload.
+- most lines are roughly aligned
+- repeated phrases can be corrected quickly
+- instrumental gaps can be represented
+- only a small number of individual lines need manual repair
+- final review takes minutes, not a full manual syncing session

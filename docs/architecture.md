@@ -2,177 +2,157 @@
 
 ## Overview
 
-The authoring tool has two main parts.
+Kara Creator is a local-first authoring tool.
+
+Current working architecture:
 
 ```text
-Frontend editor in browser
+PowerShell / local launcher
         |
-        | local API calls
         v
-Python backend on your PC
+Python pipeline tools
         |
-        | reads local project files
         v
-Project folders and exported JSON
+lyrics-aligner in conda environment
+        |
+        v
+word review JSON
+        |
+        v
+karaoke-draft-v3 JSON
+        |
+        v
+static HTML editor in browser
+        |
+        v
+edited JSON export
 ```
 
-It runs locally. The browser is just the interface.
+The browser is the interface. The processing happens locally on the user's PC.
 
 ## Why this architecture
 
-A browser interface is easier to use for editing timings.
+A browser interface is easier to use for timing edits.
 
-A Python backend is better for audio processing and alignment tools.
+Python is better for audio processing and alignment tooling.
 
 Keeping it local avoids early hosting complexity and keeps source audio files on the user's PC.
 
-## Main folders
+## Current main folders
 
 ```text
-karaoke-authoring-tool
-  backend
-    app
-      main.py
-      api
-      services
-      models
-      tools
-  frontend
-    src
-      components
-      pages
-      lib
-  projects
-    local project files ignored by Git
+kara-creator
+  tools
+    run_lyrics_aligner_pipeline.py
+    convert_lyrics_aligner_to_word_review_json.py
+    build_karaoke_draft_from_word_starts.py
+    edit_karaoke_draft.html
+    kara_creator_launcher.py
+  config
+    custom_pronunciations.json
+  incoming
+    local uploaded song inputs ignored by Git
+  outputs
+    generated JSON outputs ignored by Git unless deliberately kept
+  alignment_lab
+    runs
+      per-song run folders ignored by Git
+    singing-aligners
+      lyrics-aligner
   docs
-    project documents
 ```
 
-## Backend responsibilities
+## Current pipeline responsibilities
 
-The backend should:
+The pipeline should:
 
-- accept audio and lyric inputs
-- convert audio into a standard internal format
+- accept an isolated vocal file and lyric file
 - normalise lyrics for alignment
-- detect vocal sections and likely phrase boundaries
-- run alignment
-- produce draft JSON
-- save and load projects
-- export final JSON and LRC
+- preserve display lyrics separately from alignment tokens
+- create a line map
+- run `lyrics-aligner`
+- create word review JSON
+- create `karaoke-draft-v3` JSON
+- clean stale aligner files before reruns
+- write a run manifest
 
-## Frontend responsibilities
+## Lyric parser responsibilities
 
-The frontend should:
+The lyric parser should:
 
-- create and open projects
-- upload or select audio and lyric files
-- show waveform and playback cursor
-- show timed phrases
-- show confidence flags
-- allow fast timing corrections
-- export finished files
-
-## Processing pipeline
-
-```text
-Input vocal + lyrics
-        |
-        v
-Audio preparation
-        |
-        v
-Lyric normalisation
-        |
-        v
-Section detection
-        |
-        v
-Alignment
-        |
-        v
-Confidence scoring
-        |
-        v
-Draft JSON
-        |
-        v
-Review editor
-        |
-        v
-Final JSON export
-```
-
-## Audio preparation
-
-This stage should:
-
-- convert MP3, M4A, or WAV into a standard WAV file
-- make audio mono
-- use a consistent sample rate
-- measure duration
-- detect long leading and trailing silence
-- create waveform data for the editor
-
-## Lyric normalisation
-
-This stage should:
-
-- keep the original display text
-- create a cleaner alignment text
+- keep original display text
+- create cleaner alignment tokens
 - preserve line order
-- handle blank lines as possible section hints
-- remove accidental junk lines when possible
-- allow manual phrase split and merge later
-
-## Section detection
-
-This is important because global timing drifts.
-
-The tool should treat each verse, chorus, or lyric paragraph as a smaller timing problem.
-
-Inputs:
-
-- lyric blank lines
-- vocal gaps
-- energy envelope
-- manual section overrides
-
-Output:
-
-- section start and end estimates
-- phrase groups per section
+- keep repeated lines as separate IDs
+- use explicit section headings if present
+- use blank-line groups as automatic sections if no headings are present
+- auto-split continuous lyrics into sections of about 8 lines
+- detect `. . .`, `...`, and `…` as instrumental placeholders
+- exclude instrumental placeholders from aligner lyrics
 
 ## Alignment layer
 
-The exact aligner can change during testing.
+The current primary engine is `lyrics-aligner`.
 
-The architecture should allow one alignment engine to be swapped for another.
+The architecture should still allow future alignment engines to be swapped in.
 
-Possible strategies:
+Possible future strategies:
 
-- forced alignment from known lyrics
+- another singing-specific aligner
+- MFA as a comparison or fallback
 - ASR transcript used only as a sanity check
-- hybrid alignment with section anchors
+- hybrid alignment with manual anchors
 
-## Confidence scoring
+## Draft builder responsibilities
 
-Each phrase should get a confidence score.
+The draft builder should:
 
-Confidence should consider:
+- use word onsets as line anchors
+- infer line ends from the next line start
+- add review flags for likely weak timings
+- insert instrumental placeholder lines into the timeline
+- preserve sections
+- create editor-friendly JSON
 
-- whether the aligner found the phrase clearly
-- whether phrase duration looks plausible
-- whether phrase start sits near an onset
-- whether phrase end sits near a gap
-- whether repeated lines caused ambiguity
+## Editor responsibilities
 
-The editor should send low-confidence items to the top of the review queue.
+The current editor should:
+
+- load audio and JSON
+- show line cards
+- follow playback
+- jump to any line
+- play the current line
+- set start and end from the playhead
+- ripple forward by default
+- support anchors and locks
+- export edited JSON
+
+Future editor responsibilities:
+
+- section shift
+- section rescale
+- filtered review queue
+- backing track preview
+- LRC export
+- final clean JSON export
+
+## Local launcher responsibilities
+
+The launcher should:
+
+- let the user choose an MP3 and lyrics TXT in the browser
+- collect a song name
+- run the existing pipeline
+- show errors clearly
+- show missing pronunciation words clearly
+- show generated file paths
+- open the editor
 
 ## Export design
 
-JSON is the main export.
+`karaoke-draft-v3` is the current authoring draft format.
 
-LRC can be exported as a comparison format.
+The future final export may be cleaner and may convert timings to milliseconds.
 
-The final JSON should be stable enough for the future quiz app.
+LRC can be exported as a convenience format later, but JSON remains canonical.
