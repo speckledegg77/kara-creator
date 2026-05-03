@@ -1,0 +1,1621 @@
+{
+  "schema_version": "kara-line-map-v2",
+  "created_by": "kara-creator lyrics-aligner pipeline",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\getting-married-today-test\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\getting-married-today-test\\lyrics.txt",
+    "tokenisation": {
+      "hyphenated_words": "merged",
+      "apostrophes": "kept",
+      "instrumental_placeholders": "excluded_from_aligner"
+    }
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . ."
+  },
+  "line_count": 75,
+  "lyric_line_count": 73,
+  "instrumental_line_count": 2,
+  "word_count": 633,
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 10,
+      "lyric_line_count": 10,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 7,
+      "lyric_line_count": 7,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-11-011",
+      "label": "Section 11",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-12-012",
+      "label": "Section 12",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-13-013",
+      "label": "Section 13",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 7,
+      "lyric_line_count": 7,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-14-014",
+      "label": "Section 14",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 7,
+      "lyric_line_count": 7,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-15-015",
+      "label": "Section 15",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-0001",
+      "section_id": "section-1-001",
+      "section": "Section 1",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0002",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Bless this day, pinnacle of joy",
+      "display_type": "lyric",
+      "words": [
+        "bless",
+        "this",
+        "day",
+        "pinnacle",
+        "of",
+        "joy"
+      ],
+      "start_word_index": 0,
+      "end_word_index": 5
+    },
+    {
+      "id": "line-0003",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Boy unites with boy",
+      "display_type": "lyric",
+      "words": [
+        "boy",
+        "unites",
+        "with",
+        "boy"
+      ],
+      "start_word_index": 6,
+      "end_word_index": 9
+    },
+    {
+      "id": "line-0004",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "The heart leaps up to behold",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "heart",
+        "leaps",
+        "up",
+        "to",
+        "behold"
+      ],
+      "start_word_index": 10,
+      "end_word_index": 15
+    },
+    {
+      "id": "line-0005",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "This golden day",
+      "display_type": "lyric",
+      "words": [
+        "this",
+        "golden",
+        "day"
+      ],
+      "start_word_index": 16,
+      "end_word_index": 18
+    },
+    {
+      "id": "line-0006",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Today is for Jamie",
+      "display_type": "lyric",
+      "words": [
+        "today",
+        "is",
+        "for",
+        "jamie"
+      ],
+      "start_word_index": 19,
+      "end_word_index": 22
+    },
+    {
+      "id": "line-0007",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Jamie, I give you the rest of my days",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "i",
+        "give",
+        "you",
+        "the",
+        "rest",
+        "of",
+        "my",
+        "days"
+      ],
+      "start_word_index": 23,
+      "end_word_index": 31
+    },
+    {
+      "id": "line-0008",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "To cherish and to keep you, to honor you forever",
+      "display_type": "lyric",
+      "words": [
+        "to",
+        "cherish",
+        "and",
+        "to",
+        "keep",
+        "you",
+        "to",
+        "honor",
+        "you",
+        "forever"
+      ],
+      "start_word_index": 32,
+      "end_word_index": 41
+    },
+    {
+      "id": "line-0009",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Today is for Jamie",
+      "display_type": "lyric",
+      "words": [
+        "today",
+        "is",
+        "for",
+        "jamie"
+      ],
+      "start_word_index": 42,
+      "end_word_index": 45
+    },
+    {
+      "id": "line-0010",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "My lover, my partner, my life",
+      "display_type": "lyric",
+      "words": [
+        "my",
+        "lover",
+        "my",
+        "partner",
+        "my",
+        "life"
+      ],
+      "start_word_index": 46,
+      "end_word_index": 51
+    },
+    {
+      "id": "line-0011",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0012",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Pardon me, is everybody there? Because if everybody's there",
+      "display_type": "lyric",
+      "words": [
+        "pardon",
+        "me",
+        "is",
+        "everybody",
+        "there",
+        "because",
+        "if",
+        "everybody's",
+        "there"
+      ],
+      "start_word_index": 52,
+      "end_word_index": 60
+    },
+    {
+      "id": "line-0013",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "I wanna thank you all for coming to the wedding",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "wanna",
+        "thank",
+        "you",
+        "all",
+        "for",
+        "coming",
+        "to",
+        "the",
+        "wedding"
+      ],
+      "start_word_index": 61,
+      "end_word_index": 70
+    },
+    {
+      "id": "line-0014",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "I'd appreciate your going even more",
+      "display_type": "lyric",
+      "words": [
+        "i'd",
+        "appreciate",
+        "your",
+        "going",
+        "even",
+        "more"
+      ],
+      "start_word_index": 71,
+      "end_word_index": 76
+    },
+    {
+      "id": "line-0015",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "I mean, you must have lots of better things to do",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "mean",
+        "you",
+        "must",
+        "have",
+        "lots",
+        "of",
+        "better",
+        "things",
+        "to",
+        "do"
+      ],
+      "start_word_index": 77,
+      "end_word_index": 87
+    },
+    {
+      "id": "line-0016",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "And not a word of this to Paul, remember Paul, you know",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "not",
+        "a",
+        "word",
+        "of",
+        "this",
+        "to",
+        "paul",
+        "remember",
+        "paul",
+        "you",
+        "know"
+      ],
+      "start_word_index": 88,
+      "end_word_index": 99
+    },
+    {
+      "id": "line-0017",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "The man I'm gonna marry, but I'm not",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "man",
+        "i'm",
+        "gonna",
+        "marry",
+        "but",
+        "i'm",
+        "not"
+      ],
+      "start_word_index": 100,
+      "end_word_index": 107
+    },
+    {
+      "id": "line-0018",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Because I wouldn't ruin anyone as wonderful as he is",
+      "display_type": "lyric",
+      "words": [
+        "because",
+        "i",
+        "wouldn't",
+        "ruin",
+        "anyone",
+        "as",
+        "wonderful",
+        "as",
+        "he",
+        "is"
+      ],
+      "start_word_index": 108,
+      "end_word_index": 117
+    },
+    {
+      "id": "line-0019",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "But I thank you all for the gifts and the flowers",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "i",
+        "thank",
+        "you",
+        "all",
+        "for",
+        "the",
+        "gifts",
+        "and",
+        "the",
+        "flowers"
+      ],
+      "start_word_index": 118,
+      "end_word_index": 128
+    },
+    {
+      "id": "line-0020",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Thank you all, now it's back to the showers",
+      "display_type": "lyric",
+      "words": [
+        "thank",
+        "you",
+        "all",
+        "now",
+        "it's",
+        "back",
+        "to",
+        "the",
+        "showers"
+      ],
+      "start_word_index": 129,
+      "end_word_index": 137
+    },
+    {
+      "id": "line-0021",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Don't tell Paul, but I'm not getting married today",
+      "display_type": "lyric",
+      "words": [
+        "don't",
+        "tell",
+        "paul",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married",
+        "today"
+      ],
+      "start_word_index": 138,
+      "end_word_index": 146
+    },
+    {
+      "id": "line-0022",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "Bless this day, opposite of joy",
+      "display_type": "lyric",
+      "words": [
+        "bless",
+        "this",
+        "day",
+        "opposite",
+        "of",
+        "joy"
+      ],
+      "start_word_index": 147,
+      "end_word_index": 152
+    },
+    {
+      "id": "line-0023",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "Boy gets yoked to boy",
+      "display_type": "lyric",
+      "words": [
+        "boy",
+        "gets",
+        "yoked",
+        "to",
+        "boy"
+      ],
+      "start_word_index": 153,
+      "end_word_index": 157
+    },
+    {
+      "id": "line-0024",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "The heart sinks down and feels dead",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "heart",
+        "sinks",
+        "down",
+        "and",
+        "feels",
+        "dead"
+      ],
+      "start_word_index": 158,
+      "end_word_index": 164
+    },
+    {
+      "id": "line-0025",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "This dreadful day",
+      "display_type": "lyric",
+      "words": [
+        "this",
+        "dreadful",
+        "day"
+      ],
+      "start_word_index": 165,
+      "end_word_index": 167
+    },
+    {
+      "id": "line-0026",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Listen, everybody, look",
+      "display_type": "lyric",
+      "words": [
+        "listen",
+        "everybody",
+        "look"
+      ],
+      "start_word_index": 168,
+      "end_word_index": 170
+    },
+    {
+      "id": "line-0027",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "I don't know what you're waiting for, a wedding?",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "don't",
+        "know",
+        "what",
+        "you're",
+        "waiting",
+        "for",
+        "a",
+        "wedding"
+      ],
+      "start_word_index": 171,
+      "end_word_index": 179
+    },
+    {
+      "id": "line-0028",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "What's a wedding? It's a prehistoric ritual",
+      "display_type": "lyric",
+      "words": [
+        "what's",
+        "a",
+        "wedding",
+        "it's",
+        "a",
+        "prehistoric",
+        "ritual"
+      ],
+      "start_word_index": 180,
+      "end_word_index": 186
+    },
+    {
+      "id": "line-0029",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Where everybody promises fidelity forever",
+      "display_type": "lyric",
+      "words": [
+        "where",
+        "everybody",
+        "promises",
+        "fidelity",
+        "forever"
+      ],
+      "start_word_index": 187,
+      "end_word_index": 191
+    },
+    {
+      "id": "line-0030",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Which is maybe the most horrifying word I ever heard",
+      "display_type": "lyric",
+      "words": [
+        "which",
+        "is",
+        "maybe",
+        "the",
+        "most",
+        "horrifying",
+        "word",
+        "i",
+        "ever",
+        "heard"
+      ],
+      "start_word_index": 192,
+      "end_word_index": 201
+    },
+    {
+      "id": "line-0031",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Which is followed by a honeymoon, where suddenly he'll realize he's",
+      "display_type": "lyric",
+      "words": [
+        "which",
+        "is",
+        "followed",
+        "by",
+        "a",
+        "honeymoon",
+        "where",
+        "suddenly",
+        "he'll",
+        "realize",
+        "he's"
+      ],
+      "start_word_index": 202,
+      "end_word_index": 212
+    },
+    {
+      "id": "line-0032",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Saddled with a nut, and wanna kill me like he should so listen",
+      "display_type": "lyric",
+      "words": [
+        "saddled",
+        "with",
+        "a",
+        "nut",
+        "and",
+        "wanna",
+        "kill",
+        "me",
+        "like",
+        "he",
+        "should",
+        "so",
+        "listen"
+      ],
+      "start_word_index": 213,
+      "end_word_index": 225
+    },
+    {
+      "id": "line-0033",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Thanks a bunch, but I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "thanks",
+        "a",
+        "bunch",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 226,
+      "end_word_index": 233
+    },
+    {
+      "id": "line-0034",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Go have brunch, 'cause I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "go",
+        "have",
+        "brunch",
+        "'cause",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 234,
+      "end_word_index": 241
+    },
+    {
+      "id": "line-0035",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "You've been grand, but I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "you've",
+        "been",
+        "grand",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 242,
+      "end_word_index": 249
+    },
+    {
+      "id": "line-0036",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Don't just stand there, I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "don't",
+        "just",
+        "stand",
+        "there",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 250,
+      "end_word_index": 257
+    },
+    {
+      "id": "line-0037",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "And don't tell Paul, but I'm not getting married today",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "don't",
+        "tell",
+        "paul",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married",
+        "today"
+      ],
+      "start_word_index": 258,
+      "end_word_index": 267
+    },
+    {
+      "id": "line-0038",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Go, can't you go? Why is nobody listening?",
+      "display_type": "lyric",
+      "words": [
+        "go",
+        "can't",
+        "you",
+        "go",
+        "why",
+        "is",
+        "nobody",
+        "listening"
+      ],
+      "start_word_index": 268,
+      "end_word_index": 275
+    },
+    {
+      "id": "line-0039",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Goodbye, go and cry at some other person's wake",
+      "display_type": "lyric",
+      "words": [
+        "goodbye",
+        "go",
+        "and",
+        "cry",
+        "at",
+        "some",
+        "other",
+        "person's",
+        "wake"
+      ],
+      "start_word_index": 276,
+      "end_word_index": 284
+    },
+    {
+      "id": "line-0040",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "If you're quick, for a kick, you could pick up a christening",
+      "display_type": "lyric",
+      "words": [
+        "if",
+        "you're",
+        "quick",
+        "for",
+        "a",
+        "kick",
+        "you",
+        "could",
+        "pick",
+        "up",
+        "a",
+        "christening"
+      ],
+      "start_word_index": 285,
+      "end_word_index": 296
+    },
+    {
+      "id": "line-0041",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "But please, on my knees, there's a human life at stake",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "please",
+        "on",
+        "my",
+        "knees",
+        "there's",
+        "a",
+        "human",
+        "life",
+        "at",
+        "stake"
+      ],
+      "start_word_index": 297,
+      "end_word_index": 307
+    },
+    {
+      "id": "line-0042",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Listen everybody, I'm afraid you didn't hear",
+      "display_type": "lyric",
+      "words": [
+        "listen",
+        "everybody",
+        "i'm",
+        "afraid",
+        "you",
+        "didn't",
+        "hear"
+      ],
+      "start_word_index": 308,
+      "end_word_index": 314
+    },
+    {
+      "id": "line-0043",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Do you wanna see a crazy person fall apart in front of you?",
+      "display_type": "lyric",
+      "words": [
+        "do",
+        "you",
+        "wanna",
+        "see",
+        "a",
+        "crazy",
+        "person",
+        "fall",
+        "apart",
+        "in",
+        "front",
+        "of",
+        "you"
+      ],
+      "start_word_index": 315,
+      "end_word_index": 327
+    },
+    {
+      "id": "line-0044",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "It isn't only Paul who may be ruining his life",
+      "display_type": "lyric",
+      "words": [
+        "it",
+        "isn't",
+        "only",
+        "paul",
+        "who",
+        "may",
+        "be",
+        "ruining",
+        "his",
+        "life"
+      ],
+      "start_word_index": 328,
+      "end_word_index": 337
+    },
+    {
+      "id": "line-0045",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "You know, we'll both of us be losing our identities",
+      "display_type": "lyric",
+      "words": [
+        "you",
+        "know",
+        "we'll",
+        "both",
+        "of",
+        "us",
+        "be",
+        "losing",
+        "our",
+        "identities"
+      ],
+      "start_word_index": 338,
+      "end_word_index": 347
+    },
+    {
+      "id": "line-0046",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "I telephoned my shrink and he said maybe I should come and see him Monday",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "telephoned",
+        "my",
+        "shrink",
+        "and",
+        "he",
+        "said",
+        "maybe",
+        "i",
+        "should",
+        "come",
+        "and",
+        "see",
+        "him",
+        "monday"
+      ],
+      "start_word_index": 348,
+      "end_word_index": 362
+    },
+    {
+      "id": "line-0047",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "But by Monday, I'll be floating in the Hudson with the other garbage",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "by",
+        "monday",
+        "i'll",
+        "be",
+        "floating",
+        "in",
+        "the",
+        "hudson",
+        "with",
+        "the",
+        "other",
+        "garbage"
+      ],
+      "start_word_index": 363,
+      "end_word_index": 375
+    },
+    {
+      "id": "line-0048",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "I'm not well, so I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "i'm",
+        "not",
+        "well",
+        "so",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 376,
+      "end_word_index": 383
+    },
+    {
+      "id": "line-0049",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "You've been swell, but I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "you've",
+        "been",
+        "swell",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 384,
+      "end_word_index": 391
+    },
+    {
+      "id": "line-0050",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Clear the hall, 'cause I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "clear",
+        "the",
+        "hall",
+        "'cause",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 392,
+      "end_word_index": 399
+    },
+    {
+      "id": "line-0051",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Thank you all, but I'm not getting married",
+      "display_type": "lyric",
+      "words": [
+        "thank",
+        "you",
+        "all",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married"
+      ],
+      "start_word_index": 400,
+      "end_word_index": 407
+    },
+    {
+      "id": "line-0052",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "And don't tell Paul, but I'm not getting married today",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "don't",
+        "tell",
+        "paul",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married",
+        "today"
+      ],
+      "start_word_index": 408,
+      "end_word_index": 417
+    },
+    {
+      "id": "line-0053",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Bless this fool, totally insane",
+      "display_type": "lyric",
+      "words": [
+        "bless",
+        "this",
+        "fool",
+        "totally",
+        "insane"
+      ],
+      "start_word_index": 418,
+      "end_word_index": 422
+    },
+    {
+      "id": "line-0054",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Slipping down the drain",
+      "display_type": "lyric",
+      "words": [
+        "slipping",
+        "down",
+        "the",
+        "drain"
+      ],
+      "start_word_index": 423,
+      "end_word_index": 426
+    },
+    {
+      "id": "line-0055",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "And bless this day in our hearts",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "bless",
+        "this",
+        "day",
+        "in",
+        "our",
+        "hearts"
+      ],
+      "start_word_index": 427,
+      "end_word_index": 433
+    },
+    {
+      "id": "line-0056",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "As it starts to rain",
+      "display_type": "lyric",
+      "words": [
+        "as",
+        "it",
+        "starts",
+        "to",
+        "rain"
+      ],
+      "start_word_index": 434,
+      "end_word_index": 438
+    },
+    {
+      "id": "line-0057",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "Today is for Jamie (go, can't you go?)",
+      "display_type": "lyric",
+      "words": [
+        "today",
+        "is",
+        "for",
+        "jamie",
+        "go",
+        "can't",
+        "you",
+        "go"
+      ],
+      "start_word_index": 439,
+      "end_word_index": 446
+    },
+    {
+      "id": "line-0058",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "Look, you know I adore you all (Jamie, I give you)",
+      "display_type": "lyric",
+      "words": [
+        "look",
+        "you",
+        "know",
+        "i",
+        "adore",
+        "you",
+        "all",
+        "jamie",
+        "i",
+        "give",
+        "you"
+      ],
+      "start_word_index": 447,
+      "end_word_index": 457
+    },
+    {
+      "id": "line-0059",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "But why watch me die (the rest of my life) when I'm only being nice?",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "why",
+        "watch",
+        "me",
+        "die",
+        "the",
+        "rest",
+        "of",
+        "my",
+        "life",
+        "when",
+        "i'm",
+        "only",
+        "being",
+        "nice"
+      ],
+      "start_word_index": 458,
+      "end_word_index": 472
+    },
+    {
+      "id": "line-0060",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "Look, perhaps I'll collapse (to cherish and to keep you)",
+      "display_type": "lyric",
+      "words": [
+        "look",
+        "perhaps",
+        "i'll",
+        "collapse",
+        "to",
+        "cherish",
+        "and",
+        "to",
+        "keep",
+        "you"
+      ],
+      "start_word_index": 473,
+      "end_word_index": 482
+    },
+    {
+      "id": "line-0061",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "In the apse right before you all (to honor you forever)",
+      "display_type": "lyric",
+      "words": [
+        "in",
+        "the",
+        "apse",
+        "right",
+        "before",
+        "you",
+        "all",
+        "to",
+        "honor",
+        "you",
+        "forever"
+      ],
+      "start_word_index": 483,
+      "end_word_index": 493
+    },
+    {
+      "id": "line-0062",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "So take back the cake",
+      "display_type": "lyric",
+      "words": [
+        "so",
+        "take",
+        "back",
+        "the",
+        "cake"
+      ],
+      "start_word_index": 494,
+      "end_word_index": 498
+    },
+    {
+      "id": "line-0063",
+      "section_id": "section-13-013",
+      "section": "Section 13",
+      "text": "Burn the shoes, and boil the rice (today is for Jamie)",
+      "display_type": "lyric",
+      "words": [
+        "burn",
+        "the",
+        "shoes",
+        "and",
+        "boil",
+        "the",
+        "rice",
+        "today",
+        "is",
+        "for",
+        "jamie"
+      ],
+      "start_word_index": 499,
+      "end_word_index": 509
+    },
+    {
+      "id": "line-0064",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "Look, I didn't want to have to tell you",
+      "display_type": "lyric",
+      "words": [
+        "look",
+        "i",
+        "didn't",
+        "want",
+        "to",
+        "have",
+        "to",
+        "tell",
+        "you"
+      ],
+      "start_word_index": 510,
+      "end_word_index": 518
+    },
+    {
+      "id": "line-0065",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "But I may be coming down with hepatitis (my lover, my partner, my life)",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "i",
+        "may",
+        "be",
+        "coming",
+        "down",
+        "with",
+        "hepatitis",
+        "my",
+        "lover",
+        "my",
+        "partner",
+        "my",
+        "life"
+      ],
+      "start_word_index": 519,
+      "end_word_index": 532
+    },
+    {
+      "id": "line-0066",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "And I'm feeling kinda faint",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i'm",
+        "feeling",
+        "kinda",
+        "faint"
+      ],
+      "start_word_index": 533,
+      "end_word_index": 537
+    },
+    {
+      "id": "line-0067",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "So if you wanna see me faint, I'll do it happily",
+      "display_type": "lyric",
+      "words": [
+        "so",
+        "if",
+        "you",
+        "wanna",
+        "see",
+        "me",
+        "faint",
+        "i'll",
+        "do",
+        "it",
+        "happily"
+      ],
+      "start_word_index": 538,
+      "end_word_index": 548
+    },
+    {
+      "id": "line-0068",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "But wouldn't it be funnier to go and watch a funeral? (For the rest of my life)",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "wouldn't",
+        "it",
+        "be",
+        "funnier",
+        "to",
+        "go",
+        "and",
+        "watch",
+        "a",
+        "funeral",
+        "for",
+        "the",
+        "rest",
+        "of",
+        "my",
+        "life"
+      ],
+      "start_word_index": 549,
+      "end_word_index": 565
+    },
+    {
+      "id": "line-0069",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "So thank you for the twenty seven dinner plates",
+      "display_type": "lyric",
+      "words": [
+        "so",
+        "thank",
+        "you",
+        "for",
+        "the",
+        "twenty",
+        "seven",
+        "dinner",
+        "plates"
+      ],
+      "start_word_index": 566,
+      "end_word_index": 574
+    },
+    {
+      "id": "line-0070",
+      "section_id": "section-14-014",
+      "section": "Section 14",
+      "text": "thirty seven salad bowls, forty seven picture frames, fifty seven candle holders",
+      "display_type": "lyric",
+      "words": [
+        "thirty",
+        "seven",
+        "salad",
+        "bowls",
+        "forty",
+        "seven",
+        "picture",
+        "frames",
+        "fifty",
+        "seven",
+        "candle",
+        "holders"
+      ],
+      "start_word_index": 575,
+      "end_word_index": 586
+    },
+    {
+      "id": "line-0071",
+      "section_id": "section-15-015",
+      "section": "Section 15",
+      "text": "One more thing (I am not getting married) (amen!)",
+      "display_type": "lyric",
+      "words": [
+        "one",
+        "more",
+        "thing",
+        "i",
+        "am",
+        "not",
+        "getting",
+        "married",
+        "amen"
+      ],
+      "start_word_index": 587,
+      "end_word_index": 595
+    },
+    {
+      "id": "line-0072",
+      "section_id": "section-15-015",
+      "section": "Section 15",
+      "text": "(Softly said) but I'm not getting married (amen)",
+      "display_type": "lyric",
+      "words": [
+        "softly",
+        "said",
+        "but",
+        "i'm",
+        "not",
+        "getting",
+        "married",
+        "amen"
+      ],
+      "start_word_index": 596,
+      "end_word_index": 603
+    },
+    {
+      "id": "line-0073",
+      "section_id": "section-15-015",
+      "section": "Section 15",
+      "text": "(With this ring) still, I'm not getting married (amen)",
+      "display_type": "lyric",
+      "words": [
+        "with",
+        "this",
+        "ring",
+        "still",
+        "i'm",
+        "not",
+        "getting",
+        "married",
+        "amen"
+      ],
+      "start_word_index": 604,
+      "end_word_index": 612
+    },
+    {
+      "id": "line-0074",
+      "section_id": "section-15-015",
+      "section": "Section 15",
+      "text": "(I thee wed) still, I'm not getting married (amen)",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "thee",
+        "wed",
+        "still",
+        "i'm",
+        "not",
+        "getting",
+        "married",
+        "amen"
+      ],
+      "start_word_index": 613,
+      "end_word_index": 621
+    },
+    {
+      "id": "line-0075",
+      "section_id": "section-15-015",
+      "section": "Section 15",
+      "text": "Let us pray that we are not getting married today (amen)",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "us",
+        "pray",
+        "that",
+        "we",
+        "are",
+        "not",
+        "getting",
+        "married",
+        "today",
+        "amen"
+      ],
+      "start_word_index": 622,
+      "end_word_index": 632
+    }
+  ]
+}

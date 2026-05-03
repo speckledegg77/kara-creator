@@ -1,0 +1,3191 @@
+{
+  "schema_version": "karaoke-draft-v3",
+  "created_by": "kara-creator lyrics-aligner draft builder",
+  "source": {
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\miss_the_mountains-word-review-lyrics-aligner.json",
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\miss-the-mountains\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\miss-the-mountains\\lyrics.txt",
+    "audio_duration_seconds": 242.48
+  },
+  "alignment": {
+    "mode": "singing-specific-word-starts-to-line-draft",
+    "status": "draft",
+    "primary_aligner": "lyrics-aligner",
+    "line_count": 41,
+    "lyric_line_count": 41,
+    "instrumental_line_count": 0,
+    "section_count": 6,
+    "auto_adjusted_line_count": 1,
+    "repeated_phrase_rescue_count": 4,
+    "settings": {
+      "start_padding_seconds": 0.15,
+      "next_line_gap_seconds": 0.08,
+      "final_line_hold_seconds": 2.5,
+      "long_tail_threshold_seconds": 3.5,
+      "short_line_threshold_seconds": 1.2,
+      "large_internal_word_gap_seconds": 1.75,
+      "instrumental_fallback_seconds": 2.5,
+      "auto_correct_suspicious_first_word": true,
+      "suspicious_first_word_gap_seconds": 1.75,
+      "first_gap_ratio_threshold": 2.5,
+      "auto_anchor_min_words": 3,
+      "auto_anchor_lead_in_min_seconds": 0.35,
+      "auto_anchor_lead_in_max_seconds": 1.0,
+      "auto_anchor_lead_in_extended_max_seconds": 2.5,
+      "auto_anchor_lead_in_gap_fraction": 0.33,
+      "repeated_phrase_rescue": true,
+      "repeated_phrase_min_gap_seconds": 3.0,
+      "repeated_phrase_after_previous_word_seconds": 4.0,
+      "repeated_phrase_min_common_prefix_words": 2,
+      "adjusted_next_line_gap_seconds": 1.25,
+      "instrumental_after_previous_word_seconds": 2.5,
+      "instrumental_before_next_line_seconds": 0.5,
+      "starting_instrumental_before_first_line_seconds": 1.5
+    },
+    "review_flag_count": 69,
+    "review_flags": [
+      {
+        "section": "OPENING",
+        "line_id": "line-0001",
+        "text": "There was a time when I flew higher",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0001",
+        "text": "There was a time when I flew higher",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0002",
+        "text": "Was a time the wild girl running free",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0003",
+        "text": "Would be me",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0003",
+        "text": "Would be me",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0003",
+        "text": "Would be me",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0004",
+        "text": "Now I see her, feel the fire",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0005",
+        "text": "Now I know she needs me there to share",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "OPENING",
+        "line_id": "line-0006",
+        "text": "I'm nowhere",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0007",
+        "text": "All these blank and tranquil years",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0007",
+        "text": "All these blank and tranquil years",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0008",
+        "text": "Seems they've dried up all my tears",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0009",
+        "text": "And while she runs free and fast",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0009",
+        "text": "And while she runs free and fast",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0010",
+        "text": "Seems my wild days are past",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0010",
+        "text": "Seems my wild days are past",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "VERSE",
+        "line_id": "line-0010",
+        "text": "Seems my wild days are past",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0011",
+        "text": "But I miss the mountains",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0011",
+        "text": "But I miss the mountains",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0011",
+        "text": "But I miss the mountains",
+        "flag": "line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0011",
+        "text": "But I miss the mountains",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0011",
+        "text": "But I miss the mountains",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0012",
+        "text": "I miss the dizzy heights",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0013",
+        "text": "All the manic magic days",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS",
+        "line_id": "line-0014",
+        "text": "And the dark depressing nights",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0015",
+        "text": "I miss the mountains",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0015",
+        "text": "I miss the mountains",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0016",
+        "text": "I miss the highs and lows",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0017",
+        "text": "All the climbing, all the falling",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0018",
+        "text": "All the while the wild wind blows",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0019",
+        "text": "Stinging you with snow",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0020",
+        "text": "And soaking you with rain",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0021",
+        "text": "I miss the mountains",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0022",
+        "text": "I miss the pain",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "STAGE1",
+        "line_id": "line-0022",
+        "text": "I miss the pain",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0023",
+        "text": "Mountains make you crazy",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0024",
+        "text": "Here it's safe and sound",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0025",
+        "text": "My mind is somewhere hazy",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0026",
+        "text": "My feet are on the ground",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0027",
+        "text": "Everything is balanced here",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0028",
+        "text": "And on an even keel",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0029",
+        "text": "Everything is perfect",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0029",
+        "text": "Everything is perfect",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0029",
+        "text": "Everything is perfect",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0029",
+        "text": "Everything is perfect",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0030",
+        "text": "Nothing's real",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0030",
+        "text": "Nothing's real",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0031",
+        "text": "Nothing's real",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0031",
+        "text": "Nothing's real",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "BRIDGE",
+        "line_id": "line-0031",
+        "text": "Nothing's real",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0032",
+        "text": "And I miss the mountains",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0032",
+        "text": "And I miss the mountains",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0033",
+        "text": "I miss the lonely climb",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0034",
+        "text": "Wandering through the wilderness",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0035",
+        "text": "And spending all my time",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0036",
+        "text": "Where the air is clear",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0037",
+        "text": "And cuts you like a knife",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0038",
+        "text": "I miss the mountains",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0039",
+        "text": "I miss the mountains",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0039",
+        "text": "I miss the mountains",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0039",
+        "text": "I miss the mountains",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0039",
+        "text": "I miss the mountains",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0040",
+        "text": "I miss my life",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0040",
+        "text": "I miss my life",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0040",
+        "text": "I miss my life",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0040",
+        "text": "I miss my life",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0041",
+        "text": "I miss my life",
+        "flag": "repeated_identical_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0041",
+        "text": "I miss my life",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "CHORUS 2",
+        "line_id": "line-0041",
+        "text": "I miss my life",
+        "flag": "very_short_display_duration_needs_review"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "opening-001",
+      "label": "OPENING",
+      "start": 8.378,
+      "end": 44.906,
+      "lines": [
+        {
+          "id": "line-0001",
+          "display_type": "lyric",
+          "text": "There was a time when I flew higher",
+          "start": 8.378,
+          "end": 15.562,
+          "word_start": 8.528,
+          "last_word_start": 11.888,
+          "line_anchor_start": 8.378,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.576,
+          "max_internal_word_gap": 1.472,
+          "later_internal_word_gap_typical": 0.336,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.576,
+            "max_internal_word_gap": 1.472,
+            "later_internal_word_gap_typical": 0.336
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0001",
+              "text": "there",
+              "start": 8.528,
+              "end": 9.104,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0002",
+              "text": "was",
+              "start": 9.104,
+              "end": 9.584,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0003",
+              "text": "a",
+              "start": 9.584,
+              "end": 9.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0004",
+              "text": "time",
+              "start": 9.696,
+              "end": 9.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0005",
+              "text": "when",
+              "start": 9.888,
+              "end": 10.788,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0006",
+              "text": "i",
+              "start": 11.36,
+              "end": 11.408,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0007",
+              "text": "flew",
+              "start": 11.408,
+              "end": 11.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0008",
+              "text": "higher",
+              "start": 11.888,
+              "end": 12.788,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0002",
+          "display_type": "lyric",
+          "text": "Was a time the wild girl running free",
+          "start": 15.642,
+          "end": 23.082,
+          "word_start": 15.792,
+          "last_word_start": 20.064,
+          "line_anchor_start": 15.642,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.576,
+          "max_internal_word_gap": 1.2,
+          "later_internal_word_gap_typical": 0.68,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.576,
+            "max_internal_word_gap": 1.2,
+            "later_internal_word_gap_typical": 0.68
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0009",
+              "text": "was",
+              "start": 15.792,
+              "end": 16.368,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0010",
+              "text": "a",
+              "start": 16.368,
+              "end": 16.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0011",
+              "text": "time",
+              "start": 16.512,
+              "end": 17.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0012",
+              "text": "the",
+              "start": 17.184,
+              "end": 17.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0013",
+              "text": "wild",
+              "start": 17.392,
+              "end": 18.176,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0014",
+              "text": "girl",
+              "start": 18.176,
+              "end": 19.076,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0015",
+              "text": "running",
+              "start": 19.376,
+              "end": 20.064,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0016",
+              "text": "free",
+              "start": 20.064,
+              "end": 20.964,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0003",
+          "display_type": "lyric",
+          "text": "Would be me",
+          "start": 23.162,
+          "end": 27.706,
+          "word_start": 23.312,
+          "last_word_start": 27.712,
+          "line_anchor_start": 23.162,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 4.256,
+          "max_internal_word_gap": 4.256,
+          "later_internal_word_gap_typical": 0.144,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 4.256,
+            "max_internal_word_gap": 4.256,
+            "later_internal_word_gap_typical": 0.144
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0017",
+              "text": "would",
+              "start": 23.312,
+              "end": 24.212,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0018",
+              "text": "be",
+              "start": 27.568,
+              "end": 27.712,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0019",
+              "text": "me",
+              "start": 27.712,
+              "end": 27.936,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0004",
+          "display_type": "lyric",
+          "text": "Now I see her, feel the fire",
+          "start": 27.786,
+          "end": 32.778,
+          "word_start": 27.936,
+          "last_word_start": 30.608,
+          "line_anchor_start": 27.786,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.624,
+          "max_internal_word_gap": 1.024,
+          "later_internal_word_gap_typical": 0.304,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.624,
+            "max_internal_word_gap": 1.024,
+            "later_internal_word_gap_typical": 0.304
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0020",
+              "text": "now",
+              "start": 27.936,
+              "end": 28.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0021",
+              "text": "i",
+              "start": 28.56,
+              "end": 28.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0022",
+              "text": "see",
+              "start": 28.736,
+              "end": 29.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0023",
+              "text": "her",
+              "start": 29.184,
+              "end": 29.488,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0024",
+              "text": "feel",
+              "start": 29.488,
+              "end": 30.388,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0025",
+              "text": "the",
+              "start": 30.512,
+              "end": 30.608,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0026",
+              "text": "fire",
+              "start": 30.608,
+              "end": 31.508,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0005",
+          "display_type": "lyric",
+          "text": "Now I know she needs me there to share",
+          "start": 32.858,
+          "end": 41.21,
+          "word_start": 33.008,
+          "last_word_start": 38.16,
+          "line_anchor_start": 32.858,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.672,
+          "max_internal_word_gap": 1.744,
+          "later_internal_word_gap_typical": 0.448,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.672,
+            "max_internal_word_gap": 1.744,
+            "later_internal_word_gap_typical": 0.448
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0027",
+              "text": "now",
+              "start": 33.008,
+              "end": 33.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0028",
+              "text": "i",
+              "start": 33.68,
+              "end": 33.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0029",
+              "text": "know",
+              "start": 33.856,
+              "end": 34.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0030",
+              "text": "she",
+              "start": 34.496,
+              "end": 34.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0031",
+              "text": "needs",
+              "start": 34.864,
+              "end": 35.764,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0032",
+              "text": "me",
+              "start": 36.608,
+              "end": 37.056,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0033",
+              "text": "there",
+              "start": 37.056,
+              "end": 37.956,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0034",
+              "text": "to",
+              "start": 38.08,
+              "end": 38.16,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0035",
+              "text": "share",
+              "start": 38.16,
+              "end": 39.06,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0006",
+          "display_type": "lyric",
+          "text": "I'm nowhere",
+          "start": 41.29,
+          "end": 44.906,
+          "word_start": 41.44,
+          "last_word_start": 41.696,
+          "line_anchor_start": 41.29,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.256,
+          "later_internal_word_gap_typical": 0.0,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.256,
+            "later_internal_word_gap_typical": 0.0
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0036",
+              "text": "i'm",
+              "start": 41.44,
+              "end": 41.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0037",
+              "text": "nowhere",
+              "start": 41.696,
+              "end": 42.596,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "verse-002",
+      "label": "VERSE",
+      "start": 44.986,
+      "end": 78.468,
+      "lines": [
+        {
+          "id": "line-0007",
+          "display_type": "lyric",
+          "text": "All these blank and tranquil years",
+          "start": 44.986,
+          "end": 51.194,
+          "word_start": 45.136,
+          "last_word_start": 49.888,
+          "line_anchor_start": 44.986,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.4,
+          "max_internal_word_gap": 2.64,
+          "later_internal_word_gap_typical": 0.744,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.4,
+            "max_internal_word_gap": 2.64,
+            "later_internal_word_gap_typical": 0.744
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "large_internal_word_gap_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0038",
+              "text": "all",
+              "start": 45.136,
+              "end": 45.536,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0039",
+              "text": "these",
+              "start": 45.536,
+              "end": 45.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0040",
+              "text": "blank",
+              "start": 45.888,
+              "end": 46.788,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0041",
+              "text": "and",
+              "start": 47.024,
+              "end": 47.248,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0042",
+              "text": "tranquil",
+              "start": 47.248,
+              "end": 48.148,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0043",
+              "text": "years",
+              "start": 49.888,
+              "end": 50.788,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0008",
+          "display_type": "lyric",
+          "text": "Seems they've dried up all my tears",
+          "start": 51.274,
+          "end": 57.866,
+          "word_start": 51.424,
+          "last_word_start": 55.12,
+          "line_anchor_start": 51.274,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.528,
+          "max_internal_word_gap": 1.088,
+          "later_internal_word_gap_typical": 0.56,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.528,
+            "max_internal_word_gap": 1.088,
+            "later_internal_word_gap_typical": 0.56
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0044",
+              "text": "seems",
+              "start": 51.424,
+              "end": 51.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0045",
+              "text": "they've",
+              "start": 51.952,
+              "end": 52.176,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0046",
+              "text": "dried",
+              "start": 52.176,
+              "end": 53.076,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0047",
+              "text": "up",
+              "start": 53.264,
+              "end": 53.632,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0048",
+              "text": "all",
+              "start": 53.632,
+              "end": 54.192,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0049",
+              "text": "my",
+              "start": 54.192,
+              "end": 55.092,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0050",
+              "text": "tears",
+              "start": 55.12,
+              "end": 56.02,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0009",
+          "display_type": "lyric",
+          "text": "And while she runs free and fast",
+          "start": 57.946,
+          "end": 64.506,
+          "word_start": 58.096,
+          "last_word_start": 64.64,
+          "line_anchor_start": 57.946,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.352,
+          "max_internal_word_gap": 4.192,
+          "later_internal_word_gap_typical": 0.752,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.352,
+            "max_internal_word_gap": 4.192,
+            "later_internal_word_gap_typical": 0.752
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "large_internal_word_gap_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0051",
+              "text": "and",
+              "start": 58.096,
+              "end": 58.448,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0052",
+              "text": "while",
+              "start": 58.448,
+              "end": 58.784,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0053",
+              "text": "she",
+              "start": 58.784,
+              "end": 59.616,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0054",
+              "text": "runs",
+              "start": 59.616,
+              "end": 60.368,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0055",
+              "text": "free",
+              "start": 60.368,
+              "end": 61.268,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0056",
+              "text": "and",
+              "start": 64.56,
+              "end": 64.64,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0057",
+              "text": "fast",
+              "start": 64.64,
+              "end": 64.736,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0010",
+          "display_type": "lyric",
+          "text": "Seems my wild days are past",
+          "start": 64.586,
+          "end": 78.468,
+          "word_start": 64.736,
+          "last_word_start": 70.08,
+          "line_anchor_start": 64.586,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.528,
+          "max_internal_word_gap": 2.496,
+          "later_internal_word_gap_typical": 0.952,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.528,
+            "max_internal_word_gap": 2.496,
+            "later_internal_word_gap_typical": 0.952
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "large_internal_word_gap_needs_review",
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0058",
+              "text": "seems",
+              "start": 64.736,
+              "end": 65.264,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0059",
+              "text": "my",
+              "start": 65.264,
+              "end": 65.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0060",
+              "text": "wild",
+              "start": 65.68,
+              "end": 66.58,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0061",
+              "text": "days",
+              "start": 67.008,
+              "end": 67.908,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0062",
+              "text": "are",
+              "start": 69.504,
+              "end": 70.08,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0063",
+              "text": "past",
+              "start": 70.08,
+              "end": 70.98,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "chorus-003",
+      "label": "CHORUS",
+      "start": 79.718,
+      "end": 103.482,
+      "lines": [
+        {
+          "id": "line-0011",
+          "display_type": "lyric",
+          "text": "But I miss the mountains",
+          "start": 79.718,
+          "end": 88.618,
+          "word_start": 75.344,
+          "last_word_start": 84.816,
+          "line_anchor_start": 79.718,
+          "line_anchor_source": "corrected-word-cluster",
+          "first_internal_word_gap": 6.528,
+          "max_internal_word_gap": 6.528,
+          "later_internal_word_gap_typical": 0.432,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 6.528,
+            "max_internal_word_gap": 6.528,
+            "later_internal_word_gap_typical": 0.432,
+            "auto_anchor_lead_in_seconds": 2.154,
+            "uncorrected_display_start": 75.194,
+            "auto_corrected_display_start": 79.718,
+            "auto_anchor_reason": "held_previous_line_and_suspicious_first_word"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-corrected-word-cluster",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "line_start_auto_adjusted_needs_review",
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0064",
+              "text": "but",
+              "start": 75.344,
+              "end": 76.244,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0065",
+              "text": "i",
+              "start": 81.872,
+              "end": 82.304,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0066",
+              "text": "miss",
+              "start": 82.304,
+              "end": 83.204,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0067",
+              "text": "the",
+              "start": 84.528,
+              "end": 84.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0068",
+              "text": "mountains",
+              "start": 84.816,
+              "end": 85.716,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0012",
+          "display_type": "lyric",
+          "text": "I miss the dizzy heights",
+          "start": 88.698,
+          "end": 93.642,
+          "word_start": 88.848,
+          "last_word_start": 92.352,
+          "line_anchor_start": 88.698,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.32,
+          "max_internal_word_gap": 1.696,
+          "later_internal_word_gap_typical": 1.312,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.32,
+            "max_internal_word_gap": 1.696,
+            "later_internal_word_gap_typical": 1.312
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0069",
+              "text": "i",
+              "start": 88.848,
+              "end": 89.168,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0070",
+              "text": "miss",
+              "start": 89.168,
+              "end": 90.068,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0071",
+              "text": "the",
+              "start": 90.48,
+              "end": 90.656,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0072",
+              "text": "dizzy",
+              "start": 90.656,
+              "end": 91.556,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0073",
+              "text": "heights",
+              "start": 92.352,
+              "end": 93.252,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0013",
+          "display_type": "lyric",
+          "text": "All the manic magic days",
+          "start": 93.722,
+          "end": 97.722,
+          "word_start": 93.872,
+          "last_word_start": 95.904,
+          "line_anchor_start": 93.722,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.352,
+          "max_internal_word_gap": 0.8,
+          "later_internal_word_gap_typical": 0.704,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.352,
+            "max_internal_word_gap": 0.8,
+            "later_internal_word_gap_typical": 0.704
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0074",
+              "text": "all",
+              "start": 93.872,
+              "end": 94.224,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0075",
+              "text": "the",
+              "start": 94.224,
+              "end": 94.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0076",
+              "text": "manic",
+              "start": 94.4,
+              "end": 95.104,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0077",
+              "text": "magic",
+              "start": 95.104,
+              "end": 95.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0078",
+              "text": "days",
+              "start": 95.904,
+              "end": 96.804,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0014",
+          "display_type": "lyric",
+          "text": "And the dark depressing nights",
+          "start": 97.802,
+          "end": 103.482,
+          "word_start": 97.952,
+          "last_word_start": 100.56,
+          "line_anchor_start": 97.802,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.336,
+          "max_internal_word_gap": 1.168,
+          "later_internal_word_gap_typical": 0.896,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.336,
+            "max_internal_word_gap": 1.168,
+            "later_internal_word_gap_typical": 0.896
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0079",
+              "text": "and",
+              "start": 97.952,
+              "end": 98.288,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0080",
+              "text": "the",
+              "start": 98.288,
+              "end": 98.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0081",
+              "text": "dark",
+              "start": 98.496,
+              "end": 99.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0082",
+              "text": "depressing",
+              "start": 99.392,
+              "end": 100.292,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0083",
+              "text": "nights",
+              "start": 100.56,
+              "end": 101.46,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "stage1-004",
+      "label": "STAGE1",
+      "start": 103.562,
+      "end": 141.21,
+      "lines": [
+        {
+          "id": "line-0015",
+          "display_type": "lyric",
+          "text": "I miss the mountains",
+          "start": 103.562,
+          "end": 109.37,
+          "word_start": 103.712,
+          "last_word_start": 105.712,
+          "line_anchor_start": 103.562,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 1.36,
+          "later_internal_word_gap_typical": 0.872,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 1.36,
+            "later_internal_word_gap_typical": 0.872
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0084",
+              "text": "i",
+              "start": 103.712,
+              "end": 103.968,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0085",
+              "text": "miss",
+              "start": 103.968,
+              "end": 104.868,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0086",
+              "text": "the",
+              "start": 105.328,
+              "end": 105.712,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0087",
+              "text": "mountains",
+              "start": 105.712,
+              "end": 106.612,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0016",
+          "display_type": "lyric",
+          "text": "I miss the highs and lows",
+          "start": 109.45,
+          "end": 114.362,
+          "word_start": 109.6,
+          "last_word_start": 112.448,
+          "line_anchor_start": 109.45,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.496,
+          "max_internal_word_gap": 1.12,
+          "later_internal_word_gap_typical": 0.568,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.496,
+            "max_internal_word_gap": 1.12,
+            "later_internal_word_gap_typical": 0.568
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0088",
+              "text": "i",
+              "start": 109.6,
+              "end": 110.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0089",
+              "text": "miss",
+              "start": 110.096,
+              "end": 110.996,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0090",
+              "text": "the",
+              "start": 111.216,
+              "end": 111.312,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0091",
+              "text": "highs",
+              "start": 111.312,
+              "end": 112.064,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0092",
+              "text": "and",
+              "start": 112.064,
+              "end": 112.448,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0093",
+              "text": "lows",
+              "start": 112.448,
+              "end": 113.348,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0017",
+          "display_type": "lyric",
+          "text": "All the climbing, all the falling",
+          "start": 114.442,
+          "end": 118.282,
+          "word_start": 114.592,
+          "last_word_start": 116.56,
+          "line_anchor_start": 114.442,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.368,
+          "max_internal_word_gap": 0.832,
+          "later_internal_word_gap_typical": 0.344,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.368,
+            "max_internal_word_gap": 0.832,
+            "later_internal_word_gap_typical": 0.344
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0094",
+              "text": "all",
+              "start": 114.592,
+              "end": 114.96,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0095",
+              "text": "the",
+              "start": 114.96,
+              "end": 115.072,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0096",
+              "text": "climbing",
+              "start": 115.072,
+              "end": 115.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0097",
+              "text": "all",
+              "start": 115.904,
+              "end": 116.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0098",
+              "text": "the",
+              "start": 116.48,
+              "end": 116.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0099",
+              "text": "falling",
+              "start": 116.56,
+              "end": 117.46,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0018",
+          "display_type": "lyric",
+          "text": "All the while the wild wind blows",
+          "start": 118.362,
+          "end": 121.626,
+          "word_start": 118.512,
+          "last_word_start": 121.44,
+          "line_anchor_start": 118.362,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 0.928,
+          "later_internal_word_gap_typical": 0.736,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 0.928,
+            "later_internal_word_gap_typical": 0.736
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0100",
+              "text": "all",
+              "start": 118.512,
+              "end": 118.624,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0101",
+              "text": "the",
+              "start": 118.624,
+              "end": 118.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0102",
+              "text": "while",
+              "start": 118.832,
+              "end": 119.568,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0103",
+              "text": "the",
+              "start": 119.568,
+              "end": 120.384,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0104",
+              "text": "wild",
+              "start": 120.384,
+              "end": 121.284,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0105",
+              "text": "wind",
+              "start": 121.312,
+              "end": 121.44,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0106",
+              "text": "blows",
+              "start": 121.44,
+              "end": 121.856,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0019",
+          "display_type": "lyric",
+          "text": "Stinging you with snow",
+          "start": 121.706,
+          "end": 124.138,
+          "word_start": 121.856,
+          "last_word_start": 122.864,
+          "line_anchor_start": 121.706,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.304,
+          "max_internal_word_gap": 0.576,
+          "later_internal_word_gap_typical": 0.352,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.304,
+            "max_internal_word_gap": 0.576,
+            "later_internal_word_gap_typical": 0.352
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0107",
+              "text": "stinging",
+              "start": 121.856,
+              "end": 122.16,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0108",
+              "text": "you",
+              "start": 122.16,
+              "end": 122.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0109",
+              "text": "with",
+              "start": 122.736,
+              "end": 122.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0110",
+              "text": "snow",
+              "start": 122.864,
+              "end": 123.764,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0020",
+          "display_type": "lyric",
+          "text": "And soaking you with rain",
+          "start": 124.218,
+          "end": 129.466,
+          "word_start": 124.368,
+          "last_word_start": 126.944,
+          "line_anchor_start": 124.218,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 1.504,
+          "later_internal_word_gap_typical": 0.672,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 1.504,
+            "later_internal_word_gap_typical": 0.672
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0111",
+              "text": "and",
+              "start": 124.368,
+              "end": 124.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0112",
+              "text": "soaking",
+              "start": 124.56,
+              "end": 125.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0113",
+              "text": "you",
+              "start": 125.232,
+              "end": 126.132,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0114",
+              "text": "with",
+              "start": 126.736,
+              "end": 126.944,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0115",
+              "text": "rain",
+              "start": 126.944,
+              "end": 127.844,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0021",
+          "display_type": "lyric",
+          "text": "I miss the mountains",
+          "start": 129.546,
+          "end": 134.25,
+          "word_start": 129.696,
+          "last_word_start": 131.856,
+          "line_anchor_start": 129.546,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.36,
+          "max_internal_word_gap": 1.36,
+          "later_internal_word_gap_typical": 0.4,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.36,
+            "max_internal_word_gap": 1.36,
+            "later_internal_word_gap_typical": 0.4
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0116",
+              "text": "i",
+              "start": 129.696,
+              "end": 130.596,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0117",
+              "text": "miss",
+              "start": 131.056,
+              "end": 131.808,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0118",
+              "text": "the",
+              "start": 131.808,
+              "end": 131.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0119",
+              "text": "mountains",
+              "start": 131.856,
+              "end": 132.756,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0022",
+          "display_type": "lyric",
+          "text": "I miss the pain",
+          "start": 134.33,
+          "end": 141.21,
+          "word_start": 134.48,
+          "last_word_start": 135.472,
+          "line_anchor_start": 134.33,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.032,
+          "max_internal_word_gap": 0.864,
+          "later_internal_word_gap_typical": 0.48,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.032,
+            "max_internal_word_gap": 0.864,
+            "later_internal_word_gap_typical": 0.48
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0120",
+              "text": "i",
+              "start": 134.48,
+              "end": 134.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0121",
+              "text": "miss",
+              "start": 134.512,
+              "end": 135.376,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0122",
+              "text": "the",
+              "start": 135.376,
+              "end": 135.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0123",
+              "text": "pain",
+              "start": 135.472,
+              "end": 136.372,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "bridge-005",
+      "label": "BRIDGE",
+      "start": 141.29,
+      "end": 177.786,
+      "lines": [
+        {
+          "id": "line-0023",
+          "display_type": "lyric",
+          "text": "Mountains make you crazy",
+          "start": 141.29,
+          "end": 144.138,
+          "word_start": 141.44,
+          "last_word_start": 142.704,
+          "line_anchor_start": 141.29,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.656,
+          "max_internal_word_gap": 0.656,
+          "later_internal_word_gap_typical": 0.304,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.656,
+            "max_internal_word_gap": 0.656,
+            "later_internal_word_gap_typical": 0.304
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0124",
+              "text": "mountains",
+              "start": 141.44,
+              "end": 142.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0125",
+              "text": "make",
+              "start": 142.096,
+              "end": 142.448,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0126",
+              "text": "you",
+              "start": 142.448,
+              "end": 142.704,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0127",
+              "text": "crazy",
+              "start": 142.704,
+              "end": 143.604,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0024",
+          "display_type": "lyric",
+          "text": "Here it's safe and sound",
+          "start": 144.218,
+          "end": 145.866,
+          "word_start": 144.368,
+          "last_word_start": 145.6,
+          "line_anchor_start": 144.218,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.416,
+          "max_internal_word_gap": 0.432,
+          "later_internal_word_gap_typical": 0.192,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.416,
+            "max_internal_word_gap": 0.432,
+            "later_internal_word_gap_typical": 0.192
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0128",
+              "text": "here",
+              "start": 144.368,
+              "end": 144.784,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0129",
+              "text": "it's",
+              "start": 144.784,
+              "end": 144.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0130",
+              "text": "safe",
+              "start": 144.976,
+              "end": 145.408,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0131",
+              "text": "and",
+              "start": 145.408,
+              "end": 145.6,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0132",
+              "text": "sound",
+              "start": 145.6,
+              "end": 146.096,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0025",
+          "display_type": "lyric",
+          "text": "My mind is somewhere hazy",
+          "start": 145.946,
+          "end": 149.818,
+          "word_start": 146.096,
+          "last_word_start": 148.768,
+          "line_anchor_start": 145.946,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.544,
+          "max_internal_word_gap": 1.296,
+          "later_internal_word_gap_typical": 0.608,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.544,
+            "max_internal_word_gap": 1.296,
+            "later_internal_word_gap_typical": 0.608
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0133",
+              "text": "my",
+              "start": 146.096,
+              "end": 146.64,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0134",
+              "text": "mind",
+              "start": 146.64,
+              "end": 147.54,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0135",
+              "text": "is",
+              "start": 147.936,
+              "end": 148.16,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0136",
+              "text": "somewhere",
+              "start": 148.16,
+              "end": 148.768,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0137",
+              "text": "hazy",
+              "start": 148.768,
+              "end": 149.668,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0026",
+          "display_type": "lyric",
+          "text": "My feet are on the ground",
+          "start": 149.898,
+          "end": 152.954,
+          "word_start": 150.048,
+          "last_word_start": 151.584,
+          "line_anchor_start": 149.898,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.56,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.56,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0138",
+              "text": "my",
+              "start": 150.048,
+              "end": 150.304,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0139",
+              "text": "feet",
+              "start": 150.304,
+              "end": 150.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0140",
+              "text": "are",
+              "start": 150.864,
+              "end": 150.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0141",
+              "text": "on",
+              "start": 150.976,
+              "end": 151.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0142",
+              "text": "the",
+              "start": 151.504,
+              "end": 151.584,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0143",
+              "text": "ground",
+              "start": 151.584,
+              "end": 152.484,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0027",
+          "display_type": "lyric",
+          "text": "Everything is balanced here",
+          "start": 153.034,
+          "end": 155.418,
+          "word_start": 153.184,
+          "last_word_start": 155.168,
+          "line_anchor_start": 153.034,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.928,
+          "max_internal_word_gap": 0.928,
+          "later_internal_word_gap_typical": 0.528,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.928,
+            "max_internal_word_gap": 0.928,
+            "later_internal_word_gap_typical": 0.528
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0144",
+              "text": "everything",
+              "start": 153.184,
+              "end": 154.084,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0145",
+              "text": "is",
+              "start": 154.112,
+              "end": 154.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0146",
+              "text": "balanced",
+              "start": 154.4,
+              "end": 155.168,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0147",
+              "text": "here",
+              "start": 155.168,
+              "end": 155.648,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0028",
+          "display_type": "lyric",
+          "text": "And on an even keel",
+          "start": 155.498,
+          "end": 158.89,
+          "word_start": 155.648,
+          "last_word_start": 157.088,
+          "line_anchor_start": 155.498,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.496,
+          "later_internal_word_gap_typical": 0.448,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.496,
+            "later_internal_word_gap_typical": 0.448
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0148",
+              "text": "and",
+              "start": 155.648,
+              "end": 155.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0149",
+              "text": "on",
+              "start": 155.904,
+              "end": 156.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0150",
+              "text": "an",
+              "start": 156.4,
+              "end": 156.64,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0151",
+              "text": "even",
+              "start": 156.64,
+              "end": 157.088,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0152",
+              "text": "keel",
+              "start": 157.088,
+              "end": 157.988,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0029",
+          "display_type": "lyric",
+          "text": "Everything is perfect",
+          "start": 158.97,
+          "end": 166.346,
+          "word_start": 159.12,
+          "last_word_start": 161.536,
+          "line_anchor_start": 158.97,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 2.224,
+          "max_internal_word_gap": 2.224,
+          "later_internal_word_gap_typical": 0.192,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 2.224,
+            "max_internal_word_gap": 2.224,
+            "later_internal_word_gap_typical": 0.192
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0153",
+              "text": "everything",
+              "start": 159.12,
+              "end": 160.02,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0154",
+              "text": "is",
+              "start": 161.344,
+              "end": 161.536,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0155",
+              "text": "perfect",
+              "start": 161.536,
+              "end": 162.436,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0030",
+          "display_type": "lyric",
+          "text": "Nothing's real",
+          "start": 166.426,
+          "end": 170.35,
+          "word_start": 166.576,
+          "last_word_start": 167.6,
+          "line_anchor_start": 166.426,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.024,
+          "max_internal_word_gap": 1.024,
+          "later_internal_word_gap_typical": 0.0,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.024,
+            "max_internal_word_gap": 1.024,
+            "later_internal_word_gap_typical": 0.0
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0156",
+              "text": "nothing's",
+              "start": 166.576,
+              "end": 167.476,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0157",
+              "text": "real",
+              "start": 167.6,
+              "end": 168.5,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0031",
+          "display_type": "lyric",
+          "text": "Nothing's real",
+          "start": 171.6,
+          "end": 177.786,
+          "word_start": 172.464,
+          "last_word_start": 173.488,
+          "line_anchor_start": 171.6,
+          "line_anchor_source": "repeated-phrase-rescue",
+          "first_internal_word_gap": 1.024,
+          "max_internal_word_gap": 1.024,
+          "later_internal_word_gap_typical": 0.0,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.024,
+            "max_internal_word_gap": 1.024,
+            "later_internal_word_gap_typical": 0.0,
+            "repeated_phrase_uncorrected_display_start": 172.314,
+            "repeated_phrase_rescued_display_start": 171.6,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-phrase-rescue",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review",
+            "repeated_phrase_line_start_auto_adjusted_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0158",
+              "text": "nothing's",
+              "start": 172.464,
+              "end": 173.364,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0159",
+              "text": "real",
+              "start": 173.488,
+              "end": 174.388,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "chorus-2-006",
+      "label": "CHORUS 2",
+      "start": 177.866,
+      "end": 242.48,
+      "lines": [
+        {
+          "id": "line-0032",
+          "display_type": "lyric",
+          "text": "And I miss the mountains",
+          "start": 177.866,
+          "end": 184.41,
+          "word_start": 178.016,
+          "last_word_start": 181.232,
+          "line_anchor_start": 177.866,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.384,
+          "max_internal_word_gap": 2.352,
+          "later_internal_word_gap_typical": 0.416,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.384,
+            "max_internal_word_gap": 2.352,
+            "later_internal_word_gap_typical": 0.416
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "large_internal_word_gap_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0160",
+              "text": "and",
+              "start": 178.016,
+              "end": 178.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0161",
+              "text": "i",
+              "start": 178.4,
+              "end": 179.3,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0162",
+              "text": "miss",
+              "start": 180.752,
+              "end": 181.168,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0163",
+              "text": "the",
+              "start": 181.168,
+              "end": 181.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0164",
+              "text": "mountains",
+              "start": 181.232,
+              "end": 182.132,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0033",
+          "display_type": "lyric",
+          "text": "I miss the lonely climb",
+          "start": 184.49,
+          "end": 188.698,
+          "word_start": 184.64,
+          "last_word_start": 188.064,
+          "line_anchor_start": 184.49,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.712,
+          "max_internal_word_gap": 1.712,
+          "later_internal_word_gap_typical": 0.592,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.712,
+            "max_internal_word_gap": 1.712,
+            "later_internal_word_gap_typical": 0.592
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0165",
+              "text": "i",
+              "start": 184.64,
+              "end": 185.54,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0166",
+              "text": "miss",
+              "start": 186.352,
+              "end": 186.944,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0167",
+              "text": "the",
+              "start": 186.944,
+              "end": 187.024,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0168",
+              "text": "lonely",
+              "start": 187.024,
+              "end": 187.924,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0169",
+              "text": "climb",
+              "start": 188.064,
+              "end": 188.928,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0034",
+          "display_type": "lyric",
+          "text": "Wandering through the wilderness",
+          "start": 188.778,
+          "end": 193.546,
+          "word_start": 188.928,
+          "last_word_start": 190.576,
+          "line_anchor_start": 188.778,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.312,
+          "max_internal_word_gap": 1.312,
+          "later_internal_word_gap_typical": 0.168,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.312,
+            "max_internal_word_gap": 1.312,
+            "later_internal_word_gap_typical": 0.168
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0170",
+              "text": "wandering",
+              "start": 188.928,
+              "end": 189.828,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0171",
+              "text": "through",
+              "start": 190.24,
+              "end": 190.416,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0172",
+              "text": "the",
+              "start": 190.416,
+              "end": 190.576,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0173",
+              "text": "wilderness",
+              "start": 190.576,
+              "end": 191.476,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0035",
+          "display_type": "lyric",
+          "text": "And spending all my time",
+          "start": 193.626,
+          "end": 196.698,
+          "word_start": 193.776,
+          "last_word_start": 195.408,
+          "line_anchor_start": 193.626,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.208,
+          "max_internal_word_gap": 0.704,
+          "later_internal_word_gap_typical": 0.4,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.208,
+            "max_internal_word_gap": 0.704,
+            "later_internal_word_gap_typical": 0.4
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0174",
+              "text": "and",
+              "start": 193.776,
+              "end": 193.984,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0175",
+              "text": "spending",
+              "start": 193.984,
+              "end": 194.688,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0176",
+              "text": "all",
+              "start": 194.688,
+              "end": 195.008,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0177",
+              "text": "my",
+              "start": 195.008,
+              "end": 195.408,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0178",
+              "text": "time",
+              "start": 195.408,
+              "end": 196.308,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0036",
+          "display_type": "lyric",
+          "text": "Where the air is clear",
+          "start": 196.778,
+          "end": 199.018,
+          "word_start": 196.928,
+          "last_word_start": 197.952,
+          "line_anchor_start": 196.778,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.224,
+          "max_internal_word_gap": 0.32,
+          "later_internal_word_gap_typical": 0.256,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.224,
+            "max_internal_word_gap": 0.32,
+            "later_internal_word_gap_typical": 0.256
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0179",
+              "text": "where",
+              "start": 196.928,
+              "end": 197.152,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0180",
+              "text": "the",
+              "start": 197.152,
+              "end": 197.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0181",
+              "text": "air",
+              "start": 197.472,
+              "end": 197.728,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0182",
+              "text": "is",
+              "start": 197.728,
+              "end": 197.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0183",
+              "text": "clear",
+              "start": 197.952,
+              "end": 198.852,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0037",
+          "display_type": "lyric",
+          "text": "And cuts you like a knife",
+          "start": 199.098,
+          "end": 204.218,
+          "word_start": 199.248,
+          "last_word_start": 201.616,
+          "line_anchor_start": 199.098,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 0.944,
+          "later_internal_word_gap_typical": 0.544,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 0.944,
+            "later_internal_word_gap_typical": 0.544
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0184",
+              "text": "and",
+              "start": 199.248,
+              "end": 199.536,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0185",
+              "text": "cuts",
+              "start": 199.536,
+              "end": 199.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0186",
+              "text": "you",
+              "start": 199.952,
+              "end": 200.624,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0187",
+              "text": "like",
+              "start": 200.624,
+              "end": 201.524,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0188",
+              "text": "a",
+              "start": 201.568,
+              "end": 201.616,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0189",
+              "text": "knife",
+              "start": 201.616,
+              "end": 202.516,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0038",
+          "display_type": "lyric",
+          "text": "I miss the mountains",
+          "start": 204.298,
+          "end": 209.482,
+          "word_start": 204.448,
+          "last_word_start": 206.592,
+          "line_anchor_start": 204.298,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.552,
+          "max_internal_word_gap": 1.552,
+          "later_internal_word_gap_typical": 0.296,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.552,
+            "max_internal_word_gap": 1.552,
+            "later_internal_word_gap_typical": 0.296
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0190",
+              "text": "i",
+              "start": 204.448,
+              "end": 205.348,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0191",
+              "text": "miss",
+              "start": 206.0,
+              "end": 206.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0192",
+              "text": "the",
+              "start": 206.512,
+              "end": 206.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0193",
+              "text": "mountains",
+              "start": 206.592,
+              "end": 207.492,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0039",
+          "display_type": "lyric",
+          "text": "I miss the mountains",
+          "start": 209.562,
+          "end": 215.998,
+          "word_start": 209.712,
+          "last_word_start": 213.248,
+          "line_anchor_start": 209.562,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.824,
+          "max_internal_word_gap": 1.824,
+          "later_internal_word_gap_typical": 0.856,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.824,
+            "max_internal_word_gap": 1.824,
+            "later_internal_word_gap_typical": 0.856
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "long_tail_after_last_word_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0194",
+              "text": "i",
+              "start": 209.712,
+              "end": 210.612,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0195",
+              "text": "miss",
+              "start": 211.536,
+              "end": 212.436,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0196",
+              "text": "the",
+              "start": 212.72,
+              "end": 213.248,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0197",
+              "text": "mountains",
+              "start": 213.248,
+              "end": 214.148,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0040",
+          "display_type": "lyric",
+          "text": "I miss my life",
+          "start": 217.248,
+          "end": 229.114,
+          "word_start": 222.944,
+          "last_word_start": 233.328,
+          "line_anchor_start": 217.248,
+          "line_anchor_source": "repeated-phrase-rescue",
+          "first_internal_word_gap": 5.76,
+          "max_internal_word_gap": 5.76,
+          "later_internal_word_gap_typical": 2.312,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 5.76,
+            "max_internal_word_gap": 5.76,
+            "later_internal_word_gap_typical": 2.312,
+            "repeated_phrase_uncorrected_display_start": 222.794,
+            "repeated_phrase_rescued_display_start": 217.248,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-phrase-rescue",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "repeated_phrase_line_start_auto_adjusted_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0198",
+              "text": "i",
+              "start": 222.944,
+              "end": 223.844,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0199",
+              "text": "miss",
+              "start": 228.704,
+              "end": 229.604,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0200",
+              "text": "my",
+              "start": 230.848,
+              "end": 231.748,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0201",
+              "text": "life",
+              "start": 233.328,
+              "end": 234.228,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0041",
+          "display_type": "lyric",
+          "text": "I miss my life",
+          "start": 229.864,
+          "end": 242.48,
+          "word_start": 240.944,
+          "last_word_start": 241.28,
+          "line_anchor_start": 229.864,
+          "line_anchor_source": "repeated-identical-line-rescue",
+          "first_internal_word_gap": 0.224,
+          "max_internal_word_gap": 0.224,
+          "later_internal_word_gap_typical": 0.056,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.224,
+            "max_internal_word_gap": 0.224,
+            "later_internal_word_gap_typical": 0.056,
+            "repeated_phrase_uncorrected_display_start": 240.794,
+            "repeated_phrase_rescued_display_start": 237.328,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap",
+            "repeated_line_uncorrected_display_start": 237.328,
+            "repeated_line_rescued_display_start": 229.864,
+            "repeated_line_phrase_boundary_end": 242.48
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-identical-line-rescue",
+          "review_flags": [
+            "repeated_identical_line_start_auto_adjusted_needs_review",
+            "repeated_phrase_line_start_auto_adjusted_needs_review",
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0202",
+              "text": "i",
+              "start": 240.944,
+              "end": 241.168,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0203",
+              "text": "miss",
+              "start": 241.168,
+              "end": 241.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0204",
+              "text": "my",
+              "start": 241.232,
+              "end": 241.28,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0205",
+              "text": "life",
+              "start": 241.28,
+              "end": 242.48,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    }
+  ],
+  "editor_notes": [
+    "This draft uses singing-specific word starts as timing anchors.",
+    "Line starts normally come from the first word in each lyric line.",
+    "Cautious first-word correction is only applied to longer lines where word 1 looks like an early outlier.",
+    "Short held lines are flagged, but they are not auto-corrected just because word 1 is followed by a gap.",
+    "Repeated phrase rescue can pull repeated or shared-opening lines earlier when the word anchors arrive implausibly late.",
+    "Line ends are inferred from the next display line, with a larger gap before corrected or rescued next lines.",
+    "Instrumental placeholders are kept as editable display lines with empty words arrays.",
+    "This is an editable draft, not a final export."
+  ]
+}

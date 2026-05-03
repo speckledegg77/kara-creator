@@ -1,0 +1,81 @@
+{
+  "schema_version": "kara-run-manifest-v2",
+  "song_name": "miss_the_mountains",
+  "dataset_name": "kara_miss_the_mountains",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\miss-the-mountains\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\miss-the-mountains\\lyrics.txt"
+  },
+  "prepared_inputs": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\miss_the_mountains\\audio\\miss_the_mountains.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\miss_the_mountains\\lyrics\\miss_the_mountains.txt",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\miss_the_mountains\\miss_the_mountains-line-map.json"
+  },
+  "outputs": {
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\miss_the_mountains-word-review-lyrics-aligner.json",
+    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\miss_the_mountains-draft-lyrics-aligner-v3.json"
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . .",
+    "aligner_lyrics_exclude_instrumentals": true
+  },
+  "sections": [
+    {
+      "label": "OPENING",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "VERSE",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "CHORUS",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "STAGE1",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 8,
+      "lyric_line_count": 8,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "BRIDGE",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 9,
+      "lyric_line_count": 9,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "CHORUS 2",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 10,
+      "lyric_line_count": 10,
+      "instrumental_line_count": 0
+    }
+  ],
+  "cleanup": {
+    "removed_previous_aligner_files": []
+  }
+}

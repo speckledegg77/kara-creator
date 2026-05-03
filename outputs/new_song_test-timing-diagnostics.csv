@@ -1,0 +1,37 @@
+line_id,section,display_type,text,status,draft_start,edited_start,start_delta,draft_end,edited_end,end_delta,draft_duration,edited_duration,duration_delta,edited_manually,draft_review_flags,draft_max_internal_word_gap
+line-0001,Section 1,instrumental,. . .,compared,10.23,0.0,-10.23,12.73,11.0,-1.73,2.5,11.0,8.5,True,instrumental_at_start_needs_review|instrumental_timing_needs_review,0.0
+line-0002,Section 2,lyric,If I met myself back then I wonder what I'd say,compared,12.81,12.81,0.0,17.434,18.673,1.239,4.624,5.863,1.239,True,,0.976
+line-0003,Section 2,lyric,Would I tell that simple wide-eyed girl the truth,compared,17.514,19.081,1.567,25.946,24.447,-1.499,8.432,5.366,-3.066,True,,1.84
+line-0004,Section 2,lyric,"If I met myself again, a child who'd lost her way",compared,26.026,26.026,0.0,32.394,32.394,0.0,6.368,6.368,0.0,False,,1.008
+line-0005,Section 2,lyric,Who was just about to pay the price of youth,compared,32.474,32.474,0.0,38.698,38.698,0.0,6.224,6.224,0.0,False,,0.768
+line-0006,Section 3,lyric,I'd tell her only fools rush in and think the heart can lead,compared,38.778,38.778,0.0,45.322,45.322,0.0,6.544,6.544,0.0,False,,0.768
+line-0007,Section 3,lyric,"I'd tell her grow a thicker skin, 'cause girl you're gonna bleed",compared,45.402,45.402,0.0,51.898,51.898,0.0,6.496,6.496,0.0,False,,0.864
+line-0008,Section 3,lyric,"I'd tell her blue skies turn to grey, the only question's when",compared,51.978,51.978,0.0,58.714,58.714,0.0,6.736,6.736,0.0,False,,1.568
+line-0009,Section 3,lyric,I'd make her see her future's me,compared,58.794,58.794,0.0,62.106,63.275,1.169,3.312,4.481,1.169,True,,1.248
+line-0010,Section 3,lyric,If I met myself again,compared,62.186,63.458,1.272,66.222,68.398,2.176,4.036,4.94,0.904,True,,2.16
+line-0011,Section 4,instrumental,. . .,compared,66.302,68.75,2.448,69.178,77.0,7.822,2.876,8.25,5.374,True,instrumental_timing_needs_review,0.0
+line-0012,Section 5,lyric,If I met myself again I wonder what she'd say,compared,69.258,78.5,9.242,85.114,84.824,-0.29,15.856,6.324,-9.532,True,,9.792
+line-0013,Section 5,lyric,That love-struck girl who thought she was so smart,compared,85.194,85.194,0.0,91.706,91.706,0.0,6.512,6.512,0.0,False,,0.944
+line-0014,Section 5,lyric,"If I warn her of the men, the ones that got away",compared,91.786,91.786,0.0,98.426,98.426,0.0,6.64,6.64,0.0,False,,0.912
+line-0015,Section 5,lyric,And worse the ones that stay and break your heart,compared,98.506,98.506,0.0,104.57,104.57,0.0,6.064,6.064,0.0,False,,0.72
+line-0016,Section 6,lyric,I'd tell her love's a losing game that's better left un-played,compared,104.65,104.65,0.0,110.938,110.938,0.0,6.288,6.288,0.0,False,,0.784
+line-0017,Section 6,lyric,I'd tell her you've yourself to blame for every choice you've made,compared,111.018,111.018,0.0,117.626,117.626,0.0,6.608,6.608,0.0,False,,0.832
+line-0018,Section 6,lyric,And I'd tell her,compared,117.706,117.706,0.0,119.226,119.226,0.0,1.52,1.52,0.0,False,,0.32
+line-0019,Section 6,lyric,And I'd tell her 'til my voice gave out,compared,119.306,119.306,0.0,123.978,123.978,0.0,4.672,4.672,0.0,False,,0.912
+line-0020,Section 6,lyric,And then,compared,124.058,124.058,0.0,125.61,125.61,0.0,1.552,1.552,0.0,False,,0.4
+line-0021,Section 6,lyric,"She would smile, wait a while",compared,125.69,125.69,0.0,129.354,129.354,0.0,3.664,3.664,0.0,False,,1.264
+line-0022,Section 6,lyric,And go and do it all again,compared,129.434,129.434,0.0,135.93,133.122,-2.808,6.496,3.688,-2.808,True,long_tail_after_last_word_needs_review,0.816
+line-0023,Section 6,lyric,If I met myself again,compared,136.01,136.01,0.0,143.818,139.613,-4.205,7.808,3.603,-4.205,True,long_tail_after_last_word_needs_review,0.96
+line-0024,Section 7,lyric,If I met that girl again I'd tell her sink or swim,compared,143.898,143.898,0.0,150.074,150.074,0.0,6.176,6.176,0.0,False,,0.576
+line-0025,Section 7,lyric,I'd wake her up and god I'd make her run,compared,150.154,150.154,0.0,156.41,156.41,0.0,6.256,6.256,0.0,False,,0.528
+line-0026,Section 7,lyric,I'd turn back time and say girl stay away from him,compared,156.49,156.49,0.0,162.458,162.458,0.0,5.968,5.968,0.0,False,,0.576
+line-0027,Section 7,lyric,But if I did,compared,162.538,162.538,0.0,164.682,164.682,0.0,2.144,2.144,0.0,False,,0.288
+line-0028,Section 7,lyric,If I dared,compared,164.762,164.762,0.0,166.618,166.618,0.0,1.856,1.856,0.0,False,,0.176
+line-0029,Section 7,lyric,There's a price,compared,166.698,166.698,0.0,168.618,168.618,0.0,1.92,1.92,0.0,False,,0.336
+line-0030,Section 7,lyric,I would pay,compared,168.698,168.698,0.0,172.042,172.042,0.0,3.344,3.344,0.0,False,,0.176
+line-0031,Section 7,lyric,And I'd lose,compared,172.122,172.122,0.0,174.138,174.138,0.0,2.016,2.016,0.0,False,,0.24
+line-0032,Section 7,lyric,Cause I won't have my son,compared,174.218,174.218,0.0,177.978,179.522,1.544,3.76,5.304,1.544,True,,1.6
+line-0033,Section 8,lyric,If I met myself again,compared,178.058,181.0,2.942,187.61,184.964,-2.646,9.552,3.964,-5.588,True,long_tail_after_last_word_needs_review,3.424
+line-0034,Section 8,lyric,If I met myself again,compared,187.69,187.69,0.0,189.774,191.597,1.823,2.084,3.907,1.823,True,,0.992
+line-0035,Section 9,instrumental,. . .,compared,189.854,192.784,2.93,200.266,200.0,-0.266,10.412,7.216,-3.196,True,instrumental_timing_needs_review,0.0
+line-0036,Section 10,lyric,If I met myself again,compared,200.346,200.3,-0.046,202.996,202.95,-0.046,2.65,2.65,-0.0,True,,1.456

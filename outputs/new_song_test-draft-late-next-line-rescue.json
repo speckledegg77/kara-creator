@@ -17,6 +17,8 @@
     "section_count": 10,
     "auto_adjusted_line_count": 3,
     "repeated_phrase_rescue_count": 4,
+    "instrumental_following_anchor_rescue_count": 0,
+    "late_next_line_anchor_rescue_count": 0,
     "settings": {
       "start_padding_seconds": 0.15,
       "next_line_gap_seconds": 0.08,
@@ -24,7 +26,7 @@
       "long_tail_threshold_seconds": 3.5,
       "short_line_threshold_seconds": 1.2,
       "large_internal_word_gap_seconds": 1.75,
-      "instrumental_fallback_seconds": 2.5,
+      "instrumental_fallback_seconds": 5.0,
       "auto_correct_suspicious_first_word": true,
       "suspicious_first_word_gap_seconds": 1.75,
       "first_gap_ratio_threshold": 2.5,
@@ -34,6 +36,11 @@
       "auto_anchor_lead_in_extended_max_seconds": 2.5,
       "auto_anchor_lead_in_gap_fraction": 0.33,
       "repeated_phrase_rescue": true,
+      "instrumental_following_anchor_rescue": true,
+      "late_next_line_anchor_rescue": true,
+      "late_next_line_gap_seconds": 2.2,
+      "late_next_line_after_previous_word_seconds": 1.0,
+      "late_anchor_cascade_gap_seconds": 6.5,
       "repeated_phrase_min_gap_seconds": 3.0,
       "repeated_phrase_after_previous_word_seconds": 4.0,
       "repeated_phrase_min_common_prefix_words": 2,
@@ -42,7 +49,7 @@
       "instrumental_before_next_line_seconds": 0.5,
       "starting_instrumental_before_first_line_seconds": 1.5
     },
-    "review_flag_count": 54,
+    "review_flag_count": 57,
     "review_flags": [
       {
         "section": "Section 1",
@@ -145,6 +152,12 @@
         "line_id": "line-0010",
         "text": "If I met myself again",
         "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "Section 4",
+        "line_id": "line-0011",
+        "text": ". . .",
+        "flag": "instrumental_shorter_than_preferred_needs_review"
       },
       {
         "section": "Section 4",
@@ -354,7 +367,19 @@
         "section": "Section 9",
         "line_id": "line-0035",
         "text": ". . .",
+        "flag": "final_instrumental_gap_rescue_applied_needs_review"
+      },
+      {
+        "section": "Section 9",
+        "line_id": "line-0035",
+        "text": ". . .",
         "flag": "instrumental_timing_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0036",
+        "text": "If I met myself again",
+        "flag": "final_instrumental_following_line_auto_adjusted_needs_review"
       },
       {
         "section": "Section 10",
@@ -374,14 +399,14 @@
     {
       "id": "section-1-001",
       "label": "Section 1",
-      "start": 8.81,
+      "start": 0.0,
       "end": 11.31,
       "lines": [
         {
           "id": "line-0001",
           "display_type": "instrumental",
           "text": ". . .",
-          "start": 8.81,
+          "start": 0.0,
           "end": 11.31,
           "confidence": "draft",
           "locked": false,
@@ -1334,6 +1359,7 @@
           "anchor": false,
           "timing_source": "instrumental-placeholder-inferred",
           "review_flags": [
+            "instrumental_shorter_than_preferred_needs_review",
             "instrumental_timing_needs_review"
           ],
           "words": [],
@@ -3201,19 +3227,20 @@
       "id": "section-9-009",
       "label": "Section 9",
       "start": 191.988,
-      "end": 192.988,
+      "end": 196.988,
       "lines": [
         {
           "id": "line-0035",
           "display_type": "instrumental",
           "text": ". . .",
           "start": 191.988,
-          "end": 192.988,
+          "end": 196.988,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
           "timing_source": "instrumental-placeholder-inferred",
           "review_flags": [
+            "final_instrumental_gap_rescue_applied_needs_review",
             "instrumental_timing_needs_review"
           ],
           "words": [],
@@ -3224,19 +3251,19 @@
     {
       "id": "section-10-010",
       "label": "Section 10",
-      "start": 193.488,
+      "start": 197.488,
       "end": 203.888,
       "lines": [
         {
           "id": "line-0036",
           "display_type": "lyric",
           "text": "If I met myself again",
-          "start": 193.488,
+          "start": 197.488,
           "end": 203.888,
           "word_start": 200.496,
           "last_word_start": 202.688,
-          "line_anchor_start": 193.488,
-          "line_anchor_source": "repeated-phrase-rescue",
+          "line_anchor_start": 197.488,
+          "line_anchor_source": "final-instrumental-gap-rescue",
           "first_internal_word_gap": 0.176,
           "max_internal_word_gap": 1.472,
           "later_internal_word_gap_typical": 0.4,
@@ -3246,13 +3273,17 @@
             "later_internal_word_gap_typical": 0.4,
             "repeated_phrase_uncorrected_display_start": 200.346,
             "repeated_phrase_rescued_display_start": 193.488,
-            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap"
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap",
+            "final_instrumental_gap_original_start": 193.488,
+            "final_instrumental_gap_rescued_start": 197.488,
+            "final_instrumental_gap_desired_seconds": 5.0
           },
           "confidence": "draft",
           "locked": false,
           "anchor": false,
-          "timing_source": "kara-creator-repeated-phrase-rescue",
+          "timing_source": "kara-creator-final-instrumental-gap-rescue",
           "review_flags": [
+            "final_instrumental_following_line_auto_adjusted_needs_review",
             "repeated_phrase_line_start_auto_adjusted_needs_review",
             "very_short_display_duration_needs_review"
           ],
@@ -3304,8 +3335,10 @@
     "Cautious first-word correction is only applied to longer lines where word 1 looks like an early outlier.",
     "Short held lines are flagged, but they are not auto-corrected just because word 1 is followed by a gap.",
     "Repeated phrase rescue can pull repeated or shared-opening lines earlier when the word anchors arrive implausibly late.",
+    "Lines after explicit instrumental placeholders can be moved later when word 1 looks too early and the rest of the line starts much later.",
+    "A late next-line rescue can move a lyric line earlier when a clean previous line is followed by a suspiciously late next-line anchor.",
     "Line ends are inferred from the next display line, with a larger gap before corrected or rescued next lines.",
-    "Instrumental placeholders are kept as editable display lines with empty words arrays.",
+    "Instrumental placeholders are kept as editable display lines with empty words arrays and starting instrumentals now span from 0 where possible.",
     "This is an editable draft, not a final export."
   ]
 }

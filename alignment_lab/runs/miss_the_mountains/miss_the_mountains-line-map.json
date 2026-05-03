@@ -1,0 +1,740 @@
+{
+  "schema_version": "kara-line-map-v2",
+  "created_by": "kara-creator lyrics-aligner pipeline",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\miss-the-mountains\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\miss-the-mountains\\lyrics.txt",
+    "tokenisation": {
+      "hyphenated_words": "merged",
+      "apostrophes": "kept",
+      "instrumental_placeholders": "excluded_from_aligner"
+    }
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . ."
+  },
+  "line_count": 41,
+  "lyric_line_count": 41,
+  "instrumental_line_count": 0,
+  "word_count": 205,
+  "sections": [
+    {
+      "id": "opening-001",
+      "label": "OPENING",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "verse-002",
+      "label": "VERSE",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "chorus-003",
+      "label": "CHORUS",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "stage1-004",
+      "label": "STAGE1",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 8,
+      "lyric_line_count": 8,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "bridge-005",
+      "label": "BRIDGE",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 9,
+      "lyric_line_count": 9,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "chorus-2-006",
+      "label": "CHORUS 2",
+      "source": "explicit_heading",
+      "parser_mode": "explicit_headings",
+      "line_count": 10,
+      "lyric_line_count": 10,
+      "instrumental_line_count": 0
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-0001",
+      "section_id": "opening-001",
+      "section": "OPENING",
+      "text": "There was a time when I flew higher",
+      "display_type": "lyric",
+      "words": [
+        "there",
+        "was",
+        "a",
+        "time",
+        "when",
+        "i",
+        "flew",
+        "higher"
+      ],
+      "start_word_index": 0,
+      "end_word_index": 7
+    },
+    {
+      "id": "line-0002",
+      "section_id": "opening-001",
+      "section": "OPENING",
+      "text": "Was a time the wild girl running free",
+      "display_type": "lyric",
+      "words": [
+        "was",
+        "a",
+        "time",
+        "the",
+        "wild",
+        "girl",
+        "running",
+        "free"
+      ],
+      "start_word_index": 8,
+      "end_word_index": 15
+    },
+    {
+      "id": "line-0003",
+      "section_id": "opening-001",
+      "section": "OPENING",
+      "text": "Would be me",
+      "display_type": "lyric",
+      "words": [
+        "would",
+        "be",
+        "me"
+      ],
+      "start_word_index": 16,
+      "end_word_index": 18
+    },
+    {
+      "id": "line-0004",
+      "section_id": "opening-001",
+      "section": "OPENING",
+      "text": "Now I see her, feel the fire",
+      "display_type": "lyric",
+      "words": [
+        "now",
+        "i",
+        "see",
+        "her",
+        "feel",
+        "the",
+        "fire"
+      ],
+      "start_word_index": 19,
+      "end_word_index": 25
+    },
+    {
+      "id": "line-0005",
+      "section_id": "opening-001",
+      "section": "OPENING",
+      "text": "Now I know she needs me there to share",
+      "display_type": "lyric",
+      "words": [
+        "now",
+        "i",
+        "know",
+        "she",
+        "needs",
+        "me",
+        "there",
+        "to",
+        "share"
+      ],
+      "start_word_index": 26,
+      "end_word_index": 34
+    },
+    {
+      "id": "line-0006",
+      "section_id": "opening-001",
+      "section": "OPENING",
+      "text": "I'm nowhere",
+      "display_type": "lyric",
+      "words": [
+        "i'm",
+        "nowhere"
+      ],
+      "start_word_index": 35,
+      "end_word_index": 36
+    },
+    {
+      "id": "line-0007",
+      "section_id": "verse-002",
+      "section": "VERSE",
+      "text": "All these blank and tranquil years",
+      "display_type": "lyric",
+      "words": [
+        "all",
+        "these",
+        "blank",
+        "and",
+        "tranquil",
+        "years"
+      ],
+      "start_word_index": 37,
+      "end_word_index": 42
+    },
+    {
+      "id": "line-0008",
+      "section_id": "verse-002",
+      "section": "VERSE",
+      "text": "Seems they've dried up all my tears",
+      "display_type": "lyric",
+      "words": [
+        "seems",
+        "they've",
+        "dried",
+        "up",
+        "all",
+        "my",
+        "tears"
+      ],
+      "start_word_index": 43,
+      "end_word_index": 49
+    },
+    {
+      "id": "line-0009",
+      "section_id": "verse-002",
+      "section": "VERSE",
+      "text": "And while she runs free and fast",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "while",
+        "she",
+        "runs",
+        "free",
+        "and",
+        "fast"
+      ],
+      "start_word_index": 50,
+      "end_word_index": 56
+    },
+    {
+      "id": "line-0010",
+      "section_id": "verse-002",
+      "section": "VERSE",
+      "text": "Seems my wild days are past",
+      "display_type": "lyric",
+      "words": [
+        "seems",
+        "my",
+        "wild",
+        "days",
+        "are",
+        "past"
+      ],
+      "start_word_index": 57,
+      "end_word_index": 62
+    },
+    {
+      "id": "line-0011",
+      "section_id": "chorus-003",
+      "section": "CHORUS",
+      "text": "But I miss the mountains",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "i",
+        "miss",
+        "the",
+        "mountains"
+      ],
+      "start_word_index": 63,
+      "end_word_index": 67
+    },
+    {
+      "id": "line-0012",
+      "section_id": "chorus-003",
+      "section": "CHORUS",
+      "text": "I miss the dizzy heights",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "dizzy",
+        "heights"
+      ],
+      "start_word_index": 68,
+      "end_word_index": 72
+    },
+    {
+      "id": "line-0013",
+      "section_id": "chorus-003",
+      "section": "CHORUS",
+      "text": "All the manic magic days",
+      "display_type": "lyric",
+      "words": [
+        "all",
+        "the",
+        "manic",
+        "magic",
+        "days"
+      ],
+      "start_word_index": 73,
+      "end_word_index": 77
+    },
+    {
+      "id": "line-0014",
+      "section_id": "chorus-003",
+      "section": "CHORUS",
+      "text": "And the dark depressing nights",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "the",
+        "dark",
+        "depressing",
+        "nights"
+      ],
+      "start_word_index": 78,
+      "end_word_index": 82
+    },
+    {
+      "id": "line-0015",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "I miss the mountains",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "mountains"
+      ],
+      "start_word_index": 83,
+      "end_word_index": 86
+    },
+    {
+      "id": "line-0016",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "I miss the highs and lows",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "highs",
+        "and",
+        "lows"
+      ],
+      "start_word_index": 87,
+      "end_word_index": 92
+    },
+    {
+      "id": "line-0017",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "All the climbing, all the falling",
+      "display_type": "lyric",
+      "words": [
+        "all",
+        "the",
+        "climbing",
+        "all",
+        "the",
+        "falling"
+      ],
+      "start_word_index": 93,
+      "end_word_index": 98
+    },
+    {
+      "id": "line-0018",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "All the while the wild wind blows",
+      "display_type": "lyric",
+      "words": [
+        "all",
+        "the",
+        "while",
+        "the",
+        "wild",
+        "wind",
+        "blows"
+      ],
+      "start_word_index": 99,
+      "end_word_index": 105
+    },
+    {
+      "id": "line-0019",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "Stinging you with snow",
+      "display_type": "lyric",
+      "words": [
+        "stinging",
+        "you",
+        "with",
+        "snow"
+      ],
+      "start_word_index": 106,
+      "end_word_index": 109
+    },
+    {
+      "id": "line-0020",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "And soaking you with rain",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "soaking",
+        "you",
+        "with",
+        "rain"
+      ],
+      "start_word_index": 110,
+      "end_word_index": 114
+    },
+    {
+      "id": "line-0021",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "I miss the mountains",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "mountains"
+      ],
+      "start_word_index": 115,
+      "end_word_index": 118
+    },
+    {
+      "id": "line-0022",
+      "section_id": "stage1-004",
+      "section": "STAGE1",
+      "text": "I miss the pain",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "pain"
+      ],
+      "start_word_index": 119,
+      "end_word_index": 122
+    },
+    {
+      "id": "line-0023",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "Mountains make you crazy",
+      "display_type": "lyric",
+      "words": [
+        "mountains",
+        "make",
+        "you",
+        "crazy"
+      ],
+      "start_word_index": 123,
+      "end_word_index": 126
+    },
+    {
+      "id": "line-0024",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "Here it's safe and sound",
+      "display_type": "lyric",
+      "words": [
+        "here",
+        "it's",
+        "safe",
+        "and",
+        "sound"
+      ],
+      "start_word_index": 127,
+      "end_word_index": 131
+    },
+    {
+      "id": "line-0025",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "My mind is somewhere hazy",
+      "display_type": "lyric",
+      "words": [
+        "my",
+        "mind",
+        "is",
+        "somewhere",
+        "hazy"
+      ],
+      "start_word_index": 132,
+      "end_word_index": 136
+    },
+    {
+      "id": "line-0026",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "My feet are on the ground",
+      "display_type": "lyric",
+      "words": [
+        "my",
+        "feet",
+        "are",
+        "on",
+        "the",
+        "ground"
+      ],
+      "start_word_index": 137,
+      "end_word_index": 142
+    },
+    {
+      "id": "line-0027",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "Everything is balanced here",
+      "display_type": "lyric",
+      "words": [
+        "everything",
+        "is",
+        "balanced",
+        "here"
+      ],
+      "start_word_index": 143,
+      "end_word_index": 146
+    },
+    {
+      "id": "line-0028",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "And on an even keel",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "on",
+        "an",
+        "even",
+        "keel"
+      ],
+      "start_word_index": 147,
+      "end_word_index": 151
+    },
+    {
+      "id": "line-0029",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "Everything is perfect",
+      "display_type": "lyric",
+      "words": [
+        "everything",
+        "is",
+        "perfect"
+      ],
+      "start_word_index": 152,
+      "end_word_index": 154
+    },
+    {
+      "id": "line-0030",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "Nothing's real",
+      "display_type": "lyric",
+      "words": [
+        "nothing's",
+        "real"
+      ],
+      "start_word_index": 155,
+      "end_word_index": 156
+    },
+    {
+      "id": "line-0031",
+      "section_id": "bridge-005",
+      "section": "BRIDGE",
+      "text": "Nothing's real",
+      "display_type": "lyric",
+      "words": [
+        "nothing's",
+        "real"
+      ],
+      "start_word_index": 157,
+      "end_word_index": 158
+    },
+    {
+      "id": "line-0032",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "And I miss the mountains",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i",
+        "miss",
+        "the",
+        "mountains"
+      ],
+      "start_word_index": 159,
+      "end_word_index": 163
+    },
+    {
+      "id": "line-0033",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "I miss the lonely climb",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "lonely",
+        "climb"
+      ],
+      "start_word_index": 164,
+      "end_word_index": 168
+    },
+    {
+      "id": "line-0034",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "Wandering through the wilderness",
+      "display_type": "lyric",
+      "words": [
+        "wandering",
+        "through",
+        "the",
+        "wilderness"
+      ],
+      "start_word_index": 169,
+      "end_word_index": 172
+    },
+    {
+      "id": "line-0035",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "And spending all my time",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "spending",
+        "all",
+        "my",
+        "time"
+      ],
+      "start_word_index": 173,
+      "end_word_index": 177
+    },
+    {
+      "id": "line-0036",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "Where the air is clear",
+      "display_type": "lyric",
+      "words": [
+        "where",
+        "the",
+        "air",
+        "is",
+        "clear"
+      ],
+      "start_word_index": 178,
+      "end_word_index": 182
+    },
+    {
+      "id": "line-0037",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "And cuts you like a knife",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "cuts",
+        "you",
+        "like",
+        "a",
+        "knife"
+      ],
+      "start_word_index": 183,
+      "end_word_index": 188
+    },
+    {
+      "id": "line-0038",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "I miss the mountains",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "mountains"
+      ],
+      "start_word_index": 189,
+      "end_word_index": 192
+    },
+    {
+      "id": "line-0039",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "I miss the mountains",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "the",
+        "mountains"
+      ],
+      "start_word_index": 193,
+      "end_word_index": 196
+    },
+    {
+      "id": "line-0040",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "I miss my life",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "my",
+        "life"
+      ],
+      "start_word_index": 197,
+      "end_word_index": 200
+    },
+    {
+      "id": "line-0041",
+      "section_id": "chorus-2-006",
+      "section": "CHORUS 2",
+      "text": "I miss my life",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "miss",
+        "my",
+        "life"
+      ],
+      "start_word_index": 201,
+      "end_word_index": 204
+    }
+  ]
+}

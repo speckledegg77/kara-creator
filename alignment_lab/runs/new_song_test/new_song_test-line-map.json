@@ -19,9 +19,9 @@
     ],
     "instrumental_placeholder_output": ". . ."
   },
-  "line_count": 35,
+  "line_count": 36,
   "lyric_line_count": 33,
-  "instrumental_line_count": 2,
+  "instrumental_line_count": 3,
   "word_count": 257,
   "sections": [
     {
@@ -29,17 +29,17 @@
       "label": "Section 1",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 4,
-      "lyric_line_count": 4,
-      "instrumental_line_count": 0
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
     },
     {
       "id": "section-2-002",
       "label": "Section 2",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 5,
-      "lyric_line_count": 5,
+      "line_count": 4,
+      "lyric_line_count": 4,
       "instrumental_line_count": 0
     },
     {
@@ -47,13 +47,22 @@
       "label": "Section 3",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
       "line_count": 1,
       "lyric_line_count": 0,
       "instrumental_line_count": 1
     },
     {
-      "id": "section-4-004",
-      "label": "Section 4",
+      "id": "section-5-005",
+      "label": "Section 5",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 4,
@@ -61,8 +70,8 @@
       "instrumental_line_count": 0
     },
     {
-      "id": "section-5-005",
-      "label": "Section 5",
+      "id": "section-6-006",
+      "label": "Section 6",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 8,
@@ -70,8 +79,8 @@
       "instrumental_line_count": 0
     },
     {
-      "id": "section-6-006",
-      "label": "Section 6",
+      "id": "section-7-007",
+      "label": "Section 7",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 9,
@@ -79,8 +88,8 @@
       "instrumental_line_count": 0
     },
     {
-      "id": "section-7-007",
-      "label": "Section 7",
+      "id": "section-8-008",
+      "label": "Section 8",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 2,
@@ -88,8 +97,8 @@
       "instrumental_line_count": 0
     },
     {
-      "id": "section-8-008",
-      "label": "Section 8",
+      "id": "section-9-009",
+      "label": "Section 9",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 1,
@@ -97,8 +106,8 @@
       "instrumental_line_count": 1
     },
     {
-      "id": "section-9-009",
-      "label": "Section 9",
+      "id": "section-10-010",
+      "label": "Section 10",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 1,
@@ -111,6 +120,16 @@
       "id": "line-0001",
       "section_id": "section-1-001",
       "section": "Section 1",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0002",
+      "section_id": "section-2-002",
+      "section": "Section 2",
       "text": "If I met myself back then I wonder what I'd say",
       "display_type": "lyric",
       "words": [
@@ -130,9 +149,9 @@
       "end_word_index": 10
     },
     {
-      "id": "line-0002",
-      "section_id": "section-1-001",
-      "section": "Section 1",
+      "id": "line-0003",
+      "section_id": "section-2-002",
+      "section": "Section 2",
       "text": "Would I tell that simple wide-eyed girl the truth",
       "display_type": "lyric",
       "words": [
@@ -150,9 +169,9 @@
       "end_word_index": 19
     },
     {
-      "id": "line-0003",
-      "section_id": "section-1-001",
-      "section": "Section 1",
+      "id": "line-0004",
+      "section_id": "section-2-002",
+      "section": "Section 2",
       "text": "If I met myself again, a child who'd lost her way",
       "display_type": "lyric",
       "words": [
@@ -172,9 +191,9 @@
       "end_word_index": 30
     },
     {
-      "id": "line-0004",
-      "section_id": "section-1-001",
-      "section": "Section 1",
+      "id": "line-0005",
+      "section_id": "section-2-002",
+      "section": "Section 2",
       "text": "Who was just about to pay the price of youth",
       "display_type": "lyric",
       "words": [
@@ -193,9 +212,9 @@
       "end_word_index": 40
     },
     {
-      "id": "line-0005",
-      "section_id": "section-2-002",
-      "section": "Section 2",
+      "id": "line-0006",
+      "section_id": "section-3-003",
+      "section": "Section 3",
       "text": "I'd tell her only fools rush in and think the heart can lead",
       "display_type": "lyric",
       "words": [
@@ -217,9 +236,9 @@
       "end_word_index": 53
     },
     {
-      "id": "line-0006",
-      "section_id": "section-2-002",
-      "section": "Section 2",
+      "id": "line-0007",
+      "section_id": "section-3-003",
+      "section": "Section 3",
       "text": "I'd tell her grow a thicker skin, 'cause girl you're gonna bleed",
       "display_type": "lyric",
       "words": [
@@ -240,9 +259,9 @@
       "end_word_index": 65
     },
     {
-      "id": "line-0007",
-      "section_id": "section-2-002",
-      "section": "Section 2",
+      "id": "line-0008",
+      "section_id": "section-3-003",
+      "section": "Section 3",
       "text": "I'd tell her blue skies turn to grey, the only question's when",
       "display_type": "lyric",
       "words": [
@@ -263,9 +282,9 @@
       "end_word_index": 77
     },
     {
-      "id": "line-0008",
-      "section_id": "section-2-002",
-      "section": "Section 2",
+      "id": "line-0009",
+      "section_id": "section-3-003",
+      "section": "Section 3",
       "text": "I'd make her see her future's me",
       "display_type": "lyric",
       "words": [
@@ -281,9 +300,9 @@
       "end_word_index": 84
     },
     {
-      "id": "line-0009",
-      "section_id": "section-2-002",
-      "section": "Section 2",
+      "id": "line-0010",
+      "section_id": "section-3-003",
+      "section": "Section 3",
       "text": "If I met myself again",
       "display_type": "lyric",
       "words": [
@@ -297,9 +316,9 @@
       "end_word_index": 89
     },
     {
-      "id": "line-0010",
-      "section_id": "section-3-003",
-      "section": "Section 3",
+      "id": "line-0011",
+      "section_id": "section-4-004",
+      "section": "Section 4",
       "text": ". . .",
       "display_type": "instrumental",
       "words": [],
@@ -307,9 +326,9 @@
       "end_word_index": null
     },
     {
-      "id": "line-0011",
-      "section_id": "section-4-004",
-      "section": "Section 4",
+      "id": "line-0012",
+      "section_id": "section-5-005",
+      "section": "Section 5",
       "text": "If I met myself again I wonder what she'd say",
       "display_type": "lyric",
       "words": [
@@ -328,9 +347,9 @@
       "end_word_index": 99
     },
     {
-      "id": "line-0012",
-      "section_id": "section-4-004",
-      "section": "Section 4",
+      "id": "line-0013",
+      "section_id": "section-5-005",
+      "section": "Section 5",
       "text": "That love-struck girl who thought she was so smart",
       "display_type": "lyric",
       "words": [
@@ -348,9 +367,9 @@
       "end_word_index": 108
     },
     {
-      "id": "line-0013",
-      "section_id": "section-4-004",
-      "section": "Section 4",
+      "id": "line-0014",
+      "section_id": "section-5-005",
+      "section": "Section 5",
       "text": "If I warn her of the men, the ones that got away",
       "display_type": "lyric",
       "words": [
@@ -371,9 +390,9 @@
       "end_word_index": 120
     },
     {
-      "id": "line-0014",
-      "section_id": "section-4-004",
-      "section": "Section 4",
+      "id": "line-0015",
+      "section_id": "section-5-005",
+      "section": "Section 5",
       "text": "And worse the ones that stay and break your heart",
       "display_type": "lyric",
       "words": [
@@ -392,9 +411,9 @@
       "end_word_index": 130
     },
     {
-      "id": "line-0015",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0016",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "I'd tell her love's a losing game that's better left un-played",
       "display_type": "lyric",
       "words": [
@@ -414,9 +433,9 @@
       "end_word_index": 141
     },
     {
-      "id": "line-0016",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0017",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "I'd tell her you've yourself to blame for every choice you've made",
       "display_type": "lyric",
       "words": [
@@ -437,9 +456,9 @@
       "end_word_index": 153
     },
     {
-      "id": "line-0017",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0018",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "And I'd tell her",
       "display_type": "lyric",
       "words": [
@@ -452,9 +471,9 @@
       "end_word_index": 157
     },
     {
-      "id": "line-0018",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0019",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "And I'd tell her 'til my voice gave out",
       "display_type": "lyric",
       "words": [
@@ -472,9 +491,9 @@
       "end_word_index": 166
     },
     {
-      "id": "line-0019",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0020",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "And then",
       "display_type": "lyric",
       "words": [
@@ -485,9 +504,9 @@
       "end_word_index": 168
     },
     {
-      "id": "line-0020",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0021",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "She would smile, wait a while",
       "display_type": "lyric",
       "words": [
@@ -502,9 +521,9 @@
       "end_word_index": 174
     },
     {
-      "id": "line-0021",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0022",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "And go and do it all again",
       "display_type": "lyric",
       "words": [
@@ -520,9 +539,9 @@
       "end_word_index": 181
     },
     {
-      "id": "line-0022",
-      "section_id": "section-5-005",
-      "section": "Section 5",
+      "id": "line-0023",
+      "section_id": "section-6-006",
+      "section": "Section 6",
       "text": "If I met myself again",
       "display_type": "lyric",
       "words": [
@@ -536,9 +555,9 @@
       "end_word_index": 186
     },
     {
-      "id": "line-0023",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0024",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "If I met that girl again I'd tell her sink or swim",
       "display_type": "lyric",
       "words": [
@@ -559,9 +578,9 @@
       "end_word_index": 198
     },
     {
-      "id": "line-0024",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0025",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "I'd wake her up and god I'd make her run",
       "display_type": "lyric",
       "words": [
@@ -580,9 +599,9 @@
       "end_word_index": 208
     },
     {
-      "id": "line-0025",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0026",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "I'd turn back time and say girl stay away from him",
       "display_type": "lyric",
       "words": [
@@ -602,9 +621,9 @@
       "end_word_index": 219
     },
     {
-      "id": "line-0026",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0027",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "But if I did",
       "display_type": "lyric",
       "words": [
@@ -617,9 +636,9 @@
       "end_word_index": 223
     },
     {
-      "id": "line-0027",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0028",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "If I dared",
       "display_type": "lyric",
       "words": [
@@ -631,9 +650,9 @@
       "end_word_index": 226
     },
     {
-      "id": "line-0028",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0029",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "There's a price",
       "display_type": "lyric",
       "words": [
@@ -645,9 +664,9 @@
       "end_word_index": 229
     },
     {
-      "id": "line-0029",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0030",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "I would pay",
       "display_type": "lyric",
       "words": [
@@ -659,9 +678,9 @@
       "end_word_index": 232
     },
     {
-      "id": "line-0030",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0031",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "And I'd lose",
       "display_type": "lyric",
       "words": [
@@ -673,9 +692,9 @@
       "end_word_index": 235
     },
     {
-      "id": "line-0031",
-      "section_id": "section-6-006",
-      "section": "Section 6",
+      "id": "line-0032",
+      "section_id": "section-7-007",
+      "section": "Section 7",
       "text": "Cause I won't have my son",
       "display_type": "lyric",
       "words": [
@@ -690,9 +709,9 @@
       "end_word_index": 241
     },
     {
-      "id": "line-0032",
-      "section_id": "section-7-007",
-      "section": "Section 7",
+      "id": "line-0033",
+      "section_id": "section-8-008",
+      "section": "Section 8",
       "text": "If I met myself again",
       "display_type": "lyric",
       "words": [
@@ -706,9 +725,9 @@
       "end_word_index": 246
     },
     {
-      "id": "line-0033",
-      "section_id": "section-7-007",
-      "section": "Section 7",
+      "id": "line-0034",
+      "section_id": "section-8-008",
+      "section": "Section 8",
       "text": "If I met myself again",
       "display_type": "lyric",
       "words": [
@@ -722,9 +741,9 @@
       "end_word_index": 251
     },
     {
-      "id": "line-0034",
-      "section_id": "section-8-008",
-      "section": "Section 8",
+      "id": "line-0035",
+      "section_id": "section-9-009",
+      "section": "Section 9",
       "text": ". . .",
       "display_type": "instrumental",
       "words": [],
@@ -732,9 +751,9 @@
       "end_word_index": null
     },
     {
-      "id": "line-0035",
-      "section_id": "section-9-009",
-      "section": "Section 9",
+      "id": "line-0036",
+      "section_id": "section-10-010",
+      "section": "Section 10",
       "text": "If I met myself again",
       "display_type": "lyric",
       "words": [

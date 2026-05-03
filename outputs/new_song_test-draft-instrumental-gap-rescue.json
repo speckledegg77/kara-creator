@@ -17,6 +17,7 @@
     "section_count": 10,
     "auto_adjusted_line_count": 3,
     "repeated_phrase_rescue_count": 4,
+    "instrumental_following_anchor_rescue_count": 1,
     "settings": {
       "start_padding_seconds": 0.15,
       "next_line_gap_seconds": 0.08,
@@ -24,7 +25,7 @@
       "long_tail_threshold_seconds": 3.5,
       "short_line_threshold_seconds": 1.2,
       "large_internal_word_gap_seconds": 1.75,
-      "instrumental_fallback_seconds": 2.5,
+      "instrumental_fallback_seconds": 5.0,
       "auto_correct_suspicious_first_word": true,
       "suspicious_first_word_gap_seconds": 1.75,
       "first_gap_ratio_threshold": 2.5,
@@ -34,6 +35,7 @@
       "auto_anchor_lead_in_extended_max_seconds": 2.5,
       "auto_anchor_lead_in_gap_fraction": 0.33,
       "repeated_phrase_rescue": true,
+      "instrumental_following_anchor_rescue": true,
       "repeated_phrase_min_gap_seconds": 3.0,
       "repeated_phrase_after_previous_word_seconds": 4.0,
       "repeated_phrase_min_common_prefix_words": 2,
@@ -42,7 +44,7 @@
       "instrumental_before_next_line_seconds": 0.5,
       "starting_instrumental_before_first_line_seconds": 1.5
     },
-    "review_flag_count": 54,
+    "review_flag_count": 55,
     "review_flags": [
       {
         "section": "Section 1",
@@ -157,6 +159,12 @@
         "line_id": "line-0012",
         "text": "If I met myself again I wonder what she'd say",
         "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "instrumental_following_line_start_auto_adjusted_needs_review"
       },
       {
         "section": "Section 5",
@@ -374,14 +382,14 @@
     {
       "id": "section-1-001",
       "label": "Section 1",
-      "start": 8.81,
+      "start": 0.0,
       "end": 11.31,
       "lines": [
         {
           "id": "line-0001",
           "display_type": "instrumental",
           "text": ". . .",
-          "start": 8.81,
+          "start": 0.0,
           "end": 11.31,
           "confidence": "draft",
           "locked": false,
@@ -1321,14 +1329,14 @@
       "id": "section-4-004",
       "label": "Section 4",
       "start": 68.452,
-      "end": 69.452,
+      "end": 76.2,
       "lines": [
         {
           "id": "line-0011",
           "display_type": "instrumental",
           "text": ". . .",
           "start": 68.452,
-          "end": 69.452,
+          "end": 76.2,
           "confidence": "draft",
           "locked": false,
           "anchor": false,
@@ -1344,19 +1352,19 @@
     {
       "id": "section-5-005",
       "label": "Section 5",
-      "start": 69.952,
+      "start": 76.7,
       "end": 104.57,
       "lines": [
         {
           "id": "line-0012",
           "display_type": "lyric",
           "text": "If I met myself again I wonder what she'd say",
-          "start": 69.952,
+          "start": 76.7,
           "end": 85.114,
           "word_start": 69.408,
           "last_word_start": 83.2,
-          "line_anchor_start": 69.952,
-          "line_anchor_source": "repeated-phrase-rescue",
+          "line_anchor_start": 76.7,
+          "line_anchor_source": "instrumental-following-line-anchor-rescue",
           "first_internal_word_gap": 9.792,
           "max_internal_word_gap": 9.792,
           "later_internal_word_gap_typical": 0.44,
@@ -1370,14 +1378,19 @@
             "auto_anchor_reason": "suspicious_first_word",
             "repeated_phrase_uncorrected_display_start": 78.2,
             "repeated_phrase_rescued_display_start": 69.952,
-            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap"
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap",
+            "instrumental_following_uncorrected_display_start": 69.952,
+            "instrumental_following_rescued_display_start": 76.7,
+            "instrumental_following_rescue_lead_in_seconds": 2.5,
+            "instrumental_following_rescue_reason": "explicit_instrumental_before_suspicious_first_word"
           },
           "confidence": "draft",
           "locked": false,
           "anchor": false,
-          "timing_source": "kara-creator-repeated-phrase-rescue",
+          "timing_source": "kara-creator-instrumental-following-line-anchor-rescue",
           "review_flags": [
             "first_word_anchor_suspect",
+            "instrumental_following_line_start_auto_adjusted_needs_review",
             "large_internal_word_gap_needs_review",
             "line_start_auto_adjusted_needs_review",
             "repeated_phrase_line_start_auto_adjusted_needs_review",
@@ -3304,8 +3317,9 @@
     "Cautious first-word correction is only applied to longer lines where word 1 looks like an early outlier.",
     "Short held lines are flagged, but they are not auto-corrected just because word 1 is followed by a gap.",
     "Repeated phrase rescue can pull repeated or shared-opening lines earlier when the word anchors arrive implausibly late.",
+    "Lines after explicit instrumental placeholders can be moved later when word 1 looks too early and the rest of the line starts much later.",
     "Line ends are inferred from the next display line, with a larger gap before corrected or rescued next lines.",
-    "Instrumental placeholders are kept as editable display lines with empty words arrays.",
+    "Instrumental placeholders are kept as editable display lines with empty words arrays and starting instrumentals now span from 0 where possible.",
     "This is an editable draft, not a final export."
   ]
 }

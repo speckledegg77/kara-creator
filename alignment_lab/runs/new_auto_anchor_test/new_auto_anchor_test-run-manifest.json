@@ -1,19 +1,19 @@
 {
   "schema_version": "kara-run-manifest-v2",
-  "song_name": "new_song_test",
-  "dataset_name": "kara_new_song_test",
+  "song_name": "new_auto_anchor_test",
+  "dataset_name": "kara_new_auto_anchor_test",
   "source": {
-    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\vocals.mp3",
-    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\lyrics.txt"
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\lyrics.txt"
   },
   "prepared_inputs": {
-    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_song_test\\audio\\new_song_test.mp3",
-    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_song_test\\lyrics\\new_song_test.txt",
-    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_song_test\\new_song_test-line-map.json"
+    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_auto_anchor_test\\audio\\new_auto_anchor_test.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_auto_anchor_test\\lyrics\\new_auto_anchor_test.txt",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_auto_anchor_test\\new_auto_anchor_test-line-map.json"
   },
   "outputs": {
-    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_song_test-word-review-lyrics-aligner.json",
-    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_song_test-draft-lyrics-aligner-v3.json"
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_auto_anchor_test-word-review-lyrics-aligner.json",
+    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_auto_anchor_test-draft-lyrics-aligner-v3.json"
   },
   "parser": {
     "auto_section_size": 8,
@@ -46,44 +46,52 @@
       "label": "Section 3",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 5,
-      "lyric_line_count": 5,
+      "line_count": 4,
+      "lyric_line_count": 4,
       "instrumental_line_count": 0
     },
     {
       "label": "Section 4",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 1,
-      "lyric_line_count": 0,
-      "instrumental_line_count": 1
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
     },
     {
       "label": "Section 5",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 4,
-      "lyric_line_count": 4,
+      "line_count": 11,
+      "lyric_line_count": 11,
       "instrumental_line_count": 0
     },
     {
       "label": "Section 6",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 8,
-      "lyric_line_count": 8,
+      "line_count": 6,
+      "lyric_line_count": 6,
       "instrumental_line_count": 0
     },
     {
       "label": "Section 7",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 9,
-      "lyric_line_count": 9,
+      "line_count": 5,
+      "lyric_line_count": 5,
       "instrumental_line_count": 0
     },
     {
       "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 10,
+      "lyric_line_count": 10,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 9",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
       "line_count": 2,
@@ -91,28 +99,20 @@
       "instrumental_line_count": 0
     },
     {
-      "label": "Section 9",
-      "source": "blank_line_group",
-      "parser_mode": "blank_line_groups",
-      "line_count": 1,
-      "lyric_line_count": 0,
-      "instrumental_line_count": 1
-    },
-    {
       "label": "Section 10",
       "source": "blank_line_group",
       "parser_mode": "blank_line_groups",
-      "line_count": 1,
-      "lyric_line_count": 1,
+      "line_count": 12,
+      "lyric_line_count": 12,
       "instrumental_line_count": 0
     }
   ],
   "cleanup": {
     "removed_previous_aligner_files": [
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_song_test_word2phonemes.pickle",
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_song_test_word2phonemes.txt",
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_song_test_word_list.txt",
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\outputs\\kara_new_song_test"
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_auto_anchor_test_word2phonemes.pickle",
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_auto_anchor_test_word2phonemes.txt",
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_auto_anchor_test_word_list.txt",
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\outputs\\kara_new_auto_anchor_test"
     ]
   }
 }

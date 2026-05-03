@@ -449,7 +449,7 @@ def apply_late_next_line_anchor_rescue(
             reason = "clean_previous_line_then_late_suspicious_next_line"
 
         elif (
-            previous_source in {"late-next-line-anchor-rescue", "late-anchor-cascade-rescue", "repeated-final-word-rescue"}
+            previous_source in {"late-next-line-anchor-rescue", "late-anchor-cascade-rescue"}
             and current_word_start - previous_start >= late_anchor_cascade_gap_seconds
             and current_max_gap >= suspicious_first_word_gap_seconds
         ):
@@ -475,135 +475,6 @@ def apply_late_next_line_anchor_rescue(
 
     return rescued_count
 
-
-
-def apply_repeated_final_word_rescue(
-    lines: list[dict[str, Any]],
-    enabled: bool,
-    repeated_final_word_min_span_seconds: float,
-    repeated_final_word_collapse_window_seconds: float,
-    repeated_final_word_start_fraction: float,
-    repeated_final_word_spacing_seconds: float,
-) -> int:
-    """Spread repeated one-word display lines across a long held final word.
-
-    This targets a different pattern from repeated-line rescue.
-    Example:
-
-        Then the future can begin today
-        Today
-        Today
-
-    When the first "today" is held for a long time, the aligner can collapse
-    all the repeated Today word starts onto the end of the phrase. The karaoke
-    display needs those repeated one-word lines spread earlier across the held
-    phrase.
-    """
-    if not enabled:
-        return 0
-
-    rescued_count = 0
-    index = 0
-
-    while index < len(lines) - 1:
-        base_line = lines[index]
-
-        if base_line.get("display_type") != "lyric" or base_line.get("start") is None:
-            index += 1
-            continue
-
-        base_words = normalised_word_texts(base_line)
-        if len(base_words) < 2:
-            index += 1
-            continue
-
-        final_word = base_words[-1]
-        if not final_word:
-            index += 1
-            continue
-
-        run_indexes: list[int] = []
-        probe_index = index + 1
-
-        while probe_index < len(lines):
-            candidate = lines[probe_index]
-
-            if candidate.get("display_type") != "lyric" or candidate.get("start") is None:
-                break
-
-            candidate_words = normalised_word_texts(candidate)
-            if candidate_words != [final_word]:
-                break
-
-            run_indexes.append(probe_index)
-            probe_index += 1
-
-        if not run_indexes:
-            index += 1
-            continue
-
-        base_start = as_float(base_line.get("start"))
-        base_last_word_start = as_float(base_line.get("last_word_start"), as_float(base_line.get("word_start"), base_start))
-        held_span = base_last_word_start - base_start
-
-        if held_span < repeated_final_word_min_span_seconds:
-            index += 1
-            continue
-
-        # The collapse signal is that the repeated one-word lines' anchors are
-        # very close to the base line's final-word anchor. If they are already
-        # naturally spread out, do not move them.
-        collapse_detected = False
-        for run_index in run_indexes:
-            candidate = lines[run_index]
-            candidate_word_start = as_float(candidate.get("word_start"), as_float(candidate.get("start")))
-            if abs(candidate_word_start - base_last_word_start) <= repeated_final_word_collapse_window_seconds:
-                collapse_detected = True
-                break
-
-        if not collapse_detected:
-            index += 1
-            continue
-
-        first_rescue_start = base_start + (held_span * repeated_final_word_start_fraction)
-        first_rescue_start = max(base_start + 1.0, first_rescue_start)
-        latest_start_for_last_repeat = max(base_start + 1.0, base_last_word_start - 1.0)
-
-        for offset, run_index in enumerate(run_indexes):
-            candidate = lines[run_index]
-            current_start = as_float(candidate.get("start"))
-            proposed_start = first_rescue_start + (offset * repeated_final_word_spacing_seconds)
-
-            # Keep the final repeated display line before the aligner's collapsed
-            # final-word anchor, leaving room for the display to move on.
-            remaining_after_this = len(run_indexes) - offset - 1
-            proposed_start = min(
-                proposed_start,
-                latest_start_for_last_repeat - (remaining_after_this * 1.0),
-            )
-            proposed_start = max(base_start + 0.75, proposed_start)
-
-            if proposed_start >= current_start - 0.25:
-                continue
-
-            candidate["start"] = round_time(proposed_start)
-            candidate["line_anchor_start"] = round_time(proposed_start)
-            candidate["line_anchor_source"] = "repeated-final-word-rescue"
-            candidate["timing_source"] = "kara-creator-repeated-final-word-rescue"
-            candidate.setdefault("anchor_diagnostics", {})["repeated_final_word_uncorrected_display_start"] = round_time(current_start)
-            candidate["anchor_diagnostics"]["repeated_final_word_rescued_display_start"] = round_time(proposed_start)
-            candidate["anchor_diagnostics"]["repeated_final_word_base_line_id"] = base_line.get("id")
-            candidate["anchor_diagnostics"]["repeated_final_word_held_span_seconds"] = round_time(held_span)
-            candidate["anchor_diagnostics"]["repeated_final_word"] = final_word
-            add_flags(candidate, ["repeated_final_word_line_start_auto_adjusted_needs_review"])
-            rescued_count += 1
-
-        if rescued_count:
-            add_flags(base_line, ["repeated_final_word_run_needs_review"])
-
-        index = run_indexes[-1] + 1
-
-    return rescued_count
 
 def apply_repeated_phrase_rescue(
     lines: list[dict[str, Any]],
@@ -914,8 +785,7 @@ def display_gap_before_next_line(
         or "repeated_identical_line_start_auto_adjusted_needs_review" in next_flags
         or "instrumental_following_line_start_auto_adjusted_needs_review" in next_flags
         or "late_next_line_anchor_rescue_applied_needs_review" in next_flags
-        or "repeated_final_word_line_start_auto_adjusted_needs_review" in next_flags
-        or next_source in {"corrected-word-cluster", "repeated-phrase-rescue", "repeated-identical-line-rescue", "instrumental-following-line-anchor-rescue", "late-next-line-anchor-rescue", "late-anchor-cascade-rescue", "repeated-final-word-rescue"}
+        or next_source in {"corrected-word-cluster", "repeated-phrase-rescue", "repeated-identical-line-rescue", "instrumental-following-line-anchor-rescue", "late-next-line-anchor-rescue", "late-anchor-cascade-rescue"}
     )
 
     if next_was_moved and "long_tail_after_last_word_needs_review" in current_flags:
@@ -1029,11 +899,6 @@ def build_draft(
     auto_anchor_lead_in_gap_fraction: float,
     auto_anchor_min_words: int,
     repeated_phrase_rescue: bool,
-    repeated_final_word_rescue: bool,
-    repeated_final_word_min_span_seconds: float,
-    repeated_final_word_collapse_window_seconds: float,
-    repeated_final_word_start_fraction: float,
-    repeated_final_word_spacing_seconds: float,
     instrumental_following_anchor_rescue: bool,
     late_next_line_anchor_rescue: bool,
     late_next_line_gap_seconds: float,
@@ -1096,15 +961,6 @@ def build_draft(
         late_anchor_cascade_gap_seconds=late_anchor_cascade_gap_seconds,
         suspicious_first_word_gap_seconds=suspicious_first_word_gap_seconds,
         first_gap_ratio_threshold=first_gap_ratio_threshold,
-    )
-
-    repeated_final_word_rescue_count = apply_repeated_final_word_rescue(
-        lines=ordered_lines,
-        enabled=repeated_final_word_rescue,
-        repeated_final_word_min_span_seconds=repeated_final_word_min_span_seconds,
-        repeated_final_word_collapse_window_seconds=repeated_final_word_collapse_window_seconds,
-        repeated_final_word_start_fraction=repeated_final_word_start_fraction,
-        repeated_final_word_spacing_seconds=repeated_final_word_spacing_seconds,
     )
 
     repeated_phrase_rescue_count = apply_repeated_phrase_rescue(
@@ -1265,7 +1121,6 @@ def build_draft(
             "section_count": len(output_sections),
             "auto_adjusted_line_count": auto_adjusted_line_count,
             "repeated_phrase_rescue_count": repeated_phrase_rescue_count,
-            "repeated_final_word_rescue_count": repeated_final_word_rescue_count,
             "instrumental_following_anchor_rescue_count": instrumental_following_anchor_rescue_count,
             "late_next_line_anchor_rescue_count": late_next_line_anchor_rescue_count,
             "settings": {
@@ -1285,11 +1140,6 @@ def build_draft(
                 "auto_anchor_lead_in_extended_max_seconds": auto_anchor_lead_in_extended_max_seconds,
                 "auto_anchor_lead_in_gap_fraction": auto_anchor_lead_in_gap_fraction,
                 "repeated_phrase_rescue": repeated_phrase_rescue,
-                "repeated_final_word_rescue": repeated_final_word_rescue,
-                "repeated_final_word_min_span_seconds": repeated_final_word_min_span_seconds,
-                "repeated_final_word_collapse_window_seconds": repeated_final_word_collapse_window_seconds,
-                "repeated_final_word_start_fraction": repeated_final_word_start_fraction,
-                "repeated_final_word_spacing_seconds": repeated_final_word_spacing_seconds,
                 "instrumental_following_anchor_rescue": instrumental_following_anchor_rescue,
                 "late_next_line_anchor_rescue": late_next_line_anchor_rescue,
                 "late_next_line_gap_seconds": late_next_line_gap_seconds,
@@ -1478,40 +1328,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
-        "--no-repeated-final-word-rescue",
-        action="store_true",
-        help="Disable rescue for repeated one-word lines after a long held final word.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-min-span-ms",
-        type=int,
-        default=8000,
-        help="Minimum base-line start to final-word span for repeated final word rescue. Default: 8000.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-collapse-window-ms",
-        type=int,
-        default=1250,
-        help="Repeated one-word anchors within this window of the base final word are treated as collapsed. Default: 1250.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-start-fraction",
-        type=float,
-        default=0.55,
-        help="Where in the long held phrase to place the first repeated one-word line. Default: 0.55.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-spacing-ms",
-        type=int,
-        default=4200,
-        help="Spacing between rescued repeated final-word display lines. Default: 4200.",
-    )
-
-    parser.add_argument(
         "--no-instrumental-following-anchor-rescue",
         action="store_true",
         help="Disable the rescue that can move a lyric line later when it follows an explicit instrumental placeholder.",
@@ -1599,11 +1415,6 @@ def main() -> int:
             auto_anchor_lead_in_gap_fraction=args.auto_anchor_lead_in_gap_fraction,
             auto_anchor_min_words=args.auto_anchor_min_words,
             repeated_phrase_rescue=not args.no_repeated_phrase_rescue,
-            repeated_final_word_rescue=not args.no_repeated_final_word_rescue,
-            repeated_final_word_min_span_seconds=args.repeated_final_word_min_span_ms / 1000,
-            repeated_final_word_collapse_window_seconds=args.repeated_final_word_collapse_window_ms / 1000,
-            repeated_final_word_start_fraction=args.repeated_final_word_start_fraction,
-            repeated_final_word_spacing_seconds=args.repeated_final_word_spacing_ms / 1000,
             instrumental_following_anchor_rescue=not args.no_instrumental_following_anchor_rescue,
             late_next_line_anchor_rescue=not args.no_late_next_line_anchor_rescue,
             late_next_line_gap_seconds=args.late_next_line_gap_ms / 1000,
@@ -1634,7 +1445,6 @@ def main() -> int:
         print(f"Instrumentals:            {draft['alignment']['instrumental_line_count']}")
         print(f"Auto-adjusted lines:      {draft['alignment']['auto_adjusted_line_count']}")
         print(f"Repeated-phrase rescues:  {draft['alignment']['repeated_phrase_rescue_count']}")
-        print(f"Repeated final-word rescues: {draft['alignment']['repeated_final_word_rescue_count']}")
         print(f"Instrumental line rescues: {draft['alignment']['instrumental_following_anchor_rescue_count']}")
         print(f"Late next-line rescues:    {draft['alignment']['late_next_line_anchor_rescue_count']}")
         print(f"Review flags:             {draft['alignment']['review_flag_count']}")

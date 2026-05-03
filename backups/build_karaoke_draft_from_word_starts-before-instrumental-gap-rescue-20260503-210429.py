@@ -277,334 +277,6 @@ def apply_cautious_first_word_corrections(
     return adjusted_count
 
 
-def apply_instrumental_following_anchor_rescue(
-    lines: list[dict[str, Any]],
-    enabled: bool,
-    suspicious_first_word_gap_seconds: float,
-    first_gap_ratio_threshold: float,
-    auto_anchor_lead_in_min_seconds: float,
-    auto_anchor_lead_in_max_seconds: float,
-    auto_anchor_lead_in_gap_fraction: float,
-    start_padding_seconds: float,
-) -> int:
-    """Move a lyric line later when it follows an explicit instrumental marker and word 1 looks too early.
-
-    This is deliberately narrower than the general first-word correction. A manually placed
-    instrumental line is a strong hint that there should be a real gap before the next lyric line.
-    If the aligner places word 1 early but the rest of the line starts much later, the instrumental
-    would otherwise be squeezed into a tiny display duration.
-    """
-    if not enabled:
-        return 0
-
-    rescued_count = 0
-
-    for index, line in enumerate(lines):
-        if line.get("display_type") != "lyric" or line.get("start") is None:
-            continue
-
-        previous_index = index - 1
-        follows_instrumental = False
-
-        while previous_index >= 0:
-            previous_line = lines[previous_index]
-            if previous_line.get("display_type") == "instrumental":
-                follows_instrumental = True
-                previous_index -= 1
-                continue
-            break
-
-        if not follows_instrumental:
-            continue
-
-        words = line.get("words", [])
-        if len(words) < 2:
-            add_flags(line, ["instrumental_before_single_word_line_needs_review"])
-            continue
-
-        diagnostics = line.get("anchor_diagnostics", {})
-        first_gap = as_float(diagnostics.get("first_internal_word_gap"))
-        later_typical = as_float(diagnostics.get("later_internal_word_gap_typical"))
-
-        if first_gap < suspicious_first_word_gap_seconds:
-            continue
-
-        if later_typical > 0 and first_gap < later_typical * first_gap_ratio_threshold:
-            continue
-
-        second_word_start = as_float(words[1].get("start"))
-        lead_in = min(
-            auto_anchor_lead_in_max_seconds,
-            max(auto_anchor_lead_in_min_seconds, first_gap * auto_anchor_lead_in_gap_fraction),
-        )
-        corrected_start = max(0.0, second_word_start - lead_in)
-        uncorrected_start = as_float(line.get("start"))
-
-        if corrected_start <= uncorrected_start + max(0.5, start_padding_seconds):
-            continue
-
-        line["start"] = round_time(corrected_start)
-        line["line_anchor_start"] = round_time(corrected_start)
-        line["line_anchor_source"] = "instrumental-following-line-anchor-rescue"
-        line["timing_source"] = "kara-creator-instrumental-following-line-anchor-rescue"
-        line.setdefault("anchor_diagnostics", {})["instrumental_following_uncorrected_display_start"] = round_time(uncorrected_start)
-        line["anchor_diagnostics"]["instrumental_following_rescued_display_start"] = round_time(corrected_start)
-        line["anchor_diagnostics"]["instrumental_following_rescue_lead_in_seconds"] = round_time(lead_in)
-        line["anchor_diagnostics"]["instrumental_following_rescue_reason"] = "explicit_instrumental_before_suspicious_first_word"
-        add_flags(line, ["instrumental_following_line_start_auto_adjusted_needs_review"])
-        rescued_count += 1
-
-    return rescued_count
-
-
-def first_word_looks_like_early_outlier(
-    line: dict[str, Any],
-    suspicious_first_word_gap_seconds: float,
-    first_gap_ratio_threshold: float,
-) -> bool:
-    diagnostics = line.get("anchor_diagnostics", {})
-    first_gap = as_float(diagnostics.get("first_internal_word_gap"))
-    later_typical = as_float(diagnostics.get("later_internal_word_gap_typical"))
-
-    if first_gap < suspicious_first_word_gap_seconds:
-        return False
-
-    if later_typical <= 0:
-        return False
-
-    return first_gap >= later_typical * first_gap_ratio_threshold
-
-
-def estimate_display_step_after_line(line: dict[str, Any]) -> float:
-    word_count = max(1, len(line.get("words", [])))
-    return min(2.5, max(1.2, (word_count * 0.35) + 0.2))
-
-
-def apply_late_next_line_anchor_rescue(
-    lines: list[dict[str, Any]],
-    enabled: bool,
-    late_next_line_gap_seconds: float,
-    late_next_line_after_previous_word_seconds: float,
-    late_anchor_cascade_gap_seconds: float,
-    suspicious_first_word_gap_seconds: float,
-    first_gap_ratio_threshold: float,
-) -> int:
-    """Move a lyric line earlier when the next line's first word appears too late.
-
-    This targets a different failure from first-word early-outlier correction.
-    Example: a clean line ends on a word such as "specialism", then the next
-    line's first aligned word, such as "Clear", arrives several seconds too
-    late. In that case the previous lyric stays on screen too long and the
-    next line is missed.
-
-    The rule deliberately skips cases where word 1 looks like an early outlier,
-    because those are better handled by the cautious first-word correction.
-    """
-    if not enabled:
-        return 0
-
-    rescued_count = 0
-
-    for index, line in enumerate(lines):
-        if line.get("display_type") != "lyric" or line.get("start") is None:
-            continue
-
-        previous_line = previous_lyric_line(lines, index)
-        if not previous_line or previous_line.get("start") is None:
-            continue
-
-        if first_word_looks_like_early_outlier(
-            line=line,
-            suspicious_first_word_gap_seconds=suspicious_first_word_gap_seconds,
-            first_gap_ratio_threshold=first_gap_ratio_threshold,
-        ):
-            continue
-
-        current_start = as_float(line.get("start"))
-        current_word_start = as_float(line.get("word_start"), current_start)
-        current_max_gap = as_float(line.get("max_internal_word_gap"))
-        previous_start = as_float(previous_line.get("start"))
-        previous_last_word_start = as_float(previous_line.get("last_word_start"), previous_start)
-        previous_max_gap = as_float(previous_line.get("max_internal_word_gap"))
-        gap_from_previous_last_word = current_word_start - previous_last_word_start
-        previous_source = str(previous_line.get("line_anchor_source", ""))
-
-        proposed_start: float | None = None
-        reason = ""
-
-        previous_line_is_clean_enough = previous_max_gap < max(
-            suspicious_first_word_gap_seconds,
-            late_next_line_gap_seconds,
-        )
-
-        if (
-            previous_line_is_clean_enough
-            and current_max_gap >= suspicious_first_word_gap_seconds
-            and gap_from_previous_last_word >= late_next_line_gap_seconds
-        ):
-            proposed_start = max(
-                previous_start + 0.75,
-                previous_last_word_start + late_next_line_after_previous_word_seconds,
-            )
-            reason = "clean_previous_line_then_late_suspicious_next_line"
-
-        elif (
-            previous_source in {"late-next-line-anchor-rescue", "late-anchor-cascade-rescue", "repeated-final-word-rescue"}
-            and current_word_start - previous_start >= late_anchor_cascade_gap_seconds
-            and current_max_gap >= suspicious_first_word_gap_seconds
-        ):
-            proposed_start = previous_start + estimate_display_step_after_line(previous_line)
-            reason = "cascade_after_late_anchor_rescue"
-
-        if proposed_start is None:
-            continue
-
-        if proposed_start >= current_start - 0.5:
-            continue
-
-        line["start"] = round_time(proposed_start)
-        line["line_anchor_start"] = round_time(proposed_start)
-        line["line_anchor_source"] = "late-anchor-cascade-rescue" if "cascade" in reason else "late-next-line-anchor-rescue"
-        line["timing_source"] = "kara-creator-late-next-line-anchor-rescue"
-        line.setdefault("anchor_diagnostics", {})["late_anchor_uncorrected_display_start"] = round_time(current_start)
-        line["anchor_diagnostics"]["late_anchor_rescued_display_start"] = round_time(proposed_start)
-        line["anchor_diagnostics"]["late_anchor_gap_from_previous_last_word"] = round_time(gap_from_previous_last_word)
-        line["anchor_diagnostics"]["late_anchor_reason"] = reason
-        add_flags(line, ["late_next_line_anchor_rescue_applied_needs_review"])
-        rescued_count += 1
-
-    return rescued_count
-
-
-
-def apply_repeated_final_word_rescue(
-    lines: list[dict[str, Any]],
-    enabled: bool,
-    repeated_final_word_min_span_seconds: float,
-    repeated_final_word_collapse_window_seconds: float,
-    repeated_final_word_start_fraction: float,
-    repeated_final_word_spacing_seconds: float,
-) -> int:
-    """Spread repeated one-word display lines across a long held final word.
-
-    This targets a different pattern from repeated-line rescue.
-    Example:
-
-        Then the future can begin today
-        Today
-        Today
-
-    When the first "today" is held for a long time, the aligner can collapse
-    all the repeated Today word starts onto the end of the phrase. The karaoke
-    display needs those repeated one-word lines spread earlier across the held
-    phrase.
-    """
-    if not enabled:
-        return 0
-
-    rescued_count = 0
-    index = 0
-
-    while index < len(lines) - 1:
-        base_line = lines[index]
-
-        if base_line.get("display_type") != "lyric" or base_line.get("start") is None:
-            index += 1
-            continue
-
-        base_words = normalised_word_texts(base_line)
-        if len(base_words) < 2:
-            index += 1
-            continue
-
-        final_word = base_words[-1]
-        if not final_word:
-            index += 1
-            continue
-
-        run_indexes: list[int] = []
-        probe_index = index + 1
-
-        while probe_index < len(lines):
-            candidate = lines[probe_index]
-
-            if candidate.get("display_type") != "lyric" or candidate.get("start") is None:
-                break
-
-            candidate_words = normalised_word_texts(candidate)
-            if candidate_words != [final_word]:
-                break
-
-            run_indexes.append(probe_index)
-            probe_index += 1
-
-        if not run_indexes:
-            index += 1
-            continue
-
-        base_start = as_float(base_line.get("start"))
-        base_last_word_start = as_float(base_line.get("last_word_start"), as_float(base_line.get("word_start"), base_start))
-        held_span = base_last_word_start - base_start
-
-        if held_span < repeated_final_word_min_span_seconds:
-            index += 1
-            continue
-
-        # The collapse signal is that the repeated one-word lines' anchors are
-        # very close to the base line's final-word anchor. If they are already
-        # naturally spread out, do not move them.
-        collapse_detected = False
-        for run_index in run_indexes:
-            candidate = lines[run_index]
-            candidate_word_start = as_float(candidate.get("word_start"), as_float(candidate.get("start")))
-            if abs(candidate_word_start - base_last_word_start) <= repeated_final_word_collapse_window_seconds:
-                collapse_detected = True
-                break
-
-        if not collapse_detected:
-            index += 1
-            continue
-
-        first_rescue_start = base_start + (held_span * repeated_final_word_start_fraction)
-        first_rescue_start = max(base_start + 1.0, first_rescue_start)
-        latest_start_for_last_repeat = max(base_start + 1.0, base_last_word_start - 1.0)
-
-        for offset, run_index in enumerate(run_indexes):
-            candidate = lines[run_index]
-            current_start = as_float(candidate.get("start"))
-            proposed_start = first_rescue_start + (offset * repeated_final_word_spacing_seconds)
-
-            # Keep the final repeated display line before the aligner's collapsed
-            # final-word anchor, leaving room for the display to move on.
-            remaining_after_this = len(run_indexes) - offset - 1
-            proposed_start = min(
-                proposed_start,
-                latest_start_for_last_repeat - (remaining_after_this * 1.0),
-            )
-            proposed_start = max(base_start + 0.75, proposed_start)
-
-            if proposed_start >= current_start - 0.25:
-                continue
-
-            candidate["start"] = round_time(proposed_start)
-            candidate["line_anchor_start"] = round_time(proposed_start)
-            candidate["line_anchor_source"] = "repeated-final-word-rescue"
-            candidate["timing_source"] = "kara-creator-repeated-final-word-rescue"
-            candidate.setdefault("anchor_diagnostics", {})["repeated_final_word_uncorrected_display_start"] = round_time(current_start)
-            candidate["anchor_diagnostics"]["repeated_final_word_rescued_display_start"] = round_time(proposed_start)
-            candidate["anchor_diagnostics"]["repeated_final_word_base_line_id"] = base_line.get("id")
-            candidate["anchor_diagnostics"]["repeated_final_word_held_span_seconds"] = round_time(held_span)
-            candidate["anchor_diagnostics"]["repeated_final_word"] = final_word
-            add_flags(candidate, ["repeated_final_word_line_start_auto_adjusted_needs_review"])
-            rescued_count += 1
-
-        if rescued_count:
-            add_flags(base_line, ["repeated_final_word_run_needs_review"])
-
-        index = run_indexes[-1] + 1
-
-    return rescued_count
-
 def apply_repeated_phrase_rescue(
     lines: list[dict[str, Any]],
     enabled: bool,
@@ -763,45 +435,10 @@ def assign_instrumental_run(
 
         gap_start = max(previous_start + 0.75, previous_last_word_start + instrumental_after_previous_word_seconds)
         gap_end = following_start - instrumental_before_next_line_seconds
-        desired_minimum = max(total_minimum, instrumental_fallback_seconds * count)
-
-        following_index = None
-        for candidate_index, candidate in enumerate(lines):
-            if candidate is following_line:
-                following_index = candidate_index
-                break
-
-        following_is_last_lyric = following_index is not None and next_lyric_line(lines, following_index) is None
-        has_audio_room_for_late_final_line = (
-            audio_duration_seconds is not None
-            and audio_duration_seconds > gap_start + desired_minimum + 0.75
-        )
-
-        if gap_end - gap_start < desired_minimum and following_is_last_lyric and has_audio_room_for_late_final_line:
-            corrected_following_start = min(
-                gap_start + desired_minimum + instrumental_before_next_line_seconds,
-                max(gap_start + total_minimum + instrumental_before_next_line_seconds, audio_duration_seconds - 1.0),
-            )
-
-            if corrected_following_start > following_start:
-                following_line["start"] = round_time(corrected_following_start)
-                following_line["line_anchor_start"] = round_time(corrected_following_start)
-                following_line["line_anchor_source"] = "final-instrumental-gap-rescue"
-                following_line["timing_source"] = "kara-creator-final-instrumental-gap-rescue"
-                following_line.setdefault("anchor_diagnostics", {})["final_instrumental_gap_original_start"] = round_time(following_start)
-                following_line["anchor_diagnostics"]["final_instrumental_gap_rescued_start"] = round_time(corrected_following_start)
-                following_line["anchor_diagnostics"]["final_instrumental_gap_desired_seconds"] = round_time(desired_minimum)
-                add_flags(following_line, ["final_instrumental_following_line_auto_adjusted_needs_review"])
-                following_start = corrected_following_start
-                gap_end = following_start - instrumental_before_next_line_seconds
-                flags_for_all.append("final_instrumental_gap_rescue_applied_needs_review")
 
         if gap_end - gap_start < total_minimum:
-            gap_start = max(0.0, following_start - instrumental_before_next_line_seconds - desired_minimum)
+            gap_start = max(0.0, following_start - instrumental_before_next_line_seconds - max(total_minimum, instrumental_fallback_seconds * count))
             flags_for_all.append("instrumental_gap_too_short_needs_review")
-
-        if gap_end - gap_start < desired_minimum:
-            flags_for_all.append("instrumental_shorter_than_preferred_needs_review")
 
         if gap_end <= gap_start:
             gap_end = gap_start + total_minimum
@@ -810,12 +447,8 @@ def assign_instrumental_run(
     elif following_line:
         following_start = as_float(following_line.get("start"))
         gap_end = max(0.0, following_start - starting_instrumental_before_first_line_seconds)
-        gap_start = 0.0
+        gap_start = max(0.0, gap_end - instrumental_fallback_seconds * count)
         flags_for_all.append("instrumental_at_start_needs_review")
-
-        if gap_end - gap_start < total_minimum:
-            gap_start = max(0.0, gap_end - max(total_minimum, instrumental_fallback_seconds * count))
-            flags_for_all.append("instrumental_gap_too_short_needs_review")
 
         if gap_end <= gap_start:
             gap_end = gap_start + total_minimum
@@ -829,8 +462,7 @@ def assign_instrumental_run(
         flags_for_all.append("instrumental_at_end_needs_review")
 
         if audio_duration_seconds and audio_duration_seconds > gap_start + min_each:
-            gap_end = audio_duration_seconds
-            flags_for_all.append("instrumental_extended_to_audio_end_needs_review")
+            gap_end = min(gap_end, audio_duration_seconds)
 
     else:
         gap_start = 0.0
@@ -912,10 +544,7 @@ def display_gap_before_next_line(
         "line_start_auto_adjusted_needs_review" in next_flags
         or "repeated_phrase_line_start_auto_adjusted_needs_review" in next_flags
         or "repeated_identical_line_start_auto_adjusted_needs_review" in next_flags
-        or "instrumental_following_line_start_auto_adjusted_needs_review" in next_flags
-        or "late_next_line_anchor_rescue_applied_needs_review" in next_flags
-        or "repeated_final_word_line_start_auto_adjusted_needs_review" in next_flags
-        or next_source in {"corrected-word-cluster", "repeated-phrase-rescue", "repeated-identical-line-rescue", "instrumental-following-line-anchor-rescue", "late-next-line-anchor-rescue", "late-anchor-cascade-rescue", "repeated-final-word-rescue"}
+        or next_source in {"corrected-word-cluster", "repeated-phrase-rescue", "repeated-identical-line-rescue"}
     )
 
     if next_was_moved and "long_tail_after_last_word_needs_review" in current_flags:
@@ -1029,16 +658,6 @@ def build_draft(
     auto_anchor_lead_in_gap_fraction: float,
     auto_anchor_min_words: int,
     repeated_phrase_rescue: bool,
-    repeated_final_word_rescue: bool,
-    repeated_final_word_min_span_seconds: float,
-    repeated_final_word_collapse_window_seconds: float,
-    repeated_final_word_start_fraction: float,
-    repeated_final_word_spacing_seconds: float,
-    instrumental_following_anchor_rescue: bool,
-    late_next_line_anchor_rescue: bool,
-    late_next_line_gap_seconds: float,
-    late_next_line_after_previous_word_seconds: float,
-    late_anchor_cascade_gap_seconds: float,
     repeated_phrase_min_gap_seconds: float,
     repeated_phrase_after_previous_word_seconds: float,
     repeated_phrase_min_common_prefix_words: int,
@@ -1075,36 +694,6 @@ def build_draft(
         auto_anchor_min_words=auto_anchor_min_words,
         long_tail_threshold_seconds=long_tail_threshold_seconds,
         start_padding_seconds=start_padding_seconds,
-    )
-
-    instrumental_following_anchor_rescue_count = apply_instrumental_following_anchor_rescue(
-        lines=ordered_lines,
-        enabled=instrumental_following_anchor_rescue,
-        suspicious_first_word_gap_seconds=suspicious_first_word_gap_seconds,
-        first_gap_ratio_threshold=first_gap_ratio_threshold,
-        auto_anchor_lead_in_min_seconds=auto_anchor_lead_in_min_seconds,
-        auto_anchor_lead_in_max_seconds=auto_anchor_lead_in_extended_max_seconds,
-        auto_anchor_lead_in_gap_fraction=auto_anchor_lead_in_gap_fraction,
-        start_padding_seconds=start_padding_seconds,
-    )
-
-    late_next_line_anchor_rescue_count = apply_late_next_line_anchor_rescue(
-        lines=ordered_lines,
-        enabled=late_next_line_anchor_rescue,
-        late_next_line_gap_seconds=late_next_line_gap_seconds,
-        late_next_line_after_previous_word_seconds=late_next_line_after_previous_word_seconds,
-        late_anchor_cascade_gap_seconds=late_anchor_cascade_gap_seconds,
-        suspicious_first_word_gap_seconds=suspicious_first_word_gap_seconds,
-        first_gap_ratio_threshold=first_gap_ratio_threshold,
-    )
-
-    repeated_final_word_rescue_count = apply_repeated_final_word_rescue(
-        lines=ordered_lines,
-        enabled=repeated_final_word_rescue,
-        repeated_final_word_min_span_seconds=repeated_final_word_min_span_seconds,
-        repeated_final_word_collapse_window_seconds=repeated_final_word_collapse_window_seconds,
-        repeated_final_word_start_fraction=repeated_final_word_start_fraction,
-        repeated_final_word_spacing_seconds=repeated_final_word_spacing_seconds,
     )
 
     repeated_phrase_rescue_count = apply_repeated_phrase_rescue(
@@ -1265,9 +854,6 @@ def build_draft(
             "section_count": len(output_sections),
             "auto_adjusted_line_count": auto_adjusted_line_count,
             "repeated_phrase_rescue_count": repeated_phrase_rescue_count,
-            "repeated_final_word_rescue_count": repeated_final_word_rescue_count,
-            "instrumental_following_anchor_rescue_count": instrumental_following_anchor_rescue_count,
-            "late_next_line_anchor_rescue_count": late_next_line_anchor_rescue_count,
             "settings": {
                 "start_padding_seconds": start_padding_seconds,
                 "next_line_gap_seconds": next_line_gap_seconds,
@@ -1285,16 +871,6 @@ def build_draft(
                 "auto_anchor_lead_in_extended_max_seconds": auto_anchor_lead_in_extended_max_seconds,
                 "auto_anchor_lead_in_gap_fraction": auto_anchor_lead_in_gap_fraction,
                 "repeated_phrase_rescue": repeated_phrase_rescue,
-                "repeated_final_word_rescue": repeated_final_word_rescue,
-                "repeated_final_word_min_span_seconds": repeated_final_word_min_span_seconds,
-                "repeated_final_word_collapse_window_seconds": repeated_final_word_collapse_window_seconds,
-                "repeated_final_word_start_fraction": repeated_final_word_start_fraction,
-                "repeated_final_word_spacing_seconds": repeated_final_word_spacing_seconds,
-                "instrumental_following_anchor_rescue": instrumental_following_anchor_rescue,
-                "late_next_line_anchor_rescue": late_next_line_anchor_rescue,
-                "late_next_line_gap_seconds": late_next_line_gap_seconds,
-                "late_next_line_after_previous_word_seconds": late_next_line_after_previous_word_seconds,
-                "late_anchor_cascade_gap_seconds": late_anchor_cascade_gap_seconds,
                 "repeated_phrase_min_gap_seconds": repeated_phrase_min_gap_seconds,
                 "repeated_phrase_after_previous_word_seconds": repeated_phrase_after_previous_word_seconds,
                 "repeated_phrase_min_common_prefix_words": repeated_phrase_min_common_prefix_words,
@@ -1313,10 +889,8 @@ def build_draft(
             "Cautious first-word correction is only applied to longer lines where word 1 looks like an early outlier.",
             "Short held lines are flagged, but they are not auto-corrected just because word 1 is followed by a gap.",
             "Repeated phrase rescue can pull repeated or shared-opening lines earlier when the word anchors arrive implausibly late.",
-            "Lines after explicit instrumental placeholders can be moved later when word 1 looks too early and the rest of the line starts much later.",
-            "A late next-line rescue can move a lyric line earlier when a clean previous line is followed by a suspiciously late next-line anchor.",
             "Line ends are inferred from the next display line, with a larger gap before corrected or rescued next lines.",
-            "Instrumental placeholders are kept as editable display lines with empty words arrays and starting instrumentals now span from 0 where possible.",
+            "Instrumental placeholders are kept as editable display lines with empty words arrays.",
             "This is an editable draft, not a final export.",
         ],
     }
@@ -1391,8 +965,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--instrumental-fallback-ms",
         type=int,
-        default=5000,
-        help="Fallback duration for squeezed instrumental placeholders at the start, middle, or end. Default: 5000.",
+        default=2500,
+        help="Fallback duration for instrumental placeholders at the start or end. Default: 2500.",
     )
 
     parser.add_argument(
@@ -1478,73 +1052,6 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     parser.add_argument(
-        "--no-repeated-final-word-rescue",
-        action="store_true",
-        help="Disable rescue for repeated one-word lines after a long held final word.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-min-span-ms",
-        type=int,
-        default=8000,
-        help="Minimum base-line start to final-word span for repeated final word rescue. Default: 8000.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-collapse-window-ms",
-        type=int,
-        default=1250,
-        help="Repeated one-word anchors within this window of the base final word are treated as collapsed. Default: 1250.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-start-fraction",
-        type=float,
-        default=0.55,
-        help="Where in the long held phrase to place the first repeated one-word line. Default: 0.55.",
-    )
-
-    parser.add_argument(
-        "--repeated-final-word-spacing-ms",
-        type=int,
-        default=4200,
-        help="Spacing between rescued repeated final-word display lines. Default: 4200.",
-    )
-
-    parser.add_argument(
-        "--no-instrumental-following-anchor-rescue",
-        action="store_true",
-        help="Disable the rescue that can move a lyric line later when it follows an explicit instrumental placeholder.",
-    )
-
-    parser.add_argument(
-        "--no-late-next-line-anchor-rescue",
-        action="store_true",
-        help="Disable rescue for lines whose first word appears too late after a clean previous line.",
-    )
-
-    parser.add_argument(
-        "--late-next-line-gap-ms",
-        type=int,
-        default=2200,
-        help="Gap after the previous last word that can trigger late next-line rescue. Default: 2200.",
-    )
-
-    parser.add_argument(
-        "--late-next-line-after-previous-word-ms",
-        type=int,
-        default=1000,
-        help="Place late-rescued lines this long after the previous lyric's last word. Default: 1000.",
-    )
-
-    parser.add_argument(
-        "--late-anchor-cascade-gap-ms",
-        type=int,
-        default=6500,
-        help="Gap from a rescued previous line that can trigger one cautious cascade rescue. Default: 6500.",
-    )
-
-    parser.add_argument(
         "--repeated-phrase-min-gap-ms",
         type=int,
         default=3000,
@@ -1599,16 +1106,6 @@ def main() -> int:
             auto_anchor_lead_in_gap_fraction=args.auto_anchor_lead_in_gap_fraction,
             auto_anchor_min_words=args.auto_anchor_min_words,
             repeated_phrase_rescue=not args.no_repeated_phrase_rescue,
-            repeated_final_word_rescue=not args.no_repeated_final_word_rescue,
-            repeated_final_word_min_span_seconds=args.repeated_final_word_min_span_ms / 1000,
-            repeated_final_word_collapse_window_seconds=args.repeated_final_word_collapse_window_ms / 1000,
-            repeated_final_word_start_fraction=args.repeated_final_word_start_fraction,
-            repeated_final_word_spacing_seconds=args.repeated_final_word_spacing_ms / 1000,
-            instrumental_following_anchor_rescue=not args.no_instrumental_following_anchor_rescue,
-            late_next_line_anchor_rescue=not args.no_late_next_line_anchor_rescue,
-            late_next_line_gap_seconds=args.late_next_line_gap_ms / 1000,
-            late_next_line_after_previous_word_seconds=args.late_next_line_after_previous_word_ms / 1000,
-            late_anchor_cascade_gap_seconds=args.late_anchor_cascade_gap_ms / 1000,
             repeated_phrase_min_gap_seconds=args.repeated_phrase_min_gap_ms / 1000,
             repeated_phrase_after_previous_word_seconds=args.repeated_phrase_after_previous_word_ms / 1000,
             repeated_phrase_min_common_prefix_words=args.repeated_phrase_min_common_prefix_words,
@@ -1634,9 +1131,6 @@ def main() -> int:
         print(f"Instrumentals:            {draft['alignment']['instrumental_line_count']}")
         print(f"Auto-adjusted lines:      {draft['alignment']['auto_adjusted_line_count']}")
         print(f"Repeated-phrase rescues:  {draft['alignment']['repeated_phrase_rescue_count']}")
-        print(f"Repeated final-word rescues: {draft['alignment']['repeated_final_word_rescue_count']}")
-        print(f"Instrumental line rescues: {draft['alignment']['instrumental_following_anchor_rescue_count']}")
-        print(f"Late next-line rescues:    {draft['alignment']['late_next_line_anchor_rescue_count']}")
         print(f"Review flags:             {draft['alignment']['review_flag_count']}")
         print("")
 
