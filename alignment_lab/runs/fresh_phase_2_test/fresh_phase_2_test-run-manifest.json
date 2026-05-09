@@ -1,0 +1,129 @@
+{
+  "schema_version": "kara-run-manifest-v2",
+  "song_name": "fresh_phase_2_test",
+  "dataset_name": "kara_fresh_phase_2_test",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\fresh-phase-2-test\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\fresh-phase-2-test\\lyrics.txt"
+  },
+  "prepared_inputs": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\fresh_phase_2_test\\audio\\fresh_phase_2_test.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\fresh_phase_2_test\\lyrics\\fresh_phase_2_test.txt",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\fresh_phase_2_test\\fresh_phase_2_test-line-map.json"
+  },
+  "outputs": {
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\fresh_phase_2_test-word-review-lyrics-aligner.json",
+    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\fresh_phase_2_test-draft-lyrics-aligner-v3.json"
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . .",
+    "aligner_lyrics_exclude_instrumentals": true
+  },
+  "sections": [
+    {
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 11",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 12",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 8,
+      "lyric_line_count": 8,
+      "instrumental_line_count": 0
+    }
+  ],
+  "cleanup": {
+    "removed_previous_aligner_files": []
+  }
+}

@@ -1,12 +1,8 @@
 from __future__ import annotations
 
 import argparse
-import array
 import json
-import math
-import shutil
 import statistics
-import subprocess
 import sys
 from pathlib import Path
 from typing import Any
@@ -110,11 +106,6 @@ def word_starts(words: list[dict[str, Any]]) -> list[float]:
 
 
 def line_last_word_end(line: dict[str, Any]) -> float:
-    audio_estimated_end = line.get("audio_estimated_end")
-
-    if audio_estimated_end is not None:
-        return as_float(audio_estimated_end, as_float(line.get("last_word_start"), as_float(line.get("start"))))
-
     words = line.get("words", [])
 
     if words:
@@ -123,343 +114,6 @@ def line_last_word_end(line: dict[str, Any]) -> float:
             return as_float(last_word.get("end"), as_float(line.get("last_word_start"), as_float(line.get("start"))))
 
     return as_float(line.get("last_word_start"), as_float(line.get("start")))
-
-
-
-def percentile(values: list[float], percent: float) -> float:
-    if not values:
-        return 0.0
-
-    if len(values) == 1:
-        return values[0]
-
-    sorted_values = sorted(values)
-    position = (len(sorted_values) - 1) * (percent / 100.0)
-    lower_index = int(math.floor(position))
-    upper_index = int(math.ceil(position))
-
-    if lower_index == upper_index:
-        return sorted_values[lower_index]
-
-    lower_value = sorted_values[lower_index]
-    upper_value = sorted_values[upper_index]
-    fraction = position - lower_index
-    return lower_value + ((upper_value - lower_value) * fraction)
-
-
-def resolve_audio_path(path_value: Any, word_review_path: Path) -> Path | None:
-    if path_value is None:
-        return None
-
-    text = str(path_value).strip()
-    if not text:
-        return None
-
-    path = Path(text)
-
-    if path.exists():
-        return path
-
-    # If the path in the JSON is relative, try it from the word-review folder.
-    relative_candidate = (word_review_path.parent / path).resolve()
-    if relative_candidate.exists():
-        return relative_candidate
-
-    return path
-
-
-def decode_audio_rms_frames(
-    audio_path: Path,
-    frame_ms: int,
-    sample_rate: int = 16000,
-) -> dict[str, Any]:
-    if shutil.which("ffmpeg") is None:
-        raise RuntimeError("ffmpeg was not found on PATH, so audio line-end estimation cannot run.")
-
-    require_file(audio_path, "Audio file for line-end estimation")
-
-    command = [
-        "ffmpeg",
-        "-v",
-        "error",
-        "-i",
-        str(audio_path),
-        "-ac",
-        "1",
-        "-ar",
-        str(sample_rate),
-        "-f",
-        "s16le",
-        "-",
-    ]
-
-    completed = subprocess.run(command, capture_output=True)
-
-    if completed.returncode != 0:
-        error_text = completed.stderr.decode("utf-8", errors="replace").strip()
-        raise RuntimeError(f"ffmpeg could not decode the audio file. {error_text}")
-
-    raw_audio = completed.stdout
-    bytes_per_sample = 2
-    frame_sample_count = max(1, int(sample_rate * (frame_ms / 1000.0)))
-    frame_byte_count = frame_sample_count * bytes_per_sample
-    rms_values: list[float] = []
-
-    for start in range(0, len(raw_audio), frame_byte_count):
-        frame = raw_audio[start:start + frame_byte_count]
-
-        if len(frame) < bytes_per_sample:
-            continue
-
-        if len(frame) % bytes_per_sample:
-            frame = frame[:-1]
-
-        samples = array.array("h")
-        samples.frombytes(frame)
-
-        if sys.byteorder != "little":
-            samples.byteswap()
-
-        if not samples:
-            continue
-
-        # Normalise to approximately 0.0 to 1.0.
-        square_sum = 0.0
-        for sample in samples:
-            square_sum += float(sample) * float(sample)
-
-        rms = math.sqrt(square_sum / len(samples)) / 32768.0
-        rms_values.append(rms)
-
-    if not rms_values:
-        raise RuntimeError("No audio samples were decoded for line-end estimation.")
-
-    smoothed: list[float] = []
-    smoothing_radius = 2
-
-    for index in range(len(rms_values)):
-        left = max(0, index - smoothing_radius)
-        right = min(len(rms_values), index + smoothing_radius + 1)
-        smoothed.append(sum(rms_values[left:right]) / (right - left))
-
-    duration_seconds = (len(raw_audio) / bytes_per_sample) / sample_rate
-    non_zero_values = [value for value in smoothed if value > 0]
-    noise_floor = percentile(non_zero_values, 20) if non_zero_values else 0.0
-
-    return {
-        "audio_path": str(audio_path),
-        "frame_ms": frame_ms,
-        "sample_rate": sample_rate,
-        "duration_seconds": duration_seconds,
-        "rms": smoothed,
-        "noise_floor": noise_floor,
-    }
-
-
-def frame_index_for_time(audio_analysis: dict[str, Any], seconds: float) -> int:
-    frame_ms = int(audio_analysis.get("frame_ms", 20))
-    frame_count = len(audio_analysis.get("rms", []))
-    index = int(max(0.0, seconds) / (frame_ms / 1000.0))
-    return max(0, min(frame_count - 1, index)) if frame_count else 0
-
-
-def time_for_frame_index(audio_analysis: dict[str, Any], index: int) -> float:
-    frame_ms = int(audio_analysis.get("frame_ms", 20))
-    return max(0.0, index * (frame_ms / 1000.0))
-
-
-def estimate_line_vocal_offset(
-    line: dict[str, Any],
-    next_lyric_line: dict[str, Any] | None,
-    audio_analysis: dict[str, Any],
-    min_after_last_word_seconds: float,
-    max_search_seconds: float,
-    sustain_seconds: float,
-    relative_threshold: float,
-    noise_floor_multiplier: float,
-    next_lyric_safety_gap_seconds: float,
-) -> tuple[float | None, str, dict[str, Any]]:
-    rms_values: list[float] = audio_analysis.get("rms", [])
-    if not rms_values:
-        return None, "no_audio_rms_values", {}
-
-    line_start = as_float(line.get("start"))
-    last_word_start = as_float(line.get("last_word_start"), as_float(line.get("word_start"), line_start))
-    audio_duration_seconds = as_float(audio_analysis.get("duration_seconds"), last_word_start + max_search_seconds)
-
-    if next_lyric_line and next_lyric_line.get("start") is not None:
-        boundary_end = as_float(next_lyric_line.get("start")) - next_lyric_safety_gap_seconds
-    else:
-        boundary_end = min(audio_duration_seconds, last_word_start + max_search_seconds)
-
-    search_start = last_word_start + min_after_last_word_seconds
-    search_end = min(boundary_end, last_word_start + max_search_seconds, audio_duration_seconds)
-
-    diagnostics = {
-        "line_start": round_time(line_start),
-        "last_word_start": round_time(last_word_start),
-        "search_start": round_time(search_start),
-        "search_end": round_time(search_end),
-    }
-
-    if search_end <= search_start + sustain_seconds:
-        return None, "search_window_too_short", diagnostics
-
-    frame_ms = int(audio_analysis.get("frame_ms", 20))
-    sustain_frames = max(1, int(math.ceil(sustain_seconds / (frame_ms / 1000.0))))
-    start_index = frame_index_for_time(audio_analysis, search_start)
-    end_index = frame_index_for_time(audio_analysis, search_end)
-
-    local_peak_start = frame_index_for_time(audio_analysis, max(line_start, last_word_start - 0.4))
-    local_peak_end = frame_index_for_time(audio_analysis, min(search_start + 1.5, search_end))
-    local_values = rms_values[local_peak_start:max(local_peak_start + 1, local_peak_end + 1)]
-    local_peak = percentile(local_values, 95) if local_values else 0.0
-    noise_floor = as_float(audio_analysis.get("noise_floor"), 0.0)
-    threshold = max(noise_floor * noise_floor_multiplier, local_peak * relative_threshold)
-
-    diagnostics.update(
-        {
-            "local_peak": round(local_peak, 6),
-            "noise_floor": round(noise_floor, 6),
-            "threshold": round(threshold, 6),
-            "sustain_seconds": sustain_seconds,
-            "sustain_frames": sustain_frames,
-        }
-    )
-
-    if local_peak <= 0.00001:
-        return None, "local_peak_too_low", diagnostics
-
-    for index in range(start_index, max(start_index, end_index - sustain_frames + 1)):
-        window = rms_values[index:index + sustain_frames]
-
-        if len(window) < sustain_frames:
-            break
-
-        below_count = sum(1 for value in window if value <= threshold)
-        mean_value = sum(window) / len(window)
-
-        if below_count / len(window) >= 0.8 and mean_value <= threshold * 1.15:
-            estimated_end = max(last_word_start + min_after_last_word_seconds, time_for_frame_index(audio_analysis, index))
-            diagnostics["detected_frame_index"] = index
-            diagnostics["detected_window_mean"] = round(mean_value, 6)
-            diagnostics["detected_below_threshold_fraction"] = round(below_count / len(window), 3)
-            return estimated_end, "audio-vocal-offset", diagnostics
-
-    return None, "no_sustained_drop_detected", diagnostics
-
-
-def apply_audio_line_end_estimates(
-    lines: list[dict[str, Any]],
-    word_review: dict[str, Any],
-    word_review_path: Path,
-    enabled: bool,
-    frame_ms: int,
-    min_after_last_word_seconds: float,
-    max_search_seconds: float,
-    sustain_seconds: float,
-    relative_threshold: float,
-    noise_floor_multiplier: float,
-    next_lyric_safety_gap_seconds: float,
-) -> dict[str, Any]:
-    result: dict[str, Any] = {
-        "enabled": enabled,
-        "status": "disabled" if not enabled else "not_started",
-        "estimated_line_end_count": 0,
-        "fallback_line_end_count": 0,
-        "error": None,
-    }
-
-    if not enabled:
-        return result
-
-    audio_path = resolve_audio_path(word_review.get("source", {}).get("audio_file"), word_review_path)
-
-    if audio_path is None:
-        result["status"] = "no_audio_path_in_word_review"
-        result["error"] = "Word review JSON does not contain source.audio_file."
-        return result
-
-    try:
-        audio_analysis = decode_audio_rms_frames(audio_path=audio_path, frame_ms=frame_ms)
-    except Exception as error:
-        result["status"] = "audio_analysis_failed_falling_back_to_inferred_ends"
-        result["error"] = str(error)
-        return result
-
-    estimated_count = 0
-    fallback_count = 0
-
-    for index, line in enumerate(lines):
-        if line.get("display_type") != "lyric" or line.get("start") is None:
-            continue
-
-        next_lyric = next_lyric_line(lines, index)
-        estimated_end, source, diagnostics = estimate_line_vocal_offset(
-            line=line,
-            next_lyric_line=next_lyric,
-            audio_analysis=audio_analysis,
-            min_after_last_word_seconds=min_after_last_word_seconds,
-            max_search_seconds=max_search_seconds,
-            sustain_seconds=sustain_seconds,
-            relative_threshold=relative_threshold,
-            noise_floor_multiplier=noise_floor_multiplier,
-            next_lyric_safety_gap_seconds=next_lyric_safety_gap_seconds,
-        )
-
-        line["line_end_diagnostics"] = diagnostics
-
-        if estimated_end is None:
-            line["line_end_source"] = "inferred-from-next-display-line"
-            line["line_end_confidence"] = "fallback"
-            line["line_end_diagnostics"]["audio_line_end_status"] = source
-            add_flags(line, ["audio_line_end_estimation_fallback_needs_review"])
-            fallback_count += 1
-            continue
-
-        line_start = as_float(line.get("start"))
-        estimated_end = max(line_start + 0.1, estimated_end)
-        next_lyric = next_lyric_line(lines, index)
-
-        if next_lyric and next_lyric.get("start") is not None:
-            latest_allowed = as_float(next_lyric.get("start")) - next_lyric_safety_gap_seconds
-            if estimated_end > latest_allowed:
-                estimated_end = max(line_start + 0.1, latest_allowed)
-                add_flags(line, ["audio_estimated_line_end_clamped_to_next_lyric_needs_review"])
-
-        line["audio_estimated_end"] = round_time(estimated_end)
-        line["line_end_source"] = source
-        line["line_end_confidence"] = "medium"
-        line["line_end_diagnostics"]["audio_line_end_status"] = "estimated"
-
-        words = line.get("words", [])
-        if words:
-            words[-1]["end"] = round_time(max(as_float(words[-1].get("start")), estimated_end))
-            words[-1]["end_source"] = "audio-vocal-offset"
-
-        estimated_count += 1
-
-    result.update(
-        {
-            "status": "ok",
-            "audio_path": str(audio_path),
-            "frame_ms": frame_ms,
-            "sample_rate": audio_analysis.get("sample_rate"),
-            "audio_duration_seconds": round_time(as_float(audio_analysis.get("duration_seconds"))),
-            "noise_floor": round(as_float(audio_analysis.get("noise_floor")), 6),
-            "estimated_line_end_count": estimated_count,
-            "fallback_line_end_count": fallback_count,
-            "settings": {
-                "min_after_last_word_seconds": min_after_last_word_seconds,
-                "max_search_seconds": max_search_seconds,
-                "sustain_seconds": sustain_seconds,
-                "relative_threshold": relative_threshold,
-                "noise_floor_multiplier": noise_floor_multiplier,
-                "next_lyric_safety_gap_seconds": next_lyric_safety_gap_seconds,
-            },
-        }
-    )
-    return result
 
 
 def calculate_gap_diagnostics(words: list[dict[str, Any]]) -> dict[str, float]:
@@ -1201,23 +855,17 @@ def assign_instrumental_run(
         previous_start = as_float(previous_line.get("start"))
         previous_last_word_start = as_float(previous_line.get("last_word_start"), previous_start)
         previous_last_word_end = line_last_word_end(previous_line)
-        previous_has_audio_end = previous_line.get("line_end_source") == "audio-vocal-offset"
+        previous_minimum_held_line_end = max(
+            previous_last_word_end,
+            previous_last_word_start + lyric_before_instrumental_min_hold_seconds,
+        )
+        previous_minimum_held_gap_start = previous_minimum_held_line_end + next_line_gap_seconds
 
-        if previous_has_audio_end:
-            previous_minimum_held_gap_start = previous_last_word_end + next_line_gap_seconds
-            gap_start = max(previous_start + 0.75, previous_minimum_held_gap_start)
-        else:
-            previous_minimum_held_line_end = max(
-                previous_last_word_end,
-                previous_last_word_start + lyric_before_instrumental_min_hold_seconds,
-            )
-            previous_minimum_held_gap_start = previous_minimum_held_line_end + next_line_gap_seconds
-
-            gap_start = max(
-                previous_start + 0.75,
-                previous_last_word_end + instrumental_after_previous_word_seconds,
-                previous_minimum_held_gap_start,
-            )
+        gap_start = max(
+            previous_start + 0.75,
+            previous_last_word_end + instrumental_after_previous_word_seconds,
+            previous_minimum_held_gap_start,
+        )
         gap_end = following_start - instrumental_before_next_line_seconds
         desired_minimum = max(total_minimum, instrumental_fallback_seconds * count)
 
@@ -1323,20 +971,15 @@ def assign_instrumental_run(
         previous_start = as_float(previous_line.get("start"))
         previous_last_word_start = as_float(previous_line.get("last_word_start"), previous_start)
         previous_last_word_end = line_last_word_end(previous_line)
-        previous_has_audio_end = previous_line.get("line_end_source") == "audio-vocal-offset"
-
-        if previous_has_audio_end:
-            gap_start = max(previous_start + 0.75, previous_last_word_end + next_line_gap_seconds)
-        else:
-            previous_minimum_held_line_end = max(
-                previous_last_word_end,
-                previous_last_word_start + lyric_before_instrumental_min_hold_seconds,
-            )
-            gap_start = max(
-                previous_start + 0.75,
-                previous_last_word_start + instrumental_after_previous_word_seconds,
-                previous_minimum_held_line_end + next_line_gap_seconds,
-            )
+        previous_minimum_held_line_end = max(
+            previous_last_word_end,
+            previous_last_word_start + lyric_before_instrumental_min_hold_seconds,
+        )
+        gap_start = max(
+            previous_start + 0.75,
+            previous_last_word_start + instrumental_after_previous_word_seconds,
+            previous_minimum_held_line_end + next_line_gap_seconds,
+        )
         gap_end = gap_start + instrumental_fallback_seconds * count
         flags_for_all.append("instrumental_at_end_needs_review")
 
@@ -1565,14 +1208,6 @@ def build_draft(
     instrumental_before_next_line_seconds: float,
     starting_instrumental_before_first_line_seconds: float,
     lyric_before_instrumental_min_hold_seconds: float,
-    audio_line_end_estimation: bool,
-    audio_line_end_frame_ms: int,
-    audio_line_end_min_after_last_word_seconds: float,
-    audio_line_end_max_search_seconds: float,
-    audio_line_end_sustain_seconds: float,
-    audio_line_end_relative_threshold: float,
-    audio_line_end_noise_floor_multiplier: float,
-    audio_line_end_next_lyric_safety_gap_seconds: float,
 ) -> dict[str, Any]:
     ordered_lines = collect_ordered_lines(word_review)
 
@@ -1648,20 +1283,6 @@ def build_draft(
         next_line_gap_seconds=next_line_gap_seconds,
     )
 
-    audio_line_end_estimation_result = apply_audio_line_end_estimates(
-        lines=ordered_lines,
-        word_review=word_review,
-        word_review_path=word_review_path,
-        enabled=audio_line_end_estimation,
-        frame_ms=audio_line_end_frame_ms,
-        min_after_last_word_seconds=audio_line_end_min_after_last_word_seconds,
-        max_search_seconds=audio_line_end_max_search_seconds,
-        sustain_seconds=audio_line_end_sustain_seconds,
-        relative_threshold=audio_line_end_relative_threshold,
-        noise_floor_multiplier=audio_line_end_noise_floor_multiplier,
-        next_lyric_safety_gap_seconds=audio_line_end_next_lyric_safety_gap_seconds,
-    )
-
     assign_all_instrumental_timings(
         lines=ordered_lines,
         next_line_gap_seconds=next_line_gap_seconds,
@@ -1695,26 +1316,7 @@ def build_draft(
 
         next_display_line = next_display_line_with_timing(ordered_lines, index)
 
-        audio_estimated_end = line.get("audio_estimated_end")
-
-        if audio_estimated_end is not None:
-            display_end = as_float(audio_estimated_end)
-
-            if next_display_line:
-                gap_before_next = display_gap_before_next_line(
-                    line=line,
-                    next_display_line=next_display_line,
-                    next_line_gap_seconds=next_line_gap_seconds,
-                    adjusted_next_line_gap_seconds=adjusted_next_line_gap_seconds,
-                )
-                latest_allowed_end = as_float(next_display_line.get("start")) - gap_before_next
-
-                if display_end > latest_allowed_end:
-                    display_end = latest_allowed_end
-                    add_flags(line, ["audio_estimated_line_end_clamped_to_next_display_needs_review"])
-
-            display_end = max(as_float(line.get("start")) + 0.1, display_end)
-        elif next_display_line:
+        if next_display_line:
             gap_before_next = display_gap_before_next_line(
                 line=line,
                 next_display_line=next_display_line,
@@ -1777,10 +1379,6 @@ def build_draft(
                     **({"max_internal_word_gap": line.get("max_internal_word_gap")} if line.get("display_type") == "lyric" else {}),
                     **({"later_internal_word_gap_typical": line.get("later_internal_word_gap_typical")} if line.get("display_type") == "lyric" else {}),
                     **({"anchor_diagnostics": line.get("anchor_diagnostics", {})} if line.get("display_type") == "lyric" else {}),
-                    **({"audio_estimated_end": line.get("audio_estimated_end")} if line.get("display_type") == "lyric" and line.get("audio_estimated_end") is not None else {}),
-                    **({"line_end_source": line.get("line_end_source")} if line.get("display_type") == "lyric" and line.get("line_end_source") is not None else {}),
-                    **({"line_end_confidence": line.get("line_end_confidence")} if line.get("display_type") == "lyric" and line.get("line_end_confidence") is not None else {}),
-                    **({"line_end_diagnostics": line.get("line_end_diagnostics", {})} if line.get("display_type") == "lyric" and line.get("line_end_diagnostics") is not None else {}),
                     "confidence": line.get("confidence", "draft"),
                     "locked": line.get("locked", False),
                     "anchor": line.get("anchor", False),
@@ -1839,7 +1437,6 @@ def build_draft(
             "instrumental_following_anchor_rescue_count": instrumental_following_anchor_rescue_count,
             "late_next_line_anchor_rescue_count": late_next_line_anchor_rescue_count,
             "monotonic_line_start_guard_count": monotonic_line_start_guard_count,
-            "audio_line_end_estimation": audio_line_end_estimation_result,
             "settings": {
                 "start_padding_seconds": start_padding_seconds,
                 "next_line_gap_seconds": next_line_gap_seconds,
@@ -1875,14 +1472,6 @@ def build_draft(
                 "instrumental_before_next_line_seconds": instrumental_before_next_line_seconds,
                 "starting_instrumental_before_first_line_seconds": starting_instrumental_before_first_line_seconds,
                 "lyric_before_instrumental_min_hold_seconds": lyric_before_instrumental_min_hold_seconds,
-                "audio_line_end_estimation": audio_line_end_estimation,
-                "audio_line_end_frame_ms": audio_line_end_frame_ms,
-                "audio_line_end_min_after_last_word_seconds": audio_line_end_min_after_last_word_seconds,
-                "audio_line_end_max_search_seconds": audio_line_end_max_search_seconds,
-                "audio_line_end_sustain_seconds": audio_line_end_sustain_seconds,
-                "audio_line_end_relative_threshold": audio_line_end_relative_threshold,
-                "audio_line_end_noise_floor_multiplier": audio_line_end_noise_floor_multiplier,
-                "audio_line_end_next_lyric_safety_gap_seconds": audio_line_end_next_lyric_safety_gap_seconds,
             },
             "review_flag_count": len(review_flags),
             "review_flags": review_flags,
@@ -1897,9 +1486,9 @@ def build_draft(
             "Lines after explicit instrumental placeholders can be moved later when word 1 looks too early and the rest of the line starts much later.",
             "A late next-line rescue can move a lyric line earlier when a clean previous line is followed by a suspiciously late next-line anchor, but it is deliberately narrow and does not cascade across a phrase.",
             "A monotonic line-start guard prevents the next lyric display line from appearing before the previous lyric's final word anchor.",
-            "Line ends can be estimated from the vocal audio after the final word start; if audio analysis fails, the builder falls back to inferred line ends.",
-            "Instrumental placeholders are kept as editable display lines with empty words arrays and are timed from audio-backed lyric ends where available.",
-            "When no reliable audio-backed line end is found, the builder keeps the older safe fallback rules for held lyrics and instrumental gaps.",
+            "Line ends are inferred from the next display line, with a larger gap before corrected or rescued next lines.",
+            "Instrumental placeholders are kept as editable display lines with empty words arrays and starting instrumentals now span from 0 where possible.",
+            "When a lyric line is followed by an explicit instrumental placeholder, the lyric is held for a safer minimum duration after its final word start where there is room.",
             "This is an editable draft, not a final export.",
         ],
     }
@@ -2004,61 +1593,6 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=3000,
         help="When a lyric is followed by an explicit . . . line, keep the lyric visible for at least this long after its final word start when there is room. Default: 3000.",
-    )
-
-    parser.add_argument(
-        "--no-audio-line-end-estimation",
-        action="store_true",
-        help="Disable audio-backed line-end estimation and use inferred display ends only.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-frame-ms",
-        type=int,
-        default=20,
-        help="Audio analysis frame size in milliseconds. Default: 20.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-min-after-last-word-ms",
-        type=int,
-        default=500,
-        help="Do not search for a vocal offset until this long after the final word start. Default: 500.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-max-search-ms",
-        type=int,
-        default=9000,
-        help="Maximum time to search after the final word start for a vocal drop. Default: 9000.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-sustain-ms",
-        type=int,
-        default=450,
-        help="Low-energy audio must last this long before it counts as a vocal offset. Default: 450.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-relative-threshold",
-        type=float,
-        default=0.18,
-        help="Low-energy threshold as a fraction of local vocal energy. Default: 0.18.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-noise-floor-multiplier",
-        type=float,
-        default=3.0,
-        help="Low-energy threshold must also sit above the detected noise floor by this multiplier. Default: 3.0.",
-    )
-
-    parser.add_argument(
-        "--audio-line-end-next-lyric-safety-gap-ms",
-        type=int,
-        default=250,
-        help="Keep estimated line ends this far before the next lyric start. Default: 250.",
     )
 
     parser.add_argument(
@@ -2262,14 +1796,6 @@ def main() -> int:
             instrumental_before_next_line_seconds=args.instrumental_before_next_line_ms / 1000,
             starting_instrumental_before_first_line_seconds=args.starting_instrumental_before_first_line_ms / 1000,
             lyric_before_instrumental_min_hold_seconds=args.lyric_before_instrumental_min_hold_ms / 1000,
-            audio_line_end_estimation=not args.no_audio_line_end_estimation,
-            audio_line_end_frame_ms=args.audio_line_end_frame_ms,
-            audio_line_end_min_after_last_word_seconds=args.audio_line_end_min_after_last_word_ms / 1000,
-            audio_line_end_max_search_seconds=args.audio_line_end_max_search_ms / 1000,
-            audio_line_end_sustain_seconds=args.audio_line_end_sustain_ms / 1000,
-            audio_line_end_relative_threshold=args.audio_line_end_relative_threshold,
-            audio_line_end_noise_floor_multiplier=args.audio_line_end_noise_floor_multiplier,
-            audio_line_end_next_lyric_safety_gap_seconds=args.audio_line_end_next_lyric_safety_gap_ms / 1000,
         )
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -2291,10 +1817,6 @@ def main() -> int:
         print(f"Repeated final-word rescues: {draft['alignment']['repeated_final_word_rescue_count']}")
         print(f"Instrumental line rescues: {draft['alignment']['instrumental_following_anchor_rescue_count']}")
         print(f"Late next-line rescues:    {draft['alignment']['late_next_line_anchor_rescue_count']}")
-        audio_status = draft['alignment'].get('audio_line_end_estimation', {})
-        print(f"Audio line-end status:     {audio_status.get('status', 'unknown')}")
-        print(f"Audio-estimated endings:   {audio_status.get('estimated_line_end_count', 0)}")
-        print(f"Audio-end fallbacks:       {audio_status.get('fallback_line_end_count', 0)}")
         print(f"Review flags:             {draft['alignment']['review_flag_count']}")
         print("")
 

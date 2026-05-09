@@ -1,0 +1,777 @@
+{
+  "schema_version": "kara-line-map-v2",
+  "created_by": "kara-creator lyrics-aligner pipeline",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\fresh-phase-2-test\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\fresh-phase-2-test\\lyrics.txt",
+    "tokenisation": {
+      "hyphenated_words": "merged",
+      "apostrophes": "kept",
+      "instrumental_placeholders": "excluded_from_aligner"
+    }
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . ."
+  },
+  "line_count": 41,
+  "lyric_line_count": 36,
+  "instrumental_line_count": 5,
+  "word_count": 193,
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-11-011",
+      "label": "Section 11",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-12-012",
+      "label": "Section 12",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 8,
+      "lyric_line_count": 8,
+      "instrumental_line_count": 0
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-0001",
+      "section_id": "section-1-001",
+      "section": "Section 1",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0002",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Jamie is over and Jamie is gone",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "is",
+        "over",
+        "and",
+        "jamie",
+        "is",
+        "gone"
+      ],
+      "start_word_index": 0,
+      "end_word_index": 6
+    },
+    {
+      "id": "line-0003",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Jamie's decided it's time to move on",
+      "display_type": "lyric",
+      "words": [
+        "jamie's",
+        "decided",
+        "it's",
+        "time",
+        "to",
+        "move",
+        "on"
+      ],
+      "start_word_index": 7,
+      "end_word_index": 13
+    },
+    {
+      "id": "line-0004",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Jamie has new dreams he's building upon",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "has",
+        "new",
+        "dreams",
+        "he's",
+        "building",
+        "upon"
+      ],
+      "start_word_index": 14,
+      "end_word_index": 20
+    },
+    {
+      "id": "line-0005",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "And I'm still hurting",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i'm",
+        "still",
+        "hurting"
+      ],
+      "start_word_index": 21,
+      "end_word_index": 24
+    },
+    {
+      "id": "line-0006",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0007",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Jamie arrived at the end of the line",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "arrived",
+        "at",
+        "the",
+        "end",
+        "of",
+        "the",
+        "line"
+      ],
+      "start_word_index": 25,
+      "end_word_index": 32
+    },
+    {
+      "id": "line-0008",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Jamie's convinced that the problems are mine",
+      "display_type": "lyric",
+      "words": [
+        "jamie's",
+        "convinced",
+        "that",
+        "the",
+        "problems",
+        "are",
+        "mine"
+      ],
+      "start_word_index": 33,
+      "end_word_index": 39
+    },
+    {
+      "id": "line-0009",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Jamie is probably feeling just fine",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "is",
+        "probably",
+        "feeling",
+        "just",
+        "fine"
+      ],
+      "start_word_index": 40,
+      "end_word_index": 45
+    },
+    {
+      "id": "line-0010",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "And I'm still hurting",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i'm",
+        "still",
+        "hurting"
+      ],
+      "start_word_index": 46,
+      "end_word_index": 49
+    },
+    {
+      "id": "line-0011",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0012",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "What about lies, Jamie?",
+      "display_type": "lyric",
+      "words": [
+        "what",
+        "about",
+        "lies",
+        "jamie"
+      ],
+      "start_word_index": 50,
+      "end_word_index": 53
+    },
+    {
+      "id": "line-0013",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "What about things",
+      "display_type": "lyric",
+      "words": [
+        "what",
+        "about",
+        "things"
+      ],
+      "start_word_index": 54,
+      "end_word_index": 56
+    },
+    {
+      "id": "line-0014",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "That you swore to be true?",
+      "display_type": "lyric",
+      "words": [
+        "that",
+        "you",
+        "swore",
+        "to",
+        "be",
+        "true"
+      ],
+      "start_word_index": 57,
+      "end_word_index": 62
+    },
+    {
+      "id": "line-0015",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "What about you, Jamie?",
+      "display_type": "lyric",
+      "words": [
+        "what",
+        "about",
+        "you",
+        "jamie"
+      ],
+      "start_word_index": 63,
+      "end_word_index": 66
+    },
+    {
+      "id": "line-0016",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "What about you?",
+      "display_type": "lyric",
+      "words": [
+        "what",
+        "about",
+        "you"
+      ],
+      "start_word_index": 67,
+      "end_word_index": 69
+    },
+    {
+      "id": "line-0017",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Jamie is sure something wonderful died",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "is",
+        "sure",
+        "something",
+        "wonderful",
+        "died"
+      ],
+      "start_word_index": 70,
+      "end_word_index": 75
+    },
+    {
+      "id": "line-0018",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Jamie decides it's his right to decide",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "decides",
+        "it's",
+        "his",
+        "right",
+        "to",
+        "decide"
+      ],
+      "start_word_index": 76,
+      "end_word_index": 82
+    },
+    {
+      "id": "line-0019",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Jamie's got secrets he doesn't confide",
+      "display_type": "lyric",
+      "words": [
+        "jamie's",
+        "got",
+        "secrets",
+        "he",
+        "doesn't",
+        "confide"
+      ],
+      "start_word_index": 83,
+      "end_word_index": 88
+    },
+    {
+      "id": "line-0020",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "And I'm still hurting",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i'm",
+        "still",
+        "hurting"
+      ],
+      "start_word_index": 89,
+      "end_word_index": 92
+    },
+    {
+      "id": "line-0021",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0022",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Go and hide and run away!",
+      "display_type": "lyric",
+      "words": [
+        "go",
+        "and",
+        "hide",
+        "and",
+        "run",
+        "away"
+      ],
+      "start_word_index": 93,
+      "end_word_index": 98
+    },
+    {
+      "id": "line-0023",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Run away, run and find something better!",
+      "display_type": "lyric",
+      "words": [
+        "run",
+        "away",
+        "run",
+        "and",
+        "find",
+        "something",
+        "better"
+      ],
+      "start_word_index": 99,
+      "end_word_index": 105
+    },
+    {
+      "id": "line-0024",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Go and ride the sun away!",
+      "display_type": "lyric",
+      "words": [
+        "go",
+        "and",
+        "ride",
+        "the",
+        "sun",
+        "away"
+      ],
+      "start_word_index": 106,
+      "end_word_index": 111
+    },
+    {
+      "id": "line-0025",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Run away, like it's simple",
+      "display_type": "lyric",
+      "words": [
+        "run",
+        "away",
+        "like",
+        "it's",
+        "simple"
+      ],
+      "start_word_index": 112,
+      "end_word_index": 116
+    },
+    {
+      "id": "line-0026",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Like it's right...",
+      "display_type": "lyric",
+      "words": [
+        "like",
+        "it's",
+        "right"
+      ],
+      "start_word_index": 117,
+      "end_word_index": 119
+    },
+    {
+      "id": "line-0027",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0028",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Give me a day, Jamie!",
+      "display_type": "lyric",
+      "words": [
+        "give",
+        "me",
+        "a",
+        "day",
+        "jamie"
+      ],
+      "start_word_index": 120,
+      "end_word_index": 124
+    },
+    {
+      "id": "line-0029",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Bring back the lies",
+      "display_type": "lyric",
+      "words": [
+        "bring",
+        "back",
+        "the",
+        "lies"
+      ],
+      "start_word_index": 125,
+      "end_word_index": 128
+    },
+    {
+      "id": "line-0030",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Hang them back on the wall!",
+      "display_type": "lyric",
+      "words": [
+        "hang",
+        "them",
+        "back",
+        "on",
+        "the",
+        "wall"
+      ],
+      "start_word_index": 129,
+      "end_word_index": 134
+    },
+    {
+      "id": "line-0031",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Maybe I'd see",
+      "display_type": "lyric",
+      "words": [
+        "maybe",
+        "i'd",
+        "see"
+      ],
+      "start_word_index": 135,
+      "end_word_index": 137
+    },
+    {
+      "id": "line-0032",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "How you could be so certain that we",
+      "display_type": "lyric",
+      "words": [
+        "how",
+        "you",
+        "could",
+        "be",
+        "so",
+        "certain",
+        "that",
+        "we"
+      ],
+      "start_word_index": 138,
+      "end_word_index": 145
+    },
+    {
+      "id": "line-0033",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "Had no chance at all",
+      "display_type": "lyric",
+      "words": [
+        "had",
+        "no",
+        "chance",
+        "at",
+        "all"
+      ],
+      "start_word_index": 146,
+      "end_word_index": 150
+    },
+    {
+      "id": "line-0034",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Jamie is over and where can I turn?",
+      "display_type": "lyric",
+      "words": [
+        "jamie",
+        "is",
+        "over",
+        "and",
+        "where",
+        "can",
+        "i",
+        "turn"
+      ],
+      "start_word_index": 151,
+      "end_word_index": 158
+    },
+    {
+      "id": "line-0035",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Covered with scars I did nothing to earn",
+      "display_type": "lyric",
+      "words": [
+        "covered",
+        "with",
+        "scars",
+        "i",
+        "did",
+        "nothing",
+        "to",
+        "earn"
+      ],
+      "start_word_index": 159,
+      "end_word_index": 166
+    },
+    {
+      "id": "line-0036",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Maybe there's somewhere a lesson to learn",
+      "display_type": "lyric",
+      "words": [
+        "maybe",
+        "there's",
+        "somewhere",
+        "a",
+        "lesson",
+        "to",
+        "learn"
+      ],
+      "start_word_index": 167,
+      "end_word_index": 173
+    },
+    {
+      "id": "line-0037",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "But that wouldn't change the fact",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "that",
+        "wouldn't",
+        "change",
+        "the",
+        "fact"
+      ],
+      "start_word_index": 174,
+      "end_word_index": 179
+    },
+    {
+      "id": "line-0038",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "That wouldn't speed the time",
+      "display_type": "lyric",
+      "words": [
+        "that",
+        "wouldn't",
+        "speed",
+        "the",
+        "time"
+      ],
+      "start_word_index": 180,
+      "end_word_index": 184
+    },
+    {
+      "id": "line-0039",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Once the foundation's cracked",
+      "display_type": "lyric",
+      "words": [
+        "once",
+        "the",
+        "foundation's",
+        "cracked"
+      ],
+      "start_word_index": 185,
+      "end_word_index": 188
+    },
+    {
+      "id": "line-0040",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "And I'm",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i'm"
+      ],
+      "start_word_index": 189,
+      "end_word_index": 190
+    },
+    {
+      "id": "line-0041",
+      "section_id": "section-12-012",
+      "section": "Section 12",
+      "text": "Still hurting",
+      "display_type": "lyric",
+      "words": [
+        "still",
+        "hurting"
+      ],
+      "start_word_index": 191,
+      "end_word_index": 192
+    }
+  ]
+}

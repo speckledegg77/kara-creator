@@ -1,9 +1,7 @@
 from __future__ import annotations
 
 import argparse
-from array import array
 import json
-import math
 import re
 import shutil
 import subprocess
@@ -581,272 +579,6 @@ def create_word2phonemes_file(
         )
 
 
-
-def percentile(values: list[float], percent: float) -> float:
-    if not values:
-        return 0.0
-
-    ordered = sorted(values)
-    index = int(round((len(ordered) - 1) * max(0.0, min(100.0, percent)) / 100.0))
-    return ordered[index]
-
-
-def decode_audio_to_mono_pcm(
-    audio_path: Path,
-    sample_rate: int,
-) -> array:
-    command = [
-        "ffmpeg",
-        "-hide_banner",
-        "-loglevel",
-        "error",
-        "-i",
-        str(audio_path),
-        "-ac",
-        "1",
-        "-ar",
-        str(sample_rate),
-        "-f",
-        "s16le",
-        "pipe:1",
-    ]
-
-    completed = subprocess.run(
-        command,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-    )
-
-    if completed.returncode != 0:
-        stderr = completed.stderr.decode("utf-8", errors="replace").strip()
-        raise RuntimeError(
-            "Could not analyse the audio for vocal-start detection. "
-            "Check that ffmpeg is installed and available in PowerShell."
-            + (f" ffmpeg said: {stderr}" if stderr else "")
-        )
-
-    samples = array("h")
-    samples.frombytes(completed.stdout)
-
-    if sys.byteorder != "little":
-        samples.byteswap()
-
-    return samples
-
-
-def rms_dbfs(samples: array) -> float:
-    if not samples:
-        return -120.0
-
-    total = 0.0
-
-    for sample in samples:
-        value = float(sample) / 32768.0
-        total += value * value
-
-    rms = math.sqrt(total / len(samples))
-
-    if rms <= 0:
-        return -120.0
-
-    return 20.0 * math.log10(max(rms, 1e-9))
-
-
-def detect_first_vocal_start(
-    audio_path: Path,
-    *,
-    sample_rate: int,
-    frame_ms: int,
-    min_duration_seconds: float,
-    pre_roll_seconds: float,
-    threshold_db: float | None,
-) -> dict[str, Any]:
-    samples = decode_audio_to_mono_pcm(
-        audio_path=audio_path,
-        sample_rate=sample_rate,
-    )
-
-    frame_size = max(1, int(sample_rate * frame_ms / 1000))
-    frame_count = max(1, math.ceil(len(samples) / frame_size))
-    db_values: list[float] = []
-
-    for frame_index in range(frame_count):
-        start = frame_index * frame_size
-        end = min(len(samples), start + frame_size)
-        db_values.append(rms_dbfs(samples[start:end]))
-
-    if not db_values:
-        return {
-            "status": "no_audio_samples",
-            "detected_start_seconds": None,
-            "threshold_dbfs": None,
-            "noise_floor_dbfs": None,
-        }
-
-    noise_floor_db = percentile(db_values, 20)
-
-    if threshold_db is None:
-        calculated_threshold = max(noise_floor_db + 12.0, -50.0)
-        calculated_threshold = min(calculated_threshold, -25.0)
-    else:
-        calculated_threshold = float(threshold_db)
-
-    min_frames = max(1, int(math.ceil(min_duration_seconds / (frame_ms / 1000))))
-    required_active_frames = max(1, int(math.ceil(min_frames * 0.7)))
-    detected_frame: int | None = None
-
-    for frame_index in range(0, max(1, len(db_values) - min_frames + 1)):
-        window = db_values[frame_index:frame_index + min_frames]
-        active_count = sum(1 for value in window if value >= calculated_threshold)
-        average_db = sum(window) / len(window)
-
-        if active_count >= required_active_frames and average_db >= calculated_threshold - 3.0:
-            for inner_index, value in enumerate(window):
-                if value >= calculated_threshold:
-                    detected_frame = frame_index + inner_index
-                    break
-            break
-
-    if detected_frame is None:
-        return {
-            "status": "no_sustained_vocal_region_detected",
-            "detected_start_seconds": None,
-            "threshold_dbfs": round(calculated_threshold, 2),
-            "noise_floor_dbfs": round(noise_floor_db, 2),
-            "frame_ms": frame_ms,
-            "min_duration_seconds": min_duration_seconds,
-            "pre_roll_seconds": pre_roll_seconds,
-        }
-
-    detected_start = max(0.0, (detected_frame * frame_ms / 1000) - pre_roll_seconds)
-
-    return {
-        "status": "detected",
-        "detected_start_seconds": round(detected_start, 3),
-        "raw_detected_frame_start_seconds": round(detected_frame * frame_ms / 1000, 3),
-        "threshold_dbfs": round(calculated_threshold, 2),
-        "noise_floor_dbfs": round(noise_floor_db, 2),
-        "frame_ms": frame_ms,
-        "min_duration_seconds": min_duration_seconds,
-        "pre_roll_seconds": pre_roll_seconds,
-    }
-
-
-def read_first_aligner_word_start(aligner_output_path: Path) -> float | None:
-    require_file(aligner_output_path, "lyrics-aligner word onset output")
-
-    for raw_line in aligner_output_path.read_text(encoding="utf-8-sig").splitlines():
-        line = raw_line.strip()
-
-        if not line:
-            continue
-
-        parts = re.split(r"\s+", line)
-
-        if len(parts) < 2:
-            continue
-
-        try:
-            return float(parts[1])
-        except ValueError:
-            continue
-
-    return None
-
-
-def write_offset_aligner_output(
-    source_path: Path,
-    output_path: Path,
-    offset_seconds: float,
-) -> None:
-    require_file(source_path, "lyrics-aligner word onset output")
-    output_lines: list[str] = []
-
-    for raw_line in source_path.read_text(encoding="utf-8-sig").splitlines():
-        line = raw_line.strip()
-
-        if not line:
-            continue
-
-        parts = re.split(r"\s+", line)
-
-        if len(parts) < 2:
-            output_lines.append(raw_line)
-            continue
-
-        try:
-            start = float(parts[1])
-        except ValueError:
-            output_lines.append(raw_line)
-            continue
-
-        parts[1] = f"{max(0.0, start + offset_seconds):.3f}"
-        output_lines.append("\t".join(parts))
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text("\n".join(output_lines) + "\n", encoding="utf-8")
-
-
-def maybe_apply_vocal_start_correction(
-    *,
-    aligner_output_path: Path,
-    corrected_output_path: Path,
-    vocal_start_detection: dict[str, Any],
-    enabled: bool,
-    min_intro_seconds: float,
-    tolerance_seconds: float,
-) -> tuple[Path, dict[str, Any]]:
-    correction = dict(vocal_start_detection)
-    correction["enabled"] = enabled
-    correction["min_intro_seconds"] = min_intro_seconds
-    correction["tolerance_seconds"] = tolerance_seconds
-    correction["correction_applied"] = False
-    correction["correction_seconds"] = 0.0
-    correction["corrected_aligner_output"] = None
-
-    if not enabled:
-        correction["correction_status"] = "disabled"
-        return aligner_output_path, correction
-
-    detected_start_raw = correction.get("detected_start_seconds")
-
-    if detected_start_raw is None:
-        correction["correction_status"] = "no_detected_vocal_start"
-        return aligner_output_path, correction
-
-    detected_start = float(detected_start_raw)
-
-    if detected_start < min_intro_seconds:
-        correction["correction_status"] = "detected_intro_short_no_correction"
-        return aligner_output_path, correction
-
-    first_word_start = read_first_aligner_word_start(aligner_output_path)
-    correction["first_aligner_word_start_seconds"] = None if first_word_start is None else round(first_word_start, 3)
-
-    if first_word_start is None:
-        correction["correction_status"] = "no_aligner_word_start_found"
-        return aligner_output_path, correction
-
-    correction_seconds = detected_start - first_word_start
-
-    if correction_seconds <= tolerance_seconds:
-        correction["correction_status"] = "aligner_start_not_early_enough_to_correct"
-        correction["suggested_correction_seconds"] = round(correction_seconds, 3)
-        return aligner_output_path, correction
-
-    write_offset_aligner_output(
-        source_path=aligner_output_path,
-        output_path=corrected_output_path,
-        offset_seconds=correction_seconds,
-    )
-
-    correction["correction_applied"] = True
-    correction["correction_status"] = "shifted_aligner_word_onsets_to_detected_vocal_start"
-    correction["correction_seconds"] = round(correction_seconds, 3)
-    correction["corrected_aligner_output"] = str(corrected_output_path)
-
-    return corrected_output_path, correction
-
 def clean_previous_aligner_files(aligner_dir: Path, dataset_name: str) -> list[str]:
     removed: list[str] = []
 
@@ -883,8 +615,6 @@ def write_run_manifest(
     draft_path: Path,
     sections: list[dict[str, Any]],
     removed_files: list[str],
-    vocal_start_detection: dict[str, Any] | None = None,
-    aligner_vad_threshold: float | None = None,
 ) -> None:
     manifest = {
         "schema_version": "kara-run-manifest-v2",
@@ -908,7 +638,6 @@ def write_run_manifest(
             "instrumental_placeholder_inputs": [". . .", "...", "…"],
             "instrumental_placeholder_output": INSTRUMENTAL_DISPLAY_TEXT,
             "aligner_lyrics_exclude_instrumentals": True,
-            "lyrics_aligner_vad_threshold": aligner_vad_threshold,
         },
         "sections": [
             {
@@ -921,7 +650,6 @@ def write_run_manifest(
             }
             for section in sections
         ],
-        "vocal_start_detection": vocal_start_detection or {"enabled": False},
         "cleanup": {
             "removed_previous_aligner_files": removed_files,
         },
@@ -941,13 +669,6 @@ def run_pipeline(
     name: str,
     aligner_dir: Path,
     clean_previous: bool,
-    auto_vocal_start_correction: bool,
-    vocal_start_min_intro_seconds: float,
-    vocal_start_correction_tolerance_seconds: float,
-    vocal_start_threshold_db: float | None,
-    vocal_start_min_duration_seconds: float,
-    vocal_start_preroll_seconds: float,
-    aligner_vad_threshold: float,
 ) -> None:
     require_file(audio_path, "Input vocal MP3")
     require_file(lyrics_path, "Input lyrics TXT")
@@ -967,7 +688,6 @@ def run_pipeline(
 
     word_review_path = project_root / "outputs" / f"{safe_name}-word-review-lyrics-aligner.json"
     draft_path = project_root / "outputs" / f"{safe_name}-draft-lyrics-aligner-v3.json"
-    corrected_aligner_output_path = run_dir / f"{safe_name}-word-onsets-vocal-start-corrected.txt"
 
     removed_files: list[str] = []
 
@@ -993,22 +713,6 @@ def run_pipeline(
         source_lyrics=lyrics_path,
     )
 
-    if auto_vocal_start_correction:
-        vocal_start_detection = detect_first_vocal_start(
-            audio_path=clean_audio_path,
-            sample_rate=16000,
-            frame_ms=50,
-            min_duration_seconds=vocal_start_min_duration_seconds,
-            pre_roll_seconds=vocal_start_preroll_seconds,
-            threshold_db=vocal_start_threshold_db,
-        )
-    else:
-        vocal_start_detection = {
-            "enabled": False,
-            "status": "disabled",
-            "detected_start_seconds": None,
-        }
-
     write_run_manifest(
         manifest_path=manifest_path,
         safe_name=safe_name,
@@ -1022,8 +726,6 @@ def run_pipeline(
         draft_path=draft_path,
         sections=sections,
         removed_files=removed_files,
-        vocal_start_detection=vocal_start_detection,
-        aligner_vad_threshold=aligner_vad_threshold,
     )
 
     print("")
@@ -1037,15 +739,6 @@ def run_pipeline(
     print(f"Display lines: {sum(len(section['lines']) for section in sections)}")
     print(f"Lyric lines sent to aligner: {sum(1 for section in sections for line in section['lines'] if line.get('display_type') == 'lyric')}")
     print(f"Instrumental placeholders: {sum(1 for section in sections for line in section['lines'] if line.get('display_type') == 'instrumental')}")
-    print(f"lyrics-aligner VAD threshold: {aligner_vad_threshold:g}")
-
-    if auto_vocal_start_correction:
-        detected_start = vocal_start_detection.get("detected_start_seconds")
-        print(f"Detected first vocal start: {detected_start if detected_start is not None else 'not detected'}")
-        if vocal_start_detection.get("threshold_dbfs") is not None:
-            print(f"Vocal detection threshold: {vocal_start_detection.get('threshold_dbfs')} dBFS")
-    else:
-        print("Vocal-start correction: disabled")
 
     if clean_previous:
         print(f"Previous aligner files removed: {len(removed_files)}")
@@ -1095,7 +788,7 @@ def run_pipeline(
             "--dataset-name",
             dataset_name,
             "--vad-threshold",
-            f"{aligner_vad_threshold:g}",
+            "0",
         ],
         cwd=aligner_dir,
     )
@@ -1110,44 +803,12 @@ def run_pipeline(
 
     require_file(aligner_output_path, "lyrics-aligner word onset output")
 
-    aligner_output_for_conversion, vocal_start_detection = maybe_apply_vocal_start_correction(
-        aligner_output_path=aligner_output_path,
-        corrected_output_path=corrected_aligner_output_path,
-        vocal_start_detection=vocal_start_detection,
-        enabled=auto_vocal_start_correction,
-        min_intro_seconds=vocal_start_min_intro_seconds,
-        tolerance_seconds=vocal_start_correction_tolerance_seconds,
-    )
-
-    print("")
-    print(f"Vocal-start correction status: {vocal_start_detection.get('correction_status')}")
-    if vocal_start_detection.get("correction_applied"):
-        print(f"Timing correction applied: +{vocal_start_detection.get('correction_seconds')} seconds")
-        print(f"Corrected aligner output: {aligner_output_for_conversion}")
-
-    write_run_manifest(
-        manifest_path=manifest_path,
-        safe_name=safe_name,
-        dataset_name=dataset_name,
-        source_audio=audio_path,
-        source_lyrics=lyrics_path,
-        clean_audio_path=clean_audio_path,
-        clean_lyrics_path=clean_lyrics_path,
-        line_map_path=line_map_path,
-        word_review_path=word_review_path,
-        draft_path=draft_path,
-        sections=sections,
-        removed_files=removed_files,
-        vocal_start_detection=vocal_start_detection,
-        aligner_vad_threshold=aligner_vad_threshold,
-    )
-
     run_command(
         [
             sys.executable,
             str(project_root / "tools" / "convert_lyrics_aligner_to_word_review_json.py"),
             "--aligner-output",
-            str(aligner_output_for_conversion),
+            str(aligner_output_path),
             "--line-map",
             str(line_map_path),
             "--out",
@@ -1215,54 +876,6 @@ def build_parser() -> argparse.ArgumentParser:
         help="Do not clean previous lyrics-aligner files for this song name before running.",
     )
 
-    parser.add_argument(
-        "--no-auto-vocal-start-correction",
-        action="store_true",
-        help="Disable automatic first-vocal-start detection and global onset correction.",
-    )
-
-    parser.add_argument(
-        "--vocal-start-min-intro-seconds",
-        type=float,
-        default=5.0,
-        help="Only apply vocal-start correction when the detected vocal start is after this many seconds. Default: 5.0.",
-    )
-
-    parser.add_argument(
-        "--vocal-start-correction-tolerance-seconds",
-        type=float,
-        default=2.0,
-        help="Only shift timings when the aligner starts this many seconds too early. Default: 2.0.",
-    )
-
-    parser.add_argument(
-        "--vocal-start-threshold-db",
-        type=float,
-        default=None,
-        help="Optional fixed dBFS threshold for vocal-start detection. Leave unset for automatic thresholding.",
-    )
-
-    parser.add_argument(
-        "--vocal-start-min-duration-seconds",
-        type=float,
-        default=0.45,
-        help="Minimum sustained audio duration required to count as the first vocal region. Default: 0.45.",
-    )
-
-    parser.add_argument(
-        "--vocal-start-preroll-seconds",
-        type=float,
-        default=0.35,
-        help="Start the detected vocal region this much earlier to avoid clipping the first word. Default: 0.35.",
-    )
-
-    parser.add_argument(
-        "--vad-threshold",
-        type=float,
-        default=0.0,
-        help="lyrics-aligner VAD threshold. Use 0 for the old behaviour. Try 0.05, 0.1, or 0.2 when quiet backing bleed or separation artefacts may be confusing the aligner. Default: 0.0.",
-    )
-
     return parser
 
 
@@ -1280,13 +893,6 @@ def main() -> int:
             name=args.name,
             aligner_dir=Path(args.aligner_dir).resolve(),
             clean_previous=not args.keep_previous,
-            auto_vocal_start_correction=not args.no_auto_vocal_start_correction,
-            vocal_start_min_intro_seconds=args.vocal_start_min_intro_seconds,
-            vocal_start_correction_tolerance_seconds=args.vocal_start_correction_tolerance_seconds,
-            vocal_start_threshold_db=args.vocal_start_threshold_db,
-            vocal_start_min_duration_seconds=args.vocal_start_min_duration_seconds,
-            vocal_start_preroll_seconds=args.vocal_start_preroll_seconds,
-            aligner_vad_threshold=args.vad_threshold,
         )
     except Exception as error:
         print("")
