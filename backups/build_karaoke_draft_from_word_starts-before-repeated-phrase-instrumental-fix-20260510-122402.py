@@ -1431,25 +1431,6 @@ def apply_repeated_phrase_rescue(
         if str(current.get("line_anchor_source", "")) == "repeated-final-word-rescue":
             continue
 
-        # Do not apply repeated-phrase rescue across an explicit instrumental
-        # placeholder. Lines after . . . often repeat earlier lyric material,
-        # but the placeholder is an authored display/timing line. Pulling the
-        # following lyric earlier can crush the instrumental break, as happened
-        # with met_myself_again line-0011 to line-0012. If the aligner or local
-        # recovery has a plausible next word start, keep that anchor instead.
-        if has_explicit_instrumental_since_previous_lyric(lines, index):
-            add_flags(current, ["repeated_phrase_rescue_skipped_after_instrumental_placeholder"])
-            continue
-
-        # Local alignment recovery is a stronger signal than the repeated phrase
-        # heuristic. Once a local pass has recovered better word starts, do not
-        # let this broad rescue move the display start back towards an earlier
-        # repeated phrase.
-        current_flags = set(current.get("review_flags") or [])
-        if "local_alignment_recovery_applied_needs_review" in current_flags:
-            add_flags(current, ["repeated_phrase_rescue_skipped_after_local_recovery"])
-            continue
-
         current_words = normalised_word_texts(current)
         previous_words = normalised_word_texts(previous)
         if not current_words or not previous_words:

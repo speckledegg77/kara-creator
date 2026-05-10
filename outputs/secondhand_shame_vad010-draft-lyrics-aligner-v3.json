@@ -1,0 +1,4576 @@
+{
+  "schema_version": "karaoke-draft-v3",
+  "created_by": "kara-creator lyrics-aligner draft builder",
+  "source": {
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\secondhand_shame_vad010-word-review-lyrics-aligner.json",
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\lyrics.txt",
+    "audio_duration_seconds": 183.392
+  },
+  "alignment": {
+    "mode": "singing-specific-word-starts-to-line-draft",
+    "status": "draft",
+    "primary_aligner": "lyrics-aligner",
+    "line_count": 60,
+    "lyric_line_count": 59,
+    "instrumental_line_count": 1,
+    "section_count": 10,
+    "auto_adjusted_line_count": 0,
+    "repeated_phrase_rescue_count": 0,
+    "repeated_final_word_rescue_count": 2,
+    "instrumental_following_anchor_rescue_count": 0,
+    "late_next_line_anchor_rescue_count": 1,
+    "monotonic_line_start_guard_count": 0,
+    "audio_line_end_estimation": {
+      "enabled": true,
+      "status": "ok",
+      "estimated_line_end_count": 0,
+      "fallback_line_end_count": 0,
+      "skipped_line_end_count": 59,
+      "error": null,
+      "audio_path": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
+      "frame_ms": 20,
+      "sample_rate": 16000,
+      "audio_duration_seconds": 185.309,
+      "noise_floor": 0.017529,
+      "settings": {
+        "scope": "before_instrumental",
+        "min_after_last_word_seconds": 0.5,
+        "max_search_seconds": 9.0,
+        "sustain_seconds": 0.45,
+        "relative_threshold": 0.18,
+        "noise_floor_multiplier": 3.0,
+        "next_lyric_safety_gap_seconds": 0.25
+      }
+    },
+    "low_confidence_phrase_boundary_rescue": {
+      "enabled": true,
+      "status": "ok",
+      "corrected_line_count": 1,
+      "next_line_start_adjusted_count": 1,
+      "fallback_count": 0,
+      "skipped_count": 58,
+      "error": null,
+      "audio_path": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
+      "frame_ms": 20,
+      "sample_rate": 16000,
+      "audio_duration_seconds": 185.309,
+      "noise_floor": 0.017529,
+      "settings": {
+        "catastrophic_gap_seconds": 3.0,
+        "typical_gap_seconds": 1.5,
+        "min_after_start_seconds": 0.9,
+        "max_after_start_seconds": 6.0,
+        "sustain_seconds": 0.26,
+        "relative_threshold": 0.18,
+        "noise_floor_multiplier": 3.0,
+        "next_line_safety_gap_seconds": 0.25,
+        "next_line_start_after_boundary_seconds": 0.25
+      }
+    },
+    "settings": {
+      "start_padding_seconds": 0.15,
+      "next_line_gap_seconds": 0.08,
+      "final_line_hold_seconds": 2.5,
+      "long_tail_threshold_seconds": 3.5,
+      "short_line_threshold_seconds": 1.2,
+      "large_internal_word_gap_seconds": 1.75,
+      "instrumental_fallback_seconds": 5.0,
+      "auto_correct_suspicious_first_word": true,
+      "suspicious_first_word_gap_seconds": 1.75,
+      "first_gap_ratio_threshold": 2.5,
+      "auto_anchor_min_words": 3,
+      "auto_anchor_lead_in_min_seconds": 0.35,
+      "auto_anchor_lead_in_max_seconds": 1.0,
+      "auto_anchor_lead_in_extended_max_seconds": 2.5,
+      "auto_anchor_lead_in_gap_fraction": 0.33,
+      "repeated_phrase_rescue": true,
+      "repeated_final_word_rescue": true,
+      "repeated_final_word_min_span_seconds": 8.0,
+      "repeated_final_word_collapse_window_seconds": 1.25,
+      "repeated_final_word_start_fraction": 0.55,
+      "repeated_final_word_spacing_seconds": 4.2,
+      "instrumental_following_anchor_rescue": true,
+      "late_next_line_anchor_rescue": true,
+      "late_next_line_gap_seconds": 2.2,
+      "late_next_line_after_previous_word_seconds": 1.0,
+      "late_anchor_cascade_gap_seconds": 6.5,
+      "repeated_phrase_min_gap_seconds": 3.0,
+      "repeated_phrase_after_previous_word_seconds": 4.0,
+      "repeated_phrase_min_common_prefix_words": 2,
+      "adjusted_next_line_gap_seconds": 1.25,
+      "instrumental_after_previous_word_seconds": 2.5,
+      "instrumental_before_next_line_seconds": 0.5,
+      "starting_instrumental_before_first_line_seconds": 1.5,
+      "lyric_before_instrumental_min_hold_seconds": 3.0,
+      "audio_line_end_estimation": true,
+      "audio_line_end_scope": "before_instrumental",
+      "audio_line_end_frame_ms": 20,
+      "audio_line_end_min_after_last_word_seconds": 0.5,
+      "audio_line_end_max_search_seconds": 9.0,
+      "audio_line_end_sustain_seconds": 0.45,
+      "audio_line_end_relative_threshold": 0.18,
+      "audio_line_end_noise_floor_multiplier": 3.0,
+      "audio_line_end_next_lyric_safety_gap_seconds": 0.25,
+      "low_confidence_phrase_boundary_rescue": true,
+      "low_confidence_phrase_boundary_gap_seconds": 3.0,
+      "low_confidence_phrase_boundary_typical_gap_seconds": 1.5,
+      "low_confidence_phrase_boundary_min_after_start_seconds": 0.9,
+      "low_confidence_phrase_boundary_max_after_start_seconds": 6.0,
+      "low_confidence_phrase_boundary_sustain_seconds": 0.26,
+      "low_confidence_phrase_boundary_relative_threshold": 0.18,
+      "low_confidence_phrase_boundary_noise_floor_multiplier": 3.0,
+      "low_confidence_phrase_boundary_next_line_safety_gap_seconds": 0.25,
+      "low_confidence_phrase_boundary_next_line_start_after_boundary_seconds": 0.25
+    },
+    "review_flag_count": 17,
+    "review_flags": [
+      {
+        "section": "Section 1",
+        "line_id": "line-0001",
+        "text": ". . .",
+        "flag": "instrumental_at_start_needs_review"
+      },
+      {
+        "section": "Section 1",
+        "line_id": "line-0001",
+        "text": ". . .",
+        "flag": "instrumental_timing_needs_review"
+      },
+      {
+        "section": "Section 2",
+        "line_id": "line-0002",
+        "text": "Can't I have one day?",
+        "flag": "late_anchor_rescue_skipped_after_instrumental_placeholder"
+      },
+      {
+        "section": "Section 4",
+        "line_id": "line-0014",
+        "text": "To my own devices?",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0025",
+        "text": "Just for one day?",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0057",
+        "text": "Clear the past away",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0057",
+        "text": "Clear the past away",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0057",
+        "text": "Clear the past away",
+        "flag": "late_next_line_anchor_rescue_applied_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0057",
+        "text": "Clear the past away",
+        "flag": "low_confidence_internal_alignment_audio_boundary_used_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0058",
+        "text": "Then the future can begin today",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0058",
+        "text": "Then the future can begin today",
+        "flag": "line_start_adjusted_after_low_confidence_phrase_boundary_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0058",
+        "text": "Then the future can begin today",
+        "flag": "low_confidence_phrase_boundary_skipped_for_repeated_final_word_run_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0058",
+        "text": "Then the future can begin today",
+        "flag": "repeated_final_word_run_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0059",
+        "text": "Today",
+        "flag": "monotonic_guard_skipped_for_repeated_final_word_rescue_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0059",
+        "text": "Today",
+        "flag": "repeated_final_word_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0060",
+        "text": "Today",
+        "flag": "monotonic_guard_skipped_for_repeated_final_word_rescue_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0060",
+        "text": "Today",
+        "flag": "repeated_final_word_line_start_auto_adjusted_needs_review"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "start": 0.0,
+      "end": 5.774,
+      "lines": [
+        {
+          "id": "line-0001",
+          "display_type": "instrumental",
+          "text": ". . .",
+          "start": 0.0,
+          "end": 5.774,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "instrumental-placeholder-inferred",
+          "review_flags": [
+            "instrumental_at_start_needs_review",
+            "instrumental_timing_needs_review"
+          ],
+          "words": [],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "start": 7.274,
+      "end": 16.01,
+      "lines": [
+        {
+          "id": "line-0002",
+          "display_type": "lyric",
+          "text": "Can't I have one day?",
+          "start": 7.274,
+          "end": 9.914,
+          "word_start": 7.424,
+          "last_word_start": 8.832,
+          "line_anchor_start": 7.274,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.352,
+          "max_internal_word_gap": 0.56,
+          "later_internal_word_gap_typical": 0.336,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.352,
+            "max_internal_word_gap": 0.56,
+            "later_internal_word_gap_typical": 0.336
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "late_anchor_rescue_skipped_after_instrumental_placeholder"
+          ],
+          "words": [
+            {
+              "id": "word-0001",
+              "text": "can't",
+              "start": 7.424,
+              "end": 7.776,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0002",
+              "text": "i",
+              "start": 7.776,
+              "end": 7.936,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0003",
+              "text": "have",
+              "start": 7.936,
+              "end": 8.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0004",
+              "text": "one",
+              "start": 8.496,
+              "end": 8.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0005",
+              "text": "day",
+              "start": 8.832,
+              "end": 9.732,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0003",
+          "display_type": "lyric",
+          "text": "Without you breathing in my ear",
+          "start": 9.994,
+          "end": 12.01,
+          "word_start": 10.144,
+          "last_word_start": 11.68,
+          "line_anchor_start": 9.994,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.384,
+          "max_internal_word_gap": 0.464,
+          "later_internal_word_gap_typical": 0.24,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.384,
+            "max_internal_word_gap": 0.464,
+            "later_internal_word_gap_typical": 0.24
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0006",
+              "text": "without",
+              "start": 10.144,
+              "end": 10.528,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0007",
+              "text": "you",
+              "start": 10.528,
+              "end": 10.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0008",
+              "text": "breathing",
+              "start": 10.736,
+              "end": 11.2,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0009",
+              "text": "in",
+              "start": 11.2,
+              "end": 11.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0010",
+              "text": "my",
+              "start": 11.424,
+              "end": 11.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0011",
+              "text": "ear",
+              "start": 11.68,
+              "end": 12.24,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0004",
+          "display_type": "lyric",
+          "text": "Without your voice inside my head",
+          "start": 12.09,
+          "end": 13.834,
+          "word_start": 12.24,
+          "last_word_start": 13.808,
+          "line_anchor_start": 12.09,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.384,
+          "max_internal_word_gap": 0.416,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.384,
+            "max_internal_word_gap": 0.416,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0012",
+              "text": "without",
+              "start": 12.24,
+              "end": 12.624,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0013",
+              "text": "your",
+              "start": 12.624,
+              "end": 12.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0014",
+              "text": "voice",
+              "start": 12.816,
+              "end": 13.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0015",
+              "text": "inside",
+              "start": 13.184,
+              "end": 13.6,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0016",
+              "text": "my",
+              "start": 13.6,
+              "end": 13.808,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0017",
+              "text": "head",
+              "start": 13.808,
+              "end": 14.064,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0005",
+          "display_type": "lyric",
+          "text": "With words of caution, guilt and fear",
+          "start": 13.914,
+          "end": 16.01,
+          "word_start": 14.064,
+          "last_word_start": 15.84,
+          "line_anchor_start": 13.914,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.304,
+          "max_internal_word_gap": 0.56,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.304,
+            "max_internal_word_gap": 0.56,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0018",
+              "text": "with",
+              "start": 14.064,
+              "end": 14.368,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0019",
+              "text": "words",
+              "start": 14.368,
+              "end": 14.656,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0020",
+              "text": "of",
+              "start": 14.656,
+              "end": 14.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0021",
+              "text": "caution",
+              "start": 14.832,
+              "end": 15.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0022",
+              "text": "guilt",
+              "start": 15.392,
+              "end": 15.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0023",
+              "text": "and",
+              "start": 15.696,
+              "end": 15.84,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0024",
+              "text": "fear",
+              "start": 15.84,
+              "end": 16.24,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "start": 16.09,
+      "end": 24.506,
+      "lines": [
+        {
+          "id": "line-0006",
+          "display_type": "lyric",
+          "text": "Just one day",
+          "start": 16.09,
+          "end": 17.754,
+          "word_start": 16.24,
+          "last_word_start": 17.104,
+          "line_anchor_start": 16.09,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.496,
+          "max_internal_word_gap": 0.496,
+          "later_internal_word_gap_typical": 0.368,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.496,
+            "max_internal_word_gap": 0.496,
+            "later_internal_word_gap_typical": 0.368
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0025",
+              "text": "just",
+              "start": 16.24,
+              "end": 16.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0026",
+              "text": "one",
+              "start": 16.736,
+              "end": 17.104,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0027",
+              "text": "day",
+              "start": 17.104,
+              "end": 17.984,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0007",
+          "display_type": "lyric",
+          "text": "Without feeling like you're on my back",
+          "start": 17.834,
+          "end": 20.394,
+          "word_start": 17.984,
+          "last_word_start": 19.904,
+          "line_anchor_start": 17.834,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.608,
+          "later_internal_word_gap_typical": 0.304,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.608,
+            "later_internal_word_gap_typical": 0.304
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0028",
+              "text": "without",
+              "start": 17.984,
+              "end": 18.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0029",
+              "text": "feeling",
+              "start": 18.24,
+              "end": 18.848,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0030",
+              "text": "like",
+              "start": 18.848,
+              "end": 19.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0031",
+              "text": "you're",
+              "start": 19.232,
+              "end": 19.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0032",
+              "text": "on",
+              "start": 19.392,
+              "end": 19.6,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0033",
+              "text": "my",
+              "start": 19.6,
+              "end": 19.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0034",
+              "text": "back",
+              "start": 19.904,
+              "end": 20.624,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0008",
+          "display_type": "lyric",
+          "text": "Every time my heart soars",
+          "start": 20.474,
+          "end": 22.218,
+          "word_start": 20.624,
+          "last_word_start": 21.888,
+          "line_anchor_start": 20.474,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.272,
+          "max_internal_word_gap": 0.4,
+          "later_internal_word_gap_typical": 0.352,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.272,
+            "max_internal_word_gap": 0.4,
+            "later_internal_word_gap_typical": 0.352
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0035",
+              "text": "every",
+              "start": 20.624,
+              "end": 20.896,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0036",
+              "text": "time",
+              "start": 20.896,
+              "end": 21.248,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0037",
+              "text": "my",
+              "start": 21.248,
+              "end": 21.488,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0038",
+              "text": "heart",
+              "start": 21.488,
+              "end": 21.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0039",
+              "text": "soars",
+              "start": 21.888,
+              "end": 22.448,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0009",
+          "display_type": "lyric",
+          "text": "You're right there with a heart attack",
+          "start": 22.298,
+          "end": 24.506,
+          "word_start": 22.448,
+          "last_word_start": 23.888,
+          "line_anchor_start": 22.298,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.144,
+          "max_internal_word_gap": 0.4,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.144,
+            "max_internal_word_gap": 0.4,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0040",
+              "text": "you're",
+              "start": 22.448,
+              "end": 22.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0041",
+              "text": "right",
+              "start": 22.592,
+              "end": 22.992,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0042",
+              "text": "there",
+              "start": 22.992,
+              "end": 23.344,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0043",
+              "text": "with",
+              "start": 23.344,
+              "end": 23.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0044",
+              "text": "a",
+              "start": 23.504,
+              "end": 23.6,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0045",
+              "text": "heart",
+              "start": 23.6,
+              "end": 23.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0046",
+              "text": "attack",
+              "start": 23.888,
+              "end": 24.736,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "start": 24.586,
+      "end": 40.842,
+      "lines": [
+        {
+          "id": "line-0010",
+          "display_type": "lyric",
+          "text": "Is this all you left me?",
+          "start": 24.586,
+          "end": 27.274,
+          "word_start": 24.736,
+          "last_word_start": 25.936,
+          "line_anchor_start": 24.586,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.416,
+          "later_internal_word_gap_typical": 0.24,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.416,
+            "later_internal_word_gap_typical": 0.24
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0047",
+              "text": "is",
+              "start": 24.736,
+              "end": 24.928,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0048",
+              "text": "this",
+              "start": 24.928,
+              "end": 25.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0049",
+              "text": "all",
+              "start": 25.184,
+              "end": 25.408,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0050",
+              "text": "you",
+              "start": 25.408,
+              "end": 25.52,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0051",
+              "text": "left",
+              "start": 25.52,
+              "end": 25.936,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0052",
+              "text": "me",
+              "start": 25.936,
+              "end": 26.836,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0011",
+          "display_type": "lyric",
+          "text": "A body full of second-hand shame",
+          "start": 27.354,
+          "end": 30.074,
+          "word_start": 27.504,
+          "last_word_start": 29.456,
+          "line_anchor_start": 27.354,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.272,
+          "max_internal_word_gap": 0.848,
+          "later_internal_word_gap_typical": 0.36,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.272,
+            "max_internal_word_gap": 0.848,
+            "later_internal_word_gap_typical": 0.36
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0053",
+              "text": "a",
+              "start": 27.504,
+              "end": 27.776,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0054",
+              "text": "body",
+              "start": 27.776,
+              "end": 28.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0055",
+              "text": "full",
+              "start": 28.128,
+              "end": 28.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0056",
+              "text": "of",
+              "start": 28.496,
+              "end": 28.608,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0057",
+              "text": "secondhand",
+              "start": 28.608,
+              "end": 29.456,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0058",
+              "text": "shame",
+              "start": 29.456,
+              "end": 30.304,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0012",
+          "display_type": "lyric",
+          "text": "And a box with my name on it.",
+          "start": 30.154,
+          "end": 32.65,
+          "word_start": 30.304,
+          "last_word_start": 32.512,
+          "line_anchor_start": 30.154,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 0.48,
+          "later_internal_word_gap_typical": 0.4,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 0.48,
+            "later_internal_word_gap_typical": 0.4
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0059",
+              "text": "and",
+              "start": 30.304,
+              "end": 30.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0060",
+              "text": "a",
+              "start": 30.48,
+              "end": 30.656,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0061",
+              "text": "box",
+              "start": 30.656,
+              "end": 31.088,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0062",
+              "text": "with",
+              "start": 31.088,
+              "end": 31.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0063",
+              "text": "my",
+              "start": 31.232,
+              "end": 31.648,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0064",
+              "text": "name",
+              "start": 31.648,
+              "end": 32.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0065",
+              "text": "on",
+              "start": 32.128,
+              "end": 32.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0066",
+              "text": "it",
+              "start": 32.512,
+              "end": 32.88,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0013",
+          "display_type": "lyric",
+          "text": "Couldn't you have left me",
+          "start": 32.73,
+          "end": 35.674,
+          "word_start": 32.88,
+          "last_word_start": 34.32,
+          "line_anchor_start": 32.73,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.464,
+          "later_internal_word_gap_typical": 0.432,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.464,
+            "later_internal_word_gap_typical": 0.432
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0067",
+              "text": "couldn't",
+              "start": 32.88,
+              "end": 33.136,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0068",
+              "text": "you",
+              "start": 33.136,
+              "end": 33.568,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0069",
+              "text": "have",
+              "start": 33.568,
+              "end": 33.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0070",
+              "text": "left",
+              "start": 33.856,
+              "end": 34.32,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0071",
+              "text": "me",
+              "start": 34.32,
+              "end": 35.22,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0014",
+          "display_type": "lyric",
+          "text": "To my own devices?",
+          "start": 35.754,
+          "end": 40.842,
+          "word_start": 35.904,
+          "last_word_start": 37.376,
+          "line_anchor_start": 35.754,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 1.104,
+          "later_internal_word_gap_typical": 0.64,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 1.104,
+            "later_internal_word_gap_typical": 0.64
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0072",
+              "text": "to",
+              "start": 35.904,
+              "end": 36.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0073",
+              "text": "my",
+              "start": 36.096,
+              "end": 36.996,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0074",
+              "text": "own",
+              "start": 37.2,
+              "end": 37.376,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0075",
+              "text": "devices",
+              "start": 37.376,
+              "end": 38.276,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "start": 40.922,
+      "end": 76.954,
+      "lines": [
+        {
+          "id": "line-0015",
+          "display_type": "lyric",
+          "text": "I've moved on",
+          "start": 40.922,
+          "end": 44.218,
+          "word_start": 41.072,
+          "last_word_start": 42.928,
+          "line_anchor_start": 40.922,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.912,
+          "max_internal_word_gap": 0.944,
+          "later_internal_word_gap_typical": 0.944,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.912,
+            "max_internal_word_gap": 0.944,
+            "later_internal_word_gap_typical": 0.944
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0076",
+              "text": "i've",
+              "start": 41.072,
+              "end": 41.972,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0077",
+              "text": "moved",
+              "start": 41.984,
+              "end": 42.884,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0078",
+              "text": "on",
+              "start": 42.928,
+              "end": 43.828,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0016",
+          "display_type": "lyric",
+          "text": "This is the happiest day",
+          "start": 44.298,
+          "end": 46.17,
+          "word_start": 44.448,
+          "last_word_start": 45.904,
+          "line_anchor_start": 44.298,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.72,
+          "later_internal_word_gap_typical": 0.272,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.72,
+            "later_internal_word_gap_typical": 0.272
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0079",
+              "text": "this",
+              "start": 44.448,
+              "end": 44.704,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0080",
+              "text": "is",
+              "start": 44.704,
+              "end": 44.912,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0081",
+              "text": "the",
+              "start": 44.912,
+              "end": 45.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0082",
+              "text": "happiest",
+              "start": 45.184,
+              "end": 45.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0083",
+              "text": "day",
+              "start": 45.904,
+              "end": 46.4,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0017",
+          "display_type": "lyric",
+          "text": "Of all the days I can remember",
+          "start": 46.25,
+          "end": 48.602,
+          "word_start": 46.4,
+          "last_word_start": 48.128,
+          "line_anchor_start": 46.25,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.528,
+          "later_internal_word_gap_typical": 0.224,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.528,
+            "later_internal_word_gap_typical": 0.224
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0084",
+              "text": "of",
+              "start": 46.4,
+              "end": 46.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0085",
+              "text": "all",
+              "start": 46.592,
+              "end": 46.784,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0086",
+              "text": "the",
+              "start": 46.784,
+              "end": 46.96,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0087",
+              "text": "days",
+              "start": 46.96,
+              "end": 47.488,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0088",
+              "text": "i",
+              "start": 47.488,
+              "end": 47.712,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0089",
+              "text": "can",
+              "start": 47.712,
+              "end": 48.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0090",
+              "text": "remember",
+              "start": 48.128,
+              "end": 48.832,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0018",
+          "display_type": "lyric",
+          "text": "And you've been gone",
+          "start": 48.682,
+          "end": 53.194,
+          "word_start": 48.832,
+          "last_word_start": 51.056,
+          "line_anchor_start": 48.682,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 1.312,
+          "later_internal_word_gap_typical": 1.024,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 1.312,
+            "later_internal_word_gap_typical": 1.024
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0091",
+              "text": "and",
+              "start": 48.832,
+              "end": 49.008,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0092",
+              "text": "you've",
+              "start": 49.008,
+              "end": 49.908,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0093",
+              "text": "been",
+              "start": 50.32,
+              "end": 51.056,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0094",
+              "text": "gone",
+              "start": 51.056,
+              "end": 51.956,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0019",
+          "display_type": "lyric",
+          "text": "Under the soil",
+          "start": 53.274,
+          "end": 54.938,
+          "word_start": 53.424,
+          "last_word_start": 54.24,
+          "line_anchor_start": 53.274,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.72,
+          "max_internal_word_gap": 0.72,
+          "later_internal_word_gap_typical": 0.096,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.72,
+            "max_internal_word_gap": 0.72,
+            "later_internal_word_gap_typical": 0.096
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0095",
+              "text": "under",
+              "start": 53.424,
+              "end": 54.144,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0096",
+              "text": "the",
+              "start": 54.144,
+              "end": 54.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0097",
+              "text": "soil",
+              "start": 54.24,
+              "end": 55.14,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0020",
+          "display_type": "lyric",
+          "text": "A year come September",
+          "start": 55.018,
+          "end": 56.954,
+          "word_start": 55.168,
+          "last_word_start": 56.096,
+          "line_anchor_start": 55.018,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 0.352,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 0.352,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0098",
+              "text": "a",
+              "start": 55.168,
+              "end": 55.456,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0099",
+              "text": "year",
+              "start": 55.456,
+              "end": 55.808,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0100",
+              "text": "come",
+              "start": 55.808,
+              "end": 56.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0101",
+              "text": "september",
+              "start": 56.096,
+              "end": 56.996,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0021",
+          "display_type": "lyric",
+          "text": "So why do I still feel the burn",
+          "start": 57.034,
+          "end": 59.05,
+          "word_start": 57.184,
+          "last_word_start": 58.864,
+          "line_anchor_start": 57.034,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.32,
+          "max_internal_word_gap": 0.384,
+          "later_internal_word_gap_typical": 0.224,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.32,
+            "max_internal_word_gap": 0.384,
+            "later_internal_word_gap_typical": 0.224
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0102",
+              "text": "so",
+              "start": 57.184,
+              "end": 57.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0103",
+              "text": "why",
+              "start": 57.504,
+              "end": 57.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0104",
+              "text": "do",
+              "start": 57.888,
+              "end": 57.936,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0105",
+              "text": "i",
+              "start": 57.936,
+              "end": 58.08,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0106",
+              "text": "still",
+              "start": 58.08,
+              "end": 58.432,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0107",
+              "text": "feel",
+              "start": 58.432,
+              "end": 58.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0108",
+              "text": "the",
+              "start": 58.736,
+              "end": 58.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0109",
+              "text": "burn",
+              "start": 58.864,
+              "end": 59.28,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0022",
+          "display_type": "lyric",
+          "text": "Of your sharp tongue at every turn?",
+          "start": 59.13,
+          "end": 61.114,
+          "word_start": 59.28,
+          "last_word_start": 60.832,
+          "line_anchor_start": 59.13,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.368,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.368,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0110",
+              "text": "of",
+              "start": 59.28,
+              "end": 59.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0111",
+              "text": "your",
+              "start": 59.472,
+              "end": 59.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0112",
+              "text": "sharp",
+              "start": 59.68,
+              "end": 60.048,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0113",
+              "text": "tongue",
+              "start": 60.048,
+              "end": 60.336,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0114",
+              "text": "at",
+              "start": 60.336,
+              "end": 60.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0115",
+              "text": "every",
+              "start": 60.48,
+              "end": 60.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0116",
+              "text": "turn",
+              "start": 60.832,
+              "end": 61.344,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0023",
+          "display_type": "lyric",
+          "text": "I'm thirty four now, you don't get a say",
+          "start": 61.194,
+          "end": 65.162,
+          "word_start": 61.344,
+          "last_word_start": 63.68,
+          "line_anchor_start": 61.194,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 0.432,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 0.432,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0117",
+              "text": "i'm",
+              "start": 61.344,
+              "end": 61.456,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0118",
+              "text": "thirty",
+              "start": 61.456,
+              "end": 61.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0119",
+              "text": "four",
+              "start": 61.888,
+              "end": 62.272,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0120",
+              "text": "now",
+              "start": 62.272,
+              "end": 62.608,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0121",
+              "text": "you",
+              "start": 62.608,
+              "end": 62.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0122",
+              "text": "don't",
+              "start": 62.816,
+              "end": 63.088,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0123",
+              "text": "get",
+              "start": 63.088,
+              "end": 63.408,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0124",
+              "text": "a",
+              "start": 63.408,
+              "end": 63.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0125",
+              "text": "say",
+              "start": 63.68,
+              "end": 64.58,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0024",
+          "display_type": "lyric",
+          "text": "Can't I just have both feet in the future",
+          "start": 65.242,
+          "end": 68.458,
+          "word_start": 65.392,
+          "last_word_start": 67.472,
+          "line_anchor_start": 65.242,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.544,
+          "max_internal_word_gap": 0.544,
+          "later_internal_word_gap_typical": 0.224,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.544,
+            "max_internal_word_gap": 0.544,
+            "later_internal_word_gap_typical": 0.224
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0126",
+              "text": "can't",
+              "start": 65.392,
+              "end": 65.936,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0127",
+              "text": "i",
+              "start": 65.936,
+              "end": 66.144,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0128",
+              "text": "just",
+              "start": 66.144,
+              "end": 66.448,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0129",
+              "text": "have",
+              "start": 66.448,
+              "end": 66.672,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0130",
+              "text": "both",
+              "start": 66.672,
+              "end": 66.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0131",
+              "text": "feet",
+              "start": 66.976,
+              "end": 67.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0132",
+              "text": "in",
+              "start": 67.232,
+              "end": 67.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0133",
+              "text": "the",
+              "start": 67.392,
+              "end": 67.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0134",
+              "text": "future",
+              "start": 67.472,
+              "end": 68.372,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0025",
+          "display_type": "lyric",
+          "text": "Just for one day?",
+          "start": 68.538,
+          "end": 76.954,
+          "word_start": 68.688,
+          "last_word_start": 70.0,
+          "line_anchor_start": 68.538,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.416,
+          "max_internal_word_gap": 0.576,
+          "later_internal_word_gap_typical": 0.448,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.416,
+            "max_internal_word_gap": 0.576,
+            "later_internal_word_gap_typical": 0.448
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0135",
+              "text": "just",
+              "start": 68.688,
+              "end": 69.104,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0136",
+              "text": "for",
+              "start": 69.104,
+              "end": 69.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0137",
+              "text": "one",
+              "start": 69.424,
+              "end": 70.0,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0138",
+              "text": "day",
+              "start": 70.0,
+              "end": 70.9,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "start": 77.034,
+      "end": 90.074,
+      "lines": [
+        {
+          "id": "line-0026",
+          "display_type": "lyric",
+          "text": "Why carry dead weight?",
+          "start": 77.034,
+          "end": 79.786,
+          "word_start": 77.184,
+          "last_word_start": 78.496,
+          "line_anchor_start": 77.034,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.24,
+          "max_internal_word_gap": 0.784,
+          "later_internal_word_gap_typical": 0.536,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.24,
+            "max_internal_word_gap": 0.784,
+            "later_internal_word_gap_typical": 0.536
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0139",
+              "text": "why",
+              "start": 77.184,
+              "end": 77.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0140",
+              "text": "carry",
+              "start": 77.424,
+              "end": 78.208,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0141",
+              "text": "dead",
+              "start": 78.208,
+              "end": 78.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0142",
+              "text": "weight",
+              "start": 78.496,
+              "end": 79.396,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0027",
+          "display_type": "lyric",
+          "text": "Fed-exed from a brother",
+          "start": 79.866,
+          "end": 81.098,
+          "word_start": 80.016,
+          "last_word_start": 80.864,
+          "line_anchor_start": 79.866,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.48,
+          "max_internal_word_gap": 0.48,
+          "later_internal_word_gap_typical": 0.184,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.48,
+            "max_internal_word_gap": 0.48,
+            "later_internal_word_gap_typical": 0.184
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0143",
+              "text": "fedexed",
+              "start": 80.016,
+              "end": 80.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0144",
+              "text": "from",
+              "start": 80.496,
+              "end": 80.704,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0145",
+              "text": "a",
+              "start": 80.704,
+              "end": 80.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0146",
+              "text": "brother",
+              "start": 80.864,
+              "end": 81.328,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0028",
+          "display_type": "lyric",
+          "text": "Dragged from one home to another",
+          "start": 81.178,
+          "end": 83.226,
+          "word_start": 81.328,
+          "last_word_start": 82.816,
+          "line_anchor_start": 81.178,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.352,
+          "max_internal_word_gap": 0.352,
+          "later_internal_word_gap_typical": 0.272,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.352,
+            "max_internal_word_gap": 0.352,
+            "later_internal_word_gap_typical": 0.272
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0147",
+              "text": "dragged",
+              "start": 81.328,
+              "end": 81.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0148",
+              "text": "from",
+              "start": 81.68,
+              "end": 82.016,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0149",
+              "text": "one",
+              "start": 82.016,
+              "end": 82.288,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0150",
+              "text": "home",
+              "start": 82.288,
+              "end": 82.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0151",
+              "text": "to",
+              "start": 82.56,
+              "end": 82.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0152",
+              "text": "another",
+              "start": 82.816,
+              "end": 83.456,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0029",
+          "display_type": "lyric",
+          "text": "It's just dead weight",
+          "start": 83.306,
+          "end": 85.466,
+          "word_start": 83.456,
+          "last_word_start": 84.672,
+          "line_anchor_start": 83.306,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.336,
+          "max_internal_word_gap": 0.544,
+          "later_internal_word_gap_typical": 0.44,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.336,
+            "max_internal_word_gap": 0.544,
+            "later_internal_word_gap_typical": 0.44
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0153",
+              "text": "it's",
+              "start": 83.456,
+              "end": 83.792,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0154",
+              "text": "just",
+              "start": 83.792,
+              "end": 84.336,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0155",
+              "text": "dead",
+              "start": 84.336,
+              "end": 84.672,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0156",
+              "text": "weight",
+              "start": 84.672,
+              "end": 85.572,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0030",
+          "display_type": "lyric",
+          "text": "But it's heavy on my bones",
+          "start": 85.546,
+          "end": 87.29,
+          "word_start": 85.696,
+          "last_word_start": 87.024,
+          "line_anchor_start": 85.546,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 0.528,
+          "later_internal_word_gap_typical": 0.248,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 0.528,
+            "later_internal_word_gap_typical": 0.248
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0157",
+              "text": "but",
+              "start": 85.696,
+              "end": 85.808,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0158",
+              "text": "it's",
+              "start": 85.808,
+              "end": 86.048,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0159",
+              "text": "heavy",
+              "start": 86.048,
+              "end": 86.576,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0160",
+              "text": "on",
+              "start": 86.576,
+              "end": 86.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0161",
+              "text": "my",
+              "start": 86.832,
+              "end": 87.024,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0162",
+              "text": "bones",
+              "start": 87.024,
+              "end": 87.52,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0031",
+          "display_type": "lyric",
+          "text": "And now it's hanging in my home",
+          "start": 87.37,
+          "end": 90.074,
+          "word_start": 87.52,
+          "last_word_start": 89.2,
+          "line_anchor_start": 87.37,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.208,
+          "max_internal_word_gap": 0.4,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.208,
+            "max_internal_word_gap": 0.4,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0163",
+              "text": "and",
+              "start": 87.52,
+              "end": 87.728,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0164",
+              "text": "now",
+              "start": 87.728,
+              "end": 88.016,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0165",
+              "text": "it's",
+              "start": 88.016,
+              "end": 88.224,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0166",
+              "text": "hanging",
+              "start": 88.224,
+              "end": 88.624,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0167",
+              "text": "in",
+              "start": 88.624,
+              "end": 88.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0168",
+              "text": "my",
+              "start": 88.864,
+              "end": 89.2,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0169",
+              "text": "home",
+              "start": 89.2,
+              "end": 90.1,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "start": 90.154,
+      "end": 104.474,
+      "lines": [
+        {
+          "id": "line-0032",
+          "display_type": "lyric",
+          "text": "Is this what you wanted?",
+          "start": 90.154,
+          "end": 92.778,
+          "word_start": 90.304,
+          "last_word_start": 91.216,
+          "line_anchor_start": 90.154,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.304,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.304,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0170",
+              "text": "is",
+              "start": 90.304,
+              "end": 90.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0171",
+              "text": "this",
+              "start": 90.496,
+              "end": 90.8,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0172",
+              "text": "what",
+              "start": 90.8,
+              "end": 91.088,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0173",
+              "text": "you",
+              "start": 91.088,
+              "end": 91.216,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0174",
+              "text": "wanted",
+              "start": 91.216,
+              "end": 92.116,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0033",
+          "display_type": "lyric",
+          "text": "For me to be forever second-guessing",
+          "start": 92.858,
+          "end": 95.546,
+          "word_start": 93.008,
+          "last_word_start": 94.736,
+          "line_anchor_start": 92.858,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.704,
+          "later_internal_word_gap_typical": 0.36,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.704,
+            "later_internal_word_gap_typical": 0.36
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0175",
+              "text": "for",
+              "start": 93.008,
+              "end": 93.264,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0176",
+              "text": "me",
+              "start": 93.264,
+              "end": 93.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0177",
+              "text": "to",
+              "start": 93.68,
+              "end": 93.728,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0178",
+              "text": "be",
+              "start": 93.728,
+              "end": 94.032,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0179",
+              "text": "forever",
+              "start": 94.032,
+              "end": 94.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0180",
+              "text": "secondguessing",
+              "start": 94.736,
+              "end": 95.636,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0034",
+          "display_type": "lyric",
+          "text": "Always doubting every blessing",
+          "start": 95.626,
+          "end": 97.69,
+          "word_start": 95.776,
+          "last_word_start": 97.376,
+          "line_anchor_start": 95.626,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.704,
+          "max_internal_word_gap": 0.704,
+          "later_internal_word_gap_typical": 0.448,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.704,
+            "max_internal_word_gap": 0.704,
+            "later_internal_word_gap_typical": 0.448
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0181",
+              "text": "always",
+              "start": 95.776,
+              "end": 96.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0182",
+              "text": "doubting",
+              "start": 96.48,
+              "end": 96.928,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0183",
+              "text": "every",
+              "start": 96.928,
+              "end": 97.376,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0184",
+              "text": "blessing",
+              "start": 97.376,
+              "end": 97.92,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0035",
+          "display_type": "lyric",
+          "text": "Always feeling like I'm hunted",
+          "start": 97.77,
+          "end": 101.29,
+          "word_start": 97.92,
+          "last_word_start": 99.424,
+          "line_anchor_start": 97.77,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.576,
+          "max_internal_word_gap": 0.576,
+          "later_internal_word_gap_typical": 0.336,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.576,
+            "max_internal_word_gap": 0.576,
+            "later_internal_word_gap_typical": 0.336
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0185",
+              "text": "always",
+              "start": 97.92,
+              "end": 98.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0186",
+              "text": "feeling",
+              "start": 98.496,
+              "end": 98.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0187",
+              "text": "like",
+              "start": 98.832,
+              "end": 99.168,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0188",
+              "text": "i'm",
+              "start": 99.168,
+              "end": 99.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0189",
+              "text": "hunted",
+              "start": 99.424,
+              "end": 100.324,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0036",
+          "display_type": "lyric",
+          "text": "By a life I left behind",
+          "start": 101.37,
+          "end": 104.474,
+          "word_start": 101.52,
+          "last_word_start": 103.248,
+          "line_anchor_start": 101.37,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.736,
+          "later_internal_word_gap_typical": 0.336,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.736,
+            "later_internal_word_gap_typical": 0.336
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0190",
+              "text": "by",
+              "start": 101.52,
+              "end": 101.712,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0191",
+              "text": "a",
+              "start": 101.712,
+              "end": 101.84,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0192",
+              "text": "life",
+              "start": 101.84,
+              "end": 102.576,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0193",
+              "text": "i",
+              "start": 102.576,
+              "end": 102.96,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0194",
+              "text": "left",
+              "start": 102.96,
+              "end": 103.248,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0195",
+              "text": "behind",
+              "start": 103.248,
+              "end": 104.148,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "start": 104.554,
+      "end": 130.57,
+      "lines": [
+        {
+          "id": "line-0037",
+          "display_type": "lyric",
+          "text": "I've moved on",
+          "start": 104.554,
+          "end": 107.786,
+          "word_start": 104.704,
+          "last_word_start": 106.512,
+          "line_anchor_start": 104.554,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 1.008,
+          "max_internal_word_gap": 1.008,
+          "later_internal_word_gap_typical": 0.8,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 1.008,
+            "max_internal_word_gap": 1.008,
+            "later_internal_word_gap_typical": 0.8
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0196",
+              "text": "i've",
+              "start": 104.704,
+              "end": 105.604,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0197",
+              "text": "moved",
+              "start": 105.712,
+              "end": 106.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0198",
+              "text": "on",
+              "start": 106.512,
+              "end": 107.412,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0038",
+          "display_type": "lyric",
+          "text": "This is the happiest home",
+          "start": 107.866,
+          "end": 109.834,
+          "word_start": 108.016,
+          "last_word_start": 109.488,
+          "line_anchor_start": 107.866,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 0.8,
+          "later_internal_word_gap_typical": 0.224,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 0.8,
+            "later_internal_word_gap_typical": 0.224
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0199",
+              "text": "this",
+              "start": 108.016,
+              "end": 108.304,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0200",
+              "text": "is",
+              "start": 108.304,
+              "end": 108.464,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0201",
+              "text": "the",
+              "start": 108.464,
+              "end": 108.688,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0202",
+              "text": "happiest",
+              "start": 108.688,
+              "end": 109.488,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0203",
+              "text": "home",
+              "start": 109.488,
+              "end": 110.064,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0039",
+          "display_type": "lyric",
+          "text": "Of all the homes I can remember",
+          "start": 109.914,
+          "end": 112.698,
+          "word_start": 110.064,
+          "last_word_start": 111.68,
+          "line_anchor_start": 109.914,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.16,
+          "max_internal_word_gap": 0.512,
+          "later_internal_word_gap_typical": 0.208,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.16,
+            "max_internal_word_gap": 0.512,
+            "later_internal_word_gap_typical": 0.208
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0204",
+              "text": "of",
+              "start": 110.064,
+              "end": 110.224,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0205",
+              "text": "all",
+              "start": 110.224,
+              "end": 110.416,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0206",
+              "text": "the",
+              "start": 110.416,
+              "end": 110.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0207",
+              "text": "homes",
+              "start": 110.56,
+              "end": 111.072,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0208",
+              "text": "i",
+              "start": 111.072,
+              "end": 111.28,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0209",
+              "text": "can",
+              "start": 111.28,
+              "end": 111.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0210",
+              "text": "remember",
+              "start": 111.68,
+              "end": 112.58,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0040",
+          "display_type": "lyric",
+          "text": "I'm long gone",
+          "start": 112.778,
+          "end": 115.866,
+          "word_start": 112.928,
+          "last_word_start": 114.592,
+          "line_anchor_start": 112.778,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.752,
+          "max_internal_word_gap": 0.912,
+          "later_internal_word_gap_typical": 0.912,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.752,
+            "max_internal_word_gap": 0.912,
+            "later_internal_word_gap_typical": 0.912
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0211",
+              "text": "i'm",
+              "start": 112.928,
+              "end": 113.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0212",
+              "text": "long",
+              "start": 113.68,
+              "end": 114.58,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0213",
+              "text": "gone",
+              "start": 114.592,
+              "end": 115.492,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0041",
+          "display_type": "lyric",
+          "text": "Left as soon as I could",
+          "start": 115.946,
+          "end": 117.882,
+          "word_start": 116.096,
+          "last_word_start": 117.616,
+          "line_anchor_start": 115.946,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.48,
+          "max_internal_word_gap": 0.48,
+          "later_internal_word_gap_typical": 0.24,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.48,
+            "max_internal_word_gap": 0.48,
+            "later_internal_word_gap_typical": 0.24
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0214",
+              "text": "left",
+              "start": 116.096,
+              "end": 116.576,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0215",
+              "text": "as",
+              "start": 116.576,
+              "end": 116.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0216",
+              "text": "soon",
+              "start": 116.736,
+              "end": 117.136,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0217",
+              "text": "as",
+              "start": 117.136,
+              "end": 117.36,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0218",
+              "text": "i",
+              "start": 117.36,
+              "end": 117.616,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0219",
+              "text": "could",
+              "start": 117.616,
+              "end": 118.112,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0042",
+          "display_type": "lyric",
+          "text": "Fourteen years come November",
+          "start": 117.962,
+          "end": 120.538,
+          "word_start": 118.112,
+          "last_word_start": 119.696,
+          "line_anchor_start": 117.962,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.864,
+          "max_internal_word_gap": 0.864,
+          "later_internal_word_gap_typical": 0.36,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.864,
+            "max_internal_word_gap": 0.864,
+            "later_internal_word_gap_typical": 0.36
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0220",
+              "text": "fourteen",
+              "start": 118.112,
+              "end": 118.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0221",
+              "text": "years",
+              "start": 118.976,
+              "end": 119.376,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0222",
+              "text": "come",
+              "start": 119.376,
+              "end": 119.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0223",
+              "text": "november",
+              "start": 119.696,
+              "end": 120.596,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0043",
+          "display_type": "lyric",
+          "text": "So don't you think it's way past time",
+          "start": 120.618,
+          "end": 122.938,
+          "word_start": 120.768,
+          "last_word_start": 122.784,
+          "line_anchor_start": 120.618,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.208,
+          "max_internal_word_gap": 0.416,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.208,
+            "max_internal_word_gap": 0.416,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0224",
+              "text": "so",
+              "start": 120.768,
+              "end": 120.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0225",
+              "text": "don't",
+              "start": 120.976,
+              "end": 121.344,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0226",
+              "text": "you",
+              "start": 121.344,
+              "end": 121.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0227",
+              "text": "think",
+              "start": 121.504,
+              "end": 121.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0228",
+              "text": "it's",
+              "start": 121.888,
+              "end": 122.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0229",
+              "text": "way",
+              "start": 122.096,
+              "end": 122.368,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0230",
+              "text": "past",
+              "start": 122.368,
+              "end": 122.784,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0231",
+              "text": "time",
+              "start": 122.784,
+              "end": 123.168,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0044",
+          "display_type": "lyric",
+          "text": "I made my own bed?",
+          "start": 123.018,
+          "end": 124.954,
+          "word_start": 123.168,
+          "last_word_start": 124.48,
+          "line_anchor_start": 123.018,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.304,
+          "max_internal_word_gap": 0.384,
+          "later_internal_word_gap_typical": 0.352,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.304,
+            "max_internal_word_gap": 0.384,
+            "later_internal_word_gap_typical": 0.352
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0232",
+              "text": "i",
+              "start": 123.168,
+              "end": 123.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0233",
+              "text": "made",
+              "start": 123.472,
+              "end": 123.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0234",
+              "text": "my",
+              "start": 123.856,
+              "end": 124.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0235",
+              "text": "own",
+              "start": 124.128,
+              "end": 124.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0236",
+              "text": "bed",
+              "start": 124.48,
+              "end": 125.184,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0045",
+          "display_type": "lyric",
+          "text": "Way past time I became",
+          "start": 125.034,
+          "end": 126.714,
+          "word_start": 125.184,
+          "last_word_start": 126.384,
+          "line_anchor_start": 125.034,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.336,
+          "max_internal_word_gap": 0.432,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.336,
+            "max_internal_word_gap": 0.432,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0237",
+              "text": "way",
+              "start": 125.184,
+              "end": 125.52,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0238",
+              "text": "past",
+              "start": 125.52,
+              "end": 125.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0239",
+              "text": "time",
+              "start": 125.952,
+              "end": 126.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0240",
+              "text": "i",
+              "start": 126.24,
+              "end": 126.384,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0241",
+              "text": "became",
+              "start": 126.384,
+              "end": 126.944,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0046",
+          "display_type": "lyric",
+          "text": "The voice in my own head?",
+          "start": 126.794,
+          "end": 130.57,
+          "word_start": 126.944,
+          "last_word_start": 128.656,
+          "line_anchor_start": 126.794,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 0.512,
+          "later_internal_word_gap_typical": 0.368,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 0.512,
+            "later_internal_word_gap_typical": 0.368
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0242",
+              "text": "the",
+              "start": 126.944,
+              "end": 127.12,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0243",
+              "text": "voice",
+              "start": 127.12,
+              "end": 127.632,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0244",
+              "text": "in",
+              "start": 127.632,
+              "end": 127.92,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0245",
+              "text": "my",
+              "start": 127.92,
+              "end": 128.272,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0246",
+              "text": "own",
+              "start": 128.272,
+              "end": 128.656,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0247",
+              "text": "head",
+              "start": 128.656,
+              "end": 129.556,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "start": 130.65,
+      "end": 142.826,
+      "lines": [
+        {
+          "id": "line-0047",
+          "display_type": "lyric",
+          "text": "And you can't say I'm running away from myself",
+          "start": 130.65,
+          "end": 136.506,
+          "word_start": 130.8,
+          "last_word_start": 134.672,
+          "line_anchor_start": 130.65,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 1.728,
+          "later_internal_word_gap_typical": 0.448,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 1.728,
+            "later_internal_word_gap_typical": 0.448
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0248",
+              "text": "and",
+              "start": 130.8,
+              "end": 131.056,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0249",
+              "text": "you",
+              "start": 131.056,
+              "end": 131.264,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0250",
+              "text": "can't",
+              "start": 131.264,
+              "end": 131.712,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0251",
+              "text": "say",
+              "start": 131.712,
+              "end": 132.16,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0252",
+              "text": "i'm",
+              "start": 132.16,
+              "end": 132.304,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0253",
+              "text": "running",
+              "start": 132.304,
+              "end": 132.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0254",
+              "text": "away",
+              "start": 132.4,
+              "end": 132.944,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0255",
+              "text": "from",
+              "start": 132.944,
+              "end": 133.844,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0256",
+              "text": "myself",
+              "start": 134.672,
+              "end": 135.572,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0048",
+          "display_type": "lyric",
+          "text": "Cause I was never myself in the first place",
+          "start": 136.586,
+          "end": 142.826,
+          "word_start": 136.736,
+          "last_word_start": 139.968,
+          "line_anchor_start": 136.586,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.272,
+          "max_internal_word_gap": 1.104,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.272,
+            "max_internal_word_gap": 1.104,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0257",
+              "text": "cause",
+              "start": 136.736,
+              "end": 137.008,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0258",
+              "text": "i",
+              "start": 137.008,
+              "end": 137.28,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0259",
+              "text": "was",
+              "start": 137.28,
+              "end": 137.52,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0260",
+              "text": "never",
+              "start": 137.52,
+              "end": 137.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0261",
+              "text": "myself",
+              "start": 137.856,
+              "end": 138.756,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0262",
+              "text": "in",
+              "start": 138.96,
+              "end": 139.28,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0263",
+              "text": "the",
+              "start": 139.28,
+              "end": 139.36,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0264",
+              "text": "first",
+              "start": 139.36,
+              "end": 139.968,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0265",
+              "text": "place",
+              "start": 139.968,
+              "end": 140.868,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "start": 142.906,
+      "end": 183.392,
+      "lines": [
+        {
+          "id": "line-0049",
+          "display_type": "lyric",
+          "text": "It's just one box",
+          "start": 142.906,
+          "end": 144.97,
+          "word_start": 143.056,
+          "last_word_start": 144.112,
+          "line_anchor_start": 142.906,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.544,
+          "later_internal_word_gap_typical": 0.4,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.544,
+            "later_internal_word_gap_typical": 0.4
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0266",
+              "text": "it's",
+              "start": 143.056,
+              "end": 143.312,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0267",
+              "text": "just",
+              "start": 143.312,
+              "end": 143.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0268",
+              "text": "one",
+              "start": 143.856,
+              "end": 144.112,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0269",
+              "text": "box",
+              "start": 144.112,
+              "end": 145.012,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0050",
+          "display_type": "lyric",
+          "text": "Probably something sentimental",
+          "start": 145.05,
+          "end": 147.034,
+          "word_start": 145.2,
+          "last_word_start": 146.144,
+          "line_anchor_start": 145.05,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.416,
+          "max_internal_word_gap": 0.528,
+          "later_internal_word_gap_typical": 0.528,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.416,
+            "max_internal_word_gap": 0.528,
+            "later_internal_word_gap_typical": 0.528
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0270",
+              "text": "probably",
+              "start": 145.2,
+              "end": 145.616,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0271",
+              "text": "something",
+              "start": 145.616,
+              "end": 146.144,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0272",
+              "text": "sentimental",
+              "start": 146.144,
+              "end": 147.044,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0051",
+          "display_type": "lyric",
+          "text": "It's a cobweb in a corner",
+          "start": 147.114,
+          "end": 149.002,
+          "word_start": 147.264,
+          "last_word_start": 148.48,
+          "line_anchor_start": 147.114,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.24,
+          "max_internal_word_gap": 0.592,
+          "later_internal_word_gap_typical": 0.128,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.24,
+            "max_internal_word_gap": 0.592,
+            "later_internal_word_gap_typical": 0.128
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0273",
+              "text": "it's",
+              "start": 147.264,
+              "end": 147.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0274",
+              "text": "a",
+              "start": 147.504,
+              "end": 147.632,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0275",
+              "text": "cobweb",
+              "start": 147.632,
+              "end": 148.224,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0276",
+              "text": "in",
+              "start": 148.224,
+              "end": 148.352,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0277",
+              "text": "a",
+              "start": 148.352,
+              "end": 148.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0278",
+              "text": "corner",
+              "start": 148.48,
+              "end": 149.232,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0052",
+          "display_type": "lyric",
+          "text": "What's dead cannot be reborn",
+          "start": 149.082,
+          "end": 150.81,
+          "word_start": 149.232,
+          "last_word_start": 150.4,
+          "line_anchor_start": 149.082,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.272,
+          "max_internal_word_gap": 0.416,
+          "later_internal_word_gap_typical": 0.272,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.272,
+            "max_internal_word_gap": 0.416,
+            "later_internal_word_gap_typical": 0.272
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0279",
+              "text": "what's",
+              "start": 149.232,
+              "end": 149.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0280",
+              "text": "dead",
+              "start": 149.504,
+              "end": 149.712,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0281",
+              "text": "cannot",
+              "start": 149.712,
+              "end": 150.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0282",
+              "text": "be",
+              "start": 150.128,
+              "end": 150.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0283",
+              "text": "reborn",
+              "start": 150.4,
+              "end": 151.04,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0053",
+          "display_type": "lyric",
+          "text": "Her legacy - one box!",
+          "start": 150.89,
+          "end": 153.258,
+          "word_start": 151.04,
+          "last_word_start": 152.336,
+          "line_anchor_start": 150.89,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.64,
+          "later_internal_word_gap_typical": 0.52,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.64,
+            "later_internal_word_gap_typical": 0.52
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0284",
+              "text": "her",
+              "start": 151.04,
+              "end": 151.296,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0285",
+              "text": "legacy",
+              "start": 151.296,
+              "end": 151.936,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0286",
+              "text": "one",
+              "start": 151.936,
+              "end": 152.336,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0287",
+              "text": "box",
+              "start": 152.336,
+              "end": 153.236,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0054",
+          "display_type": "lyric",
+          "text": "So just perform the exorcism",
+          "start": 153.338,
+          "end": 155.642,
+          "word_start": 153.488,
+          "last_word_start": 154.864,
+          "line_anchor_start": 153.338,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.272,
+          "max_internal_word_gap": 0.624,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.272,
+            "max_internal_word_gap": 0.624,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0288",
+              "text": "so",
+              "start": 153.488,
+              "end": 153.76,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0289",
+              "text": "just",
+              "start": 153.76,
+              "end": 154.048,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0290",
+              "text": "perform",
+              "start": 154.048,
+              "end": 154.672,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0291",
+              "text": "the",
+              "start": 154.672,
+              "end": 154.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0292",
+              "text": "exorcism",
+              "start": 154.864,
+              "end": 155.764,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0055",
+          "display_type": "lyric",
+          "text": "Making Sarah guilty",
+          "start": 155.722,
+          "end": 157.226,
+          "word_start": 155.872,
+          "last_word_start": 156.8,
+          "line_anchor_start": 155.722,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.48,
+          "max_internal_word_gap": 0.48,
+          "later_internal_word_gap_typical": 0.448,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.48,
+            "max_internal_word_gap": 0.48,
+            "later_internal_word_gap_typical": 0.448
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0293",
+              "text": "making",
+              "start": 155.872,
+              "end": 156.352,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0294",
+              "text": "sarah",
+              "start": 156.352,
+              "end": 156.8,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0295",
+              "text": "guilty",
+              "start": 156.8,
+              "end": 157.456,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0056",
+          "display_type": "lyric",
+          "text": "That was always Betty's specialism",
+          "start": 157.306,
+          "end": 159.05,
+          "word_start": 157.456,
+          "last_word_start": 158.8,
+          "line_anchor_start": 157.306,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.24,
+          "max_internal_word_gap": 0.528,
+          "later_internal_word_gap_typical": 0.288,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.24,
+            "max_internal_word_gap": 0.528,
+            "later_internal_word_gap_typical": 0.288
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0296",
+              "text": "that",
+              "start": 157.456,
+              "end": 157.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0297",
+              "text": "was",
+              "start": 157.696,
+              "end": 157.984,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0298",
+              "text": "always",
+              "start": 157.984,
+              "end": 158.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0299",
+              "text": "betty's",
+              "start": 158.512,
+              "end": 158.8,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0300",
+              "text": "specialism",
+              "start": 158.8,
+              "end": 159.7,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0057",
+          "display_type": "lyric",
+          "text": "Clear the past away",
+          "start": 159.8,
+          "end": 161.2,
+          "word_start": 162.016,
+          "last_word_start": 172.72,
+          "line_anchor_start": 159.8,
+          "line_anchor_source": "late-next-line-anchor-rescue",
+          "first_internal_word_gap": 3.568,
+          "max_internal_word_gap": 6.72,
+          "later_internal_word_gap_typical": 3.568,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 3.568,
+            "max_internal_word_gap": 6.72,
+            "later_internal_word_gap_typical": 3.568,
+            "late_anchor_uncorrected_display_start": 161.866,
+            "late_anchor_rescued_display_start": 159.8,
+            "late_anchor_gap_from_previous_last_word": 3.216,
+            "late_anchor_reason": "clean_previous_line_then_late_suspicious_next_line"
+          },
+          "audio_estimated_end": 161.2,
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-late-next-line-anchor-rescue",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "late_next_line_anchor_rescue_applied_needs_review",
+            "low_confidence_internal_alignment_audio_boundary_used_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0301",
+              "text": "clear",
+              "start": 162.016,
+              "end": 162.916,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0302",
+              "text": "the",
+              "start": 165.584,
+              "end": 166.0,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0303",
+              "text": "past",
+              "start": 166.0,
+              "end": 166.9,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0304",
+              "text": "away",
+              "start": 172.72,
+              "end": 173.28,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0058",
+          "display_type": "lyric",
+          "text": "Then the future can begin today",
+          "start": 161.45,
+          "end": 171.994,
+          "word_start": 173.28,
+          "last_word_start": 181.984,
+          "line_anchor_start": 161.45,
+          "line_anchor_source": "audio-phrase-boundary-after-low-confidence-line",
+          "first_internal_word_gap": 0.144,
+          "max_internal_word_gap": 4.368,
+          "later_internal_word_gap_typical": 2.048,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.144,
+            "max_internal_word_gap": 4.368,
+            "later_internal_word_gap_typical": 2.048,
+            "low_confidence_previous_boundary_next_start_original": 173.13,
+            "low_confidence_previous_boundary_next_start_adjusted": 161.45,
+            "low_confidence_previous_boundary_line_id": "line-0057"
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-audio-phrase-boundary-rescue",
+          "review_flags": [
+            "large_internal_word_gap_needs_review",
+            "line_start_adjusted_after_low_confidence_phrase_boundary_needs_review",
+            "low_confidence_phrase_boundary_skipped_for_repeated_final_word_run_needs_review",
+            "repeated_final_word_run_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0305",
+              "text": "then",
+              "start": 173.28,
+              "end": 173.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0306",
+              "text": "the",
+              "start": 173.424,
+              "end": 173.568,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0307",
+              "text": "future",
+              "start": 173.568,
+              "end": 174.468,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0308",
+              "text": "can",
+              "start": 177.936,
+              "end": 178.836,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0309",
+              "text": "begin",
+              "start": 181.888,
+              "end": 181.984,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0310",
+              "text": "today",
+              "start": 181.984,
+              "end": 182.08,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0059",
+          "display_type": "lyric",
+          "text": "Today",
+          "start": 172.744,
+          "end": 176.194,
+          "word_start": 182.08,
+          "last_word_start": 182.08,
+          "line_anchor_start": 172.744,
+          "line_anchor_source": "repeated-final-word-rescue",
+          "first_internal_word_gap": 0.0,
+          "max_internal_word_gap": 0.0,
+          "later_internal_word_gap_typical": 0.0,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.0,
+            "max_internal_word_gap": 0.0,
+            "later_internal_word_gap_typical": 0.0,
+            "repeated_final_word_uncorrected_display_start": 181.93,
+            "repeated_final_word_rescued_display_start": 172.744,
+            "repeated_final_word_base_line_id": "line-0058",
+            "repeated_final_word_held_span_seconds": 20.534,
+            "repeated_final_word": "today"
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-final-word-rescue",
+          "review_flags": [
+            "monotonic_guard_skipped_for_repeated_final_word_rescue_needs_review",
+            "repeated_final_word_line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0311",
+              "text": "today",
+              "start": 182.08,
+              "end": 182.192,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0060",
+          "display_type": "lyric",
+          "text": "Today",
+          "start": 176.944,
+          "end": 183.392,
+          "word_start": 182.192,
+          "last_word_start": 182.192,
+          "line_anchor_start": 176.944,
+          "line_anchor_source": "repeated-final-word-rescue",
+          "first_internal_word_gap": 0.0,
+          "max_internal_word_gap": 0.0,
+          "later_internal_word_gap_typical": 0.0,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.0,
+            "max_internal_word_gap": 0.0,
+            "later_internal_word_gap_typical": 0.0,
+            "repeated_final_word_uncorrected_display_start": 182.042,
+            "repeated_final_word_rescued_display_start": 176.944,
+            "repeated_final_word_base_line_id": "line-0058",
+            "repeated_final_word_held_span_seconds": 20.534,
+            "repeated_final_word": "today"
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-final-word-rescue",
+          "review_flags": [
+            "monotonic_guard_skipped_for_repeated_final_word_rescue_needs_review",
+            "repeated_final_word_line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0312",
+              "text": "today",
+              "start": 182.192,
+              "end": 183.392,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    }
+  ],
+  "editor_notes": [
+    "This draft uses singing-specific word starts as timing anchors.",
+    "Line starts normally come from the first word in each lyric line.",
+    "Cautious first-word correction is only applied to longer lines where word 1 looks like an early outlier.",
+    "Short held lines are flagged, but they are not auto-corrected just because word 1 is followed by a gap.",
+    "Repeated phrase rescue can pull repeated or shared-opening lines earlier when the word anchors arrive implausibly late.",
+    "Lines after explicit instrumental placeholders can be moved later when word 1 looks too early and the rest of the line starts much later.",
+    "A late next-line rescue can move a lyric line earlier when a clean previous line is followed by a suspiciously late next-line anchor, but it is deliberately narrow and does not cascade across a phrase.",
+    "A monotonic line-start guard prevents the next lyric display line from appearing before the previous lyric's final word anchor.",
+    "Line ends can be estimated from the vocal audio after the final word start; if audio analysis fails, the builder falls back to inferred line ends.",
+    "When internal word anchors look unreliable, Kara Creator can use an early audio phrase boundary to correct the line-level timing without pretending the word anchors are certain.",
+    "Instrumental placeholders are kept as editable display lines with empty words arrays and are timed from audio-backed lyric ends where available.",
+    "When no reliable audio-backed line end is found, the builder keeps the older safe fallback rules for held lyrics and instrumental gaps.",
+    "This is an editable draft, not a final export."
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": "kara-run-manifest-v2",
+  "song_name": "secondhand_shame_vad005",
+  "dataset_name": "kara_secondhand_shame_vad005",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\lyrics.txt"
+  },
+  "prepared_inputs": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\secondhand_shame_vad005\\audio\\secondhand_shame_vad005.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\secondhand_shame_vad005\\lyrics\\secondhand_shame_vad005.txt",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\secondhand_shame_vad005\\secondhand_shame_vad005-line-map.json"
+  },
+  "outputs": {
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\secondhand_shame_vad005-word-review-lyrics-aligner.json",
+    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\secondhand_shame_vad005-draft-lyrics-aligner-v3.json"
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . .",
+    "aligner_lyrics_exclude_instrumentals": true,
+    "lyrics_aligner_vad_threshold": 0.05
+  },
+  "sections": [
+    {
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 11,
+      "lyric_line_count": 11,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 10,
+      "lyric_line_count": 10,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 2,
+      "lyric_line_count": 2,
+      "instrumental_line_count": 0
+    },
+    {
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 12,
+      "lyric_line_count": 12,
+      "instrumental_line_count": 0
+    }
+  ],
+  "vocal_start_detection": {
+    "status": "detected",
+    "detected_start_seconds": 7.4,
+    "raw_detected_frame_start_seconds": 7.75,
+    "threshold_dbfs": -25.5,
+    "noise_floor_dbfs": -37.5,
+    "frame_ms": 50,
+    "min_duration_seconds": 0.45,
+    "pre_roll_seconds": 0.35,
+    "enabled": true,
+    "min_intro_seconds": 5.0,
+    "tolerance_seconds": 2.0,
+    "correction_applied": false,
+    "correction_seconds": 0.0,
+    "corrected_aligner_output": null,
+    "first_aligner_word_start_seconds": 7.424,
+    "correction_status": "aligner_start_not_early_enough_to_correct",
+    "suggested_correction_seconds": -0.024
+  },
+  "cleanup": {
+    "removed_previous_aligner_files": [
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_secondhand_shame_vad005_word2phonemes.pickle",
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_secondhand_shame_vad005_word2phonemes.txt",
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_secondhand_shame_vad005_word_list.txt",
+      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\outputs\\kara_secondhand_shame_vad005"
+    ]
+  }
+}

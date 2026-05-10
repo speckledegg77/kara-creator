@@ -1,0 +1,3443 @@
+{
+  "schema_version": "karaoke-draft-v3",
+  "created_by": "kara-creator lyrics-aligner draft builder",
+  "source": {
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_song_test-word-review-lyrics-aligner.json",
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\lyrics.txt",
+    "audio_duration_seconds": 203.888
+  },
+  "alignment": {
+    "mode": "singing-specific-word-starts-to-line-draft",
+    "status": "draft",
+    "primary_aligner": "lyrics-aligner",
+    "line_count": 36,
+    "lyric_line_count": 33,
+    "instrumental_line_count": 3,
+    "section_count": 10,
+    "auto_adjusted_line_count": 3,
+    "repeated_phrase_rescue_count": 4,
+    "repeated_final_word_rescue_count": 0,
+    "instrumental_following_anchor_rescue_count": 0,
+    "late_next_line_anchor_rescue_count": 0,
+    "monotonic_line_start_guard_count": 1,
+    "audio_line_end_estimation": {
+      "enabled": true,
+      "status": "ok",
+      "estimated_line_end_count": 2,
+      "fallback_line_end_count": 0,
+      "skipped_line_end_count": 31,
+      "error": null,
+      "audio_path": "C:\\Users\\mark\\kara-creator\\incoming\\new-song-test\\vocals.mp3",
+      "frame_ms": 20,
+      "sample_rate": 16000,
+      "audio_duration_seconds": 214.805,
+      "noise_floor": 0.001406,
+      "settings": {
+        "scope": "before_instrumental",
+        "min_after_last_word_seconds": 0.5,
+        "max_search_seconds": 9.0,
+        "sustain_seconds": 0.45,
+        "relative_threshold": 0.18,
+        "noise_floor_multiplier": 3.0,
+        "next_lyric_safety_gap_seconds": 0.25
+      }
+    },
+    "settings": {
+      "start_padding_seconds": 0.15,
+      "next_line_gap_seconds": 0.08,
+      "final_line_hold_seconds": 2.5,
+      "long_tail_threshold_seconds": 3.5,
+      "short_line_threshold_seconds": 1.2,
+      "large_internal_word_gap_seconds": 1.75,
+      "instrumental_fallback_seconds": 5.0,
+      "auto_correct_suspicious_first_word": true,
+      "suspicious_first_word_gap_seconds": 1.75,
+      "first_gap_ratio_threshold": 2.5,
+      "auto_anchor_min_words": 3,
+      "auto_anchor_lead_in_min_seconds": 0.35,
+      "auto_anchor_lead_in_max_seconds": 1.0,
+      "auto_anchor_lead_in_extended_max_seconds": 2.5,
+      "auto_anchor_lead_in_gap_fraction": 0.33,
+      "repeated_phrase_rescue": true,
+      "repeated_final_word_rescue": true,
+      "repeated_final_word_min_span_seconds": 8.0,
+      "repeated_final_word_collapse_window_seconds": 1.25,
+      "repeated_final_word_start_fraction": 0.55,
+      "repeated_final_word_spacing_seconds": 4.2,
+      "instrumental_following_anchor_rescue": true,
+      "late_next_line_anchor_rescue": true,
+      "late_next_line_gap_seconds": 2.2,
+      "late_next_line_after_previous_word_seconds": 1.0,
+      "late_anchor_cascade_gap_seconds": 6.5,
+      "repeated_phrase_min_gap_seconds": 3.0,
+      "repeated_phrase_after_previous_word_seconds": 4.0,
+      "repeated_phrase_min_common_prefix_words": 2,
+      "adjusted_next_line_gap_seconds": 1.25,
+      "instrumental_after_previous_word_seconds": 2.5,
+      "instrumental_before_next_line_seconds": 0.5,
+      "starting_instrumental_before_first_line_seconds": 1.5,
+      "lyric_before_instrumental_min_hold_seconds": 3.0,
+      "audio_line_end_estimation": true,
+      "audio_line_end_scope": "before_instrumental",
+      "audio_line_end_frame_ms": 20,
+      "audio_line_end_min_after_last_word_seconds": 0.5,
+      "audio_line_end_max_search_seconds": 9.0,
+      "audio_line_end_sustain_seconds": 0.45,
+      "audio_line_end_relative_threshold": 0.18,
+      "audio_line_end_noise_floor_multiplier": 3.0,
+      "audio_line_end_next_lyric_safety_gap_seconds": 0.25
+    },
+    "review_flag_count": 31,
+    "review_flags": [
+      {
+        "section": "Section 1",
+        "line_id": "line-0001",
+        "text": ". . .",
+        "flag": "instrumental_at_start_needs_review"
+      },
+      {
+        "section": "Section 1",
+        "line_id": "line-0001",
+        "text": ". . .",
+        "flag": "instrumental_timing_needs_review"
+      },
+      {
+        "section": "Section 2",
+        "line_id": "line-0002",
+        "text": "If I met myself back then I wonder what I'd say",
+        "flag": "late_anchor_rescue_skipped_after_instrumental_placeholder"
+      },
+      {
+        "section": "Section 2",
+        "line_id": "line-0003",
+        "text": "Would I tell that simple wide-eyed girl the truth",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "Section 2",
+        "line_id": "line-0003",
+        "text": "Would I tell that simple wide-eyed girl the truth",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "Section 2",
+        "line_id": "line-0003",
+        "text": "Would I tell that simple wide-eyed girl the truth",
+        "flag": "line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 3",
+        "line_id": "line-0010",
+        "text": "If I met myself again",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "Section 3",
+        "line_id": "line-0010",
+        "text": "If I met myself again",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "Section 3",
+        "line_id": "line-0010",
+        "text": "If I met myself again",
+        "flag": "line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 4",
+        "line_id": "line-0011",
+        "text": ". . .",
+        "flag": "instrumental_minimum_gap_rescue_applied_needs_review"
+      },
+      {
+        "section": "Section 4",
+        "line_id": "line-0011",
+        "text": ". . .",
+        "flag": "instrumental_shorter_than_preferred_needs_review"
+      },
+      {
+        "section": "Section 4",
+        "line_id": "line-0011",
+        "text": ". . .",
+        "flag": "instrumental_timing_needs_review"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "first_word_anchor_suspect"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "instrumental_following_line_delayed_for_minimum_gap_needs_review"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "large_internal_word_gap_needs_review"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "late_anchor_rescue_skipped_after_instrumental_placeholder"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 5",
+        "line_id": "line-0012",
+        "text": "If I met myself again I wonder what she'd say",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 6",
+        "line_id": "line-0018",
+        "text": "And I'd tell her",
+        "flag": "very_short_display_duration_needs_review"
+      },
+      {
+        "section": "Section 6",
+        "line_id": "line-0019",
+        "text": "And I'd tell her 'til my voice gave out",
+        "flag": "line_start_shifted_to_preserve_word_order_needs_review"
+      },
+      {
+        "section": "Section 6",
+        "line_id": "line-0022",
+        "text": "And go and do it all again",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "Section 6",
+        "line_id": "line-0023",
+        "text": "If I met myself again",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "Section 7",
+        "line_id": "line-0024",
+        "text": "If I met that girl again I'd tell her sink or swim",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 7",
+        "line_id": "line-0032",
+        "text": "Cause I won't have my son",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "Section 8",
+        "line_id": "line-0033",
+        "text": "If I met myself again",
+        "flag": "long_tail_after_last_word_needs_review"
+      },
+      {
+        "section": "Section 8",
+        "line_id": "line-0034",
+        "text": "If I met myself again",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 9",
+        "line_id": "line-0035",
+        "text": ". . .",
+        "flag": "final_instrumental_gap_rescue_applied_needs_review"
+      },
+      {
+        "section": "Section 9",
+        "line_id": "line-0035",
+        "text": ". . .",
+        "flag": "instrumental_timing_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0036",
+        "text": "If I met myself again",
+        "flag": "final_instrumental_following_line_auto_adjusted_needs_review"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0036",
+        "text": "If I met myself again",
+        "flag": "late_anchor_rescue_skipped_after_instrumental_placeholder"
+      },
+      {
+        "section": "Section 10",
+        "line_id": "line-0036",
+        "text": "If I met myself again",
+        "flag": "repeated_phrase_line_start_auto_adjusted_needs_review"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "start": 0.0,
+      "end": 11.31,
+      "lines": [
+        {
+          "id": "line-0001",
+          "display_type": "instrumental",
+          "text": ". . .",
+          "start": 0.0,
+          "end": 11.31,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "instrumental-placeholder-inferred",
+          "review_flags": [
+            "instrumental_at_start_needs_review",
+            "instrumental_timing_needs_review"
+          ],
+          "words": [],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "start": 12.81,
+      "end": 38.714,
+      "lines": [
+        {
+          "id": "line-0002",
+          "display_type": "lyric",
+          "text": "If I met myself back then I wonder what I'd say",
+          "start": 12.81,
+          "end": 18.046,
+          "word_start": 12.96,
+          "last_word_start": 17.136,
+          "line_anchor_start": 12.81,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.976,
+          "later_internal_word_gap_typical": 0.384,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.976,
+            "later_internal_word_gap_typical": 0.384
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "late_anchor_rescue_skipped_after_instrumental_placeholder"
+          ],
+          "words": [
+            {
+              "id": "word-0001",
+              "text": "if",
+              "start": 12.96,
+              "end": 13.152,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0002",
+              "text": "i",
+              "start": 13.152,
+              "end": 13.296,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0003",
+              "text": "met",
+              "start": 13.296,
+              "end": 13.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0004",
+              "text": "myself",
+              "start": 13.68,
+              "end": 14.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0005",
+              "text": "back",
+              "start": 14.56,
+              "end": 14.944,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0006",
+              "text": "then",
+              "start": 14.944,
+              "end": 15.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0007",
+              "text": "i",
+              "start": 15.504,
+              "end": 15.568,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0008",
+              "text": "wonder",
+              "start": 15.568,
+              "end": 16.468,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0009",
+              "text": "what",
+              "start": 16.544,
+              "end": 16.944,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0010",
+              "text": "i'd",
+              "start": 16.944,
+              "end": 17.136,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0011",
+              "text": "say",
+              "start": 17.136,
+              "end": 17.36,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0003",
+          "display_type": "lyric",
+          "text": "Would I tell that simple wide-eyed girl the truth",
+          "start": 18.796,
+          "end": 25.946,
+          "word_start": 17.36,
+          "last_word_start": 23.2,
+          "line_anchor_start": 18.796,
+          "line_anchor_source": "corrected-word-cluster",
+          "first_internal_word_gap": 2.144,
+          "max_internal_word_gap": 2.144,
+          "later_internal_word_gap_typical": 0.512,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 2.144,
+            "max_internal_word_gap": 2.144,
+            "later_internal_word_gap_typical": 0.512,
+            "auto_anchor_lead_in_seconds": 0.708,
+            "uncorrected_display_start": 17.21,
+            "auto_corrected_display_start": 18.796,
+            "auto_anchor_reason": "suspicious_first_word"
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-corrected-word-cluster",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0012",
+              "text": "would",
+              "start": 17.36,
+              "end": 18.26,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0013",
+              "text": "i",
+              "start": 19.504,
+              "end": 19.824,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0014",
+              "text": "tell",
+              "start": 19.824,
+              "end": 20.336,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0015",
+              "text": "that",
+              "start": 20.336,
+              "end": 20.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0016",
+              "text": "simple",
+              "start": 20.592,
+              "end": 21.492,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0017",
+              "text": "wideeyed",
+              "start": 21.52,
+              "end": 22.42,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0018",
+              "text": "girl",
+              "start": 22.464,
+              "end": 23.056,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0019",
+              "text": "the",
+              "start": 23.056,
+              "end": 23.2,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0020",
+              "text": "truth",
+              "start": 23.2,
+              "end": 24.1,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0004",
+          "display_type": "lyric",
+          "text": "If I met myself again, a child who'd lost her way",
+          "start": 26.026,
+          "end": 32.394,
+          "word_start": 26.176,
+          "last_word_start": 30.4,
+          "line_anchor_start": 26.026,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 1.008,
+          "later_internal_word_gap_typical": 0.368,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 1.008,
+            "later_internal_word_gap_typical": 0.368
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0021",
+              "text": "if",
+              "start": 26.176,
+              "end": 26.352,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0022",
+              "text": "i",
+              "start": 26.352,
+              "end": 26.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0023",
+              "text": "met",
+              "start": 26.496,
+              "end": 26.864,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0024",
+              "text": "myself",
+              "start": 26.864,
+              "end": 27.764,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0025",
+              "text": "again",
+              "start": 27.872,
+              "end": 28.688,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0026",
+              "text": "a",
+              "start": 28.688,
+              "end": 28.752,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0027",
+              "text": "child",
+              "start": 28.752,
+              "end": 29.104,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0028",
+              "text": "who'd",
+              "start": 29.104,
+              "end": 29.632,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0029",
+              "text": "lost",
+              "start": 29.632,
+              "end": 30.192,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0030",
+              "text": "her",
+              "start": 30.192,
+              "end": 30.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0031",
+              "text": "way",
+              "start": 30.4,
+              "end": 31.3,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0005",
+          "display_type": "lyric",
+          "text": "Who was just about to pay the price of youth",
+          "start": 32.474,
+          "end": 38.714,
+          "word_start": 32.624,
+          "last_word_start": 36.064,
+          "line_anchor_start": 32.474,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.144,
+          "max_internal_word_gap": 0.768,
+          "later_internal_word_gap_typical": 0.384,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.144,
+            "max_internal_word_gap": 0.768,
+            "later_internal_word_gap_typical": 0.384
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0032",
+              "text": "who",
+              "start": 32.624,
+              "end": 32.768,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0033",
+              "text": "was",
+              "start": 32.768,
+              "end": 33.072,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0034",
+              "text": "just",
+              "start": 33.072,
+              "end": 33.536,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0035",
+              "text": "about",
+              "start": 33.536,
+              "end": 34.304,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0036",
+              "text": "to",
+              "start": 34.304,
+              "end": 34.448,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0037",
+              "text": "pay",
+              "start": 34.448,
+              "end": 35.12,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0038",
+              "text": "the",
+              "start": 35.12,
+              "end": 35.2,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0039",
+              "text": "price",
+              "start": 35.2,
+              "end": 35.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0040",
+              "text": "of",
+              "start": 35.952,
+              "end": 36.064,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0041",
+              "text": "youth",
+              "start": 36.064,
+              "end": 36.964,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "start": 38.794,
+      "end": 67.14,
+      "lines": [
+        {
+          "id": "line-0006",
+          "display_type": "lyric",
+          "text": "I'd tell her only fools rush in and think the heart can lead",
+          "start": 38.794,
+          "end": 45.322,
+          "word_start": 38.944,
+          "last_word_start": 43.472,
+          "line_anchor_start": 38.794,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.096,
+          "max_internal_word_gap": 0.768,
+          "later_internal_word_gap_typical": 0.4,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.096,
+            "max_internal_word_gap": 0.768,
+            "later_internal_word_gap_typical": 0.4
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0042",
+              "text": "i'd",
+              "start": 38.944,
+              "end": 39.04,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0043",
+              "text": "tell",
+              "start": 39.04,
+              "end": 39.44,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0044",
+              "text": "her",
+              "start": 39.44,
+              "end": 39.536,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0045",
+              "text": "only",
+              "start": 39.536,
+              "end": 40.064,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0046",
+              "text": "fools",
+              "start": 40.064,
+              "end": 40.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0047",
+              "text": "rush",
+              "start": 40.832,
+              "end": 41.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0048",
+              "text": "in",
+              "start": 41.232,
+              "end": 41.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0049",
+              "text": "and",
+              "start": 41.696,
+              "end": 41.824,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0050",
+              "text": "think",
+              "start": 41.824,
+              "end": 42.368,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0051",
+              "text": "the",
+              "start": 42.368,
+              "end": 42.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0052",
+              "text": "heart",
+              "start": 42.56,
+              "end": 43.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0053",
+              "text": "can",
+              "start": 43.184,
+              "end": 43.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0054",
+              "text": "lead",
+              "start": 43.472,
+              "end": 44.372,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0007",
+          "display_type": "lyric",
+          "text": "I'd tell her grow a thicker skin, 'cause girl you're gonna bleed",
+          "start": 45.402,
+          "end": 51.898,
+          "word_start": 45.552,
+          "last_word_start": 49.968,
+          "line_anchor_start": 45.402,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.096,
+          "max_internal_word_gap": 0.88,
+          "later_internal_word_gap_typical": 0.408,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.096,
+            "max_internal_word_gap": 0.88,
+            "later_internal_word_gap_typical": 0.408
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0055",
+              "text": "i'd",
+              "start": 45.552,
+              "end": 45.648,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0056",
+              "text": "tell",
+              "start": 45.648,
+              "end": 45.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0057",
+              "text": "her",
+              "start": 45.904,
+              "end": 46.032,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0058",
+              "text": "grow",
+              "start": 46.032,
+              "end": 46.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0059",
+              "text": "a",
+              "start": 46.592,
+              "end": 46.656,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0060",
+              "text": "thicker",
+              "start": 46.656,
+              "end": 47.36,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0061",
+              "text": "skin",
+              "start": 47.36,
+              "end": 48.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0062",
+              "text": "'cause",
+              "start": 48.096,
+              "end": 48.32,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0063",
+              "text": "girl",
+              "start": 48.32,
+              "end": 48.896,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0064",
+              "text": "you're",
+              "start": 48.896,
+              "end": 49.088,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0065",
+              "text": "gonna",
+              "start": 49.088,
+              "end": 49.968,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0066",
+              "text": "bleed",
+              "start": 49.968,
+              "end": 50.868,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0008",
+          "display_type": "lyric",
+          "text": "I'd tell her blue skies turn to grey, the only question's when",
+          "start": 51.978,
+          "end": 58.714,
+          "word_start": 52.128,
+          "last_word_start": 57.648,
+          "line_anchor_start": 51.978,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 1.568,
+          "later_internal_word_gap_typical": 0.432,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 1.568,
+            "later_internal_word_gap_typical": 0.432
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0067",
+              "text": "i'd",
+              "start": 52.128,
+              "end": 52.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0068",
+              "text": "tell",
+              "start": 52.24,
+              "end": 52.448,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0069",
+              "text": "her",
+              "start": 52.448,
+              "end": 52.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0070",
+              "text": "blue",
+              "start": 52.56,
+              "end": 52.912,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0071",
+              "text": "skies",
+              "start": 52.912,
+              "end": 53.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0072",
+              "text": "turn",
+              "start": 53.472,
+              "end": 53.936,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0073",
+              "text": "to",
+              "start": 53.936,
+              "end": 54.064,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0074",
+              "text": "grey",
+              "start": 54.064,
+              "end": 54.964,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0075",
+              "text": "the",
+              "start": 55.056,
+              "end": 55.456,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0076",
+              "text": "only",
+              "start": 55.456,
+              "end": 56.08,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0077",
+              "text": "question's",
+              "start": 56.08,
+              "end": 56.98,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0078",
+              "text": "when",
+              "start": 57.648,
+              "end": 58.548,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0009",
+          "display_type": "lyric",
+          "text": "I'd make her see her future's me",
+          "start": 58.794,
+          "end": 63.028,
+          "word_start": 58.944,
+          "last_word_start": 61.856,
+          "line_anchor_start": 58.794,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 1.248,
+          "later_internal_word_gap_typical": 0.256,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 1.248,
+            "later_internal_word_gap_typical": 0.256
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0079",
+              "text": "i'd",
+              "start": 58.944,
+              "end": 59.056,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0080",
+              "text": "make",
+              "start": 59.056,
+              "end": 59.312,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0081",
+              "text": "her",
+              "start": 59.312,
+              "end": 59.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0082",
+              "text": "see",
+              "start": 59.392,
+              "end": 60.292,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0083",
+              "text": "her",
+              "start": 60.64,
+              "end": 60.784,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0084",
+              "text": "future's",
+              "start": 60.784,
+              "end": 61.684,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0085",
+              "text": "me",
+              "start": 61.856,
+              "end": 62.32,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0010",
+          "display_type": "lyric",
+          "text": "If I met myself again",
+          "start": 63.778,
+          "end": 67.14,
+          "word_start": 62.32,
+          "last_word_start": 65.952,
+          "line_anchor_start": 63.778,
+          "line_anchor_source": "corrected-word-cluster",
+          "first_internal_word_gap": 2.176,
+          "max_internal_word_gap": 2.176,
+          "later_internal_word_gap_typical": 0.336,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 2.176,
+            "max_internal_word_gap": 2.176,
+            "later_internal_word_gap_typical": 0.336,
+            "auto_anchor_lead_in_seconds": 0.718,
+            "uncorrected_display_start": 62.17,
+            "auto_corrected_display_start": 63.778,
+            "auto_anchor_reason": "suspicious_first_word"
+          },
+          "audio_estimated_end": 67.14,
+          "line_end_source": "audio-vocal-offset",
+          "line_end_confidence": "medium",
+          "line_end_diagnostics": {
+            "line_start": 63.778,
+            "last_word_start": 65.952,
+            "search_start": 66.452,
+            "search_end": 69.702,
+            "local_peak": 0.112463,
+            "noise_floor": 0.001406,
+            "threshold": 0.020243,
+            "sustain_seconds": 0.45,
+            "sustain_frames": 23,
+            "detected_frame_index": 3357,
+            "detected_window_mean": 0.010933,
+            "detected_below_threshold_fraction": 0.826,
+            "audio_line_end_status": "estimated"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-corrected-word-cluster",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "large_internal_word_gap_needs_review",
+            "line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0086",
+              "text": "if",
+              "start": 62.32,
+              "end": 63.22,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0087",
+              "text": "i",
+              "start": 64.496,
+              "end": 64.64,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0088",
+              "text": "met",
+              "start": 64.64,
+              "end": 64.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0089",
+              "text": "myself",
+              "start": 64.976,
+              "end": 65.876,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0090",
+              "text": "again",
+              "start": 65.952,
+              "end": 67.14,
+              "source": "lyrics-aligner-word-start",
+              "end_source": "audio-vocal-offset"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "start": 67.22,
+      "end": 70.39,
+      "lines": [
+        {
+          "id": "line-0011",
+          "display_type": "instrumental",
+          "text": ". . .",
+          "start": 67.22,
+          "end": 70.39,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "instrumental-placeholder-inferred",
+          "review_flags": [
+            "instrumental_minimum_gap_rescue_applied_needs_review",
+            "instrumental_shorter_than_preferred_needs_review",
+            "instrumental_timing_needs_review"
+          ],
+          "words": [],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "start": 70.89,
+      "end": 104.57,
+      "lines": [
+        {
+          "id": "line-0012",
+          "display_type": "lyric",
+          "text": "If I met myself again I wonder what she'd say",
+          "start": 70.89,
+          "end": 85.114,
+          "word_start": 69.408,
+          "last_word_start": 83.2,
+          "line_anchor_start": 70.89,
+          "line_anchor_source": "instrumental-minimum-gap-rescue",
+          "first_internal_word_gap": 9.792,
+          "max_internal_word_gap": 9.792,
+          "later_internal_word_gap_typical": 0.44,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 9.792,
+            "max_internal_word_gap": 9.792,
+            "later_internal_word_gap_typical": 0.44,
+            "auto_anchor_lead_in_seconds": 1.0,
+            "uncorrected_display_start": 69.258,
+            "auto_corrected_display_start": 78.2,
+            "auto_anchor_reason": "suspicious_first_word",
+            "repeated_phrase_uncorrected_display_start": 78.2,
+            "repeated_phrase_rescued_display_start": 69.952,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap",
+            "instrumental_minimum_gap_original_start": 69.952,
+            "instrumental_minimum_gap_rescued_start": 70.89,
+            "instrumental_minimum_gap_seconds": 3.0
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-instrumental-minimum-gap-rescue",
+          "review_flags": [
+            "first_word_anchor_suspect",
+            "instrumental_following_line_delayed_for_minimum_gap_needs_review",
+            "large_internal_word_gap_needs_review",
+            "late_anchor_rescue_skipped_after_instrumental_placeholder",
+            "line_start_auto_adjusted_needs_review",
+            "repeated_phrase_line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0091",
+              "text": "if",
+              "start": 69.408,
+              "end": 70.308,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0092",
+              "text": "i",
+              "start": 79.2,
+              "end": 79.328,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0093",
+              "text": "met",
+              "start": 79.328,
+              "end": 79.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0094",
+              "text": "myself",
+              "start": 79.68,
+              "end": 80.58,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0095",
+              "text": "again",
+              "start": 80.64,
+              "end": 81.392,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0096",
+              "text": "i",
+              "start": 81.392,
+              "end": 81.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0097",
+              "text": "wonder",
+              "start": 81.472,
+              "end": 82.32,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0098",
+              "text": "what",
+              "start": 82.32,
+              "end": 82.768,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0099",
+              "text": "she'd",
+              "start": 82.768,
+              "end": 83.2,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0100",
+              "text": "say",
+              "start": 83.2,
+              "end": 84.1,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0013",
+          "display_type": "lyric",
+          "text": "That love-struck girl who thought she was so smart",
+          "start": 85.194,
+          "end": 91.706,
+          "word_start": 85.344,
+          "last_word_start": 88.896,
+          "line_anchor_start": 85.194,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 0.928,
+          "later_internal_word_gap_typical": 0.432,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 0.928,
+            "later_internal_word_gap_typical": 0.432
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0101",
+              "text": "that",
+              "start": 85.344,
+              "end": 85.632,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0102",
+              "text": "lovestruck",
+              "start": 85.632,
+              "end": 86.532,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0103",
+              "text": "girl",
+              "start": 86.56,
+              "end": 87.072,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0104",
+              "text": "who",
+              "start": 87.072,
+              "end": 87.264,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0105",
+              "text": "thought",
+              "start": 87.264,
+              "end": 87.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0106",
+              "text": "she",
+              "start": 87.696,
+              "end": 88.016,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0107",
+              "text": "was",
+              "start": 88.016,
+              "end": 88.352,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0108",
+              "text": "so",
+              "start": 88.352,
+              "end": 88.896,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0109",
+              "text": "smart",
+              "start": 88.896,
+              "end": 89.796,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0014",
+          "display_type": "lyric",
+          "text": "If I warn her of the men, the ones that got away",
+          "start": 91.786,
+          "end": 98.426,
+          "word_start": 91.936,
+          "last_word_start": 96.208,
+          "line_anchor_start": 91.786,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.928,
+          "later_internal_word_gap_typical": 0.376,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.928,
+            "later_internal_word_gap_typical": 0.376
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0110",
+              "text": "if",
+              "start": 91.936,
+              "end": 92.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0111",
+              "text": "i",
+              "start": 92.128,
+              "end": 92.304,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0112",
+              "text": "warn",
+              "start": 92.304,
+              "end": 92.768,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0113",
+              "text": "her",
+              "start": 92.768,
+              "end": 93.04,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0114",
+              "text": "of",
+              "start": 93.04,
+              "end": 93.536,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0115",
+              "text": "the",
+              "start": 93.536,
+              "end": 93.68,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0116",
+              "text": "men",
+              "start": 93.68,
+              "end": 94.352,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0117",
+              "text": "the",
+              "start": 94.352,
+              "end": 94.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0118",
+              "text": "ones",
+              "start": 94.512,
+              "end": 94.992,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0119",
+              "text": "that",
+              "start": 94.992,
+              "end": 95.892,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0120",
+              "text": "got",
+              "start": 95.92,
+              "end": 96.208,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0121",
+              "text": "away",
+              "start": 96.208,
+              "end": 97.108,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0015",
+          "display_type": "lyric",
+          "text": "And worse the ones that stay and break your heart",
+          "start": 98.506,
+          "end": 104.57,
+          "word_start": 98.656,
+          "last_word_start": 101.776,
+          "line_anchor_start": 98.506,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 0.608,
+          "later_internal_word_gap_typical": 0.408,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 0.608,
+            "later_internal_word_gap_typical": 0.408
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0122",
+              "text": "and",
+              "start": 98.656,
+              "end": 98.768,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0123",
+              "text": "worse",
+              "start": 98.768,
+              "end": 99.344,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0124",
+              "text": "the",
+              "start": 99.344,
+              "end": 99.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0125",
+              "text": "ones",
+              "start": 99.424,
+              "end": 99.968,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0126",
+              "text": "that",
+              "start": 99.968,
+              "end": 100.096,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0127",
+              "text": "stay",
+              "start": 100.096,
+              "end": 100.704,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0128",
+              "text": "and",
+              "start": 100.704,
+              "end": 100.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0129",
+              "text": "break",
+              "start": 100.976,
+              "end": 101.568,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0130",
+              "text": "your",
+              "start": 101.568,
+              "end": 101.776,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0131",
+              "text": "heart",
+              "start": 101.776,
+              "end": 102.676,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "start": 104.65,
+      "end": 140.51,
+      "lines": [
+        {
+          "id": "line-0016",
+          "display_type": "lyric",
+          "text": "I'd tell her love's a losing game that's better left un-played",
+          "start": 104.65,
+          "end": 110.938,
+          "word_start": 104.8,
+          "last_word_start": 109.136,
+          "line_anchor_start": 104.65,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 0.752,
+          "later_internal_word_gap_typical": 0.528,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 0.752,
+            "later_internal_word_gap_typical": 0.528
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0132",
+              "text": "i'd",
+              "start": 104.8,
+              "end": 104.912,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0133",
+              "text": "tell",
+              "start": 104.912,
+              "end": 105.136,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0134",
+              "text": "her",
+              "start": 105.136,
+              "end": 105.264,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0135",
+              "text": "love's",
+              "start": 105.264,
+              "end": 105.872,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0136",
+              "text": "a",
+              "start": 105.872,
+              "end": 106.176,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0137",
+              "text": "losing",
+              "start": 106.176,
+              "end": 106.832,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0138",
+              "text": "game",
+              "start": 106.832,
+              "end": 107.488,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0139",
+              "text": "that's",
+              "start": 107.488,
+              "end": 107.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0140",
+              "text": "better",
+              "start": 107.856,
+              "end": 108.608,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0141",
+              "text": "left",
+              "start": 108.608,
+              "end": 109.136,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0142",
+              "text": "unplayed",
+              "start": 109.136,
+              "end": 110.036,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0017",
+          "display_type": "lyric",
+          "text": "I'd tell her you've yourself to blame for every choice you've made",
+          "start": 111.018,
+          "end": 117.626,
+          "word_start": 111.168,
+          "last_word_start": 115.84,
+          "line_anchor_start": 111.018,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.112,
+          "max_internal_word_gap": 0.832,
+          "later_internal_word_gap_typical": 0.488,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.112,
+            "max_internal_word_gap": 0.832,
+            "later_internal_word_gap_typical": 0.488
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0143",
+              "text": "i'd",
+              "start": 111.168,
+              "end": 111.28,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0144",
+              "text": "tell",
+              "start": 111.28,
+              "end": 111.504,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0145",
+              "text": "her",
+              "start": 111.504,
+              "end": 111.584,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0146",
+              "text": "you've",
+              "start": 111.584,
+              "end": 112.32,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0147",
+              "text": "yourself",
+              "start": 112.32,
+              "end": 113.152,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0148",
+              "text": "to",
+              "start": 113.152,
+              "end": 113.264,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0149",
+              "text": "blame",
+              "start": 113.264,
+              "end": 113.904,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0150",
+              "text": "for",
+              "start": 113.904,
+              "end": 114.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0151",
+              "text": "every",
+              "start": 114.24,
+              "end": 114.944,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0152",
+              "text": "choice",
+              "start": 114.944,
+              "end": 115.664,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0153",
+              "text": "you've",
+              "start": 115.664,
+              "end": 115.84,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0154",
+              "text": "made",
+              "start": 115.84,
+              "end": 116.74,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0018",
+          "display_type": "lyric",
+          "text": "And I'd tell her",
+          "start": 117.706,
+          "end": 118.58,
+          "word_start": 117.856,
+          "last_word_start": 118.56,
+          "line_anchor_start": 117.706,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.144,
+          "max_internal_word_gap": 0.304,
+          "later_internal_word_gap_typical": 0.28,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.144,
+            "max_internal_word_gap": 0.304,
+            "later_internal_word_gap_typical": 0.28
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "very_short_display_duration_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0155",
+              "text": "and",
+              "start": 117.856,
+              "end": 118.0,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0156",
+              "text": "i'd",
+              "start": 118.0,
+              "end": 118.256,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0157",
+              "text": "tell",
+              "start": 118.256,
+              "end": 118.56,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0158",
+              "text": "her",
+              "start": 118.56,
+              "end": 118.608,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0019",
+          "display_type": "lyric",
+          "text": "And I'd tell her 'til my voice gave out",
+          "start": 118.66,
+          "end": 123.962,
+          "word_start": 118.608,
+          "last_word_start": 123.424,
+          "line_anchor_start": 118.66,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.864,
+          "max_internal_word_gap": 0.912,
+          "later_internal_word_gap_typical": 0.48,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.864,
+            "max_internal_word_gap": 0.912,
+            "later_internal_word_gap_typical": 0.48,
+            "monotonic_guard_original_start": 118.458,
+            "monotonic_guard_adjusted_start": 118.66
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "line_start_shifted_to_preserve_word_order_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0159",
+              "text": "and",
+              "start": 118.608,
+              "end": 119.472,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0160",
+              "text": "i'd",
+              "start": 119.472,
+              "end": 119.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0161",
+              "text": "tell",
+              "start": 119.952,
+              "end": 120.432,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0162",
+              "text": "her",
+              "start": 120.432,
+              "end": 120.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0163",
+              "text": "'til",
+              "start": 120.592,
+              "end": 121.072,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0164",
+              "text": "my",
+              "start": 121.072,
+              "end": 121.632,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0165",
+              "text": "voice",
+              "start": 121.632,
+              "end": 122.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0166",
+              "text": "gave",
+              "start": 122.512,
+              "end": 123.412,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0167",
+              "text": "out",
+              "start": 123.424,
+              "end": 124.192,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0020",
+          "display_type": "lyric",
+          "text": "And then",
+          "start": 124.042,
+          "end": 125.61,
+          "word_start": 124.192,
+          "last_word_start": 124.608,
+          "line_anchor_start": 124.042,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.416,
+          "max_internal_word_gap": 0.416,
+          "later_internal_word_gap_typical": 0.0,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.416,
+            "max_internal_word_gap": 0.416,
+            "later_internal_word_gap_typical": 0.0
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0168",
+              "text": "and",
+              "start": 124.192,
+              "end": 124.608,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0169",
+              "text": "then",
+              "start": 124.608,
+              "end": 125.508,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0021",
+          "display_type": "lyric",
+          "text": "She would smile, wait a while",
+          "start": 125.69,
+          "end": 129.354,
+          "word_start": 125.84,
+          "last_word_start": 127.952,
+          "line_anchor_start": 125.69,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 1.264,
+          "later_internal_word_gap_typical": 0.248,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 1.264,
+            "later_internal_word_gap_typical": 0.248
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0170",
+              "text": "she",
+              "start": 125.84,
+              "end": 126.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0171",
+              "text": "would",
+              "start": 126.128,
+              "end": 126.272,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0172",
+              "text": "smile",
+              "start": 126.272,
+              "end": 127.172,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0173",
+              "text": "wait",
+              "start": 127.536,
+              "end": 127.888,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0174",
+              "text": "a",
+              "start": 127.888,
+              "end": 127.952,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0175",
+              "text": "while",
+              "start": 127.952,
+              "end": 128.852,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0022",
+          "display_type": "lyric",
+          "text": "And go and do it all again",
+          "start": 129.434,
+          "end": 135.93,
+          "word_start": 129.584,
+          "last_word_start": 131.408,
+          "line_anchor_start": 129.434,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.16,
+          "max_internal_word_gap": 0.816,
+          "later_internal_word_gap_typical": 0.224,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.16,
+            "max_internal_word_gap": 0.816,
+            "later_internal_word_gap_typical": 0.224
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0176",
+              "text": "and",
+              "start": 129.584,
+              "end": 129.744,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0177",
+              "text": "go",
+              "start": 129.744,
+              "end": 129.968,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0178",
+              "text": "and",
+              "start": 129.968,
+              "end": 130.128,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0179",
+              "text": "do",
+              "start": 130.128,
+              "end": 130.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0180",
+              "text": "it",
+              "start": 130.4,
+              "end": 130.592,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0181",
+              "text": "all",
+              "start": 130.592,
+              "end": 131.408,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0182",
+              "text": "again",
+              "start": 131.408,
+              "end": 132.308,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0023",
+          "display_type": "lyric",
+          "text": "If I met myself again",
+          "start": 136.01,
+          "end": 140.51,
+          "word_start": 136.16,
+          "last_word_start": 137.76,
+          "line_anchor_start": 136.01,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 0.96,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 0.96,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0183",
+              "text": "if",
+              "start": 136.16,
+              "end": 136.336,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0184",
+              "text": "i",
+              "start": 136.336,
+              "end": 136.48,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0185",
+              "text": "met",
+              "start": 136.48,
+              "end": 136.8,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0186",
+              "text": "myself",
+              "start": 136.8,
+              "end": 137.7,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0187",
+              "text": "again",
+              "start": 137.76,
+              "end": 138.66,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "start": 141.76,
+      "end": 181.194,
+      "lines": [
+        {
+          "id": "line-0024",
+          "display_type": "lyric",
+          "text": "If I met that girl again I'd tell her sink or swim",
+          "start": 141.76,
+          "end": 150.074,
+          "word_start": 144.048,
+          "last_word_start": 148.16,
+          "line_anchor_start": 141.76,
+          "line_anchor_source": "repeated-phrase-rescue",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.576,
+          "later_internal_word_gap_typical": 0.376,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.576,
+            "later_internal_word_gap_typical": 0.376,
+            "repeated_phrase_uncorrected_display_start": 143.898,
+            "repeated_phrase_rescued_display_start": 141.76,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap"
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-phrase-rescue",
+          "review_flags": [
+            "repeated_phrase_line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0188",
+              "text": "if",
+              "start": 144.048,
+              "end": 144.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0189",
+              "text": "i",
+              "start": 144.24,
+              "end": 144.4,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0190",
+              "text": "met",
+              "start": 144.4,
+              "end": 144.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0191",
+              "text": "that",
+              "start": 144.816,
+              "end": 145.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0192",
+              "text": "girl",
+              "start": 145.184,
+              "end": 145.664,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0193",
+              "text": "again",
+              "start": 145.664,
+              "end": 146.24,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0194",
+              "text": "i'd",
+              "start": 146.24,
+              "end": 146.528,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0195",
+              "text": "tell",
+              "start": 146.528,
+              "end": 146.912,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0196",
+              "text": "her",
+              "start": 146.912,
+              "end": 147.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0197",
+              "text": "sink",
+              "start": 147.232,
+              "end": 147.808,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0198",
+              "text": "or",
+              "start": 147.808,
+              "end": 148.16,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0199",
+              "text": "swim",
+              "start": 148.16,
+              "end": 149.06,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0025",
+          "display_type": "lyric",
+          "text": "I'd wake her up and god I'd make her run",
+          "start": 150.154,
+          "end": 156.394,
+          "word_start": 150.304,
+          "last_word_start": 153.696,
+          "line_anchor_start": 150.154,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.544,
+          "later_internal_word_gap_typical": 0.368,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.544,
+            "later_internal_word_gap_typical": 0.368
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0200",
+              "text": "i'd",
+              "start": 150.304,
+              "end": 150.496,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0201",
+              "text": "wake",
+              "start": 150.496,
+              "end": 151.04,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0202",
+              "text": "her",
+              "start": 151.04,
+              "end": 151.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0203",
+              "text": "up",
+              "start": 151.424,
+              "end": 151.728,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0204",
+              "text": "and",
+              "start": 151.728,
+              "end": 152.048,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0205",
+              "text": "god",
+              "start": 152.048,
+              "end": 152.528,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0206",
+              "text": "i'd",
+              "start": 152.528,
+              "end": 152.848,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0207",
+              "text": "make",
+              "start": 152.848,
+              "end": 153.2,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0208",
+              "text": "her",
+              "start": 153.2,
+              "end": 153.696,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0209",
+              "text": "run",
+              "start": 153.696,
+              "end": 154.596,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0026",
+          "display_type": "lyric",
+          "text": "I'd turn back time and say girl stay away from him",
+          "start": 156.474,
+          "end": 162.458,
+          "word_start": 156.624,
+          "last_word_start": 160.816,
+          "line_anchor_start": 156.474,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.256,
+          "max_internal_word_gap": 0.576,
+          "later_internal_word_gap_typical": 0.464,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.256,
+            "max_internal_word_gap": 0.576,
+            "later_internal_word_gap_typical": 0.464
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0210",
+              "text": "i'd",
+              "start": 156.624,
+              "end": 156.88,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0211",
+              "text": "turn",
+              "start": 156.88,
+              "end": 157.376,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0212",
+              "text": "back",
+              "start": 157.376,
+              "end": 157.744,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0213",
+              "text": "time",
+              "start": 157.744,
+              "end": 158.144,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0214",
+              "text": "and",
+              "start": 158.144,
+              "end": 158.336,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0215",
+              "text": "say",
+              "start": 158.336,
+              "end": 158.736,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0216",
+              "text": "girl",
+              "start": 158.736,
+              "end": 159.312,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0217",
+              "text": "stay",
+              "start": 159.312,
+              "end": 159.856,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0218",
+              "text": "away",
+              "start": 159.856,
+              "end": 160.32,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0219",
+              "text": "from",
+              "start": 160.32,
+              "end": 160.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0220",
+              "text": "him",
+              "start": 160.816,
+              "end": 161.716,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0027",
+          "display_type": "lyric",
+          "text": "But if I did",
+          "start": 162.538,
+          "end": 164.682,
+          "word_start": 162.688,
+          "last_word_start": 163.328,
+          "line_anchor_start": 162.538,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 0.288,
+          "later_internal_word_gap_typical": 0.176,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 0.288,
+            "later_internal_word_gap_typical": 0.176
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0221",
+              "text": "but",
+              "start": 162.688,
+              "end": 162.976,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0222",
+              "text": "if",
+              "start": 162.976,
+              "end": 163.168,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0223",
+              "text": "i",
+              "start": 163.168,
+              "end": 163.328,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0224",
+              "text": "did",
+              "start": 163.328,
+              "end": 164.228,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0028",
+          "display_type": "lyric",
+          "text": "If I dared",
+          "start": 164.762,
+          "end": 166.634,
+          "word_start": 164.912,
+          "last_word_start": 165.248,
+          "line_anchor_start": 164.762,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 0.176,
+          "later_internal_word_gap_typical": 0.16,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 0.176,
+            "later_internal_word_gap_typical": 0.16
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0225",
+              "text": "if",
+              "start": 164.912,
+              "end": 165.088,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0226",
+              "text": "i",
+              "start": 165.088,
+              "end": 165.248,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0227",
+              "text": "dared",
+              "start": 165.248,
+              "end": 166.148,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0029",
+          "display_type": "lyric",
+          "text": "There's a price",
+          "start": 166.714,
+          "end": 168.618,
+          "word_start": 166.864,
+          "last_word_start": 167.232,
+          "line_anchor_start": 166.714,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.32,
+          "max_internal_word_gap": 0.32,
+          "later_internal_word_gap_typical": 0.048,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.32,
+            "max_internal_word_gap": 0.32,
+            "later_internal_word_gap_typical": 0.048
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0228",
+              "text": "there's",
+              "start": 166.864,
+              "end": 167.184,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0229",
+              "text": "a",
+              "start": 167.184,
+              "end": 167.232,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0230",
+              "text": "price",
+              "start": 167.232,
+              "end": 168.132,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0030",
+          "display_type": "lyric",
+          "text": "I would pay",
+          "start": 168.698,
+          "end": 172.058,
+          "word_start": 168.848,
+          "last_word_start": 169.216,
+          "line_anchor_start": 168.698,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 0.192,
+          "later_internal_word_gap_typical": 0.192,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 0.192,
+            "later_internal_word_gap_typical": 0.192
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0231",
+              "text": "i",
+              "start": 168.848,
+              "end": 169.024,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0232",
+              "text": "would",
+              "start": 169.024,
+              "end": 169.216,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0233",
+              "text": "pay",
+              "start": 169.216,
+              "end": 170.116,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0031",
+          "display_type": "lyric",
+          "text": "And I'd lose",
+          "start": 172.138,
+          "end": 174.122,
+          "word_start": 172.288,
+          "last_word_start": 172.752,
+          "line_anchor_start": 172.138,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.224,
+          "max_internal_word_gap": 0.24,
+          "later_internal_word_gap_typical": 0.24,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.224,
+            "max_internal_word_gap": 0.24,
+            "later_internal_word_gap_typical": 0.24
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0234",
+              "text": "and",
+              "start": 172.288,
+              "end": 172.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0235",
+              "text": "i'd",
+              "start": 172.512,
+              "end": 172.752,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0236",
+              "text": "lose",
+              "start": 172.752,
+              "end": 173.652,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0032",
+          "display_type": "lyric",
+          "text": "Cause I won't have my son",
+          "start": 174.202,
+          "end": 181.194,
+          "word_start": 174.352,
+          "last_word_start": 177.424,
+          "line_anchor_start": 174.202,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.288,
+          "max_internal_word_gap": 1.6,
+          "later_internal_word_gap_typical": 0.52,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.288,
+            "max_internal_word_gap": 1.6,
+            "later_internal_word_gap_typical": 0.52
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0237",
+              "text": "cause",
+              "start": 174.352,
+              "end": 174.64,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0238",
+              "text": "i",
+              "start": 174.64,
+              "end": 174.784,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0239",
+              "text": "won't",
+              "start": 174.784,
+              "end": 175.424,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0240",
+              "text": "have",
+              "start": 175.424,
+              "end": 175.824,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0241",
+              "text": "my",
+              "start": 175.824,
+              "end": 176.724,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0242",
+              "text": "son",
+              "start": 177.424,
+              "end": 178.324,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "start": 181.274,
+      "end": 190.64,
+      "lines": [
+        {
+          "id": "line-0033",
+          "display_type": "lyric",
+          "text": "If I met myself again",
+          "start": 181.274,
+          "end": 185.822,
+          "word_start": 181.424,
+          "last_word_start": 183.072,
+          "line_anchor_start": 181.274,
+          "line_anchor_source": "first-word",
+          "first_internal_word_gap": 0.192,
+          "max_internal_word_gap": 0.96,
+          "later_internal_word_gap_typical": 0.32,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.192,
+            "max_internal_word_gap": 0.96,
+            "later_internal_word_gap_typical": 0.32
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "lyrics-aligner-word-starts",
+          "review_flags": [
+            "long_tail_after_last_word_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0243",
+              "text": "if",
+              "start": 181.424,
+              "end": 181.616,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0244",
+              "text": "i",
+              "start": 181.616,
+              "end": 181.792,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0245",
+              "text": "met",
+              "start": 181.792,
+              "end": 182.112,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0246",
+              "text": "myself",
+              "start": 182.112,
+              "end": 183.012,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0247",
+              "text": "again",
+              "start": 183.072,
+              "end": 183.972,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        },
+        {
+          "id": "line-0034",
+          "display_type": "lyric",
+          "text": "If I met myself again",
+          "start": 187.072,
+          "end": 190.64,
+          "word_start": 187.84,
+          "last_word_start": 189.488,
+          "line_anchor_start": 187.072,
+          "line_anchor_source": "repeated-phrase-rescue",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 0.976,
+          "later_internal_word_gap_typical": 0.368,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 0.976,
+            "later_internal_word_gap_typical": 0.368,
+            "repeated_phrase_uncorrected_display_start": 187.69,
+            "repeated_phrase_rescued_display_start": 187.072,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap"
+          },
+          "audio_estimated_end": 190.64,
+          "line_end_source": "audio-vocal-offset",
+          "line_end_confidence": "medium",
+          "line_end_diagnostics": {
+            "line_start": 187.072,
+            "last_word_start": 189.488,
+            "search_start": 189.988,
+            "search_end": 193.238,
+            "local_peak": 0.120688,
+            "noise_floor": 0.001406,
+            "threshold": 0.021724,
+            "sustain_seconds": 0.45,
+            "sustain_frames": 23,
+            "detected_frame_index": 9532,
+            "detected_window_mean": 0.010429,
+            "detected_below_threshold_fraction": 0.826,
+            "audio_line_end_status": "estimated"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-repeated-phrase-rescue",
+          "review_flags": [
+            "repeated_phrase_line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0248",
+              "text": "if",
+              "start": 187.84,
+              "end": 188.016,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0249",
+              "text": "i",
+              "start": 188.016,
+              "end": 188.144,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0250",
+              "text": "met",
+              "start": 188.144,
+              "end": 188.512,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0251",
+              "text": "myself",
+              "start": 188.512,
+              "end": 189.412,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0252",
+              "text": "again",
+              "start": 189.488,
+              "end": 190.64,
+              "source": "lyrics-aligner-word-start",
+              "end_source": "audio-vocal-offset"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "start": 190.72,
+      "end": 195.72,
+      "lines": [
+        {
+          "id": "line-0035",
+          "display_type": "instrumental",
+          "text": ". . .",
+          "start": 190.72,
+          "end": 195.72,
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "instrumental-placeholder-inferred",
+          "review_flags": [
+            "final_instrumental_gap_rescue_applied_needs_review",
+            "instrumental_timing_needs_review"
+          ],
+          "words": [],
+          "edited_manually": false
+        }
+      ]
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "start": 196.22,
+      "end": 203.888,
+      "lines": [
+        {
+          "id": "line-0036",
+          "display_type": "lyric",
+          "text": "If I met myself again",
+          "start": 196.22,
+          "end": 203.888,
+          "word_start": 200.496,
+          "last_word_start": 202.688,
+          "line_anchor_start": 196.22,
+          "line_anchor_source": "final-instrumental-gap-rescue",
+          "first_internal_word_gap": 0.176,
+          "max_internal_word_gap": 1.472,
+          "later_internal_word_gap_typical": 0.4,
+          "anchor_diagnostics": {
+            "first_internal_word_gap": 0.176,
+            "max_internal_word_gap": 1.472,
+            "later_internal_word_gap_typical": 0.4,
+            "repeated_phrase_uncorrected_display_start": 200.346,
+            "repeated_phrase_rescued_display_start": 193.488,
+            "repeated_phrase_reason": "shared_opening_phrase_after_long_gap",
+            "final_instrumental_gap_original_start": 193.488,
+            "final_instrumental_gap_rescued_start": 196.22,
+            "final_instrumental_gap_desired_seconds": 5.0
+          },
+          "line_end_source": "inferred-from-next-display-line",
+          "line_end_confidence": "fallback",
+          "line_end_diagnostics": {
+            "audio_line_end_status": "skipped_by_scope",
+            "audio_line_end_scope": "before_instrumental",
+            "audio_line_end_scope_reason": "next_display_line_is_not_instrumental"
+          },
+          "confidence": "draft",
+          "locked": false,
+          "anchor": false,
+          "timing_source": "kara-creator-final-instrumental-gap-rescue",
+          "review_flags": [
+            "final_instrumental_following_line_auto_adjusted_needs_review",
+            "late_anchor_rescue_skipped_after_instrumental_placeholder",
+            "repeated_phrase_line_start_auto_adjusted_needs_review"
+          ],
+          "words": [
+            {
+              "id": "word-0253",
+              "text": "if",
+              "start": 200.496,
+              "end": 200.672,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0254",
+              "text": "i",
+              "start": 200.672,
+              "end": 200.816,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0255",
+              "text": "met",
+              "start": 200.816,
+              "end": 201.216,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0256",
+              "text": "myself",
+              "start": 201.216,
+              "end": 202.116,
+              "source": "lyrics-aligner-word-start"
+            },
+            {
+              "id": "word-0257",
+              "text": "again",
+              "start": 202.688,
+              "end": 203.888,
+              "source": "lyrics-aligner-word-start"
+            }
+          ],
+          "edited_manually": false
+        }
+      ]
+    }
+  ],
+  "editor_notes": [
+    "This draft uses singing-specific word starts as timing anchors.",
+    "Line starts normally come from the first word in each lyric line.",
+    "Cautious first-word correction is only applied to longer lines where word 1 looks like an early outlier.",
+    "Short held lines are flagged, but they are not auto-corrected just because word 1 is followed by a gap.",
+    "Repeated phrase rescue can pull repeated or shared-opening lines earlier when the word anchors arrive implausibly late.",
+    "Lines after explicit instrumental placeholders can be moved later when word 1 looks too early and the rest of the line starts much later.",
+    "A late next-line rescue can move a lyric line earlier when a clean previous line is followed by a suspiciously late next-line anchor, but it is deliberately narrow and does not cascade across a phrase.",
+    "A monotonic line-start guard prevents the next lyric display line from appearing before the previous lyric's final word anchor.",
+    "Line ends can be estimated from the vocal audio after the final word start; if audio analysis fails, the builder falls back to inferred line ends.",
+    "Instrumental placeholders are kept as editable display lines with empty words arrays and are timed from audio-backed lyric ends where available.",
+    "When no reliable audio-backed line end is found, the builder keeps the older safe fallback rules for held lyrics and instrumental gaps.",
+    "This is an editable draft, not a final export."
+  ]
+}

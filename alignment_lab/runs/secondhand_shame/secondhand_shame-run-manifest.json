@@ -1,19 +1,19 @@
 {
   "schema_version": "kara-run-manifest-v2",
-  "song_name": "new_auto_anchor_test",
-  "dataset_name": "kara_new_auto_anchor_test",
+  "song_name": "secondhand_shame",
+  "dataset_name": "kara_secondhand_shame",
   "source": {
     "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
     "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\lyrics.txt"
   },
   "prepared_inputs": {
-    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_auto_anchor_test\\audio\\new_auto_anchor_test.mp3",
-    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_auto_anchor_test\\lyrics\\new_auto_anchor_test.txt",
-    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\new_auto_anchor_test\\new_auto_anchor_test-line-map.json"
+    "audio_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\secondhand_shame\\audio\\secondhand_shame.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\secondhand_shame\\lyrics\\secondhand_shame.txt",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\secondhand_shame\\secondhand_shame-line-map.json"
   },
   "outputs": {
-    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_auto_anchor_test-word-review-lyrics-aligner.json",
-    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\new_auto_anchor_test-draft-lyrics-aligner-v3.json"
+    "word_review_json": "C:\\Users\\mark\\kara-creator\\outputs\\secondhand_shame-word-review-lyrics-aligner.json",
+    "draft_json": "C:\\Users\\mark\\kara-creator\\outputs\\secondhand_shame-draft-lyrics-aligner-v3.json"
   },
   "parser": {
     "auto_section_size": 8,
@@ -23,7 +23,8 @@
       "…"
     ],
     "instrumental_placeholder_output": ". . .",
-    "aligner_lyrics_exclude_instrumentals": true
+    "aligner_lyrics_exclude_instrumentals": true,
+    "lyrics_aligner_vad_threshold": 0.0
   },
   "sections": [
     {
@@ -107,12 +108,26 @@
       "instrumental_line_count": 0
     }
   ],
+  "vocal_start_detection": {
+    "status": "detected",
+    "detected_start_seconds": 7.4,
+    "raw_detected_frame_start_seconds": 7.75,
+    "threshold_dbfs": -25.5,
+    "noise_floor_dbfs": -37.5,
+    "frame_ms": 50,
+    "min_duration_seconds": 0.45,
+    "pre_roll_seconds": 0.35,
+    "enabled": true,
+    "min_intro_seconds": 5.0,
+    "tolerance_seconds": 2.0,
+    "correction_applied": false,
+    "correction_seconds": 0.0,
+    "corrected_aligner_output": null,
+    "first_aligner_word_start_seconds": 7.408,
+    "correction_status": "aligner_start_not_early_enough_to_correct",
+    "suggested_correction_seconds": -0.008
+  },
   "cleanup": {
-    "removed_previous_aligner_files": [
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_auto_anchor_test_word2phonemes.pickle",
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_auto_anchor_test_word2phonemes.txt",
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\files\\kara_new_auto_anchor_test_word_list.txt",
-      "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\outputs\\kara_new_auto_anchor_test"
-    ]
+    "removed_previous_aligner_files": []
   }
 }

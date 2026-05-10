@@ -1,0 +1,1091 @@
+{
+  "schema_version": "kara-line-map-v2",
+  "created_by": "kara-creator lyrics-aligner pipeline",
+  "source": {
+    "audio_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\vocals.mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\new-test-folder\\lyrics.txt",
+    "tokenisation": {
+      "hyphenated_words": "merged",
+      "apostrophes": "kept",
+      "instrumental_placeholders": "excluded_from_aligner"
+    }
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . ."
+  },
+  "line_count": 60,
+  "lyric_line_count": 59,
+  "instrumental_line_count": 1,
+  "word_count": 312,
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 11,
+      "lyric_line_count": 11,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 5,
+      "lyric_line_count": 5,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 10,
+      "lyric_line_count": 10,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 2,
+      "lyric_line_count": 2,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 12,
+      "lyric_line_count": 12,
+      "instrumental_line_count": 0
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-0001",
+      "section_id": "section-1-001",
+      "section": "Section 1",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0002",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Can't I have one day?",
+      "display_type": "lyric",
+      "words": [
+        "can't",
+        "i",
+        "have",
+        "one",
+        "day"
+      ],
+      "start_word_index": 0,
+      "end_word_index": 4
+    },
+    {
+      "id": "line-0003",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Without you breathing in my ear",
+      "display_type": "lyric",
+      "words": [
+        "without",
+        "you",
+        "breathing",
+        "in",
+        "my",
+        "ear"
+      ],
+      "start_word_index": 5,
+      "end_word_index": 10
+    },
+    {
+      "id": "line-0004",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Without your voice inside my head",
+      "display_type": "lyric",
+      "words": [
+        "without",
+        "your",
+        "voice",
+        "inside",
+        "my",
+        "head"
+      ],
+      "start_word_index": 11,
+      "end_word_index": 16
+    },
+    {
+      "id": "line-0005",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "With words of caution, guilt and fear",
+      "display_type": "lyric",
+      "words": [
+        "with",
+        "words",
+        "of",
+        "caution",
+        "guilt",
+        "and",
+        "fear"
+      ],
+      "start_word_index": 17,
+      "end_word_index": 23
+    },
+    {
+      "id": "line-0006",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Just one day",
+      "display_type": "lyric",
+      "words": [
+        "just",
+        "one",
+        "day"
+      ],
+      "start_word_index": 24,
+      "end_word_index": 26
+    },
+    {
+      "id": "line-0007",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Without feeling like you're on my back",
+      "display_type": "lyric",
+      "words": [
+        "without",
+        "feeling",
+        "like",
+        "you're",
+        "on",
+        "my",
+        "back"
+      ],
+      "start_word_index": 27,
+      "end_word_index": 33
+    },
+    {
+      "id": "line-0008",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Every time my heart soars",
+      "display_type": "lyric",
+      "words": [
+        "every",
+        "time",
+        "my",
+        "heart",
+        "soars"
+      ],
+      "start_word_index": 34,
+      "end_word_index": 38
+    },
+    {
+      "id": "line-0009",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "You're right there with a heart attack",
+      "display_type": "lyric",
+      "words": [
+        "you're",
+        "right",
+        "there",
+        "with",
+        "a",
+        "heart",
+        "attack"
+      ],
+      "start_word_index": 39,
+      "end_word_index": 45
+    },
+    {
+      "id": "line-0010",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Is this all you left me?",
+      "display_type": "lyric",
+      "words": [
+        "is",
+        "this",
+        "all",
+        "you",
+        "left",
+        "me"
+      ],
+      "start_word_index": 46,
+      "end_word_index": 51
+    },
+    {
+      "id": "line-0011",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "A body full of second-hand shame",
+      "display_type": "lyric",
+      "words": [
+        "a",
+        "body",
+        "full",
+        "of",
+        "secondhand",
+        "shame"
+      ],
+      "start_word_index": 52,
+      "end_word_index": 57
+    },
+    {
+      "id": "line-0012",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "And a box with my name on it.",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "a",
+        "box",
+        "with",
+        "my",
+        "name",
+        "on",
+        "it"
+      ],
+      "start_word_index": 58,
+      "end_word_index": 65
+    },
+    {
+      "id": "line-0013",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Couldn't you have left me",
+      "display_type": "lyric",
+      "words": [
+        "couldn't",
+        "you",
+        "have",
+        "left",
+        "me"
+      ],
+      "start_word_index": 66,
+      "end_word_index": 70
+    },
+    {
+      "id": "line-0014",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "To my own devices?",
+      "display_type": "lyric",
+      "words": [
+        "to",
+        "my",
+        "own",
+        "devices"
+      ],
+      "start_word_index": 71,
+      "end_word_index": 74
+    },
+    {
+      "id": "line-0015",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "I've moved on",
+      "display_type": "lyric",
+      "words": [
+        "i've",
+        "moved",
+        "on"
+      ],
+      "start_word_index": 75,
+      "end_word_index": 77
+    },
+    {
+      "id": "line-0016",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "This is the happiest day",
+      "display_type": "lyric",
+      "words": [
+        "this",
+        "is",
+        "the",
+        "happiest",
+        "day"
+      ],
+      "start_word_index": 78,
+      "end_word_index": 82
+    },
+    {
+      "id": "line-0017",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Of all the days I can remember",
+      "display_type": "lyric",
+      "words": [
+        "of",
+        "all",
+        "the",
+        "days",
+        "i",
+        "can",
+        "remember"
+      ],
+      "start_word_index": 83,
+      "end_word_index": 89
+    },
+    {
+      "id": "line-0018",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "And you've been gone",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "you've",
+        "been",
+        "gone"
+      ],
+      "start_word_index": 90,
+      "end_word_index": 93
+    },
+    {
+      "id": "line-0019",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Under the soil",
+      "display_type": "lyric",
+      "words": [
+        "under",
+        "the",
+        "soil"
+      ],
+      "start_word_index": 94,
+      "end_word_index": 96
+    },
+    {
+      "id": "line-0020",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "A year come September",
+      "display_type": "lyric",
+      "words": [
+        "a",
+        "year",
+        "come",
+        "september"
+      ],
+      "start_word_index": 97,
+      "end_word_index": 100
+    },
+    {
+      "id": "line-0021",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "So why do I still feel the burn",
+      "display_type": "lyric",
+      "words": [
+        "so",
+        "why",
+        "do",
+        "i",
+        "still",
+        "feel",
+        "the",
+        "burn"
+      ],
+      "start_word_index": 101,
+      "end_word_index": 108
+    },
+    {
+      "id": "line-0022",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Of your sharp tongue at every turn?",
+      "display_type": "lyric",
+      "words": [
+        "of",
+        "your",
+        "sharp",
+        "tongue",
+        "at",
+        "every",
+        "turn"
+      ],
+      "start_word_index": 109,
+      "end_word_index": 115
+    },
+    {
+      "id": "line-0023",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "I'm thirty four now, you don't get a say",
+      "display_type": "lyric",
+      "words": [
+        "i'm",
+        "thirty",
+        "four",
+        "now",
+        "you",
+        "don't",
+        "get",
+        "a",
+        "say"
+      ],
+      "start_word_index": 116,
+      "end_word_index": 124
+    },
+    {
+      "id": "line-0024",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Can't I just have both feet in the future",
+      "display_type": "lyric",
+      "words": [
+        "can't",
+        "i",
+        "just",
+        "have",
+        "both",
+        "feet",
+        "in",
+        "the",
+        "future"
+      ],
+      "start_word_index": 125,
+      "end_word_index": 133
+    },
+    {
+      "id": "line-0025",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": "Just for one day?",
+      "display_type": "lyric",
+      "words": [
+        "just",
+        "for",
+        "one",
+        "day"
+      ],
+      "start_word_index": 134,
+      "end_word_index": 137
+    },
+    {
+      "id": "line-0026",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "Why carry dead weight?",
+      "display_type": "lyric",
+      "words": [
+        "why",
+        "carry",
+        "dead",
+        "weight"
+      ],
+      "start_word_index": 138,
+      "end_word_index": 141
+    },
+    {
+      "id": "line-0027",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "Fed-exed from a brother",
+      "display_type": "lyric",
+      "words": [
+        "fedexed",
+        "from",
+        "a",
+        "brother"
+      ],
+      "start_word_index": 142,
+      "end_word_index": 145
+    },
+    {
+      "id": "line-0028",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "Dragged from one home to another",
+      "display_type": "lyric",
+      "words": [
+        "dragged",
+        "from",
+        "one",
+        "home",
+        "to",
+        "another"
+      ],
+      "start_word_index": 146,
+      "end_word_index": 151
+    },
+    {
+      "id": "line-0029",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "It's just dead weight",
+      "display_type": "lyric",
+      "words": [
+        "it's",
+        "just",
+        "dead",
+        "weight"
+      ],
+      "start_word_index": 152,
+      "end_word_index": 155
+    },
+    {
+      "id": "line-0030",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "But it's heavy on my bones",
+      "display_type": "lyric",
+      "words": [
+        "but",
+        "it's",
+        "heavy",
+        "on",
+        "my",
+        "bones"
+      ],
+      "start_word_index": 156,
+      "end_word_index": 161
+    },
+    {
+      "id": "line-0031",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "And now it's hanging in my home",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "now",
+        "it's",
+        "hanging",
+        "in",
+        "my",
+        "home"
+      ],
+      "start_word_index": 162,
+      "end_word_index": 168
+    },
+    {
+      "id": "line-0032",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Is this what you wanted?",
+      "display_type": "lyric",
+      "words": [
+        "is",
+        "this",
+        "what",
+        "you",
+        "wanted"
+      ],
+      "start_word_index": 169,
+      "end_word_index": 173
+    },
+    {
+      "id": "line-0033",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "For me to be forever second-guessing",
+      "display_type": "lyric",
+      "words": [
+        "for",
+        "me",
+        "to",
+        "be",
+        "forever",
+        "secondguessing"
+      ],
+      "start_word_index": 174,
+      "end_word_index": 179
+    },
+    {
+      "id": "line-0034",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Always doubting every blessing",
+      "display_type": "lyric",
+      "words": [
+        "always",
+        "doubting",
+        "every",
+        "blessing"
+      ],
+      "start_word_index": 180,
+      "end_word_index": 183
+    },
+    {
+      "id": "line-0035",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Always feeling like I'm hunted",
+      "display_type": "lyric",
+      "words": [
+        "always",
+        "feeling",
+        "like",
+        "i'm",
+        "hunted"
+      ],
+      "start_word_index": 184,
+      "end_word_index": 188
+    },
+    {
+      "id": "line-0036",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "By a life I left behind",
+      "display_type": "lyric",
+      "words": [
+        "by",
+        "a",
+        "life",
+        "i",
+        "left",
+        "behind"
+      ],
+      "start_word_index": 189,
+      "end_word_index": 194
+    },
+    {
+      "id": "line-0037",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "I've moved on",
+      "display_type": "lyric",
+      "words": [
+        "i've",
+        "moved",
+        "on"
+      ],
+      "start_word_index": 195,
+      "end_word_index": 197
+    },
+    {
+      "id": "line-0038",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "This is the happiest home",
+      "display_type": "lyric",
+      "words": [
+        "this",
+        "is",
+        "the",
+        "happiest",
+        "home"
+      ],
+      "start_word_index": 198,
+      "end_word_index": 202
+    },
+    {
+      "id": "line-0039",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Of all the homes I can remember",
+      "display_type": "lyric",
+      "words": [
+        "of",
+        "all",
+        "the",
+        "homes",
+        "i",
+        "can",
+        "remember"
+      ],
+      "start_word_index": 203,
+      "end_word_index": 209
+    },
+    {
+      "id": "line-0040",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "I'm long gone",
+      "display_type": "lyric",
+      "words": [
+        "i'm",
+        "long",
+        "gone"
+      ],
+      "start_word_index": 210,
+      "end_word_index": 212
+    },
+    {
+      "id": "line-0041",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Left as soon as I could",
+      "display_type": "lyric",
+      "words": [
+        "left",
+        "as",
+        "soon",
+        "as",
+        "i",
+        "could"
+      ],
+      "start_word_index": 213,
+      "end_word_index": 218
+    },
+    {
+      "id": "line-0042",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Fourteen years come November",
+      "display_type": "lyric",
+      "words": [
+        "fourteen",
+        "years",
+        "come",
+        "november"
+      ],
+      "start_word_index": 219,
+      "end_word_index": 222
+    },
+    {
+      "id": "line-0043",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "So don't you think it's way past time",
+      "display_type": "lyric",
+      "words": [
+        "so",
+        "don't",
+        "you",
+        "think",
+        "it's",
+        "way",
+        "past",
+        "time"
+      ],
+      "start_word_index": 223,
+      "end_word_index": 230
+    },
+    {
+      "id": "line-0044",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "I made my own bed?",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "made",
+        "my",
+        "own",
+        "bed"
+      ],
+      "start_word_index": 231,
+      "end_word_index": 235
+    },
+    {
+      "id": "line-0045",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "Way past time I became",
+      "display_type": "lyric",
+      "words": [
+        "way",
+        "past",
+        "time",
+        "i",
+        "became"
+      ],
+      "start_word_index": 236,
+      "end_word_index": 240
+    },
+    {
+      "id": "line-0046",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": "The voice in my own head?",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "voice",
+        "in",
+        "my",
+        "own",
+        "head"
+      ],
+      "start_word_index": 241,
+      "end_word_index": 246
+    },
+    {
+      "id": "line-0047",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "And you can't say I'm running away from myself",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "you",
+        "can't",
+        "say",
+        "i'm",
+        "running",
+        "away",
+        "from",
+        "myself"
+      ],
+      "start_word_index": 247,
+      "end_word_index": 255
+    },
+    {
+      "id": "line-0048",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "Cause I was never myself in the first place",
+      "display_type": "lyric",
+      "words": [
+        "cause",
+        "i",
+        "was",
+        "never",
+        "myself",
+        "in",
+        "the",
+        "first",
+        "place"
+      ],
+      "start_word_index": 256,
+      "end_word_index": 264
+    },
+    {
+      "id": "line-0049",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "It's just one box",
+      "display_type": "lyric",
+      "words": [
+        "it's",
+        "just",
+        "one",
+        "box"
+      ],
+      "start_word_index": 265,
+      "end_word_index": 268
+    },
+    {
+      "id": "line-0050",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Probably something sentimental",
+      "display_type": "lyric",
+      "words": [
+        "probably",
+        "something",
+        "sentimental"
+      ],
+      "start_word_index": 269,
+      "end_word_index": 271
+    },
+    {
+      "id": "line-0051",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "It's a cobweb in a corner",
+      "display_type": "lyric",
+      "words": [
+        "it's",
+        "a",
+        "cobweb",
+        "in",
+        "a",
+        "corner"
+      ],
+      "start_word_index": 272,
+      "end_word_index": 277
+    },
+    {
+      "id": "line-0052",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "What's dead cannot be reborn",
+      "display_type": "lyric",
+      "words": [
+        "what's",
+        "dead",
+        "cannot",
+        "be",
+        "reborn"
+      ],
+      "start_word_index": 278,
+      "end_word_index": 282
+    },
+    {
+      "id": "line-0053",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Her legacy - one box!",
+      "display_type": "lyric",
+      "words": [
+        "her",
+        "legacy",
+        "one",
+        "box"
+      ],
+      "start_word_index": 283,
+      "end_word_index": 286
+    },
+    {
+      "id": "line-0054",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "So just perform the exorcism",
+      "display_type": "lyric",
+      "words": [
+        "so",
+        "just",
+        "perform",
+        "the",
+        "exorcism"
+      ],
+      "start_word_index": 287,
+      "end_word_index": 291
+    },
+    {
+      "id": "line-0055",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Making Sarah guilty",
+      "display_type": "lyric",
+      "words": [
+        "making",
+        "sarah",
+        "guilty"
+      ],
+      "start_word_index": 292,
+      "end_word_index": 294
+    },
+    {
+      "id": "line-0056",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "That was always Betty's specialism",
+      "display_type": "lyric",
+      "words": [
+        "that",
+        "was",
+        "always",
+        "betty's",
+        "specialism"
+      ],
+      "start_word_index": 295,
+      "end_word_index": 299
+    },
+    {
+      "id": "line-0057",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Clear the past away",
+      "display_type": "lyric",
+      "words": [
+        "clear",
+        "the",
+        "past",
+        "away"
+      ],
+      "start_word_index": 300,
+      "end_word_index": 303
+    },
+    {
+      "id": "line-0058",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Then the future can begin today",
+      "display_type": "lyric",
+      "words": [
+        "then",
+        "the",
+        "future",
+        "can",
+        "begin",
+        "today"
+      ],
+      "start_word_index": 304,
+      "end_word_index": 309
+    },
+    {
+      "id": "line-0059",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Today",
+      "display_type": "lyric",
+      "words": [
+        "today"
+      ],
+      "start_word_index": 310,
+      "end_word_index": 310
+    },
+    {
+      "id": "line-0060",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Today",
+      "display_type": "lyric",
+      "words": [
+        "today"
+      ],
+      "start_word_index": 311,
+      "end_word_index": 311
+    }
+  ]
+}

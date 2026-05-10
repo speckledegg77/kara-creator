@@ -526,294 +526,6 @@ def apply_audio_line_end_estimates(
     return result
 
 
-def line_has_low_confidence_internal_alignment(
-    line: dict[str, Any],
-    catastrophic_gap_seconds: float,
-    typical_gap_seconds: float,
-) -> bool:
-    """Detect lines whose internal word anchors look too unreliable to trust.
-
-    This is different from a normal held note. A normal held note usually gives
-    a plausible first word and a plausible final word start, with perhaps a long
-    tail after the last word. A low-confidence internal alignment has one or
-    more very large gaps *inside* a short lyric line, which often means the
-    aligner has attached later words to the wrong vocal phrase.
-    """
-    if line.get("display_type") != "lyric" or not line.get("words"):
-        return False
-
-    max_gap = as_float(line.get("max_internal_word_gap"))
-    typical_gap = as_float(line.get("later_internal_word_gap_typical"))
-    word_count = len(line.get("words", []))
-    flags = set(line.get("review_flags", []))
-    anchor_source = str(line.get("line_anchor_source", ""))
-
-    if max_gap >= catastrophic_gap_seconds:
-        return True
-
-    if word_count <= 6 and max_gap >= catastrophic_gap_seconds * 0.75 and typical_gap >= typical_gap_seconds:
-        return True
-
-    if (
-        anchor_source == "late-next-line-anchor-rescue"
-        and "large_internal_word_gap_needs_review" in flags
-        and max_gap >= typical_gap_seconds
-    ):
-        return True
-
-    return False
-
-
-def estimate_phrase_boundary_after_line_start(
-    line: dict[str, Any],
-    next_display_line: dict[str, Any] | None,
-    audio_analysis: dict[str, Any],
-    min_after_start_seconds: float,
-    max_after_start_seconds: float,
-    sustain_seconds: float,
-    relative_threshold: float,
-    noise_floor_multiplier: float,
-    next_line_safety_gap_seconds: float,
-) -> tuple[float | None, str, dict[str, Any]]:
-    """Find an early audio phrase boundary for a low-confidence line.
-
-    This is used only when the aligner's internal word anchors already look
-    unreliable. It searches from the display line start, not from the final word
-    start, because the final word anchor may be the part that is wrong.
-    """
-    rms_values: list[float] = audio_analysis.get("rms", [])
-    if not rms_values:
-        return None, "no_audio_rms_values", {}
-
-    line_start = as_float(line.get("start"))
-    current_end = as_float(line.get("end"), line_start)
-    audio_duration_seconds = as_float(audio_analysis.get("duration_seconds"), line_start + max_after_start_seconds)
-
-    if next_display_line and next_display_line.get("start") is not None:
-        boundary_end = as_float(next_display_line.get("start")) - next_line_safety_gap_seconds
-    else:
-        boundary_end = min(audio_duration_seconds, current_end if current_end > line_start else line_start + max_after_start_seconds)
-
-    search_start = line_start + min_after_start_seconds
-    search_end = min(boundary_end, line_start + max_after_start_seconds, audio_duration_seconds)
-
-    diagnostics = {
-        "line_start": round_time(line_start),
-        "search_start": round_time(search_start),
-        "search_end": round_time(search_end),
-    }
-
-    if search_end <= search_start + sustain_seconds:
-        return None, "search_window_too_short", diagnostics
-
-    frame_ms = int(audio_analysis.get("frame_ms", 20))
-    sustain_frames = max(1, int(math.ceil(sustain_seconds / (frame_ms / 1000.0))))
-    start_index = frame_index_for_time(audio_analysis, search_start)
-    end_index = frame_index_for_time(audio_analysis, search_end)
-
-    local_peak_start = frame_index_for_time(audio_analysis, line_start)
-    local_peak_end = frame_index_for_time(audio_analysis, min(line_start + max(1.5, min_after_start_seconds + 0.8), search_end))
-    local_values = rms_values[local_peak_start:max(local_peak_start + 1, local_peak_end + 1)]
-    local_peak = percentile(local_values, 95) if local_values else 0.0
-    noise_floor = as_float(audio_analysis.get("noise_floor"), 0.0)
-    threshold = max(noise_floor * noise_floor_multiplier, local_peak * relative_threshold)
-
-    diagnostics.update(
-        {
-            "local_peak": round(local_peak, 6),
-            "noise_floor": round(noise_floor, 6),
-            "threshold": round(threshold, 6),
-            "sustain_seconds": sustain_seconds,
-            "sustain_frames": sustain_frames,
-        }
-    )
-
-    if local_peak <= 0.00001:
-        return None, "local_peak_too_low", diagnostics
-
-    for index in range(start_index, max(start_index, end_index - sustain_frames + 1)):
-        window = rms_values[index:index + sustain_frames]
-
-        if len(window) < sustain_frames:
-            break
-
-        below_count = sum(1 for value in window if value <= threshold)
-        mean_value = sum(window) / len(window)
-
-        if below_count / len(window) >= 0.8 and mean_value <= threshold * 1.2:
-            boundary = time_for_frame_index(audio_analysis, index)
-            diagnostics["detected_frame_index"] = index
-            diagnostics["detected_window_mean"] = round(mean_value, 6)
-            diagnostics["detected_below_threshold_fraction"] = round(below_count / len(window), 3)
-            return boundary, "audio-phrase-boundary-low-confidence-anchor", diagnostics
-
-    return None, "no_sustained_phrase_boundary_detected", diagnostics
-
-
-def apply_low_confidence_phrase_boundary_rescue(
-    lines: list[dict[str, Any]],
-    word_review: dict[str, Any],
-    word_review_path: Path,
-    enabled: bool,
-    frame_ms: int,
-    catastrophic_gap_seconds: float,
-    typical_gap_seconds: float,
-    min_after_start_seconds: float,
-    max_after_start_seconds: float,
-    sustain_seconds: float,
-    relative_threshold: float,
-    noise_floor_multiplier: float,
-    next_line_safety_gap_seconds: float,
-    next_line_start_after_boundary_seconds: float,
-) -> dict[str, Any]:
-    result: dict[str, Any] = {
-        "enabled": enabled,
-        "status": "disabled" if not enabled else "not_started",
-        "corrected_line_count": 0,
-        "next_line_start_adjusted_count": 0,
-        "fallback_count": 0,
-        "skipped_count": 0,
-        "error": None,
-    }
-
-    if not enabled:
-        return result
-
-    audio_path = resolve_audio_path(word_review.get("source", {}).get("audio_file"), word_review_path)
-
-    if audio_path is None:
-        result["status"] = "no_audio_path_in_word_review"
-        result["error"] = "Word review JSON does not contain source.audio_file."
-        return result
-
-    try:
-        audio_analysis = decode_audio_rms_frames(audio_path=audio_path, frame_ms=frame_ms)
-    except Exception as error:
-        result["status"] = "audio_analysis_failed"
-        result["error"] = str(error)
-        add_flags_to_all_lyrics(lines, ["low_confidence_phrase_boundary_audio_failed_needs_review"])
-        return result
-
-    corrected_count = 0
-    next_start_adjusted_count = 0
-    fallback_count = 0
-    skipped_count = 0
-
-    for index, line in enumerate(lines):
-        if line.get("display_type") != "lyric" or line.get("start") is None:
-            continue
-
-        if not line_has_low_confidence_internal_alignment(
-            line=line,
-            catastrophic_gap_seconds=catastrophic_gap_seconds,
-            typical_gap_seconds=typical_gap_seconds,
-        ):
-            skipped_count += 1
-            continue
-
-        next_display_line = next_display_line_with_timing(lines, index)
-        if not next_display_line or next_display_line.get("display_type") != "lyric":
-            skipped_count += 1
-            continue
-
-        # If the following authored line is a one-word repeat of this line's
-        # final word, do not cut the base line at the first phrase boundary.
-        # That shape is handled by repeated-final-word rescue, because the base
-        # line may intentionally span a long held final word.
-        line_words_for_repeat_check = normalised_word_texts(line)
-        next_words_for_repeat_check = normalised_word_texts(next_display_line)
-        if line_words_for_repeat_check and next_words_for_repeat_check == [line_words_for_repeat_check[-1]]:
-            add_flags(line, ["low_confidence_phrase_boundary_skipped_for_repeated_final_word_run_needs_review"])
-            skipped_count += 1
-            continue
-
-        boundary, source, diagnostics = estimate_phrase_boundary_after_line_start(
-            line=line,
-            next_display_line=next_display_line,
-            audio_analysis=audio_analysis,
-            min_after_start_seconds=min_after_start_seconds,
-            max_after_start_seconds=max_after_start_seconds,
-            sustain_seconds=sustain_seconds,
-            relative_threshold=relative_threshold,
-            noise_floor_multiplier=noise_floor_multiplier,
-            next_line_safety_gap_seconds=next_line_safety_gap_seconds,
-        )
-
-        line.setdefault("line_end_diagnostics", {})["low_confidence_phrase_boundary"] = diagnostics
-        line["line_end_diagnostics"]["low_confidence_phrase_boundary_status"] = source
-
-        if boundary is None:
-            add_flags(line, ["low_confidence_internal_alignment_needs_review"])
-            fallback_count += 1
-            continue
-
-        current_start = as_float(line.get("start"))
-        current_end = as_float(
-            line.get("end"),
-            as_float(next_display_line.get("start"), current_start),
-        )
-
-        # Only accept a boundary that meaningfully shortens an implausibly long line.
-        if current_end and boundary >= current_end - 0.3:
-            add_flags(line, ["low_confidence_phrase_boundary_not_earlier_needs_review"])
-            fallback_count += 1
-            continue
-
-        if boundary <= current_start + 0.4:
-            add_flags(line, ["low_confidence_phrase_boundary_too_close_needs_review"])
-            fallback_count += 1
-            continue
-
-        line["audio_estimated_end"] = round_time(boundary)
-        line["line_end_source"] = "audio-phrase-boundary-low-confidence-anchor"
-        line["line_end_confidence"] = "medium"
-        add_flags(line, ["low_confidence_internal_alignment_audio_boundary_used_needs_review"])
-        corrected_count += 1
-
-        proposed_next_start = boundary + next_line_start_after_boundary_seconds
-        current_next_start = as_float(next_display_line.get("start"), proposed_next_start)
-
-        # If the following lyric was pushed late by the same bad alignment region,
-        # allow its display start to move to the next audio phrase.
-        if proposed_next_start < current_next_start - 0.5:
-            next_display_line.setdefault("anchor_diagnostics", {})["low_confidence_previous_boundary_next_start_original"] = round_time(current_next_start)
-            next_display_line["anchor_diagnostics"]["low_confidence_previous_boundary_next_start_adjusted"] = round_time(proposed_next_start)
-            next_display_line["anchor_diagnostics"]["low_confidence_previous_boundary_line_id"] = line.get("id")
-            next_display_line["start"] = round_time(proposed_next_start)
-            next_display_line["line_anchor_start"] = round_time(proposed_next_start)
-            next_display_line["line_anchor_source"] = "audio-phrase-boundary-after-low-confidence-line"
-            next_display_line["timing_source"] = "kara-creator-audio-phrase-boundary-rescue"
-            add_flags(next_display_line, ["line_start_adjusted_after_low_confidence_phrase_boundary_needs_review"])
-            next_start_adjusted_count += 1
-
-    result.update(
-        {
-            "status": "ok",
-            "audio_path": str(audio_path),
-            "frame_ms": frame_ms,
-            "sample_rate": audio_analysis.get("sample_rate"),
-            "audio_duration_seconds": round_time(as_float(audio_analysis.get("duration_seconds"))),
-            "noise_floor": round(as_float(audio_analysis.get("noise_floor")), 6),
-            "corrected_line_count": corrected_count,
-            "next_line_start_adjusted_count": next_start_adjusted_count,
-            "fallback_count": fallback_count,
-            "skipped_count": skipped_count,
-            "settings": {
-                "catastrophic_gap_seconds": catastrophic_gap_seconds,
-                "typical_gap_seconds": typical_gap_seconds,
-                "min_after_start_seconds": min_after_start_seconds,
-                "max_after_start_seconds": max_after_start_seconds,
-                "sustain_seconds": sustain_seconds,
-                "relative_threshold": relative_threshold,
-                "noise_floor_multiplier": noise_floor_multiplier,
-                "next_line_safety_gap_seconds": next_line_safety_gap_seconds,
-                "next_line_start_after_boundary_seconds": next_line_start_after_boundary_seconds,
-            },
-        }
-    )
-    return result
-
-
 def calculate_gap_diagnostics(words: list[dict[str, Any]]) -> dict[str, float]:
     starts = word_starts(words)
 
@@ -1375,23 +1087,10 @@ def apply_monotonic_lyric_start_guard(
         if not previous_line or previous_line.get("start") is None:
             continue
 
-        # Repeated-final-word rescue deliberately allows one-word display lines
-        # such as "Today" to appear before the base line's collapsed final-word
-        # anchor. The old monotonic guard cancelled that rescue and pushed the
-        # repeated lines back to the bad anchors, so skip the guard for this
-        # specific low-confidence display pattern.
-        if str(line.get("line_anchor_source", "")) == "repeated-final-word-rescue":
-            add_flags(line, ["monotonic_guard_skipped_for_repeated_final_word_rescue_needs_review"])
-            continue
-
-        if previous_line.get("audio_estimated_end") is not None:
-            previous_last_word_start = line_last_word_end(previous_line)
-        else:
-            previous_last_word_start = as_float(
-                previous_line.get("last_word_start"),
-                as_float(previous_line.get("word_start"), as_float(previous_line.get("start"))),
-            )
-
+        previous_last_word_start = as_float(
+            previous_line.get("last_word_start"),
+            as_float(previous_line.get("word_start"), as_float(previous_line.get("start"))),
+        )
         current_start = as_float(line.get("start"))
         minimum_start = previous_last_word_start + next_line_gap_seconds + 0.02
 
@@ -1426,28 +1125,6 @@ def apply_repeated_phrase_rescue(
         previous = previous_lyric_line(lines, index)
 
         if not previous or current.get("display_type") != "lyric" or current.get("start") is None:
-            continue
-
-        if str(current.get("line_anchor_source", "")) == "repeated-final-word-rescue":
-            continue
-
-        # Do not apply repeated-phrase rescue across an explicit instrumental
-        # placeholder. Lines after . . . often repeat earlier lyric material,
-        # but the placeholder is an authored display/timing line. Pulling the
-        # following lyric earlier can crush the instrumental break, as happened
-        # with met_myself_again line-0011 to line-0012. If the aligner or local
-        # recovery has a plausible next word start, keep that anchor instead.
-        if has_explicit_instrumental_since_previous_lyric(lines, index):
-            add_flags(current, ["repeated_phrase_rescue_skipped_after_instrumental_placeholder"])
-            continue
-
-        # Local alignment recovery is a stronger signal than the repeated phrase
-        # heuristic. Once a local pass has recovered better word starts, do not
-        # let this broad rescue move the display start back towards an earlier
-        # repeated phrase.
-        current_flags = set(current.get("review_flags") or [])
-        if "local_alignment_recovery_applied_needs_review" in current_flags:
-            add_flags(current, ["repeated_phrase_rescue_skipped_after_local_recovery"])
             continue
 
         current_words = normalised_word_texts(current)
@@ -1496,10 +1173,6 @@ def apply_repeated_phrase_rescue(
             index += 1
             continue
 
-        if str(line.get("line_anchor_source", "")) == "repeated-final-word-rescue":
-            index += 1
-            continue
-
         line_key = normalised_line_text(line)
         if not line_key:
             index += 1
@@ -1511,8 +1184,6 @@ def apply_repeated_phrase_rescue(
         while next_index < len(lines):
             candidate = lines[next_index]
             if candidate.get("display_type") != "lyric" or candidate.get("start") is None:
-                break
-            if str(candidate.get("line_anchor_source", "")) == "repeated-final-word-rescue":
                 break
             if normalised_line_text(candidate) != line_key:
                 break
@@ -1967,16 +1638,6 @@ def build_draft(
     audio_line_end_relative_threshold: float,
     audio_line_end_noise_floor_multiplier: float,
     audio_line_end_next_lyric_safety_gap_seconds: float,
-    low_confidence_phrase_boundary_rescue: bool,
-    low_confidence_phrase_boundary_gap_seconds: float,
-    low_confidence_phrase_boundary_typical_gap_seconds: float,
-    low_confidence_phrase_boundary_min_after_start_seconds: float,
-    low_confidence_phrase_boundary_max_after_start_seconds: float,
-    low_confidence_phrase_boundary_sustain_seconds: float,
-    low_confidence_phrase_boundary_relative_threshold: float,
-    low_confidence_phrase_boundary_noise_floor_multiplier: float,
-    low_confidence_phrase_boundary_next_line_safety_gap_seconds: float,
-    low_confidence_phrase_boundary_next_line_start_after_boundary_seconds: float,
 ) -> dict[str, Any]:
     ordered_lines = collect_ordered_lines(word_review)
 
@@ -2027,23 +1688,6 @@ def build_draft(
         late_anchor_cascade_gap_seconds=late_anchor_cascade_gap_seconds,
         suspicious_first_word_gap_seconds=suspicious_first_word_gap_seconds,
         first_gap_ratio_threshold=first_gap_ratio_threshold,
-    )
-
-    low_confidence_phrase_boundary_result = apply_low_confidence_phrase_boundary_rescue(
-        lines=ordered_lines,
-        word_review=word_review,
-        word_review_path=word_review_path,
-        enabled=low_confidence_phrase_boundary_rescue,
-        frame_ms=audio_line_end_frame_ms,
-        catastrophic_gap_seconds=low_confidence_phrase_boundary_gap_seconds,
-        typical_gap_seconds=low_confidence_phrase_boundary_typical_gap_seconds,
-        min_after_start_seconds=low_confidence_phrase_boundary_min_after_start_seconds,
-        max_after_start_seconds=low_confidence_phrase_boundary_max_after_start_seconds,
-        sustain_seconds=low_confidence_phrase_boundary_sustain_seconds,
-        relative_threshold=low_confidence_phrase_boundary_relative_threshold,
-        noise_floor_multiplier=low_confidence_phrase_boundary_noise_floor_multiplier,
-        next_line_safety_gap_seconds=low_confidence_phrase_boundary_next_line_safety_gap_seconds,
-        next_line_start_after_boundary_seconds=low_confidence_phrase_boundary_next_line_start_after_boundary_seconds,
     )
 
     repeated_final_word_rescue_count = apply_repeated_final_word_rescue(
@@ -2262,7 +1906,6 @@ def build_draft(
             "late_next_line_anchor_rescue_count": late_next_line_anchor_rescue_count,
             "monotonic_line_start_guard_count": monotonic_line_start_guard_count,
             "audio_line_end_estimation": audio_line_end_estimation_result,
-            "low_confidence_phrase_boundary_rescue": low_confidence_phrase_boundary_result,
             "settings": {
                 "start_padding_seconds": start_padding_seconds,
                 "next_line_gap_seconds": next_line_gap_seconds,
@@ -2307,16 +1950,6 @@ def build_draft(
                 "audio_line_end_relative_threshold": audio_line_end_relative_threshold,
                 "audio_line_end_noise_floor_multiplier": audio_line_end_noise_floor_multiplier,
                 "audio_line_end_next_lyric_safety_gap_seconds": audio_line_end_next_lyric_safety_gap_seconds,
-                "low_confidence_phrase_boundary_rescue": low_confidence_phrase_boundary_rescue,
-                "low_confidence_phrase_boundary_gap_seconds": low_confidence_phrase_boundary_gap_seconds,
-                "low_confidence_phrase_boundary_typical_gap_seconds": low_confidence_phrase_boundary_typical_gap_seconds,
-                "low_confidence_phrase_boundary_min_after_start_seconds": low_confidence_phrase_boundary_min_after_start_seconds,
-                "low_confidence_phrase_boundary_max_after_start_seconds": low_confidence_phrase_boundary_max_after_start_seconds,
-                "low_confidence_phrase_boundary_sustain_seconds": low_confidence_phrase_boundary_sustain_seconds,
-                "low_confidence_phrase_boundary_relative_threshold": low_confidence_phrase_boundary_relative_threshold,
-                "low_confidence_phrase_boundary_noise_floor_multiplier": low_confidence_phrase_boundary_noise_floor_multiplier,
-                "low_confidence_phrase_boundary_next_line_safety_gap_seconds": low_confidence_phrase_boundary_next_line_safety_gap_seconds,
-                "low_confidence_phrase_boundary_next_line_start_after_boundary_seconds": low_confidence_phrase_boundary_next_line_start_after_boundary_seconds,
             },
             "review_flag_count": len(review_flags),
             "review_flags": review_flags,
@@ -2332,7 +1965,6 @@ def build_draft(
             "A late next-line rescue can move a lyric line earlier when a clean previous line is followed by a suspiciously late next-line anchor, but it is deliberately narrow and does not cascade across a phrase.",
             "A monotonic line-start guard prevents the next lyric display line from appearing before the previous lyric's final word anchor.",
             "Line ends can be estimated from the vocal audio after the final word start; if audio analysis fails, the builder falls back to inferred line ends.",
-            "When internal word anchors look unreliable, Kara Creator can use an early audio phrase boundary to correct the line-level timing without pretending the word anchors are certain.",
             "Instrumental placeholders are kept as editable display lines with empty words arrays and are timed from audio-backed lyric ends where available.",
             "When no reliable audio-backed line end is found, the builder keeps the older safe fallback rules for held lyrics and instrumental gaps.",
             "This is an editable draft, not a final export.",
@@ -2501,75 +2133,6 @@ def build_parser() -> argparse.ArgumentParser:
         type=int,
         default=250,
         help="Keep estimated line ends this far before the next lyric start. Default: 250.",
-    )
-
-    parser.add_argument(
-        "--no-low-confidence-phrase-boundary-rescue",
-        action="store_true",
-        help="Disable audio phrase-boundary correction for lyric lines with clearly unreliable internal word anchors.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-gap-ms",
-        type=int,
-        default=3000,
-        help="Internal word gap that marks a line as low-confidence for phrase-boundary correction. Default: 3000.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-typical-gap-ms",
-        type=int,
-        default=1500,
-        help="Typical later gap that helps identify low-confidence internal anchors. Default: 1500.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-min-after-start-ms",
-        type=int,
-        default=900,
-        help="Start searching for an audio phrase boundary this long after the suspicious line starts. Default: 900.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-max-after-start-ms",
-        type=int,
-        default=6000,
-        help="Stop searching for an audio phrase boundary this long after the suspicious line starts. Default: 6000.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-sustain-ms",
-        type=int,
-        default=260,
-        help="Low-energy audio must last this long before it counts as a phrase boundary. Default: 260.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-relative-threshold",
-        type=float,
-        default=0.18,
-        help="Phrase-boundary low-energy threshold as a fraction of local vocal energy. Default: 0.18.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-noise-floor-multiplier",
-        type=float,
-        default=3.0,
-        help="Phrase-boundary threshold must also sit above the detected noise floor by this multiplier. Default: 3.0.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-next-line-safety-gap-ms",
-        type=int,
-        default=250,
-        help="Keep phrase-boundary searches this far before the next current display line start. Default: 250.",
-    )
-
-    parser.add_argument(
-        "--low-confidence-phrase-boundary-next-line-start-after-boundary-ms",
-        type=int,
-        default=250,
-        help="When a low-confidence phrase boundary is found, place the following lyric display this long after it. Default: 250.",
     )
 
     parser.add_argument(
@@ -2782,16 +2345,6 @@ def main() -> int:
             audio_line_end_relative_threshold=args.audio_line_end_relative_threshold,
             audio_line_end_noise_floor_multiplier=args.audio_line_end_noise_floor_multiplier,
             audio_line_end_next_lyric_safety_gap_seconds=args.audio_line_end_next_lyric_safety_gap_ms / 1000,
-            low_confidence_phrase_boundary_rescue=not args.no_low_confidence_phrase_boundary_rescue,
-            low_confidence_phrase_boundary_gap_seconds=args.low_confidence_phrase_boundary_gap_ms / 1000,
-            low_confidence_phrase_boundary_typical_gap_seconds=args.low_confidence_phrase_boundary_typical_gap_ms / 1000,
-            low_confidence_phrase_boundary_min_after_start_seconds=args.low_confidence_phrase_boundary_min_after_start_ms / 1000,
-            low_confidence_phrase_boundary_max_after_start_seconds=args.low_confidence_phrase_boundary_max_after_start_ms / 1000,
-            low_confidence_phrase_boundary_sustain_seconds=args.low_confidence_phrase_boundary_sustain_ms / 1000,
-            low_confidence_phrase_boundary_relative_threshold=args.low_confidence_phrase_boundary_relative_threshold,
-            low_confidence_phrase_boundary_noise_floor_multiplier=args.low_confidence_phrase_boundary_noise_floor_multiplier,
-            low_confidence_phrase_boundary_next_line_safety_gap_seconds=args.low_confidence_phrase_boundary_next_line_safety_gap_ms / 1000,
-            low_confidence_phrase_boundary_next_line_start_after_boundary_seconds=args.low_confidence_phrase_boundary_next_line_start_after_boundary_ms / 1000,
         )
 
         output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -2818,9 +2371,6 @@ def main() -> int:
         print(f"Audio-estimated endings:   {audio_status.get('estimated_line_end_count', 0)}")
         print(f"Audio-end fallbacks:       {audio_status.get('fallback_line_end_count', 0)}")
         print(f"Audio-end skipped by scope: {audio_status.get('skipped_line_end_count', 0)}")
-        phrase_status = draft['alignment'].get('low_confidence_phrase_boundary_rescue', {})
-        print(f"Low-confidence phrase corrections: {phrase_status.get('corrected_line_count', 0)}")
-        print(f"Phrase-adjusted next starts: {phrase_status.get('next_line_start_adjusted_count', 0)}")
         print(f"Review flags:             {draft['alignment']['review_flag_count']}")
         print("")
 
