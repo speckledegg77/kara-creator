@@ -1,0 +1,20 @@
+
+================================================================================
+Build raw review
+Log file: C:\Users\mark\kara-creator\outputs\launcher-logs\20260510-161937-let_it_go-Build_raw_review.log
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\build_review_draft_from_word_review.py --word-review C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json --out C:\Users\mark\kara-creator\outputs\let_it_go-draft-raw-review.json
+
+Raw review draft created.
+Word review: C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json
+Draft:       C:\Users\mark\kara-creator\outputs\let_it_go-draft-raw-review.json
+Lines:       43
+Flags:       5
+
+Finished successfully in 0.3s.
+
+Raw review draft: C:\Users\mark\kara-creator\outputs\let_it_go-draft-raw-review.json
+
+Started raw editor server with auto-loaded files:
+Audio: C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\audio\let_it_go.mp3
+Draft: C:\Users\mark\kara-creator\outputs\let_it_go-draft-raw-review.json
+Diagnostics: C:\Users\mark\kara-creator\outputs\let_it_go-raw-review-diagnostics.csv

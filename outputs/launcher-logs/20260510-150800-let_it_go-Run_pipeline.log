@@ -1,0 +1,121 @@
+
+================================================================================
+Run pipeline
+Log file: C:\Users\mark\kara-creator\outputs\launcher-logs\20260510-150800-let_it_go-Run_pipeline.log
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\run_lyrics_aligner_pipeline.py --audio "E:/Downloads/Temp/New folder/3_1-05 Let It Go_(Vocals).mp3" --lyrics "E:/Downloads/Temp/New folder/let it go.txt" --name let_it_go --aligner-dir C:\Users\mark\kara-creator\alignment_lab\singing-aligners\lyrics-aligner --vad-threshold 0.1
+
+Running model on CPU.
+Processing let_it_go.mp3 ...
+Done.
+
+Lyrics-aligner word review JSON created.
+Output: C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json
+
+Sections:      9
+Display lines: 41
+Lyric lines:   40
+Instrumentals: 1
+Words:         276
+Warnings:      0
+
+
+Karaoke draft created from singing-aligner word starts.
+Output: C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json
+
+Sections:                 9
+Display lines:            41
+Lyric lines:              40
+Instrumentals:            1
+Auto-adjusted lines:      1
+Repeated-phrase rescues:  0
+Repeated final-word rescues: 0
+Instrumental line rescues: 0
+Late next-line rescues:    2
+Audio line-end status:     ok
+Audio-estimated endings:   0
+Audio-end fallbacks:       0
+Audio-end skipped by scope: 40
+Low-confidence phrase corrections: 2
+Phrase-adjusted next starts: 2
+Review flags:             24
+
+Review flags:
+- Section 1 | line-0001 | instrumental_at_start_needs_review | . . .
+- Section 1 | line-0001 | instrumental_timing_needs_review | . . .
+- Section 2 | line-0002 | late_anchor_rescue_skipped_after_instrumental_placeholder | The snow glows white on the mountain tonight
+- Section 2 | line-0004 | very_short_display_duration_needs_review | A kingdom of isolation
+- Section 2 | line-0005 | large_internal_word_gap_needs_review | And it looks like I'm the queen
+- Section 2 | line-0005 | late_next_line_anchor_rescue_applied_needs_review | And it looks like I'm the queen
+- Section 2 | line-0005 | low_confidence_internal_alignment_audio_boundary_used_needs_review | And it looks like I'm the queen
+- Section 2 | line-0005 | very_short_display_duration_needs_review | And it looks like I'm the queen
+- Section 2 | line-0006 | line_start_adjusted_after_low_confidence_phrase_boundary_needs_review | The wind is howling like this swirling storm inside
+- Section 2 | line-0007 | long_tail_after_last_word_needs_review | Couldn't keep it in, heaven knows I tried
+- Section 3 | line-0008 | first_word_anchor_suspect | Don't let them in, don't let them see
+- Section 3 | line-0008 | large_internal_word_gap_needs_review | Don't let them in, don't let them see
+- Section 3 | line-0008 | line_start_auto_adjusted_needs_review | Don't let them in, don't let them see
+- Section 3 | line-0008 | low_confidence_internal_alignment_needs_review | Don't let them in, don't let them see
+- Section 4 | line-0018 | long_tail_after_last_word_needs_review | The cold never bothered me anyway
+- Section 6 | line-0026 | line_start_shifted_to_preserve_word_order_needs_review | I am one with the wind and sky
+- Section 6 | line-0029 | large_internal_word_gap_needs_review | Here I stand and here I stay
+- Section 6 | line-0030 | long_tail_after_last_word_needs_review | Let the storm rage on
+- Section 7 | line-0033 | large_internal_word_gap_needs_review | And one thought crystallises like an icy blast
+- Section 8 | line-0038 | line_start_shifted_to_preserve_word_order_needs_review | That perfect girl is gone
+- Section 8 | line-0040 | large_internal_word_gap_needs_review | Let the storm rage on
+- Section 8 | line-0040 | late_next_line_anchor_rescue_applied_needs_review | Let the storm rage on
+- Section 8 | line-0040 | low_confidence_internal_alignment_audio_boundary_used_needs_review | Let the storm rage on
+- Section 9 | line-0041 | line_start_adjusted_after_low_confidence_phrase_boundary_needs_review | The cold never bothered me anyway
+
+
+Prepared song files.
+Run folder:    C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go
+Clean audio:   C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\audio\let_it_go.mp3
+Clean lyrics:  C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\lyrics\let_it_go.txt
+Line map:      C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\let_it_go-line-map.json
+Manifest:      C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\let_it_go-run-manifest.json
+Custom pronunciations loaded: 9
+Display lines: 41
+Lyric lines sent to aligner: 40
+Instrumental placeholders: 1
+lyrics-aligner VAD threshold: 0.1
+Detected first vocal start: 13.65
+Vocal detection threshold: -34.67 dBFS
+Previous aligner files removed: 4
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe make_word_list.py C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\lyrics --dataset-name kara_let_it_go
+
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe make_word2phoneme_dict.py --dataset-name kara_let_it_go
+
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe align.py C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\audio C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\lyrics --lyrics-format w --onsets w --dataset-name kara_let_it_go --vad-threshold 0.1
+
+
+Vocal-start correction status: aligner_start_not_early_enough_to_correct
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\convert_lyrics_aligner_to_word_review_json.py --aligner-output C:\Users\mark\kara-creator\alignment_lab\singing-aligners\lyrics-aligner\outputs\kara_let_it_go\word_onsets\let_it_go.txt --line-map C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\let_it_go-line-map.json --out C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json
+
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\build_karaoke_draft_from_word_starts.py --word-review C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json --out C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json
+
+
+Done.
+
+Word review JSON: C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json
+Draft JSON:       C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json
+
+Open the editor and load:
+Audio: C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\audio\let_it_go.mp3
+JSON:  C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json
+
+
+Finished successfully in 56.4s.
+
+Opening editor with auto-loaded files:
+Audio: C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\audio\let_it_go.mp3
+Draft: C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json
+Launch page: C:\Users\mark\kara-creator\outputs\editor-launches\20260510-150904-let_it_go-autoload-editor.html

@@ -1,0 +1,32 @@
+
+================================================================================
+Run diagnostics
+Log file: C:\Users\mark\kara-creator\outputs\launcher-logs\20260510-151550-let_it_go-Run_diagnostics.log
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\diagnose_alignment_quality.py --draft C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json --out C:\Users\mark\kara-creator\outputs\let_it_go-alignment-diagnostics.csv --summary C:\Users\mark\kara-creator\outputs\let_it_go-alignment-diagnostics-summary.md
+
+
+Alignment diagnostics complete.
+
+Total lines:                   42
+High severity lines:           5
+Medium severity lines:         2
+Local realignment candidates:  2
+CSV written to:                C:\Users\mark\kara-creator\outputs\let_it_go-alignment-diagnostics.csv
+Summary written to:            C:\Users\mark\kara-creator\outputs\let_it_go-alignment-diagnostics-summary.md
+
+Worst lines:
+- 100 | line-0005 | very_large_internal_word_gap|pronunciation_or_tokenisation_check|draft_builder_rescue_applied|local_realignment_candidate | And it looks like I'm the queen
+- 100 | line-0008 | very_large_internal_word_gap|first_word_anchor_suspect|first_gap_outlier|pronunciation_or_tokenisation_check | Don't let them in, don't let them see
+- 100 | line-0032 | very_large_internal_word_gap|first_word_anchor_suspect|first_gap_outlier | My power flurries through the air into the ground
+- 100 | line-0041 | very_large_internal_word_gap|draft_builder_rescue_applied|local_realignment_candidate | Let the storm rage on
+-  85 | line-0035 | very_large_internal_word_gap|pronunciation_or_tokenisation_check | I'm never going back, the past is in the past
+-  65 | line-0034 | large_internal_word_gap|pronunciation_or_tokenisation_check | And one thought crystallises like an icy blast
+-  45 | line-0030 | large_internal_word_gap | Here I stand and here I stay
+-  20 | line-0014 | first_gap_outlier | Let it go, let it go
+-  20 | line-0018 | first_gap_outlier | The cold never bothered me anyway
+-  20 | line-0027 | first_gap_outlier | I am one with the wind and sky
+-  20 | line-0031 | long_tail_after_last_word | Let the storm rage on
+-  10 | line-0001 | instrumental_placeholder | . . .
+
+
+Finished successfully in 0.3s.

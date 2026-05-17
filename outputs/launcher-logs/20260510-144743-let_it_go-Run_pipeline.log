@@ -1,0 +1,31 @@
+
+================================================================================
+Run pipeline
+Log file: C:\Users\mark\kara-creator\outputs\launcher-logs\20260510-144743-let_it_go-Run_pipeline.log
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\run_lyrics_aligner_pipeline.py --audio "E:/Downloads/Temp/New folder/3_1-05 Let It Go_(Vocals).mp3" --lyrics "E:/Downloads/Temp/New folder/let it go.txt" --name let_it_go --aligner-dir C:\Users\mark\kara-creator\alignment_lab\singing-aligners\lyrics-aligner --vad-threshold 0
+
+
+Prepared song files.
+Run folder:    C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go
+Clean audio:   C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\audio\let_it_go.mp3
+Clean lyrics:  C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\lyrics\let_it_go.txt
+Line map:      C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\let_it_go-line-map.json
+Manifest:      C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\let_it_go-run-manifest.json
+Custom pronunciations loaded: 7
+Display lines: 41
+Lyric lines sent to aligner: 40
+Instrumental placeholders: 1
+lyrics-aligner VAD threshold: 0
+Detected first vocal start: 13.65
+Vocal detection threshold: -34.67 dBFS
+Previous aligner files removed: 3
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe make_word_list.py C:\Users\mark\kara-creator\alignment_lab\runs\let_it_go\lyrics --dataset-name kara_let_it_go
+
+
+Pipeline failed.
+2 words are missing pronunciations. Open this file and send the words here: C:\Users\mark\kara-creator\alignment_lab\singing-aligners\lyrics-aligner\files\kara_let_it_go_missing_words.txt
+
+
+Command failed with exit code 1.

@@ -1,0 +1,81 @@
+
+================================================================================
+Run local recovery
+Log file: C:\Users\mark\kara-creator\outputs\launcher-logs\20260510-151713-let_it_go-Run_local_recovery.log
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\run_local_alignment_recovery.py --draft C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json --diagnostics C:\Users\mark\kara-creator\outputs\let_it_go-alignment-diagnostics.csv --out-word-review C:\Users\mark\kara-creator\outputs\let_it_go-word-review-local-recovery.json --out-draft C:\Users\mark\kara-creator\outputs\let_it_go-draft-local-recovery.json --aligner-dir C:\Users\mark\kara-creator\alignment_lab\singing-aligners\lyrics-aligner --min-severity 70 --vad-threshold 0.2 --line-id line-004 --line-id line-005
+
+
+Karaoke draft created from singing-aligner word starts.
+Output: C:\Users\mark\kara-creator\outputs\let_it_go-draft-local-recovery.json
+
+Sections:                 10
+Display lines:            42
+Lyric lines:              40
+Instrumentals:            2
+Auto-adjusted lines:      2
+Repeated-phrase rescues:  0
+Repeated final-word rescues: 0
+Instrumental line rescues: 0
+Late next-line rescues:    2
+Audio line-end status:     ok
+Audio-estimated endings:   1
+Audio-end fallbacks:       0
+Audio-end skipped by scope: 39
+Low-confidence phrase corrections: 3
+Phrase-adjusted next starts: 3
+Review flags:             34
+
+Review flags:
+- Section 1 | line-0001 | instrumental_at_start_needs_review | . . .
+- Section 1 | line-0001 | instrumental_timing_needs_review | . . .
+- Section 2 | line-0002 | late_anchor_rescue_skipped_after_instrumental_placeholder | The snow glows white on the mountain tonight
+- Section 2 | line-0005 | large_internal_word_gap_needs_review | And it looks like I'm the queen
+- Section 2 | line-0005 | late_next_line_anchor_rescue_applied_needs_review | And it looks like I'm the queen
+- Section 2 | line-0005 | low_confidence_internal_alignment_audio_boundary_used_needs_review | And it looks like I'm the queen
+- Section 2 | line-0005 | very_short_display_duration_needs_review | And it looks like I'm the queen
+- Section 2 | line-0006 | line_start_adjusted_after_low_confidence_phrase_boundary_needs_review | The wind is howling like this swirling storm inside
+- Section 2 | line-0007 | long_tail_after_last_word_needs_review | Couldn't keep it in, heaven knows I tried
+- Section 3 | line-0008 | first_word_anchor_suspect | Don't let them in, don't let them see
+- Section 3 | line-0008 | large_internal_word_gap_needs_review | Don't let them in, don't let them see
+- Section 3 | line-0008 | line_start_auto_adjusted_needs_review | Don't let them in, don't let them see
+- Section 3 | line-0008 | low_confidence_internal_alignment_needs_review | Don't let them in, don't let them see
+- Section 5 | line-0019 | instrumental_shorter_than_preferred_needs_review | . . .
+- Section 5 | line-0019 | instrumental_timing_needs_review | . . .
+- Section 6 | line-0020 | late_anchor_rescue_skipped_after_instrumental_placeholder | It's funny how some distance makes everything seem small
+- Section 6 | line-0020 | repeated_phrase_rescue_skipped_after_instrumental_placeholder | It's funny how some distance makes everything seem small
+- Section 7 | line-0027 | line_start_shifted_to_preserve_word_order_needs_review | I am one with the wind and sky
+- Section 7 | line-0030 | large_internal_word_gap_needs_review | Here I stand and here I stay
+- Section 7 | line-0031 | long_tail_after_last_word_needs_review | Let the storm rage on
+- Section 8 | line-0032 | first_word_anchor_suspect | My power flurries through the air into the ground
+- Section 8 | line-0032 | large_internal_word_gap_needs_review | My power flurries through the air into the ground
+- Section 8 | line-0032 | line_start_auto_adjusted_needs_review | My power flurries through the air into the ground
+- Section 8 | line-0032 | low_confidence_internal_alignment_needs_review | My power flurries through the air into the ground
+- Section 8 | line-0034 | large_internal_word_gap_needs_review | And one thought crystallises like an icy blast
+- Section 8 | line-0035 | large_internal_word_gap_needs_review | I'm never going back, the past is in the past
+- Section 8 | line-0035 | low_confidence_internal_alignment_audio_boundary_used_needs_review | I'm never going back, the past is in the past
+- Section 9 | line-0036 | line_start_adjusted_after_low_confidence_phrase_boundary_needs_review | Let it go, let it go
+- Section 9 | line-0037 | line_start_shifted_to_preserve_word_order_needs_review | And I'll rise like the break of dawn
+- Section 9 | line-0039 | line_start_shifted_to_preserve_word_order_needs_review | That perfect girl is gone
+- Section 9 | line-0041 | large_internal_word_gap_needs_review | Let the storm rage on
+- Section 9 | line-0041 | late_next_line_anchor_rescue_applied_needs_review | Let the storm rage on
+- Section 9 | line-0041 | low_confidence_internal_alignment_audio_boundary_used_needs_review | Let the storm rage on
+- Section 10 | line-0042 | line_start_adjusted_after_low_confidence_phrase_boundary_needs_review | The cold never bothered me anyway
+
+
+Local alignment recovery
+Tool version: 0.1.0
+Draft:        C:\Users\mark\kara-creator\outputs\let_it_go-draft-lyrics-aligner-v3.json
+Diagnostics:  C:\Users\mark\kara-creator\outputs\let_it_go-alignment-diagnostics.csv
+Word review:  C:\Users\mark\kara-creator\outputs\let_it_go-word-review-lyrics-aligner.json
+Candidates:   line-004, line-005
+Groups:       0
+
+No recovery groups found. Nothing changed.
+
+Running:
+C:\Users\mark\miniconda3\envs\aligner-win\python.exe C:\Users\mark\kara-creator\tools\build_karaoke_draft_from_word_starts.py --word-review C:\Users\mark\kara-creator\outputs\let_it_go-word-review-local-recovery.json --out C:\Users\mark\kara-creator\outputs\let_it_go-draft-local-recovery.json
+
+
+Finished successfully in 4.1s.
+
+Recovered draft: C:\Users\mark\kara-creator\outputs\let_it_go-draft-local-recovery.json

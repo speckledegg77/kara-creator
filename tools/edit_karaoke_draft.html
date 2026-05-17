@@ -2,1307 +2,172 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Kara Creator Draft Editor</title>
+  <title>Kara Creator Review Editor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <style>
     :root {
-      --bg: #111827;
-      --panel: #1f2937;
-      --panel-soft: #263244;
-      --text: #f9fafb;
-      --muted: #9ca3af;
-      --border: #374151;
-      --active: #facc15;
-      --active-text: #111827;
-      --button: #e5e7eb;
-      --button-text: #111827;
-      --good: #22c55e;
-      --warning: #f59e0b;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    main {
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: 28px;
-    }
-
-    h2 {
-      margin: 0 0 12px;
-      font-size: 20px;
-    }
-
-    p {
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .app-grid {
-      display: grid;
-      grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
-      gap: 18px;
-      align-items: start;
-    }
-
-    .left-column {
-      position: sticky;
-      top: 16px;
-    }
-
-    .right-column {
-      min-width: 0;
-    }
-
-    .panel {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 16px;
-    }
-
-    .compact-panel {
-      padding: 14px;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 6px;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    input[type="file"] {
-      padding: 0;
-      border: none;
-      background: transparent;
-    }
-
-    input[type="checkbox"] {
-      width: auto;
-      margin-right: 8px;
-    }
-
-    button {
-      background: var(--button);
-      color: var(--button-text);
-      border: none;
-      border-radius: 10px;
-      padding: 10px 12px;
-      cursor: pointer;
-      font-weight: bold;
-      white-space: nowrap;
-    }
-
-    button:hover {
-      opacity: 0.92;
-    }
-
-    button:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-    }
-
-    .good-button {
-      background: var(--good);
-      color: #052e16;
-    }
-
-    .warning-button {
-      background: var(--warning);
-      color: #111827;
-    }
-
-    audio {
-      width: 100%;
-      margin-top: 12px;
-    }
-
-    .help {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .error {
-      color: #fecaca;
-      background: #7f1d1d;
-      border: 1px solid #b91c1c;
-      padding: 12px;
-      border-radius: 10px;
-      margin-top: 12px;
-      display: none;
-    }
-
-    .time {
-      font-size: 28px;
-      font-weight: bold;
-      color: var(--active);
-      line-height: 1.2;
-    }
-
-    .current-line {
-      margin-top: 8px;
-      font-size: 20px;
-      line-height: 1.3;
-      font-weight: bold;
-    }
-
-    .current-meta {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .control-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .control-grid button {
-      width: 100%;
-    }
-
-    .full-width {
-      grid-column: 1 / -1;
-    }
-
-    .option-row {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 8px;
-      margin-top: 12px;
-      padding: 10px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--panel-soft);
-    }
-
-    .option-row label {
-      margin-bottom: 0;
-      font-weight: normal;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .summary-card {
-      background: var(--panel-soft);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 10px;
-    }
-
-    .summary-card strong {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-
-    .keyboard summary {
-      cursor: pointer;
-      color: var(--muted);
-      font-weight: bold;
-    }
-
-    .keyboard-list {
-      display: grid;
-      gap: 8px;
-      margin-top: 10px;
-    }
-
-    .keyboard-list div {
-      background: var(--panel-soft);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 8px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    code {
-      color: var(--text);
-    }
-
-    .section-block {
-      margin-bottom: 18px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      background: var(--panel);
-    }
-
-    .section-header {
-      background: var(--panel-soft);
-      padding: 12px 14px;
-      font-weight: bold;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 2;
-    }
-
-    .line-list {
-      display: grid;
-      gap: 0;
-    }
-
-    .line-card {
-      padding: 14px;
-      border-top: 1px solid var(--border);
-      display: grid;
-      gap: 12px;
-    }
-
-    .line-card:first-child {
-      border-top: none;
-    }
-
-    .line-card.selected {
-      background: rgba(250, 204, 21, 0.14);
-      outline: 1px solid rgba(250, 204, 21, 0.45);
-      outline-offset: -1px;
-    }
-
-    .line-card.playing {
-      box-shadow: inset 5px 0 0 var(--active);
-    }
-
-    .line-card.edited {
-      box-shadow: inset 5px 0 0 rgba(56, 189, 248, 0.75);
-    }
-
-    .line-card.selected.edited,
-    .line-card.selected.playing {
-      box-shadow: inset 5px 0 0 var(--active);
-    }
-
-    .line-top {
-      display: grid;
-      grid-template-columns: minmax(90px, 120px) minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .line-id {
-      font-weight: bold;
-      color: var(--text);
-    }
-
-    .line-text {
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 1.35;
-    }
-
-    .duration {
-      font-weight: bold;
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .duration-warning {
-      color: #fbbf24;
-    }
-
-    .duration-danger {
-      color: #f87171;
-    }
-
-    .timing-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(140px, 1fr));
-      gap: 10px;
-    }
-
-    .field-label {
-      color: var(--muted);
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
-
-    .tag-row,
-    .flag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(56, 189, 248, 0.16);
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: #bae6fd;
-      font-size: 12px;
-    }
-
-    .tag.anchor {
-      background: rgba(34, 197, 94, 0.18);
-      border-color: rgba(34, 197, 94, 0.45);
-      color: #bbf7d0;
-    }
-
-    .tag.locked {
-      background: rgba(239, 68, 68, 0.18);
-      border-color: rgba(239, 68, 68, 0.45);
-      color: #fecaca;
-    }
-
-    .flag {
-      display: inline-block;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(245, 158, 11, 0.18);
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      color: #fde68a;
-      font-size: 12px;
-    }
-
-    .small {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .actions {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
-      gap: 8px;
-    }
-
-    .actions button {
-      width: 100%;
-      padding: 8px 10px;
-      font-size: 13px;
-    }
-
-    .file-row {
-      margin-bottom: 12px;
-    }
-
-    @media (max-width: 1050px) {
-      .app-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .left-column {
-        position: static;
-      }
-
-      .section-header {
-        position: static;
-      }
-    }
-
-    @media (max-width: 700px) {
-      main {
-        padding: 12px;
-      }
-
-      .line-top {
-        grid-template-columns: 1fr;
-      }
-
-      .duration {
-        text-align: left;
-      }
-
-      .timing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .control-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+      --bg:#0f172a; --panel:#1e293b; --soft:#263449; --text:#f8fafc; --muted:#94a3b8;
+      --border:#334155; --active:#facc15; --button:#e2e8f0; --buttonText:#0f172a;
+      --good:#22c55e; --warn:#f59e0b; --bad:#ef4444; --blue:#38bdf8;
+    }
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+    main{max-width:1500px;margin:0 auto;padding:16px} h1{margin:0 0 6px;font-size:26px} h2{margin:0 0 10px;font-size:18px}
+    p{color:var(--muted);line-height:1.45} .grid{display:grid;grid-template-columns:minmax(330px,410px) minmax(0,1fr);gap:16px;align-items:start}
+    .left{position:sticky;top:12px}.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px}
+    label{display:block;font-weight:bold;margin:8px 0 5px} input,textarea,select{width:100%;padding:8px;border-radius:8px;border:1px solid var(--border);background:#0b1220;color:var(--text)}
+    input[type=file],input[type=checkbox]{width:auto} textarea{min-height:92px;font-family:Consolas,monospace;font-size:13px}
+    button{background:var(--button);color:var(--buttonText);border:0;border-radius:10px;padding:9px 10px;font-weight:bold;cursor:pointer} button:hover{opacity:.92} button:disabled{opacity:.45;cursor:not-allowed}
+    .good{background:var(--good);color:#052e16}.warn{background:var(--warn);color:#111827}.bad{background:var(--bad);color:#fff}.blue{background:var(--blue);color:#082f49}
+    audio{width:100%;margin-top:10px}.help,.small{font-size:13px;color:var(--muted)}.error{display:none;background:#7f1d1d;border:1px solid #b91c1c;color:#fecaca;padding:10px;border-radius:10px;margin-top:10px;white-space:pre-wrap}
+    .status{display:none;background:#082f49;border:1px solid #0ea5e9;color:#e0f2fe;padding:10px;border-radius:10px;margin-top:10px;white-space:pre-wrap;max-height:220px;overflow:auto}
+    .time{font-size:28px;font-weight:bold;color:var(--active)}.current-line{font-size:18px;font-weight:bold;margin-top:6px;line-height:1.35}.meta{font-size:13px;color:var(--muted);line-height:1.45;margin-top:6px}
+    .btn-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.btn-grid .full{grid-column:1/-1}.option-row{display:grid;gap:7px;margin-top:10px;padding:10px;background:var(--soft);border:1px solid var(--border);border-radius:10px}.option-row label{font-weight:normal;margin:0}
+    .summary{display:grid;grid-template-columns:1fr 1fr;gap:8px}.card{background:var(--soft);border:1px solid var(--border);border-radius:10px;padding:8px}.card strong{display:block;font-size:20px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 12px}.section{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:14px}.section-head{background:var(--soft);padding:10px 12px;font-weight:bold;border-bottom:1px solid var(--border)}
+    .line{padding:12px;border-top:1px solid var(--border);display:grid;gap:10px}.line:first-child{border-top:0}.line.selected{background:rgba(250,204,21,.13);outline:1px solid rgba(250,204,21,.45);outline-offset:-1px}.line.playing{box-shadow:inset 5px 0 0 var(--active)}.line.edited{box-shadow:inset 5px 0 0 rgba(56,189,248,.8)}.line.recovery{background:rgba(34,197,94,.10)}
+    .line-top{display:grid;grid-template-columns:32px 100px minmax(0,1fr) auto;gap:10px;align-items:start}.line-id{font-weight:bold}.line-text{font-weight:bold;line-height:1.35}.duration{font-weight:bold;white-space:nowrap}.dur-warn{color:#fbbf24}.dur-bad{color:#f87171}
+    .timing{display:grid;grid-template-columns:repeat(2,minmax(120px,1fr));gap:10px}.field{font-size:12px;color:var(--muted);margin-bottom:4px}.tags,.flags{display:flex;flex-wrap:wrap;gap:6px}.tag,.flag{display:inline-block;padding:4px 8px;border-radius:999px;font-size:12px}.tag{background:rgba(56,189,248,.16);border:1px solid rgba(56,189,248,.4);color:#bae6fd}.flag{background:rgba(245,158,11,.18);border:1px solid rgba(245,158,11,.4);color:#fde68a}.diag{background:rgba(239,68,68,.14);border-color:rgba(239,68,68,.45);color:#fecaca}.ok{background:rgba(34,197,94,.16);border-color:rgba(34,197,94,.45);color:#bbf7d0}
+    .actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}.actions button{font-size:13px;padding:7px 9px}.hidden{display:none!important}
+    @media(max-width:1050px){.grid{grid-template-columns:1fr}.left{position:static}} @media(max-width:720px){main{padding:10px}.line-top{grid-template-columns:28px 1fr}.line-id,.duration{grid-column:2}.timing,.btn-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <main>
-    <h1>Kara Creator Draft Editor</h1>
-    <p>
-      Load the isolated vocal MP3 and draft JSON, then adjust the few lines that need correction. Follow playback is switched on by default.
-    </p>
+<main>
+  <h1>Kara Creator Review Editor</h1>
+  <p>Review the raw aligner draft, make small timing edits, and select only genuinely wrong lines for local recovery.</p>
 
-    <div class="app-grid">
-      <div class="left-column">
-        <div class="panel compact-panel">
-          <h2>Files</h2>
-
-          <div class="file-row">
-            <label for="audioFile">1. Vocal MP3</label>
-            <input id="audioFile" type="file" accept="audio/*" />
-          </div>
-
-          <div class="file-row">
-            <label for="jsonFile">2. Draft JSON</label>
-            <input id="jsonFile" type="file" accept=".json,application/json" />
-          </div>
-
-          <button id="loadButton">Load draft</button>
-
-          <div id="errorBox" class="error"></div>
-
-          <audio id="audio" controls></audio>
-        </div>
-
-        <div class="panel compact-panel">
-          <div id="timeReadout" class="time">00:00.000</div>
-          <div id="currentLineText" class="current-line">No draft loaded yet.</div>
-          <div id="currentMeta" class="current-meta">Load a file to begin.</div>
-
-          <div class="option-row">
-            <label><input id="followPlaybackCheckbox" type="checkbox" checked /> Follow playback</label>
-            <label><input id="rippleCheckbox" type="checkbox" checked /> Ripple forward</label>
-            <label><input id="autoplayCheckbox" type="checkbox" checked /> Autoplay on jump</label>
-          </div>
-
-          <div class="control-grid">
-            <button id="previousButton" disabled>Previous</button>
-            <button id="nextButton" disabled>Next</button>
-
-            <button id="jumpButton" disabled>Jump</button>
-            <button id="playLineButton" disabled>Play line</button>
-
-            <button id="setStartButton" class="warning-button" disabled>Set START</button>
-            <button id="setEndButton" class="warning-button" disabled>Set END</button>
-
-            <button id="toggleAnchorButton" disabled>Anchor</button>
-            <button id="toggleLockButton" disabled>Lock</button>
-
-            <button id="exportButton" class="good-button full-width" disabled>Export edited JSON</button>
-          </div>
-
-          <details class="keyboard">
-            <summary>Keyboard shortcuts</summary>
-            <div class="keyboard-list">
-              <div><code>Space</code> = play / pause</div>
-              <div><code>J</code> = jump to selected line</div>
-              <div><code>P</code> = play selected line</div>
-              <div><code>S</code> = set start</div>
-              <div><code>E</code> = set end</div>
-              <div><code>N</code> = next line</div>
-              <div><code>B</code> = previous line</div>
-            </div>
-          </details>
-        </div>
-
-        <div class="panel compact-panel">
-          <h2>Summary</h2>
-          <div id="summaryGrid" class="summary-grid"></div>
-        </div>
+  <div class="grid">
+    <div class="left">
+      <div class="panel">
+        <h2>Files</h2>
+        <div id="serverMode" class="small">Standalone mode. Load files manually, or open from the Kara Creator recovery server.</div>
+        <label for="audioFile">Vocal MP3</label>
+        <input id="audioFile" type="file" accept="audio/*" />
+        <label for="jsonFile">Draft JSON</label>
+        <input id="jsonFile" type="file" accept=".json,application/json" />
+        <label for="diagnosticsFile">Diagnostics CSV, optional</label>
+        <input id="diagnosticsFile" type="file" accept=".csv,text/csv" />
+        <div class="btn-grid"><button id="loadButton" class="full">Load selected files</button></div>
+        <div id="errorBox" class="error"></div>
+        <div id="statusBox" class="status"></div>
+        <audio id="audio" controls></audio>
       </div>
 
-      <div class="right-column">
-        <div class="panel">
-          <h2>Draft lines</h2>
-          <p class="help">
-            The selected card now follows playback. Turn off Follow playback when you want to edit a line without the selection moving.
-          </p>
-          <div id="sectionsContainer"></div>
+      <div class="panel">
+        <div id="timeReadout" class="time">00:00.000</div>
+        <div id="currentLineText" class="current-line">No draft loaded yet.</div>
+        <div id="currentMeta" class="meta">Load a draft to begin.</div>
+        <div class="option-row">
+          <label><input id="followPlaybackCheckbox" type="checkbox" checked /> Follow playback</label>
+          <label><input id="rippleCheckbox" type="checkbox" /> Ripple forward when editing</label>
+          <label><input id="autoplayCheckbox" type="checkbox" checked /> Autoplay on jump</label>
         </div>
+        <div class="btn-grid">
+          <button id="previousButton" disabled>Previous</button><button id="nextButton" disabled>Next</button>
+          <button id="jumpButton" disabled>Jump</button><button id="playLineButton" disabled>Play line</button>
+          <button id="setStartButton" class="warn" disabled>Set start</button><button id="setEndButton" class="warn" disabled>Set end</button>
+          <button id="exportButton" class="good full" disabled>Export edited JSON</button>
+        </div>
+        <p class="small">Shortcuts: Space play/pause, J jump, P play line, S set start, E set end, N next, B previous, R select for recovery.</p>
+      </div>
+
+      <div class="panel">
+        <h2>Selected recovery</h2>
+        <div class="summary" id="summaryGrid"></div>
+        <label for="selectedLineIds">Selected line IDs</label>
+        <textarea id="selectedLineIds" readonly></textarea>
+        <label for="vadThreshold">Recovery VAD threshold</label>
+        <select id="vadThreshold"><option value="0">0</option><option value="0.05">0.05</option><option value="0.1">0.1</option><option value="0.2">0.2</option></select>
+        <div class="btn-grid">
+          <button id="selectCurrentRecoveryButton" disabled>Select current</button>
+          <button id="clearRecoveryButton" disabled>Clear</button>
+          <button id="selectDiagnosticButton" disabled>Select diagnostic candidates</button>
+          <button id="copyRecoveryButton" disabled>Copy IDs</button>
+          <button id="runRecoveryButton" class="blue full" disabled>Run selected recovery</button>
+        </div>
+        <p class="small">Running recovery requires the local recovery server. Open the editor from the launcher or start tools/editor_recovery_server.py.</p>
       </div>
     </div>
-  </main>
 
-  <script>
-    const audioFileInput = document.getElementById("audioFile");
-    const jsonFileInput = document.getElementById("jsonFile");
-    const loadButton = document.getElementById("loadButton");
-    const audio = document.getElementById("audio");
-    const errorBox = document.getElementById("errorBox");
-
-    const timeReadout = document.getElementById("timeReadout");
-    const currentLineText = document.getElementById("currentLineText");
-    const currentMeta = document.getElementById("currentMeta");
-
-    const followPlaybackCheckbox = document.getElementById("followPlaybackCheckbox");
-    const rippleCheckbox = document.getElementById("rippleCheckbox");
-    const autoplayCheckbox = document.getElementById("autoplayCheckbox");
-
-    const previousButton = document.getElementById("previousButton");
-    const nextButton = document.getElementById("nextButton");
-    const jumpButton = document.getElementById("jumpButton");
-    const playLineButton = document.getElementById("playLineButton");
-    const setStartButton = document.getElementById("setStartButton");
-    const setEndButton = document.getElementById("setEndButton");
-    const toggleAnchorButton = document.getElementById("toggleAnchorButton");
-    const toggleLockButton = document.getElementById("toggleLockButton");
-    const exportButton = document.getElementById("exportButton");
-
-    const summaryGrid = document.getElementById("summaryGrid");
-    const sectionsContainer = document.getElementById("sectionsContainer");
-
-    let draft = null;
-    let flatLines = [];
-    let selectedIndex = 0;
-    let playingIndex = -1;
-    let sourceAudioFileName = "";
-    let sourceDraftFileName = "";
-    let exportCounter = 0;
-
-    function showError(message) {
-      errorBox.style.display = "block";
-      errorBox.textContent = message;
-    }
-
-    function clearError() {
-      errorBox.style.display = "none";
-      errorBox.textContent = "";
-    }
-
-    function escapeHtml(value) {
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    function asNumber(value, fallback = 0) {
-      const parsed = Number(value);
-      return Number.isFinite(parsed) ? parsed : fallback;
-    }
-
-    function roundTime(value) {
-      return Math.round(asNumber(value) * 1000) / 1000;
-    }
-
-    function formatTime(seconds) {
-      const safe = Math.max(0, asNumber(seconds));
-      const minutes = Math.floor(safe / 60);
-      const remainingSeconds = safe - minutes * 60;
-      return `${String(minutes).padStart(2, "0")}:${remainingSeconds.toFixed(3).padStart(6, "0")}`;
-    }
-
-    function lineDuration(line) {
-      return roundTime(asNumber(line.end) - asNumber(line.start));
-    }
-
-    function durationClass(duration) {
-      if (duration >= 15) return "duration-danger";
-      if (duration >= 10) return "duration-warning";
-      return "";
-    }
-
-    function readJsonFile(file) {
-      return file.text().then((text) => JSON.parse(text));
-    }
-
-    function isEditingField() {
-      const tagName = document.activeElement ? document.activeElement.tagName.toLowerCase() : "";
-      return tagName === "input" || tagName === "select" || tagName === "textarea";
-    }
-
-    function rebuildFlatLines() {
-      flatLines = [];
-
-      if (!draft || !Array.isArray(draft.sections)) {
-        return;
-      }
-
-      draft.sections.forEach((section, sectionIndex) => {
-        if (!Array.isArray(section.lines)) return;
-
-        section.lines.forEach((line, lineIndex) => {
-          if (typeof line.anchor !== "boolean") line.anchor = false;
-          if (typeof line.locked !== "boolean") line.locked = false;
-          if (!Array.isArray(line.review_flags)) line.review_flags = [];
-          if (typeof line.confidence !== "string") line.confidence = "draft";
-          if (typeof line.timing_source !== "string") line.timing_source = "manual-or-draft";
-          if (typeof line.edited_manually !== "boolean") line.edited_manually = false;
-
-          flatLines.push({
-            sectionIndex,
-            lineIndex,
-            section,
-            line
-          });
-        });
-      });
-    }
-
-    function recalculateSectionRanges() {
-      if (!draft || !Array.isArray(draft.sections)) {
-        return;
-      }
-
-      draft.sections.forEach((section) => {
-        if (!Array.isArray(section.lines) || section.lines.length === 0) return;
-        section.start = roundTime(section.lines[0].start);
-        section.end = roundTime(section.lines[section.lines.length - 1].end);
-      });
-
-      if (!draft.alignment) draft.alignment = {};
-      draft.alignment.section_count = draft.sections.length;
-      draft.alignment.line_count = flatLines.length;
-
-      let reviewFlags = [];
-
-      draft.sections.forEach((section) => {
-        section.lines.forEach((line) => {
-          (line.review_flags || []).forEach((flag) => {
-            reviewFlags.push({
-              section: section.label,
-              line_id: line.id,
-              text: line.text,
-              flag
-            });
-          });
-        });
-      });
-
-      draft.alignment.review_flag_count = reviewFlags.length;
-      draft.alignment.review_flags = reviewFlags;
-    }
-
-    function selectedFlatLine() {
-      return flatLines[selectedIndex] || null;
-    }
-
-    function setButtonsEnabled(enabled) {
-      previousButton.disabled = !enabled;
-      nextButton.disabled = !enabled;
-      jumpButton.disabled = !enabled;
-      playLineButton.disabled = !enabled;
-      setStartButton.disabled = !enabled;
-      setEndButton.disabled = !enabled;
-      toggleAnchorButton.disabled = !enabled;
-      toggleLockButton.disabled = !enabled;
-      exportButton.disabled = !enabled;
-    }
-
-    function renderSummary() {
-      if (!draft) {
-        summaryGrid.innerHTML = "";
-        return;
-      }
-
-      const lineCount = flatLines.length;
-      const sectionCount = Array.isArray(draft.sections) ? draft.sections.length : 0;
-      const editedCount = flatLines.filter((item) => item.line.edited_manually).length;
-      const flaggedCount = flatLines.reduce((total, item) => total + (item.line.review_flags || []).length, 0);
-
-      summaryGrid.innerHTML = `
-        <div class="summary-card">
-          <strong>${sectionCount}</strong>
-          Sections
+    <div class="right">
+      <div class="panel">
+        <h2>Draft lines</h2>
+        <div class="toolbar">
+          <button id="filterAll">Show all</button>
+          <button id="filterFlagged">Show flagged</button>
+          <button id="filterRecovery">Show selected recovery</button>
         </div>
-        <div class="summary-card">
-          <strong>${lineCount}</strong>
-          Lines
-        </div>
-        <div class="summary-card">
-          <strong>${editedCount}</strong>
-          Edited
-        </div>
-        <div class="summary-card">
-          <strong>${flaggedCount}</strong>
-          Flags
-        </div>
-      `;
-    }
-
-    function renderSections() {
-      if (!draft || !Array.isArray(draft.sections)) {
-        sectionsContainer.innerHTML = "";
-        return;
-      }
-
-      sectionsContainer.innerHTML = draft.sections.map((section, sectionIndex) => {
-        const cards = (section.lines || []).map((line, lineIndex) => {
-          const flatIndex = flatLines.findIndex((item) => item.sectionIndex === sectionIndex && item.lineIndex === lineIndex);
-          const duration = lineDuration(line);
-          const flags = (line.review_flags || []).map((flag) => `<span class="flag">${escapeHtml(flag)}</span>`).join("");
-
-          return `
-            <div
-              class="line-card ${flatIndex === selectedIndex ? "selected" : ""} ${flatIndex === playingIndex ? "playing" : ""} ${line.edited_manually ? "edited" : ""}"
-              data-flat-index="${flatIndex}"
-            >
-              <div class="line-top">
-                <div class="line-id">${escapeHtml(line.id || "")}</div>
-                <div class="line-text">${escapeHtml(line.text || "")}</div>
-                <div class="duration ${durationClass(duration)}">${duration.toFixed(3)}s</div>
-              </div>
-
-              <div class="timing-grid">
-                <div>
-                  <div class="field-label">Start</div>
-                  <input type="number" step="0.001" data-action="start-input" data-flat-index="${flatIndex}" value="${roundTime(line.start)}" />
-                </div>
-                <div>
-                  <div class="field-label">End</div>
-                  <input type="number" step="0.001" data-action="end-input" data-flat-index="${flatIndex}" value="${roundTime(line.end)}" />
-                </div>
-              </div>
-
-              <div class="tag-row">
-                <span class="tag">${escapeHtml(line.timing_source || "draft")}</span>
-                ${line.anchor ? `<span class="tag anchor">anchor</span>` : ""}
-                ${line.locked ? `<span class="tag locked">locked</span>` : ""}
-              </div>
-
-              <div class="flag-row">
-                ${flags || `<span class="small">No review flags</span>`}
-              </div>
-
-              <div class="actions">
-                <button data-action="select" data-flat-index="${flatIndex}">Select</button>
-                <button data-action="jump" data-flat-index="${flatIndex}">Jump</button>
-                <button data-action="play" data-flat-index="${flatIndex}">Play</button>
-                <button data-action="set-start" data-flat-index="${flatIndex}">Set start</button>
-                <button data-action="set-end" data-flat-index="${flatIndex}">Set end</button>
-                <button data-action="toggle-anchor" data-flat-index="${flatIndex}">Anchor</button>
-                <button data-action="toggle-lock" data-flat-index="${flatIndex}">Lock</button>
-              </div>
-            </div>
-          `;
-        }).join("");
-
-        return `
-          <div class="section-block">
-            <div class="section-header">
-              ${escapeHtml(section.label || "Section")} (${formatTime(section.start)} to ${formatTime(section.end)})
-            </div>
-            <div class="line-list">${cards}</div>
-          </div>
-        `;
-      }).join("");
-
-      sectionsContainer.querySelectorAll("button").forEach((button) => {
-        button.addEventListener("click", () => {
-          const flatIndex = asNumber(button.dataset.flatIndex, -1);
-          const action = button.dataset.action;
-
-          if (flatIndex < 0 || !flatLines[flatIndex]) return;
-
-          if (action === "select") selectLine(flatIndex, true);
-
-          if (action === "jump") {
-            selectLine(flatIndex, true);
-            jumpToSelectedLine();
-          }
-
-          if (action === "play") {
-            selectLine(flatIndex, true);
-            playSelectedLine();
-          }
-
-          if (action === "set-start") {
-            selectLine(flatIndex, true);
-            setSelectedLineStart(audio.currentTime);
-          }
-
-          if (action === "set-end") {
-            selectLine(flatIndex, true);
-            setSelectedLineEnd(audio.currentTime);
-          }
-
-          if (action === "toggle-anchor") {
-            selectLine(flatIndex, true);
-            toggleAnchor();
-          }
-
-          if (action === "toggle-lock") {
-            selectLine(flatIndex, true);
-            toggleLock();
-          }
-        });
-      });
-
-      sectionsContainer.querySelectorAll('input[data-action="start-input"]').forEach((input) => {
-        input.addEventListener("change", () => {
-          const flatIndex = asNumber(input.dataset.flatIndex, -1);
-          const newStart = asNumber(input.value, 0);
-
-          if (flatIndex < 0 || !flatLines[flatIndex]) return;
-
-          selectLine(flatIndex, false);
-          setSelectedLineStart(newStart);
-        });
-      });
-
-      sectionsContainer.querySelectorAll('input[data-action="end-input"]').forEach((input) => {
-        input.addEventListener("change", () => {
-          const flatIndex = asNumber(input.dataset.flatIndex, -1);
-          const newEnd = asNumber(input.value, 0);
-
-          if (flatIndex < 0 || !flatLines[flatIndex]) return;
-
-          selectLine(flatIndex, false);
-          setSelectedLineEnd(newEnd);
-        });
-      });
-    }
-
-    function updateCurrentDisplay() {
-      timeReadout.textContent = formatTime(audio.currentTime);
-
-      const selected = selectedFlatLine();
-
-      if (!selected) {
-        currentLineText.textContent = "No line selected.";
-        currentMeta.textContent = "Load a draft to begin.";
-        return;
-      }
-
-      const { section, line } = selected;
-      const duration = lineDuration(line);
-
-      currentLineText.textContent = `${line.id}: ${line.text}`;
-      currentMeta.innerHTML = `
-        Section: <strong>${escapeHtml(section.label || "")}</strong><br>
-        Start: <strong>${formatTime(line.start)}</strong> |
-        End: <strong>${formatTime(line.end)}</strong> |
-        Duration: <strong>${duration.toFixed(3)}s</strong><br>
-        Anchor: <strong>${line.anchor ? "yes" : "no"}</strong> |
-        Locked: <strong>${line.locked ? "yes" : "no"}</strong><br>
-        Flags: <strong>${(line.review_flags || []).length ? escapeHtml(line.review_flags.join(", ")) : "none"}</strong>
-      `;
-    }
-
-    function rerenderAll() {
-      recalculateSectionRanges();
-      rebuildFlatLines();
-
-      if (selectedIndex >= flatLines.length) {
-        selectedIndex = Math.max(0, flatLines.length - 1);
-      }
-
-      renderSummary();
-      renderSections();
-      updateCurrentDisplay();
-      highlightSelectedCard();
-    }
-
-    function clearSelectionClasses() {
-      document.querySelectorAll(".line-card.selected").forEach((card) => {
-        card.classList.remove("selected");
-      });
-    }
-
-    function clearPlayingClasses() {
-      document.querySelectorAll(".line-card.playing").forEach((card) => {
-        card.classList.remove("playing");
-      });
-    }
-
-    function highlightSelectedCard(scrollIntoView = true) {
-      clearSelectionClasses();
-
-      const card = document.querySelector(`.line-card[data-flat-index="${selectedIndex}"]`);
-
-      if (card) {
-        card.classList.add("selected");
-
-        if (scrollIntoView) {
-          card.scrollIntoView({ block: "center", behavior: "smooth" });
-        }
-      }
-    }
-
-    function highlightPlayingCard(scrollIntoView = false) {
-      clearPlayingClasses();
-
-      const card = document.querySelector(`.line-card[data-flat-index="${playingIndex}"]`);
-
-      if (card) {
-        card.classList.add("playing");
-
-        if (scrollIntoView) {
-          card.scrollIntoView({ block: "center", behavior: "smooth" });
-        }
-      }
-    }
-
-    function selectLine(index, scrollIntoView = true) {
-      if (!flatLines[index]) return;
-
-      selectedIndex = index;
-      updateCurrentDisplay();
-      highlightSelectedCard(scrollIntoView);
-    }
-
-    function findLineIndexAtTime(time) {
-      if (!flatLines.length) return -1;
-
-      for (let index = 0; index < flatLines.length; index++) {
-        const line = flatLines[index].line;
-
-        if (time >= asNumber(line.start) && time <= asNumber(line.end)) {
-          return index;
-        }
-      }
-
-      let closestPreviousIndex = -1;
-
-      for (let index = 0; index < flatLines.length; index++) {
-        const line = flatLines[index].line;
-
-        if (asNumber(line.start) <= time) {
-          closestPreviousIndex = index;
-        } else {
-          break;
-        }
-      }
-
-      return closestPreviousIndex;
-    }
-
-    function syncSelectionToPlayback() {
-      if (!followPlaybackCheckbox.checked) return;
-      if (!flatLines.length) return;
-      if (audio.paused) return;
-      if (isEditingField()) return;
-
-      const nextPlayingIndex = findLineIndexAtTime(audio.currentTime);
-
-      if (nextPlayingIndex < 0) return;
-
-      if (nextPlayingIndex !== playingIndex) {
-        playingIndex = nextPlayingIndex;
-        selectedIndex = nextPlayingIndex;
-        updateCurrentDisplay();
-        highlightSelectedCard(true);
-        highlightPlayingCard(false);
-      }
-    }
-
-    function jumpToSelectedLine() {
-      const selected = selectedFlatLine();
-
-      if (!selected) return;
-
-      audio.currentTime = Math.max(0, asNumber(selected.line.start) - 0.2);
-
-      if (autoplayCheckbox.checked) {
-        audio.play();
-      }
-    }
-
-    function playSelectedLine() {
-      const selected = selectedFlatLine();
-
-      if (!selected) return;
-
-      const line = selected.line;
-      const stopAt = asNumber(line.end) + 0.2;
-
-      audio.currentTime = Math.max(0, asNumber(line.start) - 0.2);
-      audio.play();
-
-      const stopper = () => {
-        if (audio.currentTime >= stopAt) {
-          audio.pause();
-          audio.removeEventListener("timeupdate", stopper);
-        }
-      };
-
-      audio.addEventListener("timeupdate", stopper);
-    }
-
-    function markLineEdited(line) {
-      line.edited_manually = true;
-      line.confidence = "edited";
-      line.timing_source = "manual-edit";
-    }
-
-    function shiftLine(line, delta) {
-      line.start = roundTime(asNumber(line.start) + delta);
-      line.end = roundTime(asNumber(line.end) + delta);
-
-      if (line.end <= line.start) {
-        line.end = roundTime(line.start + 0.05);
-      }
-
-      markLineEdited(line);
-    }
-
-    function rippleForward(fromFlatIndex, delta) {
-      if (!rippleCheckbox.checked) return;
-      if (Math.abs(delta) < 0.0005) return;
-
-      for (let i = fromFlatIndex; i < flatLines.length; i++) {
-        const target = flatLines[i].line;
-
-        if (target.anchor || target.locked) {
-          break;
-        }
-
-        shiftLine(target, delta);
-      }
-    }
-
-    function setSelectedLineStart(newStart) {
-      const selected = selectedFlatLine();
-
-      if (!selected) return;
-
-      const line = selected.line;
-      const oldStart = asNumber(line.start);
-      const oldEnd = asNumber(line.end);
-      const duration = Math.max(0.05, oldEnd - oldStart);
-
-      line.start = roundTime(Math.max(0, newStart));
-      line.end = roundTime(line.start + duration);
-
-      markLineEdited(line);
-
-      const delta = roundTime(line.start - oldStart);
-      rippleForward(selectedIndex + 1, delta);
-
-      rerenderAll();
-    }
-
-    function setSelectedLineEnd(newEnd) {
-      const selected = selectedFlatLine();
-
-      if (!selected) return;
-
-      const line = selected.line;
-      const oldEnd = asNumber(line.end);
-
-      line.end = roundTime(Math.max(asNumber(line.start) + 0.05, newEnd));
-      markLineEdited(line);
-
-      const delta = roundTime(line.end - oldEnd);
-      rippleForward(selectedIndex + 1, delta);
-
-      rerenderAll();
-    }
-
-    function toggleAnchor() {
-      const selected = selectedFlatLine();
-
-      if (!selected) return;
-
-      selected.line.anchor = !selected.line.anchor;
-      markLineEdited(selected.line);
-      rerenderAll();
-    }
-
-    function toggleLock() {
-      const selected = selectedFlatLine();
-
-      if (!selected) return;
-
-      selected.line.locked = !selected.line.locked;
-      markLineEdited(selected.line);
-      rerenderAll();
-    }
-
-    async function loadDraft() {
-      clearError();
-
-      const audioFile = audioFileInput.files[0];
-      const jsonFile = jsonFileInput.files[0];
-
-      if (!audioFile) {
-        showError("Choose the isolated vocal MP3 first.");
-        return;
-      }
-
-      if (!jsonFile) {
-        showError("Choose the draft JSON file.");
-        return;
-      }
-
-      try {
-        draft = await readJsonFile(jsonFile);
-      } catch (error) {
-        showError(`Could not read JSON: ${error.message}`);
-        return;
-      }
-
-      if (!draft.sections || !Array.isArray(draft.sections)) {
-        showError("The JSON does not contain a sections array.");
-        return;
-      }
-
-      sourceAudioFileName = audioFile.name;
-      sourceDraftFileName = jsonFile.name;
-      audio.src = URL.createObjectURL(audioFile);
-
-      rebuildFlatLines();
-
-      if (!flatLines.length) {
-        showError("No lines were found in the draft JSON.");
-        return;
-      }
-
-      selectedIndex = 0;
-      playingIndex = -1;
-      setButtonsEnabled(true);
-      rerenderAll();
-      jumpToSelectedLine();
-    }
-
-    function previousLine() {
-      if (!flatLines.length) return;
-
-      selectedIndex = Math.max(0, selectedIndex - 1);
-      playingIndex = selectedIndex;
-      updateCurrentDisplay();
-      highlightSelectedCard(true);
-      highlightPlayingCard(false);
-
-      if (autoplayCheckbox.checked) {
-        jumpToSelectedLine();
-      }
-    }
-
-    function nextLine() {
-      if (!flatLines.length) return;
-
-      selectedIndex = Math.min(flatLines.length - 1, selectedIndex + 1);
-      playingIndex = selectedIndex;
-      updateCurrentDisplay();
-      highlightSelectedCard(true);
-      highlightPlayingCard(false);
-
-      if (autoplayCheckbox.checked) {
-        jumpToSelectedLine();
-      }
-    }
-
-    function exportEditedJson() {
-      if (!draft) {
-        showError("No draft loaded.");
-        return;
-      }
-
-      recalculateSectionRanges();
-
-      if (!draft.source) draft.source = {};
-      draft.source.edited_audio_file_name = sourceAudioFileName;
-      draft.source.edited_from_draft_file_name = sourceDraftFileName;
-
-      exportCounter += 1;
-
-      const json = JSON.stringify(draft, null, 2);
-      const blob = new Blob([json], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-
-      const baseName = sourceDraftFileName
-        ? sourceDraftFileName.replace(/\.json$/i, "")
-        : "karaoke-draft";
-
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `${baseName}-edited-${exportCounter}.json`;
-      link.click();
-
-      URL.revokeObjectURL(url);
-    }
-
-    loadButton.addEventListener("click", loadDraft);
-    previousButton.addEventListener("click", previousLine);
-    nextButton.addEventListener("click", nextLine);
-    jumpButton.addEventListener("click", jumpToSelectedLine);
-    playLineButton.addEventListener("click", playSelectedLine);
-    setStartButton.addEventListener("click", () => setSelectedLineStart(audio.currentTime));
-    setEndButton.addEventListener("click", () => setSelectedLineEnd(audio.currentTime));
-    toggleAnchorButton.addEventListener("click", toggleAnchor);
-    toggleLockButton.addEventListener("click", toggleLock);
-    exportButton.addEventListener("click", exportEditedJson);
-
-    audio.addEventListener("timeupdate", () => {
-      syncSelectionToPlayback();
-      updateCurrentDisplay();
-    });
-
-    audio.addEventListener("seeked", () => {
-      const index = findLineIndexAtTime(audio.currentTime);
-
-      if (index >= 0) {
-        playingIndex = index;
-
-        if (followPlaybackCheckbox.checked && !isEditingField()) {
-          selectedIndex = index;
-          highlightSelectedCard(true);
-        }
-
-        highlightPlayingCard(false);
-      }
-
-      updateCurrentDisplay();
-    });
-
-    audio.addEventListener("pause", () => {
-      updateCurrentDisplay();
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (isEditingField()) {
-        return;
-      }
-
-      if (event.code === "Space") {
-        event.preventDefault();
-
-        if (audio.paused) audio.play();
-        else audio.pause();
-      }
-
-      if (event.key.toLowerCase() === "j") {
-        jumpToSelectedLine();
-      }
-
-      if (event.key.toLowerCase() === "p") {
-        playSelectedLine();
-      }
-
-      if (event.key.toLowerCase() === "s") {
-        setSelectedLineStart(audio.currentTime);
-      }
-
-      if (event.key.toLowerCase() === "e") {
-        setSelectedLineEnd(audio.currentTime);
-      }
-
-      if (event.key.toLowerCase() === "n") {
-        nextLine();
-      }
-
-      if (event.key.toLowerCase() === "b") {
-        previousLine();
-      }
-    });
-
-    setButtonsEnabled(false);
-  </script>
+        <div id="sectionsContainer"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+const el = (id) => document.getElementById(id);
+const audioFileInput = el('audioFile'), jsonFileInput = el('jsonFile'), diagnosticsFileInput = el('diagnosticsFile'), loadButton = el('loadButton'), audio = el('audio');
+const errorBox = el('errorBox'), statusBox = el('statusBox'), serverMode = el('serverMode');
+const timeReadout = el('timeReadout'), currentLineText = el('currentLineText'), currentMeta = el('currentMeta');
+const followPlaybackCheckbox = el('followPlaybackCheckbox'), rippleCheckbox = el('rippleCheckbox'), autoplayCheckbox = el('autoplayCheckbox');
+const previousButton = el('previousButton'), nextButton = el('nextButton'), jumpButton = el('jumpButton'), playLineButton = el('playLineButton'), setStartButton = el('setStartButton'), setEndButton = el('setEndButton'), exportButton = el('exportButton');
+const sectionsContainer = el('sectionsContainer'), summaryGrid = el('summaryGrid'), selectedLineIds = el('selectedLineIds'), vadThreshold = el('vadThreshold');
+const selectCurrentRecoveryButton = el('selectCurrentRecoveryButton'), clearRecoveryButton = el('clearRecoveryButton'), selectDiagnosticButton = el('selectDiagnosticButton'), copyRecoveryButton = el('copyRecoveryButton'), runRecoveryButton = el('runRecoveryButton');
+const filterAll = el('filterAll'), filterFlagged = el('filterFlagged'), filterRecovery = el('filterRecovery');
+let draft = null, flatLines = [], selectedIndex = 0, playingIndex = -1, exportCounter = 0;
+let sourceAudioFileName = '', sourceDraftFileName = '', sourceDraftPath = '', sourceDiagnosticsPath = '', sourceWordReviewPath = '', sourceAudioPath = '';
+let recoveryLineIds = new Set();
+let diagnosticsByLineId = new Map();
+let currentFilter = 'all';
+let serverAvailable = false;
+function showError(message){errorBox.style.display='block';errorBox.textContent=message} function clearError(){errorBox.style.display='none';errorBox.textContent=''}
+function showStatus(message){statusBox.style.display='block';statusBox.textContent=message} function appendStatus(message){statusBox.style.display='block';statusBox.textContent += message}
+function escapeHtml(v){return String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;')}
+function asNumber(v,f=0){const n=Number(v);return Number.isFinite(n)?n:f} function roundTime(v){return Math.round(asNumber(v)*1000)/1000}
+function formatTime(seconds){const safe=Math.max(0,asNumber(seconds));const m=Math.floor(safe/60);const s=safe-m*60;return `${String(m).padStart(2,'0')}:${s.toFixed(3).padStart(6,'0')}`}
+function lineDuration(line){return roundTime(asNumber(line.end)-asNumber(line.start))} function durationClass(d){if(d>=15)return'dur-bad';if(d>=10)return'dur-warn';return''}
+function isEditingField(){const tag=document.activeElement?document.activeElement.tagName.toLowerCase():'';return ['input','select','textarea'].includes(tag)}
+async function readJsonFile(file){return JSON.parse(await file.text())}
+async function readDiagnosticsFile(file){return parseDiagnosticsCsv(await file.text())}
+function parseCsvLine(line){const out=[];let cur='',quoted=false;for(let i=0;i<line.length;i++){const ch=line[i];if(ch==='"'){if(quoted&&line[i+1]==='"'){cur+='"';i++;}else quoted=!quoted;}else if(ch===','&&!quoted){out.push(cur);cur='';}else cur+=ch;}out.push(cur);return out}
+function parseDiagnosticsCsv(text){const lines=String(text||'').split(/\r?\n/).filter(x=>x.trim().length);if(!lines.length)return new Map();const headers=parseCsvLine(lines[0]);const map=new Map();for(const line of lines.slice(1)){const cells=parseCsvLine(line);const row={};headers.forEach((h,i)=>row[h]=cells[i]??'');const id=row.line_id||row.id;if(id)map.set(id,row)}return map}
+function diagnosticFor(line){return diagnosticsByLineId.get(line.id||'')||null}
+function diagnosticTags(line){const row=diagnosticFor(line);if(!row)return'';const severity=Number(row.severity||0);const cats=String(row.diagnostic_category||'').split('|').filter(Boolean);const bits=[`<span class="flag diag">severity ${severity}</span>`];for(const cat of cats.slice(0,6))bits.push(`<span class="flag diag">${escapeHtml(cat)}</span>`);return bits.join('')}
+function isDiagnosticCandidate(line){const row=diagnosticFor(line);if(!row)return false;const cats=String(row.diagnostic_category||'');const sev=Number(row.severity||0);return cats.includes('local_realignment_candidate') || (sev>=90 && cats.includes('very_large_internal_word_gap'))}
+function rebuildFlatLines(){flatLines=[];if(!draft||!Array.isArray(draft.sections))return;draft.sections.forEach((section,si)=>{(section.lines||[]).forEach((line,li)=>{if(!Array.isArray(line.review_flags))line.review_flags=[];if(typeof line.edited_manually!=='boolean')line.edited_manually=false;if(typeof line.confidence!=='string')line.confidence='draft';if(typeof line.timing_source!=='string')line.timing_source='draft';flatLines.push({sectionIndex:si,lineIndex:li,section,line})})})}
+function recalcSections(){if(!draft||!Array.isArray(draft.sections))return;draft.sections.forEach(section=>{const lines=section.lines||[];if(!lines.length)return;section.start=roundTime(lines[0].start);section.end=roundTime(lines[lines.length-1].end)});if(!draft.alignment)draft.alignment={};draft.alignment.line_count=flatLines.length;draft.alignment.section_count=draft.sections.length;const flags=[];draft.sections.forEach(s=>(s.lines||[]).forEach(l=>(l.review_flags||[]).forEach(f=>flags.push({section:s.label,line_id:l.id,text:l.text,flag:f}))));draft.alignment.review_flags=flags;draft.alignment.review_flag_count=flags.length}
+function selectedFlatLine(){return flatLines[selectedIndex]||null}
+function setButtonsEnabled(on){[previousButton,nextButton,jumpButton,playLineButton,setStartButton,setEndButton,exportButton,selectCurrentRecoveryButton,clearRecoveryButton,selectDiagnosticButton,copyRecoveryButton].forEach(b=>b.disabled=!on);runRecoveryButton.disabled=!on || !serverAvailable}
+function renderSummary(){const edited=flatLines.filter(x=>x.line.edited_manually).length;const flags=flatLines.reduce((t,x)=>t+(x.line.review_flags||[]).length,0);const selected=recoveryLineIds.size;const diag=[...diagnosticsByLineId.values()].filter(r=>Number(r.severity||0)>=70).length;summaryGrid.innerHTML=`<div class="card"><strong>${flatLines.length}</strong>Lines</div><div class="card"><strong>${edited}</strong>Edited</div><div class="card"><strong>${flags}</strong>Flags</div><div class="card"><strong>${selected}</strong>Recovery</div><div class="card"><strong>${diag}</strong>Diagnostic 70+</div><div class="card"><strong>${serverAvailable?'Yes':'No'}</strong>Server</div>`;selectedLineIds.value=[...recoveryLineIds].sort().join(', ')}
+function shouldShowLine(line){if(currentFilter==='recovery')return recoveryLineIds.has(line.id);if(currentFilter==='flagged')return (line.review_flags||[]).length||diagnosticFor(line);return true}
+function renderSections(){if(!draft||!Array.isArray(draft.sections)){sectionsContainer.innerHTML='';return}sectionsContainer.innerHTML=draft.sections.map((section,si)=>{const cards=(section.lines||[]).map((line,li)=>{const flatIndex=flatLines.findIndex(x=>x.sectionIndex===si&&x.lineIndex===li);if(!shouldShowLine(line))return'';const d=lineDuration(line);const flags=(line.review_flags||[]).map(f=>`<span class="flag">${escapeHtml(f)}</span>`).join('');const diag=diagnosticTags(line);const rec=recoveryLineIds.has(line.id);return `<div class="line ${flatIndex===selectedIndex?'selected':''} ${flatIndex===playingIndex?'playing':''} ${line.edited_manually?'edited':''} ${rec?'recovery':''}" data-flat-index="${flatIndex}"><div class="line-top"><input type="checkbox" data-action="recover-check" data-flat-index="${flatIndex}" ${rec?'checked':''} title="Select for local recovery"/><div class="line-id">${escapeHtml(line.id||'')}</div><div class="line-text">${escapeHtml(line.text||'')}</div><div class="duration ${durationClass(d)}">${d.toFixed(3)}s</div></div><div class="timing"><div><div class="field">Start</div><input type="number" step="0.001" data-action="start-input" data-flat-index="${flatIndex}" value="${roundTime(line.start)}" /></div><div><div class="field">End</div><input type="number" step="0.001" data-action="end-input" data-flat-index="${flatIndex}" value="${roundTime(line.end)}" /></div></div><div class="tags"><span class="tag">${escapeHtml(line.timing_source||'draft')}</span>${line.display_type==='instrumental'?'<span class="tag">instrumental</span>':''}${rec?'<span class="tag ok">selected for recovery</span>':''}</div><div class="flags">${flags}${diag}${(!flags&&!diag)?'<span class="small">No review flags</span>':''}</div><div class="actions"><button data-action="select" data-flat-index="${flatIndex}">Select</button><button data-action="jump" data-flat-index="${flatIndex}">Jump</button><button data-action="play" data-flat-index="${flatIndex}">Play</button><button data-action="set-start" data-flat-index="${flatIndex}">Set start</button><button data-action="set-end" data-flat-index="${flatIndex}">Set end</button><button data-action="toggle-recovery" data-flat-index="${flatIndex}">${rec?'Unselect recovery':'Select recovery'}</button></div></div>`}).join('');return `<div class="section"><div class="section-head">${escapeHtml(section.label||'Section')} (${formatTime(section.start)} to ${formatTime(section.end)})</div>${cards||'<div class="line small">No lines shown by current filter.</div>'}</div>`}).join('');bindLineEvents()}
+function bindLineEvents(){sectionsContainer.querySelectorAll('button').forEach(button=>button.addEventListener('click',()=>{const i=asNumber(button.dataset.flatIndex,-1);if(i<0||!flatLines[i])return;const a=button.dataset.action;if(a==='select')selectLine(i,true);if(a==='jump'){selectLine(i,true);jumpToSelectedLine()}if(a==='play'){selectLine(i,true);playSelectedLine()}if(a==='set-start'){selectLine(i,true);setSelectedLineStart(audio.currentTime)}if(a==='set-end'){selectLine(i,true);setSelectedLineEnd(audio.currentTime)}if(a==='toggle-recovery'){selectLine(i,false);toggleRecoveryForLine(flatLines[i].line.id)}}));sectionsContainer.querySelectorAll('input[data-action="recover-check"]').forEach(input=>input.addEventListener('change',()=>{const i=asNumber(input.dataset.flatIndex,-1);if(i>=0&&flatLines[i])toggleRecoveryForLine(flatLines[i].line.id,input.checked)}));sectionsContainer.querySelectorAll('input[data-action="start-input"]').forEach(input=>input.addEventListener('change',()=>{const i=asNumber(input.dataset.flatIndex,-1);if(i>=0&&flatLines[i]){selectLine(i,false);setSelectedLineStart(asNumber(input.value,0))}}));sectionsContainer.querySelectorAll('input[data-action="end-input"]').forEach(input=>input.addEventListener('change',()=>{const i=asNumber(input.dataset.flatIndex,-1);if(i>=0&&flatLines[i]){selectLine(i,false);setSelectedLineEnd(asNumber(input.value,0))}}))}
+function updateCurrentDisplay(){timeReadout.textContent=formatTime(audio.currentTime);const s=selectedFlatLine();if(!s){currentLineText.textContent='No line selected.';currentMeta.textContent='Load a draft to begin.';return}const line=s.line,row=diagnosticFor(line),d=lineDuration(line);currentLineText.textContent=`${line.id}: ${line.text}`;currentMeta.innerHTML=`Section: <strong>${escapeHtml(s.section.label||'')}</strong><br>Start: <strong>${formatTime(line.start)}</strong> | End: <strong>${formatTime(line.end)}</strong> | Duration: <strong>${d.toFixed(3)}s</strong><br>Flags: <strong>${(line.review_flags||[]).length?escapeHtml(line.review_flags.join(', ')):'none'}</strong><br>Diagnostics: <strong>${row?escapeHtml((row.severity||'')+' '+(row.diagnostic_category||'')):'none loaded'}</strong>`}
+function rerenderAll(){recalcSections();rebuildFlatLines();if(selectedIndex>=flatLines.length)selectedIndex=Math.max(0,flatLines.length-1);renderSummary();renderSections();updateCurrentDisplay();highlightSelectedCard(false)}
+function highlightSelectedCard(scroll=true){document.querySelectorAll('.line.selected').forEach(c=>c.classList.remove('selected'));const card=document.querySelector(`.line[data-flat-index="${selectedIndex}"]`);if(card){card.classList.add('selected');if(scroll)card.scrollIntoView({block:'center',behavior:'smooth'})}}
+function highlightPlayingCard(scroll=false){document.querySelectorAll('.line.playing').forEach(c=>c.classList.remove('playing'));const card=document.querySelector(`.line[data-flat-index="${playingIndex}"]`);if(card){card.classList.add('playing');if(scroll)card.scrollIntoView({block:'center',behavior:'smooth'})}}
+function selectLine(index,scroll=true){if(!flatLines[index])return;selectedIndex=index;updateCurrentDisplay();highlightSelectedCard(scroll)}
+function findLineIndexAtTime(t){let prev=-1;for(let i=0;i<flatLines.length;i++){const l=flatLines[i].line;if(t>=asNumber(l.start)&&t<=asNumber(l.end))return i;if(asNumber(l.start)<=t)prev=i;else break}return prev}
+function syncSelectionToPlayback(){if(!followPlaybackCheckbox.checked||!flatLines.length||audio.paused||isEditingField())return;const i=findLineIndexAtTime(audio.currentTime);if(i>=0&&i!==playingIndex){playingIndex=i;selectedIndex=i;updateCurrentDisplay();highlightSelectedCard(true);highlightPlayingCard(false)}}
+function jumpToSelectedLine(){const s=selectedFlatLine();if(!s)return;audio.currentTime=Math.max(0,asNumber(s.line.start)-0.2);if(autoplayCheckbox.checked)audio.play()}
+function playSelectedLine(){const s=selectedFlatLine();if(!s)return;const stop=asNumber(s.line.end)+0.2;audio.currentTime=Math.max(0,asNumber(s.line.start)-0.2);audio.play();const stopper=()=>{if(audio.currentTime>=stop){audio.pause();audio.removeEventListener('timeupdate',stopper)}};audio.addEventListener('timeupdate',stopper)}
+function markLineEdited(line){line.edited_manually=true;line.confidence='edited';line.timing_source='manual-edit'}
+function shiftLine(line,delta){line.start=roundTime(asNumber(line.start)+delta);line.end=roundTime(asNumber(line.end)+delta);if(line.end<=line.start)line.end=roundTime(line.start+0.05);markLineEdited(line)}
+function rippleForward(from,delta){if(!rippleCheckbox.checked||Math.abs(delta)<.0005)return;for(let i=from;i<flatLines.length;i++){shiftLine(flatLines[i].line,delta)}}
+function setSelectedLineStart(newStart){const s=selectedFlatLine();if(!s)return;const l=s.line,old=asNumber(l.start),dur=Math.max(.05,asNumber(l.end)-old);l.start=roundTime(Math.max(0,newStart));l.end=roundTime(l.start+dur);markLineEdited(l);rippleForward(selectedIndex+1,roundTime(l.start-old));rerenderAll()}
+function setSelectedLineEnd(newEnd){const s=selectedFlatLine();if(!s)return;const l=s.line,old=asNumber(l.end);l.end=roundTime(Math.max(asNumber(l.start)+.05,newEnd));markLineEdited(l);rippleForward(selectedIndex+1,roundTime(l.end-old));rerenderAll()}
+function toggleRecoveryForLine(id,force){if(!id)return;if(force===true)recoveryLineIds.add(id);else if(force===false)recoveryLineIds.delete(id);else if(recoveryLineIds.has(id))recoveryLineIds.delete(id);else recoveryLineIds.add(id);renderSummary();renderSections();highlightSelectedCard(false)}
+function selectDiagnosticCandidates(){for(const item of flatLines){if(isDiagnosticCandidate(item.line))recoveryLineIds.add(item.line.id)}rerenderAll()}
+async function copyRecoveryIds(){const text=[...recoveryLineIds].sort().join(', ');try{await navigator.clipboard.writeText(text);showStatus('Copied selected line IDs:\n'+text)}catch{selectedLineIds.select();document.execCommand('copy');showStatus('Copied selected line IDs.')}}
+async function loadDraftFromObjects({draftObject,audioUrl,audioName,draftName,draftPath,diagnosticsPath,wordReviewPath,audioPath,diagnosticsRows}){draft=draftObject;sourceAudioFileName=audioName||'';sourceDraftFileName=draftName||'';sourceDraftPath=draftPath||'';sourceDiagnosticsPath=diagnosticsPath||'';sourceWordReviewPath=wordReviewPath||'';sourceAudioPath=audioPath||'';if(audioUrl)audio.src=audioUrl;if(diagnosticsRows){diagnosticsByLineId=new Map();for(const row of diagnosticsRows){if(row.line_id)diagnosticsByLineId.set(row.line_id,row)}}rebuildFlatLines();if(!flatLines.length){showError('No lines were found in the draft JSON.');return}selectedIndex=0;playingIndex=-1;setButtonsEnabled(true);rerenderAll();const old=autoplayCheckbox.checked;autoplayCheckbox.checked=false;jumpToSelectedLine();autoplayCheckbox.checked=old;clearError()}
+async function loadDraft(){clearError();const af=audioFileInput.files[0], jf=jsonFileInput.files[0], df=diagnosticsFileInput.files[0];if(!af){showError('Choose the vocal MP3 first.');return}if(!jf){showError('Choose the draft JSON file.');return}try{const obj=await readJsonFile(jf);let rows=null;if(df){diagnosticsByLineId=await readDiagnosticsFile(df);rows=[...diagnosticsByLineId.values()]}await loadDraftFromObjects({draftObject:obj,audioUrl:URL.createObjectURL(af),audioName:af.name,draftName:jf.name,diagnosticsRows:rows})}catch(e){showError('Could not load files: '+e.message)}}
+function exportEditedJson(){if(!draft){showError('No draft loaded.');return}recalcSections();if(!draft.source)draft.source={};draft.source.edited_audio_file_name=sourceAudioFileName;draft.source.edited_from_draft_file_name=sourceDraftFileName;exportCounter++;const blob=new Blob([JSON.stringify(draft,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const base=(sourceDraftFileName||'karaoke-draft').replace(/\.json$/i,'');const a=document.createElement('a');a.href=url;a.download=`${base}-edited-${exportCounter}.json`;a.click();URL.revokeObjectURL(url)}
+async function runSelectedRecovery(){clearError();if(!serverAvailable){showError('The local recovery server is not available. Open this editor from the launcher/server to run recovery.');return}const ids=[...recoveryLineIds].sort();if(!ids.length){showError('Select at least one line for recovery.');return}if(!sourceDraftPath||!sourceDiagnosticsPath){showError('The editor does not know the draft path and diagnostics path. Open it from the recovery server or launcher.');return}if(!confirm(`Run local recovery for ${ids.join(', ')}?`))return;showStatus('Running selected local recovery. This may take a few minutes...');runRecoveryButton.disabled=true;try{const res=await fetch('/api/recover',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({draft_path:sourceDraftPath,diagnostics_path:sourceDiagnosticsPath,word_review_path:sourceWordReviewPath,line_ids:ids,vad_threshold:vadThreshold.value})});const data=await res.json();if(!res.ok||!data.ok){throw new Error(data.error||'Recovery failed.')}sourceDraftPath=data.draft_path;sourceWordReviewPath=data.word_review_path||sourceWordReviewPath;sourceDraftFileName=(data.draft_path||'').split(/[\\/]/).pop();showStatus(`Recovery complete.\nDraft: ${data.draft_path}\nWord review: ${data.word_review_path}\n\n${data.log||''}`);recoveryLineIds.clear();await loadDraftFromObjects({draftObject:data.draft,audioUrl:audio.src,audioName:sourceAudioFileName,draftName:sourceDraftFileName,draftPath:sourceDraftPath,diagnosticsPath:sourceDiagnosticsPath,wordReviewPath:sourceWordReviewPath,audioPath:sourceAudioPath,diagnosticsRows:data.diagnostics_rows||[...diagnosticsByLineId.values()]})}catch(e){showError('Recovery failed:\n'+e.message);appendStatus('\nRecovery failed: '+e.message)}finally{runRecoveryButton.disabled=!serverAvailable}}
+async function tryServerContext(){try{const res=await fetch('/api/context',{cache:'no-store'});if(!res.ok)return;const data=await res.json();serverAvailable=true;serverMode.textContent='Server mode. Recovery can be run from this editor.';if(data.context){vadThreshold.value=String(data.context.vad_threshold??'0')}if(data.draft){await loadDraftFromObjects({draftObject:data.draft,audioUrl:data.audio_url,audioName:data.audio_name,draftName:data.draft_name,draftPath:data.draft_path,diagnosticsPath:data.diagnostics_path,wordReviewPath:data.word_review_path,audioPath:data.audio_path,diagnosticsRows:data.diagnostics_rows})}else{setButtonsEnabled(false)}renderSummary()}catch{serverAvailable=false;serverMode.textContent='Standalone mode. Load files manually, or open from the Kara Creator recovery server.'}}
+function previousLine(){if(!flatLines.length)return;selectedIndex=Math.max(0,selectedIndex-1);playingIndex=selectedIndex;updateCurrentDisplay();highlightSelectedCard(true);highlightPlayingCard(false);if(autoplayCheckbox.checked)jumpToSelectedLine()}
+function nextLine(){if(!flatLines.length)return;selectedIndex=Math.min(flatLines.length-1,selectedIndex+1);playingIndex=selectedIndex;updateCurrentDisplay();highlightSelectedCard(true);highlightPlayingCard(false);if(autoplayCheckbox.checked)jumpToSelectedLine()}
+loadButton.addEventListener('click',loadDraft);previousButton.addEventListener('click',previousLine);nextButton.addEventListener('click',nextLine);jumpButton.addEventListener('click',jumpToSelectedLine);playLineButton.addEventListener('click',playSelectedLine);setStartButton.addEventListener('click',()=>setSelectedLineStart(audio.currentTime));setEndButton.addEventListener('click',()=>setSelectedLineEnd(audio.currentTime));exportButton.addEventListener('click',exportEditedJson);selectCurrentRecoveryButton.addEventListener('click',()=>{const s=selectedFlatLine();if(s)toggleRecoveryForLine(s.line.id,true)});clearRecoveryButton.addEventListener('click',()=>{recoveryLineIds.clear();rerenderAll()});selectDiagnosticButton.addEventListener('click',selectDiagnosticCandidates);copyRecoveryButton.addEventListener('click',copyRecoveryIds);runRecoveryButton.addEventListener('click',runSelectedRecovery);filterAll.addEventListener('click',()=>{currentFilter='all';renderSections()});filterFlagged.addEventListener('click',()=>{currentFilter='flagged';renderSections()});filterRecovery.addEventListener('click',()=>{currentFilter='recovery';renderSections()});
+audio.addEventListener('timeupdate',()=>{syncSelectionToPlayback();updateCurrentDisplay()});audio.addEventListener('seeked',()=>{const i=findLineIndexAtTime(audio.currentTime);if(i>=0){playingIndex=i;if(followPlaybackCheckbox.checked&&!isEditingField()){selectedIndex=i;highlightSelectedCard(true)}highlightPlayingCard(false)}updateCurrentDisplay()});audio.addEventListener('pause',updateCurrentDisplay);
+document.addEventListener('keydown',(event)=>{if(isEditingField())return;if(event.code==='Space'){event.preventDefault();audio.paused?audio.play():audio.pause()}const k=event.key.toLowerCase();if(k==='j')jumpToSelectedLine();if(k==='p')playSelectedLine();if(k==='s')setSelectedLineStart(audio.currentTime);if(k==='e')setSelectedLineEnd(audio.currentTime);if(k==='n')nextLine();if(k==='b')previousLine();if(k==='r'){const s=selectedFlatLine();if(s)toggleRecoveryForLine(s.line.id)}});
+setButtonsEnabled(false);tryServerContext();
+</script>
 </body>
 </html>

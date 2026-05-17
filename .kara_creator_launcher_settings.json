@@ -1,0 +1,12 @@
+{
+  "song_name": "let_it_go",
+  "audio_path": "E:/Downloads/Temp/New folder/3_1-05 Let It Go_(Vocals).mp3",
+  "lyrics_path": "C:/Users/mark/kara-creator/incoming/let_it_go/lyrics.txt",
+  "use_lyrics_editor": true,
+  "vad_threshold": "0.2",
+  "aligner_dir": "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner",
+  "local_recovery_line_ids": "line-004, line-005",
+  "local_recovery_min_severity": "70",
+  "keep_previous": false,
+  "show_completion_popup": true
+}

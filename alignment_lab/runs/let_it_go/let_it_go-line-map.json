@@ -1,0 +1,875 @@
+{
+  "schema_version": "kara-line-map-v2",
+  "created_by": "kara-creator lyrics-aligner pipeline",
+  "source": {
+    "audio_file": "E:\\Downloads\\Temp\\New folder\\3_1-05 Let It Go_(Vocals).mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\let_it_go\\lyrics.txt",
+    "tokenisation": {
+      "hyphenated_words": "merged",
+      "apostrophes": "kept",
+      "instrumental_placeholders": "excluded_from_aligner"
+    }
+  },
+  "parser": {
+    "auto_section_size": 8,
+    "instrumental_placeholder_inputs": [
+      ". . .",
+      "...",
+      "…"
+    ],
+    "instrumental_placeholder_output": ". . ."
+  },
+  "line_count": 43,
+  "lyric_line_count": 40,
+  "instrumental_line_count": 3,
+  "word_count": 276,
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 7,
+      "lyric_line_count": 7,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 0,
+      "instrumental_line_count": 1
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 4,
+      "lyric_line_count": 4,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 6,
+      "lyric_line_count": 6,
+      "instrumental_line_count": 0
+    },
+    {
+      "id": "section-11-011",
+      "label": "Section 11",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "line_count": 1,
+      "lyric_line_count": 1,
+      "instrumental_line_count": 0
+    }
+  ],
+  "lines": [
+    {
+      "id": "line-0001",
+      "section_id": "section-1-001",
+      "section": "Section 1",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0002",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "The snow glows white on the mountain tonight",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "snow",
+        "glows",
+        "white",
+        "on",
+        "the",
+        "mountain",
+        "tonight"
+      ],
+      "start_word_index": 0,
+      "end_word_index": 7
+    },
+    {
+      "id": "line-0003",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Not a footprint to be seen",
+      "display_type": "lyric",
+      "words": [
+        "not",
+        "a",
+        "footprint",
+        "to",
+        "be",
+        "seen"
+      ],
+      "start_word_index": 8,
+      "end_word_index": 13
+    },
+    {
+      "id": "line-0004",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "A kingdom of isolation",
+      "display_type": "lyric",
+      "words": [
+        "a",
+        "kingdom",
+        "of",
+        "isolation"
+      ],
+      "start_word_index": 14,
+      "end_word_index": 17
+    },
+    {
+      "id": "line-0005",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "And it looks like I'm the queen",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "it",
+        "looks",
+        "like",
+        "i'm",
+        "the",
+        "queen"
+      ],
+      "start_word_index": 18,
+      "end_word_index": 24
+    },
+    {
+      "id": "line-0006",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "The wind is howling like this swirling storm inside",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "wind",
+        "is",
+        "howling",
+        "like",
+        "this",
+        "swirling",
+        "storm",
+        "inside"
+      ],
+      "start_word_index": 25,
+      "end_word_index": 33
+    },
+    {
+      "id": "line-0007",
+      "section_id": "section-2-002",
+      "section": "Section 2",
+      "text": "Couldn't keep it in, heaven knows I tried",
+      "display_type": "lyric",
+      "words": [
+        "couldn't",
+        "keep",
+        "it",
+        "in",
+        "heaven",
+        "knows",
+        "i",
+        "tried"
+      ],
+      "start_word_index": 34,
+      "end_word_index": 41
+    },
+    {
+      "id": "line-0008",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Don't let them in, don't let them see",
+      "display_type": "lyric",
+      "words": [
+        "don't",
+        "let",
+        "them",
+        "in",
+        "don't",
+        "let",
+        "them",
+        "see"
+      ],
+      "start_word_index": 42,
+      "end_word_index": 49
+    },
+    {
+      "id": "line-0009",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Be the good girl you always have to be",
+      "display_type": "lyric",
+      "words": [
+        "be",
+        "the",
+        "good",
+        "girl",
+        "you",
+        "always",
+        "have",
+        "to",
+        "be"
+      ],
+      "start_word_index": 50,
+      "end_word_index": 58
+    },
+    {
+      "id": "line-0010",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Conceal, don't feel, don't let them know",
+      "display_type": "lyric",
+      "words": [
+        "conceal",
+        "don't",
+        "feel",
+        "don't",
+        "let",
+        "them",
+        "know"
+      ],
+      "start_word_index": 59,
+      "end_word_index": 65
+    },
+    {
+      "id": "line-0011",
+      "section_id": "section-3-003",
+      "section": "Section 3",
+      "text": "Well, now they know",
+      "display_type": "lyric",
+      "words": [
+        "well",
+        "now",
+        "they",
+        "know"
+      ],
+      "start_word_index": 66,
+      "end_word_index": 69
+    },
+    {
+      "id": "line-0012",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Let it go, let it go",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "it",
+        "go",
+        "let",
+        "it",
+        "go"
+      ],
+      "start_word_index": 70,
+      "end_word_index": 75
+    },
+    {
+      "id": "line-0013",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Can't hold it back anymore",
+      "display_type": "lyric",
+      "words": [
+        "can't",
+        "hold",
+        "it",
+        "back",
+        "anymore"
+      ],
+      "start_word_index": 76,
+      "end_word_index": 80
+    },
+    {
+      "id": "line-0014",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Let it go, let it go",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "it",
+        "go",
+        "let",
+        "it",
+        "go"
+      ],
+      "start_word_index": 81,
+      "end_word_index": 86
+    },
+    {
+      "id": "line-0015",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Turn away and slam the door",
+      "display_type": "lyric",
+      "words": [
+        "turn",
+        "away",
+        "and",
+        "slam",
+        "the",
+        "door"
+      ],
+      "start_word_index": 87,
+      "end_word_index": 92
+    },
+    {
+      "id": "line-0016",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "I don't care what they're going to say",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "don't",
+        "care",
+        "what",
+        "they're",
+        "going",
+        "to",
+        "say"
+      ],
+      "start_word_index": 93,
+      "end_word_index": 100
+    },
+    {
+      "id": "line-0017",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "Let the storm rage on",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "the",
+        "storm",
+        "rage",
+        "on"
+      ],
+      "start_word_index": 101,
+      "end_word_index": 105
+    },
+    {
+      "id": "line-0018",
+      "section_id": "section-4-004",
+      "section": "Section 4",
+      "text": "The cold never bothered me anyway",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "cold",
+        "never",
+        "bothered",
+        "me",
+        "anyway"
+      ],
+      "start_word_index": 106,
+      "end_word_index": 111
+    },
+    {
+      "id": "line-0019",
+      "section_id": "section-5-005",
+      "section": "Section 5",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0020",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "It's funny how some distance makes everything seem small",
+      "display_type": "lyric",
+      "words": [
+        "it's",
+        "funny",
+        "how",
+        "some",
+        "distance",
+        "makes",
+        "everything",
+        "seem",
+        "small"
+      ],
+      "start_word_index": 112,
+      "end_word_index": 120
+    },
+    {
+      "id": "line-0021",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "And the fears that once controlled me can't get to me at all",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "the",
+        "fears",
+        "that",
+        "once",
+        "controlled",
+        "me",
+        "can't",
+        "get",
+        "to",
+        "me",
+        "at",
+        "all"
+      ],
+      "start_word_index": 121,
+      "end_word_index": 133
+    },
+    {
+      "id": "line-0022",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "It's time to see what I can do",
+      "display_type": "lyric",
+      "words": [
+        "it's",
+        "time",
+        "to",
+        "see",
+        "what",
+        "i",
+        "can",
+        "do"
+      ],
+      "start_word_index": 134,
+      "end_word_index": 141
+    },
+    {
+      "id": "line-0023",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "To test the limits and break through",
+      "display_type": "lyric",
+      "words": [
+        "to",
+        "test",
+        "the",
+        "limits",
+        "and",
+        "break",
+        "through"
+      ],
+      "start_word_index": 142,
+      "end_word_index": 148
+    },
+    {
+      "id": "line-0024",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "No right, no wrong, no rules for me",
+      "display_type": "lyric",
+      "words": [
+        "no",
+        "right",
+        "no",
+        "wrong",
+        "no",
+        "rules",
+        "for",
+        "me"
+      ],
+      "start_word_index": 149,
+      "end_word_index": 156
+    },
+    {
+      "id": "line-0025",
+      "section_id": "section-6-006",
+      "section": "Section 6",
+      "text": "I'm free",
+      "display_type": "lyric",
+      "words": [
+        "i'm",
+        "free"
+      ],
+      "start_word_index": 157,
+      "end_word_index": 158
+    },
+    {
+      "id": "line-0026",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Let it go, let it go",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "it",
+        "go",
+        "let",
+        "it",
+        "go"
+      ],
+      "start_word_index": 159,
+      "end_word_index": 164
+    },
+    {
+      "id": "line-0027",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "I am one with the wind and sky",
+      "display_type": "lyric",
+      "words": [
+        "i",
+        "am",
+        "one",
+        "with",
+        "the",
+        "wind",
+        "and",
+        "sky"
+      ],
+      "start_word_index": 165,
+      "end_word_index": 172
+    },
+    {
+      "id": "line-0028",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Let it go, let it go",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "it",
+        "go",
+        "let",
+        "it",
+        "go"
+      ],
+      "start_word_index": 173,
+      "end_word_index": 178
+    },
+    {
+      "id": "line-0029",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "You'll never see me cry",
+      "display_type": "lyric",
+      "words": [
+        "you'll",
+        "never",
+        "see",
+        "me",
+        "cry"
+      ],
+      "start_word_index": 179,
+      "end_word_index": 183
+    },
+    {
+      "id": "line-0030",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Here I stand and here I stay",
+      "display_type": "lyric",
+      "words": [
+        "here",
+        "i",
+        "stand",
+        "and",
+        "here",
+        "i",
+        "stay"
+      ],
+      "start_word_index": 184,
+      "end_word_index": 190
+    },
+    {
+      "id": "line-0031",
+      "section_id": "section-7-007",
+      "section": "Section 7",
+      "text": "Let the storm rage on",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "the",
+        "storm",
+        "rage",
+        "on"
+      ],
+      "start_word_index": 191,
+      "end_word_index": 195
+    },
+    {
+      "id": "line-0032",
+      "section_id": "section-8-008",
+      "section": "Section 8",
+      "text": ". . .",
+      "display_type": "instrumental",
+      "words": [],
+      "start_word_index": null,
+      "end_word_index": null
+    },
+    {
+      "id": "line-0033",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "My power flurries through the air into the ground",
+      "display_type": "lyric",
+      "words": [
+        "my",
+        "power",
+        "flurries",
+        "through",
+        "the",
+        "air",
+        "into",
+        "the",
+        "ground"
+      ],
+      "start_word_index": 196,
+      "end_word_index": 204
+    },
+    {
+      "id": "line-0034",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "My soul is spiralling in frozen fractals all around",
+      "display_type": "lyric",
+      "words": [
+        "my",
+        "soul",
+        "is",
+        "spiralling",
+        "in",
+        "frozen",
+        "fractals",
+        "all",
+        "around"
+      ],
+      "start_word_index": 205,
+      "end_word_index": 213
+    },
+    {
+      "id": "line-0035",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "And one thought crystallises like an icy blast",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "one",
+        "thought",
+        "crystallises",
+        "like",
+        "an",
+        "icy",
+        "blast"
+      ],
+      "start_word_index": 214,
+      "end_word_index": 221
+    },
+    {
+      "id": "line-0036",
+      "section_id": "section-9-009",
+      "section": "Section 9",
+      "text": "I'm never going back, the past is in the past",
+      "display_type": "lyric",
+      "words": [
+        "i'm",
+        "never",
+        "going",
+        "back",
+        "the",
+        "past",
+        "is",
+        "in",
+        "the",
+        "past"
+      ],
+      "start_word_index": 222,
+      "end_word_index": 231
+    },
+    {
+      "id": "line-0037",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Let it go, let it go",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "it",
+        "go",
+        "let",
+        "it",
+        "go"
+      ],
+      "start_word_index": 232,
+      "end_word_index": 237
+    },
+    {
+      "id": "line-0038",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "And I'll rise like the break of dawn",
+      "display_type": "lyric",
+      "words": [
+        "and",
+        "i'll",
+        "rise",
+        "like",
+        "the",
+        "break",
+        "of",
+        "dawn"
+      ],
+      "start_word_index": 238,
+      "end_word_index": 245
+    },
+    {
+      "id": "line-0039",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Let it go, let it go",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "it",
+        "go",
+        "let",
+        "it",
+        "go"
+      ],
+      "start_word_index": 246,
+      "end_word_index": 251
+    },
+    {
+      "id": "line-0040",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "That perfect girl is gone",
+      "display_type": "lyric",
+      "words": [
+        "that",
+        "perfect",
+        "girl",
+        "is",
+        "gone"
+      ],
+      "start_word_index": 252,
+      "end_word_index": 256
+    },
+    {
+      "id": "line-0041",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Here I stand in the light of day",
+      "display_type": "lyric",
+      "words": [
+        "here",
+        "i",
+        "stand",
+        "in",
+        "the",
+        "light",
+        "of",
+        "day"
+      ],
+      "start_word_index": 257,
+      "end_word_index": 264
+    },
+    {
+      "id": "line-0042",
+      "section_id": "section-10-010",
+      "section": "Section 10",
+      "text": "Let the storm rage on",
+      "display_type": "lyric",
+      "words": [
+        "let",
+        "the",
+        "storm",
+        "rage",
+        "on"
+      ],
+      "start_word_index": 265,
+      "end_word_index": 269
+    },
+    {
+      "id": "line-0043",
+      "section_id": "section-11-011",
+      "section": "Section 11",
+      "text": "The cold never bothered me anyway",
+      "display_type": "lyric",
+      "words": [
+        "the",
+        "cold",
+        "never",
+        "bothered",
+        "me",
+        "anyway"
+      ],
+      "start_word_index": 270,
+      "end_word_index": 275
+    }
+  ]
+}

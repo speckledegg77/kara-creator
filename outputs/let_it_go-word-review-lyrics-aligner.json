@@ -1,0 +1,5369 @@
+{
+  "schema_version": "karaoke-word-review-v2",
+  "created_by": "kara-creator lyrics-aligner converter",
+  "source": {
+    "lyrics_aligner_output": "C:\\Users\\mark\\kara-creator\\alignment_lab\\singing-aligners\\lyrics-aligner\\outputs\\kara_let_it_go\\word_onsets\\let_it_go.txt",
+    "line_map_json": "C:\\Users\\mark\\kara-creator\\alignment_lab\\runs\\let_it_go\\let_it_go-line-map.json",
+    "audio_file": "E:\\Downloads\\Temp\\New folder\\3_1-05 Let It Go_(Vocals).mp3",
+    "lyrics_file": "C:\\Users\\mark\\kara-creator\\incoming\\let_it_go\\lyrics.txt",
+    "audio_duration_seconds": 213.184
+  },
+  "alignment": {
+    "mode": "singing-specific-lyrics-aligner-word-onsets",
+    "status": "diagnostic",
+    "word_count": 276,
+    "section_count": 11,
+    "line_count": 43,
+    "lyric_line_count": 40,
+    "instrumental_line_count": 3,
+    "settings": {
+      "max_word_display_seconds": 0.9,
+      "final_word_display_seconds": 1.2,
+      "next_line_gap_seconds": 0.05
+    },
+    "warnings": []
+  },
+  "sections": [
+    {
+      "id": "section-1-001",
+      "label": "Section 1",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": null,
+      "end": null,
+      "lines": [
+        {
+          "id": "line-0001",
+          "section": "Section 1",
+          "text": ". . .",
+          "display_type": "instrumental",
+          "start": null,
+          "end": null,
+          "timing_source": "instrumental-placeholder-pending-draft-builder",
+          "review_flags": [
+            "instrumental_timing_needs_review"
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "section-2-002",
+      "label": "Section 2",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 13.968,
+      "end": 38.996,
+      "lines": [
+        {
+          "id": "line-0002",
+          "section": "Section 2",
+          "text": "The snow glows white on the mountain tonight",
+          "display_type": "lyric",
+          "start": 13.968,
+          "end": 17.156,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0001",
+              "aligner_word_index": 0,
+              "line_word_index": 0,
+              "text": "the",
+              "start": 13.968,
+              "end": 14.016,
+              "duration": 0.048
+            },
+            {
+              "id": "word-0002",
+              "aligner_word_index": 1,
+              "line_word_index": 1,
+              "text": "snow",
+              "start": 14.016,
+              "end": 14.528,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0003",
+              "aligner_word_index": 2,
+              "line_word_index": 2,
+              "text": "glows",
+              "start": 14.528,
+              "end": 14.96,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0004",
+              "aligner_word_index": 3,
+              "line_word_index": 3,
+              "text": "white",
+              "start": 14.96,
+              "end": 15.488,
+              "duration": 0.528
+            },
+            {
+              "id": "word-0005",
+              "aligner_word_index": 4,
+              "line_word_index": 4,
+              "text": "on",
+              "start": 15.488,
+              "end": 15.776,
+              "duration": 0.288
+            },
+            {
+              "id": "word-0006",
+              "aligner_word_index": 5,
+              "line_word_index": 5,
+              "text": "the",
+              "start": 15.776,
+              "end": 15.824,
+              "duration": 0.048
+            },
+            {
+              "id": "word-0007",
+              "aligner_word_index": 6,
+              "line_word_index": 6,
+              "text": "mountain",
+              "start": 15.824,
+              "end": 16.256,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0008",
+              "aligner_word_index": 7,
+              "line_word_index": 7,
+              "text": "tonight",
+              "start": 16.256,
+              "end": 17.156,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0003",
+          "section": "Section 2",
+          "text": "Not a footprint to be seen",
+          "display_type": "lyric",
+          "start": 17.232,
+          "end": 19.828,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0009",
+              "aligner_word_index": 8,
+              "line_word_index": 0,
+              "text": "not",
+              "start": 17.232,
+              "end": 17.408,
+              "duration": 0.176
+            },
+            {
+              "id": "word-0010",
+              "aligner_word_index": 9,
+              "line_word_index": 1,
+              "text": "a",
+              "start": 17.408,
+              "end": 17.472,
+              "duration": 0.064
+            },
+            {
+              "id": "word-0011",
+              "aligner_word_index": 10,
+              "line_word_index": 2,
+              "text": "footprint",
+              "start": 17.472,
+              "end": 18.372,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0012",
+              "aligner_word_index": 11,
+              "line_word_index": 3,
+              "text": "to",
+              "start": 18.608,
+              "end": 18.816,
+              "duration": 0.208
+            },
+            {
+              "id": "word-0013",
+              "aligner_word_index": 12,
+              "line_word_index": 4,
+              "text": "be",
+              "start": 18.816,
+              "end": 18.928,
+              "duration": 0.112
+            },
+            {
+              "id": "word-0014",
+              "aligner_word_index": 13,
+              "line_word_index": 5,
+              "text": "seen",
+              "start": 18.928,
+              "end": 19.828,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0004",
+          "section": "Section 2",
+          "text": "A kingdom of isolation",
+          "display_type": "lyric",
+          "start": 21.008,
+          "end": 22.708,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0015",
+              "aligner_word_index": 14,
+              "line_word_index": 0,
+              "text": "a",
+              "start": 21.008,
+              "end": 21.104,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0016",
+              "aligner_word_index": 15,
+              "line_word_index": 1,
+              "text": "kingdom",
+              "start": 21.104,
+              "end": 21.616,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0017",
+              "aligner_word_index": 16,
+              "line_word_index": 2,
+              "text": "of",
+              "start": 21.616,
+              "end": 21.808,
+              "duration": 0.192
+            },
+            {
+              "id": "word-0018",
+              "aligner_word_index": 17,
+              "line_word_index": 3,
+              "text": "isolation",
+              "start": 21.808,
+              "end": 22.708,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0005",
+          "section": "Section 2",
+          "text": "And it looks like I'm the queen",
+          "display_type": "lyric",
+          "start": 24.288,
+          "end": 29.07,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0019",
+              "aligner_word_index": 18,
+              "line_word_index": 0,
+              "text": "and",
+              "start": 24.288,
+              "end": 24.384,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0020",
+              "aligner_word_index": 19,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 24.384,
+              "end": 24.592,
+              "duration": 0.208
+            },
+            {
+              "id": "word-0021",
+              "aligner_word_index": 20,
+              "line_word_index": 2,
+              "text": "looks",
+              "start": 24.592,
+              "end": 24.88,
+              "duration": 0.288
+            },
+            {
+              "id": "word-0022",
+              "aligner_word_index": 21,
+              "line_word_index": 3,
+              "text": "like",
+              "start": 24.88,
+              "end": 25.78,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0023",
+              "aligner_word_index": 22,
+              "line_word_index": 4,
+              "text": "i'm",
+              "start": 28.512,
+              "end": 28.576,
+              "duration": 0.064
+            },
+            {
+              "id": "word-0024",
+              "aligner_word_index": 23,
+              "line_word_index": 5,
+              "text": "the",
+              "start": 28.576,
+              "end": 28.672,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0025",
+              "aligner_word_index": 24,
+              "line_word_index": 6,
+              "text": "queen",
+              "start": 28.672,
+              "end": 29.12,
+              "duration": 0.448
+            }
+          ],
+          "original_unclamped_end": 29.12,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0006",
+          "section": "Section 2",
+          "text": "The wind is howling like this swirling storm inside",
+          "display_type": "lyric",
+          "start": 29.12,
+          "end": 33.748,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0026",
+              "aligner_word_index": 25,
+              "line_word_index": 0,
+              "text": "the",
+              "start": 29.12,
+              "end": 29.168,
+              "duration": 0.048
+            },
+            {
+              "id": "word-0027",
+              "aligner_word_index": 26,
+              "line_word_index": 1,
+              "text": "wind",
+              "start": 29.168,
+              "end": 29.28,
+              "duration": 0.112
+            },
+            {
+              "id": "word-0028",
+              "aligner_word_index": 27,
+              "line_word_index": 2,
+              "text": "is",
+              "start": 29.28,
+              "end": 29.664,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0029",
+              "aligner_word_index": 28,
+              "line_word_index": 3,
+              "text": "howling",
+              "start": 29.664,
+              "end": 30.56,
+              "duration": 0.896
+            },
+            {
+              "id": "word-0030",
+              "aligner_word_index": 29,
+              "line_word_index": 4,
+              "text": "like",
+              "start": 30.56,
+              "end": 31.04,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0031",
+              "aligner_word_index": 30,
+              "line_word_index": 5,
+              "text": "this",
+              "start": 31.04,
+              "end": 31.28,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0032",
+              "aligner_word_index": 31,
+              "line_word_index": 6,
+              "text": "swirling",
+              "start": 31.28,
+              "end": 32.18,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0033",
+              "aligner_word_index": 32,
+              "line_word_index": 7,
+              "text": "storm",
+              "start": 32.224,
+              "end": 32.848,
+              "duration": 0.624
+            },
+            {
+              "id": "word-0034",
+              "aligner_word_index": 33,
+              "line_word_index": 8,
+              "text": "inside",
+              "start": 32.848,
+              "end": 33.748,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0007",
+          "section": "Section 2",
+          "text": "Couldn't keep it in, heaven knows I tried",
+          "display_type": "lyric",
+          "start": 35.568,
+          "end": 38.996,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0035",
+              "aligner_word_index": 34,
+              "line_word_index": 0,
+              "text": "couldn't",
+              "start": 35.568,
+              "end": 35.984,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0036",
+              "aligner_word_index": 35,
+              "line_word_index": 1,
+              "text": "keep",
+              "start": 35.984,
+              "end": 36.304,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0037",
+              "aligner_word_index": 36,
+              "line_word_index": 2,
+              "text": "it",
+              "start": 36.304,
+              "end": 36.656,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0038",
+              "aligner_word_index": 37,
+              "line_word_index": 3,
+              "text": "in",
+              "start": 36.656,
+              "end": 37.216,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0039",
+              "aligner_word_index": 38,
+              "line_word_index": 4,
+              "text": "heaven",
+              "start": 37.216,
+              "end": 37.664,
+              "duration": 0.448
+            },
+            {
+              "id": "word-0040",
+              "aligner_word_index": 39,
+              "line_word_index": 5,
+              "text": "knows",
+              "start": 37.664,
+              "end": 37.952,
+              "duration": 0.288
+            },
+            {
+              "id": "word-0041",
+              "aligner_word_index": 40,
+              "line_word_index": 6,
+              "text": "i",
+              "start": 37.952,
+              "end": 38.096,
+              "duration": 0.144
+            },
+            {
+              "id": "word-0042",
+              "aligner_word_index": 41,
+              "line_word_index": 7,
+              "text": "tried",
+              "start": 38.096,
+              "end": 38.996,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    },
+    {
+      "id": "section-3-003",
+      "label": "Section 3",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 39.264,
+      "end": 58.004,
+      "lines": [
+        {
+          "id": "line-0008",
+          "section": "Section 3",
+          "text": "Don't let them in, don't let them see",
+          "display_type": "lyric",
+          "start": 39.264,
+          "end": 45.982,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0043",
+              "aligner_word_index": 42,
+              "line_word_index": 0,
+              "text": "don't",
+              "start": 39.264,
+              "end": 40.164,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0044",
+              "aligner_word_index": 43,
+              "line_word_index": 1,
+              "text": "let",
+              "start": 42.704,
+              "end": 43.2,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0045",
+              "aligner_word_index": 44,
+              "line_word_index": 2,
+              "text": "them",
+              "start": 43.2,
+              "end": 43.664,
+              "duration": 0.464
+            },
+            {
+              "id": "word-0046",
+              "aligner_word_index": 45,
+              "line_word_index": 3,
+              "text": "in",
+              "start": 43.664,
+              "end": 44.144,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0047",
+              "aligner_word_index": 46,
+              "line_word_index": 4,
+              "text": "don't",
+              "start": 44.144,
+              "end": 44.336,
+              "duration": 0.192
+            },
+            {
+              "id": "word-0048",
+              "aligner_word_index": 47,
+              "line_word_index": 5,
+              "text": "let",
+              "start": 44.336,
+              "end": 44.944,
+              "duration": 0.608
+            },
+            {
+              "id": "word-0049",
+              "aligner_word_index": 48,
+              "line_word_index": 6,
+              "text": "them",
+              "start": 44.944,
+              "end": 45.28,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0050",
+              "aligner_word_index": 49,
+              "line_word_index": 7,
+              "text": "see",
+              "start": 45.28,
+              "end": 46.032,
+              "duration": 0.752
+            }
+          ],
+          "original_unclamped_end": 46.032,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0009",
+          "section": "Section 3",
+          "text": "Be the good girl you always have to be",
+          "display_type": "lyric",
+          "start": 46.032,
+          "end": 49.454,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0051",
+              "aligner_word_index": 50,
+              "line_word_index": 0,
+              "text": "be",
+              "start": 46.032,
+              "end": 46.272,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0052",
+              "aligner_word_index": 51,
+              "line_word_index": 1,
+              "text": "the",
+              "start": 46.272,
+              "end": 46.464,
+              "duration": 0.192
+            },
+            {
+              "id": "word-0053",
+              "aligner_word_index": 52,
+              "line_word_index": 2,
+              "text": "good",
+              "start": 46.464,
+              "end": 46.688,
+              "duration": 0.224
+            },
+            {
+              "id": "word-0054",
+              "aligner_word_index": 53,
+              "line_word_index": 3,
+              "text": "girl",
+              "start": 46.688,
+              "end": 47.2,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0055",
+              "aligner_word_index": 54,
+              "line_word_index": 4,
+              "text": "you",
+              "start": 47.2,
+              "end": 47.36,
+              "duration": 0.16
+            },
+            {
+              "id": "word-0056",
+              "aligner_word_index": 55,
+              "line_word_index": 5,
+              "text": "always",
+              "start": 47.36,
+              "end": 48.016,
+              "duration": 0.656
+            },
+            {
+              "id": "word-0057",
+              "aligner_word_index": 56,
+              "line_word_index": 6,
+              "text": "have",
+              "start": 48.016,
+              "end": 48.448,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0058",
+              "aligner_word_index": 57,
+              "line_word_index": 7,
+              "text": "to",
+              "start": 48.448,
+              "end": 48.8,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0059",
+              "aligner_word_index": 58,
+              "line_word_index": 8,
+              "text": "be",
+              "start": 48.8,
+              "end": 49.504,
+              "duration": 0.704
+            }
+          ],
+          "original_unclamped_end": 49.504,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0010",
+          "section": "Section 3",
+          "text": "Conceal, don't feel, don't let them know",
+          "display_type": "lyric",
+          "start": 49.504,
+          "end": 53.268,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0060",
+              "aligner_word_index": 59,
+              "line_word_index": 0,
+              "text": "conceal",
+              "start": 49.504,
+              "end": 50.176,
+              "duration": 0.672
+            },
+            {
+              "id": "word-0061",
+              "aligner_word_index": 60,
+              "line_word_index": 1,
+              "text": "don't",
+              "start": 50.176,
+              "end": 50.544,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0062",
+              "aligner_word_index": 61,
+              "line_word_index": 2,
+              "text": "feel",
+              "start": 50.544,
+              "end": 51.248,
+              "duration": 0.704
+            },
+            {
+              "id": "word-0063",
+              "aligner_word_index": 62,
+              "line_word_index": 3,
+              "text": "don't",
+              "start": 51.248,
+              "end": 51.44,
+              "duration": 0.192
+            },
+            {
+              "id": "word-0064",
+              "aligner_word_index": 63,
+              "line_word_index": 4,
+              "text": "let",
+              "start": 51.44,
+              "end": 51.952,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0065",
+              "aligner_word_index": 64,
+              "line_word_index": 5,
+              "text": "them",
+              "start": 51.952,
+              "end": 52.368,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0066",
+              "aligner_word_index": 65,
+              "line_word_index": 6,
+              "text": "know",
+              "start": 52.368,
+              "end": 53.268,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0011",
+          "section": "Section 3",
+          "text": "Well, now they know",
+          "display_type": "lyric",
+          "start": 55.616,
+          "end": 58.004,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0067",
+              "aligner_word_index": 66,
+              "line_word_index": 0,
+              "text": "well",
+              "start": 55.616,
+              "end": 56.0,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0068",
+              "aligner_word_index": 67,
+              "line_word_index": 1,
+              "text": "now",
+              "start": 56.0,
+              "end": 56.432,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0069",
+              "aligner_word_index": 68,
+              "line_word_index": 2,
+              "text": "they",
+              "start": 56.432,
+              "end": 57.104,
+              "duration": 0.672
+            },
+            {
+              "id": "word-0070",
+              "aligner_word_index": 69,
+              "line_word_index": 3,
+              "text": "know",
+              "start": 57.104,
+              "end": 58.004,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    },
+    {
+      "id": "section-4-004",
+      "label": "Section 4",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 59.008,
+      "end": 86.676,
+      "lines": [
+        {
+          "id": "line-0012",
+          "section": "Section 4",
+          "text": "Let it go, let it go",
+          "display_type": "lyric",
+          "start": 59.008,
+          "end": 62.164,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0071",
+              "aligner_word_index": 70,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 59.008,
+              "end": 59.344,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0072",
+              "aligner_word_index": 71,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 59.344,
+              "end": 59.456,
+              "duration": 0.112
+            },
+            {
+              "id": "word-0073",
+              "aligner_word_index": 72,
+              "line_word_index": 2,
+              "text": "go",
+              "start": 59.456,
+              "end": 60.356,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0074",
+              "aligner_word_index": 73,
+              "line_word_index": 3,
+              "text": "let",
+              "start": 60.752,
+              "end": 61.056,
+              "duration": 0.304
+            },
+            {
+              "id": "word-0075",
+              "aligner_word_index": 74,
+              "line_word_index": 4,
+              "text": "it",
+              "start": 61.056,
+              "end": 61.264,
+              "duration": 0.208
+            },
+            {
+              "id": "word-0076",
+              "aligner_word_index": 75,
+              "line_word_index": 5,
+              "text": "go",
+              "start": 61.264,
+              "end": 62.164,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0013",
+          "section": "Section 4",
+          "text": "Can't hold it back anymore",
+          "display_type": "lyric",
+          "start": 62.672,
+          "end": 64.622,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0077",
+              "aligner_word_index": 76,
+              "line_word_index": 0,
+              "text": "can't",
+              "start": 62.672,
+              "end": 63.152,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0078",
+              "aligner_word_index": 77,
+              "line_word_index": 1,
+              "text": "hold",
+              "start": 63.152,
+              "end": 63.504,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0079",
+              "aligner_word_index": 78,
+              "line_word_index": 2,
+              "text": "it",
+              "start": 63.504,
+              "end": 63.584,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0080",
+              "aligner_word_index": 79,
+              "line_word_index": 3,
+              "text": "back",
+              "start": 63.584,
+              "end": 64.064,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0081",
+              "aligner_word_index": 80,
+              "line_word_index": 4,
+              "text": "anymore",
+              "start": 64.064,
+              "end": 64.672,
+              "duration": 0.608
+            }
+          ],
+          "original_unclamped_end": 64.672,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0014",
+          "section": "Section 4",
+          "text": "Let it go, let it go",
+          "display_type": "lyric",
+          "start": 64.672,
+          "end": 69.108,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0082",
+              "aligner_word_index": 81,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 64.672,
+              "end": 65.572,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0083",
+              "aligner_word_index": 82,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 66.128,
+              "end": 66.496,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0084",
+              "aligner_word_index": 83,
+              "line_word_index": 2,
+              "text": "go",
+              "start": 66.496,
+              "end": 67.396,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0085",
+              "aligner_word_index": 84,
+              "line_word_index": 3,
+              "text": "let",
+              "start": 67.792,
+              "end": 68.032,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0086",
+              "aligner_word_index": 85,
+              "line_word_index": 4,
+              "text": "it",
+              "start": 68.032,
+              "end": 68.208,
+              "duration": 0.176
+            },
+            {
+              "id": "word-0087",
+              "aligner_word_index": 86,
+              "line_word_index": 5,
+              "text": "go",
+              "start": 68.208,
+              "end": 69.108,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0015",
+          "section": "Section 4",
+          "text": "Turn away and slam the door",
+          "display_type": "lyric",
+          "start": 69.568,
+          "end": 72.756,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0088",
+              "aligner_word_index": 87,
+              "line_word_index": 0,
+              "text": "turn",
+              "start": 69.568,
+              "end": 69.856,
+              "duration": 0.288
+            },
+            {
+              "id": "word-0089",
+              "aligner_word_index": 88,
+              "line_word_index": 1,
+              "text": "away",
+              "start": 69.856,
+              "end": 70.48,
+              "duration": 0.624
+            },
+            {
+              "id": "word-0090",
+              "aligner_word_index": 89,
+              "line_word_index": 2,
+              "text": "and",
+              "start": 70.48,
+              "end": 70.688,
+              "duration": 0.208
+            },
+            {
+              "id": "word-0091",
+              "aligner_word_index": 90,
+              "line_word_index": 3,
+              "text": "slam",
+              "start": 70.688,
+              "end": 71.424,
+              "duration": 0.736
+            },
+            {
+              "id": "word-0092",
+              "aligner_word_index": 91,
+              "line_word_index": 4,
+              "text": "the",
+              "start": 71.424,
+              "end": 71.856,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0093",
+              "aligner_word_index": 92,
+              "line_word_index": 5,
+              "text": "door",
+              "start": 71.856,
+              "end": 72.756,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0016",
+          "section": "Section 4",
+          "text": "I don't care what they're going to say",
+          "display_type": "lyric",
+          "start": 73.744,
+          "end": 79.236,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0094",
+              "aligner_word_index": 93,
+              "line_word_index": 0,
+              "text": "i",
+              "start": 73.744,
+              "end": 74.288,
+              "duration": 0.544
+            },
+            {
+              "id": "word-0095",
+              "aligner_word_index": 94,
+              "line_word_index": 1,
+              "text": "don't",
+              "start": 74.288,
+              "end": 74.944,
+              "duration": 0.656
+            },
+            {
+              "id": "word-0096",
+              "aligner_word_index": 95,
+              "line_word_index": 2,
+              "text": "care",
+              "start": 74.944,
+              "end": 75.844,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0097",
+              "aligner_word_index": 96,
+              "line_word_index": 3,
+              "text": "what",
+              "start": 76.176,
+              "end": 76.704,
+              "duration": 0.528
+            },
+            {
+              "id": "word-0098",
+              "aligner_word_index": 97,
+              "line_word_index": 4,
+              "text": "they're",
+              "start": 76.704,
+              "end": 77.2,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0099",
+              "aligner_word_index": 98,
+              "line_word_index": 5,
+              "text": "going",
+              "start": 77.2,
+              "end": 77.76,
+              "duration": 0.56
+            },
+            {
+              "id": "word-0100",
+              "aligner_word_index": 99,
+              "line_word_index": 6,
+              "text": "to",
+              "start": 77.76,
+              "end": 78.336,
+              "duration": 0.576
+            },
+            {
+              "id": "word-0101",
+              "aligner_word_index": 100,
+              "line_word_index": 7,
+              "text": "say",
+              "start": 78.336,
+              "end": 79.236,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0017",
+          "section": "Section 4",
+          "text": "Let the storm rage on",
+          "display_type": "lyric",
+          "start": 80.08,
+          "end": 82.916,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0102",
+              "aligner_word_index": 101,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 80.08,
+              "end": 80.448,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0103",
+              "aligner_word_index": 102,
+              "line_word_index": 1,
+              "text": "the",
+              "start": 80.448,
+              "end": 80.544,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0104",
+              "aligner_word_index": 103,
+              "line_word_index": 2,
+              "text": "storm",
+              "start": 80.544,
+              "end": 81.28,
+              "duration": 0.736
+            },
+            {
+              "id": "word-0105",
+              "aligner_word_index": 104,
+              "line_word_index": 3,
+              "text": "rage",
+              "start": 81.28,
+              "end": 82.016,
+              "duration": 0.736
+            },
+            {
+              "id": "word-0106",
+              "aligner_word_index": 105,
+              "line_word_index": 4,
+              "text": "on",
+              "start": 82.016,
+              "end": 82.916,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0018",
+          "section": "Section 4",
+          "text": "The cold never bothered me anyway",
+          "display_type": "lyric",
+          "start": 83.088,
+          "end": 86.676,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0107",
+              "aligner_word_index": 106,
+              "line_word_index": 0,
+              "text": "the",
+              "start": 83.088,
+              "end": 83.988,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0108",
+              "aligner_word_index": 107,
+              "line_word_index": 1,
+              "text": "cold",
+              "start": 84.176,
+              "end": 84.592,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0109",
+              "aligner_word_index": 108,
+              "line_word_index": 2,
+              "text": "never",
+              "start": 84.592,
+              "end": 85.008,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0110",
+              "aligner_word_index": 109,
+              "line_word_index": 3,
+              "text": "bothered",
+              "start": 85.008,
+              "end": 85.424,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0111",
+              "aligner_word_index": 110,
+              "line_word_index": 4,
+              "text": "me",
+              "start": 85.424,
+              "end": 85.776,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0112",
+              "aligner_word_index": 111,
+              "line_word_index": 5,
+              "text": "anyway",
+              "start": 85.776,
+              "end": 86.676,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    },
+    {
+      "id": "section-5-005",
+      "label": "Section 5",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": null,
+      "end": null,
+      "lines": [
+        {
+          "id": "line-0019",
+          "section": "Section 5",
+          "text": ". . .",
+          "display_type": "instrumental",
+          "start": null,
+          "end": null,
+          "timing_source": "instrumental-placeholder-pending-draft-builder",
+          "review_flags": [
+            "instrumental_timing_needs_review"
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "section-6-006",
+      "label": "Section 6",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 91.456,
+      "end": 118.164,
+      "lines": [
+        {
+          "id": "line-0020",
+          "section": "Section 6",
+          "text": "It's funny how some distance makes everything seem small",
+          "display_type": "lyric",
+          "start": 91.456,
+          "end": 97.028,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0113",
+              "aligner_word_index": 112,
+              "line_word_index": 0,
+              "text": "it's",
+              "start": 91.456,
+              "end": 91.632,
+              "duration": 0.176
+            },
+            {
+              "id": "word-0114",
+              "aligner_word_index": 113,
+              "line_word_index": 1,
+              "text": "funny",
+              "start": 91.632,
+              "end": 92.064,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0115",
+              "aligner_word_index": 114,
+              "line_word_index": 2,
+              "text": "how",
+              "start": 92.064,
+              "end": 92.224,
+              "duration": 0.16
+            },
+            {
+              "id": "word-0116",
+              "aligner_word_index": 115,
+              "line_word_index": 3,
+              "text": "some",
+              "start": 92.224,
+              "end": 92.736,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0117",
+              "aligner_word_index": 116,
+              "line_word_index": 4,
+              "text": "distance",
+              "start": 92.736,
+              "end": 93.636,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0118",
+              "aligner_word_index": 117,
+              "line_word_index": 5,
+              "text": "makes",
+              "start": 94.16,
+              "end": 94.784,
+              "duration": 0.624
+            },
+            {
+              "id": "word-0119",
+              "aligner_word_index": 118,
+              "line_word_index": 6,
+              "text": "everything",
+              "start": 94.784,
+              "end": 95.648,
+              "duration": 0.864
+            },
+            {
+              "id": "word-0120",
+              "aligner_word_index": 119,
+              "line_word_index": 7,
+              "text": "seem",
+              "start": 95.648,
+              "end": 96.128,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0121",
+              "aligner_word_index": 120,
+              "line_word_index": 8,
+              "text": "small",
+              "start": 96.128,
+              "end": 97.028,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0021",
+          "section": "Section 6",
+          "text": "And the fears that once controlled me can't get to me at all",
+          "display_type": "lyric",
+          "start": 97.872,
+          "end": 103.828,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0122",
+              "aligner_word_index": 121,
+              "line_word_index": 0,
+              "text": "and",
+              "start": 97.872,
+              "end": 98.016,
+              "duration": 0.144
+            },
+            {
+              "id": "word-0123",
+              "aligner_word_index": 122,
+              "line_word_index": 1,
+              "text": "the",
+              "start": 98.016,
+              "end": 98.096,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0124",
+              "aligner_word_index": 123,
+              "line_word_index": 2,
+              "text": "fears",
+              "start": 98.096,
+              "end": 98.736,
+              "duration": 0.64
+            },
+            {
+              "id": "word-0125",
+              "aligner_word_index": 124,
+              "line_word_index": 3,
+              "text": "that",
+              "start": 98.736,
+              "end": 98.816,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0126",
+              "aligner_word_index": 125,
+              "line_word_index": 4,
+              "text": "once",
+              "start": 98.816,
+              "end": 99.344,
+              "duration": 0.528
+            },
+            {
+              "id": "word-0127",
+              "aligner_word_index": 126,
+              "line_word_index": 5,
+              "text": "controlled",
+              "start": 99.344,
+              "end": 100.244,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0128",
+              "aligner_word_index": 127,
+              "line_word_index": 6,
+              "text": "me",
+              "start": 100.32,
+              "end": 101.22,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0129",
+              "aligner_word_index": 128,
+              "line_word_index": 7,
+              "text": "can't",
+              "start": 101.232,
+              "end": 101.728,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0130",
+              "aligner_word_index": 129,
+              "line_word_index": 8,
+              "text": "get",
+              "start": 101.728,
+              "end": 102.032,
+              "duration": 0.304
+            },
+            {
+              "id": "word-0131",
+              "aligner_word_index": 130,
+              "line_word_index": 9,
+              "text": "to",
+              "start": 102.032,
+              "end": 102.656,
+              "duration": 0.624
+            },
+            {
+              "id": "word-0132",
+              "aligner_word_index": 131,
+              "line_word_index": 10,
+              "text": "me",
+              "start": 102.656,
+              "end": 102.864,
+              "duration": 0.208
+            },
+            {
+              "id": "word-0133",
+              "aligner_word_index": 132,
+              "line_word_index": 11,
+              "text": "at",
+              "start": 102.864,
+              "end": 102.928,
+              "duration": 0.064
+            },
+            {
+              "id": "word-0134",
+              "aligner_word_index": 133,
+              "line_word_index": 12,
+              "text": "all",
+              "start": 102.928,
+              "end": 103.828,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0022",
+          "section": "Section 6",
+          "text": "It's time to see what I can do",
+          "display_type": "lyric",
+          "start": 105.68,
+          "end": 109.086,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0135",
+              "aligner_word_index": 134,
+              "line_word_index": 0,
+              "text": "it's",
+              "start": 105.68,
+              "end": 106.0,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0136",
+              "aligner_word_index": 135,
+              "line_word_index": 1,
+              "text": "time",
+              "start": 106.0,
+              "end": 106.24,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0137",
+              "aligner_word_index": 136,
+              "line_word_index": 2,
+              "text": "to",
+              "start": 106.24,
+              "end": 106.624,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0138",
+              "aligner_word_index": 137,
+              "line_word_index": 3,
+              "text": "see",
+              "start": 106.624,
+              "end": 107.232,
+              "duration": 0.608
+            },
+            {
+              "id": "word-0139",
+              "aligner_word_index": 138,
+              "line_word_index": 4,
+              "text": "what",
+              "start": 107.232,
+              "end": 107.664,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0140",
+              "aligner_word_index": 139,
+              "line_word_index": 5,
+              "text": "i",
+              "start": 107.664,
+              "end": 108.032,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0141",
+              "aligner_word_index": 140,
+              "line_word_index": 6,
+              "text": "can",
+              "start": 108.032,
+              "end": 108.544,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0142",
+              "aligner_word_index": 141,
+              "line_word_index": 7,
+              "text": "do",
+              "start": 108.544,
+              "end": 109.136,
+              "duration": 0.592
+            }
+          ],
+          "original_unclamped_end": 109.136,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0023",
+          "section": "Section 6",
+          "text": "To test the limits and break through",
+          "display_type": "lyric",
+          "start": 109.136,
+          "end": 112.654,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0143",
+              "aligner_word_index": 142,
+              "line_word_index": 0,
+              "text": "to",
+              "start": 109.136,
+              "end": 109.328,
+              "duration": 0.192
+            },
+            {
+              "id": "word-0144",
+              "aligner_word_index": 143,
+              "line_word_index": 1,
+              "text": "test",
+              "start": 109.328,
+              "end": 109.84,
+              "duration": 0.512
+            },
+            {
+              "id": "word-0145",
+              "aligner_word_index": 144,
+              "line_word_index": 2,
+              "text": "the",
+              "start": 109.84,
+              "end": 110.208,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0146",
+              "aligner_word_index": 145,
+              "line_word_index": 3,
+              "text": "limits",
+              "start": 110.208,
+              "end": 111.108,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0147",
+              "aligner_word_index": 146,
+              "line_word_index": 4,
+              "text": "and",
+              "start": 111.216,
+              "end": 111.552,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0148",
+              "aligner_word_index": 147,
+              "line_word_index": 5,
+              "text": "break",
+              "start": 111.552,
+              "end": 112.032,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0149",
+              "aligner_word_index": 148,
+              "line_word_index": 6,
+              "text": "through",
+              "start": 112.032,
+              "end": 112.704,
+              "duration": 0.672
+            }
+          ],
+          "original_unclamped_end": 112.704,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0024",
+          "section": "Section 6",
+          "text": "No right, no wrong, no rules for me",
+          "display_type": "lyric",
+          "start": 112.704,
+          "end": 116.116,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0150",
+              "aligner_word_index": 149,
+              "line_word_index": 0,
+              "text": "no",
+              "start": 112.704,
+              "end": 112.944,
+              "duration": 0.24
+            },
+            {
+              "id": "word-0151",
+              "aligner_word_index": 150,
+              "line_word_index": 1,
+              "text": "right",
+              "start": 112.944,
+              "end": 113.28,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0152",
+              "aligner_word_index": 151,
+              "line_word_index": 2,
+              "text": "no",
+              "start": 113.28,
+              "end": 113.776,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0153",
+              "aligner_word_index": 152,
+              "line_word_index": 3,
+              "text": "wrong",
+              "start": 113.776,
+              "end": 114.224,
+              "duration": 0.448
+            },
+            {
+              "id": "word-0154",
+              "aligner_word_index": 153,
+              "line_word_index": 4,
+              "text": "no",
+              "start": 114.224,
+              "end": 114.688,
+              "duration": 0.464
+            },
+            {
+              "id": "word-0155",
+              "aligner_word_index": 154,
+              "line_word_index": 5,
+              "text": "rules",
+              "start": 114.688,
+              "end": 115.104,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0156",
+              "aligner_word_index": 155,
+              "line_word_index": 6,
+              "text": "for",
+              "start": 115.104,
+              "end": 115.216,
+              "duration": 0.112
+            },
+            {
+              "id": "word-0157",
+              "aligner_word_index": 156,
+              "line_word_index": 7,
+              "text": "me",
+              "start": 115.216,
+              "end": 116.116,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0025",
+          "section": "Section 6",
+          "text": "I'm free",
+          "display_type": "lyric",
+          "start": 116.912,
+          "end": 118.164,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0158",
+              "aligner_word_index": 157,
+              "line_word_index": 0,
+              "text": "i'm",
+              "start": 116.912,
+              "end": 117.264,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0159",
+              "aligner_word_index": 158,
+              "line_word_index": 1,
+              "text": "free",
+              "start": 117.264,
+              "end": 118.164,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    },
+    {
+      "id": "section-7-007",
+      "label": "Section 7",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 120.352,
+      "end": 144.212,
+      "lines": [
+        {
+          "id": "line-0026",
+          "section": "Section 7",
+          "text": "Let it go, let it go",
+          "display_type": "lyric",
+          "start": 120.352,
+          "end": 122.59,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0160",
+              "aligner_word_index": 159,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 120.352,
+              "end": 120.608,
+              "duration": 0.256
+            },
+            {
+              "id": "word-0161",
+              "aligner_word_index": 160,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 120.608,
+              "end": 120.736,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0162",
+              "aligner_word_index": 161,
+              "line_word_index": 2,
+              "text": "go",
+              "start": 120.736,
+              "end": 121.636,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0163",
+              "aligner_word_index": 162,
+              "line_word_index": 3,
+              "text": "let",
+              "start": 122.0,
+              "end": 122.368,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0164",
+              "aligner_word_index": 163,
+              "line_word_index": 4,
+              "text": "it",
+              "start": 122.368,
+              "end": 122.512,
+              "duration": 0.144
+            },
+            {
+              "id": "word-0165",
+              "aligner_word_index": 164,
+              "line_word_index": 5,
+              "text": "go",
+              "start": 122.512,
+              "end": 122.64,
+              "duration": 0.128
+            }
+          ],
+          "original_unclamped_end": 122.64,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0027",
+          "section": "Section 7",
+          "text": "I am one with the wind and sky",
+          "display_type": "lyric",
+          "start": 122.64,
+          "end": 126.804,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0166",
+              "aligner_word_index": 165,
+              "line_word_index": 0,
+              "text": "i",
+              "start": 122.64,
+              "end": 123.54,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0167",
+              "aligner_word_index": 166,
+              "line_word_index": 1,
+              "text": "am",
+              "start": 123.904,
+              "end": 124.256,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0168",
+              "aligner_word_index": 167,
+              "line_word_index": 2,
+              "text": "one",
+              "start": 124.256,
+              "end": 124.64,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0169",
+              "aligner_word_index": 168,
+              "line_word_index": 3,
+              "text": "with",
+              "start": 124.64,
+              "end": 124.96,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0170",
+              "aligner_word_index": 169,
+              "line_word_index": 4,
+              "text": "the",
+              "start": 124.96,
+              "end": 125.136,
+              "duration": 0.176
+            },
+            {
+              "id": "word-0171",
+              "aligner_word_index": 170,
+              "line_word_index": 5,
+              "text": "wind",
+              "start": 125.136,
+              "end": 125.632,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0172",
+              "aligner_word_index": 171,
+              "line_word_index": 6,
+              "text": "and",
+              "start": 125.632,
+              "end": 125.904,
+              "duration": 0.272
+            },
+            {
+              "id": "word-0173",
+              "aligner_word_index": 172,
+              "line_word_index": 7,
+              "text": "sky",
+              "start": 125.904,
+              "end": 126.804,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0028",
+          "section": "Section 7",
+          "text": "Let it go, let it go",
+          "display_type": "lyric",
+          "start": 127.392,
+          "end": 130.942,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0174",
+              "aligner_word_index": 173,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 127.392,
+              "end": 127.664,
+              "duration": 0.272
+            },
+            {
+              "id": "word-0175",
+              "aligner_word_index": 174,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 127.664,
+              "end": 127.808,
+              "duration": 0.144
+            },
+            {
+              "id": "word-0176",
+              "aligner_word_index": 175,
+              "line_word_index": 2,
+              "text": "go",
+              "start": 127.808,
+              "end": 128.708,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0177",
+              "aligner_word_index": 176,
+              "line_word_index": 3,
+              "text": "let",
+              "start": 128.944,
+              "end": 129.536,
+              "duration": 0.592
+            },
+            {
+              "id": "word-0178",
+              "aligner_word_index": 177,
+              "line_word_index": 4,
+              "text": "it",
+              "start": 129.536,
+              "end": 130.208,
+              "duration": 0.672
+            },
+            {
+              "id": "word-0179",
+              "aligner_word_index": 178,
+              "line_word_index": 5,
+              "text": "go",
+              "start": 130.208,
+              "end": 130.992,
+              "duration": 0.784
+            }
+          ],
+          "original_unclamped_end": 130.992,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0029",
+          "section": "Section 7",
+          "text": "You'll never see me cry",
+          "display_type": "lyric",
+          "start": 130.992,
+          "end": 134.036,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0180",
+              "aligner_word_index": 179,
+              "line_word_index": 0,
+              "text": "you'll",
+              "start": 130.992,
+              "end": 131.312,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0181",
+              "aligner_word_index": 180,
+              "line_word_index": 1,
+              "text": "never",
+              "start": 131.312,
+              "end": 132.0,
+              "duration": 0.688
+            },
+            {
+              "id": "word-0182",
+              "aligner_word_index": 181,
+              "line_word_index": 2,
+              "text": "see",
+              "start": 132.0,
+              "end": 132.72,
+              "duration": 0.72
+            },
+            {
+              "id": "word-0183",
+              "aligner_word_index": 182,
+              "line_word_index": 3,
+              "text": "me",
+              "start": 132.72,
+              "end": 133.136,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0184",
+              "aligner_word_index": 183,
+              "line_word_index": 4,
+              "text": "cry",
+              "start": 133.136,
+              "end": 134.036,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0030",
+          "section": "Section 7",
+          "text": "Here I stand and here I stay",
+          "display_type": "lyric",
+          "start": 134.976,
+          "end": 140.66,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0185",
+              "aligner_word_index": 184,
+              "line_word_index": 0,
+              "text": "here",
+              "start": 134.976,
+              "end": 135.876,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0186",
+              "aligner_word_index": 185,
+              "line_word_index": 1,
+              "text": "i",
+              "start": 136.112,
+              "end": 136.176,
+              "duration": 0.064
+            },
+            {
+              "id": "word-0187",
+              "aligner_word_index": 186,
+              "line_word_index": 2,
+              "text": "stand",
+              "start": 136.176,
+              "end": 137.076,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0188",
+              "aligner_word_index": 187,
+              "line_word_index": 3,
+              "text": "and",
+              "start": 138.08,
+              "end": 138.384,
+              "duration": 0.304
+            },
+            {
+              "id": "word-0189",
+              "aligner_word_index": 188,
+              "line_word_index": 4,
+              "text": "here",
+              "start": 138.384,
+              "end": 139.264,
+              "duration": 0.88
+            },
+            {
+              "id": "word-0190",
+              "aligner_word_index": 189,
+              "line_word_index": 5,
+              "text": "i",
+              "start": 139.264,
+              "end": 139.76,
+              "duration": 0.496
+            },
+            {
+              "id": "word-0191",
+              "aligner_word_index": 190,
+              "line_word_index": 6,
+              "text": "stay",
+              "start": 139.76,
+              "end": 140.66,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0031",
+          "section": "Section 7",
+          "text": "Let the storm rage on",
+          "display_type": "lyric",
+          "start": 141.424,
+          "end": 144.212,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0192",
+              "aligner_word_index": 191,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 141.424,
+              "end": 141.744,
+              "duration": 0.32
+            },
+            {
+              "id": "word-0193",
+              "aligner_word_index": 192,
+              "line_word_index": 1,
+              "text": "the",
+              "start": 141.744,
+              "end": 141.824,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0194",
+              "aligner_word_index": 193,
+              "line_word_index": 2,
+              "text": "storm",
+              "start": 141.824,
+              "end": 142.528,
+              "duration": 0.704
+            },
+            {
+              "id": "word-0195",
+              "aligner_word_index": 194,
+              "line_word_index": 3,
+              "text": "rage",
+              "start": 142.528,
+              "end": 143.312,
+              "duration": 0.784
+            },
+            {
+              "id": "word-0196",
+              "aligner_word_index": 195,
+              "line_word_index": 4,
+              "text": "on",
+              "start": 143.312,
+              "end": 144.212,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    },
+    {
+      "id": "section-8-008",
+      "label": "Section 8",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": null,
+      "end": null,
+      "lines": [
+        {
+          "id": "line-0032",
+          "section": "Section 8",
+          "text": ". . .",
+          "display_type": "instrumental",
+          "start": null,
+          "end": null,
+          "timing_source": "instrumental-placeholder-pending-draft-builder",
+          "review_flags": [
+            "instrumental_timing_needs_review"
+          ],
+          "words": []
+        }
+      ]
+    },
+    {
+      "id": "section-9-009",
+      "label": "Section 9",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 144.288,
+      "end": 182.932,
+      "lines": [
+        {
+          "id": "line-0033",
+          "section": "Section 9",
+          "text": "My power flurries through the air into the ground",
+          "display_type": "lyric",
+          "start": 144.288,
+          "end": 158.292,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0197",
+              "aligner_word_index": 196,
+              "line_word_index": 0,
+              "text": "my",
+              "start": 144.288,
+              "end": 145.188,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0198",
+              "aligner_word_index": 197,
+              "line_word_index": 1,
+              "text": "power",
+              "start": 153.12,
+              "end": 153.888,
+              "duration": 0.768
+            },
+            {
+              "id": "word-0199",
+              "aligner_word_index": 198,
+              "line_word_index": 2,
+              "text": "flurries",
+              "start": 153.888,
+              "end": 154.788,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0200",
+              "aligner_word_index": 199,
+              "line_word_index": 3,
+              "text": "through",
+              "start": 154.992,
+              "end": 155.408,
+              "duration": 0.416
+            },
+            {
+              "id": "word-0201",
+              "aligner_word_index": 200,
+              "line_word_index": 4,
+              "text": "the",
+              "start": 155.408,
+              "end": 155.472,
+              "duration": 0.064
+            },
+            {
+              "id": "word-0202",
+              "aligner_word_index": 201,
+              "line_word_index": 5,
+              "text": "air",
+              "start": 155.472,
+              "end": 156.336,
+              "duration": 0.864
+            },
+            {
+              "id": "word-0203",
+              "aligner_word_index": 202,
+              "line_word_index": 6,
+              "text": "into",
+              "start": 156.336,
+              "end": 157.12,
+              "duration": 0.784
+            },
+            {
+              "id": "word-0204",
+              "aligner_word_index": 203,
+              "line_word_index": 7,
+              "text": "the",
+              "start": 157.12,
+              "end": 157.392,
+              "duration": 0.272
+            },
+            {
+              "id": "word-0205",
+              "aligner_word_index": 204,
+              "line_word_index": 8,
+              "text": "ground",
+              "start": 157.392,
+              "end": 158.292,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0034",
+          "section": "Section 9",
+          "text": "My soul is spiralling in frozen fractals all around",
+          "display_type": "lyric",
+          "start": 159.92,
+          "end": 165.86,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0206",
+              "aligner_word_index": 205,
+              "line_word_index": 0,
+              "text": "my",
+              "start": 159.92,
+              "end": 160.112,
+              "duration": 0.192
+            },
+            {
+              "id": "word-0207",
+              "aligner_word_index": 206,
+              "line_word_index": 1,
+              "text": "soul",
+              "start": 160.112,
+              "end": 160.704,
+              "duration": 0.592
+            },
+            {
+              "id": "word-0208",
+              "aligner_word_index": 207,
+              "line_word_index": 2,
+              "text": "is",
+              "start": 160.704,
+              "end": 160.976,
+              "duration": 0.272
+            },
+            {
+              "id": "word-0209",
+              "aligner_word_index": 208,
+              "line_word_index": 3,
+              "text": "spiralling",
+              "start": 160.976,
+              "end": 161.876,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0210",
+              "aligner_word_index": 209,
+              "line_word_index": 4,
+              "text": "in",
+              "start": 162.416,
+              "end": 162.816,
+              "duration": 0.4
+            },
+            {
+              "id": "word-0211",
+              "aligner_word_index": 210,
+              "line_word_index": 5,
+              "text": "frozen",
+              "start": 162.816,
+              "end": 163.584,
+              "duration": 0.768
+            },
+            {
+              "id": "word-0212",
+              "aligner_word_index": 211,
+              "line_word_index": 6,
+              "text": "fractals",
+              "start": 163.584,
+              "end": 164.484,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0213",
+              "aligner_word_index": 212,
+              "line_word_index": 7,
+              "text": "all",
+              "start": 164.576,
+              "end": 164.96,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0214",
+              "aligner_word_index": 213,
+              "line_word_index": 8,
+              "text": "around",
+              "start": 164.96,
+              "end": 165.86,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0035",
+          "section": "Section 9",
+          "text": "And one thought crystallises like an icy blast",
+          "display_type": "lyric",
+          "start": 167.024,
+          "end": 172.228,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0215",
+              "aligner_word_index": 214,
+              "line_word_index": 0,
+              "text": "and",
+              "start": 167.024,
+              "end": 167.168,
+              "duration": 0.144
+            },
+            {
+              "id": "word-0216",
+              "aligner_word_index": 215,
+              "line_word_index": 1,
+              "text": "one",
+              "start": 167.168,
+              "end": 167.552,
+              "duration": 0.384
+            },
+            {
+              "id": "word-0217",
+              "aligner_word_index": 216,
+              "line_word_index": 2,
+              "text": "thought",
+              "start": 167.552,
+              "end": 167.888,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0218",
+              "aligner_word_index": 217,
+              "line_word_index": 3,
+              "text": "crystallises",
+              "start": 167.888,
+              "end": 168.788,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0219",
+              "aligner_word_index": 218,
+              "line_word_index": 4,
+              "text": "like",
+              "start": 169.824,
+              "end": 170.72,
+              "duration": 0.896
+            },
+            {
+              "id": "word-0220",
+              "aligner_word_index": 219,
+              "line_word_index": 5,
+              "text": "an",
+              "start": 170.72,
+              "end": 171.024,
+              "duration": 0.304
+            },
+            {
+              "id": "word-0221",
+              "aligner_word_index": 220,
+              "line_word_index": 6,
+              "text": "icy",
+              "start": 171.024,
+              "end": 171.328,
+              "duration": 0.304
+            },
+            {
+              "id": "word-0222",
+              "aligner_word_index": 221,
+              "line_word_index": 7,
+              "text": "blast",
+              "start": 171.328,
+              "end": 172.228,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0036",
+          "section": "Section 9",
+          "text": "I'm never going back, the past is in the past",
+          "display_type": "lyric",
+          "start": 173.984,
+          "end": 182.932,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0223",
+              "aligner_word_index": 222,
+              "line_word_index": 0,
+              "text": "i'm",
+              "start": 173.984,
+              "end": 174.112,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0224",
+              "aligner_word_index": 223,
+              "line_word_index": 1,
+              "text": "never",
+              "start": 174.112,
+              "end": 174.896,
+              "duration": 0.784
+            },
+            {
+              "id": "word-0225",
+              "aligner_word_index": 224,
+              "line_word_index": 2,
+              "text": "going",
+              "start": 174.896,
+              "end": 174.976,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0226",
+              "aligner_word_index": 225,
+              "line_word_index": 3,
+              "text": "back",
+              "start": 174.976,
+              "end": 175.872,
+              "duration": 0.896
+            },
+            {
+              "id": "word-0227",
+              "aligner_word_index": 226,
+              "line_word_index": 4,
+              "text": "the",
+              "start": 175.872,
+              "end": 176.772,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0228",
+              "aligner_word_index": 227,
+              "line_word_index": 5,
+              "text": "past",
+              "start": 177.072,
+              "end": 177.52,
+              "duration": 0.448
+            },
+            {
+              "id": "word-0229",
+              "aligner_word_index": 228,
+              "line_word_index": 6,
+              "text": "is",
+              "start": 177.52,
+              "end": 178.42,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0230",
+              "aligner_word_index": 229,
+              "line_word_index": 7,
+              "text": "in",
+              "start": 178.64,
+              "end": 179.54,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0231",
+              "aligner_word_index": 230,
+              "line_word_index": 8,
+              "text": "the",
+              "start": 181.664,
+              "end": 182.032,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0232",
+              "aligner_word_index": 231,
+              "line_word_index": 9,
+              "text": "past",
+              "start": 182.032,
+              "end": 182.932,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    },
+    {
+      "id": "section-10-010",
+      "label": "Section 10",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 183.136,
+      "end": 210.174,
+      "lines": [
+        {
+          "id": "line-0037",
+          "section": "Section 10",
+          "text": "Let it go, let it go",
+          "display_type": "lyric",
+          "start": 183.136,
+          "end": 185.534,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0233",
+              "aligner_word_index": 232,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 183.136,
+              "end": 183.488,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0234",
+              "aligner_word_index": 233,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 183.488,
+              "end": 183.856,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0235",
+              "aligner_word_index": 234,
+              "line_word_index": 2,
+              "text": "go",
+              "start": 183.856,
+              "end": 183.952,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0236",
+              "aligner_word_index": 235,
+              "line_word_index": 3,
+              "text": "let",
+              "start": 183.952,
+              "end": 184.852,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0237",
+              "aligner_word_index": 236,
+              "line_word_index": 4,
+              "text": "it",
+              "start": 185.2,
+              "end": 185.376,
+              "duration": 0.176
+            },
+            {
+              "id": "word-0238",
+              "aligner_word_index": 237,
+              "line_word_index": 5,
+              "text": "go",
+              "start": 185.376,
+              "end": 185.584,
+              "duration": 0.208
+            }
+          ],
+          "original_unclamped_end": 185.584,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0038",
+          "section": "Section 10",
+          "text": "And I'll rise like the break of dawn",
+          "display_type": "lyric",
+          "start": 185.584,
+          "end": 188.212,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0239",
+              "aligner_word_index": 238,
+              "line_word_index": 0,
+              "text": "and",
+              "start": 185.584,
+              "end": 185.68,
+              "duration": 0.096
+            },
+            {
+              "id": "word-0240",
+              "aligner_word_index": 239,
+              "line_word_index": 1,
+              "text": "i'll",
+              "start": 185.68,
+              "end": 185.968,
+              "duration": 0.288
+            },
+            {
+              "id": "word-0241",
+              "aligner_word_index": 240,
+              "line_word_index": 2,
+              "text": "rise",
+              "start": 185.968,
+              "end": 186.096,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0242",
+              "aligner_word_index": 241,
+              "line_word_index": 3,
+              "text": "like",
+              "start": 186.096,
+              "end": 186.352,
+              "duration": 0.256
+            },
+            {
+              "id": "word-0243",
+              "aligner_word_index": 242,
+              "line_word_index": 4,
+              "text": "the",
+              "start": 186.352,
+              "end": 186.48,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0244",
+              "aligner_word_index": 243,
+              "line_word_index": 5,
+              "text": "break",
+              "start": 186.48,
+              "end": 187.024,
+              "duration": 0.544
+            },
+            {
+              "id": "word-0245",
+              "aligner_word_index": 244,
+              "line_word_index": 6,
+              "text": "of",
+              "start": 187.024,
+              "end": 187.312,
+              "duration": 0.288
+            },
+            {
+              "id": "word-0246",
+              "aligner_word_index": 245,
+              "line_word_index": 7,
+              "text": "dawn",
+              "start": 187.312,
+              "end": 188.212,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0039",
+          "section": "Section 10",
+          "text": "Let it go, let it go",
+          "display_type": "lyric",
+          "start": 188.72,
+          "end": 190.782,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0247",
+              "aligner_word_index": 246,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 188.72,
+              "end": 188.976,
+              "duration": 0.256
+            },
+            {
+              "id": "word-0248",
+              "aligner_word_index": 247,
+              "line_word_index": 1,
+              "text": "it",
+              "start": 188.976,
+              "end": 189.104,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0249",
+              "aligner_word_index": 248,
+              "line_word_index": 2,
+              "text": "go",
+              "start": 189.104,
+              "end": 190.004,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0250",
+              "aligner_word_index": 249,
+              "line_word_index": 3,
+              "text": "let",
+              "start": 190.304,
+              "end": 190.64,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0251",
+              "aligner_word_index": 250,
+              "line_word_index": 4,
+              "text": "it",
+              "start": 190.64,
+              "end": 190.784,
+              "duration": 0.144
+            },
+            {
+              "id": "word-0252",
+              "aligner_word_index": 251,
+              "line_word_index": 5,
+              "text": "go",
+              "start": 190.784,
+              "end": 190.832,
+              "duration": 0.048
+            }
+          ],
+          "original_unclamped_end": 190.832,
+          "display_end_clamped_to_next_line": true
+        },
+        {
+          "id": "line-0040",
+          "section": "Section 10",
+          "text": "That perfect girl is gone",
+          "display_type": "lyric",
+          "start": 190.832,
+          "end": 195.492,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0253",
+              "aligner_word_index": 252,
+              "line_word_index": 0,
+              "text": "that",
+              "start": 190.832,
+              "end": 191.732,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0254",
+              "aligner_word_index": 253,
+              "line_word_index": 1,
+              "text": "perfect",
+              "start": 192.256,
+              "end": 193.156,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0255",
+              "aligner_word_index": 254,
+              "line_word_index": 2,
+              "text": "girl",
+              "start": 193.44,
+              "end": 194.16,
+              "duration": 0.72
+            },
+            {
+              "id": "word-0256",
+              "aligner_word_index": 255,
+              "line_word_index": 3,
+              "text": "is",
+              "start": 194.16,
+              "end": 194.592,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0257",
+              "aligner_word_index": 256,
+              "line_word_index": 4,
+              "text": "gone",
+              "start": 194.592,
+              "end": 195.492,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0041",
+          "section": "Section 10",
+          "text": "Here I stand in the light of day",
+          "display_type": "lyric",
+          "start": 196.224,
+          "end": 202.404,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0258",
+              "aligner_word_index": 257,
+              "line_word_index": 0,
+              "text": "here",
+              "start": 196.224,
+              "end": 197.008,
+              "duration": 0.784
+            },
+            {
+              "id": "word-0259",
+              "aligner_word_index": 258,
+              "line_word_index": 1,
+              "text": "i",
+              "start": 197.008,
+              "end": 197.456,
+              "duration": 0.448
+            },
+            {
+              "id": "word-0260",
+              "aligner_word_index": 259,
+              "line_word_index": 2,
+              "text": "stand",
+              "start": 197.456,
+              "end": 198.356,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0261",
+              "aligner_word_index": 260,
+              "line_word_index": 3,
+              "text": "in",
+              "start": 198.992,
+              "end": 199.344,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0262",
+              "aligner_word_index": 261,
+              "line_word_index": 4,
+              "text": "the",
+              "start": 199.344,
+              "end": 199.792,
+              "duration": 0.448
+            },
+            {
+              "id": "word-0263",
+              "aligner_word_index": 262,
+              "line_word_index": 5,
+              "text": "light",
+              "start": 199.792,
+              "end": 200.692,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0264",
+              "aligner_word_index": 263,
+              "line_word_index": 6,
+              "text": "of",
+              "start": 201.056,
+              "end": 201.504,
+              "duration": 0.448
+            },
+            {
+              "id": "word-0265",
+              "aligner_word_index": 264,
+              "line_word_index": 7,
+              "text": "day",
+              "start": 201.504,
+              "end": 202.404,
+              "duration": 0.9
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        },
+        {
+          "id": "line-0042",
+          "section": "Section 10",
+          "text": "Let the storm rage on",
+          "display_type": "lyric",
+          "start": 204.528,
+          "end": 210.174,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0266",
+              "aligner_word_index": 265,
+              "line_word_index": 0,
+              "text": "let",
+              "start": 204.528,
+              "end": 204.864,
+              "duration": 0.336
+            },
+            {
+              "id": "word-0267",
+              "aligner_word_index": 266,
+              "line_word_index": 1,
+              "text": "the",
+              "start": 204.864,
+              "end": 204.944,
+              "duration": 0.08
+            },
+            {
+              "id": "word-0268",
+              "aligner_word_index": 267,
+              "line_word_index": 2,
+              "text": "storm",
+              "start": 204.944,
+              "end": 205.584,
+              "duration": 0.64
+            },
+            {
+              "id": "word-0269",
+              "aligner_word_index": 268,
+              "line_word_index": 3,
+              "text": "rage",
+              "start": 205.584,
+              "end": 206.484,
+              "duration": 0.9
+            },
+            {
+              "id": "word-0270",
+              "aligner_word_index": 269,
+              "line_word_index": 4,
+              "text": "on",
+              "start": 209.92,
+              "end": 210.224,
+              "duration": 0.304
+            }
+          ],
+          "original_unclamped_end": 210.224,
+          "display_end_clamped_to_next_line": true
+        }
+      ]
+    },
+    {
+      "id": "section-11-011",
+      "label": "Section 11",
+      "source": "blank_line_group",
+      "parser_mode": "blank_line_groups",
+      "start": 210.224,
+      "end": 213.184,
+      "lines": [
+        {
+          "id": "line-0043",
+          "section": "Section 11",
+          "text": "The cold never bothered me anyway",
+          "display_type": "lyric",
+          "start": 210.224,
+          "end": 213.184,
+          "review_flags": [],
+          "words": [
+            {
+              "id": "word-0271",
+              "aligner_word_index": 270,
+              "line_word_index": 0,
+              "text": "the",
+              "start": 210.224,
+              "end": 210.352,
+              "duration": 0.128
+            },
+            {
+              "id": "word-0272",
+              "aligner_word_index": 271,
+              "line_word_index": 1,
+              "text": "cold",
+              "start": 210.352,
+              "end": 210.832,
+              "duration": 0.48
+            },
+            {
+              "id": "word-0273",
+              "aligner_word_index": 272,
+              "line_word_index": 2,
+              "text": "never",
+              "start": 210.832,
+              "end": 211.184,
+              "duration": 0.352
+            },
+            {
+              "id": "word-0274",
+              "aligner_word_index": 273,
+              "line_word_index": 3,
+              "text": "bothered",
+              "start": 211.184,
+              "end": 211.616,
+              "duration": 0.432
+            },
+            {
+              "id": "word-0275",
+              "aligner_word_index": 274,
+              "line_word_index": 4,
+              "text": "me",
+              "start": 211.616,
+              "end": 211.984,
+              "duration": 0.368
+            },
+            {
+              "id": "word-0276",
+              "aligner_word_index": 275,
+              "line_word_index": 5,
+              "text": "anyway",
+              "start": 211.984,
+              "end": 213.184,
+              "duration": 1.2
+            }
+          ],
+          "display_end_clamped_to_next_line": false
+        }
+      ]
+    }
+  ],
+  "all_words": [
+    {
+      "id": "word-0001",
+      "index": 0,
+      "text": "the",
+      "start": 13.968,
+      "end": 14.016,
+      "duration": 0.048
+    },
+    {
+      "id": "word-0002",
+      "index": 1,
+      "text": "snow",
+      "start": 14.016,
+      "end": 14.528,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0003",
+      "index": 2,
+      "text": "glows",
+      "start": 14.528,
+      "end": 14.96,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0004",
+      "index": 3,
+      "text": "white",
+      "start": 14.96,
+      "end": 15.488,
+      "duration": 0.528
+    },
+    {
+      "id": "word-0005",
+      "index": 4,
+      "text": "on",
+      "start": 15.488,
+      "end": 15.776,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0006",
+      "index": 5,
+      "text": "the",
+      "start": 15.776,
+      "end": 15.824,
+      "duration": 0.048
+    },
+    {
+      "id": "word-0007",
+      "index": 6,
+      "text": "mountain",
+      "start": 15.824,
+      "end": 16.256,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0008",
+      "index": 7,
+      "text": "tonight",
+      "start": 16.256,
+      "end": 17.156,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0009",
+      "index": 8,
+      "text": "not",
+      "start": 17.232,
+      "end": 17.408,
+      "duration": 0.176
+    },
+    {
+      "id": "word-0010",
+      "index": 9,
+      "text": "a",
+      "start": 17.408,
+      "end": 17.472,
+      "duration": 0.064
+    },
+    {
+      "id": "word-0011",
+      "index": 10,
+      "text": "footprint",
+      "start": 17.472,
+      "end": 18.372,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0012",
+      "index": 11,
+      "text": "to",
+      "start": 18.608,
+      "end": 18.816,
+      "duration": 0.208
+    },
+    {
+      "id": "word-0013",
+      "index": 12,
+      "text": "be",
+      "start": 18.816,
+      "end": 18.928,
+      "duration": 0.112
+    },
+    {
+      "id": "word-0014",
+      "index": 13,
+      "text": "seen",
+      "start": 18.928,
+      "end": 19.828,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0015",
+      "index": 14,
+      "text": "a",
+      "start": 21.008,
+      "end": 21.104,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0016",
+      "index": 15,
+      "text": "kingdom",
+      "start": 21.104,
+      "end": 21.616,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0017",
+      "index": 16,
+      "text": "of",
+      "start": 21.616,
+      "end": 21.808,
+      "duration": 0.192
+    },
+    {
+      "id": "word-0018",
+      "index": 17,
+      "text": "isolation",
+      "start": 21.808,
+      "end": 22.708,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0019",
+      "index": 18,
+      "text": "and",
+      "start": 24.288,
+      "end": 24.384,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0020",
+      "index": 19,
+      "text": "it",
+      "start": 24.384,
+      "end": 24.592,
+      "duration": 0.208
+    },
+    {
+      "id": "word-0021",
+      "index": 20,
+      "text": "looks",
+      "start": 24.592,
+      "end": 24.88,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0022",
+      "index": 21,
+      "text": "like",
+      "start": 24.88,
+      "end": 25.78,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0023",
+      "index": 22,
+      "text": "i'm",
+      "start": 28.512,
+      "end": 28.576,
+      "duration": 0.064
+    },
+    {
+      "id": "word-0024",
+      "index": 23,
+      "text": "the",
+      "start": 28.576,
+      "end": 28.672,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0025",
+      "index": 24,
+      "text": "queen",
+      "start": 28.672,
+      "end": 29.12,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0026",
+      "index": 25,
+      "text": "the",
+      "start": 29.12,
+      "end": 29.168,
+      "duration": 0.048
+    },
+    {
+      "id": "word-0027",
+      "index": 26,
+      "text": "wind",
+      "start": 29.168,
+      "end": 29.28,
+      "duration": 0.112
+    },
+    {
+      "id": "word-0028",
+      "index": 27,
+      "text": "is",
+      "start": 29.28,
+      "end": 29.664,
+      "duration": 0.384
+    },
+    {
+      "id": "word-0029",
+      "index": 28,
+      "text": "howling",
+      "start": 29.664,
+      "end": 30.56,
+      "duration": 0.896
+    },
+    {
+      "id": "word-0030",
+      "index": 29,
+      "text": "like",
+      "start": 30.56,
+      "end": 31.04,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0031",
+      "index": 30,
+      "text": "this",
+      "start": 31.04,
+      "end": 31.28,
+      "duration": 0.24
+    },
+    {
+      "id": "word-0032",
+      "index": 31,
+      "text": "swirling",
+      "start": 31.28,
+      "end": 32.18,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0033",
+      "index": 32,
+      "text": "storm",
+      "start": 32.224,
+      "end": 32.848,
+      "duration": 0.624
+    },
+    {
+      "id": "word-0034",
+      "index": 33,
+      "text": "inside",
+      "start": 32.848,
+      "end": 33.748,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0035",
+      "index": 34,
+      "text": "couldn't",
+      "start": 35.568,
+      "end": 35.984,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0036",
+      "index": 35,
+      "text": "keep",
+      "start": 35.984,
+      "end": 36.304,
+      "duration": 0.32
+    },
+    {
+      "id": "word-0037",
+      "index": 36,
+      "text": "it",
+      "start": 36.304,
+      "end": 36.656,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0038",
+      "index": 37,
+      "text": "in",
+      "start": 36.656,
+      "end": 37.216,
+      "duration": 0.56
+    },
+    {
+      "id": "word-0039",
+      "index": 38,
+      "text": "heaven",
+      "start": 37.216,
+      "end": 37.664,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0040",
+      "index": 39,
+      "text": "knows",
+      "start": 37.664,
+      "end": 37.952,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0041",
+      "index": 40,
+      "text": "i",
+      "start": 37.952,
+      "end": 38.096,
+      "duration": 0.144
+    },
+    {
+      "id": "word-0042",
+      "index": 41,
+      "text": "tried",
+      "start": 38.096,
+      "end": 38.996,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0043",
+      "index": 42,
+      "text": "don't",
+      "start": 39.264,
+      "end": 40.164,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0044",
+      "index": 43,
+      "text": "let",
+      "start": 42.704,
+      "end": 43.2,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0045",
+      "index": 44,
+      "text": "them",
+      "start": 43.2,
+      "end": 43.664,
+      "duration": 0.464
+    },
+    {
+      "id": "word-0046",
+      "index": 45,
+      "text": "in",
+      "start": 43.664,
+      "end": 44.144,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0047",
+      "index": 46,
+      "text": "don't",
+      "start": 44.144,
+      "end": 44.336,
+      "duration": 0.192
+    },
+    {
+      "id": "word-0048",
+      "index": 47,
+      "text": "let",
+      "start": 44.336,
+      "end": 44.944,
+      "duration": 0.608
+    },
+    {
+      "id": "word-0049",
+      "index": 48,
+      "text": "them",
+      "start": 44.944,
+      "end": 45.28,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0050",
+      "index": 49,
+      "text": "see",
+      "start": 45.28,
+      "end": 46.032,
+      "duration": 0.752
+    },
+    {
+      "id": "word-0051",
+      "index": 50,
+      "text": "be",
+      "start": 46.032,
+      "end": 46.272,
+      "duration": 0.24
+    },
+    {
+      "id": "word-0052",
+      "index": 51,
+      "text": "the",
+      "start": 46.272,
+      "end": 46.464,
+      "duration": 0.192
+    },
+    {
+      "id": "word-0053",
+      "index": 52,
+      "text": "good",
+      "start": 46.464,
+      "end": 46.688,
+      "duration": 0.224
+    },
+    {
+      "id": "word-0054",
+      "index": 53,
+      "text": "girl",
+      "start": 46.688,
+      "end": 47.2,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0055",
+      "index": 54,
+      "text": "you",
+      "start": 47.2,
+      "end": 47.36,
+      "duration": 0.16
+    },
+    {
+      "id": "word-0056",
+      "index": 55,
+      "text": "always",
+      "start": 47.36,
+      "end": 48.016,
+      "duration": 0.656
+    },
+    {
+      "id": "word-0057",
+      "index": 56,
+      "text": "have",
+      "start": 48.016,
+      "end": 48.448,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0058",
+      "index": 57,
+      "text": "to",
+      "start": 48.448,
+      "end": 48.8,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0059",
+      "index": 58,
+      "text": "be",
+      "start": 48.8,
+      "end": 49.504,
+      "duration": 0.704
+    },
+    {
+      "id": "word-0060",
+      "index": 59,
+      "text": "conceal",
+      "start": 49.504,
+      "end": 50.176,
+      "duration": 0.672
+    },
+    {
+      "id": "word-0061",
+      "index": 60,
+      "text": "don't",
+      "start": 50.176,
+      "end": 50.544,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0062",
+      "index": 61,
+      "text": "feel",
+      "start": 50.544,
+      "end": 51.248,
+      "duration": 0.704
+    },
+    {
+      "id": "word-0063",
+      "index": 62,
+      "text": "don't",
+      "start": 51.248,
+      "end": 51.44,
+      "duration": 0.192
+    },
+    {
+      "id": "word-0064",
+      "index": 63,
+      "text": "let",
+      "start": 51.44,
+      "end": 51.952,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0065",
+      "index": 64,
+      "text": "them",
+      "start": 51.952,
+      "end": 52.368,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0066",
+      "index": 65,
+      "text": "know",
+      "start": 52.368,
+      "end": 53.268,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0067",
+      "index": 66,
+      "text": "well",
+      "start": 55.616,
+      "end": 56.0,
+      "duration": 0.384
+    },
+    {
+      "id": "word-0068",
+      "index": 67,
+      "text": "now",
+      "start": 56.0,
+      "end": 56.432,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0069",
+      "index": 68,
+      "text": "they",
+      "start": 56.432,
+      "end": 57.104,
+      "duration": 0.672
+    },
+    {
+      "id": "word-0070",
+      "index": 69,
+      "text": "know",
+      "start": 57.104,
+      "end": 58.004,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0071",
+      "index": 70,
+      "text": "let",
+      "start": 59.008,
+      "end": 59.344,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0072",
+      "index": 71,
+      "text": "it",
+      "start": 59.344,
+      "end": 59.456,
+      "duration": 0.112
+    },
+    {
+      "id": "word-0073",
+      "index": 72,
+      "text": "go",
+      "start": 59.456,
+      "end": 60.356,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0074",
+      "index": 73,
+      "text": "let",
+      "start": 60.752,
+      "end": 61.056,
+      "duration": 0.304
+    },
+    {
+      "id": "word-0075",
+      "index": 74,
+      "text": "it",
+      "start": 61.056,
+      "end": 61.264,
+      "duration": 0.208
+    },
+    {
+      "id": "word-0076",
+      "index": 75,
+      "text": "go",
+      "start": 61.264,
+      "end": 62.164,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0077",
+      "index": 76,
+      "text": "can't",
+      "start": 62.672,
+      "end": 63.152,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0078",
+      "index": 77,
+      "text": "hold",
+      "start": 63.152,
+      "end": 63.504,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0079",
+      "index": 78,
+      "text": "it",
+      "start": 63.504,
+      "end": 63.584,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0080",
+      "index": 79,
+      "text": "back",
+      "start": 63.584,
+      "end": 64.064,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0081",
+      "index": 80,
+      "text": "anymore",
+      "start": 64.064,
+      "end": 64.672,
+      "duration": 0.608
+    },
+    {
+      "id": "word-0082",
+      "index": 81,
+      "text": "let",
+      "start": 64.672,
+      "end": 65.572,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0083",
+      "index": 82,
+      "text": "it",
+      "start": 66.128,
+      "end": 66.496,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0084",
+      "index": 83,
+      "text": "go",
+      "start": 66.496,
+      "end": 67.396,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0085",
+      "index": 84,
+      "text": "let",
+      "start": 67.792,
+      "end": 68.032,
+      "duration": 0.24
+    },
+    {
+      "id": "word-0086",
+      "index": 85,
+      "text": "it",
+      "start": 68.032,
+      "end": 68.208,
+      "duration": 0.176
+    },
+    {
+      "id": "word-0087",
+      "index": 86,
+      "text": "go",
+      "start": 68.208,
+      "end": 69.108,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0088",
+      "index": 87,
+      "text": "turn",
+      "start": 69.568,
+      "end": 69.856,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0089",
+      "index": 88,
+      "text": "away",
+      "start": 69.856,
+      "end": 70.48,
+      "duration": 0.624
+    },
+    {
+      "id": "word-0090",
+      "index": 89,
+      "text": "and",
+      "start": 70.48,
+      "end": 70.688,
+      "duration": 0.208
+    },
+    {
+      "id": "word-0091",
+      "index": 90,
+      "text": "slam",
+      "start": 70.688,
+      "end": 71.424,
+      "duration": 0.736
+    },
+    {
+      "id": "word-0092",
+      "index": 91,
+      "text": "the",
+      "start": 71.424,
+      "end": 71.856,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0093",
+      "index": 92,
+      "text": "door",
+      "start": 71.856,
+      "end": 72.756,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0094",
+      "index": 93,
+      "text": "i",
+      "start": 73.744,
+      "end": 74.288,
+      "duration": 0.544
+    },
+    {
+      "id": "word-0095",
+      "index": 94,
+      "text": "don't",
+      "start": 74.288,
+      "end": 74.944,
+      "duration": 0.656
+    },
+    {
+      "id": "word-0096",
+      "index": 95,
+      "text": "care",
+      "start": 74.944,
+      "end": 75.844,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0097",
+      "index": 96,
+      "text": "what",
+      "start": 76.176,
+      "end": 76.704,
+      "duration": 0.528
+    },
+    {
+      "id": "word-0098",
+      "index": 97,
+      "text": "they're",
+      "start": 76.704,
+      "end": 77.2,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0099",
+      "index": 98,
+      "text": "going",
+      "start": 77.2,
+      "end": 77.76,
+      "duration": 0.56
+    },
+    {
+      "id": "word-0100",
+      "index": 99,
+      "text": "to",
+      "start": 77.76,
+      "end": 78.336,
+      "duration": 0.576
+    },
+    {
+      "id": "word-0101",
+      "index": 100,
+      "text": "say",
+      "start": 78.336,
+      "end": 79.236,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0102",
+      "index": 101,
+      "text": "let",
+      "start": 80.08,
+      "end": 80.448,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0103",
+      "index": 102,
+      "text": "the",
+      "start": 80.448,
+      "end": 80.544,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0104",
+      "index": 103,
+      "text": "storm",
+      "start": 80.544,
+      "end": 81.28,
+      "duration": 0.736
+    },
+    {
+      "id": "word-0105",
+      "index": 104,
+      "text": "rage",
+      "start": 81.28,
+      "end": 82.016,
+      "duration": 0.736
+    },
+    {
+      "id": "word-0106",
+      "index": 105,
+      "text": "on",
+      "start": 82.016,
+      "end": 82.916,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0107",
+      "index": 106,
+      "text": "the",
+      "start": 83.088,
+      "end": 83.988,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0108",
+      "index": 107,
+      "text": "cold",
+      "start": 84.176,
+      "end": 84.592,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0109",
+      "index": 108,
+      "text": "never",
+      "start": 84.592,
+      "end": 85.008,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0110",
+      "index": 109,
+      "text": "bothered",
+      "start": 85.008,
+      "end": 85.424,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0111",
+      "index": 110,
+      "text": "me",
+      "start": 85.424,
+      "end": 85.776,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0112",
+      "index": 111,
+      "text": "anyway",
+      "start": 85.776,
+      "end": 86.676,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0113",
+      "index": 112,
+      "text": "it's",
+      "start": 91.456,
+      "end": 91.632,
+      "duration": 0.176
+    },
+    {
+      "id": "word-0114",
+      "index": 113,
+      "text": "funny",
+      "start": 91.632,
+      "end": 92.064,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0115",
+      "index": 114,
+      "text": "how",
+      "start": 92.064,
+      "end": 92.224,
+      "duration": 0.16
+    },
+    {
+      "id": "word-0116",
+      "index": 115,
+      "text": "some",
+      "start": 92.224,
+      "end": 92.736,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0117",
+      "index": 116,
+      "text": "distance",
+      "start": 92.736,
+      "end": 93.636,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0118",
+      "index": 117,
+      "text": "makes",
+      "start": 94.16,
+      "end": 94.784,
+      "duration": 0.624
+    },
+    {
+      "id": "word-0119",
+      "index": 118,
+      "text": "everything",
+      "start": 94.784,
+      "end": 95.648,
+      "duration": 0.864
+    },
+    {
+      "id": "word-0120",
+      "index": 119,
+      "text": "seem",
+      "start": 95.648,
+      "end": 96.128,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0121",
+      "index": 120,
+      "text": "small",
+      "start": 96.128,
+      "end": 97.028,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0122",
+      "index": 121,
+      "text": "and",
+      "start": 97.872,
+      "end": 98.016,
+      "duration": 0.144
+    },
+    {
+      "id": "word-0123",
+      "index": 122,
+      "text": "the",
+      "start": 98.016,
+      "end": 98.096,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0124",
+      "index": 123,
+      "text": "fears",
+      "start": 98.096,
+      "end": 98.736,
+      "duration": 0.64
+    },
+    {
+      "id": "word-0125",
+      "index": 124,
+      "text": "that",
+      "start": 98.736,
+      "end": 98.816,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0126",
+      "index": 125,
+      "text": "once",
+      "start": 98.816,
+      "end": 99.344,
+      "duration": 0.528
+    },
+    {
+      "id": "word-0127",
+      "index": 126,
+      "text": "controlled",
+      "start": 99.344,
+      "end": 100.244,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0128",
+      "index": 127,
+      "text": "me",
+      "start": 100.32,
+      "end": 101.22,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0129",
+      "index": 128,
+      "text": "can't",
+      "start": 101.232,
+      "end": 101.728,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0130",
+      "index": 129,
+      "text": "get",
+      "start": 101.728,
+      "end": 102.032,
+      "duration": 0.304
+    },
+    {
+      "id": "word-0131",
+      "index": 130,
+      "text": "to",
+      "start": 102.032,
+      "end": 102.656,
+      "duration": 0.624
+    },
+    {
+      "id": "word-0132",
+      "index": 131,
+      "text": "me",
+      "start": 102.656,
+      "end": 102.864,
+      "duration": 0.208
+    },
+    {
+      "id": "word-0133",
+      "index": 132,
+      "text": "at",
+      "start": 102.864,
+      "end": 102.928,
+      "duration": 0.064
+    },
+    {
+      "id": "word-0134",
+      "index": 133,
+      "text": "all",
+      "start": 102.928,
+      "end": 103.828,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0135",
+      "index": 134,
+      "text": "it's",
+      "start": 105.68,
+      "end": 106.0,
+      "duration": 0.32
+    },
+    {
+      "id": "word-0136",
+      "index": 135,
+      "text": "time",
+      "start": 106.0,
+      "end": 106.24,
+      "duration": 0.24
+    },
+    {
+      "id": "word-0137",
+      "index": 136,
+      "text": "to",
+      "start": 106.24,
+      "end": 106.624,
+      "duration": 0.384
+    },
+    {
+      "id": "word-0138",
+      "index": 137,
+      "text": "see",
+      "start": 106.624,
+      "end": 107.232,
+      "duration": 0.608
+    },
+    {
+      "id": "word-0139",
+      "index": 138,
+      "text": "what",
+      "start": 107.232,
+      "end": 107.664,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0140",
+      "index": 139,
+      "text": "i",
+      "start": 107.664,
+      "end": 108.032,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0141",
+      "index": 140,
+      "text": "can",
+      "start": 108.032,
+      "end": 108.544,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0142",
+      "index": 141,
+      "text": "do",
+      "start": 108.544,
+      "end": 109.136,
+      "duration": 0.592
+    },
+    {
+      "id": "word-0143",
+      "index": 142,
+      "text": "to",
+      "start": 109.136,
+      "end": 109.328,
+      "duration": 0.192
+    },
+    {
+      "id": "word-0144",
+      "index": 143,
+      "text": "test",
+      "start": 109.328,
+      "end": 109.84,
+      "duration": 0.512
+    },
+    {
+      "id": "word-0145",
+      "index": 144,
+      "text": "the",
+      "start": 109.84,
+      "end": 110.208,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0146",
+      "index": 145,
+      "text": "limits",
+      "start": 110.208,
+      "end": 111.108,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0147",
+      "index": 146,
+      "text": "and",
+      "start": 111.216,
+      "end": 111.552,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0148",
+      "index": 147,
+      "text": "break",
+      "start": 111.552,
+      "end": 112.032,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0149",
+      "index": 148,
+      "text": "through",
+      "start": 112.032,
+      "end": 112.704,
+      "duration": 0.672
+    },
+    {
+      "id": "word-0150",
+      "index": 149,
+      "text": "no",
+      "start": 112.704,
+      "end": 112.944,
+      "duration": 0.24
+    },
+    {
+      "id": "word-0151",
+      "index": 150,
+      "text": "right",
+      "start": 112.944,
+      "end": 113.28,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0152",
+      "index": 151,
+      "text": "no",
+      "start": 113.28,
+      "end": 113.776,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0153",
+      "index": 152,
+      "text": "wrong",
+      "start": 113.776,
+      "end": 114.224,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0154",
+      "index": 153,
+      "text": "no",
+      "start": 114.224,
+      "end": 114.688,
+      "duration": 0.464
+    },
+    {
+      "id": "word-0155",
+      "index": 154,
+      "text": "rules",
+      "start": 114.688,
+      "end": 115.104,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0156",
+      "index": 155,
+      "text": "for",
+      "start": 115.104,
+      "end": 115.216,
+      "duration": 0.112
+    },
+    {
+      "id": "word-0157",
+      "index": 156,
+      "text": "me",
+      "start": 115.216,
+      "end": 116.116,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0158",
+      "index": 157,
+      "text": "i'm",
+      "start": 116.912,
+      "end": 117.264,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0159",
+      "index": 158,
+      "text": "free",
+      "start": 117.264,
+      "end": 118.164,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0160",
+      "index": 159,
+      "text": "let",
+      "start": 120.352,
+      "end": 120.608,
+      "duration": 0.256
+    },
+    {
+      "id": "word-0161",
+      "index": 160,
+      "text": "it",
+      "start": 120.608,
+      "end": 120.736,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0162",
+      "index": 161,
+      "text": "go",
+      "start": 120.736,
+      "end": 121.636,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0163",
+      "index": 162,
+      "text": "let",
+      "start": 122.0,
+      "end": 122.368,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0164",
+      "index": 163,
+      "text": "it",
+      "start": 122.368,
+      "end": 122.512,
+      "duration": 0.144
+    },
+    {
+      "id": "word-0165",
+      "index": 164,
+      "text": "go",
+      "start": 122.512,
+      "end": 122.64,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0166",
+      "index": 165,
+      "text": "i",
+      "start": 122.64,
+      "end": 123.54,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0167",
+      "index": 166,
+      "text": "am",
+      "start": 123.904,
+      "end": 124.256,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0168",
+      "index": 167,
+      "text": "one",
+      "start": 124.256,
+      "end": 124.64,
+      "duration": 0.384
+    },
+    {
+      "id": "word-0169",
+      "index": 168,
+      "text": "with",
+      "start": 124.64,
+      "end": 124.96,
+      "duration": 0.32
+    },
+    {
+      "id": "word-0170",
+      "index": 169,
+      "text": "the",
+      "start": 124.96,
+      "end": 125.136,
+      "duration": 0.176
+    },
+    {
+      "id": "word-0171",
+      "index": 170,
+      "text": "wind",
+      "start": 125.136,
+      "end": 125.632,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0172",
+      "index": 171,
+      "text": "and",
+      "start": 125.632,
+      "end": 125.904,
+      "duration": 0.272
+    },
+    {
+      "id": "word-0173",
+      "index": 172,
+      "text": "sky",
+      "start": 125.904,
+      "end": 126.804,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0174",
+      "index": 173,
+      "text": "let",
+      "start": 127.392,
+      "end": 127.664,
+      "duration": 0.272
+    },
+    {
+      "id": "word-0175",
+      "index": 174,
+      "text": "it",
+      "start": 127.664,
+      "end": 127.808,
+      "duration": 0.144
+    },
+    {
+      "id": "word-0176",
+      "index": 175,
+      "text": "go",
+      "start": 127.808,
+      "end": 128.708,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0177",
+      "index": 176,
+      "text": "let",
+      "start": 128.944,
+      "end": 129.536,
+      "duration": 0.592
+    },
+    {
+      "id": "word-0178",
+      "index": 177,
+      "text": "it",
+      "start": 129.536,
+      "end": 130.208,
+      "duration": 0.672
+    },
+    {
+      "id": "word-0179",
+      "index": 178,
+      "text": "go",
+      "start": 130.208,
+      "end": 130.992,
+      "duration": 0.784
+    },
+    {
+      "id": "word-0180",
+      "index": 179,
+      "text": "you'll",
+      "start": 130.992,
+      "end": 131.312,
+      "duration": 0.32
+    },
+    {
+      "id": "word-0181",
+      "index": 180,
+      "text": "never",
+      "start": 131.312,
+      "end": 132.0,
+      "duration": 0.688
+    },
+    {
+      "id": "word-0182",
+      "index": 181,
+      "text": "see",
+      "start": 132.0,
+      "end": 132.72,
+      "duration": 0.72
+    },
+    {
+      "id": "word-0183",
+      "index": 182,
+      "text": "me",
+      "start": 132.72,
+      "end": 133.136,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0184",
+      "index": 183,
+      "text": "cry",
+      "start": 133.136,
+      "end": 134.036,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0185",
+      "index": 184,
+      "text": "here",
+      "start": 134.976,
+      "end": 135.876,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0186",
+      "index": 185,
+      "text": "i",
+      "start": 136.112,
+      "end": 136.176,
+      "duration": 0.064
+    },
+    {
+      "id": "word-0187",
+      "index": 186,
+      "text": "stand",
+      "start": 136.176,
+      "end": 137.076,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0188",
+      "index": 187,
+      "text": "and",
+      "start": 138.08,
+      "end": 138.384,
+      "duration": 0.304
+    },
+    {
+      "id": "word-0189",
+      "index": 188,
+      "text": "here",
+      "start": 138.384,
+      "end": 139.264,
+      "duration": 0.88
+    },
+    {
+      "id": "word-0190",
+      "index": 189,
+      "text": "i",
+      "start": 139.264,
+      "end": 139.76,
+      "duration": 0.496
+    },
+    {
+      "id": "word-0191",
+      "index": 190,
+      "text": "stay",
+      "start": 139.76,
+      "end": 140.66,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0192",
+      "index": 191,
+      "text": "let",
+      "start": 141.424,
+      "end": 141.744,
+      "duration": 0.32
+    },
+    {
+      "id": "word-0193",
+      "index": 192,
+      "text": "the",
+      "start": 141.744,
+      "end": 141.824,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0194",
+      "index": 193,
+      "text": "storm",
+      "start": 141.824,
+      "end": 142.528,
+      "duration": 0.704
+    },
+    {
+      "id": "word-0195",
+      "index": 194,
+      "text": "rage",
+      "start": 142.528,
+      "end": 143.312,
+      "duration": 0.784
+    },
+    {
+      "id": "word-0196",
+      "index": 195,
+      "text": "on",
+      "start": 143.312,
+      "end": 144.212,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0197",
+      "index": 196,
+      "text": "my",
+      "start": 144.288,
+      "end": 145.188,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0198",
+      "index": 197,
+      "text": "power",
+      "start": 153.12,
+      "end": 153.888,
+      "duration": 0.768
+    },
+    {
+      "id": "word-0199",
+      "index": 198,
+      "text": "flurries",
+      "start": 153.888,
+      "end": 154.788,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0200",
+      "index": 199,
+      "text": "through",
+      "start": 154.992,
+      "end": 155.408,
+      "duration": 0.416
+    },
+    {
+      "id": "word-0201",
+      "index": 200,
+      "text": "the",
+      "start": 155.408,
+      "end": 155.472,
+      "duration": 0.064
+    },
+    {
+      "id": "word-0202",
+      "index": 201,
+      "text": "air",
+      "start": 155.472,
+      "end": 156.336,
+      "duration": 0.864
+    },
+    {
+      "id": "word-0203",
+      "index": 202,
+      "text": "into",
+      "start": 156.336,
+      "end": 157.12,
+      "duration": 0.784
+    },
+    {
+      "id": "word-0204",
+      "index": 203,
+      "text": "the",
+      "start": 157.12,
+      "end": 157.392,
+      "duration": 0.272
+    },
+    {
+      "id": "word-0205",
+      "index": 204,
+      "text": "ground",
+      "start": 157.392,
+      "end": 158.292,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0206",
+      "index": 205,
+      "text": "my",
+      "start": 159.92,
+      "end": 160.112,
+      "duration": 0.192
+    },
+    {
+      "id": "word-0207",
+      "index": 206,
+      "text": "soul",
+      "start": 160.112,
+      "end": 160.704,
+      "duration": 0.592
+    },
+    {
+      "id": "word-0208",
+      "index": 207,
+      "text": "is",
+      "start": 160.704,
+      "end": 160.976,
+      "duration": 0.272
+    },
+    {
+      "id": "word-0209",
+      "index": 208,
+      "text": "spiralling",
+      "start": 160.976,
+      "end": 161.876,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0210",
+      "index": 209,
+      "text": "in",
+      "start": 162.416,
+      "end": 162.816,
+      "duration": 0.4
+    },
+    {
+      "id": "word-0211",
+      "index": 210,
+      "text": "frozen",
+      "start": 162.816,
+      "end": 163.584,
+      "duration": 0.768
+    },
+    {
+      "id": "word-0212",
+      "index": 211,
+      "text": "fractals",
+      "start": 163.584,
+      "end": 164.484,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0213",
+      "index": 212,
+      "text": "all",
+      "start": 164.576,
+      "end": 164.96,
+      "duration": 0.384
+    },
+    {
+      "id": "word-0214",
+      "index": 213,
+      "text": "around",
+      "start": 164.96,
+      "end": 165.86,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0215",
+      "index": 214,
+      "text": "and",
+      "start": 167.024,
+      "end": 167.168,
+      "duration": 0.144
+    },
+    {
+      "id": "word-0216",
+      "index": 215,
+      "text": "one",
+      "start": 167.168,
+      "end": 167.552,
+      "duration": 0.384
+    },
+    {
+      "id": "word-0217",
+      "index": 216,
+      "text": "thought",
+      "start": 167.552,
+      "end": 167.888,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0218",
+      "index": 217,
+      "text": "crystallises",
+      "start": 167.888,
+      "end": 168.788,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0219",
+      "index": 218,
+      "text": "like",
+      "start": 169.824,
+      "end": 170.72,
+      "duration": 0.896
+    },
+    {
+      "id": "word-0220",
+      "index": 219,
+      "text": "an",
+      "start": 170.72,
+      "end": 171.024,
+      "duration": 0.304
+    },
+    {
+      "id": "word-0221",
+      "index": 220,
+      "text": "icy",
+      "start": 171.024,
+      "end": 171.328,
+      "duration": 0.304
+    },
+    {
+      "id": "word-0222",
+      "index": 221,
+      "text": "blast",
+      "start": 171.328,
+      "end": 172.228,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0223",
+      "index": 222,
+      "text": "i'm",
+      "start": 173.984,
+      "end": 174.112,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0224",
+      "index": 223,
+      "text": "never",
+      "start": 174.112,
+      "end": 174.896,
+      "duration": 0.784
+    },
+    {
+      "id": "word-0225",
+      "index": 224,
+      "text": "going",
+      "start": 174.896,
+      "end": 174.976,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0226",
+      "index": 225,
+      "text": "back",
+      "start": 174.976,
+      "end": 175.872,
+      "duration": 0.896
+    },
+    {
+      "id": "word-0227",
+      "index": 226,
+      "text": "the",
+      "start": 175.872,
+      "end": 176.772,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0228",
+      "index": 227,
+      "text": "past",
+      "start": 177.072,
+      "end": 177.52,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0229",
+      "index": 228,
+      "text": "is",
+      "start": 177.52,
+      "end": 178.42,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0230",
+      "index": 229,
+      "text": "in",
+      "start": 178.64,
+      "end": 179.54,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0231",
+      "index": 230,
+      "text": "the",
+      "start": 181.664,
+      "end": 182.032,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0232",
+      "index": 231,
+      "text": "past",
+      "start": 182.032,
+      "end": 182.932,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0233",
+      "index": 232,
+      "text": "let",
+      "start": 183.136,
+      "end": 183.488,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0234",
+      "index": 233,
+      "text": "it",
+      "start": 183.488,
+      "end": 183.856,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0235",
+      "index": 234,
+      "text": "go",
+      "start": 183.856,
+      "end": 183.952,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0236",
+      "index": 235,
+      "text": "let",
+      "start": 183.952,
+      "end": 184.852,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0237",
+      "index": 236,
+      "text": "it",
+      "start": 185.2,
+      "end": 185.376,
+      "duration": 0.176
+    },
+    {
+      "id": "word-0238",
+      "index": 237,
+      "text": "go",
+      "start": 185.376,
+      "end": 185.584,
+      "duration": 0.208
+    },
+    {
+      "id": "word-0239",
+      "index": 238,
+      "text": "and",
+      "start": 185.584,
+      "end": 185.68,
+      "duration": 0.096
+    },
+    {
+      "id": "word-0240",
+      "index": 239,
+      "text": "i'll",
+      "start": 185.68,
+      "end": 185.968,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0241",
+      "index": 240,
+      "text": "rise",
+      "start": 185.968,
+      "end": 186.096,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0242",
+      "index": 241,
+      "text": "like",
+      "start": 186.096,
+      "end": 186.352,
+      "duration": 0.256
+    },
+    {
+      "id": "word-0243",
+      "index": 242,
+      "text": "the",
+      "start": 186.352,
+      "end": 186.48,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0244",
+      "index": 243,
+      "text": "break",
+      "start": 186.48,
+      "end": 187.024,
+      "duration": 0.544
+    },
+    {
+      "id": "word-0245",
+      "index": 244,
+      "text": "of",
+      "start": 187.024,
+      "end": 187.312,
+      "duration": 0.288
+    },
+    {
+      "id": "word-0246",
+      "index": 245,
+      "text": "dawn",
+      "start": 187.312,
+      "end": 188.212,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0247",
+      "index": 246,
+      "text": "let",
+      "start": 188.72,
+      "end": 188.976,
+      "duration": 0.256
+    },
+    {
+      "id": "word-0248",
+      "index": 247,
+      "text": "it",
+      "start": 188.976,
+      "end": 189.104,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0249",
+      "index": 248,
+      "text": "go",
+      "start": 189.104,
+      "end": 190.004,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0250",
+      "index": 249,
+      "text": "let",
+      "start": 190.304,
+      "end": 190.64,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0251",
+      "index": 250,
+      "text": "it",
+      "start": 190.64,
+      "end": 190.784,
+      "duration": 0.144
+    },
+    {
+      "id": "word-0252",
+      "index": 251,
+      "text": "go",
+      "start": 190.784,
+      "end": 190.832,
+      "duration": 0.048
+    },
+    {
+      "id": "word-0253",
+      "index": 252,
+      "text": "that",
+      "start": 190.832,
+      "end": 191.732,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0254",
+      "index": 253,
+      "text": "perfect",
+      "start": 192.256,
+      "end": 193.156,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0255",
+      "index": 254,
+      "text": "girl",
+      "start": 193.44,
+      "end": 194.16,
+      "duration": 0.72
+    },
+    {
+      "id": "word-0256",
+      "index": 255,
+      "text": "is",
+      "start": 194.16,
+      "end": 194.592,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0257",
+      "index": 256,
+      "text": "gone",
+      "start": 194.592,
+      "end": 195.492,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0258",
+      "index": 257,
+      "text": "here",
+      "start": 196.224,
+      "end": 197.008,
+      "duration": 0.784
+    },
+    {
+      "id": "word-0259",
+      "index": 258,
+      "text": "i",
+      "start": 197.008,
+      "end": 197.456,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0260",
+      "index": 259,
+      "text": "stand",
+      "start": 197.456,
+      "end": 198.356,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0261",
+      "index": 260,
+      "text": "in",
+      "start": 198.992,
+      "end": 199.344,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0262",
+      "index": 261,
+      "text": "the",
+      "start": 199.344,
+      "end": 199.792,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0263",
+      "index": 262,
+      "text": "light",
+      "start": 199.792,
+      "end": 200.692,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0264",
+      "index": 263,
+      "text": "of",
+      "start": 201.056,
+      "end": 201.504,
+      "duration": 0.448
+    },
+    {
+      "id": "word-0265",
+      "index": 264,
+      "text": "day",
+      "start": 201.504,
+      "end": 202.404,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0266",
+      "index": 265,
+      "text": "let",
+      "start": 204.528,
+      "end": 204.864,
+      "duration": 0.336
+    },
+    {
+      "id": "word-0267",
+      "index": 266,
+      "text": "the",
+      "start": 204.864,
+      "end": 204.944,
+      "duration": 0.08
+    },
+    {
+      "id": "word-0268",
+      "index": 267,
+      "text": "storm",
+      "start": 204.944,
+      "end": 205.584,
+      "duration": 0.64
+    },
+    {
+      "id": "word-0269",
+      "index": 268,
+      "text": "rage",
+      "start": 205.584,
+      "end": 206.484,
+      "duration": 0.9
+    },
+    {
+      "id": "word-0270",
+      "index": 269,
+      "text": "on",
+      "start": 209.92,
+      "end": 210.224,
+      "duration": 0.304
+    },
+    {
+      "id": "word-0271",
+      "index": 270,
+      "text": "the",
+      "start": 210.224,
+      "end": 210.352,
+      "duration": 0.128
+    },
+    {
+      "id": "word-0272",
+      "index": 271,
+      "text": "cold",
+      "start": 210.352,
+      "end": 210.832,
+      "duration": 0.48
+    },
+    {
+      "id": "word-0273",
+      "index": 272,
+      "text": "never",
+      "start": 210.832,
+      "end": 211.184,
+      "duration": 0.352
+    },
+    {
+      "id": "word-0274",
+      "index": 273,
+      "text": "bothered",
+      "start": 211.184,
+      "end": 211.616,
+      "duration": 0.432
+    },
+    {
+      "id": "word-0275",
+      "index": 274,
+      "text": "me",
+      "start": 211.616,
+      "end": 211.984,
+      "duration": 0.368
+    },
+    {
+      "id": "word-0276",
+      "index": 275,
+      "text": "anyway",
+      "start": 211.984,
+      "end": 213.184,
+      "duration": 1.2
+    }
+  ],
+  "review_notes": [
+    "This file was created from singing-specific lyrics-aligner word onsets.",
+    "The aligner output provides word starts only.",
+    "Word and line ends are inferred for review purposes and should not be treated as final timing truth.",
+    "Instrumental placeholder lines are preserved here with empty words arrays and are timed in the draft builder.",
+    "Use this mainly to judge word starts and line starts."
+  ]
+}
